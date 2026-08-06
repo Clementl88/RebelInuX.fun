@@ -654,12 +654,12 @@ function setActiveNavItem() {
         'trade.html': 'a.nav-trade',
         'epoch-rewards.html': 'a.nav-rewards',
         'tokenomics.html': 'a.nav-tokenomics',
-        'security-integrity.html': 'a.nav-security-integrity', // FIXED: Correct class name
+        'security-integrity.html': 'a.nav-security-integrity',
         'community.html': 'a.nav-community',
         'governance.html': 'a.nav-governance',
         'roadmap.html': 'a.nav-roadmap',
         'artwork.html': 'a.nav-artwork',
-        'rebl-calculator.html': 'a.nav-rebl-calculator', // FIXED: Correct class name
+        'rebl-calculator.html': 'a.nav-rebl-calculator',
         'whitepaper.html': 'a.nav-whitepaper'
     };
     
@@ -931,37 +931,7 @@ function hideLoader() {
         }, 500);
     }
 }
-function setupMobileNavToggle() {
-    const mobileToggle = document.getElementById('mobileNavToggle');
-    const navDesktop = document.getElementById('nav-desktop');
-    
-    if (mobileToggle && navDesktop) {
-        mobileToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const isActive = navDesktop.classList.contains('active');
-            
-            // Toggle navigation
-            navDesktop.classList.toggle('active');
-            this.classList.toggle('active');
-            this.setAttribute('aria-expanded', !isActive);
-            
-            // Prevent body scroll when menu is open
-            document.body.style.overflow = isActive ? '' : 'hidden';
-        });
-        
-        // Close mobile menu when clicking a link
-        navDesktop.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                navDesktop.classList.remove('active');
-                mobileToggle.classList.remove('active');
-                mobileToggle.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            });
-        });
-    }
-}
+
 // ========== INITIALIZE EVERYTHING ==========
 function initializeCommon() {
     console.log('🚀 Initializing common functionality...');
@@ -976,7 +946,7 @@ function initializeCommon() {
         // 3. Setup header scroll effect
         setupHeaderScrollEffect();
         
-        // 4. Setup mobile navigation
+        // 4. Setup mobile navigation (handles toggle and menu)
         setupMobileNavigation();
         
         // 5. Setup dropdowns
@@ -996,7 +966,6 @@ function initializeCommon() {
         
         // 10. Setup enhanced contract copy functionality
         setupContractCopy();
-        setupMobileNavToggle(); 
         
         // 11. Add body class for JavaScript detection
         document.body.classList.add('js-enabled');
