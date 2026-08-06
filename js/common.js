@@ -1,4 +1,4 @@
-// common.js - Fixed dropdown issue with single source of truth
+/// common.js - Fixed dropdown issue with single source of truth
 
 // ========== GLOBAL STATE ==========
 let isMobileMenuOpen = false;
