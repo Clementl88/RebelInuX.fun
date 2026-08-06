@@ -1,65 +1,59 @@
 <header>
   <div class="header-container">
-    <!-- Brand Logo --->
+    <!-- Brand Logo -->
     <a href="index.html" class="brand-link" aria-label="RebelInuX Home">
       <div class="brand-content">
-        <img src="images/Logo_REBL.svg" 
-             alt="RebelInuX Logo" 
-             width="50" 
+        <img src="images/Logo_REBL.svg"
+             alt="RebelInuX Logo"
+             width="50"
              height="50"
              loading="eager"
              class="brand-logo">
         <div class="brand-text">
           <div class="brand-title">RebelInuX</div>
-<div class="brand-subtitle">Historical Journey Collectibles</div>
+          <div class="brand-subtitle">Historical Journey Collectibles</div>
         </div>
       </div>
     </a>
-    
-    <!-- Premium Mobile Menu Toggle -->
+
+    <!-- Mobile Menu Toggle (Simplified) -->
     <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-    
-    <!-- Desktop Navigation Only -->
+
+    <!-- Desktop & Mobile Navigation -->
     <nav id="nav-desktop" aria-label="Main navigation">
-      <!-- Trade Page Link -->
+      <!-- Main Links -->
       <a href="trade.html" class="nav-trade">
         <i class="fas fa-chart-line"></i> Trade Guide
       </a>
-      
-      <!-- Rewards -->
       <a href="epoch-rewards.html" class="nav-rewards">
         <i class="fas fa-gift"></i> Rewards
       </a>
-      
-      <!-- Tokenomics -->
       <a href="tokenomics.html" class="nav-tokenomics">
         <i class="fas fa-coins"></i> Tokenomics
       </a>
-      
+
       <!-- More Dropdown -->
       <div class="dropdown">
-        <button class="dropbtn nav-more" aria-expanded="false" aria-haspopup="true">
+        <button class="dropbtn nav-more" aria-expanded="false">
           <i class="fas fa-ellipsis-h"></i> More
-          <span class="dropdown-arrow" aria-hidden="true">▼</span>
+          <span class="dropdown-arrow">▼</span>
         </button>
-        <div class="dropdown-content" aria-label="More options">
+        <div class="dropdown-content">
           <a href="community.html" class="nav-community">
             <i class="fas fa-users"></i> Community
           </a>
-  <a href="security-integrity.html" class="nav-security-integrity">
-    <i class="fas fa-shield-alt"></i> Security & Integrity
-</a>
+          <a href="security-integrity.html" class="nav-security-integrity">
+            <i class="fas fa-shield-alt"></i> Security & Integrity
+          </a>
           <a href="whitepaper.html" class="nav-whitepaper">
             <i class="fas fa-file-contract"></i> Whitepaper
           </a>
           <a href="rebl-calculator.html" class="nav-rebl-calculator">
-             <i class="fas fa-calculator"></i> Epoch Calculator
+            <i class="fas fa-calculator"></i> Epoch Calculator
           </a>
           <a href="governance.html" class="nav-governance">
             <i class="fas fa-vote-yea"></i> Governance
@@ -72,33 +66,28 @@
           </a>
         </div>
       </div>
-      
-      <!-- MOBILE-ONLY: Direct Buy Button -->
-      <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump" 
-         class="cta-button mobile-direct-buy" 
-         target="_blank" 
+
+      <!-- Mobile-Only Buy Button -->
+      <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump"
+         class="cta-button mobile-direct-buy"
+         target="_blank"
          rel="noopener noreferrer">
         <i class="fas fa-bolt"></i> Buy Now
       </a>
     </nav>
-    
-    <!-- DESKTOP-ONLY: Ultimate Trading Button -->
+
+    <!-- Desktop-Only Trade Dropdown -->
     <div class="buy-dropdown desktop-primary-action">
-      <button class="cta-button primary-action-btn buy-toggle" aria-expanded="false" aria-haspopup="true">
+      <button class="cta-button primary-action-btn buy-toggle" aria-expanded="false">
         <i class="fas fa-rocket"></i> TRADE $REBL
-        <i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+        <i class="fas fa-chevron-down dropdown-arrow"></i>
       </button>
-      
-      <div class="buy-options primary-action-options" aria-label="Trade $REBL options">
-        <!-- 1. QUICK ACTIONS -->
+
+      <div class="buy-options primary-action-options">
+        <!-- Quick Actions -->
         <div class="action-group">
-          <div class="group-title">
-            <i class="fas fa-bolt"></i> Quick Actions
-          </div>
-          
-          <!-- Primary Quick Trade -->
-          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump" 
-             class="buy-option primary-action">
+          <div class="group-title"><i class="fas fa-bolt"></i> Quick Actions</div>
+          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump" class="buy-option primary-action">
             <div class="option-icon pump-icon">
               <img src="images/platforms/Pump.Fun-favicon.svg" alt="Pump.fun" width="24" height="24" loading="lazy" class="platform-img">
             </div>
@@ -108,10 +97,7 @@
             </div>
             <div class="option-badge main-pool">MAIN</div>
           </a>
-          
-          <!-- Smart Price Aggregator -->
-          <a href="https://jup.ag/swap?sell=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump&buy=So11111111111111111111111111111111111111112" 
-             class="buy-option">
+          <a href="https://jup.ag/swap?sell=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump&buy=So11111111111111111111111111111111111111112" class="buy-option">
             <div class="option-icon">
               <img src="images/platforms/jupiter-favicon.ico" alt="Jupiter" width="24" height="24" loading="lazy" class="platform-img">
             </div>
@@ -122,16 +108,11 @@
             <div class="option-badge smart">SMART</div>
           </a>
         </div>
-        
-        <!-- 2. ESSENTIAL ANALYTICS (Top 3) -->
+
+        <!-- Essential Analytics -->
         <div class="action-group">
-          <div class="group-title">
-            <i class="fas fa-chart-line"></i> Essential Analytics
-          </div>
-          
-          <!-- Dextools (MUST HAVE) -->
-          <a href="https://www.dextools.io/app/solana/pair-explorer/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump" 
-             class="buy-option analytics-option">
+          <div class="group-title"><i class="fas fa-chart-line"></i> Essential Analytics</div>
+          <a href="https://www.dextools.io/app/solana/pair-explorer/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump" class="buy-option analytics-option">
             <div class="option-icon">
               <img src="images/platforms/dextools-favicon.svg" alt="Dextools" width="24" height="24" loading="lazy" class="platform-img">
             </div>
@@ -141,10 +122,7 @@
             </div>
             <div class="option-badge essential">ESSENTIAL</div>
           </a>
-          
-          <!-- GeckoTerminal -->
-          <a href="https://www.geckoterminal.com/solana/pools/Fyak2SY4vx2PnExMh87rJ7uGAVrhN3Z9SfZcJEMa7kyv" 
-             class="buy-option analytics-option">
+          <a href="https://www.geckoterminal.com/solana/pools/Fyak2SY4vx2PnExMh87rJ7uGAVrhN3Z9SfZcJEMa7kyv" class="buy-option analytics-option">
             <div class="option-icon">
               <img src="images/platforms/geckoterminal%20icon.svg" alt="GeckoTerminal" width="24" height="24" loading="lazy" class="platform-img">
             </div>
@@ -153,10 +131,7 @@
               <div class="option-desc">Advanced Pool Analytics</div>
             </div>
           </a>
-          
-          <!-- Birdeye -->
-          <a href="https://birdeye.so/token/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump?chain=solana" 
-             class="buy-option analytics-option">
+          <a href="https://birdeye.so/token/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump?chain=solana" class="buy-option analytics-option">
             <div class="option-icon">
               <img src="images/platforms/birdeye-favicon.ico" alt="Birdeye" width="24" height="24" loading="lazy" class="platform-img">
             </div>
@@ -166,16 +141,11 @@
             </div>
           </a>
         </div>
-        
-        <!-- 3. TRADING PLATFORMS (Top 2) -->
+
+        <!-- Trading Platforms -->
         <div class="action-group">
-          <div class="group-title">
-            <i class="fas fa-exchange-alt"></i> Trading Platforms
-          </div>
-          
-          <!-- PancakeSwap -->
-          <a href="https://pancakeswap.finance/swap?outputCurrency=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump&chain=sol" 
-             class="buy-option platform-option">
+          <div class="group-title"><i class="fas fa-exchange-alt"></i> Trading Platforms</div>
+          <a href="https://pancakeswap.finance/swap?outputCurrency=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump&chain=sol" class="buy-option platform-option">
             <div class="option-icon">
               <img src="images/platforms/pancakeswap-favicon.ico" alt="PancakeSwap" width="24" height="24" loading="lazy" class="platform-img">
             </div>
@@ -185,10 +155,7 @@
             </div>
             <div class="option-badge popular">POPULAR</div>
           </a>
-          
-          <!-- MEXC DEX -->
-          <a href="https://www.mexc.com/dex/trade?pair_ca=Fyak2SY4vx2PnExMh87rJ7uGAVrhN3Z9SfZcJEMa7kyv&chain_id=100000&token_ca=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump&from=search" 
-             class="buy-option platform-option">
+          <a href="https://www.mexc.com/dex/trade?pair_ca=Fyak2SY4vx2PnExMh87rJ7uGAVrhN3Z9SfZcJEMa7kyv&chain_id=100000&token_ca=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump&from=search" class="buy-option platform-option">
             <div class="option-icon">
               <img src="images/platforms/MEXC-favicon.png" alt="MEXC" width="24" height="24" loading="lazy" class="platform-img">
             </div>
@@ -198,16 +165,11 @@
             </div>
           </a>
         </div>
-        
-        <!-- 4. ADVANCED TOOLS -->
+
+        <!-- Advanced Tools -->
         <div class="action-group">
-          <div class="group-title">
-            <i class="fas fa-tools"></i> Advanced Tools
-          </div>
-          
-          <!-- Bubble Maps -->
-          <a href="https://v2.bubblemaps.io/map?address=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump&chain=solana" 
-             class="buy-option tools-option">
+          <div class="group-title"><i class="fas fa-tools"></i> Advanced Tools</div>
+          <a href="https://v2.bubblemaps.io/map?address=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump&chain=solana" class="buy-option tools-option">
             <div class="option-icon">
               <img src="images/platforms/bubblemap-favicon.ico" alt="Bubble Maps" width="24" height="24" loading="lazy" class="platform-img">
             </div>
@@ -216,10 +178,7 @@
               <div class="option-desc">Holder Distribution</div>
             </div>
           </a>
-          
-          <!-- GMGN.ai -->
-          <a href="https://gmgn.ai/sol/token/solscan_F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump" 
-             class="buy-option tools-option">
+          <a href="https://gmgn.ai/sol/token/solscan_F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump" class="buy-option tools-option">
             <div class="option-icon">
               <img src="images/platforms/Gmgn.ai-favicon.svg" alt="GMGN.ai" width="24" height="24" loading="lazy" class="platform-img">
             </div>
@@ -229,15 +188,11 @@
             </div>
           </a>
         </div>
-        
-        <!-- 5. LIQUIDITY & YIELD -->
+
+        <!-- Liquidity & Yield -->
         <div class="action-group">
-          <div class="group-title">
-            <i class="fas fa-piggy-bank"></i> Earn Yield
-          </div>
-          
-          <a href="https://swap.pump.fun/deposit?pool=Fyak2SY4vx2PnExMh87rJ7uGAVrhN3Z9SfZcJEMa7kyv" 
-             class="buy-option yield-action">
+          <div class="group-title"><i class="fas fa-piggy-bank"></i> Earn Yield</div>
+          <a href="https://swap.pump.fun/deposit?pool=Fyak2SY4vx2PnExMh87rJ7uGAVrhN3Z9SfZcJEMa7kyv" class="buy-option yield-action">
             <div class="option-icon">
               <img src="images/platforms/Pump.Fun-favicon.svg" alt="Pump.fun" width="24" height="24" loading="lazy" class="platform-img">
             </div>
@@ -248,8 +203,8 @@
             <div class="option-badge yield">EARN</div>
           </a>
         </div>
-        
-        <!-- Contract Quick Access - FIXED WRAPPING -->
+
+        <!-- Contract Address -->
         <div class="contract-quick">
           <div class="contract-label">Contract Address:</div>
           <div class="contract-value-wrapper">
@@ -262,8 +217,8 @@
             </div>
           </div>
           <div class="contract-verify">
-            <a href="https://solscan.io/token/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump" 
-               target="_blank" 
+            <a href="https://solscan.io/token/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump"
+               target="_blank"
                rel="noopener noreferrer"
                class="contract-link">
               <i class="fas fa-external-link-alt"></i> Verify on Solscan
