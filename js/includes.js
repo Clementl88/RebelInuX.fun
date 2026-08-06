@@ -4,12 +4,15 @@
 window.componentsLoaded = false;
 window.componentsLoading = false;
 window.componentsError = false;
+window.commonJsReady = false;
 
 // Configuration
 const COMPONENTS_CONFIG = {
   retryAttempts: 3,
   retryDelay: 1000,
-  timeout: 5000
+  timeout: 5000,
+  commonJsMaxRetries: 5,
+  commonJsRetryDelay: 500
 };
 
 // Load all components
@@ -42,6 +45,9 @@ async function loadAllComponents() {
     
     console.log('✅ All components loaded successfully');
     
+    // Wait for common.js to be ready, then initialize
+    await waitForCommonJs();
+    
     // Initialize components after loading
     initializeComponents();
     
@@ -53,6 +59,149 @@ async function loadAllComponents() {
     // Show user-friendly error messages
     showComponentErrors();
   }
+}
+
+// Wait for common.js to be ready
+function waitForCommonJs() {
+  return new Promise((resolve) => {
+    // Check if common.js is already loaded
+    if (window.commonJsReady && typeof initializeCommon === 'function') {
+      console.log('✅ common.js already loaded and ready');
+      resolve();
+      return;
+    }
+    
+    // Check if setupMobileNavigation exists as a function
+    if (typeof setupMobileNavigation === 'function' && 
+        typeof setupDropdowns === 'function' && 
+        typeof setActiveNavItem === 'function') {
+      window.commonJsReady = true;
+      console.log('✅ common.js functions detected');
+      resolve();
+      return;
+    }
+    
+    // If common.js exists but isn't initialized yet, wait for it
+    console.log('⏳ Waiting for common.js to initialize...');
+    
+    // Listen for the components:initialized event from common.js
+    const onInitialized = function() {
+      document.removeEventListener('components:initialized', onInitialized);
+      window.commonJsReady = true;
+      console.log('✅ common.js initialized (via event)');
+      resolve();
+    };
+    
+    document.addEventListener('components:initialized', onInitialized);
+    
+    // Also check periodically if functions become available
+    let attempts = 0;
+    const maxAttempts = COMPONENTS_CONFIG.commonJsMaxRetries;
+    
+    const checkFunctions = setInterval(() => {
+      attempts++;
+      
+      if (typeof setupMobileNavigation === 'function' && 
+          typeof setupDropdowns === 'function' && 
+          typeof setActiveNavItem === 'function') {
+        clearInterval(checkFunctions);
+        document.removeEventListener('components:initialized', onInitialized);
+        window.commonJsReady = true;
+        console.log('✅ common.js functions detected (polling)');
+        resolve();
+      } else if (attempts >= maxAttempts) {
+        clearInterval(checkFunctions);
+        // If we still can't find functions, try to load common.js manually
+        console.warn('⚠️ common.js not detected, attempting to load...');
+        loadCommonJs().then(() => {
+          window.commonJsReady = true;
+          resolve();
+        }).catch(() => {
+          console.error('❌ Failed to load common.js');
+          // Try to initialize with whatever is available
+          resolve();
+        });
+      }
+    }, COMPONENTS_CONFIG.commonJsRetryDelay);
+    
+    // Set a timeout to prevent hanging
+    setTimeout(() => {
+      clearInterval(checkFunctions);
+      // If we haven't resolved by now, check one more time
+      if (!window.commonJsReady) {
+        if (typeof setupMobileNavigation === 'function') {
+          window.commonJsReady = true;
+          console.log('✅ common.js functions available (timeout fallback)');
+          resolve();
+        } else {
+          console.warn('⚠️ common.js still not ready after timeout');
+          resolve();
+        }
+      }
+    }, COMPONENTS_CONFIG.commonJsMaxRetries * COMPONENTS_CONFIG.commonJsRetryDelay + 2000);
+  });
+}
+
+// Load common.js dynamically if needed
+function loadCommonJs() {
+  return new Promise((resolve, reject) => {
+    // Check if already loaded
+    if (window.commonJsReady) {
+      resolve();
+      return;
+    }
+    
+    // Check if script already exists
+    const existingScript = document.querySelector('script[src*="common.js"]');
+    if (existingScript) {
+      console.log('✅ common.js script already in DOM, waiting...');
+      // Wait for it to load
+      const checkInterval = setInterval(() => {
+        if (typeof setupMobileNavigation === 'function') {
+          clearInterval(checkInterval);
+          window.commonJsReady = true;
+          resolve();
+        }
+      }, 200);
+      
+      setTimeout(() => {
+        clearInterval(checkInterval);
+        if (window.commonJsReady) {
+          resolve();
+        } else {
+          reject(new Error('common.js script found but not ready'));
+        }
+      }, 5000);
+      
+      return;
+    }
+    
+    // Load script
+    console.log('📥 Loading common.js dynamically...');
+    const script = document.createElement('script');
+    script.src = 'js/common.js';
+    script.async = false; // Load synchronously for reliability
+    
+    script.onload = () => {
+      console.log('✅ common.js loaded dynamically');
+      window.commonJsReady = true;
+      
+      // If common.js has an initialize function, call it
+      if (typeof initializeCommon === 'function') {
+        console.log('🔄 Calling initializeCommon...');
+        initializeCommon();
+      }
+      
+      resolve();
+    };
+    
+    script.onerror = () => {
+      console.error('❌ Failed to load common.js dynamically');
+      reject(new Error('Failed to load common.js'));
+    };
+    
+    document.head.appendChild(script);
+  });
 }
 
 // Load individual component with retry logic
@@ -173,14 +322,24 @@ function initializeComponents() {
       console.warn('⚠️ Missing required functions:', missingFunctions);
       
       // Try to load common.js dynamically if missing
-      if (!window.commonJsLoaded) {
-        console.log('🔄 Attempting to load common.js dynamically...');
-        loadScript('js/common.js');
+      if (!window.commonJsReady) {
+        console.log('🔄 common.js not ready, attempting to load...');
+        loadCommonJs().then(() => {
+          console.log('✅ common.js loaded, retrying initialization...');
+          setTimeout(initializeComponents, 200);
+        }).catch(() => {
+          console.error('❌ Failed to load common.js, skipping initialization');
+        });
         return;
       }
     }
     
     // Initialize in correct order
+    if (typeof setupHeaderScrollEffect === 'function') {
+      console.log('🔧 Setting up header scroll effect...');
+      setupHeaderScrollEffect();
+    }
+    
     if (typeof setupMobileNavigation === 'function') {
       console.log('🔧 Setting up mobile navigation...');
       setupMobileNavigation();
@@ -201,14 +360,16 @@ function initializeComponents() {
       setActiveNavItem();
     }
     
-    if (typeof setupHeaderScrollEffect === 'function') {
-      console.log('🔧 Setting up header scroll effect...');
-      setupHeaderScrollEffect();
-    }
-    
     if (typeof setupBackToTop === 'function') {
       console.log('🔧 Setting up back to top...');
       setupBackToTop();
+    }
+    
+    // If initializeCommon exists, call it as a fallback
+    if (typeof initializeCommon === 'function' && !window._commonInitialized) {
+      console.log('🔧 Calling initializeCommon as fallback...');
+      initializeCommon();
+      window._commonInitialized = true;
     }
     
     // Dispatch initialization complete event
@@ -230,7 +391,6 @@ function loadScript(src) {
     
     script.onload = () => {
       console.log(`✅ ${src} loaded`);
-      window.commonJsLoaded = true;
       resolve();
     };
     
@@ -245,6 +405,10 @@ function loadScript(src) {
 
 // Show component errors to user
 function showComponentErrors() {
+  // Remove existing error alert if present
+  const existingAlert = document.getElementById('components-error-alert');
+  if (existingAlert) existingAlert.remove();
+  
   const errorContainer = document.createElement('div');
   errorContainer.id = 'components-error-alert';
   errorContainer.style.cssText = `
@@ -283,9 +447,10 @@ function showComponentErrors() {
   
   // Auto-remove after 10 seconds
   setTimeout(() => {
-    if (errorContainer.parentNode) {
-      errorContainer.style.animation = 'slideOut 0.3s ease';
-      setTimeout(() => errorContainer.remove(), 300);
+    const alert = document.getElementById('components-error-alert');
+    if (alert) {
+      alert.style.animation = 'slideOut 0.3s ease';
+      setTimeout(() => alert.remove(), 300);
     }
   }, 10000);
 }
@@ -318,6 +483,12 @@ document.head.appendChild(style);
 document.addEventListener('DOMContentLoaded', function() {
   console.log('📄 DOM Content Loaded (includes.js)');
   
+  // Check if common.js is already loaded
+  if (typeof setupMobileNavigation === 'function') {
+    window.commonJsReady = true;
+    console.log('✅ common.js already loaded');
+  }
+  
   // Start loading components
   setTimeout(() => {
     loadAllComponents();
@@ -329,7 +500,8 @@ window.addEventListener('load', function() {
   console.log('🌐 Window fully loaded');
   
   // If components haven't loaded yet, try to initialize
-  if (window.componentsLoaded && typeof initializeComponents === 'function') {
+  if (window.componentsLoaded && !window._componentsInitialized) {
+    window._componentsInitialized = true;
     setTimeout(initializeComponents, 100);
   } else if (window.componentsError) {
     // If there was an error, try one more time
@@ -353,6 +525,8 @@ window.loadAllComponents = loadAllComponents;
 window.loadComponent = loadComponent;
 window.initializeComponents = initializeComponents;
 window.showComponentErrors = showComponentErrors;
+window.loadCommonJs = loadCommonJs;
+window.waitForCommonJs = waitForCommonJs;
 
 // Global component state access
 Object.defineProperty(window, 'componentState', {
@@ -360,7 +534,8 @@ Object.defineProperty(window, 'componentState', {
     return {
       loaded: window.componentsLoaded,
       loading: window.componentsLoading,
-      error: window.componentsError
+      error: window.componentsError,
+      commonJsReady: window.commonJsReady
     };
   }
 });
