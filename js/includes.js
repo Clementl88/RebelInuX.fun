@@ -1,4 +1,4 @@
-// js/includes.js - Load header and footer components with enhanced error handling
+/// js/includes.js - Load header and footer components with enhanced error handling
 
 // Global state to track component loading
 window.componentsLoaded = false;
