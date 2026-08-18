@@ -8,7 +8,7 @@ let lastClickedDropdown = null;
 // ========== DYNAMIC PAGE SUBTITLES ==========
 const PAGE_SUBTITLES = {
     // Main pages
-    'index.html': 'AI-Animated Historical Journey Collectibles',
+    'index.html': 'AI-Animated Journey Collectibles',
     'trade.html': 'Trade & Exchange Guide',
     'epoch-rewards.html': 'Reward System Dashboard',
     'tokenomics.html': 'Tokenomics & Distribution',
@@ -21,12 +21,12 @@ const PAGE_SUBTITLES = {
     'artwork.html': 'Art & Media Gallery',
     
     // Handle root/index pages
-    'index': 'AI-Animated Historical Journey Collectibles',
-    '/': 'AI-Animated Historical Journey Collectibles',
-    '': 'AI-Animated Historical Journey Collectibles',
+    'index': 'AI-Animated Journey Collectibles',
+    '/': 'AI-Animated Journey Collectibles',
+    '': 'AI-Animated Journey Collectibles',
     
     // Default fallback
-    'default': 'AI-Animated Historical Journey Collectibles'
+    'default': 'AI-Animated Journey Collectibles'
 };
 
 function getCurrentPage() {
