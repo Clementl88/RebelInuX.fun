@@ -4721,3 +4721,20 @@ body {
       font-weight: 400;
     }
     .subtitle-3assets strong { color: var(--rebel-gold); font-weight: 600; }
+
+
+/* ===== FIX: stack process-flow and contract-governance vertically ===== */
+.logo-comparison-container {
+  display: block;
+  width: 100%;
+}
+
+.logo-comparison-container > .logo-comparison-cards,
+.logo-comparison-container > .process-flow,
+.logo-comparison-container > .contract-governance {
+  display: block;
+  width: 100%;
+  flex: 0 0 100%;
+  flex-basis: 100%;
+  clear: both;
+}
