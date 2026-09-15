@@ -2767,15 +2767,14 @@ body {
 }
 
 .logo-comparison-container {
-       display: flex;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
-.logo-comparison-container > .process-flow,
-.logo-comparison-container > .contract-governance {
-    flex-basis: 100%;
-    width: 100%;
-}
+
 .logo-comparison-cards {
   display: flex;
   flex-direction: column;
