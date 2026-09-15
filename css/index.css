@@ -2768,7 +2768,6 @@ body {
 
 .logo-comparison-container {
        display: flex;
-    flex-wrap: wrap; /* NEW — allows children to wrap */
   max-width: 1200px;
   margin: 0 auto;
 }
