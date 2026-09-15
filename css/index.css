@@ -4722,19 +4722,37 @@ body {
     }
     .subtitle-3assets strong { color: var(--rebel-gold); font-weight: 600; }
 
+/* ===== LAYOUT FIX ===== */
 
-/* ===== FIX: stack process-flow and contract-governance vertically ===== */
+/* Logo comparison container: block by default so children stack */
 .logo-comparison-container {
   display: block;
   width: 100%;
 }
 
-.logo-comparison-container > .logo-comparison-cards,
-.logo-comparison-container > .process-flow,
-.logo-comparison-container > .contract-governance {
+/* The two logo cards must sit side-by-side on desktop */
+.logo-comparison-cards {
+  display: flex;
+  flex-direction: column;   /* mobile: stacked */
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .logo-comparison-cards {
+    flex-direction: row;    /* desktop: side-by-side */
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+/* The two blocks BELOW the logo cards must stack vertically */
+.process-flow,
+.contract-governance {
   display: block;
   width: 100%;
-  flex: 0 0 100%;
-  flex-basis: 100%;
+  flex-basis: auto;
   clear: both;
 }
