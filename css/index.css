@@ -2769,6 +2769,7 @@ body {
 .logo-comparison-container {
   display: flex;
   flex-direction: column;
+     flex-wrap: nowrap;      /* ← add this */
   width: 100%;
   gap: 2rem;
   max-width: 1200px;
