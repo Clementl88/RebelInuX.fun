@@ -4727,3 +4727,37 @@ body {
       font-weight: 400;
     }
     .subtitle-3assets strong { color: var(--rebel-gold); font-weight: 600; }
+/* ===== FIX: Logo comparison layout ===== */
+
+/* Container: everything stacks vertically */
+.logo-comparison-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2rem;
+}
+
+/* The two logo cards inside get side-by-side on desktop */
+.logo-comparison-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .logo-comparison-cards {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+
+/* The two lower blocks stay full width, stacked */
+.process-flow,
+.contract-governance {
+  display: block;
+  width: 100%;
+}
