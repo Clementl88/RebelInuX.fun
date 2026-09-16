@@ -2783,7 +2783,13 @@ body {
   .logo-comparison-cards {
     flex-direction: row;
     justify-content: center;
+         align-items: flex-start;   /* ← KEY: this makes children not stretch */
     gap: 2rem;
+         flex-wrap: nowrap;
+  }
+    .logo-comparison-cards > .logo-card,
+  .logo-comparison-cards > .logo-bridge {
+    flex: 0 0 auto;            /* ← prevent them from grabbing the row */
   }
 }
 
