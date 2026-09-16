@@ -1,5 +1,12 @@
 /*** trade.css - Trade page specific styles */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
+* {
+  box-sizing: border-box;
+}
 /* ===== Hero Section ===== */
 .page-hero--trade {
   background: linear-gradient(135deg, #1a1a1a 0%, #3a2f1f 100%);
