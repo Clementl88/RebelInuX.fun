@@ -2561,3 +2561,29 @@ html, body {
     justify-content: center;
   }
 }
+/* ===== KILL HORIZONTAL SCROLL / SWIPE ===== */
+@media (max-width: 768px) {
+  html {
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+  }
+
+  body {
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    /* Prevents touch panning past the edges */
+    overscroll-behavior-x: none;
+    touch-action: pan-y;
+  }
+
+  /* Only the content area can scroll vertically */
+  main {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+}
