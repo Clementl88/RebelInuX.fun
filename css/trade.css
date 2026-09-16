@@ -2461,89 +2461,71 @@ html, body {
     padding: 1rem;
   }
 }
-/* ===== ABSOLUTE MOBILE OVERFLOW KILLER ===== */
+/* ===== MOBILE OVERFLOW CONTROL ===== */
 @media (max-width: 768px) {
-  /* Everything respects the viewport width */
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-  }
-
   html, body {
-    width: 100% !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-    position: relative !important;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
-  /* Force every block-level container to fit */
-  main,
+  .container,
   section,
-  article,
-  aside,
-  header,
-  footer,
-  nav,
-  div,
-  .container {
-    max-width: 100% !important;
-    overflow-wrap: break-word !important;
-    word-wrap: break-word !important;
+  main,
+  article {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
-  /* Images and videos shrink */
-  img,
-  svg,
-  video,
-  canvas,
-  iframe {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  /* Every grid becomes 1 column */
-  [class*="grid"],
-  [class*="links"],
-  [style*="grid-template-columns"] {
+  /* Force grids to stack */
+  .takeaways-grid,
+  .exchange-links,
+  .trading-pairs-grid,
+  .verification-grid,
+  .warning-grid,
+  .related-grid,
+  .faq-grid,
+  .logo-explanation-grid,
+  .platform-grid,
+  .market-stats {
     grid-template-columns: 1fr !important;
-    gap: 1rem !important;
   }
 
-  /* Every flex row becomes a column */
-  [class*="row"],
-  [class*="actions"],
-  [class*="buttons"],
-  [class*="header"] {
-    flex-wrap: wrap !important;
+  /* Flex rows become columns */
+  .hero-buttons,
+  .contract-actions,
+  .pair-actions,
+  .function-buttons,
+  .controls,
+  .dashboard-header,
+  .contract-header,
+  .warning-header,
+  .price-ticker {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  /* Long strings break */
-  code,
-  pre,
-  p,
-  h1, h2, h3, h4, h5, h6,
-  a,
-  span,
+  /* Long strings */
   .contract-code,
-  .contract-display code {
-    overflow-wrap: anywhere !important;
-    word-break: break-word !important;
-    white-space: normal !important;
+  .contract-display code,
+  .contract-display-inline code,
+  .warning-item-value.code {
+    white-space: normal;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    font-size: 0.75rem;
   }
 
-  /* Buttons fill the width */
-  button,
-  .cta-button,
-  .action-button,
-  .function-button,
+  /* Buttons fill width */
+  .hero-buttons .cta-button,
+  .contract-actions .action-button,
+  .function-buttons .function-button,
   .refresh-button {
-    max-width: 100% !important;
+    width: 100%;
+    justify-content: center;
   }
 
-  /* Reduce insanely large padding */
+  /* Tighten padding */
   .content-card,
   .security-warning,
   .contract-display,
@@ -2556,85 +2538,10 @@ html, body {
   .verification-card,
   .logo-card,
   .related-card {
-    padding: 1rem !important;
-  }
-
-  /* Smaller headings */
-  h1 { font-size: 1.75rem !important; }
-  h2 { font-size: 1.4rem !important; }
-  h3 { font-size: 1.15rem !important; }
-  h4 { font-size: 1rem !important; }
-  p, li { font-size: 0.9rem !important; }
-
-  /* Kill any inline fixed widths */
-  [style*="width:"] {
-    max-width: 100% !important;
-  }
-  [style*="min-width:"] {
-    min-width: 0 !important;
+    padding: 1rem;
   }
 }
-@media (max-width: 768px) {
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
 
-  html, body {
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-
-  /* Only block-level containers get the max-width constraint */
-  section, article, main, div, p, ul, ol, h1, h2, h3, h4, h5, h6 {
-    max-width: 100%;
-  }
-
-  /* Images shrink */
-  img, svg, video, canvas {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Iframes get constrained but keep their height */
-  iframe {
-    max-width: 100%;
-  }
-
-  /* Grids stack */
-  .takeaways-grid,
-  .exchange-links,
-  .trading-pairs-grid,
-  .verification-grid,
-  .warning-grid,
-  .related-grid,
-  .faq-grid,
-  .logo-explanation-grid,
-  .platform-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Flex rows become columns */
-  .hero-buttons,
-  .contract-actions,
-  .pair-actions,
-  .function-buttons,
-  .dashboard-header,
-  .contract-header,
-  .warning-header {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  /* Long strings wrap */
-  .contract-code,
-  .contract-display code,
-  .contract-display-inline code {
-    word-break: break-all;
-    overflow-wrap: anywhere;
-    white-space: normal;
-  }
-}
 @media (max-width: 768px) {
   .contract-display-inline {
     flex-direction: column;
@@ -2653,5 +2560,39 @@ html, body {
   .contract-display-inline .cta-button.small {
     width: 100%;
     justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  /* Ensure nested containers don't compound padding */
+  .container .content-card,
+  .container .takeaways-box,
+  .container .trading-dashboard,
+  .container .chart-container,
+  .container .security-warning,
+  .container .contract-display,
+  .container .additional-functions {
+    padding: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Force FAQ and related grids to single column, full width */
+  .faq-grid,
+  .related-grid,
+  .faq-item,
+  .related-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .faq-item h4 {
+    font-size: 1rem;
+    flex-wrap: wrap;
+    word-break: break-word;
+  }
+
+  .faq-item p {
+    font-size: 0.9rem;
+    word-break: break-word;
   }
 }
