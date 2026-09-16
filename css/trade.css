@@ -2461,7 +2461,7 @@ html, body {
     padding: 1rem;
   }
 }
-/* ===== MOBILE OVERFLOW CONTROL — HEADER-SAFE ===== */
+/* ===== MOBILE OVERFLOW CONTROL ===== */
 @media (max-width: 768px) {
   html, body {
     width: 100%;
@@ -2469,15 +2469,15 @@ html, body {
     overflow-x: hidden;
   }
 
-  /* Only apply to the CONTENT area, not the header */
+  .container,
+  section,
   main,
-  main > section,
-  main .container {
+  article {
     max-width: 100%;
     overflow-x: hidden;
   }
 
-  /* Grids — stack on mobile */
+  /* Force grids to stack */
   .takeaways-grid,
   .exchange-links,
   .trading-pairs-grid,
@@ -2491,7 +2491,7 @@ html, body {
     grid-template-columns: 1fr !important;
   }
 
-  /* Flex rows inside content — become columns */
+  /* Flex rows become columns */
   .hero-buttons,
   .contract-actions,
   .pair-actions,
@@ -2505,7 +2505,7 @@ html, body {
     align-items: stretch;
   }
 
-  /* Long strings wrap */
+  /* Long strings */
   .contract-code,
   .contract-display code,
   .contract-display-inline code,
@@ -2516,7 +2516,7 @@ html, body {
     font-size: 0.75rem;
   }
 
-  /* Buttons full width inside content */
+  /* Buttons fill width */
   .hero-buttons .cta-button,
   .contract-actions .action-button,
   .function-buttons .function-button,
@@ -2525,7 +2525,7 @@ html, body {
     justify-content: center;
   }
 
-  /* Content card padding */
+  /* Tighten padding */
   .content-card,
   .security-warning,
   .contract-display,
@@ -2541,6 +2541,7 @@ html, body {
     padding: 1rem;
   }
 }
+
 @media (max-width: 768px) {
   .contract-display-inline {
     flex-direction: column;
@@ -2559,5 +2560,39 @@ html, body {
   .contract-display-inline .cta-button.small {
     width: 100%;
     justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  /* Ensure nested containers don't compound padding */
+  .container .content-card,
+  .container .takeaways-box,
+  .container .trading-dashboard,
+  .container .chart-container,
+  .container .security-warning,
+  .container .contract-display,
+  .container .additional-functions {
+    padding: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Force FAQ and related grids to single column, full width */
+  .faq-grid,
+  .related-grid,
+  .faq-item,
+  .related-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .faq-item h4 {
+    font-size: 1rem;
+    flex-wrap: wrap;
+    word-break: break-word;
+  }
+
+  .faq-item p {
+    font-size: 0.9rem;
+    word-break: break-word;
   }
 }
