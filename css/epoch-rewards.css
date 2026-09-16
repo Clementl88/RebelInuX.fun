@@ -2104,3 +2104,22 @@ html, body {
     overflow-wrap: anywhere;
   }
 }
+/* ===== CENTER HERO BUTTONS ON MOBILE ===== */
+@media (max-width: 768px) {
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* center children horizontally */
+    justify-content: center;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .hero-buttons .cta-button {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;           /* belt-and-suspenders for centering */
+    justify-content: center;  /* center the icon + text inside the button */
+    text-align: center;
+  }
+}
