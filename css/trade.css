@@ -2567,3 +2567,39 @@
     min-width: 0 !important;
   }
 }
+@media (max-width: 768px) {
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  section, div, article, main, header, footer {
+    max-width: 100% !important;
+  }
+  img, svg, iframe, video, canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  [class*="grid"], [class*="links"] {
+    grid-template-columns: 1fr !important;
+  }
+  [class*="actions"], [class*="buttons"] {
+    flex-direction: column !important;
+  }
+  code, pre, p, h1, h2, h3, h4, h5, h6, a, span {
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+  .container, .content-card, .contract-display, .trading-dashboard, .chart-container, .takeaways-box {
+    padding: 1rem !important;
+  }
+  h1 { font-size: 1.75rem !important; }
+  h2 { font-size: 1.4rem !important; }
+  h3 { font-size: 1.15rem !important; }
+}
