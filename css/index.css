@@ -1602,76 +1602,7 @@ body {
   color: var(--rebel-gold);
   margin-top: 0.25rem;
 }
-/* ===== LOGO COMPARISON SECTION ===== */
-.logo-comparison-container {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
 
-/* Row 1: the two logo cards + bridge */
-.logo-comparison-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-}
-
-@media (min-width: 992px) {
-  .logo-comparison-row {
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
-  }
-}
-
-/* Make sure each logo card cannot collapse */
-.logo-card {
-  flex: 0 0 auto;
-  width: 100%;
-  max-width: 400px;
-  background: #f8f9ff;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 2px solid transparent;
-  transition: all 0.5s ease;
-}
-
-.logo-card.original:hover {
-  border-color: rgba(0, 170, 255, 0.3);
-  transform: translateY(-10px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
-}
-
-.logo-card.updated:hover {
-  border-color: rgba(212, 167, 106, 0.3);
-  transform: translateY(-10px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
-}
-
-.logo-bridge {
-  flex: 0 0 auto;
-  min-width: 180px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-/* Rows 2 & 3 — always full width, always block */
-.process-flow,
-.contract-governance,
-.contract-emphasis {
-  display: block;
-  width: 100%;
-  flex: 0 0 100%;
-}
 /* ===== TOKEN ECOSYSTEM ===== */
 .token-ecosystem {
   padding: 4rem 0;
@@ -2835,7 +2766,78 @@ body {
   }
 }
 
+.logo-comparison-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.logo-comparison-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 992px) {
+  .logo-comparison-cards {
+    flex-direction: row;
+    justify-content: center;
+         align-items: flex-start;   /* ← KEY: this makes children not stretch */
+    gap: 2rem;
+         flex-wrap: nowrap;
+  }
+    .logo-comparison-cards > .logo-card,
+  .logo-comparison-cards > .logo-bridge {
+    flex: 0 0 auto;            /* ← prevent them from grabbing the row */
+  }
+}
+
+.logo-card {
+  width: 100%;
+  max-width: 400px;
+  background: #f8f9ff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all var(--animation-medium) ease;
+  animation: fadeInUp 0.7s ease-out;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.logo-card.original { animation-delay: 0.1s; }
+.logo-card.updated { animation-delay: 0.3s; }
+
+.logo-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.logo-card.original:hover {
+  border-color: rgba(0, 170, 255, 0.3);
+}
+
+.logo-card.updated:hover {
+  border-color: rgba(212, 167, 106, 0.3);
+}
+
+.logo-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .logo-card-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
 
 .logo-badge {
   padding: 0.375rem 1rem;
@@ -3014,7 +3016,21 @@ body {
   box-shadow: var(--shadow-light);
 }
 
+/* ===== LOGO BRIDGE ===== */
+.logo-bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-width: 150px;
+  padding: 1rem;
+}
 
+@media (min-width: 992px) {
+  .logo-bridge {
+    flex-direction: column;
+  }
+}
 
 .bridge-icon {
   width: 60px;
@@ -3061,6 +3077,31 @@ body {
   font-size: 0.8rem;
 }
 
+/* ===== PROCESS FLOW ===== */
+.process-flow {
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem 0;
+  border: 2px solid rgba(0, 170, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+  .process-flow {
+    margin: 3rem 0;
+  }
+}
+
+.process-flow h3 {
+  color: #333;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
 
 .flow-steps {
   display: flex;
@@ -3223,7 +3264,15 @@ body {
 }
 
 /* ===== CONTRACT & GOVERNANCE ===== */
+.contract-governance {
+  margin-top: 3rem;
+}
 
+@media (min-width: 768px) {
+  .contract-governance {
+    margin-top: 4rem;
+  }
+}
 
 .governance-info {
   display: flex;
@@ -3410,7 +3459,13 @@ body {
 }
 
 /* ===== CONTRACT EMPHASIS ===== */
-
+.contract-emphasis {
+  background: rgba(76, 175, 80, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 2px solid rgba(76, 175, 80, 0.2);
+  text-align: center;
+}
 
 .contract-header {
   display: flex;
