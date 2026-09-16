@@ -1,12 +1,5 @@
 /*** trade.css - Trade page specific styles */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
 
-* {
-  box-sizing: border-box;
-}
 /* ===== Hero Section ===== */
 .page-hero--trade {
   background: linear-gradient(135deg, #1a1a1a 0%, #3a2f1f 100%);
@@ -508,17 +501,10 @@ html, body {
   overflow: hidden;
   margin: var(--spacing-lg) 0;
 }
-@media (max-width: 768px) {
-  .iframe-container {
-    height: 320px;
-    margin: 1rem 0;
-  }
-}
+
 .iframe-container iframe {
   width: 100%;
   height: 100%;
-    display: block;
-  border: 0;
 }
 
 .chart-actions {
@@ -529,7 +515,7 @@ html, body {
 /* ===== Exchange Links ===== */
 .exchange-links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--spacing-lg);
   margin: var(--spacing-xl) 0;
 }
@@ -597,7 +583,7 @@ html, body {
 /* ===== Trading Pairs ===== */
 .trading-pairs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
 }
@@ -736,7 +722,7 @@ html, body {
 
 .warning-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--spacing-md);
   margin-top: var(--spacing-md);
 }
@@ -874,24 +860,7 @@ html, body {
   font-size: 1.1em;
   color: var(--rebel-gold);
   word-break: break-all;
-  overflow-wrap: anywhere;
   padding-right: 140px;
-}
-
-@media (max-width: 768px) {
-  .contract-code {
-    padding-right: 1rem;
-    padding-left: 1rem;
-    font-size: 0.8em;
-    text-align: center;
-    white-space: normal;
-    overflow-wrap: anywhere;
-    word-break: break-all;
-  }
-  
-  .contract-code-container {
-    padding: 1rem;
-  }
 }
 
 .copy-button {
@@ -982,7 +951,7 @@ html, body {
 
 .verification-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-xl);
 }
@@ -1167,7 +1136,7 @@ html, body {
 
 .related-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-lg);
   max-width: 1200px;
   margin: 0 auto;
@@ -1691,7 +1660,7 @@ html, body {
 .faq-grid {
   display: grid;
   gap: var(--spacing-lg);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .faq-item {
@@ -1820,9 +1789,9 @@ html, body {
 
 .logo-explanation-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  margin: 2rem 0;
+  margin: 2.5rem 0;
 }
 
 .logo-section {
@@ -2039,7 +2008,7 @@ html, body {
 
 .platform-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
 
@@ -2119,30 +2088,11 @@ html, body {
   .why-matters-box {
     flex-direction: column;
     text-align: center;
-    padding: 1.5rem;
-  }
-  
-  .why-icon {
-    margin: 0 auto;
   }
   
   .contract-display {
     flex-direction: column;
     text-align: center;
-    align-items: stretch;
-  }
-  
-  .contract-display code {
-    font-size: 0.7rem;
-    word-break: break-all;
-    white-space: normal;
-    padding: 0.6rem;
-    text-align: center;
-  }
-  
-  .cta-button.small {
-    width: 100%;
-    justify-content: center;
   }
   
   .platform-grid {
@@ -2376,6 +2326,165 @@ html, body {
   padding: 4rem 0;
 }
 
+.logo-card {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(124, 58, 237, 0.2));
+  border: 2px solid var(--rebel-purple);
+}
+
+.logo-explanation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.logo-section.onchain {
+  border: 2px solid var(--rebel-red);
+}
+
+.logo-section.offchain {
+  border: 2px solid var(--rebel-blue);
+}
+
+.logo-image {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.logo-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  object-fit: contain;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.logo-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--rebel-gold);
+  color: var(--dark-bg);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.logo-section.onchain .logo-badge {
+  background: var(--rebel-red);
+  color: white;
+}
+
+.logo-section.offchain .logo-badge {
+  background: var(--rebel-blue);
+  color: white;
+}
+
+.logo-content h4 {
+  color: var(--rebel-gold);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.logo-content p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.logo-features {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.logo-features li {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-features i {
+  color: var(--rebel-gold);
+  font-size: 0.8rem;
+}
+
+.platforms-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.platform-tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--rebel-gold);
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.explanation-box {
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 4px solid var(--rebel-gold);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.explanation-box h5 {
+  color: var(--rebel-gold);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.explanation-box p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.verification-note {
+  background: rgba(255, 51, 102, 0.1);
+  border: 1px solid rgba(255, 51, 102, 0.3);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.verification-note i {
+  color: var(--rebel-red);
+  font-size: 1.2rem;
+}
+
+.verification-note span {
+  color: white;
+  font-size: 0.9rem;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -2388,211 +2497,249 @@ html, body {
     height: 100px;
   }
 }
-/* ===== FINAL MOBILE SAFETY NET ===== */
+/* ===== MOBILE-ONLY HORIZONTAL SCROLL FIXES ===== */
+/* These ONLY apply on mobile devices, preserve desktop layout */
+
 @media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden;
-    max-width: 100vw;
-  }
-
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  /* Grids that must stack on mobile */
-  .takeaways-grid,
-  .exchange-links,
-  .trading-pairs-grid,
-  .verification-grid,
-  .warning-grid,
-  .related-grid,
-  .faq-grid,
-  .logo-explanation-grid,
-  .platform-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1rem;
-  }
-
-  /* Flex rows that must become columns */
-  .hero-buttons,
-  .contract-actions,
-  .pair-actions,
-  .function-buttons,
-  .controls,
-  .dashboard-header,
-  .contract-header,
-  .warning-header {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-  }
-
-  /* Full-width buttons */
-  .hero-buttons .cta-button,
-  .contract-actions .action-button,
-  .function-buttons .function-button,
-  .refresh-button {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-
-  /* Long strings wrap instead of overflowing */
-  .contract-code,
-  .contract-display code,
-  .contract-display-inline code {
-    white-space: normal;
-    word-break: break-all;
-    overflow-wrap: anywhere;
-    font-size: 0.75rem;
-  }
-
-  /* Tighter padding for mobile */
-  .content-card,
-  .security-warning,
-  .contract-display,
-  .chart-container,
-  .trading-dashboard,
-  .takeaways-box,
-  .additional-functions {
-    padding: 1rem;
-  }
+    /* Force body to not overflow */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        position: relative;
+    }
+    
+    /* Fix main containers */
+    .container,
+    .calculator-section,
+    .content-card,
+    .page-hero .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Fix parameter grid - prevent columns from overflowing */
+    .parameter-grid {
+        grid-template-columns: 1fr !important; /* Stack on mobile */
+        gap: 15px;
+    }
+    
+    .parameter-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    /* Fix formula display - reduce font size and force wrap */
+    .formula-equation {
+        font-size: 1.2rem !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        max-width: 100% !important;
+        line-height: 1.3;
+    }
+    
+    .formula-component {
+        font-size: 1rem !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
+    
+    /* Fix tables - keep them scrollable INSIDE container, not overflow page */
+    .table-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 10px 0 !important;
+        border: 1px solid rgba(212, 167, 106, 0.2);
+    }
+    
+    #token-batches-table,
+    #other-participants-table {
+        min-width: 600px; /* Keeps table readable on mobile */
+        width: 100%;
+        table-layout: auto;
+    }
+    
+    /* Fix gamma components grid */
+    .gamma-components {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px;
+    }
+    
+    /* Fix WS info grid */
+    .ws-info-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px;
+    }
+    
+    /* Fix slider containers */
+    .slider-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 15px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .slider-info {
+        flex-wrap: wrap;
+    }
+    
+    .slider-info-value {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .value-input {
+        width: 120px !important;
+    }
+    
+    /* Fix any inline styles that might have fixed widths */
+    [style*="width:"] {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Fix formula announcement header */
+    .announcement-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px;
+    }
+    
+    .announcement-header > div {
+        width: 100% !important;
+        min-width: auto !important;
+    }
+    
+    .governance-badge {
+        align-self: flex-start !important;
+    }
+    
+    /* Fix mobile break line */
+    .mobile-break {
+        display: block !important;
+    }
+    
+    /* Fix other participants summary grid */
+    .other-participants-summary {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px;
+    }
+    
+    /* Fix quick actions buttons */
+    .quick-actions,
+    .table-actions,
+    .other-participants-actions,
+    .preset-buttons {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    
+    .quick-action-btn,
+    .table-action-btn,
+    .other-participants-btn,
+    .example-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        margin: 2px 0 !important;
+    }
+    
+    /* Fix hero section */
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-buttons .cta-button {
+        width: 100%;
+        margin: 5px 0 !important;
+    }
+    
+    /* Fix chart container */
+    .chart-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 300px;
+        padding: 10px !important;
+    }
+    
+    /* Fix reward result */
+    .reward-result {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 15px !important;
+    }
+    
+    /* Fix contribution grid */
+    .contribution-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Fix participant type selector */
+    .participant-type-selector {
+        flex-direction: column !important;
+    }
+    
+    .participant-type-option {
+        width: 100% !important;
+    }
 }
-/* ===== MOBILE OVERFLOW CONTROL ===== */
-@media (max-width: 768px) {
-  html, body {
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
 
-  .container,
-  section,
-  main,
-  article {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  /* Force grids to stack */
-  .takeaways-grid,
-  .exchange-links,
-  .trading-pairs-grid,
-  .verification-grid,
-  .warning-grid,
-  .related-grid,
-  .faq-grid,
-  .logo-explanation-grid,
-  .platform-grid,
-  .market-stats {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Flex rows become columns */
-  .hero-buttons,
-  .contract-actions,
-  .pair-actions,
-  .function-buttons,
-  .controls,
-  .dashboard-header,
-  .contract-header,
-  .warning-header,
-  .price-ticker {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  /* Long strings */
-  .contract-code,
-  .contract-display code,
-  .contract-display-inline code,
-  .warning-item-value.code {
-    white-space: normal;
-    word-break: break-all;
-    overflow-wrap: anywhere;
-    font-size: 0.75rem;
-  }
-
-  /* Buttons fill width */
-  .hero-buttons .cta-button,
-  .contract-actions .action-button,
-  .function-buttons .function-button,
-  .refresh-button {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* Tighten padding */
-  .content-card,
-  .security-warning,
-  .contract-display,
-  .chart-container,
-  .trading-dashboard,
-  .takeaways-box,
-  .additional-functions,
-  .exchange-card,
-  .pair-card,
-  .verification-card,
-  .logo-card,
-  .related-card {
-    padding: 1rem;
-  }
+/* Extra small devices - even more compact */
+@media (max-width: 480px) {
+    .gamma-components {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .ws-info-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .other-participants-summary {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .formula-equation {
+        font-size: 1rem !important;
+    }
+    
+    .formula-component {
+        font-size: 0.9rem !important;
+    }
+    
+    .parameter-value {
+        font-size: 1.5rem !important;
+    }
+    
+    .slider-value {
+        font-size: 1rem !important;
+    }
+    
+    .value-input {
+        width: 90px !important;
+    }
 }
 
-@media (max-width: 768px) {
-  .contract-display-inline {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
-  }
-
-  .contract-display-inline code {
-    font-size: 0.7rem;
-    padding: 0.6rem;
-    word-break: break-all;
-    overflow-wrap: anywhere;
-    text-align: center;
-  }
-
-  .contract-display-inline .cta-button.small {
-    width: 100%;
-    justify-content: center;
-  }
-}
-@media (max-width: 768px) {
-  /* Ensure nested containers don't compound padding */
-  .container .content-card,
-  .container .takeaways-box,
-  .container .trading-dashboard,
-  .container .chart-container,
-  .container .security-warning,
-  .container .contract-display,
-  .container .additional-functions {
-    padding: 1rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  /* Force FAQ and related grids to single column, full width */
-  .faq-grid,
-  .related-grid,
-  .faq-item,
-  .related-card {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .faq-item h4 {
-    font-size: 1rem;
-    flex-wrap: wrap;
-    word-break: break-word;
-  }
-
-  .faq-item p {
-    font-size: 0.9rem;
-    word-break: break-word;
-  }
+/* Fix for landscape mode on mobile */
+@media (max-height: 600px) and (orientation: landscape) and (max-width: 900px) {
+    .parameter-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .gamma-components {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .ws-info-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
 }
