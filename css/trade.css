@@ -2569,37 +2569,82 @@
 }
 @media (max-width: 768px) {
   *, *::before, *::after {
-    box-sizing: border-box !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
+    box-sizing: border-box;
   }
+
   html, body {
-    width: 100% !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
-  section, div, article, main, header, footer {
-    max-width: 100% !important;
+
+  /* Only block-level containers get the max-width constraint */
+  section, article, main, div, p, ul, ol, h1, h2, h3, h4, h5, h6 {
+    max-width: 100%;
   }
-  img, svg, iframe, video, canvas {
-    max-width: 100% !important;
-    height: auto !important;
+
+  /* Images shrink */
+  img, svg, video, canvas {
+    max-width: 100%;
+    height: auto;
   }
-  [class*="grid"], [class*="links"] {
-    grid-template-columns: 1fr !important;
+
+  /* Iframes get constrained but keep their height */
+  iframe {
+    max-width: 100%;
   }
-  [class*="actions"], [class*="buttons"] {
-    flex-direction: column !important;
+
+  /* Grids stack */
+  .takeaways-grid,
+  .exchange-links,
+  .trading-pairs-grid,
+  .verification-grid,
+  .warning-grid,
+  .related-grid,
+  .faq-grid,
+  .logo-explanation-grid,
+  .platform-grid {
+    grid-template-columns: 1fr;
   }
-  code, pre, p, h1, h2, h3, h4, h5, h6, a, span {
-    overflow-wrap: anywhere !important;
-    word-break: break-word !important;
-    white-space: normal !important;
+
+  /* Flex rows become columns */
+  .hero-buttons,
+  .contract-actions,
+  .pair-actions,
+  .function-buttons,
+  .dashboard-header,
+  .contract-header,
+  .warning-header {
+    flex-direction: column;
+    align-items: stretch;
   }
-  .container, .content-card, .contract-display, .trading-dashboard, .chart-container, .takeaways-box {
-    padding: 1rem !important;
+
+  /* Long strings wrap */
+  .contract-code,
+  .contract-display code,
+  .contract-display-inline code {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    white-space: normal;
   }
-  h1 { font-size: 1.75rem !important; }
-  h2 { font-size: 1.4rem !important; }
-  h3 { font-size: 1.15rem !important; }
+}
+@media (max-width: 768px) {
+  .contract-display-inline {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .contract-display-inline code {
+    font-size: 0.7rem;
+    padding: 0.6rem;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+
+  .contract-display-inline .cta-button.small {
+    width: 100%;
+    justify-content: center;
+  }
 }
