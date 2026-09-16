@@ -1,5 +1,12 @@
 /*** trade.css - Trade page specific styles */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
+* {
+  box-sizing: border-box;
+}
 /* ===== Hero Section ===== */
 .page-hero--trade {
   background: linear-gradient(135deg, #1a1a1a 0%, #3a2f1f 100%);
@@ -2452,5 +2459,105 @@
   .takeaways-box,
   .additional-functions {
     padding: 1rem;
+  }
+}
+/* ===== MOBILE OVERFLOW CONTROL — HEADER-SAFE ===== */
+@media (max-width: 768px) {
+  html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Only apply to the CONTENT area, not the header */
+  main,
+  main > section,
+  main .container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Grids — stack on mobile */
+  .takeaways-grid,
+  .exchange-links,
+  .trading-pairs-grid,
+  .verification-grid,
+  .warning-grid,
+  .related-grid,
+  .faq-grid,
+  .logo-explanation-grid,
+  .platform-grid,
+  .market-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Flex rows inside content — become columns */
+  .hero-buttons,
+  .contract-actions,
+  .pair-actions,
+  .function-buttons,
+  .controls,
+  .dashboard-header,
+  .contract-header,
+  .warning-header,
+  .price-ticker {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Long strings wrap */
+  .contract-code,
+  .contract-display code,
+  .contract-display-inline code,
+  .warning-item-value.code {
+    white-space: normal;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    font-size: 0.75rem;
+  }
+
+  /* Buttons full width inside content */
+  .hero-buttons .cta-button,
+  .contract-actions .action-button,
+  .function-buttons .function-button,
+  .refresh-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Content card padding */
+  .content-card,
+  .security-warning,
+  .contract-display,
+  .chart-container,
+  .trading-dashboard,
+  .takeaways-box,
+  .additional-functions,
+  .exchange-card,
+  .pair-card,
+  .verification-card,
+  .logo-card,
+  .related-card {
+    padding: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .contract-display-inline {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .contract-display-inline code {
+    font-size: 0.7rem;
+    padding: 0.6rem;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+
+  .contract-display-inline .cta-button.small {
+    width: 100%;
+    justify-content: center;
   }
 }
