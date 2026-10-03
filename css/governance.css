@@ -1138,3 +1138,42 @@
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }
+/* ============================================================
+   v3.0 — Related card themes (Journey, Contests, Tokenomics)
+   ============================================================ */
+
+/* Journey Card — Gold */
+.related-card.journey-card {
+  border-color: #E3B87C !important;
+  background: linear-gradient(135deg,
+    rgba(227, 184, 124, 0.1),
+    rgba(227, 184, 124, 0.05)) !important;
+}
+.related-card.journey-card .related-icon,
+.related-card.journey-card h3,
+.related-card.journey-card .related-arrow { color: #E3B87C !important; }
+.related-card.journey-card::before { background: #E3B87C !important; }
+.related-card.journey-card:hover {
+  background: linear-gradient(135deg,
+    rgba(227, 184, 124, 0.15),
+    rgba(227, 184, 124, 0.08)) !important;
+  border-color: #D4A76A !important;
+}
+
+/* Contests Card — Amber */
+.related-card.contests-card {
+  border-color: #FBBF24 !important;
+  background: linear-gradient(135deg,
+    rgba(251, 191, 36, 0.1),
+    rgba(251, 191, 36, 0.05)) !important;
+}
+.related-card.contests-card .related-icon,
+.related-card.contests-card h3,
+.related-card.contests-card .related-arrow { color: #FBBF24 !important; }
+.related-card.contests-card::before { background: #FBBF24 !important; }
+.related-card.contests-card:hover {
+  background: linear-gradient(135deg,
+    rgba(251, 191, 36, 0.15),
+    rgba(251, 191, 36, 0.08)) !important;
+  border-color: #F59E0B !important;
+}
