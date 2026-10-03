@@ -89,6 +89,51 @@ svg {
   --gradient-subtle: linear-gradient(135deg, rgba(212, 167, 106, 0.2), rgba(215, 77, 77, 0.1));
   --gradient-red: linear-gradient(135deg, #D74D4D, #b33a3a);
 
+  /* Page-specific colors (used by brand-subtitle and hero gradients) */
+  --page-index: #D4A76A;
+  --page-index-light: rgba(212, 167, 106, 0.15);
+  --page-index-border: rgba(212, 167, 106, 0.4);
+
+  --page-journey: #E3B87C;
+  --page-journey-light: rgba(227, 184, 124, 0.15);
+  --page-journey-border: rgba(227, 184, 124, 0.4);
+
+  --page-contests: #FBBF24;
+  --page-contests-light: rgba(251, 191, 36, 0.15);
+  --page-contests-border: rgba(251, 191, 36, 0.4);
+
+  --page-governance: #FF9800;
+  --page-governance-light: rgba(255, 152, 0, 0.15);
+  --page-governance-border: rgba(255, 152, 0, 0.4);
+
+  --page-trade: #FF6B35;
+  --page-trade-light: rgba(255, 107, 53, 0.15);
+  --page-trade-border: rgba(255, 107, 53, 0.4);
+
+  --page-tokenomics: #00BCD4;
+  --page-tokenomics-light: rgba(0, 188, 212, 0.15);
+  --page-tokenomics-border: rgba(0, 188, 212, 0.4);
+
+  --page-whitepaper: #673AB7;
+  --page-whitepaper-light: rgba(103, 58, 183, 0.15);
+  --page-whitepaper-border: rgba(103, 58, 183, 0.4);
+
+  --page-community: #2196F3;
+  --page-community-light: rgba(33, 150, 243, 0.15);
+  --page-community-border: rgba(33, 150, 243, 0.4);
+
+  --page-security-integrity: #4CAF50;
+  --page-security-integrity-light: rgba(76, 175, 80, 0.15);
+  --page-security-integrity-border: rgba(76, 175, 80, 0.4);
+
+  --page-roadmap: #FF5722;
+  --page-roadmap-light: rgba(255, 87, 34, 0.15);
+  --page-roadmap-border: rgba(255, 87, 34, 0.4);
+
+  --page-artwork: #E91E63;
+  --page-artwork-light: rgba(233, 30, 99, 0.15);
+  --page-artwork-border: rgba(233, 30, 99, 0.4);
+
   /* Spacing — small on phone, grows on tablet/desktop */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -99,15 +144,15 @@ svg {
   --spacing-3xl: 48px;
 
   /* Typography — phone-first sizes */
-  --font-size-xs: 0.75rem;      /* 12px */
-  --font-size-sm: 0.8125rem;    /* 13px */
-  --font-size-base: 0.9375rem;  /* 15px */
-  --font-size-md: 1rem;         /* 16px */
-  --font-size-lg: 1.0625rem;    /* 17px */
-  --font-size-xl: 1.25rem;      /* 20px */
-  --font-size-2xl: 1.5rem;      /* 24px */
-  --font-size-3xl: 1.75rem;     /* 28px */
-  --font-size-4xl: 2rem;        /* 32px */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.9375rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.0625rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.75rem;
+  --font-size-4xl: 2rem;
 
   /* Line heights */
   --line-height-tight: 1.2;
@@ -122,7 +167,7 @@ svg {
   --border-radius-xl: 18px;
   --border-radius-full: 9999px;
 
-  /* Shadows — lighter on mobile for performance */
+  /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
@@ -167,8 +212,6 @@ body {
 
 main {
   flex: 1;
-  /* Sticky header floats above — no padding hack needed.
-     The first section (.page-hero) handles its own top spacing. */
   position: relative;
 }
 
@@ -290,29 +333,6 @@ section {
   padding: var(--spacing-xl) 0;
 }
 
-/* Hero — first section on the page. Handles its own top spacing
-   to sit correctly below the sticky header. */
-.page-hero,
-.page-hero--epoch {
-  padding: var(--spacing-xl) var(--container-padding);
-  padding-top: calc(var(--spacing-xl) + var(--header-height));
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--dark-bg) 0%, #2a1f14 100%);
-}
-
-.page-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 50%,
-    rgba(215, 77, 77, 0.1) 0%,
-    rgba(212, 167, 106, 0.05) 30%,
-    transparent 50%);
-  pointer-events: none;
-}
-
 .page-hero + section {
   padding-top: var(--spacing-lg);
 }
@@ -355,6 +375,177 @@ section {
   justify-content: center;
   margin-top: var(--spacing-md);
   width: 100%;
+}
+
+
+/* ============================================================
+   PAGE HERO — BASE
+   ============================================================ */
+.page-hero,
+.page-hero--epoch {
+  padding: var(--spacing-xl) var(--container-padding);
+  padding-top: calc(var(--spacing-xl) + var(--header-height));
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #2a1f14 100%);
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(215, 77, 77, 0.1) 0%,
+    rgba(212, 167, 106, 0.05) 30%,
+    transparent 50%);
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   PAGE HERO — PER-PAGE COLORS
+   ============================================================ */
+
+/* ---------- INDEX / HOME ---------- */
+.page-hero--index {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #2a1f14 100%);
+}
+
+.page-hero--index h1 {
+  background: linear-gradient(135deg, #D4A76A, #D74D4D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- JOURNEY ---------- */
+.page-hero--journey {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #3a2f1f 100%);
+}
+
+.page-hero--journey h1 {
+  background: linear-gradient(135deg, #E3B87C, #D4A76A, #D74D4D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- CONTESTS ---------- */
+.page-hero--contests {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #3a2a10 100%);
+}
+
+.page-hero--contests h1 {
+  background: linear-gradient(135deg, #FBBF24, #D4A76A, #D74D4D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- GOVERNANCE ---------- */
+.page-hero--governance {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #3a2a10 100%);
+}
+
+.page-hero--governance h1 {
+  background: linear-gradient(135deg, #FF9800, #D4A76A, #D74D4D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- TRADE ---------- */
+.page-hero--trade {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #3a2210 100%);
+}
+
+.page-hero--trade h1 {
+  background: linear-gradient(135deg, #FF6B35, #D4A76A, #D74D4D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- TOKENOMICS ---------- */
+.page-hero--tokenomics {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #0f2a30 100%);
+}
+
+.page-hero--tokenomics h1 {
+  background: linear-gradient(135deg, #00BCD4, #D4A76A, #D74D4D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- WHITEPAPER ---------- */
+.page-hero--whitepaper {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #251a3a 100%);
+}
+
+.page-hero--whitepaper h1 {
+  background: linear-gradient(135deg, #A78BFA, #D4A76A, #D74D4D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- COMMUNITY ---------- */
+.page-hero--community {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #0f2240 100%);
+}
+
+.page-hero--community h1 {
+  background: linear-gradient(135deg, #4EA6FF, #D4A76A, #D74D4D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- SECURITY & INTEGRITY ---------- */
+.page-hero--security {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #0f2a15 100%);
+}
+
+.page-hero--security h1 {
+  background: linear-gradient(135deg, #66BB6A, #D4A76A, #D74D4D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- ROADMAP ---------- */
+.page-hero--roadmap {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #3a1a10 100%);
+}
+
+.page-hero--roadmap h1 {
+  background: linear-gradient(135deg, #FF7043, #D4A76A, #D74D4D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- ARTWORK ---------- */
+.page-hero--artwork {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #3a1020 100%);
+}
+
+.page-hero--artwork h1 {
+  background: linear-gradient(135deg, #F06292, #D4A76A, #D74D4D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- FALLBACK (matches any hero modifier) ---------- */
+.page-hero h1,
+.page-hero--epoch h1 {
+  background: linear-gradient(135deg, #D4A76A, #D74D4D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
@@ -822,6 +1013,17 @@ button {
   background: linear-gradient(135deg, var(--rebel-gold), #e8c88a);
 }
 
+.cta-button.primary-glow {
+  background: linear-gradient(135deg, var(--rebel-red), var(--rebel-gold));
+  box-shadow: 0 6px 25px rgba(215, 77, 77, 0.4);
+}
+
+.cta-button.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
 
 /* ============================================================
    UTILITY CLASSES
@@ -1146,7 +1348,6 @@ pre {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Hover states — desktop only */
   .card:hover::before {
     opacity: 1;
   }
