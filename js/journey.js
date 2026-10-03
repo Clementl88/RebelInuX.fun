@@ -1,6 +1,6 @@
 /* ============================================================
    JOURNEY PAGE — RebelInuX v3.0
-   Handles: chapter filter, smooth scroll, lazy image handling
+   Handles: chapter filter, smooth scroll, lazy images, copy Zora links
    ============================================================ */
 
 (function () {
@@ -18,11 +18,9 @@
       btn.addEventListener('click', () => {
         const chapter = btn.getAttribute('data-chapter');
 
-        // Toggle active state
         filterButtons.forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
 
-        // Filter cards
         let visibleCount = 0;
         cards.forEach((card) => {
           const cardChapter = card.getAttribute('data-chapter');
@@ -36,12 +34,10 @@
           }
         });
 
-        // Show empty state if needed
         if (emptyState) {
           emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
         }
 
-        // Refresh AOS positions after filter
         if (window.AOS && typeof window.AOS.refresh === 'function') {
           window.AOS.refresh();
         }
@@ -49,7 +45,7 @@
     });
   }
 
-  // ---------- Smooth Scroll for internal links ----------
+  // ---------- Smooth Scroll ----------
   function initSmoothScroll() {
     const internalLinks = document.querySelectorAll('a[href^="#"]');
     internalLinks.forEach((link) => {
@@ -70,7 +66,6 @@
   }
 
   // ---------- Image Error Fallback ----------
-  // If a thumbnail is missing, replace it with a colored placeholder
   function initImageFallbacks() {
     const images = document.querySelectorAll('.collectible-thumb img');
     images.forEach((img) => {
@@ -89,6 +84,7 @@
             background: linear-gradient(135deg, rgba(227, 184, 124, 0.15), rgba(139, 92, 246, 0.1));
             color: rgba(227, 184, 124, 0.6);
             font-size: 2rem;
+            aspect-ratio: 16 / 10;
           `;
           placeholder.innerHTML = '<i class="fas fa-image"></i>';
           parent.appendChild(placeholder);
@@ -97,7 +93,7 @@
     });
   }
 
-  // ---------- Keyboard Support for Filter ----------
+  // ---------- Keyboard Support ----------
   function initFilterKeyboard() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach((btn) => {
@@ -110,10 +106,9 @@
     });
   }
 
-  // ---------- Copy Zora link ----------
+  // ---------- Copy Zora Link on Right-Click ----------
   function initCopyZoraLinks() {
-    // Long-press / right-click to copy Zora link (optional convenience)
-    const mintButtons = document.querySelectorAll('.mint-btn');
+    const mintButtons = document.querySelectorAll('.action-btn.primary');
     mintButtons.forEach((btn) => {
       btn.addEventListener('contextmenu', (e) => {
         e.preventDefault();
@@ -122,7 +117,7 @@
         navigator.clipboard.writeText(url)
           .then(() => {
             const original = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-check"></i><span>Link Copied</span>';
+            btn.innerHTML = '<i class="fas fa-check"></i><span>Copied</span>';
             setTimeout(() => { btn.innerHTML = original; }, 1500);
           })
           .catch(() => {});
