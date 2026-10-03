@@ -1034,3 +1034,74 @@
     gap: 0.5rem;
   }
 }
+/* ---------- Hero (tokenomics-style) ---------- */
+.page-hero--contests {
+  background: linear-gradient(135deg, var(--dark-bg, #0a0a0a) 0%, #2f3b52 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0 4rem;
+  text-align: center;
+}
+
+.page-hero--contests::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://i.imgur.com/bfPgAoS.webp') center/cover;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.page-hero--contests .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero--contests h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-hero--contests .text-lead {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.page-hero--contests .text-lead strong {
+  color: var(--rebel-gold);
+}
+
+.hero-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(227, 184, 124, 0.12);
+  border: 1px solid rgba(227, 184, 124, 0.3);
+  padding: 0.4rem 0.9rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  color: var(--rebel-gold);
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
