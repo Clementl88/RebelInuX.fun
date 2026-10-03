@@ -798,7 +798,6 @@ body.nav-open {
     transform: translateY(-2px);
   }
 
-  /* More button — selected (either dropdown is open, OR a nested page is active) */
   #nav-desktop .dropdown.active .dropbtn,
   #nav-desktop .dropbtn.active {
     background: linear-gradient(135deg,
@@ -843,7 +842,6 @@ body.nav-open {
     padding: 8px 0;
   }
 
-  /* Dropdown content links — base */
   #nav-desktop .dropdown-content a {
     margin: 0 6px;
     border-radius: var(--border-radius-md);
@@ -855,7 +853,6 @@ body.nav-open {
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Dropdown content — hover */
   #nav-desktop .dropdown-content a:hover {
     background: rgba(255, 255, 255, 0.06);
   }
@@ -863,8 +860,6 @@ body.nav-open {
   /* ============================================
      DROPDOWN CONTENT — ACTIVE STATES (5 pages)
      ============================================ */
-
-  /* Whitepaper — Purple */
   #nav-desktop .dropdown-content a.nav-whitepaper.active {
     background: linear-gradient(135deg,
       rgba(103, 58, 183, 0.4),
@@ -875,7 +870,6 @@ body.nav-open {
     padding-left: 22px;
   }
 
-  /* Community — Blue */
   #nav-desktop .dropdown-content a.nav-community.active {
     background: linear-gradient(135deg,
       rgba(33, 150, 243, 0.4),
@@ -886,7 +880,6 @@ body.nav-open {
     padding-left: 22px;
   }
 
-  /* Security & Integrity — Green */
   #nav-desktop .dropdown-content a.nav-security-integrity.active {
     background: linear-gradient(135deg,
       rgba(76, 175, 80, 0.4),
@@ -897,7 +890,6 @@ body.nav-open {
     padding-left: 22px;
   }
 
-  /* Roadmap — Deep Orange */
   #nav-desktop .dropdown-content a.nav-roadmap.active {
     background: linear-gradient(135deg,
       rgba(255, 87, 34, 0.4),
@@ -908,7 +900,6 @@ body.nav-open {
     padding-left: 22px;
   }
 
-  /* Artwork — Pink */
   #nav-desktop .dropdown-content a.nav-artwork.active {
     background: linear-gradient(135deg,
       rgba(233, 30, 99, 0.4),
@@ -1247,6 +1238,65 @@ body.nav-open {
     padding: 12px 15px;
     font-size: 0.9rem;
     min-height: 48px;
+  }
+}
+
+
+/* ============================================================
+   ⭐ MOBILE FORCE-COLOR FIX — Trade + Governance
+   Guarantees the two pills show their page color on mobile,
+   regardless of cascade order or specificity conflicts.
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Trade Guide — bright orange */
+  #nav-desktop a.nav-trade {
+    color: #FF6B35 !important;
+    background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.12),
+      rgba(255, 107, 53, 0.03)) !important;
+    border: 1px solid rgba(255, 107, 53, 0.3) !important;
+  }
+
+  #nav-desktop a.nav-trade:active {
+    background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.2),
+      rgba(255, 107, 53, 0.08)) !important;
+  }
+
+  #nav-desktop a.nav-trade.active {
+    background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.4),
+      rgba(255, 107, 53, 0.18)) !important;
+    color: #FFFFFF !important;
+    border-color: #FF6B35 !important;
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.45) !important;
+    font-weight: 700 !important;
+  }
+
+  /* Governance — orange */
+  #nav-desktop a.nav-governance {
+    color: #FF9800 !important;
+    background: linear-gradient(135deg,
+      rgba(255, 152, 0, 0.12),
+      rgba(255, 152, 0, 0.03)) !important;
+    border: 1px solid rgba(255, 152, 0, 0.3) !important;
+  }
+
+  #nav-desktop a.nav-governance:active {
+    background: linear-gradient(135deg,
+      rgba(255, 152, 0, 0.2),
+      rgba(255, 152, 0, 0.08)) !important;
+  }
+
+  #nav-desktop a.nav-governance.active {
+    background: linear-gradient(135deg,
+      rgba(255, 152, 0, 0.4),
+      rgba(255, 152, 0, 0.18)) !important;
+    color: #FFFFFF !important;
+    border-color: #FF9800 !important;
+    box-shadow: 0 4px 20px rgba(255, 152, 0, 0.45) !important;
+    font-weight: 700 !important;
   }
 }
 
