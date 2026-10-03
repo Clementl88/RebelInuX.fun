@@ -1,4 +1,7 @@
-/* ========== TOKENOMICS PAGE STYLES =========== */
+/* ============================================================
+   TOKENOMICS PAGE STYLES — RebelInuX v3.0
+   ============================================================ */
+
 html, body {
   overflow-x: hidden;
   max-width: 100%;
@@ -9,8 +12,6 @@ html, body {
 }
 
 /* ========== KEY TAKEAWAYS ========== */
-
-/* Key Takeaways Box */
 .key-takeaways {
   margin: var(--spacing-2xl) 0;
 }
@@ -22,8 +23,8 @@ html, body {
 }
 
 .takeaways-box {
-  background: linear-gradient(135deg, 
-    rgba(156, 39, 176, 0.15), 
+  background: linear-gradient(135deg,
+    rgba(156, 39, 176, 0.15),
     rgba(0, 170, 255, 0.15));
   padding: var(--spacing-lg);
   border-radius: var(--border-radius-lg);
@@ -59,7 +60,6 @@ html, body {
   margin: 0;
 }
 
-/* Takeaways grid */
 .takeaways-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -81,7 +81,6 @@ html, body {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Takeaway color themes */
 .takeaway-purple { border-left-color: var(--rebel-purple) !important; }
 .takeaway-red { border-left-color: var(--rebel-red) !important; }
 .takeaway-gold { border-left-color: var(--rebel-gold) !important; }
@@ -151,9 +150,7 @@ html, body {
   transform: translateY(-2px);
 }
 
-/* ========== TOKENOMICS PAGE STYLES ========== */
-
-/* Hero Background */
+/* ========== HERO ========== */
 .page-hero--tokenomics {
   background: linear-gradient(135deg, var(--dark-bg) 0%, #2f3b52 100%);
   position: relative;
@@ -169,11 +166,11 @@ html, body {
   z-index: var(--z-under);
 }
 
-/* Quick Stats */
+/* ========== QUICK STATS ========== */
 .stats-overview {
   display: grid;
   gap: var(--spacing-lg);
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Changed from 250px to 280px */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   margin: var(--spacing-xl) 0;
 }
 
@@ -217,7 +214,7 @@ html, body {
   margin-top: var(--spacing-xs);
 }
 
-/* Progress Bars */
+/* ========== PROGRESS BARS ========== */
 .progress-container {
   margin-top: var(--spacing-md);
 }
@@ -237,7 +234,7 @@ html, body {
   transition: width 1s ease;
 }
 
-/* Distribution Chart */
+/* ========== DISTRIBUTION CHART ========== */
 .chart-container {
   background: var(--color-bg-card);
   padding: var(--spacing-xl);
@@ -291,7 +288,7 @@ html, body {
   font-weight: 700;
 }
 
-/* Vesting Section */
+/* ========== VESTING ========== */
 .section-subtitle {
   color: var(--rebel-gold);
   margin: var(--spacing-xl) 0 var(--spacing-lg);
@@ -318,6 +315,10 @@ html, body {
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+}
+
+.vesting-card.full-width {
+  grid-column: 1 / -1;
 }
 
 .vesting-card:hover {
@@ -401,160 +402,7 @@ html, body {
   gap: var(--spacing-sm);
 }
 
-/* Timeline Section */
-.timeline-section {
-  margin-top: var(--spacing-2xl);
-}
-
-.timeline-container {
-  background: rgba(0, 0, 0, 0.3);
-  padding: var(--spacing-xl);
-  border-radius: var(--border-radius-lg);
-  border: 2px solid var(--rebel-gold);
-  margin-bottom: var(--spacing-xl);
-}
-
-.timeline-item {
-  display: flex;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.timeline-dot {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-
-.timeline-content {
-  flex: 1;
-}
-
-.timeline-content h5 {
-  color: inherit;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
-.timeline-dates {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.timeline-details {
-  color: inherit;
-  font-size: 0.85rem;
-  margin-top: 0.25rem;
-}
-
-.timeline-note {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.8rem;
-  margin-top: 0.25rem;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Timeline Legend */
-.timeline-legend {
-  background: rgba(0, 0, 0, 0.2);
-  padding: var(--spacing-md);
-  border-radius: var(--border-radius);
-  margin: var(--spacing-lg) 0;
-}
-
-.timeline-legend h6 {
-  color: var(--rebel-gold);
-  font-weight: 600;
-  margin-bottom: var(--spacing-sm);
-  font-size: 0.9rem;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm);
-}
-
-.legend-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 0.5rem;
-  font-size: 0.8rem;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.legend-color {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* Status Summary */
-.status-summary {
-  background: linear-gradient(90deg, rgba(156, 39, 176, 0.1), rgba(75, 192, 192, 0.1), rgba(0, 170, 255, 0.1));
-  padding: var(--spacing-md);
-  border-radius: var(--border-radius);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.status-header {
-  color: var(--rebel-gold);
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: var(--spacing-sm);
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-}
-
-.status-items {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  flex-wrap: wrap;
-}
-
-.status-item {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Accordion Styles */
+/* ========== ACCORDION ========== */
 .accordion {
   max-width: 100%;
   margin: var(--spacing-xl) 0;
@@ -579,6 +427,8 @@ html, body {
   font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--color-text-primary);
+  position: relative;
+  z-index: 10;
 }
 
 .accordion-header:hover,
@@ -592,11 +442,13 @@ html, body {
   overflow: hidden;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
-  transition: max-height 0.5s ease;
+  transition: all 0.4s ease;
+  opacity: 0;
 }
 
 .accordion-content.active {
   max-height: 5000px;
+  opacity: 1;
   padding: var(--spacing-xl);
 }
 
@@ -608,7 +460,6 @@ html, body {
   transform: rotate(180deg);
 }
 
-/* Accordion Controls */
 .accordion-controls {
   display: flex;
   flex-wrap: wrap;
@@ -617,7 +468,161 @@ html, body {
   margin-top: var(--spacing-xl);
 }
 
-/* Accordion Hero */
+.accordion-controls .cta-button {
+  cursor: pointer;
+}
+
+/* ========== ACCORDION COLOR THEMES ========== */
+.accordion-item.color-red .accordion-header {
+  background: rgba(255, 51, 102, 0.1) !important;
+  border-color: rgba(255, 51, 102, 0.3) !important;
+  color: var(--rebel-red) !important;
+}
+.accordion-item.color-red .accordion-header:hover,
+.accordion-item.color-red .accordion-header.active {
+  background: rgba(255, 51, 102, 0.2) !important;
+  border-color: var(--rebel-red) !important;
+  color: var(--rebel-red) !important;
+}
+.accordion-item.color-red .accordion-content {
+  background: rgba(255, 51, 102, 0.05) !important;
+}
+.accordion-item.color-red .accordion-header .accordion-icon {
+  color: var(--rebel-red) !important;
+}
+
+.accordion-item.color-purple .accordion-header {
+  background: rgba(156, 39, 176, 0.1) !important;
+  border-color: rgba(156, 39, 176, 0.3) !important;
+  color: var(--rebel-purple) !important;
+}
+.accordion-item.color-purple .accordion-header:hover,
+.accordion-item.color-purple .accordion-header.active {
+  background: rgba(156, 39, 176, 0.2) !important;
+  border-color: var(--rebel-purple) !important;
+  color: var(--rebel-purple) !important;
+}
+.accordion-item.color-purple .accordion-content {
+  background: rgba(156, 39, 176, 0.05) !important;
+}
+.accordion-item.color-purple .accordion-header .accordion-icon {
+  color: var(--rebel-purple) !important;
+}
+
+.accordion-item.color-teal .accordion-header {
+  background: rgba(0, 188, 212, 0.1) !important;
+  border-color: rgba(0, 188, 212, 0.3) !important;
+  color: #00bcd4 !important;
+}
+.accordion-item.color-teal .accordion-header:hover,
+.accordion-item.color-teal .accordion-header.active {
+  background: rgba(0, 188, 212, 0.2) !important;
+  border-color: #00bcd4 !important;
+  color: #00bcd4 !important;
+}
+.accordion-item.color-teal .accordion-content {
+  background: rgba(0, 188, 212, 0.05) !important;
+}
+.accordion-item.color-teal .accordion-header .accordion-icon {
+  color: #00bcd4 !important;
+}
+
+.accordion-item.color-gold .accordion-header {
+  background: rgba(255, 204, 0, 0.1) !important;
+  border-color: rgba(255, 204, 0, 0.3) !important;
+  color: var(--rebel-gold) !important;
+}
+.accordion-item.color-gold .accordion-header:hover,
+.accordion-item.color-gold .accordion-header.active {
+  background: rgba(255, 204, 0, 0.2) !important;
+  border-color: var(--rebel-gold) !important;
+  color: var(--rebel-gold) !important;
+}
+.accordion-item.color-gold .accordion-content {
+  background: rgba(255, 204, 0, 0.05) !important;
+}
+.accordion-item.color-gold .accordion-header .accordion-icon {
+  color: var(--rebel-gold) !important;
+}
+
+.accordion-item.color-blue .accordion-header {
+  background: rgba(0, 170, 255, 0.1) !important;
+  border-color: rgba(0, 170, 255, 0.3) !important;
+  color: var(--rebel-blue) !important;
+}
+.accordion-item.color-blue .accordion-header:hover,
+.accordion-item.color-blue .accordion-header.active {
+  background: rgba(0, 170, 255, 0.2) !important;
+  border-color: var(--rebel-blue) !important;
+  color: var(--rebel-blue) !important;
+}
+.accordion-item.color-blue .accordion-content {
+  background: rgba(0, 170, 255, 0.05) !important;
+}
+.accordion-item.color-blue .accordion-header .accordion-icon {
+  color: var(--rebel-blue) !important;
+}
+
+.accordion-item.color-green .accordion-header {
+  background: rgba(76, 175, 80, 0.1) !important;
+  border-color: rgba(76, 175, 80, 0.3) !important;
+  color: var(--rebel-green) !important;
+}
+.accordion-item.color-green .accordion-header:hover,
+.accordion-item.color-green .accordion-header.active {
+  background: rgba(76, 175, 80, 0.2) !important;
+  border-color: var(--rebel-green) !important;
+  color: var(--rebel-green) !important;
+}
+.accordion-item.color-green .accordion-content {
+  background: rgba(76, 175, 80, 0.05) !important;
+}
+.accordion-item.color-green .accordion-header .accordion-icon {
+  color: var(--rebel-green) !important;
+}
+
+/* Buttons inside accordions */
+.accordion-item.color-red .accordion-content .cta-button {
+  background: rgba(255, 51, 102, 0.1) !important;
+  border-color: var(--rebel-red) !important;
+  color: var(--rebel-red) !important;
+}
+.accordion-item.color-red .accordion-content .cta-button:hover {
+  background: rgba(255, 51, 102, 0.2) !important;
+  box-shadow: 0 0 15px rgba(255, 51, 102, 0.3);
+}
+
+.accordion-item.color-purple .accordion-content .cta-button {
+  background: rgba(156, 39, 176, 0.1) !important;
+  border-color: var(--rebel-purple) !important;
+  color: var(--rebel-purple) !important;
+}
+.accordion-item.color-purple .accordion-content .cta-button:hover {
+  background: rgba(156, 39, 176, 0.2) !important;
+  box-shadow: 0 0 15px rgba(156, 39, 176, 0.3);
+}
+
+.accordion-item.color-teal .accordion-content .cta-button {
+  background: rgba(0, 188, 212, 0.1) !important;
+  border-color: #00bcd4 !important;
+  color: #00bcd4 !important;
+}
+.accordion-item.color-teal .accordion-content .cta-button:hover {
+  background: rgba(0, 188, 212, 0.2) !important;
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+}
+
+.accordion-item.color-gold .accordion-content .cta-button {
+  background: rgba(255, 204, 0, 0.1) !important;
+  border-color: var(--rebel-gold) !important;
+  color: var(--rebel-gold) !important;
+}
+.accordion-item.color-gold .accordion-content .cta-button:hover {
+  background: rgba(255, 204, 0, 0.2) !important;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+}
+
+/* ========== ACCORDION HERO ========== */
 .accordion-hero {
   text-align: center;
   margin-bottom: var(--spacing-xl);
@@ -626,25 +631,39 @@ html, body {
 .accordion-hero-icon {
   width: 100px;
   height: 100px;
-  background: rgba(0, 170, 255, 0.2);
   border-radius: var(--border-radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto var(--spacing-md);
-  border: 3px solid var(--rebel-blue);
+  border: 3px solid;
   font-size: 3rem;
-  color: var(--rebel-blue);
 }
 
-.accordion-stats-grid {
+.accordion-hero h3 {
+  font-size: 1.8rem;
+  color: inherit;
+  margin-bottom: var(--spacing-sm);
+}
+
+.accordion-hero p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* ========== CONTRACT / DAO STATS ========== */
+.contract-stats,
+.dao-stats {
   display: grid;
-  gap: var(--spacing-lg);
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
   margin: var(--spacing-xl) 0;
 }
 
-.accordion-stat {
+.contract-stat,
+.dao-stat {
   text-align: center;
   padding: var(--spacing-lg);
   background: rgba(0, 0, 0, 0.3);
@@ -652,100 +671,36 @@ html, body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.accordion-stat .stat-number {
-  font-size: var(--font-size-3xl);
+.contract-stat .stat-number,
+.dao-stat .stat-number {
+  font-size: 2rem;
   font-weight: 900;
   margin-bottom: var(--spacing-sm);
 }
 
-.accordion-stat .stat-label {
-  font-size: var(--font-size-sm);
-  color: var(--rebel-gold);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.accordion-stat .stat-sub {
-  font-size: var(--font-size-sm);
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: var(--spacing-xs);
-}
-
-/* Benefits Section */
-.benefits-section {
-  background: rgba(0, 170, 255, 0.1);
-  padding: var(--spacing-xl);
-  border-radius: var(--border-radius);
-  margin: var(--spacing-xl) 0;
-  border: 2px solid var(--rebel-blue);
-}
-
-.benefits-section h5 {
-  color: var(--rebel-blue);
-  margin-bottom: var(--spacing-lg);
-  text-align: center;
-  font-size: 1.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm);
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-lg);
-}
-
-.benefit-item {
-  text-align: center;
-}
-
-.benefit-icon {
-  width: 60px;
-  height: 60px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--spacing-md);
-  border: 2px solid;
-  font-size: 1.8rem;
-}
-
-.benefit-title {
+.contract-stat .stat-label,
+.dao-stat .stat-label {
   font-weight: 700;
+  color: white;
   margin-bottom: var(--spacing-sm);
-  color: inherit;
 }
 
-.benefit-desc {
-  color: rgba(255, 255, 255, 0.9);
+.contract-stat .stat-sub,
+.dao-stat .stat-sub {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
 }
 
-/* Progress Section */
-.progress-section {
+/* ========== PROGRESS VISUALIZATION ========== */
+.progress-visualization {
+  margin: var(--spacing-xl) 0;
+}
+
+.overall-progress {
   background: rgba(0, 0, 0, 0.3);
   padding: var(--spacing-xl);
   border-radius: var(--border-radius);
-  margin: var(--spacing-xl) 0;
-  border: 2px solid var(--rebel-blue);
-}
-
-.progress-section h5 {
-  color: var(--rebel-blue);
   margin-bottom: var(--spacing-lg);
-  text-align: center;
-  font-size: 1.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm);
-}
-
-.progress-overview {
-  margin-bottom: var(--spacing-xl);
 }
 
 .progress-header {
@@ -765,7 +720,6 @@ html, body {
 
 .progress-fill-large {
   height: 100%;
-  background: linear-gradient(90deg, var(--rebel-blue), #0099ff);
   border-radius: 6px;
   transition: width 1s ease;
 }
@@ -777,116 +731,107 @@ html, body {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.progress-details-grid {
+.breakdown-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--spacing-lg);
 }
 
-.progress-detail {
+.breakdown-item {
   text-align: center;
+  padding: var(--spacing-sm);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
-.detail-number {
-  font-size: 2rem;
-  color: inherit;
+.breakdown-number {
+  font-size: 1.5rem;
   font-weight: 900;
   margin-bottom: var(--spacing-sm);
 }
 
-.detail-label {
+.breakdown-label {
   font-weight: 700;
   color: white;
   margin-bottom: var(--spacing-sm);
 }
 
-.detail-sub {
+.breakdown-sub {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
 }
 
-/* Next Unlock Section */
-.next-unlock-section {
-  background: linear-gradient(135deg, rgba(0, 255, 0, 0.2), rgba(0, 170, 255, 0.2));
+/* ========== REWARD DISTRIBUTION ========== */
+.reward-distribution {
+  background: rgba(156, 39, 176, 0.1);
   padding: var(--spacing-xl);
   border-radius: var(--border-radius);
   margin: var(--spacing-xl) 0;
-  border: 2px solid #00ff00;
+  border: 2px solid var(--rebel-purple);
 }
 
-.next-unlock-section h5 {
-  color: #00ff00;
-  margin-bottom: var(--spacing-lg);
-  text-align: center;
-  font-size: 1.3rem;
+.distribution-flow {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+  margin: var(--spacing-xl) 0;
 }
 
-.unlock-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-lg);
-}
-
-.unlock-item {
+.distribution-step {
   text-align: center;
+  flex: 0 0 auto;
 }
 
-.unlock-icon {
-  font-size: 2rem;
-  color: inherit;
-  font-weight: 900;
-  margin-bottom: var(--spacing-sm);
-}
-
-.unlock-value {
-  font-weight: 700;
-  color: white;
-  margin-bottom: var(--spacing-sm);
-  font-size: 1.2rem;
-}
-
-.unlock-label {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* Final Note */
-.final-note {
-  background: rgba(0, 170, 255, 0.1);
-  padding: var(--spacing-lg);
-  border-radius: var(--border-radius);
-  margin-top: var(--spacing-xl);
-  border-left: 4px solid var(--rebel-blue);
+.step-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-md);
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-md);
+  border: 2px solid;
+  font-size: 2rem;
 }
 
-.final-note i {
-  color: var(--rebel-blue);
-  font-size: 1.5rem;
-  margin-top: 2px;
+.step-arrow {
+  font-size: 2rem;
+  color: var(--rebel-purple);
 }
 
-.note-title {
+.step-title {
   font-weight: 700;
-  color: var(--rebel-blue);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 0.25rem;
 }
 
-.note-content {
-  color: rgba(255, 255, 255, 0.9);
+.step-desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
 }
 
-/* Allocation Breakdown (ZORA) */
+.distribution-cta {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+}
+
+/* ========== ALLOCATION / SCHEDULE / USE-CASES ========== */
+.allocation-section {
+  margin: var(--spacing-xl) 0;
+}
+
 .allocation-breakdown {
   display: grid;
   gap: var(--spacing-xl);
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: var(--spacing-xl) 0;
+}
+
+.allocation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
 }
 
 .allocation-card {
@@ -935,210 +880,10 @@ html, body {
   font-size: 0.95rem;
 }
 
-/* DAO Stats */
-.dao-stats {
-  display: grid;
-  gap: var(--spacing-lg);
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin: var(--spacing-xl) 0;
-}
-
-.dao-stat {
-  text-align: center;
-  padding: var(--spacing-lg);
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: var(--border-radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.dao-stat .stat-number {
-  font-size: 2rem;
-  color: #4CAF50;
-  font-weight: 900;
-  margin-bottom: var(--spacing-sm);
-}
-
-.dao-stat .stat-label {
-  font-size: var(--font-size-sm);
-  color: var(--rebel-gold);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.dao-stat .stat-sub {
-  font-size: var(--font-size-sm);
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: var(--spacing-xs);
-}
-
-/* Accordion Actions */
-.accordion-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-lg);
-  justify-content: center;
-  margin-top: var(--spacing-xl);
-}
-
-/* ========== ACCORDION ENHANCEMENTS ========== */
-
-/* Accordion Hero Variations */
-.accordion-hero {
-  text-align: center;
-  margin-bottom: var(--spacing-xl);
-}
-
-.accordion-hero-icon {
-  width: 100px;
-  height: 100px;
-  border-radius: var(--border-radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--spacing-md);
-  border: 3px solid;
-  font-size: 3rem;
-}
-
-.accordion-hero h3 {
-  font-size: 1.8rem;
-  color: inherit;
-  margin-bottom: var(--spacing-sm);
-}
-
-.accordion-hero p {
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-}
-
-/* Contract Stats for ZORA */
-.contract-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing-lg);
-  margin: var(--spacing-xl) 0;
-}
-
-.contract-stat {
-  text-align: center;
-  padding: var(--spacing-lg);
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: var(--border-radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.contract-stat .stat-number {
+.allocation-number {
   font-size: 2rem;
   font-weight: 900;
   margin-bottom: var(--spacing-sm);
-}
-
-.contract-stat .stat-label {
-  font-weight: 700;
-  color: white;
-  margin-bottom: var(--spacing-sm);
-}
-
-.contract-stat .stat-sub {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
-}
-
-/* Progress Visualization */
-.progress-visualization {
-  margin: var(--spacing-xl) 0;
-}
-
-.overall-progress {
-  background: rgba(0, 0, 0, 0.3);
-  padding: var(--spacing-xl);
-  border-radius: var(--border-radius);
-  margin-bottom: var(--spacing-lg);
-}
-
-.breakdown-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing-lg);
-}
-
-.breakdown-item {
-  text-align: center;
-}
-
-.breakdown-number {
-  font-size: 1.5rem;
-  font-weight: 900;
-  margin-bottom: var(--spacing-sm);
-}
-
-.breakdown-label {
-  font-weight: 700;
-  color: white;
-  margin-bottom: var(--spacing-sm);
-}
-
-.breakdown-sub {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
-}
-
-/* Reward Distribution */
-.reward-distribution {
-  background: rgba(156, 39, 176, 0.1);
-  padding: var(--spacing-xl);
-  border-radius: var(--border-radius);
-  margin: var(--spacing-xl) 0;
-  border: 2px solid var(--rebel-purple);
-}
-
-.distribution-flow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: var(--spacing-xl);
-  margin: var(--spacing-xl) 0;
-}
-
-.distribution-step {
-  text-align: center;
-  flex: 0 0 auto;
-}
-
-.step-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--spacing-md);
-  border: 2px solid;
-  font-size: 2rem;
-}
-
-.step-arrow {
-  font-size: 2rem;
-  color: var(--rebel-purple);
-}
-
-.distribution-cta {
-  text-align: center;
-  margin-top: var(--spacing-lg);
-}
-
-/* Team Fund Specific Styles */
-.allocation-section {
-  margin: var(--spacing-xl) 0;
-}
-
-.allocation-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing-md);
 }
 
 .schedule-grid {
@@ -1149,7 +894,6 @@ html, body {
 
 .schedule-title {
   font-weight: 700;
-  color: var(--rebel-gold);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -1165,7 +909,28 @@ html, body {
   margin-bottom: 0;
 }
 
-/* Ecosystem Fund Specific Styles */
+.progress-note {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.5rem;
+}
+
+.info-box {
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin: var(--spacing-xl) 0;
+  border: 2px solid;
+}
+
+.info-box h5 {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* Ecosystem Fund */
 .fund-allocation {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1175,6 +940,14 @@ html, body {
 
 .use-cases {
   margin: var(--spacing-xl) 0;
+}
+
+.use-cases h5 {
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
 }
 
 .use-cases-grid {
@@ -1193,7 +966,6 @@ html, body {
 
 .use-case-icon {
   font-size: 2rem;
-  color: inherit;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -1208,21 +980,18 @@ html, body {
   margin-top: var(--spacing-sm);
 }
 
-/* Unlock Note */
-.unlock-note {
-  text-align: center;
-  margin-top: var(--spacing-lg);
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
-}
-
-/* Cross-Chain Value */
+/* ========== VALUE ACCELERATION ========== */
 .zora-treasury-stats {
   background: rgba(156, 39, 176, 0.1);
   padding: var(--spacing-xl);
   border-radius: var(--border-radius-lg);
   border: 2px solid var(--rebel-purple);
   margin: var(--spacing-xl) 0;
+}
+
+.zora-treasury-stats h4 {
+  color: var(--rebel-purple);
+  margin-bottom: var(--spacing-lg);
 }
 
 .treasury-grid {
@@ -1240,6 +1009,7 @@ html, body {
   font-size: 2rem;
   font-weight: 900;
   margin-bottom: 0.5rem;
+  color: var(--rebel-purple);
 }
 
 .treasury-label {
@@ -1263,11 +1033,10 @@ html, body {
   gap: var(--spacing-sm);
 }
 
-/* Revenue Grid */
 .revenue-grid {
   display: grid;
   gap: var(--spacing-xl);
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   margin: var(--spacing-xl) 0;
 }
 
@@ -1319,6 +1088,9 @@ html, body {
 .cycle-header {
   text-align: center;
   margin-bottom: var(--spacing-lg);
+  color: var(--rebel-gold);
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .cycle-header i {
@@ -1339,7 +1111,7 @@ html, body {
   gap: 1rem;
 }
 
-.step-icon {
+.cycle-step .step-icon {
   flex-shrink: 0;
   width: 50px;
   height: 50px;
@@ -1352,16 +1124,17 @@ html, body {
   color: white;
 }
 
-.step-content {
+.cycle-step .step-content {
   flex: 1;
 }
 
-.step-title {
+.cycle-step .step-title {
   font-weight: bold;
   margin-bottom: 0.25rem;
+  color: white;
 }
 
-.step-desc {
+.cycle-step .step-desc {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.85rem;
 }
@@ -1413,6 +1186,7 @@ html, body {
   font-size: 1.1rem;
   font-weight: bold;
   margin-bottom: 0.25rem;
+  color: var(--rebel-gold);
 }
 
 .cycle-stat .stat-label {
@@ -1424,7 +1198,7 @@ html, body {
   text-align: center;
 }
 
-/* Creator Coin Supply */
+/* ========== CREATOR COIN SUPPLY ========== */
 .supply-intro {
   font-size: var(--font-size-lg);
   margin-bottom: var(--spacing-xl);
@@ -1432,60 +1206,6 @@ html, body {
   color: rgba(255, 255, 255, 0.9);
 }
 
-.formula-box {
-  background: rgba(0, 0, 0, 0.4);
-  padding: var(--spacing-xl);
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--rebel-gold);
-  margin-bottom: var(--spacing-xl);
-}
-
-.formula-display {
-  font-family: 'Courier New', monospace;
-  font-size: var(--font-size-lg);
-  color: white;
-  line-height: 2.2;
-}
-
-.formula-line {
-  display: flex;
-  align-items: center;
-  margin-bottom: var(--spacing-sm);
-  padding-left: var(--spacing-xl);
-}
-
-.formula-number {
-  min-width: 180px;
-  text-align: right;
-  margin-right: var(--spacing-md);
-}
-
-.formula-operator {
-  color: var(--rebel-gold);
-  margin-right: var(--spacing-md);
-}
-
-.formula-label {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: var(--font-size-sm);
-  margin-left: var(--spacing-sm);
-}
-
-.formula-total {
-  display: flex;
-  align-items: center;
-  margin-top: var(--spacing-lg);
-  padding-top: var(--spacing-md);
-  border-top: 1px solid rgba(255, 204, 0, 0.3);
-}
-
-.formula-result {
-  color: var(--rebel-red);
-  font-size: var(--font-size-2xl);
-  margin: 0 var(--spacing-md);
-}
-
-/* Breakdown Section */
 .breakdown-section {
   background: rgba(0, 0, 0, 0.3);
   padding: var(--spacing-lg);
@@ -1503,19 +1223,6 @@ html, body {
   align-items: center;
   justify-content: center;
   gap: var(--spacing-sm);
-}
-
-.breakdown-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-md);
-  font-size: 0.9rem;
-}
-
-.breakdown-item {
-  padding: var(--spacing-sm);
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
 }
 
 .breakdown-title {
@@ -1546,9 +1253,9 @@ html, body {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
+  border-left: 4px solid var(--rebel-gold);
 }
 
-/* Supply Stats */
 .supply-stats {
   display: grid;
   gap: var(--spacing-lg);
@@ -1576,50 +1283,6 @@ html, body {
   box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
 }
 
-/* Mechanism Section */
-.mechanism-section {
-  background: rgba(255, 51, 102, 0.1);
-  padding: var(--spacing-lg);
-  border-radius: var(--border-radius);
-  margin-top: var(--spacing-lg);
-  border-left: 4px solid var(--rebel-red);
-  display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-md);
-}
-
-.mechanism-icon {
-  color: var(--rebel-gold);
-  font-size: 1.2rem;
-  margin-right: var(--spacing-md);
-  margin-top: 2px;
-}
-
-.mechanism-content {
-  flex: 1;
-}
-
-.mechanism-title {
-  font-weight: 700;
-  color: var(--rebel-gold);
-  margin-bottom: var(--spacing-sm);
-}
-
-.mechanism-desc {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.mechanism-link {
-  color: var(--rebel-gold);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.mechanism-link:hover {
-  text-decoration: underline;
-}
-
-/* Calculator Connection */
 .calculator-connection {
   text-align: center;
   margin-top: var(--spacing-xl);
@@ -1632,7 +1295,12 @@ html, body {
   margin-bottom: var(--spacing-md);
 }
 
-/* Security Overview */
+.calculator-connection p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ========== SECURITY OVERVIEW ========== */
 .security-card {
   background: var(--color-bg-card);
   border: 2px solid var(--rebel-red);
@@ -1701,6 +1369,12 @@ html, body {
   color: var(--color-text-primary);
 }
 
+.security-stat .stat-sub {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: var(--spacing-xs);
+}
+
 .security-description {
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
@@ -1719,7 +1393,7 @@ html, body {
   margin-top: var(--spacing-xl);
 }
 
-/* FAQ Grid */
+/* ========== FAQ ========== */
 .faq-grid {
   display: grid;
   gap: var(--spacing-lg);
@@ -1740,9 +1414,22 @@ html, body {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+  font-size: 1.05rem;
 }
 
-/* Related Pages - COLORED CARDS */
+.faq-item p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.faq-item a {
+  color: var(--rebel-gold);
+  text-decoration: underline;
+}
+
+/* ========== RELATED PAGES ========== */
 .related-grid {
   display: grid;
   gap: var(--spacing-lg);
@@ -1752,12 +1439,12 @@ html, body {
 
 .related-card {
   background: var(--color-bg-card);
-  border: 1px solid;
+  border: 2px solid;
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-lg);
   transition: var(--transition);
   text-align: center;
-  min-height: 200px;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1827,157 +1514,62 @@ html, body {
   transform: translateX(5px);
 }
 
-/* COLOR THEMES FOR RELATED CARDS */
-.related-card:nth-child(1) {
-  border-color: #FF6B35 !important;
-  background: linear-gradient(135deg, 
-    rgba(255, 107, 53, 0.1), 
-    rgba(255, 107, 53, 0.05)) !important; 
+/* Related card themes (v3.0) */
+.related-card.contests-card {
+  border-color: #FBBF24 !important;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.05)) !important;
+}
+.related-card.contests-card .related-icon,
+.related-card.contests-card h3,
+.related-card.contests-card .related-arrow { color: #FBBF24 !important; }
+.related-card.contests-card::before { background: #FBBF24 !important; }
+.related-card.contests-card:hover {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(251, 191, 36, 0.08)) !important;
+  border-color: #F59E0B !important;
 }
 
-.related-card:nth-child(1) .related-icon,
-.related-card:nth-child(1) h3,
-.related-card:nth-child(1) .related-arrow {
-  color: #FF6B35 !important;
+.related-card.journey-card {
+  border-color: #E3B87C !important;
+  background: linear-gradient(135deg, rgba(227, 184, 124, 0.1), rgba(227, 184, 124, 0.05)) !important;
+}
+.related-card.journey-card .related-icon,
+.related-card.journey-card h3,
+.related-card.journey-card .related-arrow { color: #E3B87C !important; }
+.related-card.journey-card::before { background: #E3B87C !important; }
+.related-card.journey-card:hover {
+  background: linear-gradient(135deg, rgba(227, 184, 124, 0.15), rgba(227, 184, 124, 0.08)) !important;
+  border-color: #D4A76A !important;
 }
 
-.related-card:nth-child(1)::before {
-  background: #FF6B35 !important;
+.related-card.whitepaper-card {
+  border-color: #673AB7 !important;
+  background: linear-gradient(135deg, rgba(103, 58, 183, 0.1), rgba(103, 58, 183, 0.05)) !important;
+}
+.related-card.whitepaper-card .related-icon,
+.related-card.whitepaper-card h3,
+.related-card.whitepaper-card .related-arrow { color: #673AB7 !important; }
+.related-card.whitepaper-card::before { background: #673AB7 !important; }
+.related-card.whitepaper-card:hover {
+  background: linear-gradient(135deg, rgba(103, 58, 183, 0.15), rgba(103, 58, 183, 0.08)) !important;
+  border-color: #5D2E8C !important;
 }
 
-.related-card:nth-child(1):hover {
-  background: linear-gradient(135deg, 
-    rgba(255, 107, 53, 0.15), 
-    rgba(255, 107, 53, 0.08)) !important;
-  border-color: #FF4500 !important;
-}
-.related-card:nth-child(1):hover  .related-icon,
-.related-card:nth-child(1):hover  h3,
-.related-card:nth-child(1):hover  .related-arrow {
-  color: #FF4500 !important;
-}
-
-.related-card:nth-child(2) {
-  border-color: #9C27B0 !important;
-  background: linear-gradient(135deg, 
-    rgba(156, 39, 176, 0.1), 
-    rgba(156, 39, 176, 0.05)) !important;
-}
-
-.related-card:nth-child(2) .related-icon,
-.related-card:nth-child(2) h3,
-.related-card:nth-child(2) .related-arrow {
-  color: #9C27B0 !important;
-}
-
-.related-card:nth-child(2)::before {
-  background: #9C27B0 !important;
-}
-
-.related-card:nth-child(2):hover {
-  background: linear-gradient(135deg, 
-    rgba(156, 39, 176, 0.15), 
-    rgba(156, 39, 176, 0.08)) !important; 
-  border-color: #8A2BE2 !important;
-}
-.related-card:nth-child(2):hover .related-icon,
-.related-card:nth-child(2):hover h3,
-.related-card:nth-child(2):hover .related-arrow {
-  color: #8A2BE2 !important;
-}
-
-.related-card:nth-child(3) {
-  border-color: #673AB7   !important;
-  background: linear-gradient(135deg, 
-    rgba(103, 58, 183, 0.1), 
-    rgba(103, 58, 183, 0.05)) !important; /* UPDATED */
-}
-
-.related-card:nth-child(3) .related-icon,
-.related-card:nth-child(3) h3,
-.related-card:nth-child(3) .related-arrow {
-  color: #673AB7   !important;
-}
-
-.related-card:nth-child(3)::before {
-  background: #673AB7   !important;
-}
-
-.related-card:nth-child(3):hover {
-  background: linear-gradient(135deg, 
-    rgba(103, 58, 183, 0.15), 
-    rgba(103, 58, 183, 0.08)) !important; 
-  border-color: #5D2E8C !important; 
-}
-
-.related-card:nth-child(3):hover .related-icon,
-.related-card:nth-child(3):hover h3,
-.related-card:nth-child(3):hover .related-arrow {
-  color: #5D2E8C !important; 
-}
-/* ========== UTILITY CLASSES ========== */
-
-/* Color utility classes */
+/* ========== UTILITY COLOR CLASSES ========== */
 .color-red { color: var(--rebel-red) !important; }
 .color-purple { color: var(--rebel-purple) !important; }
 .color-blue { color: var(--rebel-blue) !important; }
 .color-gold { color: var(--rebel-gold) !important; }
 .color-green { color: var(--rebel-green) !important; }
+.color-teal { color: #00bcd4 !important; }
 
 .bg-red { background: rgba(255, 51, 102, 0.1) !important; }
 .bg-purple { background: rgba(156, 39, 176, 0.1) !important; }
 .bg-blue { background: rgba(0, 170, 255, 0.1) !important; }
 .bg-gold { background: rgba(255, 204, 0, 0.1) !important; }
 .bg-green { background: rgba(76, 175, 80, 0.1) !important; }
+.bg-teal { background: rgba(0, 188, 212, 0.1) !important; }
 
-.border-red { border-color: var(--rebel-red) !important; }
-.border-purple { border-color: var(--rebel-purple) !important; }
-.border-blue { border-color: var(--rebel-blue) !important; }
-.border-gold { border-color: var(--rebel-gold) !important; }
-.border-green { border-color: var(--rebel-green) !important; }
-
-/* Additional Utility Classes */
-.text-center {
-  text-align: center;
-}
-
-.margin-xl {
-  margin: var(--spacing-xl) 0;
-}
-
-.padding-xl {
-  padding: var(--spacing-xl);
-}
-
-/* Animation for accordion content */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.accordion-content.active {
-  animation: fadeIn 0.3s ease;
-}
-
-/* Enhanced focus states for accessibility */
-.accordion-header:focus-visible {
-  outline: 2px solid var(--rebel-gold);
-  outline-offset: 2px;
-}
-
-.cta-button:focus-visible,
-a:focus-visible {
-  outline: 2px solid var(--rebel-red);
-  outline-offset: 2px;
-}
-
-/* ========== CHART FALLBACK STYLES ========== */
+/* ========== CHART FALLBACK ========== */
 .chart-fallback {
   height: 400px;
   display: flex;
@@ -2040,45 +1632,19 @@ a:focus-visible {
   text-align: right;
 }
 
-/* Touch feedback */
-.touch-active {
-  opacity: 0.8;
-  transform: scale(0.98);
-  transition: opacity 0.1s, transform 0.1s;
+/* ========== ACCESSIBILITY ========== */
+.accordion-header:focus-visible {
+  outline: 2px solid var(--rebel-gold);
+  outline-offset: 2px;
 }
 
-/* Emergency accordion fix */
-.accordion-header {
-    cursor: pointer !important;
-    position: relative;
-    z-index: 10;
+.cta-button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--rebel-red);
+  outline-offset: 2px;
 }
 
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.3s ease;
-}
-
-.accordion-content.active {
-    max-height: 5000px;
-    opacity: 1;
-    padding: 1.5rem !important;
-}
-
-/* Make sure buttons are clickable */
-#expandAll, #collapseAll {
-    cursor: pointer;
-    pointer-events: all !important;
-}
-
-/* Debug styling - remove after fixing */
-.accordion-header:hover {
-    background-color: rgba(255, 204, 0, 0.1) !important;
-}
-
-/* ========== RESPONSIVE DESIGN ========== */
+/* ========== RESPONSIVE — TABLET & MOBILE ========== */
 @media (max-width: 768px) {
   .stats-overview,
   .vesting-grid,
@@ -2087,120 +1653,89 @@ a:focus-visible {
   .supply-stats,
   .security-stats,
   .treasury-grid,
-  .accordion-stats-grid,
-  .progress-details-grid,
-  .unlock-grid,
-  .allocation-breakdown,
-  .dao-stats,
-  .breakdown-grid,
-  .benefits-grid,
-  .cycle-stats,
-  .legend-items,
   .contract-stats,
   .breakdown-grid,
+  .allocation-breakdown,
+  .dao-stats,
   .allocation-grid,
   .schedule-grid,
   .fund-allocation,
-  .use-cases-grid {
-    grid-template-columns: 1fr;
+  .use-cases-grid,
+  .takeaways-grid,
+  .related-grid {
+    grid-template-columns: 1fr !important;
   }
-  
+
   .chart-wrapper {
     height: 300px;
   }
-  
+
   .chart-container {
     padding: var(--spacing-md);
   }
-  
+
   .accordion-content.active {
     padding: var(--spacing-lg);
   }
-  
-  .related-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
+
   .page-hero--tokenomics {
     padding-top: calc(var(--spacing-2xl) + 70px);
   }
-  
-  .formula-line {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 0;
+
+  .vesting-card.full-width {
+    grid-column: span 1;
   }
-  
-  .formula-number,
-  .formula-label {
+
+  .accordion-controls {
+    flex-direction: column;
+  }
+
+  .accordion-controls .cta-button {
     width: 100%;
-    text-align: left;
-    margin: 0;
   }
-  
-  .formula-total {
+
+  .security-actions {
     flex-direction: column;
-    align-items: flex-start;
   }
-  
-  .timeline-dates {
+
+  .security-actions .cta-button {
+    width: 100%;
+  }
+
+  .distribution-flow {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 1.5rem;
   }
-  
-  .status-items {
-    flex-direction: column;
-    align-items: stretch;
+
+  .step-arrow {
+    transform: rotate(90deg);
   }
-  
-  .status-item {
-    justify-content: center;
-  }
-  
+
   .cycle-steps {
     max-width: 100%;
   }
-  
+
   .cycle-step {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
   }
-  
+
   .cycle-arrow {
     margin: 0;
     transform: rotate(90deg);
   }
-  
+
   .cycle-loop {
     transform: none;
   }
-  
-  .accordion-controls {
-    flex-direction: column;
-  }
-  
-  .accordion-controls .cta-button {
-    width: 100%;
-  }
-  
-  .distribution-flow {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .step-arrow {
-    transform: rotate(90deg);
-  }
-  
+
   .accordion-hero-icon {
     width: 80px;
     height: 80px;
     font-size: 2.5rem;
   }
-  
+
   .step-icon {
     width: 60px;
     height: 60px;
@@ -2212,96 +1747,56 @@ a:focus-visible {
   .vesting-card {
     padding: var(--spacing-md);
   }
-  
+
   .vesting-header {
     flex-direction: column;
     text-align: center;
     gap: var(--spacing-sm);
   }
-  
+
   .vesting-icon {
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
   }
-  
+
   .accordion-header {
     font-size: var(--font-size-base);
     padding: var(--spacing-md);
   }
-  
+
   .accordion-content.active {
     padding: var(--spacing-md);
   }
-  
-  .security-actions {
-    flex-direction: column;
-  }
-  
-  .security-actions .cta-button {
-    width: 100%;
-  }
-  
-  .timeline-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  
-  .timeline-dot {
-    align-self: flex-start;
-  }
-  
+
   .accordion-stat,
   .contract-stat,
   .breakdown-item,
-  .use-case {
+  .use-case,
+  .dao-stat,
+  .security-stat {
     padding: var(--spacing-md);
   }
-  
+
   .distribution-flow {
     gap: 1rem;
   }
 }
 
-/* Touch device optimizations */
+/* ========== TOUCH DEVICES ========== */
 @media (hover: none) and (pointer: coarse) {
-  .related-card:hover {
-    transform: none;
-  }
-  
-  .related-card:active {
-    transform: translateY(-2px);
-  }
-  
-  .vesting-card:hover {
-    transform: none;
-  }
-  
-  .vesting-card:active {
-    transform: translateY(-2px);
-  }
-  
-  .revenue-card:hover {
-    transform: none;
-  }
-  
-  .revenue-card:active {
-    transform: translateY(-2px);
-  }
-  
-  .supply-stat:hover {
-    transform: none;
-  }
-  
-  .supply-stat:active {
-    transform: translateY(-2px);
-  }
+  .related-card:hover { transform: none; }
+  .related-card:active { transform: translateY(-2px); }
+  .vesting-card:hover { transform: none; }
+  .vesting-card:active { transform: translateY(-2px); }
+  .revenue-card:hover { transform: none; }
+  .revenue-card:active { transform: translateY(-2px); }
+  .supply-stat:hover { transform: none; }
+  .supply-stat:active { transform: translateY(-2px); }
 }
 
-/* Fallback for older browsers */
+/* ========== FALLBACK FOR OLD BROWSERS ========== */
 @supports not (display: grid) {
-  .accordion-stats-grid,
   .contract-stats,
   .breakdown-grid,
   .allocation-grid,
@@ -2312,8 +1807,7 @@ a:focus-visible {
     flex-wrap: wrap;
     gap: 1rem;
   }
-  
-  .accordion-stat,
+
   .contract-stat,
   .breakdown-item,
   .allocation-card,
@@ -2323,326 +1817,8 @@ a:focus-visible {
     flex: 1 1 200px;
   }
 }
-/* ========== ACCORDION COLOR MATCHING ========== */
-/* Apply colors from accordion titles to their respective accordions */
 
-/* Red accordion */
-.accordion-item.color-red .accordion-header {
-  background: rgba(255, 51, 102, 0.1) !important;
-  border-color: rgba(255, 51, 102, 0.3) !important;
-  color: var(--rebel-red) !important;
-}
-
-.accordion-item.color-red .accordion-header:hover,
-.accordion-item.color-red .accordion-header.active {
-  background: rgba(255, 51, 102, 0.2) !important;
-  border-color: var(--rebel-red) !important;
-  color: var(--rebel-red) !important;
-}
-
-.accordion-item.color-red .accordion-content {
-  background: rgba(255, 51, 102, 0.05) !important;
-  border-color: rgba(255, 51, 102, 0.2) !important;
-}
-
-/* Purple accordion */
-.accordion-item.color-purple .accordion-header {
-  background: rgba(156, 39, 176, 0.1) !important;
-  border-color: rgba(156, 39, 176, 0.3) !important;
-  color: var(--rebel-purple) !important;
-}
-
-.accordion-item.color-purple .accordion-header:hover,
-.accordion-item.color-purple .accordion-header.active {
-  background: rgba(156, 39, 176, 0.2) !important;
-  border-color: var(--rebel-purple) !important;
-  color: var(--rebel-purple) !important;
-}
-
-.accordion-item.color-purple .accordion-content {
-  background: rgba(156, 39, 176, 0.05) !important;
-  border-color: rgba(156, 39, 176, 0.2) !important;
-}
-
-/* Blue accordion */
-.accordion-item.color-blue .accordion-header {
-  background: rgba(0, 170, 255, 0.1) !important;
-  border-color: rgba(0, 170, 255, 0.3) !important;
-  color: var(--rebel-blue) !important;
-}
-
-.accordion-item.color-blue .accordion-header:hover,
-.accordion-item.color-blue .accordion-header.active {
-  background: rgba(0, 170, 255, 0.2) !important;
-  border-color: var(--rebel-blue) !important;
-  color: var(--rebel-blue) !important;
-}
-
-.accordion-item.color-blue .accordion-content {
-  background: rgba(0, 170, 255, 0.05) !important;
-  border-color: rgba(0, 170, 255, 0.2) !important;
-}
-
-/* Gold accordion */
-.accordion-item.color-gold .accordion-header {
-  background: rgba(255, 204, 0, 0.1) !important;
-  border-color: rgba(255, 204, 0, 0.3) !important;
-  color: var(--rebel-gold) !important;
-}
-
-.accordion-item.color-gold .accordion-header:hover,
-.accordion-item.color-gold .accordion-header.active {
-  background: rgba(255, 204, 0, 0.2) !important;
-  border-color: var(--rebel-gold) !important;
-  color: var(--rebel-gold) !important;
-}
-
-.accordion-item.color-gold .accordion-content {
-  background: rgba(255, 204, 0, 0.05) !important;
-  border-color: rgba(255, 204, 0, 0.2) !important;
-}
-
-/* Green accordion */
-.accordion-item.color-green .accordion-header {
-  background: rgba(76, 175, 80, 0.1) !important;
-  border-color: rgba(76, 175, 80, 0.3) !important;
-  color: var(--rebel-green) !important;
-}
-
-.accordion-item.color-green .accordion-header:hover,
-.accordion-item.color-green .accordion-header.active {
-  background: rgba(76, 175, 80, 0.2) !important;
-  border-color: var(--rebel-green) !important;
-  color: var(--rebel-green) !important;
-}
-
-.accordion-item.color-green .accordion-content {
-  background: rgba(76, 175, 80, 0.05) !important;
-  border-color: rgba(76, 175, 80, 0.2) !important;
-}
-
-/* Ensure accordion icons match the title color */
-.accordion-item.color-red .accordion-header .accordion-icon {
-  color: var(--rebel-red) !important;
-}
-
-.accordion-item.color-purple .accordion-header .accordion-icon {
-  color: var(--rebel-purple) !important;
-}
-
-.accordion-item.color-blue .accordion-header .accordion-icon {
-  color: var(--rebel-blue) !important;
-}
-
-.accordion-item.color-gold .accordion-header .accordion-icon {
-  color: var(--rebel-gold) !important;
-}
-
-.accordion-item.color-green .accordion-header .accordion-icon {
-  color: var(--rebel-green) !important;
-}
-
-/* Accordion control buttons (expand/collapse all) */
-.accordion-controls .cta-button.color-red {
-  background: rgba(255, 51, 102, 0.1) !important;
-  border-color: var(--rebel-red) !important;
-  color: var(--rebel-red) !important;
-}
-
-.accordion-controls .cta-button.color-red:hover {
-  background: rgba(255, 51, 102, 0.2) !important;
-  box-shadow: 0 0 15px rgba(255, 51, 102, 0.3);
-}
-
-.accordion-controls .cta-button.color-purple {
-  background: rgba(156, 39, 176, 0.1) !important;
-  border-color: var(--rebel-purple) !important;
-  color: var(--rebel-purple) !important;
-}
-
-.accordion-controls .cta-button.color-purple:hover {
-  background: rgba(156, 39, 176, 0.2) !important;
-  box-shadow: 0 0 15px rgba(156, 39, 176, 0.3);
-}
-
-.accordion-controls .cta-button.color-blue {
-  background: rgba(0, 170, 255, 0.1) !important;
-  border-color: var(--rebel-blue) !important;
-  color: var(--rebel-blue) !important;
-}
-
-.accordion-controls .cta-button.color-blue:hover {
-  background: rgba(0, 170, 255, 0.2) !important;
-  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
-}
-
-.accordion-controls .cta-button.color-gold {
-  background: rgba(255, 204, 0, 0.1) !important;
-  border-color: var(--rebel-gold) !important;
-  color: var(--rebel-gold) !important;
-}
-
-.accordion-controls .cta-button.color-gold:hover {
-  background: rgba(255, 204, 0, 0.2) !important;
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
-}
-
-.accordion-controls .cta-button.color-green {
-  background: rgba(76, 175, 80, 0.1) !important;
-  border-color: var(--rebel-green) !important;
-  color: var(--rebel-green) !important;
-}
-
-.accordion-controls .cta-button.color-green:hover {
-  background: rgba(76, 175, 80, 0.2) !important;
-  box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
-}
-
-/* Button styles for buttons inside accordion content */
-.accordion-item.color-red .accordion-content .cta-button {
-  background: rgba(255, 51, 102, 0.1) !important;
-  border-color: var(--rebel-red) !important;
-  color: var(--rebel-red) !important;
-}
-
-.accordion-item.color-red .accordion-content .cta-button:hover {
-  background: rgba(255, 51, 102, 0.2) !important;
-  box-shadow: 0 0 15px rgba(255, 51, 102, 0.3);
-}
-
-.accordion-item.color-purple .accordion-content .cta-button {
-  background: rgba(156, 39, 176, 0.1) !important;
-  border-color: var(--rebel-purple) !important;
-  color: var(--rebel-purple) !important;
-}
-
-.accordion-item.color-purple .accordion-content .cta-button:hover {
-  background: rgba(156, 39, 176, 0.2) !important;
-  box-shadow: 0 0 15px rgba(156, 39, 176, 0.3);
-}
-
-.accordion-item.color-blue .accordion-content .cta-button {
-  background: rgba(0, 170, 255, 0.1) !important;
-  border-color: var(--rebel-blue) !important;
-  color: var(--rebel-blue) !important;
-}
-
-.accordion-item.color-blue .accordion-content .cta-button:hover {
-  background: rgba(0, 170, 255, 0.2) !important;
-  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
-}
-
-.accordion-item.color-gold .accordion-content .cta-button {
-  background: rgba(255, 204, 0, 0.1) !important;
-  border-color: var(--rebel-gold) !important;
-  color: var(--rebel-gold) !important;
-}
-
-.accordion-item.color-gold .accordion-content .cta-button:hover {
-  background: rgba(255, 204, 0, 0.2) !important;
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
-}
-
-.accordion-item.color-green .accordion-content .cta-button {
-  background: rgba(76, 175, 80, 0.1) !important;
-  border-color: var(--rebel-green) !important;
-  color: var(--rebel-green) !important;
-}
-
-.accordion-item.color-green .accordion-content .cta-button:hover {
-  background: rgba(76, 175, 80, 0.2) !important;
-  box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
-}
-
-/* Ensure buttons inside accordion content maintain their hover effect */
-.accordion-item .accordion-content .cta-button:hover {
-  transform: translateY(-2px);
-}
-
-/* Special styling for action buttons at the bottom of accordions */
-.accordion-actions .cta-button.color-red {
-  background: rgba(255, 51, 102, 0.1) !important;
-  border-color: var(--rebel-red) !important;
-  color: var(--rebel-red) !important;
-}
-
-.accordion-actions .cta-button.color-red:hover {
-  background: rgba(255, 51, 102, 0.2) !important;
-  box-shadow: 0 0 15px rgba(255, 51, 102, 0.3);
-}
-
-.accordion-actions .cta-button.color-purple {
-  background: rgba(156, 39, 176, 0.1) !important;
-  border-color: var(--rebel-purple) !important;
-  color: var(--rebel-purple) !important;
-}
-
-.accordion-actions .cta-button.color-purple:hover {
-  background: rgba(156, 39, 176, 0.2) !important;
-  box-shadow: 0 0 15px rgba(156, 39, 176, 0.3);
-}
-
-.accordion-actions .cta-button.color-blue {
-  background: rgba(0, 170, 255, 0.1) !important;
-  border-color: var(--rebel-blue) !important;
-  color: var(--rebel-blue) !important;
-}
-
-.accordion-actions .cta-button.color-blue:hover {
-  background: rgba(0, 170, 255, 0.2) !important;
-  box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
-}
-
-.accordion-actions .cta-button.color-gold {
-  background: rgba(255, 204, 0, 0.1) !important;
-  border-color: var(--rebel-gold) !important;
-  color: var(--rebel-gold) !important;
-}
-
-.accordion-actions .cta-button.color-gold:hover {
-  background: rgba(255, 204, 0, 0.2) !important;
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
-}
-
-.accordion-actions .cta-button.color-green {
-  background: rgba(76, 175, 80, 0.1) !important;
-  border-color: var(--rebel-green) !important;
-  color: var(--rebel-green) !important;
-}
-
-.accordion-actions .cta-button.color-green:hover {
-  background: rgba(76, 175, 80, 0.2) !important;
-  box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
-}
-/* Additional color for Team Fund */
-.color-teal { color: #00bcd4 !important; }
-.bg-teal { background: rgba(0, 188, 212, 0.1) !important; }
-.border-teal { border-color: #00bcd4 !important; }
-
-/* Accordion styling for teal */
-.accordion-item.color-teal .accordion-header {
-  background: rgba(0, 188, 212, 0.1) !important;
-  border-color: rgba(0, 188, 212, 0.3) !important;
-  color: #00bcd4 !important;
-}
-
-.accordion-item.color-teal .accordion-header:hover,
-.accordion-item.color-teal .accordion-header.active {
-  background: rgba(0, 188, 212, 0.2) !important;
-  border-color: #00bcd4 !important;
-  color: #00bcd4 !important;
-}
-
-.accordion-item.color-teal .accordion-content {
-  background: rgba(0, 188, 212, 0.05) !important;
-  border-color: rgba(0, 188, 212, 0.2) !important;
-}
-
-.accordion-item.color-teal .accordion-header .accordion-icon {
-  color: #00bcd4 !important;
-}
-
-/* ===== KILL HORIZONTAL SCROLL / SWIPE ===== */
+/* ========== MOBILE OVERFLOW KILLER ========== */
 @media (max-width: 768px) {
   html {
     overflow-x: hidden !important;
@@ -2665,220 +1841,4 @@ a:focus-visible {
     width: 100%;
     max-width: 100%;
   }
-}
-/* ===== MOBILE GRID STACKING (HEADER-SAFE) ===== */
-@media (max-width: 768px) {
-  /* Grids that must stack */
-  .stats-overview,
-  .vesting-grid,
-  .revenue-grid,
-  .faq-grid,
-  .supply-stats,
-  .security-stats,
-  .treasury-grid,
-  .accordion-stats-grid,
-  .progress-details-grid,
-  .unlock-grid,
-  .allocation-breakdown,
-  .dao-stats,
-  .breakdown-grid,
-  .benefits-grid,
-  .cycle-stats,
-  .legend-items,
-  .contract-stats,
-  .allocation-grid,
-  .schedule-grid,
-  .fund-allocation,
-  .use-cases-grid,
-  .takeaways-grid,
-  .related-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Charts and containers */
-  .chart-wrapper {
-    height: 300px !important;
-  }
-
-  .chart-container {
-    padding: 1rem !important;
-  }
-
-  /* Formula — stack the lines */
-  .formula-line {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 0;
-  }
-
-  .formula-number,
-  .formula-label {
-    width: 100%;
-    text-align: left;
-    margin: 0;
-  }
-
-  .formula-total {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* Flex rows → columns */
-  .accordion-controls,
-  .security-actions,
-  .distribution-flow,
-  .cycle-steps {
-    flex-direction: column;
-  }
-
-  .accordion-controls .cta-button,
-  .security-actions .cta-button {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .step-arrow {
-    transform: rotate(90deg);
-  }
-
-  /* Timeline */
-  .timeline-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .timeline-dot {
-    align-self: flex-start;
-  }
-
-  .timeline-dates {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* Status items stack */
-  .status-items {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .status-item {
-    justify-content: center;
-  }
-
-  /* Cycle stats */
-  .cycle-step {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-  }
-
-  .cycle-arrow {
-    margin: 0;
-    transform: rotate(90deg);
-  }
-
-  .cycle-loop {
-    transform: none;
-  }
-
-  /* Accordion hero icon smaller */
-  .accordion-hero-icon {
-    width: 80px;
-    height: 80px;
-    font-size: 2.5rem;
-  }
-
-  .step-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.8rem;
-  }
-
-  /* Vesting cards full width on mobile */
-  .vesting-card.full-width {
-    grid-column: span 1;
-  }
-}
-@media (max-width: 480px) {
-  .vesting-card {
-    padding: 1rem;
-  }
-
-  .vesting-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-  }
-
-  .vesting-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-  }
-
-  .accordion-header {
-    font-size: 0.95rem;
-    padding: 1rem;
-  }
-
-  .accordion-content.active {
-    padding: 1rem !important;
-  }
-
-  .accordion-stat,
-  .contract-stat,
-  .breakdown-item,
-  .use-case,
-  .dao-stat,
-  .security-stat {
-    padding: 1rem;
-  }
-
-  .distribution-flow {
-    gap: 1rem;
-  }
-}
-/* ===== v3.0 — Related card themes ===== */
-
-/* Contests Card (amber) */
-.related-card.contests-card {
-  border-color: #FBBF24 !important;
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.05)) !important;
-}
-.related-card.contests-card .related-icon,
-.related-card.contests-card h3,
-.related-card.contests-card .related-arrow { color: #FBBF24 !important; }
-.related-card.contests-card::before { background: #FBBF24 !important; }
-.related-card.contests-card:hover {
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(251, 191, 36, 0.08)) !important;
-  border-color: #F59E0B !important;
-}
-
-/* Journey Card (gold) */
-.related-card.journey-card {
-  border-color: #E3B87C !important;
-  background: linear-gradient(135deg, rgba(227, 184, 124, 0.1), rgba(227, 184, 124, 0.05)) !important;
-}
-.related-card.journey-card .related-icon,
-.related-card.journey-card h3,
-.related-card.journey-card .related-arrow { color: #E3B87C !important; }
-.related-card.journey-card::before { background: #E3B87C !important; }
-.related-card.journey-card:hover {
-  background: linear-gradient(135deg, rgba(227, 184, 124, 0.15), rgba(227, 184, 124, 0.08)) !important;
-  border-color: #D4A76A !important;
-}
-
-/* Whitepaper Card (deep purple) */
-.related-card.whitepaper-card {
-  border-color: #673AB7 !important;
-  background: linear-gradient(135deg, rgba(103, 58, 183, 0.1), rgba(103, 58, 183, 0.05)) !important;
-}
-.related-card.whitepaper-card .related-icon,
-.related-card.whitepaper-card h3,
-.related-card.whitepaper-card .related-arrow { color: #673AB7 !important; }
-.related-card.whitepaper-card::before { background: #673AB7 !important; }
-.related-card.whitepaper-card:hover {
-  background: linear-gradient(135deg, rgba(103, 58, 183, 0.15), rgba(103, 58, 183, 0.08)) !important;
-  border-color: #5D2E8C !important;
 }
