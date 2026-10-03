@@ -1510,6 +1510,7 @@ header.scrolled {
   .dropdown-content a:hover i { transform: scale(1.2); }
 
   /* Dropdown mobile link colors */
+  .dropdown-content a.nav-governance { color: #FF9800 !important; }
   .dropdown-content a.nav-whitepaper { color: #673AB7 !important; }
   .dropdown-content a.nav-community { color: #2196F3 !important; }
   .dropdown-content a.nav-security-integrity { color: #4CAF50 !important; }
