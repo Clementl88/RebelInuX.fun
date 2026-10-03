@@ -1,15 +1,12 @@
 /**
  * ============================================================
- * REBELINUX INDEX PAGE - MOBILE-FIRST JAVASCRIPT
+ * REBELINUX INDEX PAGE — MOBILE-FIRST JAVASCRIPT
  * Version: 3.0 (Mobile-First • 3 Asset Types)
  * ============================================================
- *
  * 3 Asset Types System:
  *   🪙 Type 1: Creator Coin ($rebelinux) on ZORA
  *   📜 Type 2: Content Coins (Rebel Key + Journey) on ZORA
  *   ⭐ Type 3: Governance + Reward Token ($REBL) on Solana
- *
- * Formula: Hold Type 1 + Type 2 → Earn Type 3 ($REBL)
  *
  * Breakpoints (kept in sync with CSS):
  *   Mobile ..... 0–599px
@@ -27,7 +24,7 @@
   const BP_TABLET = 600;
   const BP_DESKTOP = 992;
 
-  const REBL_CONTRACT = 'F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump';
+  const REBL_CONTRACT      = 'F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump';
   const REBELINUX_CONTRACT = '0xf95beeF6439ec38fA757238Cdec8417ABDA536bd';
 
   // ============================================================
@@ -39,9 +36,8 @@
     if (w < BP_DESKTOP) return 'tablet';
     return 'desktop';
   }
-
-  function isMobile() { return getViewport() === 'mobile'; }
-  function isTablet() { return getViewport() === 'tablet'; }
+  function isMobile()  { return getViewport() === 'mobile'; }
+  function isTablet()  { return getViewport() === 'tablet'; }
   function isDesktop() { return getViewport() === 'desktop'; }
 
   function prefersReducedMotion() {
@@ -81,7 +77,6 @@
       initLazyLoading,
       initPerformanceObservers,
       initWalletDetection,
-      initChainAnimation,
       initValueCardEffects,
       initAssetTypesDisplay,
       initFormulaAnimation
@@ -118,7 +113,6 @@
         if (now !== lastViewport) {
           console.log(`📐 Viewport changed: ${lastViewport} → ${now}`);
           if (now === 'mobile') {
-            // Remove particles on mobile
             document.querySelectorAll('.particle').forEach(p => p.remove());
             window.particles = [];
           } else if (lastViewport === 'mobile') {
@@ -139,8 +133,7 @@
     const loader = document.getElementById('loader');
     if (!loader) return;
 
-    const isMobileView = isMobile();
-    const minTime = isMobileView ? 900 : 1500;
+    const minTime = isMobile() ? 900 : 1500;
     const start = performance.now();
     const progressBar = loader.querySelector('.progress-bar');
 
@@ -182,7 +175,6 @@
     const els = document.querySelectorAll(selector);
     if (!els.length) return;
 
-    // Reduced motion — show immediately
     if (prefersReducedMotion()) {
       els.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
       return;
@@ -193,14 +185,9 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (!entry.isIntersecting) return;
-
         const target = entry.target;
         const delay = isMobileView ? Math.min(index * 40, 200) : index * 60;
-
-        setTimeout(() => {
-          target.classList.add('fade-in');
-        }, delay);
-
+        setTimeout(() => target.classList.add('fade-in'), delay);
         observer.unobserve(target);
       });
     }, {
@@ -223,7 +210,6 @@
         mouseX = (e.clientX - window.innerWidth / 2) / 30;
         mouseY = (e.clientY - window.innerHeight / 2) / 30;
       };
-
       window.addEventListener('mousemove', onMouseMove);
       window.mousemoveListener = onMouseMove;
 
@@ -263,7 +249,9 @@
   // STATS COUNTERS
   // ============================================================
   function initStatsCounters() {
-    const statValues = document.querySelectorAll('.stat-value[data-target], .stat-number[data-target]');
+    const statValues = document.querySelectorAll(
+      '.stat-value[data-target], .stat-number[data-target]'
+    );
     if (!statValues.length) return;
 
     const observer = new IntersectionObserver((entries) => {
@@ -352,7 +340,6 @@
     e.preventDefault();
     const button = e.currentTarget;
 
-    // Copy contract button (official $REBL section)
     if (button.classList.contains('copy-contract-btn')) {
       copyToClipboard(REBL_CONTRACT.trim())
         .then(() => {
@@ -366,7 +353,6 @@
       return;
     }
 
-    // Inline copy inside .contract-address
     const wrap = button.closest('.contract-address');
     if (!wrap) return;
     const codeEl = wrap.querySelector('code');
@@ -458,7 +444,6 @@
       info: 'fa-info-circle',
       warning: 'fa-exclamation-triangle'
     };
-
     const colors = {
       success: 'rgba(76, 175, 80, 0.95)',
       error: 'rgba(244, 67, 54, 0.95)',
@@ -475,7 +460,6 @@
       top: calc(80px + env(safe-area-inset-top, 0px));
       left: 50%;
       transform: translateX(-50%);
-      right: auto;
       background: ${colors[type] || colors.info};
       color: white;
       padding: 14px 20px;
@@ -489,7 +473,6 @@
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255,255,255,0.15);
       max-width: min(92vw, 380px);
-      min-width: 0;
       pointer-events: none;
       font-size: 0.9rem;
       line-height: 1.4;
@@ -598,6 +581,7 @@
     const r = Math.floor(Math.random() * 60 + 195);
     const g = Math.floor(Math.random() * 60 + 195);
     const opacity = Math.random() * 0.25 + 0.1;
+    const drift = (Math.random() > 0.5 ? '' : '-') + Math.floor(Math.random() * 40 + 10) + 'px';
 
     p.style.cssText = `
       position: absolute;
@@ -611,15 +595,14 @@
       pointer-events: none;
     `;
 
-    // Ensure keyframes exist
     if (!document.querySelector('#particle-kf')) {
       const s = document.createElement('style');
       s.id = 'particle-kf';
       s.textContent = `
         @keyframes floatParticle {
-          0%   { transform: translate(0, 0);           opacity: 0; }
+          0%   { transform: translate(0, 0); opacity: 0; }
           20%  { opacity: 1; }
-          100% { transform: translate(${Math.random() > 0.5 ? '' : '-'}40px, -100vh); opacity: 0; }
+          100% { transform: translate(${drift}, -100vh); opacity: 0; }
         }
       `;
       document.head.appendChild(s);
@@ -699,7 +682,6 @@
   }
 
   function optimizeTokenEcosystemForMobile() {
-    // CSS handles all layout. Only shorten addresses here.
     document.querySelectorAll('.contract-short').forEach(code => {
       const full = code.getAttribute('data-full') || code.textContent;
       if (full && full.length > 20) code.textContent = shorten(full);
@@ -708,7 +690,7 @@
 
   function adjustTouchTargets() {
     const targets = document.querySelectorAll(
-      '.action-btn, .copy-btn, .view-btn, .wallet-btn, .cta-button, .learn-link'
+      '.action-btn, .copy-btn, .view-btn, .wallet-btn, .cta-button, .step-btn, .step-btn-mini, .learn-link'
     );
     targets.forEach(el => {
       if (el.offsetHeight && el.offsetHeight < 44) el.style.minHeight = '44px';
@@ -722,7 +704,6 @@
   function initTouchInteractions() {
     if (!('ontouchstart' in window)) return;
 
-    // Long-press to copy contract addresses
     document.querySelectorAll('.contract-address code').forEach(code => {
       let pressTimer = null;
 
@@ -737,7 +718,6 @@
           setTimeout(() => { code.style.backgroundColor = ''; }, 400);
         }, 700);
       };
-
       const cancel = () => { if (pressTimer) clearTimeout(pressTimer); };
 
       code.addEventListener('touchstart', start, { passive: true });
@@ -822,7 +802,6 @@
     });
   }
 
-  // Add token to wallet (SPL token watchAsset)
   function addToWallet(address) {
     if (!address) return;
     const wallet = detectWallet();
@@ -832,11 +811,7 @@
         method: 'wallet_watchAsset',
         params: {
           type: 'SPL',
-          options: {
-            address: address,
-            symbol: 'REBL',
-            decimals: 9
-          }
+          options: { address, symbol: 'REBL', decimals: 9 }
         }
       }).then(() => {
         showNotification('✅ $REBL added to Phantom', 'success');
@@ -851,15 +826,7 @@
   }
 
   // ============================================================
-  // CHAIN ANIMATION
-  // ============================================================
-  function initChainAnimation() {
-    // CSS now handles the moving coin on all viewports.
-    // Nothing to do JS-side; keep the function for API compat.
-  }
-
-  // ============================================================
-  // VALUE CARD EFFECTS (mouse spotlight — desktop only)
+  // VALUE CARD EFFECTS (desktop only)
   // ============================================================
   function initValueCardEffects() {
     if (isMobile()) return;
@@ -877,12 +844,10 @@
   // ASSET TYPES DISPLAY
   // ============================================================
   function initAssetTypesDisplay() {
-    // Update "triple-asset" copy → "3 Asset Types"
     document.querySelectorAll('.triple-asset-text, .triple-asset-label').forEach(el => {
       el.textContent = el.textContent.replace(/triple-asset/gi, '3 Asset Types');
     });
 
-    // Auto-badge any .asset-card missing a badge
     document.querySelectorAll('.asset-card').forEach((card, i) => {
       if (card.querySelector('.asset-type-badge, .asset-badge')) return;
       const badge = document.createElement('div');
@@ -993,26 +958,27 @@
   // PUBLIC API
   // ============================================================
   window.RebelInuX = {
-    // public methods
     copyToClipboard,
     addToWallet,
     showNotification,
     toggleContractView,
     copyContractAddress,
     detectWallet,
-
-    // viewport helpers
     getViewport,
     isMobile,
     isTablet,
     isDesktop,
-
-    // constants
     REBL_CONTRACT,
     REBELINUX_CONTRACT,
-
     version: '3.0'
   };
+
+  // Expose as globals (used by inline onclick attributes in HTML)
+  window.copyToClipboard     = copyToClipboard;
+  window.toggleContractView  = toggleContractView;
+  window.addToWallet         = addToWallet;
+  window.copyContractAddress = copyContractAddress;
+  window.showNotification    = showNotification;
 
   console.log('🪙 RebelInuX Mobile-First JS loaded (v3.0)');
 })();
