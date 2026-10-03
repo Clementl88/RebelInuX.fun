@@ -481,39 +481,74 @@ body.nav-open {
   }
 
   /* Nav color variants — desktop hover */
+  /* ---------- Nav pill colors (hover) ---------- */
   #nav-desktop a.nav-journey:hover {
     background: linear-gradient(135deg,
-      rgba(227, 184, 124, 0.2),
-      rgba(227, 184, 124, 0.1));
-    color: #E3B87C;
+      rgba(227, 184, 124, 0.25),
+      rgba(227, 184, 124, 0.12));
+    color: #F0CA8A;
+    border-color: #E3B87C;
+    box-shadow: 0 4px 15px rgba(227, 184, 124, 0.25);
+    transform: translateY(-2px);
   }
 
   #nav-desktop a.nav-contests:hover {
     background: linear-gradient(135deg,
-      rgba(251, 191, 36, 0.2),
-      rgba(251, 191, 36, 0.1));
-    color: #FBBF24;
+      rgba(251, 191, 36, 0.25),
+      rgba(251, 191, 36, 0.12));
+    color: #FCD34D;
+    border-color: #FBBF24;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.25);
+    transform: translateY(-2px);
   }
 
   #nav-desktop a.nav-governance:hover {
     background: linear-gradient(135deg,
-      rgba(255, 152, 0, 0.2),
-      rgba(255, 152, 0, 0.1));
-    color: #FF9800;
+      rgba(255, 152, 0, 0.25),
+      rgba(255, 152, 0, 0.12));
+    color: #FFB74D;
+    border-color: #FF9800;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.25);
+    transform: translateY(-2px);
   }
 
   #nav-desktop a.nav-trade:hover {
     background: linear-gradient(135deg,
-      rgba(255, 107, 53, 0.2),
-      rgba(255, 107, 53, 0.1));
-    color: #FF6B35;
+      rgba(255, 107, 53, 0.25),
+      rgba(255, 107, 53, 0.12));
+    color: #FF8A65;
+    border-color: #FF6B35;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.25);
+    transform: translateY(-2px);
   }
 
   #nav-desktop a.nav-tokenomics:hover {
     background: linear-gradient(135deg,
-      rgba(0, 188, 212, 0.2),
-      rgba(0, 188, 212, 0.1));
-    color: #00BCD4;
+      rgba(0, 188, 212, 0.25),
+      rgba(0, 188, 212, 0.12));
+    color: #4DD0E1;
+    border-color: #00BCD4;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.25);
+    transform: translateY(-2px);
+  }
+
+  #nav-desktop .dropbtn:hover {
+    background: linear-gradient(135deg,
+      rgba(255, 215, 0, 0.2),
+      rgba(255, 215, 0, 0.1));
+    color: #FFEB3B;
+    border-color: #FFD700;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.25);
+    transform: translateY(-2px);
+  }
+
+  /* More button (dropdown trigger) keeps its gold color */
+  #nav-desktop .dropbtn {
+    color: #FFD700;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg,
+      rgba(255, 215, 0, 0.1),
+      rgba(255, 152, 0, 0.05));
   }
 
   #nav-desktop a.active {
