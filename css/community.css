@@ -1084,3 +1084,60 @@
     box-sizing: border-box !important;
   }
 }
+/* ============================================================
+   v3.0 — Related card themes
+   ============================================================ */
+
+/* The Journey Card — Gold (reuses .artwork-card class) */
+.related-card.artwork-card {
+  border-color: #E3B87C !important;
+  background: linear-gradient(135deg,
+    rgba(227, 184, 124, 0.1),
+    rgba(227, 184, 124, 0.05)) !important;
+}
+.related-card.artwork-card .related-icon,
+.related-card.artwork-card h3,
+.related-card.artwork-card .related-arrow { color: #E3B87C !important; }
+.related-card.artwork-card::before { background: #E3B87C !important; }
+.related-card.artwork-card:hover {
+  background: linear-gradient(135deg,
+    rgba(227, 184, 124, 0.15),
+    rgba(227, 184, 124, 0.08)) !important;
+  border-color: #D4A76A !important;
+}
+
+/* Contests Card — Amber (reuses .governance-card class) */
+.related-card.governance-card {
+  border-color: #FBBF24 !important;
+  background: linear-gradient(135deg,
+    rgba(251, 191, 36, 0.1),
+    rgba(251, 191, 36, 0.05)) !important;
+}
+.related-card.governance-card .related-icon,
+.related-card.governance-card h3,
+.related-card.governance-card .related-arrow { color: #FBBF24 !important; }
+.related-card.governance-card::before { background: #FBBF24 !important; }
+.related-card.governance-card:hover {
+  background: linear-gradient(135deg,
+    rgba(251, 191, 36, 0.15),
+    rgba(251, 191, 36, 0.08)) !important;
+  border-color: #F59E0B !important;
+}
+
+/* Governance Hub Card — Orange (reuses .roadmap-card class) */
+.related-card.roadmap-card {
+  border-color: #FF9800 !important;
+  background: linear-gradient(135deg,
+    rgba(255, 152, 0, 0.1),
+    rgba(255, 152, 0, 0.05)) !important;
+}
+.related-card.roadmap-card .related-icon,
+.related-card.roadmap-card h3,
+.related-card.roadmap-card .related-arrow { color: #FF9800 !important; }
+.related-card.roadmap-card::before { background: #FF9800 !important; }
+.related-card.roadmap-card:hover {
+  background: linear-gradient(135deg,
+    rgba(255, 152, 0, 0.15),
+    rgba(255, 152, 0, 0.08)) !important;
+  border-color: #E67E22 !important;
+}
