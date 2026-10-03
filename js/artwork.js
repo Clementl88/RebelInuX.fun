@@ -1,13 +1,15 @@
-// artwork.js - Enhanced Artwork Gallery functionality
+// js/artwork.js — Enhanced Artwork Gallery v3.0
+// Aligned with RebelInuX Whitepaper v3.0 (participation model, no epoch/3-asset mechanics)
 
-// ===== INITIALIZATION - Wait for components to be ready =====
+// ============================================================================
+// INITIALIZATION — Wait for header/footer components to load
+// ============================================================================
 function waitForComponents(callback, maxAttempts = 20) {
   let attempts = 0;
-  
-  const checkInterval = setInterval(function() {
+
+  const checkInterval = setInterval(function () {
     attempts++;
-    
-    // Check if components are loaded AND common.js functions are available
+
     if (window.componentsLoaded && typeof window.setupMobileNavigation === 'function') {
       clearInterval(checkInterval);
       console.log('✅ Components ready, initializing artwork page');
@@ -15,7 +17,6 @@ function waitForComponents(callback, maxAttempts = 20) {
     } else if (attempts >= maxAttempts) {
       clearInterval(checkInterval);
       console.warn('⚠️ Components not ready after timeout, forcing initialization');
-      // Force initialization anyway
       if (typeof window.initializeComponents === 'function') {
         window.initializeComponents();
       }
@@ -26,91 +27,55 @@ function waitForComponents(callback, maxAttempts = 20) {
   }, 100);
 }
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   console.log('📄 Artwork page DOM ready');
-  waitForComponents(function() {
+  waitForComponents(function () {
     setTimeout(initArtworkPage, 200);
   });
 });
 
-// ===== MAIN INITIALIZATION =====
+// ============================================================================
+// MAIN INITIALIZATION
+// ============================================================================
 function initArtworkPage() {
-  console.log('🚀 Initializing Enhanced Artwork Gallery page');
-  
-  // ===== DELETED: All mobile navigation code =====
-  // REMOVED: window.setupMobileNavigation() - This is handled by common.js
-  // REMOVED: window.setupDropdowns() - This is handled by common.js
-  
-  // Initialize artwork data
-  initArtworkData();
-  
-  // Initialize AOS animations with delay
+  console.log('🚀 Initializing Enhanced Artwork Gallery page (v3.0)');
+
   initAOSWithDelay();
-  
-  // Initialize gallery interactions
   initGalleryInteractions();
-  
-  // Initialize NFT interactions
-  initNFTInteractions();
-  
-  // Initialize artwork modal
+  initFiltering();
   initArtworkModal();
-  
-  // Initialize slider animation
-  initArtworkSlider();
-  
-  // Initialize scroll animations
+  initFAQAccordion();
   initScrollAnimations();
-  
-  // Start periodic updates
-  setInterval(updateArtworkStats, 60000);
+  trackPageVisit();
 }
 
-// ========== AOS ANIMATIONS ==========
+// ============================================================================
+// AOS ANIMATIONS
+// ============================================================================
 function initAOSWithDelay() {
-  // Check if AOS is available
   if (typeof AOS !== 'undefined') {
-    // Delay to ensure menu is fully initialized
-    setTimeout(function() {
+    setTimeout(function () {
       AOS.init({
         duration: 800,
         once: true,
         offset: 100,
         disable: window.innerWidth < 768 ? 'mobile' : false
       });
-      
-      // Refresh AOS on window resize
-      window.addEventListener('resize', function() {
-        AOS.refresh();
-      });
-      
-      console.log('✅ AOS initialized with delay');
+      window.addEventListener('resize', function () { AOS.refresh(); });
+      console.log('✅ AOS initialized');
     }, 200);
   } else {
-    // If AOS not loaded yet, wait for it
     console.log('⏳ Waiting for AOS to load...');
     let attempts = 0;
     const maxAttempts = 10;
-    
-    const checkAOS = setInterval(function() {
+
+    const checkAOS = setInterval(function () {
       attempts++;
       if (typeof AOS !== 'undefined') {
         clearInterval(checkAOS);
-        setTimeout(function() {
-          AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100,
-            disable: window.innerWidth < 768 ? 'mobile' : false
-          });
-          
-          window.addEventListener('resize', function() {
-            AOS.refresh();
-          });
-          
-          console.log('✅ AOS initialized after loading');
-        }, 200);
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        window.addEventListener('resize', function () { AOS.refresh(); });
+        console.log('✅ AOS initialized after loading');
       } else if (attempts >= maxAttempts) {
         clearInterval(checkAOS);
         console.warn('⚠️ AOS failed to load');
@@ -119,219 +84,43 @@ function initAOSWithDelay() {
   }
 }
 
-// ========== FAQ ACCORDION FUNCTIONALITY ==========
-function initFAQAccordion() {
-  console.log('📋 Initializing FAQ accordion');
-  
-  const faqItems = document.querySelectorAll('#faq .faq-item');
-  
-  faqItems.forEach(item => {
-    // Remove any existing listeners
-    item.removeEventListener('click', handleFAQClick);
-    // Add new listener with proper event handling
-    item.addEventListener('click', handleFAQClick);
-  });
-  
-  // Prevent chevron clicks from toggling twice
-  document.querySelectorAll('.faq-chevron').forEach(chevron => {
-    chevron.addEventListener('click', function(e) {
-      e.stopPropagation();
-    });
-  });
-  
-  console.log(`✅ FAQ accordion initialized with ${faqItems.length} items`);
-}
-
-function handleFAQClick(e) {
-  // Check if click is on or inside a link/button
-  const isLink = e.target.tagName === 'A' || 
-                e.target.closest('a') || 
-                e.target.tagName === 'BUTTON' ||
-                e.target.closest('.cta-button') ||
-                e.target.closest('button');
-  
-  if (isLink) {
-    e.stopPropagation(); // Prevent FAQ from toggling
-    return; // Let the link open normally
-  }
-  
-  // Toggle FAQ for non-link clicks
-  this.classList.toggle('active');
-}
-
-// ========== ARTWORK DATA FUNCTIONS ==========
-function initArtworkData() {
-  console.log('📊 Initializing artwork data');
-  
-  // Fetch and update artwork stats
-  updateArtworkStats();
-  
-  // Initialize filter functionality
-  initFiltering();
-  
-  // Initialize artwork likes
-  initArtworkLikes();
-  
-  // Initialize NFT data
-  initNFTData();
-  
-  // Initialize FAQ accordion
-  initFAQAccordion();
-  
-  // Track page visit
-  trackPageVisit();
-}
-
-async function updateArtworkStats() {
-  try {
-    // Update stat counters with corrected values
-    animateCounter('totalArtworks', 78);
-    animateCounter('contestWinners', 18);
-    animateCounter('totalArtists', 32);
-    document.getElementById('nftCollections').textContent = '15+';
-    
-    // Update last updated time
-    updateLastUpdated();
-    
-  } catch (error) {
-    console.error('Error updating artwork stats:', error);
-  }
-}
-
-function initArtworkLikes() {
-  // Initialize like counts from localStorage
-  document.querySelectorAll('.like-btn').forEach(btn => {
-    const artworkId = btn.closest('.artwork-card, .contest-card, .nft-card')?.getAttribute('data-id');
-    if (!artworkId) return;
-    
-    const savedLikes = localStorage.getItem(`artwork_likes_${artworkId}`);
-    if (savedLikes) {
-      const likeCount = btn.querySelector('.like-count');
-      if (likeCount) {
-        likeCount.textContent = savedLikes;
-      }
-      
-      // Check if liked
-      const isLiked = localStorage.getItem(`artwork_liked_${artworkId}`) === 'true';
-      if (isLiked) {
-        btn.classList.add('liked');
-        btn.querySelector('i').className = 'fas fa-heart';
-      }
-    }
-  });
-}
-
-function initNFTData() {
-  // Initialize like counts from localStorage for NFTs
-  document.querySelectorAll('.nft-card').forEach(card => {
-    const nftId = card.dataset.category;
-    if (!nftId) return;
-    
-    const savedLikes = localStorage.getItem(`nft_likes_${nftId}`);
-    if (savedLikes) {
-      const likeCount = card.querySelector('.like-count');
-      if (likeCount) {
-        likeCount.textContent = savedLikes;
-      }
-      
-      // Check if liked
-      const isLiked = localStorage.getItem(`nft_liked_${nftId}`) === 'true';
-      if (isLiked) {
-        const likeBtn = card.querySelector('.like-btn');
-        if (likeBtn) {
-          likeBtn.classList.add('liked');
-          likeBtn.querySelector('i').className = 'fas fa-heart';
-        }
-      }
-    }
-  });
-}
-
-function animateCounter(elementId, target) {
-  const element = document.getElementById(elementId);
-  if (!element) return;
-  
-  const current = parseInt(element.textContent.replace(/[^\d]/g, '')) || 0;
-  if (current === target) return;
-  
-  const duration = 1000;
-  const increment = (target - current) / (duration / 16);
-  
-  let currentValue = current;
-  const timer = setInterval(() => {
-    currentValue += increment;
-    if ((increment > 0 && currentValue >= target) || (increment < 0 && currentValue <= target)) {
-      element.textContent = target + '+';
-      clearInterval(timer);
-    } else {
-      element.textContent = Math.floor(currentValue) + '+';
-    }
-  }, 16);
-}
-
-function updateLastUpdated() {
-  const now = new Date();
-  const timeString = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-  
-  const timestampElement = document.querySelector('.update-time');
-  if (timestampElement) {
-    timestampElement.textContent = `Last Updated: ${timeString}`;
-  }
-}
-
-function trackPageVisit() {
-  const visitCount = parseInt(localStorage.getItem('artwork_visits') || '0');
-  localStorage.setItem('artwork_visits', (visitCount + 1).toString());
-  
-  if (visitCount === 0) {
-    setTimeout(() => {
-      showToast('🎨 Welcome to the RebelInuX Art Gallery! Explore NFTs exclusively on ZORA.', 'info', 5000);
-    }, 2000);
-  }
-}
-
-// ========== GALLERY INTERACTIONS ==========
+// ============================================================================
+// GALLERY NAVIGATION
+// ============================================================================
 function initGalleryInteractions() {
-  // Category navigation
   const categoryBtns = document.querySelectorAll('.category-btn');
   categoryBtns.forEach(btn => {
-    btn.addEventListener('click', function(e) {
+    btn.addEventListener('click', function (e) {
       e.preventDefault();
-      
-      // Update active state
+
       categoryBtns.forEach(b => b.classList.remove('active'));
       this.classList.add('active');
-      
-      // Scroll to section
+
       const targetId = this.getAttribute('href');
       const targetSection = document.querySelector(targetId);
       if (targetSection) {
-        targetSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   });
-  
-  // Filter functionality
-  initFiltering();
 }
 
+// ============================================================================
+// ARTWORK FILTERING (Contest Winners / Featured / Video)
+// ============================================================================
 function initFiltering() {
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const artworkCards = document.querySelectorAll('.artwork-card');
-  
-  // Artwork filtering
+  const artworkCards = document.querySelectorAll('#artworkGallery .artwork-card');
+
+  if (!filterBtns.length || !artworkCards.length) return;
+
   filterBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      // Update active state
+    btn.addEventListener('click', function () {
       filterBtns.forEach(b => b.classList.remove('active'));
       this.classList.add('active');
-      
-      // Filter artworks
+
       const filter = this.dataset.filter;
-      
+
       artworkCards.forEach(card => {
         const category = card.dataset.category;
         if (filter === 'all' || category === filter) {
@@ -352,66 +141,119 @@ function initFiltering() {
   });
 }
 
-// ========== ARTWORK MODAL ==========
+// ============================================================================
+// FAQ ACCORDION
+// ============================================================================
+function initFAQAccordion() {
+  console.log('📋 Initializing FAQ accordion');
+
+  const faqItems = document.querySelectorAll('#faq .faq-item');
+  if (!faqItems.length) return;
+
+  faqItems.forEach(item => {
+    item.removeEventListener('click', handleFAQClick);
+    item.addEventListener('click', handleFAQClick);
+  });
+
+  document.querySelectorAll('.faq-chevron').forEach(chevron => {
+    chevron.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+  });
+
+  console.log(`✅ FAQ accordion initialized with ${faqItems.length} items`);
+}
+
+function handleFAQClick(e) {
+  const isLink =
+    e.target.tagName === 'A' ||
+    e.target.closest('a') ||
+    e.target.tagName === 'BUTTON' ||
+    e.target.closest('.cta-button') ||
+    e.target.closest('button');
+
+  if (isLink) {
+    e.stopPropagation();
+    return;
+  }
+
+  this.classList.toggle('active');
+}
+
+// ============================================================================
+// ARTWORK MODAL (View Details lightbox)
+// ============================================================================
 function initArtworkModal() {
   const modal = document.getElementById('artworkModal');
   const modalClose = document.getElementById('modalClose');
   const viewButtons = document.querySelectorAll('.view-artwork');
-  
-  if (!modal || !modalClose) return;
-  
-  // View artwork buttons
+
+  // If modal doesn't exist in HTML, wire up a lightweight fallback
+  if (!modal) {
+    viewButtons.forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        const link = this.getAttribute('data-link');
+        if (link) {
+          window.open(link, '_blank', 'noopener,noreferrer');
+        }
+      });
+    });
+    return;
+  }
+
   viewButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
+    button.addEventListener('click', function (e) {
       e.preventDefault();
-      
+
       const image = this.getAttribute('data-image');
       const title = this.getAttribute('data-title');
       const artist = this.getAttribute('data-artist');
       const description = this.getAttribute('data-description');
       const link = this.getAttribute('data-link');
-      
-      // Set modal content
-      document.getElementById('modalImage').src = image;
-      document.getElementById('modalImage').alt = title;
-      document.getElementById('modalTitle').textContent = title;
-      
-      const artistInitial = artist ? artist.charAt(0) : 'A';
-      document.getElementById('modalArtist').innerHTML = `
-        <div class="artist-info">
-          <div class="artist-avatar">${artistInitial}</div>
-          <span>by <a href="https://x.com/${artist?.replace('@', '').split(' ')[0] || 'rebelinux'}" class="artist-link">${artist || 'RebelInuX'}</a></span>
-        </div>
-      `;
-      
-      document.getElementById('modalDescription').textContent = description || 'Award-winning RebelInuX artwork';
-      document.getElementById('modalLink').href = link || 'https://zora.co/@rebelinux';
-      
-      // Show modal
+
+      const imgEl = document.getElementById('modalImage');
+      const titleEl = document.getElementById('modalTitle');
+      const artistEl = document.getElementById('modalArtist');
+      const descEl = document.getElementById('modalDescription');
+      const linkEl = document.getElementById('modalLink');
+
+      if (imgEl) { imgEl.src = image; imgEl.alt = title; }
+      if (titleEl) titleEl.textContent = title;
+      if (descEl) descEl.textContent = description || 'Award-winning RebelInuX artwork';
+      if (linkEl) linkEl.href = link || 'https://zora.co/@rebelinux';
+
+      if (artistEl) {
+        const handle = (artist || '@rebelinux').replace('@', '').split(' ')[0];
+        const initial = handle.charAt(0).toUpperCase();
+        artistEl.innerHTML = `
+          <div class="artist-info">
+            <div class="artist-avatar">${initial}</div>
+            <span>by <a href="https://x.com/${handle}" target="_blank" rel="noopener noreferrer" class="artist-link">${artist || '@rebelinux'}</a></span>
+          </div>
+        `;
+      }
+
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
-      
-      // Track modal view
-      trackArtworkView(title);
     });
   });
-  
-  // Close modal
-  modalClose.addEventListener('click', function() {
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  });
-  
-  // Close modal when clicking outside
-  modal.addEventListener('click', function(e) {
+
+  if (modalClose) {
+    modalClose.addEventListener('click', function () {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+  }
+
+  modal.addEventListener('click', function (e) {
     if (e.target === modal) {
       modal.classList.remove('active');
       document.body.style.overflow = 'auto';
     }
   });
-  
-  // Close modal with escape key
-  document.addEventListener('keydown', function(e) {
+
+  document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
       modal.classList.remove('active');
       document.body.style.overflow = 'auto';
@@ -419,155 +261,14 @@ function initArtworkModal() {
   });
 }
 
-function trackArtworkView(title) {
-  const views = parseInt(localStorage.getItem(`artwork_views_${title}`) || '0');
-  localStorage.setItem(`artwork_views_${title}`, (views + 1).toString());
-  
-  // Send analytics event
-  console.log(`Artwork viewed: ${title}`);
-}
-
-// ========== ARTWORK SLIDER ==========
-function initArtworkSlider() {
-  const sliderContainer = document.querySelector('.slider-container');
-  if (!sliderContainer) return;
-  
-  // Pause animation on hover
-  const slider = document.querySelector('.artwork-slider');
-  if (slider) {
-    slider.addEventListener('mouseenter', function() {
-      sliderContainer.style.animationPlayState = 'paused';
-    });
-    
-    slider.addEventListener('mouseleave', function() {
-      sliderContainer.style.animationPlayState = 'running';
-    });
-  }
-  
-  // Reset animation periodically to create infinite loop effect
-  setInterval(() => {
-    sliderContainer.style.animation = 'none';
-    setTimeout(() => {
-      sliderContainer.style.animation = 'slide 30s linear infinite';
-    }, 10);
-  }, 30000);
-}
-
-// ========== NFT INTERACTIONS ==========
-function initNFTInteractions() {
-  // View button functionality for NFTs
-  document.querySelectorAll('.nft-card .view-btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const nftCard = this.closest('.nft-card');
-      const nftId = Array.from(nftCard.parentElement?.children || []).indexOf(nftCard) + 1;
-      viewNftDetails(nftId);
-    });
-  });
-}
-
-function viewNftDetails(nftId) {
-  const nftData = {
-    1: {
-      name: "Rebel King #001",
-      rarity: "Legendary",
-      description: "The first and most powerful RebelInuX character in the collection.",
-      attributes: ["1 of 10", "98% burned", "Royalty: 5%", "Blockchain: Base"],
-      platform: "ZORA",
-      link: "https://zora.co/@rebelinux"
-    }
-  };
-  
-  const nft = nftData[nftId] || nftData[1];
-  
-  showToast(`Viewing details for: ${nft.name}`, 'info');
-}
-
-// ========== SUBMISSION FUNCTIONALITY ==========
-function openSubmissionForm() {
-  showToast('Opening community art submission form...', 'info');
-  
-  setTimeout(() => {
-    const submissionInfo = `
-      Community Art Submission:
-      
-      To submit your RebelInuX artwork:
-      
-      1. Join our Telegram community
-      2. Post your artwork in the community chat
-      3. Use hashtag #RebelArt
-      4. Include your wallet address for potential rewards
-      5. Selected artwork will be featured here!
-      
-      Requirements:
-      - Must be original RebelInuX-themed art
-      - No offensive or inappropriate content
-      - Include your community username
-      - By submitting, you grant display rights to RebelInuX
-      
-      Rewards for selected artwork:
-      - 100,000 $REBL tokens
-      - Featured in community gallery
-      - Special role in community
-      - May be minted as official NFT on ZORA
-    `;
-    
-    if (confirm('Submit your RebelInuX artwork?\n\n' + submissionInfo)) {
-      window.open('https://t.me/RebelInuX_Official', '_blank');
-      showToast('Opening Telegram community...', 'info');
-    }
-  }, 500);
-}
-
-function downloadAsset(assetPath) {
-  // Extract filename from path
-  const fileName = assetPath.split('/').pop();
-  const fileType = fileName.split('.').pop().toUpperCase();
-  
-  showToast(`Downloading ${fileName}...`, 'info');
-  
-  // Create a temporary download link
-  const tempLink = document.createElement('a');
-  tempLink.href = assetPath;
-  tempLink.download = fileName;
-  tempLink.style.display = 'none';
-  
-  document.body.appendChild(tempLink);
-  tempLink.click();
-  document.body.removeChild(tempLink);
-  
-  // Show success message
-  setTimeout(() => {
-    showToast(`${fileName} downloaded successfully!`, 'success');
-    
-    // Track downloads in analytics
-    trackAssetDownload(fileName);
-  }, 100);
-}
-
-function trackAssetDownload(fileName) {
-  const downloads = parseInt(localStorage.getItem(`asset_downloads`)) || 0;
-  localStorage.setItem('asset_downloads', (downloads + 1).toString());
-  
-  console.log(`Asset downloaded: ${fileName}, Total downloads: ${downloads + 1}`);
-  
-  // Show designer credit toast on first download
-  const hasSeenCredit = localStorage.getItem('seen_designer_credit');
-  if (!hasSeenCredit && (fileName.includes('Logo') || fileName.includes('logo'))) {
-    setTimeout(() => {
-      showToast('🎨 Logo designed by Masum B - Professional Graphic Designer', 'info', 5000);
-      localStorage.setItem('seen_designer_credit', 'true');
-    }, 1500);
-  }
-}
-
-// ========== ANIMATION FUNCTIONS ==========
+// ============================================================================
+// SCROLL ANIMATIONS
+// ============================================================================
 function initScrollAnimations() {
   const animatedElements = document.querySelectorAll(
-    '.artwork-card, .contest-card, .nft-card, .utility-card, .faq-item, .related-card, .info-card, .brand-card, .guideline, .benefit-card'
+    '.artwork-card, .faq-item, .related-card, .brand-card, .guideline, .benefit-card, .cross-link-card'
   );
-  
-  // Use Intersection Observer for better performance
+
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -577,57 +278,49 @@ function initScrollAnimations() {
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    });
-    
+    }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
     animatedElements.forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
       observer.observe(el);
     });
-  } else {
-    // Fallback for older browsers
-    window.addEventListener('scroll', animateElements);
-    animateElements(); // Initial check
   }
 }
 
-function animateElements() {
-  const animatedElements = document.querySelectorAll(
-    '.artwork-card, .contest-card, .nft-card, .utility-card, .faq-item, .related-card, .info-card, .brand-card, .guideline, .benefit-card'
-  );
-  
-  animatedElements.forEach((el, index) => {
-    const rect = el.getBoundingClientRect();
-    const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 0;
-    
-    if (isVisible) {
+// ============================================================================
+// PAGE VISIT TRACKING (localStorage only — no external calls)
+// ============================================================================
+function trackPageVisit() {
+  try {
+    const visitCount = parseInt(localStorage.getItem('artwork_visits') || '0', 10);
+    localStorage.setItem('artwork_visits', String(visitCount + 1));
+
+    if (visitCount === 0) {
       setTimeout(() => {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-      }, index * 50);
+        showToast('🎨 Welcome to the RebelInuX Art Gallery!', 'info', 5000);
+      }, 2000);
     }
-  });
+  } catch (err) {
+    // localStorage may be disabled — fail silently
+  }
 }
 
-// ========== TOAST NOTIFICATION ==========
+// ============================================================================
+// TOAST NOTIFICATIONS
+// ============================================================================
 function showToast(message, type = 'info', duration = 3000) {
-  // Remove existing toasts
   const existingToast = document.querySelector('.toast-notification');
   if (existingToast) existingToast.remove();
-  
-  // Create toast
+
   const toast = document.createElement('div');
   toast.className = `toast-notification toast-${type}`;
   toast.innerHTML = `
     <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-triangle' : 'info-circle'}"></i>
     <span>${message}</span>
   `;
-  
-  // Style toast
+
   toast.style.cssText = `
     position: fixed;
     bottom: 20px;
@@ -651,99 +344,35 @@ function showToast(message, type = 'info', duration = 3000) {
     overflow: hidden;
     text-overflow: ellipsis;
   `;
-  
+
   document.body.appendChild(toast);
-  
-  // Add animation styles if not already present
+
   if (!document.querySelector('#toast-styles')) {
     const style = document.createElement('style');
     style.id = 'toast-styles';
     style.textContent = `
       @keyframes slideUp {
-        from {
-          transform: translateX(-50%) translateY(100px);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(-50%) translateY(0);
-          opacity: 1;
-        }
+        from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+        to { transform: translateX(-50%) translateY(0); opacity: 1; }
       }
-      
       @keyframes slideDown {
-        from {
-          transform: translateX(-50%) translateY(0);
-          opacity: 1;
-        }
-        to {
-          transform: translateX(-50%) translateY(100px);
-          opacity: 0;
-        }
+        from { transform: translateX(-50%) translateY(0); opacity: 1; }
+        to { transform: translateX(-50%) translateY(100px); opacity: 0; }
       }
     `;
     document.head.appendChild(style);
   }
-  
-  // Remove toast after duration
+
   setTimeout(() => {
     toast.style.animation = 'slideDown 0.3s ease';
     setTimeout(() => {
-      if (toast.parentNode) {
-        toast.parentNode.removeChild(toast);
-      }
+      if (toast.parentNode) toast.parentNode.removeChild(toast);
     }, 300);
   }, duration);
 }
 
-// ========== LOGO DOWNLOAD FUNCTIONS ==========
-function downloadLogo(logoType) {
-  let logoName, filePath;
-  
-  if (logoType === 'Logo_REBL') {
-    logoName = 'RebelInuX_REBL_Logo.png';
-    filePath = 'images/Logo_REBL.svg';
-  } else if (logoType === 'rebelinux_logo') {
-    logoName = 'RebelInuX_Logo.png';
-    filePath = 'images/rebelinux_logo/$rebelinux SVG (4).svg';
-  } else {
-    showToast('Logo not found', 'error');
-    return;
-  }
-  
-  showToast(`Converting ${logoName} to PNG...`, 'info');
-  
-  // Simulate the download process
-  setTimeout(() => {
-    // Create a temporary download link for the PNG version
-    const tempLink = document.createElement('a');
-    tempLink.href = filePath.replace('.svg', '.png');
-    tempLink.download = logoName;
-    tempLink.style.display = 'none';
-    
-    document.body.appendChild(tempLink);
-    tempLink.click();
-    document.body.removeChild(tempLink);
-    
-    showToast(`${logoName} downloaded!`, 'success');
-    
-    // Track downloads in analytics
-    trackLogoDownload(logoType);
-    
-  }, 1000);
-}
-
-function trackLogoDownload(logoType) {
-  const downloads = parseInt(localStorage.getItem(`logo_downloads_${logoType}`) || '0');
-  localStorage.setItem(`logo_downloads_${logoType}`, (downloads + 1).toString());
-  
-  console.log(`Logo downloaded: ${logoType}, Total: ${downloads + 1}`);
-}
-
-// ========== GLOBAL EXPORTS ==========
-window.viewNftDetails = viewNftDetails;
-window.openSubmissionForm = openSubmissionForm;
-window.downloadAsset = downloadAsset;
-window.downloadLogo = downloadLogo;
-window.trackAssetDownload = trackAssetDownload;
-window.showToast = showToast;
+// ============================================================================
+// GLOBAL EXPORTS
+// ============================================================================
 window.initArtworkPage = initArtworkPage;
+window.showToast = showToast;
