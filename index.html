@@ -4,59 +4,51 @@
   <!-- Meta tags for SEO and social sharing -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="description" content="RebelInuX | AI Art • History • SocialFi. Hold 2 Assets on ZORA (Base) → Earn $REBL on Solana. AI-animated historical Journey Collectibles. Whitepaper v2.2." />
-<meta name="keywords" content="RebelInuX, AI-Animated Historical Collectibles, Journey NFTs, SocialFi, ZORA, Base chain, Solana, $REBL, $rebelinux, Creator Coin, Content Coins, AI art, historical collectibles, French Revolution NFTs, 2-Asset Baseline" />
-  
+  <meta name="description" content="RebelInuX | AI Art • History • SocialFi. Participate in contests. Preserve history. Earn $REBL on Solana. AI-animated historical Journey Collectibles. Whitepaper v3.0." />
+  <meta name="keywords" content="RebelInuX, AI-Animated Historical Collectibles, Journey Collectibles, SocialFi, ZORA, Base chain, Solana, $REBL, $rebelinux, Creator Coin, Content Coins, AI art, historical collectibles, French Revolution, participation rewards, contests, tokenization" />
+
   <!-- Title -->
   <title>RebelInuX | AI Art • History • SocialFi</title>
-  
+
   <!-- Open Graph -->
   <meta property="og:title" content="RebelInuX | AI Art • History • SocialFi" />
   <meta property="og:image" content="https://rebelinux.fun/images/Logo_REBL.svg" />
-<meta property="og:description" content="RebelInuX | AI Art • History • SocialFi. Hold 2 Assets on ZORA (Base) → Earn $REBL on Solana. AI-animated historical Journey Collectibles. Whitepaper v2.2." />
+  <meta property="og:description" content="Participate in contests. Preserve history. Earn $REBL. AI-animated historical Journey Collectibles. Whitepaper v3.0." />
   <meta property="og:url" content="https://rebelinux.fun/" />
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="RebelInuX">
-  
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@RebelInuX">
   <meta name="twitter:title" content="RebelInuX | AI Art • History • SocialFi">
-<meta name="twitter:description" content="RebelInuX | AI Art • History • SocialFi. Hold 2 Assets on ZORA (Base) → Earn $REBL on Solana. AI-animated historical Journey Collectibles. Whitepaper v2.2.">
+  <meta name="twitter:description" content="Participate in contests. Preserve history. Earn $REBL. AI-animated historical Journey Collectibles. Whitepaper v3.0.">
   <meta name="twitter:image" content="https://rebelinux.fun/images/Logo_REBL.svg">
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="images/Logo_REBL.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="images/Logo_REBL.svg">
-  
+
   <!-- Preload critical resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <!-- AOS Animation -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  
+
   <!-- CSS Files -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/header-footer.css">
   <link rel="stylesheet" href="css/index.css">
-  
+
   <style>
-    /* Additional styles */
-    .step-button-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    .step-button-group .cta-button { margin: 0; }
+    /* Additional homepage-specific styles (v3.0) */
     .warning-note {
       background: rgba(255, 193, 7, 0.1);
       border-left: 3px solid #ffc107;
@@ -78,48 +70,26 @@
       padding: 0.25rem 0.75rem;
       border-radius: 20px;
     }
-    .age-bonus-grid {
-      display: flex;
-      justify-content: space-between;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
-    }
-    .age-item {
-      flex: 1;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      padding: 0.4rem;
-    }
-    .age-value {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--rebel-gold);
-    }
-    .age-label {
-      font-size: 0.6rem;
-      color: rgba(255, 255, 255, 0.7);
-    }
-    .collector-bonus-grid {
+    .participation-grid {
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.5rem;
       margin: 1rem 0;
       flex-wrap: wrap;
     }
-    .bonus-item {
+    .participation-item {
       text-align: center;
       background: rgba(212, 167, 106, 0.1);
       border: 1px solid rgba(212, 167, 106, 0.3);
       border-radius: 12px;
       padding: 0.8rem 1.5rem;
     }
-    .bonus-item .bonus-value {
+    .participation-item .value {
       font-size: 1.2rem;
       font-weight: 700;
       color: var(--rebel-gold);
     }
-    .bonus-item .bonus-label {
+    .participation-item .label {
       font-size: 0.7rem;
       color: rgba(255, 255, 255, 0.7);
     }
@@ -243,13 +213,13 @@
       font-weight: bold;
       cursor: pointer;
     }
-    .value-card, .comparison-card, .step-card, .token-card, .logo-card, .stat-card {
+    .value-card, .comparison-card, .step-card, .token-card, .stat-card {
       opacity: 1 !important;
       visibility: visible !important;
     }
-    
-    /* 3 Assets Display */
-    .three-asset-grid {
+
+    /* 2 Assets Display */
+    .two-asset-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
@@ -289,11 +259,10 @@
       background: linear-gradient(135deg, rgba(212,167,106,0.2), rgba(212,167,106,0.05));
       border: 2px solid var(--rebel-gold);
     }
-    
     .asset-badge.asset-1 { background: rgba(227,184,124,0.2); color: #e3b87c; border-color: #e3b87c; }
     .asset-badge.asset-2 { background: rgba(139,92,246,0.2); color: #8b5cf6; border-color: #8b5cf6; }
     .asset-badge.asset-3 { background: rgba(251,191,36,0.2); color: #fbbf24; border-color: #fbbf24; }
-    
+
     .three-asset-formula {
       display: flex;
       align-items: center;
@@ -326,7 +295,7 @@
       color: #0a0a0f;
       font-size: 0.8rem;
     }
-    
+
     .asset-legend {
       display: flex;
       justify-content: center;
@@ -350,7 +319,7 @@
     .dot-1 { background: #e3b87c; }
     .dot-2 { background: #8b5cf6; }
     .dot-3 { background: #fbbf24; }
-    
+
     @media (max-width: 768px) {
       .chain-platform { padding: 1rem !important; }
       .token-card, .nft-card { padding: 0.8rem !important; }
@@ -363,11 +332,11 @@
       .stats-grid { justify-content: center; }
       .hero-title { font-size: 28px; }
       .social-links { justify-content: center; }
-      .three-asset-grid { grid-template-columns: 1fr; }
+      .two-asset-grid { grid-template-columns: 1fr; }
       .three-asset-formula { font-size: 0.65rem; padding: 0.3rem 0.6rem; }
       .asset-legend { gap: 0.75rem; font-size: 0.6rem; }
     }
-    
+
     .quick-stats-bar {
       background: rgba(10,10,15,0.8);
       backdrop-filter: blur(8px);
@@ -386,15 +355,15 @@
       background: rgba(227,184,124,0.15);
       transform: translateY(-2px);
     }
-    .collector-bonus-section {
+    .participation-section {
       background: rgba(212, 167, 106, 0.08);
       border-radius: 16px;
       padding: 1.5rem;
       border: 1px solid rgba(212, 167, 106, 0.2);
       margin: 1.5rem 0;
     }
-    .collector-bonus-section h4 { color: var(--rebel-gold); margin-bottom: 0.5rem; }
-    .collector-bonus-section .bonus-note {
+    .participation-section h4 { color: var(--rebel-gold); margin-bottom: 0.5rem; }
+    .participation-section .participation-note {
       font-size: 0.8rem;
       color: rgba(255,255,255,0.7);
       margin-top: 0.5rem;
@@ -477,7 +446,7 @@
     }
     .subtitle-3assets strong { color: var(--rebel-gold); font-weight: 600; }
   </style>
-  
+
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -486,7 +455,7 @@
     "name": "RebelInuX",
     "url": "https://rebelinux.fun",
     "logo": "https://rebelinux.fun/images/Logo_REBL.svg",
-"description": "AI-Animated Historical Journey Collectibles. Hold 2 Assets on ZORA (Base) → Earn $REBL on Solana.",
+    "description": "AI-Animated Historical Journey Collectibles. Participate in contests. Preserve history. Earn $REBL on Solana.",
     "sameAs": [
       "https://twitter.com/RebelInuX",
       "https://t.me/RebelInuX"
@@ -501,22 +470,22 @@
       <div class="loader-spinner"></div>
       <div class="loader-text">
         <span class="text-item">Loading AI-Animated Historical Journey</span>
-<span class="text-item">Hold 2 Assets → Earn $REBL →  Join our Governance Hub</span>
+        <span class="text-item">Participate → Preserve History → Earn $REBL</span>
         <span class="text-item">Connecting to ZORA (Base)</span>
         <span class="text-item">Preparing the French Revolution Journey</span>
-        <span class="text-item">Ready for SocialFi Rewards</span>
+        <span class="text-item">Ready for Participation Rewards</span>
       </div>
       <div class="loader-progress">
         <div class="progress-bar"></div>
       </div>
     </div>
   </div>
-  
+
   <!-- Back to Top Button -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </button>
-  
+
   <!-- Header Container -->
   <div id="header-container"></div>
 
@@ -528,38 +497,37 @@
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
-            
+
             <!-- Headline -->
             <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
               <span class="title-line"><span class="highlight">AI-Animated</span></span>
               <span class="title-line"><span class="highlight">Historical Journey</span> Collectibles</span>
             </h1>
 
-<!-- Subtitle: 2-Asset Baseline -->
+            <!-- Subtitle: Participation Model -->
             <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="250" style="font-size: 1.1rem; margin-top: 0.3rem;">
- <span class="gradient-text">Hold 2 Assets on ZORA</span> 
-  <span style="color: rgba(255,255,255,0.3);">→</span> 
-  <span class="gradient-text">Earn $REBL on Solana</span>
-  <span style="color: rgba(255,255,255,0.3);">→</span> 
- <span class="gradient-text">Join our Governance Hub</span>
+              <span class="gradient-text">Participate</span>
+              <span style="color: rgba(255,255,255,0.3);">→</span>
+              <span class="gradient-text">Preserve History</span>
+              <span style="color: rgba(255,255,255,0.3);">→</span>
+              <span class="gradient-text">Earn $REBL</span>
             </p>
-            
+
             <p class="hero-description" data-aos="fade-up" data-aos-delay="300" style="font-size: 0.95rem;">
-              We transform <strong>real historical paintings</strong> into <strong>living AI-animated video collectibles</strong>. 
+              We transform <strong>real historical paintings</strong> into <strong>living AI-animated video collectibles</strong>.
               Our mascot travels through time, witnessing pivotal moments in human history.
+              <strong>The community decides what comes next.</strong>
             </p>
 
             <!-- Current Journey Highlight -->
-            <div style="background: rgba(212,167,106,0.1); border-radius: 14px; padding: 0.8rem 1.2rem; margin: 0.8rem 0; border: 1px solid rgba(212,167,106,0.2);">
+            <div style="background: rgba(212,167,106,0.1); border-radius: 14px; padding: 0.8rem 1.2rem; margin: 0.8rem 0; border: 1px solid rgba(212,167,106,0.2);" data-aos="fade-up" data-aos-delay="330">
               <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                 <span style="background: #D4A76A; color: #0a0a0f; padding: 0.1rem 0.5rem; border-radius: 10px; font-weight: 700; font-size: 0.65rem;">🇫🇷 CURRENT</span>
                 <span style="font-weight: 600; font-size: 0.9rem;">RebelInuX at the <strong>1789 French Revolution</strong></span>
-<span style="color: rgba(255,255,255,0.4); font-size: 0.75rem;">— Chapter VI: Betrayal, Part VI </span>
-                <a href="#journey-story" style="color: var(--rebel-gold); font-size: 0.75rem; text-decoration: none; margin-left: auto;">
-                  <i class="fas fa-arrow-right"></i> Explore
+                <a href="journey.html" style="color: var(--rebel-gold); font-size: 0.75rem; text-decoration: none; margin-left: auto;">
+                  <i class="fas fa-arrow-right"></i> View all chapters
                 </a>
               </div>
-              <!-- Timeline -->
               <div class="journey-timeline">
                 <span class="timeline-year active">1779</span>
                 <span class="timeline-arrow">→</span>
@@ -573,34 +541,28 @@
                 </span>
               </div>
               <div style="display: flex; gap: 0.4rem; margin-top: 0.3rem; flex-wrap: wrap;">
-<span class="journey-collectible-badge">✅ REBL-J1A</span>
-<span class="journey-collectible-badge">✅ REBL-J1B</span>
-<span class="journey-collectible-badge">✅ REBL-J1C</span>
-<span class="journey-collectible-badge">✅ REBL-J1D</span>
-<span class="journey-collectible-badge">✅ REBL-J1E</span>
-<span class="journey-collectible-badge">✅ REBL-J1E-01</span>
-<span class="journey-collectible-badge">✅ REBL-J1E-02</span>
-<span class="journey-collectible-badge">✅ REBL-J1E-03</span>
+                <span class="journey-collectible-badge">✅ 8 Collectibles Live</span>
+                <span class="journey-collectible-badge">🎬 Chapters I–V</span>
               </div>
             </div>
 
-            <!-- 3 Assets Display -->
+            <!-- Asset Legend -->
             <div class="asset-legend" data-aos="fade-up" data-aos-delay="350">
               <span class="asset-legend-item">
                 <span class="dot dot-1"></span>
                 <strong>$rebelinux</strong> <span style="color: rgba(255,255,255,0.3);">·</span> Creator Coin
               </span>
-<span class="asset-legend-item">
-  <span class="dot dot-2"></span>
-  <strong>Rebel Key</strong> <span style="color: rgba(255,255,255,0.3);">·</span> Content Coin
-</span>
+              <span class="asset-legend-item">
+                <span class="dot dot-2"></span>
+                <strong>Journey Collectibles</strong> <span style="color: rgba(255,255,255,0.3);">·</span> Content Coins
+              </span>
               <span class="asset-legend-item">
                 <span class="dot dot-3"></span>
                 <strong>$REBL</strong> <span style="color: rgba(255,255,255,0.3);">·</span> Reward Token
               </span>
             </div>
 
-            <div class="three-asset-grid" data-aos="fade-up" data-aos-delay="400">
+            <div class="two-asset-grid" data-aos="fade-up" data-aos-delay="400">
               <div class="asset-card" style="border-color: #e3b87c;">
                 <div class="asset-icon">🪙</div>
                 <div class="asset-badge asset-1">CREATOR COIN</div>
@@ -608,15 +570,15 @@
                 <p>Digital claim ticket</p>
                 <div class="asset-sub">Held on ZORA (Base)</div>
               </div>
-              
-<div class="asset-card" style="border-color: #8b5cf6;">
-  <div class="asset-icon">📜</div>
-  <div class="asset-badge asset-2">CONTENT COIN</div>
-  <h4>Rebel Key</h4>
-  <p>Eligibility + Solana registration</p>
-  <div class="asset-sub">Held on ZORA (Base)</div>
-</div>
-              
+
+              <div class="asset-card" style="border-color: #8b5cf6;">
+                <div class="asset-icon">🎬</div>
+                <div class="asset-badge asset-2">CONTENT COINS</div>
+                <h4>Journey Collectibles</h4>
+                <p>AI-animated historical scenes</p>
+                <div class="asset-sub">Held on ZORA (Base)</div>
+              </div>
+
               <div class="asset-card reward-card" style="border-color: #fbbf24;">
                 <div class="asset-icon">⭐</div>
                 <div class="asset-badge asset-3">REWARD TOKEN</div>
@@ -627,19 +589,17 @@
             </div>
 
             <!-- Formula -->
-<div class="three-asset-formula" ...>
-  <span>Hold</span>
-  <span class="asset-badge asset-1">$rebelinux</span>
-  <span style="color: rgba(255,255,255,0.3);">+</span>
-  <span class="asset-badge asset-2">Rebel Key</span>
-  <span class="arrow">→</span>
-  <span class="result">Earn $REBL</span>
-</div>
+            <div class="three-asset-formula" data-aos="fade-up" data-aos-delay="450">
+              <span>Participate</span>
+              <span class="asset-badge asset-2">Contests</span>
+              <span class="arrow">→</span>
+              <span class="result">Earn $REBL</span>
+            </div>
 
             <p class="hero-sub-description" data-aos="fade-up" data-aos-delay="500" style="font-size: 0.8rem;">
-              <strong>7% age bonus per epoch</strong> (+140% at 20 epochs). 
-<strong>50% of ZORA revenue</strong> buys back and burns $REBL, <strong>20% funds AI production</strong>, <strong>15% replenishes the reserve</strong>, <strong>15% covers operations</strong>.
-              <strong>Collector Bonuses:</strong> +0.05x per collectible, +0.1x for largest holders.
+              <strong>50% of ZORA revenue</strong> buys back and burns $REBL, <strong>20% funds AI production</strong>,
+              <strong>15% replenishes the reserve</strong>, <strong>15% covers operations</strong>.
+              <strong>Participation rewards:</strong> Contest winners earn $REBL + volume bonuses.
             </p>
 
             <div class="hero-achievement" data-aos="fade-up" data-aos-delay="550">
@@ -648,66 +608,73 @@
                 <span>$rebelinux: First Remunerating Creator Coin on ZORA</span>
               </div>
             </div>
-            
+
             <!-- Metrics Grid -->
             <div class="hero-metrics" role="group" aria-label="Key metrics" data-aos="fade-up" data-aos-delay="600">
-  <div class="metric-card">
-  <div class="metric-icon" aria-hidden="true"><i class="fas fa-layer-group"></i></div>
-  <div class="metric-info">
-    <div class="metric-value highlight-gradient">2</div>
-    <div class="metric-label">Required Assets</div>
-  </div>
-</div>
-<div class="metric-card">
-  <div class="metric-icon" aria-hidden="true"><i class="fas fa-film"></i></div>
-  <div class="metric-info">
-    <div class="metric-value highlight-gradient">5</div>
-    <div class="metric-label">Chapters Live</div>
-  </div>
-</div>
               <div class="metric-card">
-                <div class="metric-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
+                <div class="metric-icon" aria-hidden="true"><i class="fas fa-layer-group"></i></div>
                 <div class="metric-info">
-                  <div class="metric-value">40%</div>
-                  <div class="metric-label">Minimum Rewards Floor</div>
+                  <div class="metric-value highlight-gradient">2</div>
+                  <div class="metric-label">Chains</div>
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-icon" aria-hidden="true"><i class="fas fa-film"></i></div>
+                <div class="metric-info">
+                  <div class="metric-value highlight-gradient">8</div>
+                  <div class="metric-label">Journey Collectibles</div>
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-icon" aria-hidden="true"><i class="fas fa-trophy"></i></div>
+                <div class="metric-info">
+                  <div class="metric-value">3</div>
+                  <div class="metric-label">Contest Types</div>
                 </div>
               </div>
             </div>
-            
+
             <div class="reward-range" data-aos="fade-up" data-aos-delay="650">
-              <span>📊 Weekly Rewards: 1.28M - 3.2M $REBL</span>
-              <span>🏆 Max Age Bonus: +140% at 20 epochs</span>
+              <span>🏆 Contest winners earn $REBL</span>
+              <span>📊 Volume bonuses up to $111</span>
               <span>🎨 AI-Animated Historical Journey Collectibles</span>
             </div>
 
-            <!-- Collector Bonuses Section -->
-            <div class="collector-bonus-section" data-aos="fade-up" data-aos-delay="700">
-<span class="whats-new-badge">🆕 NEW IN WHITEPAPER v2.2</span>
-              <h4>🎯 Collector Bonuses</h4>
-              <div class="collector-bonus-grid">
-                <div class="bonus-item">
-                  <div class="bonus-value">+0.05x</div>
-                  <div class="bonus-label">Per Collectible Held</div>
+            <!-- Participation Model Section -->
+            <div class="participation-section" data-aos="fade-up" data-aos-delay="700">
+              <span class="whats-new-badge">🆕 WHITEPAPER v3.0</span>
+              <h4>🏆 It Rewards Participation, Not Holding</h4>
+              <p style="font-size: 0.85rem; line-height: 1.6;">
+                Create thumbnails. Select scenes. Tokenize animated paintings. Vote on contests.
+                The community decides and earns $REBL.
+              </p>
+              <div class="participation-grid">
+                <div class="participation-item">
+                  <div class="value">3</div>
+                  <div class="label">Contest Types</div>
                 </div>
-                <div class="bonus-item">
-                  <div class="bonus-value">+0.1x</div>
-                  <div class="bonus-label">Largest Holder Bonus</div>
+                <div class="participation-item">
+                  <div class="value">$111</div>
+                  <div class="label">Max Volume Bonus</div>
+                </div>
+                <div class="participation-item">
+                  <div class="value">500K</div>
+                  <div class="label">$REBL for Governance</div>
                 </div>
               </div>
-              <p class="bonus-note">Exceptional collectibles may carry higher bonuses, announced at launch on ZORA.</p>
-              <p class="bonus-note" style="margin-top: 0.3rem; color: var(--rebel-gold);">
-                <i class="fas fa-calendar-alt"></i> Applies from <strong>Epoch A9</strong>
+              <p class="participation-note">
+                Contests are free to enter. No purchase required to participate. Winners earn $REBL.
               </p>
               <div style="margin-top: 0.75rem; text-align: center;">
-                <a href="whitepaper.html" class="whitepaper-link-gold">
-                  <i class="fas fa-file-alt"></i> Full details in Whitepaper v2.2
+                <a href="contests.html" class="whitepaper-link-gold">
+                  <i class="fas fa-trophy"></i> See all contest mechanics
                 </a>
               </div>
             </div>
-            
+
             <!-- Hero CTA Buttons -->
             <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
-              <a href="#journey-story" class="cta-button hero-cta primary-glow" aria-label="Explore the Journey">
+              <a href="journey.html" class="cta-button hero-cta primary-glow" aria-label="Explore the Journey">
                 <i class="fas fa-film" aria-hidden="true"></i>
                 <span>Explore the Journey</span>
               </a>
@@ -715,12 +682,12 @@
                 <i class="fas fa-store" aria-hidden="true"></i>
                 <span>View on ZORA</span>
               </a>
-              <a href="epoch-rewards.html" class="cta-button hero-cta secondary" aria-label="View rewards">
-                <i class="fas fa-chart-line" aria-hidden="true"></i>
-                <span>View Rewards</span>
+              <a href="contests.html" class="cta-button hero-cta secondary" aria-label="Enter a contest">
+                <i class="fas fa-trophy" aria-hidden="true"></i>
+                <span>Enter a Contest</span>
               </a>
             </div>
-            
+
             <!-- Trust Badges -->
             <div class="hero-trust-badges" role="group" aria-label="Trust badges" data-aos="fade-up" data-aos-delay="900">
               <div class="trust-badge">
@@ -728,16 +695,16 @@
                 <span>AI-Animated Journey Collectibles</span>
               </div>
               <div class="trust-badge">
-                <i class="fas fa-key" aria-hidden="true"></i>
-                <span>Rebel Key (One for All Epochs)</span>
+                <i class="fas fa-trophy" aria-hidden="true"></i>
+                <span>Participation Rewards</span>
               </div>
               <div class="trust-badge">
-                <i class="fas fa-address-card" aria-hidden="true"></i>
-                <span>One-Time Registration</span>
+                <i class="fas fa-vote-yea" aria-hidden="true"></i>
+                <span>Community Governance Hub</span>
               </div>
             </div>
           </div>
-          
+
           <!-- Hero Visual -->
           <div class="hero-visual">
             <div class="visual-container">
@@ -752,7 +719,7 @@
                   <span class="ticker-name">Reward Token</span>
                 </div>
               </div>
-              
+
               <!-- Chain Visualization -->
               <div class="chain-visualization" aria-label="Multi-chain bridge visualization">
                 <div class="chain-node base-node" role="article">
@@ -762,18 +729,17 @@
                   <div class="node-label">ZORA on Base</div>
                   <div class="node-tokens">
                     <span class="token-badge coin" role="status">$rebelinux</span>
-                    <span class="token-badge nft" role="status">Rebel Key</span>
                     <span class="token-badge journey" role="status">Journey Collectibles</span>
                   </div>
                 </div>
-                
+
                 <div class="bridge-animation" aria-hidden="true">
                   <div class="bridge-tokens">
                     <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     <div class="moving-coin"></div>
                   </div>
                 </div>
-                
+
                 <div class="chain-node solana-node" role="article">
                   <div class="node-icon" aria-hidden="true">
                     <img src="images/Chains/solana-sol-logo.svg" alt="Solana Chain" class="chain-logo">
@@ -784,7 +750,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <!-- $rebelinux Token Logo -->
               <div class="token-logo-container">
                 <div class="floating-logo rebelinux-logo" aria-hidden="true">
@@ -800,17 +766,17 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Quick Stats Bar -->
       <div class="quick-stats-bar" data-aos="fade-up" data-aos-delay="950">
         <div class="stats-grid">
           <div class="stat-item red-stat"><div class="stat-number">2</div><div class="stat-title">Chains</div></div>
-          <div class="stat-item red-stat"><div class="stat-number">3</div><div class="stat-title">Assets</div></div>
-          <div class="stat-item red-stat"><div class="stat-number">1</div><div class="stat-title">Rebel Key</div></div>
-          <div class="stat-item red-stat"><div class="stat-number">7%</div><div class="stat-title">Age Bonus/Epoch</div></div>
-<div class="stat-item yellow-stat"><div class="stat-number">170M</div><div class="stat-title">$REBL Treasury</div></div>
-          <div class="stat-item yellow-stat"><div class="stat-number">3.2M</div><div class="stat-title">Max Weekly $REBL</div></div>
+          <div class="stat-item red-stat"><div class="stat-number">3</div><div class="stat-title">Contest Types</div></div>
+          <div class="stat-item red-stat"><div class="stat-number">8</div><div class="stat-title">Collectibles Live</div></div>
+          <div class="stat-item red-stat"><div class="stat-number">1B</div><div class="stat-title">$REBL Supply</div></div>
+          <div class="stat-item yellow-stat"><div class="stat-number">170M</div><div class="stat-title">ZORA Rewards Treasury</div></div>
           <div class="stat-item yellow-stat"><div class="stat-number">500K</div><div class="stat-title">$REBL Governance Entry</div></div>
+          <div class="stat-item yellow-stat"><div class="stat-number">50%</div><div class="stat-title">Buy-Back & Burn</div></div>
         </div>
       </div>
     </section>
@@ -825,32 +791,32 @@
           <h1><i class="fas fa-film" aria-hidden="true"></i> RebelInuX Journey Collectibles</h1>
           <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Time-Traveling Art • AI Animation • Collective History</p>
           <p class="subtitle-3assets" style="color: rgba(255,255,255,0.4); font-size: 0.85rem;">
-  Hold <strong style="color: var(--rebel-gold);">2 Assets</strong> on ZORA → Earn <strong style="color: var(--rebel-gold);">$REBL</strong> on Solana
+            Participate in <strong style="color: var(--rebel-gold);">contests</strong> → Earn <strong style="color: var(--rebel-gold);">$REBL</strong> on Solana
           </p>
         </div>
-        
+
         <div class="journey-story-card" data-aos="fade-up" data-aos-delay="200">
           <div class="historical-badge">🇫🇷 CURRENT JOURNEY: 1789 French Revolution</div>
           <h3 style="color: var(--rebel-gold); margin-bottom: 1rem;">Our Mascot Travels Through Time</h3>
           <p style="line-height: 1.6; margin-bottom: 1rem;">
-            The RebelInuX mascot is doing time and space travel to assist historical events aligned with its rebellious nature, 
-            painting the scenes as they unfold. We use <strong>real historical paintings</strong> and <strong>animate them with AI</strong>, 
-            transforming static art into living, breathing video collectibles.
+            The RebelInuX mascot travels through history, painting scenes as they unfold. We use
+            <strong>real historical paintings</strong> and <strong>animate them with AI</strong>,
+            transforming static art into living video collectibles.
           </p>
           <p style="line-height: 1.6; margin-bottom: 1rem;">
-            Currently, the journey is witnessing the <strong>1789 French Revolution</strong>, a defining moment of rebellion and change. 
+            Currently witnessing the <strong>1789 French Revolution</strong> — a defining moment of rebellion and change.
             But this is just the beginning. Future journeys will explore historical events from all countries and cultures.
           </p>
           <p style="line-height: 1.6;">
-            <strong>This is a collective work.</strong> You decide our next destinations, which historical moments to capture, 
+            <strong>This is a collective work.</strong> You decide our next destinations, which historical moments to capture,
             which scenes are important, and what elements to add, including what our mascot wears in each era.
             Participate in the <strong>Governance Hub</strong> to shape history.
           </p>
-          
-          <!-- Journey Collection Preview -->
+
+          <!-- Featured Chapters -->
           <div style="margin: 1.5rem 0; background: rgba(255,255,255,0.03); border-radius: 16px; padding: 1rem; border: 1px solid rgba(212,167,106,0.15);">
             <h4 style="color: var(--rebel-gold); margin-bottom: 0.75rem; font-size: 0.9rem;">
-              <i class="fas fa-list"></i> The French Revolution Journey
+              <i class="fas fa-list"></i> Featured Chapters
             </h4>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.6rem;">
               <div style="background: rgba(255,255,255,0.03); border-radius: 10px; padding: 0.6rem; border-left: 3px solid #e3b87c;">
@@ -869,32 +835,19 @@
                 <div style="font-size: 0.55rem; color: rgba(255,255,255,0.3);">1789</div>
               </div>
               <div style="background: rgba(255,255,255,0.03); border-radius: 10px; padding: 0.6rem; border-left: 3px solid #d1aa77ab;">
-  <div style="font-weight: 700; font-size: 0.75rem;">REBL-J1D</div>
-  <div style="font-size: 0.65rem; color: rgba(255,255,255,0.6);">The Fall</div>
-  <div style="font-size: 0.55rem; color: rgba(255,255,255,0.3);">July 1789</div>
-</div>
-<div style="background: rgba(255,255,255,0.03); border-radius: 10px; padding: 0.6rem; border-left: 3px solid #ea4acc39;">
-  <div style="font-weight: 700; font-size: 0.75rem;">REBL-J1E-01</div>
-  <div style="font-size: 0.65rem; color: rgba(255,255,255,0.6);">Abolition of Privileges</div>
-  <div style="font-size: 0.55rem; color: rgba(255,255,255,0.3);">Aug 1789</div>
-</div>
-<div style="background: rgba(255,255,255,0.03); border-radius: 10px; padding: 0.6rem; border-left: 3px solid #09ed126d;">
-  <div style="font-weight: 700; font-size: 0.75rem;">REBL-J1E-02</div>
-  <div style="font-size: 0.65rem; color: rgba(255,255,255,0.6);">The Women's March</div>
-  <div style="font-size: 0.55rem; color: rgba(255,255,255,0.3);">Oct 1789</div>
-</div>
-<div style="background: rgba(255,255,255,0.03); border-radius: 10px; padding: 0.6rem; border-left: 3px solid #ad319217;">
-  <div style="font-weight: 700; font-size: 0.75rem;">REBL-J1E-03</div>
-  <div style="font-size: 0.65rem; color: rgba(255,255,255,0.6);">Chaos at Versailles</div>
-  <div style="font-size: 0.55rem; color: rgba(255,255,255,0.3);">Oct 1789</div>
-</div>
+                <div style="font-weight: 700; font-size: 0.75rem;">REBL-J1D</div>
+                <div style="font-size: 0.65rem; color: rgba(255,255,255,0.6);">The Fall</div>
+                <div style="font-size: 0.55rem; color: rgba(255,255,255,0.3);">July 1789</div>
+              </div>
             </div>
-            <div style="text-align: center; margin-top: 0.5rem; font-size: 0.6rem; color: rgba(255,255,255,0.3);">
-              <i class="fas fa-plus-circle"></i> Additional chapters to be released as the Journey unfolds
+            <div style="text-align: center; margin-top: 0.8rem;">
+              <a href="journey.html" style="color: var(--rebel-gold); font-size: 0.75rem; text-decoration: none;">
+                <i class="fas fa-arrow-right"></i> View all 8 chapters
+              </a>
             </div>
           </div>
-          
-          <!-- SOCIAL MEDIA LINKS -->
+
+          <!-- Social Media Links -->
           <div class="social-links">
             <span style="font-weight: 600; margin-right: 5px; font-size: 0.8rem;">📱 Follow the Journey:</span>
             <a href="https://zora.co/@rebelinux" target="_blank" class="social-icon zora"><i class="fas fa-store"></i> ZORA</a>
@@ -903,8 +856,8 @@
             <a href="https://youtube.com/@RebelInuX_REBL" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i> YouTube</a>
             <a href="https://twitter.com/RebelInuX" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i> Twitter/X</a>
           </div>
-          
-          <!-- FEATURE TAGS -->
+
+          <!-- Feature Tags -->
           <div class="feature-tags">
             <span class="feature-tag">🎨 AI-Animated Art</span>
             <span class="feature-tag">🏛️ Historical Preservation</span>
@@ -919,86 +872,50 @@
     <section id="how-it-works" class="value-proposition" aria-label="How it works" data-aos="fade-up">
       <div class="container">
         <div class="section-header" data-aos="fade-up" data-aos-delay="100">
-<h2><i class="fas fa-gem" aria-hidden="true"></i> The <span class="highlight-gold">2-Asset Baseline</span> + Optional Boosters</h2>
-<p class="section-subtitle">Hold $rebelinux + Rebel Key → Earn $REBL (Journey Collectibles optional)</p>
+          <h2><i class="fas fa-gem" aria-hidden="true"></i> How <span class="highlight-gold">Participation</span> Works</h2>
+          <p class="section-subtitle">Enter contests → Winners become content coins → Earn $REBL</p>
         </div>
-        
+
         <div class="value-grid">
           <div class="value-card" role="article" data-aos="fade-up" data-aos-delay="200" style="border-color: #e3b87c;">
             <div class="value-icon" style="background: linear-gradient(135deg, #e3b87c, #c99e5c);"><i class="fas fa-coins"></i></div>
             <div class="value-content">
               <h3>$rebelinux — Creator Coin</h3>
-              <p><strong>Digital Claim Ticket</strong> on ZORA (Base). The first remunerating Creator Coin on ZORA.</p>
+              <p>The digital claim ticket of the RebelInuX ecosystem on ZORA (Base).</p>
               <ul class="value-features">
-                <li><i class="fas fa-check" aria-hidden="true"></i> Digital Claim Ticket</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> First of its kind on ZORA</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Required for rewards</li>
+                <li><i class="fas fa-check" aria-hidden="true"></i> First remunerating Creator Coin on ZORA</li>
+                <li><i class="fas fa-check" aria-hidden="true"></i> Powers the ecosystem</li>
               </ul>
             </div>
           </div>
-          
+
           <div class="value-card" role="article" data-aos="fade-up" data-aos-delay="300" style="border-color: #8b5cf6;">
-            <div class="value-icon" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);"><i class="fas fa-layer-group"></i></div>
+            <div class="value-icon" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);"><i class="fas fa-trophy"></i></div>
             <div class="value-content">
-<h3>Rebel Key — Content Coin</h3>
-<p><strong>Eligibility + Solana registration</strong> on ZORA (Base).</p>
-<ul class="value-features">
-  <li><i class="fas fa-check"></i> One key for all epochs</li>
-  <li><i class="fas fa-check"></i> Register Solana address once</li>
-  <li><i class="fas fa-check"></i> Required for base eligibility</li>
-</ul>
+              <h3>Contests — 3 Types</h3>
+              <p>Thumbnail, Tokenization, and Journey contests. Winners earn $REBL.</p>
+              <ul class="value-features">
+                <li><i class="fas fa-check"></i> Free to enter</li>
+                <li><i class="fas fa-check"></i> Volume bonuses up to $111</li>
+              </ul>
+              <a href="contests.html" class="whitepaper-link-gold" style="margin-top: 0.5rem; display: inline-block;">
+                <i class="fas fa-arrow-right"></i> Contest mechanics
+              </a>
             </div>
           </div>
-          
+
           <div class="value-card" role="article" data-aos="fade-up" data-aos-delay="400" style="border-color: #fbbf24; border-width: 2px;">
-            <div class="value-icon" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);"><i class="fas fa-crown"></i></div>
+            <div class="value-icon" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);"><i class="fas fa-vote-yea"></i></div>
             <div class="value-content">
-              <h3>$REBL — Reward Token <span style="font-size: 0.6rem; background: #fbbf24; color: #0a0a0f; padding: 0.1rem 0.5rem; border-radius: 12px;">EARNED</span></h3>
-              <p><strong>Governance + Reward Token</strong> on Solana. What you earn by holding the three assets.</p>
+              <h3>Governance Hub</h3>
+              <p>Hold 500K+ $REBL. Pre-select finalists. Vote on treasury. Shape history.</p>
               <ul class="value-features">
-                <li><i class="fas fa-check" aria-hidden="true"></i> Governance token (500K entry)</li>
-<li><i class="fas fa-check"></i> 50% buy-back &amp; burn, 20% AI, 15% reserve, 15% ops</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Weekly rewards: 1.28M - 3.2M</li>
+                <li><i class="fas fa-check"></i> 1 member = 1 vote</li>
+                <li><i class="fas fa-check"></i> Token-gated Telegram</li>
               </ul>
-            </div>
-          </div>
-          
-          <div class="value-card" role="article" data-aos="fade-up" data-aos-delay="500" style="border-color: var(--rebel-red);">
-            <div class="value-icon gradient-red" aria-hidden="true" style="background: linear-gradient(135deg, var(--rebel-red), #ff4757);"><i class="fas fa-chart-line"></i></div>
-            <div class="value-content">
-              <h3>Age Bonus (7% per Epoch)</h3>
-              <p>Your rewards grow the longer you hold. +7% bonus each epoch, up to +140% after 20 epochs.</p>
-              <ul class="value-features">
-                <li><i class="fas fa-check" aria-hidden="true"></i> +7% age bonus each epoch</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> +140% at 20 epochs</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Rewards loyalty, not capital</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="value-card" role="article" data-aos="fade-up" data-aos-delay="600" style="border-color: var(--rebel-blue);">
-            <div class="value-icon gradient-blue" aria-hidden="true" style="background: linear-gradient(135deg, var(--rebel-blue), var(--rebel-blue));"><i class="fas fa-shield-alt"></i></div>
-            <div class="value-content">
-              <h3>Sustainable Rewards</h3>
-              <p>Fixed maximum rewards pool. Higher participation increases rewards. Protected with 40% minimum floor.</p>
-              <ul class="value-features">
-                <li><i class="fas fa-check" aria-hidden="true"></i> Max 3.2M $REBL/week</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Min 1.28M $REBL/week (40%)</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Treasury protection</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="value-card" role="article" data-aos="fade-up" data-aos-delay="700" style="border-color: var(--rebel-green);">
-            <div class="value-icon gradient-gold" aria-hidden="true" style="background: linear-gradient(135deg, var(--rebel-green), #28d90d);"><i class="fas fa-trophy"></i></div>
-            <div class="value-content">
-              <h3>Collector Bonuses</h3>
-              <p>Hold more Journey Collectibles to earn higher rewards. Largest holders get an extra bonus.</p>
-              <ul class="value-features">
-                <li><i class="fas fa-check" aria-hidden="true"></i> +0.05x per collectible held</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> +0.1x for largest holders</li>
-                <li><i class="fas fa-check" aria-hidden="true"></i> Exceptional collectibles: higher bonuses</li>
-              </ul>
+              <a href="governance.html" class="whitepaper-link-gold" style="margin-top: 0.5rem; display: inline-block;">
+                <i class="fas fa-arrow-right"></i> Governance details
+              </a>
             </div>
           </div>
         </div>
@@ -1009,16 +926,20 @@
     <section id="token-ecosystem" class="token-ecosystem" aria-label="Token ecosystem" data-aos="fade-up">
       <div class="container">
         <div class="section-header" data-aos="fade-up" data-aos-delay="100">
-          <h2><i class="fas fa-sitemap" aria-hidden="true"></i> The <span class="highlight-gold">2-Asset Baseline</span> + Optional Boosters</h2>
-<p class="section-subtitle">Hold $rebelinux + Rebel Key → Earn $REBL (Journey Collectibles optional)</p>
+          <h2><i class="fas fa-sitemap" aria-hidden="true"></i> The <span class="highlight-gold">Participation</span> Ecosystem</h2>
+          <p class="section-subtitle">Contests → Content Coins → Trading Fees → Buy-Back & Burn</p>
         </div>
-        
-        <!-- Register Section -->
-        <div style="background: rgba(227,184,124,0.1); border-left: 5px solid #e3b87c; border-radius: 1rem; padding: 1rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-          <div><i class="fas fa-address-card" style="font-size: 1.5rem; color: #e3b87c;"></i> <strong>Register Your Solana Address (One Time)</strong><br><span style="color: #ccc;">Post your Solana address on the Rebel Key page. That's all. Automatic rewards forever.</span></div>
-          <a href="https://zora.co/coin/base:0x7f86232930e1f43b73b8e5d83192800bfca8a7f3" target="_blank" class="register-link"><i class="fas fa-address-card"></i> Register Address →</a>
+
+        <!-- Governance Hub CTA -->
+        <div style="background: rgba(227,184,124,0.1); border-left: 5px solid #e3b87c; border-radius: 1rem; padding: 1rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;" data-aos="fade-up" data-aos-delay="150">
+          <div>
+            <i class="fas fa-vote-yea" style="font-size: 1.5rem; color: #e3b87c;"></i>
+            <strong>Join the REBL Governance Hub (500K $REBL)</strong><br>
+            <span style="color: #ccc;">Pre-select contest finalists. Vote on treasury. Shape history.</span>
+          </div>
+          <a href="governance.html" class="register-link"><i class="fas fa-vote-yea"></i> Join the Hub →</a>
         </div>
-        
+
         <div class="ecosystem-visual">
           <div class="ecosystem-flow">
             <!-- Base Platform -->
@@ -1027,11 +948,10 @@
                 <div class="platform-icon" aria-hidden="true"><img src="images/Chains/base-logo-in-blue.svg" alt="Base Chain" class="platform-chain-logo"></div>
                 <div class="platform-info">
                   <h3>ZORA on Base</h3>
-<p class="platform-subtitle">Hold $rebelinux + Rebel Key</p>
+                  <p class="platform-subtitle">Content layer</p>
                 </div>
               </div>
-              
-              <!-- Creator Coin Card -->
+
               <div class="token-card primary-token" role="article" data-aos="fade-up" data-aos-delay="300" style="border-color: #e3b87c;">
                 <div class="token-header">
                   <div class="token-logo" aria-hidden="true"><img src="images/rebelinux_logo/$rebelinux SVG (4).svg" alt="$rebelinux token logo"></div>
@@ -1058,56 +978,29 @@
                   <a href="https://zora.co/coin/base:0xf95beeF6439ec38fA757238Cdec8417ABDA536bd" target="_blank" rel="noopener noreferrer" class="action-btn primary" aria-label="Buy $rebelinux on ZORA"><i class="fas fa-shopping-cart" aria-hidden="true"></i><span>Buy on ZORA</span></a>
                 </div>
               </div>
-              
-              <!-- Content Coins Section -->
-              <div style="background: rgba(255,255,255,0.03); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid rgba(139,92,246,0.3);">
-                <div style="text-align: center; font-size: 0.8rem; color: #8b5cf6; font-weight: 700; margin-bottom: 0.75rem;">📜 CONTENT COINS</div>
-                
-                <div class="nft-card" role="article" data-aos="fade-up" data-aos-delay="400" style="margin-bottom: 1rem; border-color: #8b5cf6;">
-                  <div class="nft-header">
-                    <div class="nft-icon" aria-hidden="true"><i class="fas fa-key"></i></div>
-                    <div class="nft-info">
-                      <h4>Rebel Key</h4>
-                      <p class="nft-type">Eligibility Pass</p>
-                    </div>
-                  </div>
-                  <div class="nft-details">
-                    <p><i class="fas fa-info-circle" aria-hidden="true"></i> Your permanent claiming interface. <strong>Register your Solana address ONCE here.</strong></p>
-                    <div class="nft-status"><i class="fas fa-check-circle" aria-hidden="true"></i><span>Active for all epochs</span></div>
-                  </div>
-                  <div class="token-actions" style="margin-top: 1rem;">
-                    <a href="https://zora.co/coin/base:0x7f86232930e1f43b73b8e5d83192800bfca8a7f3" target="_blank" rel="noopener noreferrer" class="action-btn outline" aria-label="Get Rebel Key"><i class="fas fa-key" aria-hidden="true"></i><span>Get Rebel Key</span></a>
-                    <a href="https://zora.co/coin/base:0x7f86232930e1f43b73b8e5d83192800bfca8a7f3" target="_blank" rel="noopener noreferrer" class="action-btn secondary" aria-label="Register Solana Address"><i class="fas fa-address-card" aria-hidden="true"></i><span>📝 Register Address</span></a>
+
+              <div class="nft-card journey-card-new" role="article" data-aos="fade-up" data-aos-delay="500" style="border-color: #8b5cf6; margin-top: 1rem;">
+                <div class="nft-header">
+                  <div class="nft-icon" aria-hidden="true"><i class="fas fa-film"></i></div>
+                  <div class="nft-info">
+                    <h4>Journey Collectibles</h4>
+                    <p class="nft-type">Content Coins — 8 Live</p>
                   </div>
                 </div>
-
-                <div class="nft-card journey-card-new" role="article" data-aos="fade-up" data-aos-delay="500" style="border-color: #8b5cf6;">
-                  <div class="nft-header">
-                    <div class="nft-icon" aria-hidden="true"><i class="fas fa-film"></i></div>
-                    <div class="nft-info">
-                      <h4>Journey Collectibles</h4>
-<p class="nft-type">Optional Yield Boosters</p>
-                    </div>
+                <div class="nft-details">
+                  <p><i class="fas fa-info-circle" aria-hidden="true"></i> AI-animated historical scenes from the French Revolution Journey. Each collectible is a content coin on Zora.</p>
+                  <div class="journey-note">
+                    <i class="fas fa-globe" aria-hidden="true"></i>
+                    <strong>Current Journey:</strong> REBL-J1 — 1789 French Revolution
+                    <br><small>Next destination decided by community vote.</small>
                   </div>
-                  <div class="nft-details">
-<p><i class="fas fa-info-circle"></i> <strong>Optional.</strong> Hold any Journey Collectible for +0.05x multiplier. Hold the largest balance of any collectible for +0.10x.</p>
-                    <div class="journey-note">
-                      <i class="fas fa-globe" aria-hidden="true"></i>
-                      <strong>Current Journey:</strong> REBL-J1C — The Oath, 1789 French Revolution
-                      <br><small>Next destination decided by community vote.</small>
-                    </div>
-                    <div class="collector-bonus-note" style="margin-top: 0.5rem; background: rgba(212,167,106,0.1); border-radius: 8px; padding: 0.5rem; font-size: 0.75rem; text-align: center; border: 1px solid rgba(212,167,106,0.2);">
-                      <i class="fas fa-trophy" style="color: var(--rebel-gold);"></i>
-<strong>Collector Bonus:</strong> +0.05x per collectible held. <strong>Largest Holder Bonus:</strong> +0.1x.
-                    </div>
-                  </div>
-                  <div class="token-actions" style="margin-top: 1rem;">
-                    <a href="https://zora.co/coin/base:0x631e050fa042c2da1d3b8abe7a260b53ffc83f7f" target="_blank" rel="noopener noreferrer" class="action-btn primary" style="background: var(--rebel-purple);" aria-label="Mint REBL-J1C on ZORA"><i class="fas fa-video" aria-hidden="true"></i><span>Mint REBL-J1C on ZORA</span></a>
-                  </div>
+                </div>
+                <div class="token-actions" style="margin-top: 1rem;">
+                  <a href="journey.html" class="action-btn outline" aria-label="View Journey Collectibles"><i class="fas fa-arrow-right" aria-hidden="true"></i><span>View all collectibles</span></a>
                 </div>
               </div>
             </div>
-            
+
             <!-- Bridge Animation -->
             <div class="bridge-animation" aria-hidden="true" data-aos="fade-up" data-aos-delay="600">
               <div class="bridge-line"></div>
@@ -1125,10 +1018,10 @@
                 <div class="platform-icon" aria-hidden="true"><img src="images/Chains/solana-sol-logo.svg" alt="Solana Chain" class="platform-chain-logo"></div>
                 <div class="platform-info">
                   <h3>Solana Chain</h3>
-                  <p class="platform-subtitle">Earn $REBL</p>
+                  <p class="platform-subtitle">Token layer</p>
                 </div>
               </div>
-              
+
               <div class="token-card reward-token" role="article" data-aos="fade-up" data-aos-delay="800" style="border-color: #fbbf24; border-width: 2px;">
                 <div class="token-header">
                   <div class="token-logo" aria-hidden="true"><img src="images/Logo_REBL.svg" alt="$REBL token logo"></div>
@@ -1139,9 +1032,9 @@
                   <div class="token-status active"><i class="fas fa-circle" aria-hidden="true"></i><span>Live</span></div>
                 </div>
                 <div class="token-details">
-                  <div class="detail-item"><div class="detail-icon" aria-hidden="true"><i class="fas fa-gift"></i></div><div class="detail-text"><div class="detail-label">Weekly Rewards</div><div class="detail-value highlight">1.28M - 3.2M $REBL</div><div class="detail-note">(40% min floor - 100% max)</div></div></div>
-                  <div class="detail-item"><div class="detail-icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div><div class="detail-text"><div class="detail-label">Age Bonus</div><div class="detail-value">+7% per epoch</div><div class="detail-value">+140% at 20 epochs</div></div></div>
-<div class="detail-item"><div class="detail-icon" aria-hidden="true"><i class="fas fa-fire"></i></div><div class="detail-text"><div class="detail-label">Governance-Triggered Value Acceleration</div><div class="detail-value">50% buy-back &amp;</div><div class="detail-value"> burn · 20% AI · </div><div class="detail-value"> 15% reserve · 15% ops</div></div></div>
+                  <div class="detail-item"><div class="detail-icon" aria-hidden="true"><i class="fas fa-trophy"></i></div><div class="detail-text"><div class="detail-label">Rewards</div><div class="detail-value highlight">Contest Prizes + Volume Bonuses</div><div class="detail-note">Base reward + cumulative milestones</div></div></div>
+                  <div class="detail-item"><div class="detail-icon" aria-hidden="true"><i class="fas fa-vote-yea"></i></div><div class="detail-text"><div class="detail-label">Governance</div><div class="detail-value">500K $REBL Threshold</div><div class="detail-value">1 member = 1 vote</div></div></div>
+                  <div class="detail-item"><div class="detail-icon" aria-hidden="true"><i class="fas fa-fire"></i></div><div class="detail-text"><div class="detail-label">Value Acceleration</div><div class="detail-value">50% buy-back & burn · 20% AI</div><div class="detail-value">15% reserve · 15% ops</div></div></div>
                 </div>
                 <div class="token-achievement rebl-achievement"><i class="fas fa-crown" aria-hidden="true"></i><span>Governance token for the RebelInuX SocialFi Ecosystem</span></div>
                 <div class="contract-address">
@@ -1154,71 +1047,62 @@
                 </div>
                 <div class="token-actions">
                   <a href="trade.html" class="action-btn secondary" aria-label="Trade $REBL"><i class="fas fa-chart-line" aria-hidden="true"></i><span>Trade $REBL</span></a>
-                  <a href="governance.html" class="action-btn outline" aria-label="Join Governance Hub"><i class="fas fa-vote-yea" aria-hidden="true"></i><span>Join Governance Hub (500K $REBL)</span></a>
-                  <button class="action-btn wallet-action" onclick="addToWallet('F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump')" aria-label="Add $REBL to wallet"><i class="fas fa-plus-circle" aria-hidden="true"></i><span>Add to Wallet</span></button>
+                  <a href="governance.html" class="action-btn outline" aria-label="Join Governance Hub"><i class="fas fa-vote-yea" aria-hidden="true"></i><span>Join Governance Hub</span></a>
+                  <a href="tokenomics.html" class="action-btn outline" aria-label="Full tokenomics"><i class="fas fa-sitemap" aria-hidden="true"></i><span>Full tokenomics</span></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
-        <!-- How It Works Summary -->
+
+        <!-- Ecosystem Summary -->
         <div class="ecosystem-summary" role="region" aria-label="Ecosystem summary" data-aos="fade-up" data-aos-delay="900">
           <div class="summary-card">
             <div class="summary-header">
               <h4><i class="fas fa-lightbulb" aria-hidden="true"></i> How It Works</h4>
-              <p class="summary-subtitle">Hold <strong>$rebelinux</strong> + <strong>Rebel Key</strong> + <strong>Journey</strong> → Earn <strong>$REBL</strong>. Simple, one-time setup.</p>
+              <p class="summary-subtitle">Participate in contests → Winners become content coins → Earn <strong>$REBL</strong>.</p>
             </div>
-            
+
             <div class="process-steps">
               <div class="process-step" role="article">
                 <div class="step-number" aria-hidden="true">1</div>
                 <div class="step-content">
-                  <h5>Acquire the 2 Assets</h5>
-<p><strong>$rebelinux</strong> (Creator Coin) + <strong>Rebel Key</strong> on ZORA (Base chain). That's the base eligibility. Optional: add Journey Collectibles for multipliers.</p>
+                  <h5>Watch & Discover</h5>
+                  <p>Follow the Rebel Journey on TikTok, YouTube, Instagram, and Facebook. Discover the scenes that will be selected for tokenization.</p>
                 </div>
               </div>
-              
+
               <div class="process-step" role="article">
                 <div class="step-number" aria-hidden="true">2</div>
                 <div class="step-content">
-                  <h5>Register Address (Once)</h5>
-                  <p>Post your Solana address on the Rebel Key page. One time. Never again.</p>
+                  <h5>Enter a Contest</h5>
+                  <p>Design a thumbnail, propose a painting to tokenize, or suggest the next Journey theme. Contests are free to enter.</p>
                   <div style="margin-top: 0.6rem;">
-                    <a href="https://zora.co/coin/base:0x7f86232930e1f43b73b8e5d83192800bfca8a7f3" target="_blank" class="register-link"><i class="fas fa-address-card"></i> Register Your Solana Address →</a>
+                    <a href="contests.html" class="register-link"><i class="fas fa-trophy"></i> Contest Rules →</a>
                   </div>
                 </div>
               </div>
-              
+
               <div class="process-step" role="article">
                 <div class="step-number" aria-hidden="true">3</div>
                 <div class="step-content">
-                <h5>Hold and Earn $REBL</h5>
-<p>Hold the 2-asset baseline. Receive <strong>$REBL</strong> rewards automatically each epoch. Age bonus grows over time. Optional: add Journey Collectibles for bonus multipliers.</p>
-                  <div class="age-bonus-grid" style="margin-top: 0.75rem;">
-                    <div class="age-item"><div class="age-value">+7%</div><div class="age-label">per Epoch</div></div>
-                    <div class="age-item"><div class="age-value">140%</div><div class="age-label">at 20 Epochs</div></div>
-                    <div class="age-item"><div class="age-value">3.2M</div><div class="age-label">Max Weekly $REBL</div></div>
-                  </div>
-                  <div style="margin-top: 0.75rem; background: rgba(212,167,106,0.1); border-radius: 8px; padding: 0.5rem; text-align: center; border: 1px solid rgba(212,167,106,0.2);">
-                    <i class="fas fa-trophy" style="color: var(--rebel-gold);"></i>
-                    <strong>Collector Bonuses (NEW in v2.1):</strong> +0.05x per collectible, +0.1x for largest holders
-                    <span style="display: inline-block; background: var(--rebel-gold); color: #0a0a0f; padding: 0.05rem 0.5rem; border-radius: 10px; font-size: 0.6rem; font-weight: 700; margin-left: 0.5rem;">NEW</span>
-                  </div>
+                  <h5>Earn $REBL</h5>
+                  <p>Winners earn $REBL. If a tokenized scene reaches volume milestones, cumulative bonuses apply (up to $111).</p>
                 </div>
               </div>
             </div>
-            
+
             <div class="bonus-info" role="complementary">
               <div class="bonus-icon" aria-hidden="true"><i class="fas fa-film"></i></div>
               <div class="bonus-content">
                 <h5>New Collectibles Released as Each Journey Unfolds</h5>
-               <p>Our mascot travels through history. Each epoch features a new historical event, animated from real paintings. Journey Collectibles are optional yield boosters, hold them to multiply your rewards. <strong>You decide what comes next</strong> through community governance.</p>
+                <p>Our mascot travels through history. Each Journey features a new historical event, animated from real paintings. <strong>You decide what comes next</strong> through community governance.</p>
+              </div>
             </div>
-            
+
             <div class="warning-note">
               <i class="fas fa-info-circle" aria-hidden="true"></i>
-              <strong>Why SocialFi?</strong> Traditional staking locks your tokens. SocialFi rewards you for holding culturally significant digital collectibles that have artistic and historical value. You own real assets, not just digital entries in a pool. <strong>50% of ZORA revenue is allocated to buy-back and burn</strong> (with 20% AI, 15% reserve, 15% operations), all triggered by REBL Governance Hub vote. Not an investment. We never use your funds.
+              <strong>Why SocialFi?</strong> Traditional staking locks your tokens. SocialFi rewards you for creating culturally significant content. You own real assets, not just digital entries in a pool. <strong>50% of ZORA revenue is allocated to buy-back and burn</strong> (with 20% AI, 15% reserve, 15% operations), all triggered by REBL Governance Hub vote. Not an investment. We never use your funds.
             </div>
           </div>
         </div>
@@ -1232,17 +1116,17 @@
           <h2><i class="fas fa-vote-yea" aria-hidden="true"></i> The Journey Contest: You Decide History</h2>
           <p class="section-subtitle">Community decides: next destination, scenes, and what our mascot wears</p>
         </div>
-        
+
         <div class="stats-container">
           <div class="stats-grid">
             <div class="stat-card" role="article" data-aos="fade-up" data-aos-delay="200">
               <div class="stat-header"><div class="stat-icon" aria-hidden="true"><i class="fas fa-globe"></i></div><div class="stat-title">Next Destination</div></div>
               <div class="stat-value">You Decide</div>
-              <div class="stat-unit">Vote on Events</div>
+              <div class="stat-unit">Vote on Themes</div>
               <div class="stat-description">Any country, any era</div>
             </div>
             <div class="stat-card" role="article" data-aos="fade-up" data-aos-delay="300">
-              <div class="stat-header"><div class="stat-icon" aria-hidden="true"><i class="fas fa-palette"></i></div><div class="stat-title">Scenes and Elements</div></div>
+              <div class="stat-header"><div class="stat-icon" aria-hidden="true"><i class="fas fa-palette"></i></div><div class="stat-title">Scenes & Elements</div></div>
               <div class="stat-value">Collective</div>
               <div class="stat-unit">Work</div>
               <div class="stat-description">Submit key moments</div>
@@ -1255,9 +1139,9 @@
             </div>
             <div class="stat-card" role="article" data-aos="fade-up" data-aos-delay="500">
               <div class="stat-header"><div class="stat-icon" aria-hidden="true"><i class="fas fa-vote-yea"></i></div><div class="stat-title">Winner Selection</div></div>
-              <div class="stat-value">60% Vote</div>
-              <div class="stat-unit">+ 40% Engagement</div>
-              <div class="stat-description">Hybrid scoring</div>
+              <div class="stat-value">Hub Vote</div>
+              <div class="stat-unit">+ X Community</div>
+              <div class="stat-description">Pre-selection + public vote</div>
             </div>
           </div>
           <div class="stats-action" data-aos="fade-up" data-aos-delay="600">
@@ -1272,35 +1156,31 @@
       <div class="container">
         <div class="section-header" data-aos="fade-up" data-aos-delay="100">
           <h2><i class="fas fa-chart-bar" aria-hidden="true"></i> Why SocialFi vs Traditional Staking?</h2>
-          <p class="section-subtitle">Hold collectibles. Earn rewards. Shape culture.</p>
+          <p class="section-subtitle">Participate. Preserve culture. Earn rewards.</p>
         </div>
-        
+
         <div class="comparison-grid">
           <div class="comparison-card" role="article" data-aos="fade-up" data-aos-delay="200">
             <div class="comparison-header"><h3>RebelInuX SocialFi</h3><div class="comparison-badge best" aria-label="Best choice">BEST</div></div>
             <ul class="comparison-features">
-              <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Hold collectibles with cultural and artistic value</span></li>
-<li class="feature-item"><i class="fas fa-check-circle"></i> <span>Hold $rebelinux + Rebel Key → Earn $REBL (Journey optional)</span></li>
-              <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Multi-Chain (ZORA on Base → Solana)</span></li>
-              <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>+7% per epoch (max +140% at 20 epochs)</span></li>
-              <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Collector bonuses: +0.05x per collectible, +0.1x for largest holders</span></li>
+              <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Participate in contests, create real cultural value</span></li>
+              <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Hold collectibles with artistic and historical value</span></li>
+              <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Multi-chain (ZORA on Base → Solana)</span></li>
               <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Community-decided historical journeys</span></li>
-<li class="feature-item"><i class="fas fa-check-circle"></i> <span>50% Revenue → Buy Back &amp; Burn (governance-triggered)</span></li>
-              <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Not an Investment. No Funds Used</span></li>
+              <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>50% of ZORA revenue → Buy-Back & Burn</span></li>
+              <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Not an investment. No funds used.</span></li>
             </ul>
-            <div class="comparison-cta"><a href="#how-it-works" class="cta-button primary" aria-label="Get started"><i class="fas fa-play" aria-hidden="true"></i><span>Start Earning</span></a></div>
+            <div class="comparison-cta"><a href="#how-it-works" class="cta-button primary" aria-label="Get started"><i class="fas fa-play" aria-hidden="true"></i><span>Start Participating</span></a></div>
           </div>
-          
+
           <div class="comparison-card" role="article" data-aos="fade-up" data-aos-delay="300">
             <div class="comparison-header"><h3>Traditional Staking</h3><div class="comparison-badge" aria-label="Basic option">BASIC</div></div>
             <ul class="comparison-features">
               <li class="feature-item negative"><i class="fas fa-times-circle" aria-hidden="true"></i> <span>Lock tokens, no cultural value</span></li>
-              <li class="feature-item negative"><i class="fas fa-times-circle" aria-hidden="true"></i> <span>Single Chain Limitations</span></li>
-              <li class="feature-item negative"><i class="fas fa-times-circle" aria-hidden="true"></i> <span>No Loyalty Bonus System</span></li>
-              <li class="feature-item negative"><i class="fas fa-times-circle" aria-hidden="true"></i> <span>No Collector Bonuses</span></li>
-              <li class="feature-item negative"><i class="fas fa-times-circle" aria-hidden="true"></i> <span>No Community Creativity</span></li>
-              <li class="feature-item negative"><i class="fas fa-times-circle" aria-hidden="true"></i> <span>No Buy Back and Burn Mechanism</span></li>
-              <li class="feature-item negative"><i class="fas fa-times-circle" aria-hidden="true"></i> <span>Uses Your Funds</span></li>
+              <li class="feature-item negative"><i class="fas fa-times-circle" aria-hidden="true"></i> <span>Single-chain limitations</span></li>
+              <li class="feature-item negative"><i class="fas fa-times-circle" aria-hidden="true"></i> <span>No community creativity</span></li>
+              <li class="feature-item negative"><i class="fas fa-times-circle" aria-hidden="true"></i> <span>No buy-back and burn mechanism</span></li>
+              <li class="feature-item negative"><i class="fas fa-times-circle" aria-hidden="true"></i> <span>Uses your funds</span></li>
             </ul>
             <div class="comparison-cta"><a href="education.html" class="cta-button primary" aria-label="Learn more"><i class="fas fa-info-circle" aria-hidden="true"></i><span>Learn More</span></a></div>
           </div>
@@ -1308,238 +1188,59 @@
       </div>
     </section>
 
-    <!-- ========== DUAL LOGO SECTION ========== -->
-    <section class="dual-logo-section" aria-label="Dual logo ecosystem" data-aos="fade-up">
+    <!-- ========== OFFICIAL CONTRACT ========== -->
+    <section aria-label="Official contract" data-aos="fade-up" style="padding: 2rem 0;">
       <div class="container">
-        <div class="section-header" data-aos="fade-up" data-aos-delay="100">
-          <h2><i class="fas fa-crown" aria-hidden="true"></i> $REBL: The Reward Token</h2>
-<p class="section-subtitle">50% of ZORA revenue funds buy-back and burn — governance-triggered</p>
-        </div>
-        
-        <div class="ecosystem-overview">
-          <div class="ecosystem-badge"><i class="fas fa-users" aria-hidden="true"></i><span>Built by Creators, for Creators and Collectors</span></div>
-          <div class="ecosystem-intro">
-            <h3><i class="fas fa-sync-alt" aria-hidden="true"></i> The Complete SocialFi Ecosystem</h3>
-            <p class="ecosystem-description">$REBL isn't just a token. It's the governance and reward engine of a revolutionary multi-chain SocialFi ecosystem that <strong>rewards loyalty, creativity, and participation</strong> in preserving and animating history.</p>
+        <div class="contract-emphasis" style="max-width: 700px; margin: 0 auto;">
+          <div class="contract-header">
+            <i class="fas fa-fingerprint" aria-hidden="true"></i>
+            <h4>Official $REBL Token</h4>
+          </div>
+          <div class="contract-code">
+            <code>F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump</code>
+            <button class="copy-contract-btn" onclick="copyContractAddress()">
+              <i class="fas fa-copy"></i><span>Copy</span>
+            </button>
+          </div>
+          <div class="contract-note">
+            <i class="fas fa-shield-alt"></i>
+            <span><strong>Always verify:</strong> This is the ONLY official $REBL token contract</span>
           </div>
         </div>
-        
-<div class="logo-comparison-container">
-
-  <!-- ROW 1: The two $REBL logo cards + bridge -->
-  <div class="logo-comparison-row">
-    <div class="logo-card original" role="article">
-      <div class="logo-card-header">
-        <div class="logo-badge on-chain">On-Chain Legacy</div>
-        <div class="logo-status"><i class="fas fa-history" aria-hidden="true"></i><span>Immutable History</span></div>
-      </div>
-      <div class="logo-visual">
-        <div class="logo-image-container">
-          <img src="images/Original_600x600.png" alt="Original $REBL Logo" loading="lazy">
-          <div class="logo-glow-effect" aria-hidden="true"></div>
-        </div>
-        <div class="logo-label">Original $REBL</div>
-        <div class="logo-subtitle">Permanent Blockchain Record</div>
-      </div>
-      <div class="logo-details">
-        <div class="ecosystem-feature">
-          <div class="feature-icon" aria-hidden="true"><i class="fas fa-gem"></i></div>
-          <div class="feature-content">
-            <h4>Governance Token</h4>
-            <p>Powers decisions on ZORA collection, burns, and rewards</p>
-          </div>
-        </div>
-        <div class="ecosystem-feature">
-          <div class="feature-icon" aria-hidden="true"><i class="fas fa-fire"></i></div>
-          <div class="feature-content">
-            <h4>Governance-Triggered Value Acceleration</h4>
-            <p>50% buy-back &amp; burn, 20% AI production, 15% reserve, 15% operations — all deployed at Governance Hub discretion</p>
-          </div>
-        </div>
-        <div class="platforms-list">
-          <span class="platform-tag"><i class="fab fa-phantom"></i> Phantom</span>
-          <span class="platform-tag"><i class="fas fa-rocket"></i> Pump.fun</span>
-          <span class="platform-tag"><i class="fas fa-water"></i> Jupiter</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="logo-bridge" role="complementary">
-      <div class="bridge-icon" aria-hidden="true"><i class="fas fa-exchange-alt"></i></div>
-      <div class="bridge-text">
-        <h3>Same Vision</h3>
-        <p>From meme warriors to creator economy</p>
-        <div class="bridge-quote">
-          <i class="fas fa-quote-left" aria-hidden="true"></i>
-          <em>More than a meme coin, it's a movement</em>
-          <i class="fas fa-quote-right" aria-hidden="true"></i>
-        </div>
-      </div>
-    </div>
-
-    <div class="logo-card updated" role="article">
-      <div class="logo-card-header">
-        <div class="logo-badge off-chain">Evolving Brand</div>
-        <div class="logo-status"><i class="fas fa-sync-alt" aria-hidden="true"></i><span>Active Development</span></div>
-      </div>
-      <div class="logo-visual">
-        <div class="logo-image-container">
-          <img src="images/Logo_REBL.svg" alt="Current $REBL Logo" loading="lazy">
-          <div class="logo-glow-effect" aria-hidden="true"></div>
-        </div>
-        <div class="logo-label">Current $REBL</div>
-        <div class="logo-subtitle">Active SocialFi Ecosystem</div>
-      </div>
-      <div class="logo-details">
-        <div class="ecosystem-feature">
-          <div class="feature-icon" aria-hidden="true"><i class="fas fa-gift"></i></div>
-          <div class="feature-content">
-            <h4>Rewards System</h4>
-            <p>Age-weighted bonuses: +7% per epoch, +140% at 20 epochs</p>
-          </div>
-        </div>
-        <div class="ecosystem-feature">
-          <div class="feature-icon" aria-hidden="true"><i class="fas fa-trophy"></i></div>
-          <div class="feature-content">
-            <h4>Collector Bonuses</h4>
-            <p>+0.05x per collectible, +0.1x for largest holders</p>
-          </div>
-        </div>
-        <div class="ecosystem-feature">
-          <div class="feature-icon" aria-hidden="true"><i class="fas fa-paint-brush"></i></div>
-          <div class="feature-content">
-            <h4>Journey Collectible Pipeline</h4>
-            <p>Community-chosen history → AI-animated collectibles → Revenue → Burns</p>
-          </div>
-        </div>
-        <div class="platforms-list">
-          <span class="platform-tag"><i class="fas fa-chart-line"></i> DexScreener</span>
-          <span class="platform-tag"><i class="fas fa-terminal"></i> GeckoTerminal</span>
-          <span class="platform-tag"><i class="fas fa-home"></i> RebelInuX.fun</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ROW 2: SocialFi Flow -->
-  <div class="process-flow" role="region" aria-label="Ecosystem process flow">
-    <h3><i class="fas fa-random" aria-hidden="true"></i> The SocialFi Flow</h3>
-    <div class="flow-steps">
-      <div class="flow-step" role="article">
-        <div class="step-number" aria-hidden="true">1</div>
-        <div class="step-content">
-          <h4>Hold $rebelinux + Rebel Key on ZORA</h4>
-          <p>The 2-asset baseline: Creator Coin ($rebelinux) + Content Coin (Rebel Key). Journey Collectibles are optional boosters.</p>
-        </div>
-      </div>
-      <div class="flow-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
-      <div class="flow-step" role="article">
-        <div class="step-number" aria-hidden="true">2</div>
-        <div class="step-content">
-          <h4>Register Once</h4>
-          <p>Post your Solana address on the Rebel Key page</p>
-          <a href="https://zora.co/coin/base:0x7f86232930e1f43b73b8e5d83192800bfca8a7f3" target="_blank" class="register-link" style="display: inline-flex; align-items: center; gap: 0.4rem; background: var(--rebel-gold); color: #1a1a2e; padding: 0.4rem 0.8rem; border-radius: 8px; margin-top: 0.5rem; text-decoration: none; font-weight: 700; font-size: 0.75rem;">
-            <i class="fas fa-address-card"></i> Register Address →
-          </a>
-        </div>
-      </div>
-      <div class="flow-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
-      <div class="flow-step" role="article">
-        <div class="step-number" aria-hidden="true">3</div>
-        <div class="step-content">
-          <h4>Earn $REBL + Bonuses</h4>
-          <p>Automatic rewards every epoch. +7% age bonus per epoch. +0.05x per collectible. +0.1x for largest holders.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ROW 3: Governance Hub + Official Token -->
-  <div class="contract-governance" role="region" aria-label="Governance information">
-    <div class="governance-info">
-      <div class="governance-icon" aria-hidden="true"><i class="fas fa-vote-yea"></i></div>
-      <div class="governance-content">
-        <h3><i class="fas fa-crown" aria-hidden="true"></i> $REBL Governance Hub: You Shape History</h3>
-        <p>$REBL holders govern the RebelInuX SocialFi ecosystem through a token-gated Telegram group:</p>
-        <ul class="governance-list">
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span><strong>Entry Requirement:</strong> 500,000 $REBL</span></li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span><strong>Voting Power:</strong> 1 member = 1 vote (equal)</span></li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span><strong>Journey Contest:</strong> 60% Governance Hub vote + 40% social engagement</span></li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span><strong>Governance Powers:</strong> Protocol parameters, treasury, partnerships, Journey themes</span></li>
-        </ul>
-        <div class="learn-more-box">
-          <div class="learn-icon" aria-hidden="true"><i class="fas fa-gavel"></i></div>
-          <div class="learn-content">
-            <h4>Community-Driven Journey Creation</h4>
-            <p>All governance unified under $REBL. Journey Contest winners are determined by hybrid scoring: <strong>60% Governance Hub vote + 40% social engagement</strong>. You decide where our mascot travels next.</p>
-            <div class="learn-links">
-              <a href="governance.html" class="learn-link"><i class="fas fa-vote-yea"></i><span>Join Governance Hub (500K $REBL)</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="contract-emphasis" role="complementary">
-      <div class="contract-header">
-        <i class="fas fa-fingerprint" aria-hidden="true"></i>
-        <h4>Official $REBL Token</h4>
-      </div>
-      <div class="contract-code">
-        <code>F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump</code>
-        <button class="copy-contract-btn" onclick="copyContractAddress()">
-          <i class="fas fa-copy"></i><span>Copy</span>
-        </button>
-      </div>
-      <div class="contract-note">
-        <i class="fas fa-shield-alt"></i>
-        <span><strong>Always verify:</strong> This is the ONLY official $REBL token contract</span>
-      </div>
-    </div>
-  </div>
-
-</div>
       </div>
     </section>
-    
+
     <!-- ========== QUICK START SECTION ========== -->
     <section class="quick-start" aria-label="Quick start guide" data-aos="fade-up">
       <div class="container">
         <div class="section-header" data-aos="fade-up" data-aos-delay="100">
-          <h2><i class="fas fa-rocket" aria-hidden="true"></i> Start Earning in 3 Steps</h2>
-          <p class="section-subtitle">One-time setup for automatic weekly $REBL rewards</p>
+          <h2><i class="fas fa-rocket" aria-hidden="true"></i> Start in 3 Steps</h2>
+          <p class="section-subtitle">No purchase required to enter contests</p>
         </div>
-        
+
         <div class="steps-grid" data-aos="fade-up" data-aos-delay="200">
           <div class="step-card" role="article" data-aos="fade-up" data-aos-delay="300">
             <div class="step-number" aria-hidden="true">1</div>
-            <div class="step-icon" aria-hidden="true"><i class="fas fa-wallet"></i></div>
-            <h3>Set Up Wallets</h3>
-            <p>Install Base-compatible wallet (MetaMask) for ZORA and Solana wallet (Phantom) for $REBL.</p>
-            <a href="getting-started.html" class="cta-button primary wallet-guide-btn"><i class="fas fa-wallet"></i><span>Wallet Guide</span></a>
+            <div class="step-icon" aria-hidden="true"><i class="fas fa-film"></i></div>
+            <h3>Watch & Discover</h3>
+            <p>Follow the Rebel Journey on TikTok, YouTube, Instagram, and Facebook. All videos are free to watch.</p>
+            <a href="journey.html" class="cta-button primary"><i class="fas fa-film"></i><span>Explore the Journey</span></a>
           </div>
-          
+
           <div class="step-card" role="article" data-aos="fade-up" data-aos-delay="400">
             <div class="step-number" aria-hidden="true">2</div>
-            <div class="step-icon" aria-hidden="true"><i class="fas fa-shopping-cart"></i></div>
-          <h3>Acquire the 2 Assets</h3>
-<p>Buy <strong>$rebelinux</strong> + <strong>Rebel Key</strong> on ZORA (Base chain). Optionally add Journey Collectibles to boost your multiplier.</p>
-            <div class="step-button-group">
-              <a href="https://zora.co/coin/base:0xf95beeF6439ec38fA757238Cdec8417ABDA536bd" target="_blank" rel="noopener noreferrer" class="cta-button gold-glow"><i class="fas fa-rocket"></i><span>Buy $rebelinux</span></a>
-<a href="https://zora.co/coin/base:0x7f86232930e1f43b73b8e5d83192800bfca8a7f3" target="_blank" rel="noopener noreferrer" class="cta-button secondary" style="background: var(--rebel-green);"><i class="fas fa-key"></i><span>Get Rebel Key</span></a>
-              <a href="https://zora.co/coin/base:0x631e050fa042c2da1d3b8abe7a260b53ffc83f7f" target="_blank" rel="noopener noreferrer" class="cta-button" style="background: var(--rebel-purple);"><i class="fas fa-film"></i><span>Mint REBL-J1C</span></a>
-            </div>
+            <div class="step-icon" aria-hidden="true"><i class="fas fa-trophy"></i></div>
+            <h3>Enter a Contest</h3>
+            <p>Design a thumbnail, propose a painting to tokenize, or suggest the next Journey theme.</p>
+            <a href="contests.html" class="cta-button gold-glow"><i class="fas fa-trophy"></i><span>Contest Rules</span></a>
           </div>
-          
+
           <div class="step-card" role="article" data-aos="fade-up" data-aos-delay="500">
             <div class="step-number" aria-hidden="true">3</div>
-            <div class="step-icon" aria-hidden="true"><i class="fas fa-address-card"></i></div>
-            <h3>Register and Earn $REBL</h3>
-            <p>Post your Solana address on the Rebel Key page. Hold the 3 assets. Earn $REBL automatically.</p>
-            <div class="step-button-group" style="margin-bottom: 1rem;">
-              <a href="https://zora.co/coin/base:0x7f86232930e1f43b73b8e5d83192800bfca8a7f3" target="_blank" class="register-link"><i class="fas fa-address-card"></i><span> Register Your Solana Address →</span></a>
-<a href="epoch-rewards.html" class="cta-button secondary" style="background: var(--rebel-blue);"><i class="fas fa-chart-line"></i><span>View Rewards</span></a>
-            </div>
+            <div class="step-icon" aria-hidden="true"><i class="fas fa-coins"></i></div>
+            <h3>Earn $REBL</h3>
+            <p>Winners earn $REBL, plus cumulative volume bonuses if their tokenized scene trades.</p>
+            <a href="tokenomics.html" class="cta-button secondary"><i class="fas fa-sitemap"></i><span>Tokenomics</span></a>
           </div>
         </div>
       </div>
@@ -1551,65 +1252,63 @@
         <div class="cta-container" data-aos="fade-up" data-aos-delay="100">
           <div class="cta-content" data-aos="fade-up" data-aos-delay="200">
             <h2>Ready to Join <span class="gradient-text">the Historical Journey?</span></h2>
-<p class="cta-subtitle">Hold <strong>$rebelinux</strong> + <strong>Rebel Key</strong> → Earn <strong>$REBL</strong> (Journey Collectibles optional)</p>
-            
+            <p class="cta-subtitle">Participate in contests → Preserve history → Earn <strong>$REBL</strong></p>
+
             <div class="cta-features">
               <div class="feature"><i class="fas fa-film"></i><span>AI-Animated Historical Collectibles</span></div>
-              <div class="feature"><i class="fas fa-gift"></i><span>1.28M - 3.2M $REBL Weekly</span></div>
-              <div class="feature"><i class="fas fa-address-card"></i><span>One-Time Registration</span></div>
-              <div class="feature"><i class="fas fa-trophy"></i><span>Collector Bonuses (+0.05x, +0.1x)</span></div>
+              <div class="feature"><i class="fas fa-trophy"></i><span>3 Contest Types</span></div>
+              <div class="feature"><i class="fas fa-vote-yea"></i><span>Community Governance</span></div>
+              <div class="feature"><i class="fas fa-fire"></i><span>50% Buy-Back & Burn</span></div>
             </div>
-            
+
             <div class="cta-buttons">
               <a href="https://zora.co/@rebelinux" target="_blank" rel="noopener noreferrer" class="cta-button primary-glow large"><i class="fas fa-store"></i><span>View on ZORA</span></a>
-              <a href="https://zora.co/coin/base:0x7f86232930e1f43b73b8e5d83192800bfca8a7f3" target="_blank" class="register-link"><i class="fas fa-address-card"></i><span> Register Your Solana Address →</span></a>
+              <a href="contests.html" class="cta-button secondary large"><i class="fas fa-trophy"></i><span>Enter a Contest</span></a>
             </div>
-            
+
             <div class="security-badges">
               <div class="badge"><i class="fas fa-film"></i><span>AI-Animated Journey Collectibles</span></div>
-              <div class="badge"><i class="fas fa-key"></i><span>Rebel Key (One for All Epochs)</span></div>
-              <div class="badge"><i class="fas fa-address-card"></i><span>One-Time Registration</span></div>
+              <div class="badge"><i class="fas fa-trophy"></i><span>Participation Rewards</span></div>
+              <div class="badge"><i class="fas fa-vote-yea"></i><span>Governance Hub</span></div>
             </div>
           </div>
-          
+
           <div class="cta-visual" data-aos="fade-up" data-aos-delay="300">
             <div class="visual-container">
               <div style="position: relative; display: inline-block; width: 350px; height: 350px;">
                 <img src="images/rebelinux_logo/$rebelinux SVG (4).svg" alt="RebelInuX Logo" class="cta-logo" style="width: 100%; height: 100%; object-fit: contain;">
                 <div class="pulse-effect" aria-hidden="true"></div>
               </div>
-<div class="token-flow" aria-hidden="true">
-  <div class="flow-item">$rebelinux</div>
-  <i class="fas fa-plus"></i>
-  <div class="flow-item">Rebel Key</div>
-  <i class="fas fa-arrow-right"></i>
-  <div class="flow-item reward">$REBL</div>
-</div>
+              <div class="token-flow" aria-hidden="true">
+                <div class="flow-item">Contests</div>
+                <i class="fas fa-arrow-right"></i>
+                <div class="flow-item reward">$REBL</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
   </main>
-  
+
   <!-- Footer Container -->
   <div id="footer-container"></div>
-  
+
   <!-- JavaScript -->
   <script src="js/includes.js"></script>
   <script src="js/common.js"></script>
   <script src="js/index.js"></script>
-  
+
   <!-- AOS Animation -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, once: true, offset: 100, disable: window.innerWidth < 768 ? 'mobile' : false });
     window.addEventListener('resize', function() { AOS.refresh(); });
-    
+
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text).then(() => alert('Contract address copied!')).catch(() => prompt('Copy manually:', text));
     }
-    
+
     function toggleContractView(btn) {
       const code = btn.closest('.contract-address').querySelector('code');
       const full = code.getAttribute('data-full');
@@ -1623,15 +1322,15 @@
         btn.querySelector('i').className = 'fas fa-compress-alt';
       }
     }
-    
+
     function addToWallet(address) { alert('Add token to wallet: ' + address); }
     function copyContractAddress() { copyToClipboard('F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump'); }
-    
+
     const loader = document.getElementById('loader');
     if (loader) {
       setTimeout(() => { loader.classList.add('loaded'); setTimeout(() => { loader.style.display = 'none'; }, 500); }, 2000);
     }
-    
+
     const backBtn = document.getElementById('backToTop');
     if (backBtn) {
       window.addEventListener('scroll', () => { backBtn.classList.toggle('visible', window.scrollY > 400); });
