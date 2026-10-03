@@ -1107,14 +1107,18 @@
   }
   
   .token-verify-btn {
-    font-size: 0.85em;
-    padding: 7px 14px;
-    width: 100%;
+    font-size: 0.8em;
+    padding: 7px 12px;
+    width: auto;
+    max-width: 100%;
     justify-content: center;
+    box-sizing: border-box;
   }
   
   .token-address-box {
     gap: 8px;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -1123,5 +1127,10 @@
     font-size: 0.65em;
     padding: 6px 8px;
     letter-spacing: 0.2px;
+  }
+  
+  .token-verify-btn {
+    font-size: 0.75em;
+    padding: 6px 10px;
   }
 }
