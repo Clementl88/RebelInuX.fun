@@ -1073,3 +1073,99 @@
     gap: 0.5rem;
   }
 }
+/* ---------- Hero (tokenomics-style) ---------- */
+.page-hero--journey {
+  background: linear-gradient(135deg, var(--dark-bg, #0a0a0a) 0%, #2f3b52 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0 4rem;
+  text-align: center;
+}
+
+.page-hero--journey::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://i.imgur.com/bfPgAoS.webp') center/cover;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.page-hero--journey .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero--journey h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-hero--journey .text-lead {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.page-hero--journey .text-lead strong {
+  color: var(--rebel-gold);
+}
+
+.current-journey-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(227, 184, 124, 0.12);
+  border: 1px solid rgba(227, 184, 124, 0.4);
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.current-journey-badge .flag { font-size: 1.1rem; }
+
+.current-journey-badge .current-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--rebel-gold);
+  text-transform: uppercase;
+}
+
+.current-journey-badge .current-name {
+  color: #fff;
+  font-weight: 600;
+}
+
+.hero-journey-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(227, 184, 124, 0.15);
+  border-bottom: 1px solid rgba(227, 184, 124, 0.15);
+}
+
+.hero-stat { text-align: center; }
+
+.hero-stat .stat-num {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--rebel-gold);
+}
+
+.hero-stat .stat-label {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
