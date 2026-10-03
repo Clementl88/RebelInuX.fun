@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -21,6 +21,8 @@
   <meta name="twitter:description" content="Enter Thumbnail, Tokenization, or Journey contests. Free to enter. Winners earn $REBL.">
   <meta name="twitter:image" content="https://rebelinux.fun/images/Logo_REBL.svg">
 
+  <meta name="theme-color" content="#050508">
+
   <link rel="icon" type="image/svg+xml" href="images/Logo_REBL.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="images/Logo_REBL.svg">
 
@@ -40,9 +42,9 @@
     <div class="loader-content">
       <div class="loader-spinner"></div>
       <div class="loader-text">
-        <span class="text-item">Loading Contests</span>
-        <span class="text-item">Thumbnail · Tokenization · Journey</span>
-        <span class="text-item">Free to Enter · Winners Earn $REBL</span>
+        <span class="text-item">Contests</span>
+        <span class="text-item">Free to Enter</span>
+        <span class="text-item">Winners Earn $REBL</span>
       </div>
       <div class="loader-progress"><div class="progress-bar"></div></div>
     </div>
@@ -54,596 +56,312 @@
 
   <main>
 
-    <!-- ========== HERO ========== -->
- <section class="page-hero page-hero--contests" aria-label="Contests hero" data-aos="fade-up">
-  <div class="container">
-    <h1>ENTER CONTESTS. EARN $REBL.</h1>
-    <p class="text-lead" data-aos="fade-up" data-aos-delay="100">
-      RebelInuX rewards <strong>participation, not holding</strong>. Create thumbnails. Select scenes. Propose the next Journey. Winners earn $REBL on Solana.
-    </p>
+    <!-- ========== HERO (Cinematic) ========== -->
+    <section class="cinema-hero cinema-hero--contests" aria-label="Contests hero">
+      <div class="cinema-hero-bg" aria-hidden="true"></div>
+      <div class="cinema-hero-vignette" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cinema-hero-content" data-aos="fade-up">
+          <span class="cinema-eyebrow">
+            <span class="dot"></span>
+            Live participation system
+          </span>
 
-    <div class="hero-badges" data-aos="fade-up" data-aos-delay="150">
-      <span class="hero-badge"><i class="fas fa-check-circle"></i> Free to enter</span>
-      <span class="hero-badge"><i class="fas fa-check-circle"></i> No purchase required</span>
-      <span class="hero-badge"><i class="fas fa-check-circle"></i> Rewards in $REBL</span>
-    </div>
+          <h1 class="cinema-title">
+            ENTER CONTESTS.<br>EARN $REBL.
+          </h1>
 
-    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-      <a href="#active-contest" class="cta-button">
-        <i class="fas fa-bullhorn"></i> View Active Contest
-      </a>
-      <a href="#contest-types" class="cta-button gold">
-        <i class="fas fa-list"></i> Contest Types
-      </a>
-    </div>
-  </div>
-</section>
+          <p class="cinema-lead">
+            RebelInuX rewards <strong>participation, not holding</strong>. Create thumbnails.
+            Select scenes. Propose the next Journey. Winners earn $REBL on Solana.
+          </p>
 
-    <!-- ========== KEY TAKEAWAYS (v3.0 style) ========== -->
-    <section class="key-takeaways" aria-label="Key takeaways" data-aos="fade-up">
-      <div class="takeaways-container">
-        <div class="takeaways-box">
-          <div class="takeaways-header">
-            <div class="takeaways-icon"><i class="fas fa-bolt"></i></div>
-            <h3 class="takeaways-title">Contest Key Takeaways</h3>
+          <div class="cinema-meta-row">
+            <span class="cinema-meta-item"><i class="fas fa-trophy"></i> 3 Contest Types</span>
+            <span class="cinema-meta-item"><i class="fas fa-unlock"></i> Free to Enter</span>
+            <span class="cinema-meta-item"><i class="fas fa-fire"></i> Up to $111 Bonuses</span>
+            <span class="cinema-meta-item"><i class="fas fa-vote-yea"></i> 500K $REBL for Governance</span>
           </div>
 
-          <div class="takeaways-grid">
-            <div class="takeaway-item takeaway-gold" data-aos="fade-right">
-              <div class="takeaway-icon"><i class="fas fa-trophy"></i></div>
-              <div class="takeaway-content">
-                <div class="takeaway-title">Contest Types</div>
-                <div class="takeaway-value">3</div>
-                <div class="takeaway-sub">Thumbnail · Tokenization · Journey</div>
-              </div>
-            </div>
-
-            <div class="takeaway-item takeaway-blue" data-aos="fade-up">
-              <div class="takeaway-icon"><i class="fas fa-unlock"></i></div>
-              <div class="takeaway-content">
-                <div class="takeaway-title">Entry Cost</div>
-                <div class="takeaway-value">Free</div>
-                <div class="takeaway-sub">No purchase required</div>
-              </div>
-            </div>
-
-            <div class="takeaway-item takeaway-red" data-aos="fade-up">
-              <div class="takeaway-icon"><i class="fas fa-fire"></i></div>
-              <div class="takeaway-content">
-                <div class="takeaway-title">Volume Bonuses</div>
-                <div class="takeaway-value">Up to $111</div>
-                <div class="takeaway-sub">Cumulative · Tokenization only</div>
-              </div>
-            </div>
-
-            <div class="takeaway-item takeaway-purple" data-aos="fade-left">
-              <div class="takeaway-icon"><i class="fas fa-vote-yea"></i></div>
-              <div class="takeaway-content">
-                <div class="takeaway-title">Governance Hub</div>
-                <div class="takeaway-value">500K $REBL</div>
-                <div class="takeaway-sub">Pre-selects finalists</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="takeaways-footer">
-            <a href="#contest-types">
-              <i class="fas fa-arrow-down"></i> See the contest types below
+          <div class="cinema-cta-row">
+            <a href="#active-contest" class="cinema-btn primary">
+              <i class="fas fa-bullhorn"></i> View Active Contest
+            </a>
+            <a href="#contest-types" class="cinema-btn ghost">
+              <i class="fas fa-list"></i> Contest Types
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== STATS OVERVIEW (v3.0 style) ========== -->
-    <section id="contests-stats" aria-label="Contest stats" data-aos="fade-up">
+    <!-- ========== KEY TAKEAWAYS (Cinematic) ========== -->
+    <section class="cinema-takeaways" aria-label="Key takeaways" data-aos="fade-up">
       <div class="container">
-        <h2><i class="fas fa-chart-line"></i> Contest Overview</h2>
+        <div class="cinema-section-eyebrow">
+          <span class="rule"></span>
+          <span>The System at a glance</span>
+          <span class="rule"></span>
+        </div>
 
-        <div class="stats-overview">
-          <div class="stat-card" data-aos="fade-right">
-            <div class="stat-icon"><i class="fas fa-trophy"></i></div>
-            <div class="stat-value">3</div>
-            <div class="stat-label">Contest Types</div>
-            <div class="stat-note">Thumbnail · Tokenization · Journey</div>
+        <div class="cinema-poster-grid">
+          <div class="cinema-poster" data-aos="fade-right">
+            <div class="poster-index">01</div>
+            <div class="poster-value">3</div>
+            <div class="poster-label">Contest Types</div>
+            <div class="poster-note">Thumbnail · Tokenization · Journey</div>
           </div>
 
-          <div class="stat-card" data-aos="fade-up">
-            <div class="stat-icon"><i class="fas fa-gift"></i></div>
-            <div class="stat-value">Base + Bonus</div>
-            <div class="stat-label">Reward Model</div>
-            <div class="stat-note">Base per contest · Volume cumulative</div>
+          <div class="cinema-poster" data-aos="fade-up">
+            <div class="poster-index">02</div>
+            <div class="poster-value">Free</div>
+            <div class="poster-label">Entry</div>
+            <div class="poster-note">No purchase required</div>
           </div>
 
-          <div class="stat-card" data-aos="fade-up">
-            <div class="stat-icon"><i class="fas fa-fire"></i></div>
-            <div class="stat-value">$111</div>
-            <div class="stat-label">Max Volume Bonus</div>
-            <div class="progress-container">
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: 100%"></div>
-              </div>
-              <div class="stat-note">At $50K trading volume</div>
-            </div>
+          <div class="cinema-poster" data-aos="fade-up">
+            <div class="poster-index">03</div>
+            <div class="poster-value">$111</div>
+            <div class="poster-label">Max Volume Bonus</div>
+            <div class="poster-note">Cumulative · Tokenization only</div>
           </div>
 
-          <div class="stat-card" data-aos="fade-left">
-            <div class="stat-icon"><i class="fas fa-vote-yea"></i></div>
-            <div class="stat-value">500K</div>
-            <div class="stat-label">$REBL for Governance</div>
-            <div class="stat-note">1 member = 1 vote</div>
+          <div class="cinema-poster" data-aos="fade-left">
+            <div class="poster-index">04</div>
+            <div class="poster-value">500K</div>
+            <div class="poster-label">$REBL for Governance</div>
+            <div class="poster-note">1 member = 1 vote</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== ACTIVE CONTEST BANNER ========== -->
-    <section id="active-contest" class="active-contest-section" aria-label="Active contest">
+    <!-- ========== ACTIVE CONTEST (Cinematic LIVE treatment) ========== -->
+    <section id="active-contest" class="cinema-active" aria-label="Active contest">
       <div class="container">
-        <div class="active-contest-card" data-aos="fade-up">
-          <div class="active-contest-header">
-            <span class="live-dot"></span>
-            <span class="active-label">ACTIVE CONTEST</span>
-            <span class="contest-id">#001</span>
+        <div class="cinema-active-card" data-aos="fade-up">
+          <div class="cinema-live-bar">
+            <span class="live-pulse"></span>
+            <span class="live-label">LIVE NOW</span>
+            <span class="live-id">#001</span>
           </div>
 
-          <!--
-            ═══════════════════════════════════════════════════════
-            EDIT THIS BLOCK EACH TIME A NEW CONTEST OPENS
-            ═══════════════════════════════════════════════════════
-          -->
-          <h2 class="active-contest-title">
-            Thumbnail Contest — REBL-J1E Chapter V
-          </h2>
-          <p class="active-contest-description">
+          <h2 class="cinema-active-title">Thumbnail Contest — Chapter V</h2>
+          <p class="cinema-active-desc">
             Design a thumbnail for the upcoming Chapter V video of the French Revolution Journey.
             Your thumbnail will be used on YouTube, TikTok, Instagram, and Facebook.
             The winning design becomes the official visual of the chapter.
           </p>
 
-          <div class="active-contest-meta">
-            <div class="meta-item">
-              <i class="fas fa-trophy"></i>
-              <div>
-                <span class="meta-label">Reward</span>
-                <span class="meta-value">Base $REBL + Public Credit</span>
-              </div>
+          <div class="cinema-active-meta">
+            <div class="active-meta-item">
+              <span class="active-meta-label">Reward</span>
+              <span class="active-meta-value">Base $REBL + Public Credit</span>
             </div>
-            <div class="meta-item">
-              <i class="fas fa-calendar-alt"></i>
-              <div>
-                <span class="meta-label">Submission Deadline</span>
-                <span class="meta-value">Announced on X</span>
-              </div>
+            <div class="active-meta-item">
+              <span class="active-meta-label">Deadline</span>
+              <span class="active-meta-value">Announced on X</span>
             </div>
-            <div class="meta-item">
-              <i class="fas fa-gavel"></i>
-              <div>
-                <span class="meta-label">Winner Selection</span>
-                <span class="meta-value">Hub pre-selects · X community votes</span>
-              </div>
+            <div class="active-meta-item">
+              <span class="active-meta-label">Selection</span>
+              <span class="active-meta-value">Hub pre-selects · X community votes</span>
             </div>
           </div>
 
-          <div class="active-contest-actions">
-            <a href="https://x.com/RebelInuX" target="_blank" rel="noopener noreferrer" class="cta-button primary-glow">
-              <i class="fab fa-twitter"></i><span>Submit on X</span>
+          <div class="cinema-cta-row">
+            <a href="https://x.com/RebelInuX" target="_blank" rel="noopener noreferrer" class="cinema-btn primary">
+              <i class="fab fa-twitter"></i> Submit on X
             </a>
-            <a href="#how-to-enter" class="cta-button secondary">
-              <i class="fas fa-info-circle"></i><span>How to Enter</span>
+            <a href="#how-to-enter" class="cinema-btn ghost">
+              <i class="fas fa-info-circle"></i> How to Enter
             </a>
           </div>
-          <!-- ═══════════════════════════════════════════════════════ -->
         </div>
       </div>
     </section>
 
-    <!-- ========== 3 CONTEST TYPES ========== -->
-    <section id="contest-types" class="contest-types-section" aria-label="Contest types">
+    <!-- ========== CONTEST TYPES (Cinematic posters) ========== -->
+    <section id="contest-types" class="cinema-types" aria-label="Contest types">
       <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-trophy"></i> The <span class="highlight-gold">3 Contest Types</span></h2>
-          <p class="section-subtitle">Each rewards a different kind of contribution</p>
+        <div class="cinema-section-header" data-aos="fade-up">
+          <span class="cinema-section-eyebrow">
+            <span class="rule"></span>
+            <span>Three paths</span>
+          </span>
+          <h2>Choose Your Contest</h2>
+          <p class="cinema-section-sub">Each rewards a different kind of contribution.</p>
         </div>
 
-        <div class="contest-types-grid">
-          <!-- Thumbnail -->
-          <div class="contest-type-card" data-aos="fade-up" data-aos-delay="100" style="border-top: 3px solid #e3b87c;">
-            <div class="contest-type-icon" style="background: linear-gradient(135deg, #e3b87c, #c99e5c);">
-              <i class="fas fa-image"></i>
-            </div>
+        <div class="cinema-type-grid">
+          <article class="cinema-type" data-aos="fade-up" data-aos-delay="100">
+            <div class="type-index">01</div>
+            <div class="type-icon"><i class="fas fa-image"></i></div>
             <h3>Thumbnail Contests</h3>
-            <p>Create a thumbnail for one of our videos. Your design becomes the official visual on every platform.</p>
-            <ul class="contest-type-features">
-              <li><i class="fas fa-check"></i> Design a thumbnail</li>
+            <p>Design a thumbnail for one of our videos. Your work becomes the official visual across every platform.</p>
+            <ul class="type-list">
               <li><i class="fas fa-check"></i> Base $REBL reward</li>
               <li><i class="fas fa-check"></i> Public credit</li>
+              <li><i class="fas fa-check"></i> Free to enter</li>
             </ul>
-            <div class="contest-type-note">
-              <i class="fas fa-info-circle"></i>
-              <span>Base reward only — no volume bonuses</span>
-            </div>
-          </div>
+            <div class="type-note">No volume bonuses</div>
+          </article>
 
-          <!-- Tokenization -->
-          <div class="contest-type-card" data-aos="fade-up" data-aos-delay="200" style="border-top: 3px solid #fbbf24; border-width: 2px;">
-            <div class="contest-type-icon" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">
-              <i class="fas fa-gavel"></i>
-            </div>
-            <span class="contest-type-badge">VOLUME BONUSES</span>
+          <article class="cinema-type highlight" data-aos="fade-up" data-aos-delay="200">
+            <div class="type-index">02</div>
+            <div class="type-icon"><i class="fas fa-gavel"></i></div>
+            <span class="type-badge">VOLUME BONUSES</span>
             <h3>Tokenization Contests</h3>
-            <p>Choose a scene from our videos to be tokenized on Zora. Your selection becomes a tradeable content coin.</p>
-            <ul class="contest-type-features">
-              <li><i class="fas fa-check"></i> Select a scene to tokenize</li>
+            <p>Choose a scene from our videos to become a content coin on Zora. Your selection goes on-chain.</p>
+            <ul class="type-list">
               <li><i class="fas fa-check"></i> Base reward + volume bonuses</li>
-              <li><i class="fas fa-check"></i> Up to $111 cumulative bonus</li>
+              <li><i class="fas fa-check"></i> Up to $111 cumulative</li>
+              <li><i class="fas fa-check"></i> Content coin becomes tradeable</li>
             </ul>
-            <div class="contest-type-note highlight">
-              <i class="fas fa-fire"></i>
-              <span>The only contest with trading volume bonuses</span>
-            </div>
-          </div>
+            <div class="type-note accent">Only contest with volume bonuses</div>
+          </article>
 
-          <!-- Journey -->
-          <div class="contest-type-card" data-aos="fade-up" data-aos-delay="300" style="border-top: 3px solid #8b5cf6;">
-            <div class="contest-type-icon" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">
-              <i class="fas fa-globe"></i>
-            </div>
+          <article class="cinema-type" data-aos="fade-up" data-aos-delay="300">
+            <div class="type-index">03</div>
+            <div class="type-icon"><i class="fas fa-globe"></i></div>
             <h3>Journey Contests</h3>
-            <p>Propose the next historical theme — a country and a period. The winning theme becomes the next official Journey.</p>
-            <ul class="contest-type-features">
-              <li><i class="fas fa-check"></i> Propose country + period</li>
+            <p>Propose the next historical theme — a country and a period. The winning theme becomes the next Journey.</p>
+            <ul class="type-list">
               <li><i class="fas fa-check"></i> Base $REBL reward</li>
               <li><i class="fas fa-check"></i> Shape the next collection</li>
+              <li><i class="fas fa-check"></i> Free to enter</li>
             </ul>
-            <div class="contest-type-note">
-              <i class="fas fa-info-circle"></i>
-              <span>Base reward only — no volume bonuses</span>
-            </div>
-          </div>
+            <div class="type-note">No volume bonuses</div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ========== HOW A CONTEST WORKS ========== -->
-    <section id="how-it-works" class="how-it-works-section" aria-label="How a contest works">
+    <!-- ========== REWARDS (Cinematic) ========== -->
+    <section class="cinema-rewards" aria-label="Reward structure">
       <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-route"></i> How a Contest Works</h2>
-          <p class="section-subtitle">From submission to reward — 6 steps</p>
-        </div>
-
-        <div class="steps-flow">
-          <div class="flow-step" data-aos="fade-up" data-aos-delay="100">
-            <div class="flow-number">1</div>
-            <div class="flow-content">
-              <h4>Contest Opens</h4>
-              <p>Announced on X and in the Governance Hub. The challenge, reward, and deadline are specified.</p>
-            </div>
-          </div>
-
-          <div class="flow-step" data-aos="fade-up" data-aos-delay="150">
-            <div class="flow-number">2</div>
-            <div class="flow-content">
-              <h4>You Submit</h4>
-              <p>Post your entry on X with your Solana wallet address. Free to enter. No purchase required.</p>
-            </div>
-          </div>
-
-          <div class="flow-step" data-aos="fade-up" data-aos-delay="200">
-            <div class="flow-number">3</div>
-            <div class="flow-content">
-              <h4>Hub Pre-Selects Finalists</h4>
-              <p>The REBL Governance Hub (500K+ $REBL) reviews entries and shortlists finalists based on skill criteria.</p>
-            </div>
-          </div>
-
-          <div class="flow-step" data-aos="fade-up" data-aos-delay="250">
-            <div class="flow-number">4</div>
-            <div class="flow-content">
-              <h4>Community Votes on X</h4>
-              <p>Finalists are published. Anyone can vote for their preferred entry through a poll on X.</p>
-            </div>
-          </div>
-
-          <div class="flow-step" data-aos="fade-up" data-aos-delay="300">
-            <div class="flow-number">5</div>
-            <div class="flow-content">
-              <h4>Winner Announced</h4>
-              <p>The finalist with the most votes wins. In case of a tie, the project owner decides. A 75% Hub supermajority may veto in extreme cases.</p>
-            </div>
-          </div>
-
-          <div class="flow-step" data-aos="fade-up" data-aos-delay="350">
-            <div class="flow-number">6</div>
-            <div class="flow-content">
-              <h4>Reward & Production</h4>
-              <p>The winner receives their $REBL reward. Tokenization Contest winners see their scene become a content coin on Zora, with volume bonuses unlocking as it trades.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== REWARD STRUCTURE ========== -->
-    <section id="rewards" class="rewards-section" aria-label="Reward structure">
-      <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-coins"></i> Reward Structure</h2>
-          <p class="section-subtitle">Base reward + cumulative volume bonuses (Tokenization Contests only)</p>
-        </div>
-
-        <div class="reward-info-grid">
-          <div class="reward-info-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="reward-info-icon"><i class="fas fa-award"></i></div>
-            <h4>Base Reward</h4>
-            <p>Every contest winner receives a base $REBL reward. The amount is announced per contest.</p>
-            <div class="reward-info-note">All contest types</div>
-          </div>
-
-          <div class="reward-info-card highlighted" data-aos="fade-up" data-aos-delay="200">
-            <div class="reward-info-icon"><i class="fas fa-fire"></i></div>
-            <h4>Volume Bonuses</h4>
-            <p>Cumulative bonuses unlock as your tokenized scene reaches trading volume milestones.</p>
-            <div class="reward-info-note highlight">Tokenization Contests only</div>
-          </div>
-
-          <div class="reward-info-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="reward-info-icon"><i class="fas fa-gift"></i></div>
-            <h4>Extra Prizes</h4>
-            <p>Winners also receive public credit, $rebelinux Creator Coins, and a free mint of the first video collectible from the collection.</p>
-            <div class="reward-info-note">All contest types</div>
-          </div>
-        </div>
-
-        <!-- Volume Milestone Cards -->
-        <div class="milestones-wrapper" data-aos="fade-up" data-aos-delay="400">
-          <h3 class="milestones-title">
-            <i class="fas fa-chart-line"></i> Volume Milestones — Tokenization Contests
-          </h3>
-          <p class="milestones-subtitle">
-            Cumulative bonuses: reaching a higher milestone includes all lower-milestone bonuses.
-          </p>
-
-          <div class="milestones-grid">
-            <div class="milestone-card">
-              <div class="milestone-volume">$2,500</div>
-              <div class="milestone-bonus">+$3</div>
-              <div class="milestone-total">Total: $3</div>
-            </div>
-            <div class="milestone-card">
-              <div class="milestone-volume">$5,000</div>
-              <div class="milestone-bonus">+$6</div>
-              <div class="milestone-total">Total: $9</div>
-            </div>
-            <div class="milestone-card">
-              <div class="milestone-volume">$10,000</div>
-              <div class="milestone-bonus">+$12</div>
-              <div class="milestone-total">Total: $21</div>
-            </div>
-            <div class="milestone-card">
-              <div class="milestone-volume">$25,000</div>
-              <div class="milestone-bonus">+$30</div>
-              <div class="milestone-total">Total: $51</div>
-            </div>
-            <div class="milestone-card final">
-              <div class="milestone-volume">$50,000</div>
-              <div class="milestone-bonus">+$60</div>
-              <div class="milestone-total">Total: <strong>$111</strong></div>
-            </div>
-          </div>
-
-          <div class="milestones-note">
-            <i class="fas fa-info-circle"></i>
-            All rewards are paid in $REBL. Volume bonuses apply to Tokenization Contests only.
-            Base reward amount is announced per contest and is separate from volume bonuses.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== SKILL CRITERIA ========== -->
-    <section id="criteria" class="criteria-section" aria-label="Selection criteria">
-      <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-star"></i> Skill Criteria</h2>
-          <p class="section-subtitle">What the Governance Hub looks for when pre-selecting finalists</p>
-        </div>
-
-        <div class="criteria-grid">
-          <div class="criteria-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="criteria-header" style="border-left: 4px solid #e3b87c;">
-              <i class="fas fa-image"></i>
-              <h3>Thumbnail Contests</h3>
-            </div>
-            <ul class="criteria-list">
-              <li><i class="fas fa-check-circle"></i> Originality</li>
-              <li><i class="fas fa-check-circle"></i> Visual impact</li>
-              <li><i class="fas fa-check-circle"></i> Clarity</li>
-              <li><i class="fas fa-check-circle"></i> Alignment with the video's theme</li>
-            </ul>
-          </div>
-
-          <div class="criteria-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="criteria-header" style="border-left: 4px solid #fbbf24;">
-              <i class="fas fa-gavel"></i>
-              <h3>Tokenization Contests</h3>
-            </div>
-            <ul class="criteria-list">
-              <li><i class="fas fa-check-circle"></i> Strength of the argument</li>
-              <li><i class="fas fa-check-circle"></i> Historical relevance</li>
-              <li><i class="fas fa-check-circle"></i> Narrative potential</li>
-            </ul>
-          </div>
-
-          <div class="criteria-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="criteria-header" style="border-left: 4px solid #8b5cf6;">
-              <i class="fas fa-globe"></i>
-              <h3>Journey Contests</h3>
-            </div>
-            <ul class="criteria-list">
-              <li><i class="fas fa-check-circle"></i> Creative vision</li>
-              <li><i class="fas fa-check-circle"></i> Historical significance</li>
-              <li><i class="fas fa-check-circle"></i> Alignment with the RebelInuX mascot's identity</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="criteria-footnote" data-aos="fade-up" data-aos-delay="400">
-          <i class="fas fa-shield-alt"></i>
-          <span>
-            Only entries meeting these criteria advance to the voting phase. This ensures every finalist entry reflects genuine skill and effort.
+        <div class="cinema-section-header" data-aos="fade-up">
+          <span class="cinema-section-eyebrow">
+            <span class="rule"></span>
+            <span>The rewards</span>
           </span>
+          <h2>How You Get Paid</h2>
+          <p class="cinema-section-sub">Base reward + cumulative volume bonuses.</p>
+        </div>
+
+        <div class="cinema-reward-blocks">
+          <div class="cinema-reward-card" data-aos="fade-up">
+            <div class="reward-tag">ALL CONTESTS</div>
+            <h3>Base Reward</h3>
+            <p>Every winner receives a base $REBL reward. Amount announced per contest.</p>
+          </div>
+
+          <div class="cinema-reward-card accent" data-aos="fade-up" data-aos-delay="100">
+            <div class="reward-tag accent">TOKENIZATION ONLY</div>
+            <h3>Volume Bonuses</h3>
+            <p>Cumulative bonuses unlock as your tokenized scene reaches trading volume milestones.</p>
+          </div>
+
+          <div class="cinema-reward-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="reward-tag">ALL CONTESTS</div>
+            <h3>Extras</h3>
+            <p>Public credit, $rebelinux Creator Coins, and a free mint of the collection's first video.</p>
+          </div>
+        </div>
+
+        <div class="cinema-milestones" data-aos="fade-up">
+          <h3>Volume Milestones</h3>
+          <p class="milestones-intro">Cumulative: reaching a higher milestone includes all lower ones.</p>
+
+          <div class="milestone-strip">
+            <div class="milestone-block">
+              <div class="ms-vol">$2,500</div>
+              <div class="ms-bonus">+$3</div>
+              <div class="ms-total">Total $3</div>
+            </div>
+            <div class="milestone-block">
+              <div class="ms-vol">$5,000</div>
+              <div class="ms-bonus">+$6</div>
+              <div class="ms-total">Total $9</div>
+            </div>
+            <div class="milestone-block">
+              <div class="ms-vol">$10,000</div>
+              <div class="ms-bonus">+$12</div>
+              <div class="ms-total">Total $21</div>
+            </div>
+            <div class="milestone-block">
+              <div class="ms-vol">$25,000</div>
+              <div class="ms-bonus">+$30</div>
+              <div class="ms-total">Total $51</div>
+            </div>
+            <div class="milestone-block final">
+              <div class="ms-vol">$50,000</div>
+              <div class="ms-bonus">+$60</div>
+              <div class="ms-total"><strong>Total $111</strong></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== HOW TO ENTER ========== -->
-    <section id="how-to-enter" class="how-to-enter-section" aria-label="How to enter">
+    <!-- ========== HOW TO ENTER (Cinematic) ========== -->
+    <section id="how-to-enter" class="cinema-enter" aria-label="How to enter">
       <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-play-circle"></i> How to Enter</h2>
-          <p class="section-subtitle">3 steps. No wallet required to participate.</p>
+        <div class="cinema-section-header" data-aos="fade-up">
+          <span class="cinema-section-eyebrow">
+            <span class="rule"></span>
+            <span>Three steps</span>
+          </span>
+          <h2>How to Enter</h2>
+          <p class="cinema-section-sub">No wallet required to participate.</p>
         </div>
 
-        <div class="enter-steps">
-          <div class="enter-step" data-aos="fade-up" data-aos-delay="100">
-            <div class="enter-step-number">1</div>
-            <div class="enter-step-icon"><i class="fas fa-bullhorn"></i></div>
+        <div class="cinema-enter-grid">
+          <div class="enter-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="enter-num">01</div>
             <h3>Check the Active Contest</h3>
-            <p>Look at the active contest banner at the top of this page. The challenge, reward, and deadline are listed there.</p>
+            <p>Look at the banner at the top of this page. The challenge, reward, and deadline are listed there.</p>
           </div>
 
-          <div class="enter-step" data-aos="fade-up" data-aos-delay="200">
-            <div class="enter-step-number">2</div>
-            <div class="enter-step-icon"><i class="fas fa-palette"></i></div>
+          <div class="enter-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="enter-num">02</div>
             <h3>Create Your Entry</h3>
-            <p>Design a thumbnail, propose a scene to tokenize, or suggest a Journey theme. Follow the skill criteria for your contest type.</p>
+            <p>Design a thumbnail, propose a scene to tokenize, or suggest a Journey theme. Follow the criteria for your contest type.</p>
           </div>
 
-          <div class="enter-step" data-aos="fade-up" data-aos-delay="300">
-            <div class="enter-step-number">3</div>
-            <div class="enter-step-icon"><i class="fab fa-twitter"></i></div>
+          <div class="enter-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="enter-num">03</div>
             <h3>Submit on X</h3>
-            <p>Post your entry on X with your Solana wallet address in the post or first reply. Tag <strong>@RebelInuX</strong> and use the contest hashtag.</p>
+            <p>Post your entry on X with your Solana wallet address. Tag <strong>@RebelInuX</strong> and use the contest hashtag.</p>
           </div>
         </div>
 
-        <div class="enter-cta" data-aos="fade-up" data-aos-delay="400">
-          <a href="https://x.com/RebelInuX" target="_blank" rel="noopener noreferrer" class="cta-button primary-glow large">
-            <i class="fab fa-twitter"></i><span>Go to X and Submit</span>
+        <div class="cinema-enter-cta" data-aos="fade-up">
+          <a href="https://x.com/RebelInuX" target="_blank" rel="noopener noreferrer" class="cinema-btn primary large">
+            <i class="fab fa-twitter"></i> Go to X and Submit
           </a>
         </div>
 
-        <div class="enter-note" data-aos="fade-up" data-aos-delay="500">
-          <i class="fas fa-info-circle"></i>
-          <span>
-            No purchase is required to enter. You only need a Solana wallet address to receive your reward if you win.
-          </span>
+        <div class="cinema-note" data-aos="fade-up">
+          <i class="fas fa-check-circle"></i>
+          <span>No purchase is required. A Solana wallet address is only needed to receive rewards if you win.</span>
         </div>
       </div>
     </section>
 
-    <!-- ========== FAQ ========== -->
-    <section id="faq" class="faq-section" aria-label="Frequently asked questions">
+    <!-- ========== FINAL CTA (Cinematic) ========== -->
+    <section class="cinema-final" aria-label="Final CTA">
       <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
-          <p class="section-subtitle">Everything you need to know before entering</p>
-        </div>
-
-        <div class="faq-list" data-aos="fade-up" data-aos-delay="100">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>Do I need to hold $REBL to participate?</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>No. Contests are free to enter. No purchase is required. You only need a Solana wallet address to receive your reward if you win.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>How are winners selected?</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>The REBL Governance Hub (500K+ $REBL) pre-selects a shortlist of finalists based on skill criteria. The community then votes for the winner on X among the finalists. In case of a tie, the project owner makes the final decision. A 75% supermajority of the Governance Hub may veto a winner in extreme cases (offensive, illegal, or plagiarized content).</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>How much can I win?</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>Every contest winner receives a base $REBL reward, announced per contest. Tokenization Contest winners also earn cumulative volume bonuses as their tokenized scene reaches trading milestones (up to $111). Winners also receive public credit, $rebelinux Creator Coins, and a free mint of the first video collectible from the collection.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>What happens if my chosen scene doesn't reach the volume milestones?</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>For Tokenization Contest winners: you keep the base contest reward and the free mint of the first collectible. Volume bonuses only apply if the trading volume thresholds are reached.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>Can I enter multiple contests?</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>Yes. Each contest is independent. You can enter as many as you like.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>How do I receive my reward?</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>Rewards are distributed in $REBL to the Solana wallet address you provide with your contest entry.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>What is the Governance Hub and how do I join?</span>
-              <i class="fas fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>The Governance Hub is a private Telegram group for holders of 500,000+ $REBL. Members pre-select contest finalists, vote on treasury proposals, and ratify partnerships. <a href="governance.html">Learn more about the Hub</a>.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== FINAL CTA ========== -->
-    <section class="contests-final-cta" aria-label="Final call to action">
-      <div class="container">
-        <div class="contests-cta-card" data-aos="fade-up">
-          <h2>Ready to <span class="gradient-text">participate?</span></h2>
-          <p>Join the rebellion. Create. Select. Vote. Earn $REBL.</p>
-          <div class="cta-actions">
-            <a href="https://x.com/RebelInuX" target="_blank" rel="noopener noreferrer" class="cta-button primary-glow large">
-              <i class="fab fa-twitter"></i><span>Follow & Submit on X</span>
+        <div class="cinema-final-card" data-aos="fade-up">
+          <div class="final-eyebrow">Join the rebellion</div>
+          <h2>Ready to participate?</h2>
+          <p>Create. Select. Vote. Earn $REBL.</p>
+          <div class="cinema-cta-row">
+            <a href="https://x.com/RebelInuX" target="_blank" rel="noopener noreferrer" class="cinema-btn primary large">
+              <i class="fab fa-twitter"></i> Follow & Submit on X
             </a>
-            <a href="governance.html" class="cta-button secondary large">
-              <i class="fas fa-vote-yea"></i><span>Join the Governance Hub</span>
+            <a href="governance.html" class="cinema-btn ghost large">
+              <i class="fas fa-vote-yea"></i> Join the Governance Hub
             </a>
-          </div>
-          <div class="cta-badges">
-            <span><i class="fas fa-check-circle"></i> Free to enter</span>
-            <span><i class="fas fa-check-circle"></i> No purchase required</span>
-            <span><i class="fas fa-check-circle"></i> Rewards in $REBL</span>
           </div>
         </div>
       </div>
@@ -663,7 +381,7 @@
 
     const loader = document.getElementById('loader');
     if (loader) {
-      setTimeout(() => { loader.classList.add('loaded'); setTimeout(() => { loader.style.display = 'none'; }, 1500); }, 1500);
+      setTimeout(() => { loader.classList.add('loaded'); setTimeout(() => { loader.style.display = 'none'; }, 500); }, 1500);
     }
 
     const backBtn = document.getElementById('backToTop');
