@@ -1,6 +1,6 @@
 /* ============================================================
    HEADER + FOOTER — RebelInuX v3.0
-   3-state colored pill system applied to ALL 10 pages
+   3-state nav pill system: default / hover / selected
    Mobile-first. Base = phone. Enhances at 769px+.
    ============================================================ */
 
@@ -250,7 +250,7 @@ header.scrolled {
   transform: translateY(0);
 }
 
-/* Base mobile link */
+/* Mobile menu — top-level links (base) */
 #nav-desktop a:not(.mobile-direct-buy) {
   display: flex;
   align-items: center;
@@ -275,9 +275,7 @@ header.scrolled {
   transform: scale(0.98);
 }
 
-/* ============================================================
-   MOBILE — TOP-LEVEL PILL COLORS (Journey/Contests/Governance/Trade/Tokenomics)
-   ============================================================ */
+/* Mobile — page-colored top-level links */
 #nav-desktop a.nav-journey {
   color: #E3B87C;
   background: linear-gradient(135deg,
@@ -318,7 +316,7 @@ header.scrolled {
   border-color: rgba(0, 188, 212, 0.3);
 }
 
-/* Mobile active states — top-level pills */
+/* Mobile — selected state (current page) */
 #nav-desktop a.nav-journey.active {
   background: linear-gradient(135deg,
     rgba(227, 184, 124, 0.4),
@@ -369,6 +367,7 @@ header.scrolled {
   font-weight: 700;
 }
 
+/* Mobile — generic .active fallback */
 #nav-desktop a.active:not([class*="nav-"]) {
   background: linear-gradient(135deg,
     rgba(212, 167, 106, 0.4),
@@ -378,9 +377,7 @@ header.scrolled {
   font-weight: 700;
 }
 
-/* ============================================================
-   MOBILE DROPDOWN ("More") — base
-   ============================================================ */
+/* Mobile dropdown inside menu */
 #nav-desktop .dropdown {
   width: 100%;
   margin-bottom: 6px;
@@ -451,7 +448,6 @@ header.scrolled {
   text-decoration: none;
   font-size: 0.9rem;
   min-height: 48px;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #nav-desktop .dropdown-content a:active {
@@ -464,26 +460,14 @@ header.scrolled {
   font-size: 0.95rem;
 }
 
-/* ============================================================
-   MOBILE — DROPDOWN LINK COLORS (5 pages)
-   Base + hover + active — all colored like the top pills
-   ============================================================ */
+/* Dropdown link colors (mobile) */
+#nav-desktop .dropdown-content a.nav-whitepaper { color: #A78BFA; }
+#nav-desktop .dropdown-content a.nav-community { color: #4EA6FF; }
+#nav-desktop .dropdown-content a.nav-security-integrity { color: #66BB6A; }
+#nav-desktop .dropdown-content a.nav-roadmap { color: #FF7043; }
+#nav-desktop .dropdown-content a.nav-artwork { color: #F06292; }
 
-/* Whitepaper — Purple */
-#nav-desktop .dropdown-content a.nav-whitepaper {
-  color: #A78BFA;
-  background: linear-gradient(135deg,
-    rgba(167, 139, 250, 0.08),
-    rgba(167, 139, 250, 0.02));
-  border-left: 3px solid transparent;
-}
-
-#nav-desktop .dropdown-content a.nav-whitepaper:active {
-  background: linear-gradient(135deg,
-    rgba(167, 139, 250, 0.15),
-    rgba(167, 139, 250, 0.05));
-}
-
+/* Mobile — active dropdown link */
 #nav-desktop .dropdown-content a.nav-whitepaper.active {
   background: linear-gradient(135deg,
     rgba(103, 58, 183, 0.4),
@@ -491,21 +475,6 @@ header.scrolled {
   color: #FFFFFF;
   border-left: 3px solid #673AB7;
   font-weight: 700;
-}
-
-/* Community — Blue */
-#nav-desktop .dropdown-content a.nav-community {
-  color: #4EA6FF;
-  background: linear-gradient(135deg,
-    rgba(78, 166, 255, 0.08),
-    rgba(78, 166, 255, 0.02));
-  border-left: 3px solid transparent;
-}
-
-#nav-desktop .dropdown-content a.nav-community:active {
-  background: linear-gradient(135deg,
-    rgba(78, 166, 255, 0.15),
-    rgba(78, 166, 255, 0.05));
 }
 
 #nav-desktop .dropdown-content a.nav-community.active {
@@ -517,21 +486,6 @@ header.scrolled {
   font-weight: 700;
 }
 
-/* Security & Integrity — Green */
-#nav-desktop .dropdown-content a.nav-security-integrity {
-  color: #66BB6A;
-  background: linear-gradient(135deg,
-    rgba(102, 187, 106, 0.08),
-    rgba(102, 187, 106, 0.02));
-  border-left: 3px solid transparent;
-}
-
-#nav-desktop .dropdown-content a.nav-security-integrity:active {
-  background: linear-gradient(135deg,
-    rgba(102, 187, 106, 0.15),
-    rgba(102, 187, 106, 0.05));
-}
-
 #nav-desktop .dropdown-content a.nav-security-integrity.active {
   background: linear-gradient(135deg,
     rgba(76, 175, 80, 0.4),
@@ -541,43 +495,13 @@ header.scrolled {
   font-weight: 700;
 }
 
-/* Roadmap — Coral (distinct from Trade) */
-#nav-desktop .dropdown-content a.nav-roadmap {
-  color: #FF7F50;
-  background: linear-gradient(135deg,
-    rgba(255, 127, 80, 0.08),
-    rgba(255, 127, 80, 0.02));
-  border-left: 3px solid transparent;
-}
-
-#nav-desktop .dropdown-content a.nav-roadmap:active {
-  background: linear-gradient(135deg,
-    rgba(255, 127, 80, 0.15),
-    rgba(255, 127, 80, 0.05));
-}
-
 #nav-desktop .dropdown-content a.nav-roadmap.active {
   background: linear-gradient(135deg,
-    rgba(255, 127, 80, 0.4),
-    rgba(255, 127, 80, 0.18));
+    rgba(255, 87, 34, 0.4),
+    rgba(255, 87, 34, 0.18));
   color: #FFFFFF;
-  border-left: 3px solid #FF7F50;
+  border-left: 3px solid #FF5722;
   font-weight: 700;
-}
-
-/* Artwork — Pink */
-#nav-desktop .dropdown-content a.nav-artwork {
-  color: #F06292;
-  background: linear-gradient(135deg,
-    rgba(240, 98, 146, 0.08),
-    rgba(240, 98, 146, 0.02));
-  border-left: 3px solid transparent;
-}
-
-#nav-desktop .dropdown-content a.nav-artwork:active {
-  background: linear-gradient(135deg,
-    rgba(240, 98, 146, 0.15),
-    rgba(240, 98, 146, 0.05));
 }
 
 #nav-desktop .dropdown-content a.nav-artwork.active {
@@ -623,7 +547,9 @@ body.nav-open {
     box-shadow: none;
   }
 
-  /* Base pill */
+  /* ============================================
+     BASE PILL
+     ============================================ */
   #nav-desktop a:not(.mobile-direct-buy) {
     padding: 8px 18px;
     border-radius: var(--border-radius-full);
@@ -656,10 +582,8 @@ body.nav-open {
   }
 
   /* ============================================
-     TOP-LEVEL PILLS — 3 states
+     STATE 1 — DEFAULT (page color)
      ============================================ */
-
-  /* ---- JOURNEY — Gold ---- */
   #nav-desktop a.nav-journey {
     color: #E3B87C;
     border-color: rgba(227, 184, 124, 0.4);
@@ -667,6 +591,42 @@ body.nav-open {
       rgba(227, 184, 124, 0.15),
       rgba(227, 184, 124, 0.03));
   }
+
+  #nav-desktop a.nav-contests {
+    color: #FBBF24;
+    border-color: rgba(251, 191, 36, 0.4);
+    background: linear-gradient(135deg,
+      rgba(251, 191, 36, 0.15),
+      rgba(251, 191, 36, 0.03));
+  }
+
+  #nav-desktop a.nav-governance {
+    color: #FF9800;
+    border-color: rgba(255, 152, 0, 0.4);
+    background: linear-gradient(135deg,
+      rgba(255, 152, 0, 0.15),
+      rgba(255, 152, 0, 0.03));
+  }
+
+  #nav-desktop a.nav-trade {
+    color: #FF6B35;
+    border-color: rgba(255, 107, 53, 0.4);
+    background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.15),
+      rgba(255, 107, 53, 0.03));
+  }
+
+  #nav-desktop a.nav-tokenomics {
+    color: #00BCD4;
+    border-color: rgba(0, 188, 212, 0.4);
+    background: linear-gradient(135deg,
+      rgba(0, 188, 212, 0.15),
+      rgba(0, 188, 212, 0.03));
+  }
+
+  /* ============================================
+     STATE 2 — HOVER
+     ============================================ */
   #nav-desktop a.nav-journey:hover {
     background: linear-gradient(135deg,
       rgba(227, 184, 124, 0.28),
@@ -676,6 +636,63 @@ body.nav-open {
     box-shadow: 0 6px 20px rgba(227, 184, 124, 0.35);
     transform: translateY(-2px);
   }
+
+  #nav-desktop a.nav-contests:hover {
+    background: linear-gradient(135deg,
+      rgba(251, 191, 36, 0.28),
+      rgba(251, 191, 36, 0.14));
+    color: #FDE047;
+    border-color: #FBBF24;
+    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.35);
+    transform: translateY(-2px);
+  }
+
+  #nav-desktop a.nav-governance:hover {
+    background: linear-gradient(135deg,
+      rgba(255, 152, 0, 0.28),
+      rgba(255, 152, 0, 0.14));
+    color: #FFC166;
+    border-color: #FF9800;
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.35);
+    transform: translateY(-2px);
+  }
+
+  #nav-desktop a.nav-trade:hover {
+    background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.28),
+      rgba(255, 107, 53, 0.14));
+    color: #FFA07A;
+    border-color: #FF6B35;
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.35);
+    transform: translateY(-2px);
+  }
+
+  #nav-desktop a.nav-tokenomics:hover {
+    background: linear-gradient(135deg,
+      rgba(0, 188, 212, 0.28),
+      rgba(0, 188, 212, 0.14));
+    color: #6EE7F0;
+    border-color: #00BCD4;
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.35);
+    transform: translateY(-2px);
+  }
+
+  /* ============================================
+     STATE 3 — SELECTED (top-level pills)
+     ============================================ */
+  #nav-desktop a.active:not([class*="nav-"]) {
+    background: linear-gradient(135deg,
+      rgba(212, 167, 106, 0.4),
+      rgba(212, 167, 106, 0.18));
+    color: #FFFFFF;
+    border-color: var(--rebel-gold);
+    box-shadow:
+      0 4px 20px rgba(212, 167, 106, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    font-weight: 700;
+  }
+
   #nav-desktop a.nav-journey.active {
     background: linear-gradient(135deg,
       rgba(227, 184, 124, 0.4),
@@ -689,23 +706,6 @@ body.nav-open {
     font-weight: 700;
   }
 
-  /* ---- CONTESTS — Amber ---- */
-  #nav-desktop a.nav-contests {
-    color: #FBBF24;
-    border-color: rgba(251, 191, 36, 0.4);
-    background: linear-gradient(135deg,
-      rgba(251, 191, 36, 0.15),
-      rgba(251, 191, 36, 0.03));
-  }
-  #nav-desktop a.nav-contests:hover {
-    background: linear-gradient(135deg,
-      rgba(251, 191, 36, 0.28),
-      rgba(251, 191, 36, 0.14));
-    color: #FDE047;
-    border-color: #FBBF24;
-    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.35);
-    transform: translateY(-2px);
-  }
   #nav-desktop a.nav-contests.active {
     background: linear-gradient(135deg,
       rgba(251, 191, 36, 0.4),
@@ -719,23 +719,6 @@ body.nav-open {
     font-weight: 700;
   }
 
-  /* ---- GOVERNANCE — Orange ---- */
-  #nav-desktop a.nav-governance {
-    color: #FF9800;
-    border-color: rgba(255, 152, 0, 0.4);
-    background: linear-gradient(135deg,
-      rgba(255, 152, 0, 0.15),
-      rgba(255, 152, 0, 0.03));
-  }
-  #nav-desktop a.nav-governance:hover {
-    background: linear-gradient(135deg,
-      rgba(255, 152, 0, 0.28),
-      rgba(255, 152, 0, 0.14));
-    color: #FFC166;
-    border-color: #FF9800;
-    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.35);
-    transform: translateY(-2px);
-  }
   #nav-desktop a.nav-governance.active {
     background: linear-gradient(135deg,
       rgba(255, 152, 0, 0.4),
@@ -749,23 +732,6 @@ body.nav-open {
     font-weight: 700;
   }
 
-  /* ---- TRADE — Bright Orange ---- */
-  #nav-desktop a.nav-trade {
-    color: #FF6B35;
-    border-color: rgba(255, 107, 53, 0.4);
-    background: linear-gradient(135deg,
-      rgba(255, 107, 53, 0.15),
-      rgba(255, 107, 53, 0.03));
-  }
-  #nav-desktop a.nav-trade:hover {
-    background: linear-gradient(135deg,
-      rgba(255, 107, 53, 0.28),
-      rgba(255, 107, 53, 0.14));
-    color: #FFA07A;
-    border-color: #FF6B35;
-    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.35);
-    transform: translateY(-2px);
-  }
   #nav-desktop a.nav-trade.active {
     background: linear-gradient(135deg,
       rgba(255, 107, 53, 0.4),
@@ -779,23 +745,6 @@ body.nav-open {
     font-weight: 700;
   }
 
-  /* ---- TOKENOMICS — Cyan ---- */
-  #nav-desktop a.nav-tokenomics {
-    color: #00BCD4;
-    border-color: rgba(0, 188, 212, 0.4);
-    background: linear-gradient(135deg,
-      rgba(0, 188, 212, 0.15),
-      rgba(0, 188, 212, 0.03));
-  }
-  #nav-desktop a.nav-tokenomics:hover {
-    background: linear-gradient(135deg,
-      rgba(0, 188, 212, 0.28),
-      rgba(0, 188, 212, 0.14));
-    color: #6EE7F0;
-    border-color: #00BCD4;
-    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.35);
-    transform: translateY(-2px);
-  }
   #nav-desktop a.nav-tokenomics.active {
     background: linear-gradient(135deg,
       rgba(0, 188, 212, 0.4),
@@ -804,20 +753,6 @@ body.nav-open {
     border-color: #00BCD4;
     box-shadow:
       0 4px 20px rgba(0, 188, 212, 0.45),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    transform: translateY(-1px);
-    font-weight: 700;
-  }
-
-  /* Fallback .active */
-  #nav-desktop a.active:not([class*="nav-"]) {
-    background: linear-gradient(135deg,
-      rgba(212, 167, 106, 0.4),
-      rgba(212, 167, 106, 0.18));
-    color: #FFFFFF;
-    border-color: var(--rebel-gold);
-    box-shadow:
-      0 4px 20px rgba(212, 167, 106, 0.45),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
     font-weight: 700;
@@ -918,23 +853,13 @@ body.nav-open {
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* ============================================
-     DROPDOWN CONTENT — 3-STATE COLORED PILLS (5 pages)
-     ============================================ */
+  #nav-desktop .dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
 
-  /* ---- WHITEPAPER — Purple ---- */
-  #nav-desktop .dropdown-content a.nav-whitepaper {
-    color: #A78BFA;
-    background: transparent;
-    border-left: 3px solid transparent;
-  }
-  #nav-desktop .dropdown-content a.nav-whitepaper:hover {
-    background: linear-gradient(135deg,
-      rgba(167, 139, 250, 0.18),
-      rgba(167, 139, 250, 0.06)) !important;
-    color: #C4B5FD !important;
-    border-left-color: #A78BFA;
-  }
+  /* ============================================
+     DROPDOWN CONTENT — ACTIVE STATES (5 pages)
+     ============================================ */
   #nav-desktop .dropdown-content a.nav-whitepaper.active {
     background: linear-gradient(135deg,
       rgba(103, 58, 183, 0.4),
@@ -945,19 +870,6 @@ body.nav-open {
     padding-left: 22px;
   }
 
-  /* ---- COMMUNITY — Blue ---- */
-  #nav-desktop .dropdown-content a.nav-community {
-    color: #4EA6FF;
-    background: transparent;
-    border-left: 3px solid transparent;
-  }
-  #nav-desktop .dropdown-content a.nav-community:hover {
-    background: linear-gradient(135deg,
-      rgba(78, 166, 255, 0.18),
-      rgba(78, 166, 255, 0.06)) !important;
-    color: #7BC0FF !important;
-    border-left-color: #4EA6FF;
-  }
   #nav-desktop .dropdown-content a.nav-community.active {
     background: linear-gradient(135deg,
       rgba(33, 150, 243, 0.4),
@@ -968,19 +880,6 @@ body.nav-open {
     padding-left: 22px;
   }
 
-  /* ---- SECURITY & INTEGRITY — Green ---- */
-  #nav-desktop .dropdown-content a.nav-security-integrity {
-    color: #66BB6A;
-    background: transparent;
-    border-left: 3px solid transparent;
-  }
-  #nav-desktop .dropdown-content a.nav-security-integrity:hover {
-    background: linear-gradient(135deg,
-      rgba(102, 187, 106, 0.18),
-      rgba(102, 187, 106, 0.06)) !important;
-    color: #81C784 !important;
-    border-left-color: #66BB6A;
-  }
   #nav-desktop .dropdown-content a.nav-security-integrity.active {
     background: linear-gradient(135deg,
       rgba(76, 175, 80, 0.4),
@@ -991,42 +890,16 @@ body.nav-open {
     padding-left: 22px;
   }
 
-  /* ---- ROADMAP — Coral ---- */
-  #nav-desktop .dropdown-content a.nav-roadmap {
-    color: #FF7F50;
-    background: transparent;
-    border-left: 3px solid transparent;
-  }
-  #nav-desktop .dropdown-content a.nav-roadmap:hover {
-    background: linear-gradient(135deg,
-      rgba(255, 127, 80, 0.18),
-      rgba(255, 127, 80, 0.06)) !important;
-    color: #FFA07A !important;
-    border-left-color: #FF7F50;
-  }
   #nav-desktop .dropdown-content a.nav-roadmap.active {
     background: linear-gradient(135deg,
-      rgba(255, 127, 80, 0.4),
-      rgba(255, 127, 80, 0.18)) !important;
+      rgba(255, 87, 34, 0.4),
+      rgba(255, 87, 34, 0.18)) !important;
     color: #FFFFFF !important;
-    border-left: 3px solid #FF7F50;
+    border-left: 3px solid #FF5722;
     font-weight: 700;
     padding-left: 22px;
   }
 
-  /* ---- ARTWORK — Pink ---- */
-  #nav-desktop .dropdown-content a.nav-artwork {
-    color: #F06292;
-    background: transparent;
-    border-left: 3px solid transparent;
-  }
-  #nav-desktop .dropdown-content a.nav-artwork:hover {
-    background: linear-gradient(135deg,
-      rgba(240, 98, 146, 0.18),
-      rgba(240, 98, 146, 0.06)) !important;
-    color: #F48FB1 !important;
-    border-left-color: #F06292;
-  }
   #nav-desktop .dropdown-content a.nav-artwork.active {
     background: linear-gradient(135deg,
       rgba(233, 30, 99, 0.4),
@@ -1365,6 +1238,65 @@ body.nav-open {
     padding: 12px 15px;
     font-size: 0.9rem;
     min-height: 48px;
+  }
+}
+
+
+/* ============================================================
+   ⭐ MOBILE FORCE-COLOR FIX — Trade + Governance
+   Guarantees the two pills show their page color on mobile,
+   regardless of cascade order or specificity conflicts.
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Trade Guide — bright orange */
+  #nav-desktop a.nav-trade {
+    color: #FF6B35 !important;
+    background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.12),
+      rgba(255, 107, 53, 0.03)) !important;
+    border: 1px solid rgba(255, 107, 53, 0.3) !important;
+  }
+
+  #nav-desktop a.nav-trade:active {
+    background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.2),
+      rgba(255, 107, 53, 0.08)) !important;
+  }
+
+  #nav-desktop a.nav-trade.active {
+    background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.4),
+      rgba(255, 107, 53, 0.18)) !important;
+    color: #FFFFFF !important;
+    border-color: #FF6B35 !important;
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.45) !important;
+    font-weight: 700 !important;
+  }
+
+  /* Governance — orange */
+  #nav-desktop a.nav-governance {
+    color: #FF9800 !important;
+    background: linear-gradient(135deg,
+      rgba(255, 152, 0, 0.12),
+      rgba(255, 152, 0, 0.03)) !important;
+    border: 1px solid rgba(255, 152, 0, 0.3) !important;
+  }
+
+  #nav-desktop a.nav-governance:active {
+    background: linear-gradient(135deg,
+      rgba(255, 152, 0, 0.2),
+      rgba(255, 152, 0, 0.08)) !important;
+  }
+
+  #nav-desktop a.nav-governance.active {
+    background: linear-gradient(135deg,
+      rgba(255, 152, 0, 0.4),
+      rgba(255, 152, 0, 0.18)) !important;
+    color: #FFFFFF !important;
+    border-color: #FF9800 !important;
+    box-shadow: 0 4px 20px rgba(255, 152, 0, 0.45) !important;
+    font-weight: 700 !important;
   }
 }
 
