@@ -1,100 +1,122 @@
 /* ============================================================
    CONTESTS PAGE — RebelInuX v3.0
+   Handles: FAQ accordion, smooth scroll, active contest CTAs
    ============================================================ */
 
-/* ---------- Hero ---------- */
-.contests-hero {
-  position: relative;
-  padding: 6rem 0 3rem;
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 100%);
-  overflow: hidden;
-}
+(function () {
+  'use strict';
 
-.contests-hero-content {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
+  // ---------- FAQ Accordion ----------
+  function initFaqAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (!faqItems.length) return;
 
-.contests-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 900;
-  line-height: 1.1;
-  margin: 1rem 0;
-  color: #fff;
-}
+    faqItems.forEach((item) => {
+      const button = item.querySelector('.faq-question');
+      if (!button) return;
 
-.contests-subtitle {
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 700px;
-  margin: 0 auto 1.5rem;
-  line-height: 1.6;
-}
+      button.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
 
-.contests-subtitle strong { color: var(--rebel-gold); }
+        // Close all (accordion behavior — one open at a time)
+        faqItems.forEach((other) => {
+          other.classList.remove('open');
+          const otherBtn = other.querySelector('.faq-question');
+          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        });
 
-.hero-badges {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin: 1.5rem 0;
-}
+        // Toggle current
+        if (!isOpen) {
+          item.classList.add('open');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: rgba(227, 184, 124, 0.12);
-  border: 1px solid rgba(227, 184, 124, 0.3);
-  padding: 0.4rem 0.9rem;
-  border-radius: 30px;
-  font-size: 0.8rem;
-  color: var(--rebel-gold);
-}
+  // ---------- Smooth Scroll for internal links ----------
+  function initSmoothScroll() {
+    const internalLinks = document.querySelectorAll('a[href^="#"]');
+    internalLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href === '#' || href.length < 2) return;
 
-.hero-cta-group {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
-}
+        const target = document.querySelector(href);
+        if (!target) return;
 
-/* ---------- Active Contest ---------- */
-.active-contest-section {
-  padding: 2rem 0 4rem;
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 100%);
-}
+        e.preventDefault();
+        const headerOffset = 80;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
 
-.active-contest-card {
-  background: linear-gradient(135deg, rgba(227, 184, 124, 0.15), rgba(255, 193, 7, 0.05));
-  border: 2px solid var(--rebel-gold);
-  border-radius: 24px;
-  padding: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-  box-shadow: 0 8px 40px rgba(212, 167, 106, 0.15);
-}
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      });
+    });
+  }
 
-.active-contest-header {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 1rem;
-}
+  // ---------- Active Contest — Auto-Update Contest ID ----------
+  function initActiveContestId() {
+    const idEl = document.querySelector('.contest-id');
+    if (!idEl) return;
 
-.live-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #22c55e;
-  animation: pulse-dot 2s infinite;
-}
+    // Optional: uncomment if you want the ID to increment automatically
+    // based on a stored counter in localStorage (useful when you open contests often)
+    /*
+    const stored = localStorage.getItem('rebelinux_contest_id');
+    if (!stored) {
+      localStorage.setItem('rebelinux_contest_id', '001');
+    }
+    idEl.textContent = '#' + (stored || '001');
+    */
+  }
 
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1
+  // ---------- Copy helpers (reused from homepage) ----------
+  function initCopyButtons() {
+    const copyButtons = document.querySelectorAll('[data-copy]');
+    copyButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const value = btn.getAttribute('data-copy');
+        if (!value) return;
+
+        navigator.clipboard.writeText(value)
+          .then(() => {
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Copied';
+            setTimeout(() => { btn.innerHTML = original; }, 1500);
+          })
+          .catch(() => {
+            prompt('Copy manually:', value);
+          });
+      });
+    });
+  }
+
+  // ---------- Highlight Active Contest on Scroll ----------
+  function initSectionReveal() {
+    if (typeof IntersectionObserver === 'undefined') return;
+
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+  }
+
+  // ---------- Init ----------
+  document.addEventListener('DOMContentLoaded', () => {
+    initFaqAccordion();
+    initSmoothScroll();
+    initActiveContestId();
+    initCopyButtons();
+    initSectionReveal();
+  });
+})();
