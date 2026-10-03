@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="RebelInuX Journey | AI-animated historical collectibles. 8 live collectibles from the 1789 French Revolution. Mint on Zora. Participate in contests to shape the next Journey." />
+  <meta name="description" content="RebelInuX Journey | AI-animated historical collectibles. 8 live collectibles from the 1789 French Revolution. Watch the videos. Mint on Zora. Participate in contests to shape the next Journey." />
   <meta name="keywords" content="RebelInuX Journey, AI-animated historical collectibles, French Revolution NFTs, Journey Collectibles, Zora, Base, content coins, REBL-J1, historical art, AI animation" />
 
   <title>Journey | RebelInuX — AI-Animated Historical Collectibles</title>
 
   <!-- Open Graph -->
   <meta property="og:title" content="Journey | RebelInuX" />
-  <meta property="og:description" content="8 AI-animated historical collectibles from the 1789 French Revolution. Mint on Zora. Participate in contests to shape the next Journey." />
+  <meta property="og:description" content="8 AI-animated historical collectibles from the 1789 French Revolution. Watch the videos. Mint on Zora." />
   <meta property="og:image" content="https://rebelinux.fun/images/Logo_REBL.svg" />
   <meta property="og:url" content="https://rebelinux.fun/journey.html" />
   <meta property="og:type" content="website">
@@ -20,12 +20,18 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@RebelInuX">
   <meta name="twitter:title" content="Journey | RebelInuX">
-  <meta name="twitter:description" content="8 AI-animated historical collectibles from the 1789 French Revolution. Mint on Zora.">
+  <meta name="twitter:description" content="8 AI-animated historical collectibles from the 1789 French Revolution. Watch the videos. Mint on Zora.">
   <meta name="twitter:image" content="https://rebelinux.fun/images/Logo_REBL.svg">
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="images/Logo_REBL.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/Logo_REBL.svg">
+  <!-- Mobile meta -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1a1a">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/Logo_REBL.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/Logo_REBL.svg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +58,7 @@
         <span class="text-item">Loading the Journey</span>
         <span class="text-item">1789 French Revolution</span>
         <span class="text-item">8 AI-Animated Collectibles</span>
-        <span class="text-item">Mint on Zora</span>
+        <span class="text-item">Watch · Mint · Collect</span>
       </div>
       <div class="loader-progress"><div class="progress-bar"></div></div>
     </div>
@@ -102,7 +108,7 @@
 
           <div class="hero-cta-group">
             <a href="#collectibles" class="cta-button primary-glow">
-              <i class="fas fa-film"></i><span>View Collectibles</span>
+              <i class="fas fa-film"></i><span>Explore Collectibles</span>
             </a>
             <a href="https://zora.co/@rebelinux" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
               <i class="fas fa-store"></i><span>Mint on ZORA</span>
@@ -148,12 +154,12 @@
       </div>
     </section>
 
-    <!-- ========== COLLECTIBLES ========== -->
+    <!-- ========== COLLECTIBLES (VIDEO EMBEDS) ========== -->
     <section id="collectibles" class="collectibles-section" aria-label="Journey collectibles">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
           <h2><i class="fas fa-images"></i> The French Revolution Journey</h2>
-          <p class="section-subtitle">8 collectibles · 5 chapters · Mint on ZORA</p>
+          <p class="section-subtitle">Watch each chapter. Mint the collectible on ZORA.</p>
         </div>
 
         <!-- Chapter Filter -->
@@ -178,15 +184,24 @@
           </button>
         </div>
 
-        <!-- Collectibles Grid -->
+        <!-- Collectibles Grid with YouTube embeds -->
         <div class="collectibles-grid" id="collectiblesGrid">
 
           <!-- REBL-J1A -->
-          <div class="collectible-card" data-chapter="I" data-aos="fade-up" data-aos-delay="100">
+          <div class="collectible-card video-card" data-chapter="I" data-aos="fade-up" data-aos-delay="100">
             <div class="collectible-thumb">
-              <img src="images/journey/rebl-j1a.png" alt="REBL-J1A — Twilight of the Ancien Régime" loading="lazy">
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/qxCwj0c4L-g"
+                        title="REBL-J1A: Twilight of the Ancien Régime"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen loading="lazy">
+                </iframe>
+              </div>
               <div class="collectible-overlay">
                 <span class="collectible-id">REBL-J1A</span>
+                <span class="video-badge available">YouTube</span>
               </div>
             </div>
             <div class="collectible-body">
@@ -195,20 +210,34 @@
                 <span class="date-badge">1779</span>
               </div>
               <h3>Twilight of the Ancien Régime</h3>
-              <p>The last years of the old order, painted as the storm gathers.</p>
-              <a href="https://zora.co/coin/base:0x631e050fa042c2da1d3b8abe7a260b53ffc83f7f"
-                 target="_blank" rel="noopener noreferrer" class="mint-btn">
-                <i class="fas fa-store"></i><span>Mint on ZORA</span>
-              </a>
+              <p>The RebelInuX mascot travels to Versailles, 1779. Witness the twilight of the Ancien Régime.</p>
+              <div class="collectible-actions">
+                <a href="https://youtu.be/qxCwj0c4L-g" target="_blank" rel="noopener noreferrer" class="action-btn outline">
+                  <i class="fab fa-youtube"></i><span>Watch</span>
+                </a>
+                <a href="https://zora.co/coin/base:0x631e050fa042c2da1d3b8abe7a260b53ffc83f7f"
+                   target="_blank" rel="noopener noreferrer" class="action-btn primary">
+                  <i class="fas fa-store"></i><span>Mint on ZORA</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- REBL-J1B -->
-          <div class="collectible-card" data-chapter="II" data-aos="fade-up" data-aos-delay="150">
+          <div class="collectible-card video-card" data-chapter="II" data-aos="fade-up" data-aos-delay="150">
             <div class="collectible-thumb">
-              <img src="images/journey/rebl-j1b.png" alt="REBL-J1B — Winter of Discontent" loading="lazy">
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/Al-xVTEyLjs"
+                        title="REBL-J1B: Winter of Discontent"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen loading="lazy">
+                </iframe>
+              </div>
               <div class="collectible-overlay">
                 <span class="collectible-id">REBL-J1B</span>
+                <span class="video-badge available">YouTube</span>
               </div>
             </div>
             <div class="collectible-body">
@@ -217,20 +246,34 @@
                 <span class="date-badge">1780–1788</span>
               </div>
               <h3>Winter of Discontent</h3>
-              <p>Famine, frost, and the slow fracture of a kingdom.</p>
-              <a href="https://zora.co/coin/base:0xc2979efc53283f4e56d1284696139e606fc14a74"
-                 target="_blank" rel="noopener noreferrer" class="mint-btn">
-                <i class="fas fa-store"></i><span>Mint on ZORA</span>
-              </a>
+              <p>Witness the years of hardship (1780–1788) that led to revolution.</p>
+              <div class="collectible-actions">
+                <a href="https://youtu.be/Al-xVTEyLjs" target="_blank" rel="noopener noreferrer" class="action-btn outline">
+                  <i class="fab fa-youtube"></i><span>Watch</span>
+                </a>
+                <a href="https://zora.co/coin/base:0xc2979efc53283f4e56d1284696139e606fc14a74"
+                   target="_blank" rel="noopener noreferrer" class="action-btn primary">
+                  <i class="fas fa-store"></i><span>Mint on ZORA</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- REBL-J1C -->
-          <div class="collectible-card" data-chapter="III" data-aos="fade-up" data-aos-delay="200">
+          <div class="collectible-card video-card" data-chapter="III" data-aos="fade-up" data-aos-delay="200">
             <div class="collectible-thumb">
-              <img src="images/journey/rebl-j1c.png" alt="REBL-J1C — The Oath" loading="lazy">
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/y4FkpYOTSOc"
+                        title="REBL-J1C: The Oath"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen loading="lazy">
+                </iframe>
+              </div>
               <div class="collectible-overlay">
                 <span class="collectible-id">REBL-J1C</span>
+                <span class="video-badge available">YouTube</span>
               </div>
             </div>
             <div class="collectible-body">
@@ -239,20 +282,34 @@
                 <span class="date-badge">Apr–Jun 1789</span>
               </div>
               <h3>The Oath</h3>
-              <p>The Tennis Court Oath — a nation's representatives refuse to disband.</p>
-              <a href="https://zora.co/coin/base:0xffcf837646f2d9a60fa18f2afab25d9979578dcf"
-                 target="_blank" rel="noopener noreferrer" class="mint-btn">
-                <i class="fas fa-store"></i><span>Mint on ZORA</span>
-              </a>
+              <p>The RebelInuX mascot witnesses the Tennis Court Oath (April–June 1789).</p>
+              <div class="collectible-actions">
+                <a href="https://youtu.be/y4FkpYOTSOc" target="_blank" rel="noopener noreferrer" class="action-btn outline">
+                  <i class="fab fa-youtube"></i><span>Watch</span>
+                </a>
+                <a href="https://zora.co/coin/base:0xffcf837646f2d9a60fa18f2afab25d9979578dcf"
+                   target="_blank" rel="noopener noreferrer" class="action-btn primary">
+                  <i class="fas fa-store"></i><span>Mint on ZORA</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- REBL-J1D -->
-          <div class="collectible-card" data-chapter="IV" data-aos="fade-up" data-aos-delay="250">
+          <div class="collectible-card video-card" data-chapter="IV" data-aos="fade-up" data-aos-delay="250">
             <div class="collectible-thumb">
-              <img src="images/journey/rebl-j1d.png" alt="REBL-J1D — The Fall" loading="lazy">
+              <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/Qm033A23pVE"
+                        title="REBL-J1D: The Fall"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen loading="lazy">
+                </iframe>
+              </div>
               <div class="collectible-overlay">
                 <span class="collectible-id">REBL-J1D</span>
+                <span class="video-badge available">YouTube</span>
               </div>
             </div>
             <div class="collectible-body">
@@ -261,16 +318,21 @@
                 <span class="date-badge">Jul 14, 1789</span>
               </div>
               <h3>The Fall</h3>
-              <p>The storming of the Bastille — the moment the old order broke.</p>
-              <a href="https://zora.co/coin/base:0x5202fb24cf1c9549d9fe945871c417ec10b4b99a"
-                 target="_blank" rel="noopener noreferrer" class="mint-btn">
-                <i class="fas fa-store"></i><span>Mint on ZORA</span>
-              </a>
+              <p>The RebelInuX mascot witnesses the Storming of the Bastille, July 1789.</p>
+              <div class="collectible-actions">
+                <a href="https://youtu.be/Qm033A23pVE" target="_blank" rel="noopener noreferrer" class="action-btn outline">
+                  <i class="fab fa-youtube"></i><span>Watch</span>
+                </a>
+                <a href="https://zora.co/coin/base:0x5202fb24cf1c9549d9fe945871c417ec10b4b99a"
+                   target="_blank" rel="noopener noreferrer" class="action-btn primary">
+                  <i class="fas fa-store"></i><span>Mint on ZORA</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- REBL-J1E -->
-          <div class="collectible-card" data-chapter="V" data-aos="fade-up" data-aos-delay="300">
+          <div class="collectible-card video-card" data-chapter="V" data-aos="fade-up" data-aos-delay="300">
             <div class="collectible-thumb">
               <img src="images/journey/rebl-j1e.png" alt="REBL-J1E — Liberty" loading="lazy">
               <div class="collectible-overlay">
@@ -284,15 +346,17 @@
               </div>
               <h3>Liberty</h3>
               <p>The Declaration of the Rights of Man — a new idea of citizenship.</p>
-              <a href="https://zora.co/coin/base:0xea4acc39a111e5bb0188bb3b39b25cddd7741202"
-                 target="_blank" rel="noopener noreferrer" class="mint-btn">
-                <i class="fas fa-store"></i><span>Mint on ZORA</span>
-              </a>
+              <div class="collectible-actions">
+                <a href="https://zora.co/coin/base:0xea4acc39a111e5bb0188bb3b39b25cddd7741202"
+                   target="_blank" rel="noopener noreferrer" class="action-btn primary">
+                  <i class="fas fa-store"></i><span>Mint on ZORA</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- REBL-J1E-01 -->
-          <div class="collectible-card" data-chapter="V" data-aos="fade-up" data-aos-delay="350">
+          <div class="collectible-card video-card" data-chapter="V" data-aos="fade-up" data-aos-delay="350">
             <div class="collectible-thumb">
               <img src="images/journey/rebl-j1e-01.png" alt="REBL-J1E-01 — Abolition of Privileges" loading="lazy">
               <div class="collectible-overlay">
@@ -306,15 +370,17 @@
               </div>
               <h3>Abolition of Privileges</h3>
               <p>The night the old feudal order was formally dismantled.</p>
-              <a href="https://zora.co/coin/base:0x09ed126dd9e0cbc781b011a2e911b6d4e544abd7"
-                 target="_blank" rel="noopener noreferrer" class="mint-btn">
-                <i class="fas fa-store"></i><span>Mint on ZORA</span>
-              </a>
+              <div class="collectible-actions">
+                <a href="https://zora.co/coin/base:0x09ed126dd9e0cbc781b011a2e911b6d4e544abd7"
+                   target="_blank" rel="noopener noreferrer" class="action-btn primary">
+                  <i class="fas fa-store"></i><span>Mint on ZORA</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- REBL-J1E-02 -->
-          <div class="collectible-card" data-chapter="V" data-aos="fade-up" data-aos-delay="400">
+          <div class="collectible-card video-card" data-chapter="V" data-aos="fade-up" data-aos-delay="400">
             <div class="collectible-thumb">
               <img src="images/journey/rebl-j1e-02.png" alt="REBL-J1E-02 — The Women's March" loading="lazy">
               <div class="collectible-overlay">
@@ -328,15 +394,17 @@
               </div>
               <h3>The Women's March</h3>
               <p>Parisian women march to Versailles — a turning point of the Revolution.</p>
-              <a href="https://zora.co/coin/base:0xd1aa77ab3e1a7257ccc46caa1067b17c0b9f9bbd"
-                 target="_blank" rel="noopener noreferrer" class="mint-btn">
-                <i class="fas fa-store"></i><span>Mint on ZORA</span>
-              </a>
+              <div class="collectible-actions">
+                <a href="https://zora.co/coin/base:0xd1aa77ab3e1a7257ccc46caa1067b17c0b9f9bbd"
+                   target="_blank" rel="noopener noreferrer" class="action-btn primary">
+                  <i class="fas fa-store"></i><span>Mint on ZORA</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- REBL-J1E-03 -->
-          <div class="collectible-card" data-chapter="V" data-aos="fade-up" data-aos-delay="450">
+          <div class="collectible-card video-card" data-chapter="V" data-aos="fade-up" data-aos-delay="450">
             <div class="collectible-thumb">
               <img src="images/journey/rebl-j1e-03.png" alt="REBL-J1E-03 — Chaos at Versailles" loading="lazy">
               <div class="collectible-overlay">
@@ -350,19 +418,58 @@
               </div>
               <h3>Chaos at Versailles</h3>
               <p>The royal family is forced back to Paris — the monarchy's grip slips.</p>
-              <a href="https://zora.co/coin/base:0xad31921776215ec39d1c0b01109c7150eb6ddd44"
-                 target="_blank" rel="noopener noreferrer" class="mint-btn">
-                <i class="fas fa-store"></i><span>Mint on ZORA</span>
-              </a>
+              <div class="collectible-actions">
+                <a href="https://zora.co/coin/base:0xad31921776215ec39d1c0b01109c7150eb6ddd44"
+                   target="_blank" rel="noopener noreferrer" class="action-btn primary">
+                  <i class="fas fa-store"></i><span>Mint on ZORA</span>
+                </a>
+              </div>
             </div>
           </div>
 
         </div>
 
-        <!-- No results message (shown by JS when filter returns 0) -->
+        <!-- Empty state -->
         <div class="collectibles-empty" id="collectiblesEmpty" style="display:none;">
           <i class="fas fa-search"></i>
           <p>No collectibles in this chapter yet.</p>
+        </div>
+
+        <!-- Journey Progress Tracker -->
+        <div class="journey-progress-tracker" data-aos="fade-up">
+          <div class="progress-header">
+            <span>French Revolution Journey</span>
+            <span>5 Chapters • Ongoing</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 100%;"></div>
+          </div>
+          <div class="journey-chapters">
+            <span class="completed">J1A ✓</span>
+            <span class="completed">J1B ✓</span>
+            <span class="completed">J1C ✓</span>
+            <span class="completed">J1D ✓</span>
+            <span class="current">J1E ● Active</span>
+            <span class="upcoming">More…</span>
+          </div>
+        </div>
+
+        <!-- Journey Info Box -->
+        <div class="journey-info-box" data-aos="fade-up">
+          <h4><i class="fas fa-info-circle"></i> About Journey Collectibles</h4>
+          <p>
+            Journey Collectibles are AI-generated videos retracing important historical events.
+            Each Journey is a collection of multiple video Collectibles. The subject of each Journey
+            is determined by the <strong>REBL Governance Hub</strong> through the
+            <strong>Journey Contest</strong> (Hub pre-selection + community vote on X).
+          </p>
+          <p style="margin-top: 0.5rem;">
+            <strong>Free to watch.</strong> Viewing is not gated by token ownership. The tokenized
+            collectibles represent ownership of a specific scene — but anyone can watch the source videos.
+          </p>
+          <a href="contests.html" class="journey-info-link">
+            <i class="fas fa-trophy"></i> Learn about contests →
+          </a>
         </div>
 
         <div class="collectibles-note" data-aos="fade-up">
@@ -376,8 +483,8 @@
     <section class="videos-section" aria-label="The videos">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-play-circle"></i> The Videos</h2>
-          <p class="section-subtitle">Two formats. Free to watch on every platform.</p>
+          <h2><i class="fas fa-play-circle"></i> Two Video Formats</h2>
+          <p class="section-subtitle">Short-form vertical + long-form YouTube</p>
         </div>
 
         <div class="videos-grid">
