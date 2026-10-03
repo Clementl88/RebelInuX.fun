@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="RebelInuX Artwork Gallery - Official AI-Animated Journey Collectibles, community creations, and digital art from the RebelInuX ecosystem." />
-  <meta name="keywords" content="$REBL Journey Collectibles, RebelInuX artwork, AI-animated art, crypto art, NFT collection, community art, French Revolution Journey" />
-  <meta property="og:title" content="RebelInuX Artwork Gallery - AI-Animated Journey Collectibles & Community Art" />
-  <meta property="og:description" content="Explore AI-animated Journey Collectibles and award-winning RebelInuX artwork created by our talented community." />
+  <meta name="description" content="RebelInuX Artwork Gallery - Community art, contest winners, and official brand assets from the RebelInuX ecosystem." />
+  <meta name="keywords" content="RebelInuX artwork, community art, contest winners, crypto art, NFT collection, brand assets, French Revolution art" />
+  <meta property="og:title" content="Artwork Gallery | RebelInuX — Community Art & Contest Winners" />
+  <meta property="og:description" content="Explore community art, contest winners, and official RebelInuX brand assets." />
   <meta property="og:image" content="images/Logo_REBL.svg" />
   <meta property="og:url" content="https://rebelinux.fun/artwork.html" />
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="RebelInuX">
-  <meta name="twitter:title" content="RebelInuX Artwork Gallery - AI-Animated Journey Collectibles">
-  <meta name="twitter:description" content="Explore AI-animated Journey Collectibles and award-winning RebelInuX artwork.">
+  <meta name="twitter:title" content="Artwork Gallery | RebelInuX">
+  <meta name="twitter:description" content="Explore community art, contest winners, and official RebelInuX brand assets.">
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Mobile Meta Tags -->
@@ -20,18 +20,18 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#1a1a1a">
   <meta name="mobile-web-app-capable" content="yes">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="images/Logo_REBL.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/Logo_REBL.svg">
-  <title>Artwork Gallery - RebelInuX | AI-Animated Journey Collectibles</title>
-  
+  <title>Artwork Gallery | RebelInuX — Community Art & Contest Winners</title>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- AOS Animation -->
@@ -43,68 +43,6 @@
   <link rel="stylesheet" href="css/artwork.css">
 
   <style>
-    /* Journey Progress Labels */
-    .journey-chapters {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 0.5rem;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.6);
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-    .journey-chapters .completed { color: #2ECC71; }
-    .journey-chapters .current { color: var(--rebel-gold); font-weight: 600; }
-    .journey-chapters .upcoming { color: rgba(255,255,255,0.4); }
-    
-    /* Video Wrapper */
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      background: #000;
-    }
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    .video-thumbnail {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      background: #000;
-      min-height: 200px;
-    }
-    .video-thumbnail .video-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(255, 0, 0, 0.9);
-      color: white;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      z-index: 2;
-      backdrop-filter: blur(5px);
-    }
-    .video-thumbnail .video-badge.required {
-      background: rgba(255, 152, 0, 0.9);
-    }
-    .video-thumbnail .video-badge.available {
-      background: rgba(46, 204, 113, 0.9);
-    }
-    @media (max-width: 768px) {
-      .video-thumbnail { min-height: 150px; }
-    }
-    
     /* Special Events Badge */
     .event-badge {
       display: inline-block;
@@ -116,6 +54,86 @@
       color: white;
       margin-left: 0.5rem;
     }
+
+    /* Cross-link cards to Journey and Contests */
+    .cross-link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 2rem auto 0;
+    }
+
+    .cross-link-card {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .cross-link-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .cross-link-card.journey-card {
+      border: 2px solid var(--rebel-gold);
+    }
+
+    .cross-link-card.journey-card:hover {
+      background: rgba(212, 167, 106, 0.1);
+      box-shadow: 0 12px 30px rgba(212, 167, 106, 0.25);
+    }
+
+    .cross-link-card.contests-card {
+      border: 2px solid #FBBF24;
+    }
+
+    .cross-link-card.contests-card:hover {
+      background: rgba(251, 191, 36, 0.1);
+      box-shadow: 0 12px 30px rgba(251, 191, 36, 0.25);
+    }
+
+    .cross-link-icon {
+      font-size: 2.5rem;
+      color: var(--rebel-gold);
+    }
+
+    .cross-link-card.contests-card .cross-link-icon {
+      color: #FBBF24;
+    }
+
+    .cross-link-card h3 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .cross-link-card p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.85rem;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .cross-link-arrow {
+      color: var(--rebel-gold);
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .cross-link-card.contests-card .cross-link-arrow {
+      color: #FBBF24;
+    }
   </style>
 </head>
 <body>
@@ -123,33 +141,33 @@
   <div class="loader" id="loader">
     <div class="loader-spinner"></div>
   </div>
-  
+
   <!-- Back to Top Button -->
   <div class="back-to-top" id="backToTop">
     <i class="fas fa-arrow-up"></i>
   </div>
-  
+
   <!-- Header -->
   <div id="header-container"></div>
-  
+
   <main>
     <!-- Hero Section -->
     <section class="page-hero page-hero--artwork">
       <div class="container">
-        <h1 data-aos="fade-up">AI-ANIMATED JOURNEY COLLECTIBLES</h1>
+        <h1 data-aos="fade-up">COMMUNITY ARTWORK GALLERY</h1>
         <p class="text-lead" data-aos="fade-up" data-aos-delay="100">
-          Explore AI-animated historical Journey Collectibles that bring history to life. 
-          Hold the most recent Journey Collectible to qualify for weekly $REBL rewards.
+          Award-winning community art, contest winners, and official RebelInuX brand assets.
+          Every piece here was created by or for the RebelInuX community.
         </p>
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-          <a href="#journey-collectibles" class="cta-button gold">
-            <i class="fas fa-video"></i> Journey Collectibles
-          </a>
-          <a href="#featured-art" class="cta-button">
-            <i class="fas fa-trophy"></i> Community Art
+          <a href="#featured-art" class="cta-button gold">
+            <i class="fas fa-trophy"></i> Contest Winners
           </a>
           <a href="#artist-spotlight" class="cta-button">
             <i class="fas fa-user-astronaut"></i> Featured Artist
+          </a>
+          <a href="#brand-assets" class="cta-button">
+            <i class="fas fa-palette"></i> Brand Assets
           </a>
           <a href="#submit-art" class="cta-button">
             <i class="fas fa-paint-brush"></i> Submit Your Art
@@ -172,9 +190,9 @@
             <div class="stat-subtitle">Talented Contributors</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number">4+</div>
-            <div class="stat-label">Journey Chapters</div>
-            <div class="stat-subtitle">French Revolution • Ongoing</div>
+            <div class="stat-number">4</div>
+            <div class="stat-label">Contest Types</div>
+            <div class="stat-subtitle">Thumbnail • Tokenization • Journey • Special</div>
           </div>
         </div>
       </div>
@@ -184,11 +202,7 @@
     <section id="gallery-nav">
       <div class="container">
         <nav class="gallery-categories" data-aos="fade-up">
-          <a href="#journey-collectibles" class="category-btn active" data-category="journey">
-            <i class="fas fa-video"></i>
-            <span>Journey Collectibles</span>
-          </a>
-          <a href="#featured-art" class="category-btn" data-category="featured">
+          <a href="#featured-art" class="category-btn active" data-category="featured">
             <i class="fas fa-trophy"></i>
             <span>Community Art</span>
           </a>
@@ -196,228 +210,45 @@
             <i class="fas fa-user-astronaut"></i>
             <span>Featured Artist</span>
           </a>
-          <a href="#official-assets" class="category-btn" data-category="official">
-            <i class="fas fa-gem"></i>
-            <span>Official Assets</span>
-          </a>
           <a href="#brand-assets" class="category-btn" data-category="brand">
             <i class="fas fa-palette"></i>
             <span>Brand Assets</span>
+          </a>
+          <a href="#submit-art" class="category-btn" data-category="submit">
+            <i class="fas fa-paint-brush"></i>
+            <span>Submit Art</span>
           </a>
         </nav>
       </div>
     </section>
 
-    <!-- ===== JOURNEY COLLECTIBLES SECTION ===== -->
-    <section id="journey-collectibles">
+    <!-- ===== CROSS-LINK CARDS (Journey + Contests) ===== -->
+    <section id="cross-links" style="padding: 3rem 0 0;">
       <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-video"></i> AI-Animated Journey Collectibles</h2>
-          <p class="section-subtitle">
-            AI-generated videos retracing important historical events. Each Journey is a collection of multiple video Collectibles. 
-            Hold the most recent Collectible to qualify for weekly $REBL rewards.
-          </p>
-        </div>
-        
-        <div class="journey-collection" data-aos="fade-up">
-          <div class="collection-header">
-            <div class="collection-icon">
-              <i class="fas fa-flag"></i>
+        <div class="cross-link-grid" data-aos="fade-up">
+          <a href="journey.html" class="cross-link-card journey-card">
+            <div class="cross-link-icon"><i class="fas fa-film"></i></div>
+            <h3>Explore the Journey</h3>
+            <p>Watch the AI-animated historical collectibles and mint them on ZORA.</p>
+            <div class="cross-link-arrow">
+              <i class="fas fa-arrow-right"></i> View Journey
             </div>
-            <div>
-              <h3>French Revolution Journey</h3>
-              <p class="collection-subtitle">Inaugural Rebel Journey • Community-voted via Journey Contest</p>
+          </a>
+
+          <a href="contests.html" class="cross-link-card contests-card">
+            <div class="cross-link-icon"><i class="fas fa-trophy"></i></div>
+            <h3>Enter a Contest</h3>
+            <p>Thumbnail, Tokenization, and Journey contests. Free to enter. Winners earn $REBL.</p>
+            <div class="cross-link-arrow">
+              <i class="fas fa-arrow-right"></i> See Contests
             </div>
-            <span class="collection-badge active">
-              <i class="fas fa-check-circle"></i> Active
-            </span>
-          </div>
-          
-          <div class="gallery-grid" id="journeyGallery">
-            <!-- REBL-J1A -->
-            <div class="artwork-card" data-category="journey" data-aos="fade-up">
-              <div class="artwork-image video-thumbnail">
-                <div class="video-wrapper">
-                  <iframe src="https://www.youtube.com/embed/qxCwj0c4L-g" 
-                          title="REBL-J1A: Twilight of the Ancien Régime" 
-                          frameborder="0" 
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                          referrerpolicy="strict-origin-when-cross-origin" 
-                          allowfullscreen loading="lazy">
-                  </iframe>
-                </div>
-                <span class="video-badge available">YouTube</span>
-              </div>
-              <div class="artwork-info">
-                <span class="artwork-status status-collectible">
-                  <i class="fas fa-check-circle"></i> Minted
-                </span>
-                <h3 class="artwork-title">REBL-J1A: Twilight of the Ancien Régime</h3>
-                <div class="artist-info">
-                  <div class="artist-avatar">AI</div>
-                  <span>AI-Animated by RebelInuX</span>
-                </div>
-                <p class="artwork-description">
-                  The RebelInuX mascot travels to Versailles, 1779. Witness the twilight of the Ancien Régime.
-                </p>
-                <div class="artwork-actions">
-                  <a href="https://youtu.be/qxCwj0c4L-g" target="_blank" rel="noopener noreferrer" class="cta-button">
-                    <i class="fab fa-youtube"></i> Watch
-                  </a>
-                  <a href="https://zora.co/coin/base:0x631e050fa042c2da1d3b8abe7a260b53ffc83f7f" 
-                     target="_blank" rel="noopener noreferrer" class="cta-button gold">
-                    <i class="fas fa-shopping-cart"></i> Buy on ZORA
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            <!-- REBL-J1B -->
-            <div class="artwork-card" data-category="journey" data-aos="fade-up" data-aos-delay="100">
-              <div class="artwork-image video-thumbnail">
-                <div class="video-wrapper">
-                  <iframe src="https://www.youtube.com/embed/Al-xVTEyLjs" 
-                          title="REBL-J1B: Winter of Discontent" 
-                          frameborder="0" 
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                          referrerpolicy="strict-origin-when-cross-origin" 
-                          allowfullscreen loading="lazy">
-                  </iframe>
-                </div>
-                <span class="video-badge available">YouTube</span>
-              </div>
-              <div class="artwork-info">
-                <span class="artwork-status status-collectible">
-                  <i class="fas fa-check-circle"></i> Minted
-                </span>
-                <h3 class="artwork-title">REBL-J1B: Winter of Discontent</h3>
-                <div class="artist-info">
-                  <div class="artist-avatar">AI</div>
-                  <span>AI-Animated by RebelInuX</span>
-                </div>
-                <p class="artwork-description">
-                  Witness the years of hardship (1780–1788) that led to revolution.
-                </p>
-                <div class="artwork-actions">
-                  <a href="https://youtu.be/Al-xVTEyLjs" target="_blank" rel="noopener noreferrer" class="cta-button">
-                    <i class="fab fa-youtube"></i> Watch
-                  </a>
-                  <a href="https://zora.co/coin/base:0xc2979efc53283f4e56d1284696139e606fc14a74" 
-                     target="_blank" rel="noopener noreferrer" class="cta-button gold">
-                    <i class="fas fa-shopping-cart"></i> Buy on ZORA
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            <!-- REBL-J1C - Current Required -->
-            <div class="artwork-card" data-category="journey" data-aos="fade-up" data-aos-delay="200">
-              <div class="artwork-image video-thumbnail">
-                <div class="video-wrapper">
-                  <iframe src="https://www.youtube.com/embed/y4FkpYOTSOc" 
-                          title="REBL-J1C: The Oath" 
-                          frameborder="0" 
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                          referrerpolicy="strict-origin-when-cross-origin" 
-                          allowfullscreen loading="lazy">
-                  </iframe>
-                </div>
-                <span class="video-badge required">Required for B1</span>
-              </div>
-              <div class="artwork-info">
-                <span class="artwork-status status-collectible" style="border-color: #2ECC71;">
-                  <i class="fas fa-check-circle"></i> Required for B1
-                </span>
-                <h3 class="artwork-title">REBL-J1C: The Oath</h3>
-                <div class="artist-info">
-                  <div class="artist-avatar">AI</div>
-                  <span>AI-Animated by RebelInuX</span>
-                </div>
-                <p class="artwork-description">
-                  The RebelInuX mascot witnesses the Tennis Court Oath (April–June 1789). 
-                  <strong>Required for Epoch B1 rewards.</strong>
-                </p>
-                <div class="artwork-actions">
-                  <a href="https://youtu.be/y4FkpYOTSOc" target="_blank" rel="noopener noreferrer" class="cta-button">
-                    <i class="fab fa-youtube"></i> Watch
-                  </a>
-                  <a href="https://zora.co/coin/base:0xffcf837646f2d9a60fa18f2afab25d9979578dcf" 
-                     target="_blank" rel="noopener noreferrer" class="cta-button gold">
-                    <i class="fas fa-shopping-cart"></i> Buy on ZORA
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            <!-- REBL-J1D - Available -->
-            <div class="artwork-card" data-category="journey" data-aos="fade-up" data-aos-delay="300">
-              <div class="artwork-image video-thumbnail">
-                <div class="video-wrapper">
-                  <iframe src="https://www.youtube.com/embed/Qm033A23pVE" 
-                          title="REBL-J1D: The Fall" 
-                          frameborder="0" 
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                          referrerpolicy="strict-origin-when-cross-origin" 
-                          allowfullscreen loading="lazy">
-                  </iframe>
-                </div>
-                <span class="video-badge available">Available for B2</span>
-              </div>
-              <div class="artwork-info">
-                <span class="artwork-status status-collectible">
-                  <i class="fas fa-check-circle"></i> Minted • Available for B2
-                </span>
-                <h3 class="artwork-title">REBL-J1D: The Fall</h3>
-                <div class="artist-info">
-                  <div class="artist-avatar">AI</div>
-                  <span>AI-Animated by RebelInuX</span>
-                </div>
-                <p class="artwork-description">
-                  The RebelInuX mascot witnesses the Storming of the Bastille, July 1789. 
-                  <strong>Available for Epoch B2 rewards.</strong>
-                </p>
-                <div class="artwork-actions">
-                  <a href="https://youtu.be/Qm033A23pVE" target="_blank" rel="noopener noreferrer" class="cta-button">
-                    <i class="fab fa-youtube"></i> Watch
-                  </a>
-                  <a href="https://zora.co/coin/base:0x5202fb24cf1c9549d9fe945871c417ec10b4b99a" 
-                     target="_blank" rel="noopener noreferrer" class="cta-button gold">
-                    <i class="fas fa-shopping-cart"></i> Buy on ZORA
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="journey-info-box" data-aos="fade-up">
-            <h4><i class="fas fa-info-circle"></i> About Journey Collectibles</h4>
-            <p>Journey Collectibles are AI-generated videos retracing important historical events. Each Journey is a collection of multiple video Collectibles. The subject of each Journey is determined by the <strong>REBL Governance Hub</strong> through the <strong>Journey Contest</strong> (60% vote + 40% engagement scoring).</p>
-            <p style="margin-top: 0.5rem;"><strong>To earn weekly $REBL rewards:</strong> Hold all three assets — $rebelinux Creator Coin + Permanent Rebel Key + the most recent Journey Collectible.</p>
-            <a href="epoch-rewards.html" style="color: var(--rebel-gold);">Learn about epoch rewards →</a>
-          </div>
-          
-          <div class="journey-progress" data-aos="fade-up">
-            <div class="progress-header">
-              <span>French Revolution Journey</span>
-              <span>4+ Chapters • Ongoing</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" style="width: 100%; background: var(--rebel-gold);"></div>
-            </div>
-            <div class="journey-chapters">
-              <span class="completed">J1A ✓</span>
-              <span class="completed">J1B ✓</span>
-              <span class="current">J1C ● Required</span>
-              <span class="completed">J1D ✓</span>
-              <span class="upcoming">More...</span>
-            </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- ===== FEATURED ART & CONTEST WINNERS ===== -->
-    <section id="featured-art">
+    <section id="featured-art" style="padding-top: 3rem;">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
           <h2><i class="fas fa-trophy"></i> Community Art & Contest Winners</h2>
@@ -425,14 +256,14 @@
             Award-winning artwork by RebelInuX community members. From past contest winners to featured creations.
           </p>
         </div>
-        
+
         <div class="filter-buttons" data-aos="fade-up">
           <button class="filter-btn active" data-filter="all">All Artwork</button>
           <button class="filter-btn" data-filter="winner">Contest Winners</button>
           <button class="filter-btn" data-filter="featured">Featured Art</button>
           <button class="filter-btn" data-filter="video">Video Content</button>
         </div>
-        
+
         <div class="gallery-grid" id="artworkGallery">
           <!-- REBEL JUDGES VOTING KEY -->
           <div class="artwork-card" data-category="winner" data-aos="fade-up">
@@ -455,22 +286,22 @@
                 Official voting NFT from the Ultimate Rebel Creator Contest.
               </p>
               <div class="artwork-actions">
-                <button class="cta-button view-artwork" 
-                        data-image="images/RebelJudgesVotingKey.svg" 
-                        data-title="REBEL JUDGES VOTING KEY" 
-                        data-artist="@issa_abdulrazaq" 
-                        data-description="Official voting NFT from RebelInuX's Ultimate Rebel Creator Contest. Selected by our judges as a grand prize winner." 
+                <button class="cta-button view-artwork"
+                        data-image="images/RebelJudgesVotingKey.svg"
+                        data-title="REBEL JUDGES VOTING KEY"
+                        data-artist="@issa_abdulrazaq"
+                        data-description="Official voting NFT from RebelInuX's Ultimate Rebel Creator Contest. Selected by our judges as a grand prize winner."
                         data-link="https://zora.co/coin/base:0x0ea28d8b2f45fa45b3a13a9d0869263f6b41f5e6?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee">
                   <i class="fas fa-expand"></i> View Details
                 </button>
-                <a href="https://zora.co/coin/base:0x0ea28d8b2f45fa45b3a13a9d0869263f6b41f5e6?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee" 
+                <a href="https://zora.co/coin/base:0x0ea28d8b2f45fa45b3a13a9d0869263f6b41f5e6?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee"
                    target="_blank" rel="noopener noreferrer" class="cta-button gold">
                   <i class="fas fa-shopping-cart"></i> Buy on ZORA
                 </a>
               </div>
             </div>
           </div>
-          
+
           <!-- REBEL KEY #2 -->
           <div class="artwork-card" data-category="winner" data-aos="fade-up" data-aos-delay="100">
             <div class="artwork-image">
@@ -492,22 +323,22 @@
                 From winning memes of the 1st official $REBL Meme Contest.
               </p>
               <div class="artwork-actions">
-                <button class="cta-button view-artwork" 
-                        data-image="images/REBELKEY2.svg" 
-                        data-title="REBEL KEY #2" 
-                        data-artist="@DefiMaven5" 
-                        data-description="A rotating governance and utility asset within the RebelInuX ecosystem." 
+                <button class="cta-button view-artwork"
+                        data-image="images/REBELKEY2.svg"
+                        data-title="REBEL KEY #2"
+                        data-artist="@DefiMaven5"
+                        data-description="A rotating governance and utility asset within the RebelInuX ecosystem."
                         data-link="https://zora.co/coin/base:0xe43fed2a4df3430cbba39e141d35fb4265cc734c?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee">
                   <i class="fas fa-expand"></i> View Details
                 </button>
-                <a href="https://zora.co/coin/base:0xe43fed2a4df3430cbba39e141d35fb4265cc734c?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee" 
+                <a href="https://zora.co/coin/base:0xe43fed2a4df3430cbba39e141d35fb4265cc734c?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee"
                    target="_blank" rel="noopener noreferrer" class="cta-button gold">
                   <i class="fas fa-shopping-cart"></i> Buy on ZORA
                 </a>
               </div>
             </div>
           </div>
-          
+
           <!-- RULES THEM ALL - 2nd Place -->
           <div class="artwork-card" data-category="winner" data-aos="fade-up" data-aos-delay="200">
             <div class="artwork-image">
@@ -529,22 +360,22 @@
                 Trophy of victory for 2nd place in RebelInuX shilling contest.
               </p>
               <div class="artwork-actions">
-                <button class="cta-button view-artwork" 
-                        data-image="https://i.imgur.com/6ECioCX.jpeg" 
-                        data-title="RULES THEM ALL" 
-                        data-artist="@PeterGriff9178" 
-                        data-description="Officially awarded to @PeterGriff9178 for securing 2nd place in the RebelInuX shilling contest." 
+                <button class="cta-button view-artwork"
+                        data-image="https://i.imgur.com/6ECioCX.jpeg"
+                        data-title="RULES THEM ALL"
+                        data-artist="@PeterGriff9178"
+                        data-description="Officially awarded to @PeterGriff9178 for securing 2nd place in the RebelInuX shilling contest."
                         data-link="https://zora.co/coin/base:0x031f93dd91b3c87d801538f4bc9fe9a42f585b10?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee">
                   <i class="fas fa-expand"></i> View Details
                 </button>
-                <a href="https://zora.co/coin/base:0x031f93dd91b3c87d801538f4bc9fe9a42f585b10?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee" 
+                <a href="https://zora.co/coin/base:0x031f93dd91b3c87d801538f4bc9fe9a42f585b10?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee"
                    target="_blank" rel="noopener noreferrer" class="cta-button gold">
                   <i class="fas fa-shopping-cart"></i> Buy on ZORA
                 </a>
               </div>
             </div>
           </div>
-          
+
           <!-- BUY THE DIP - 3rd Place -->
           <div class="artwork-card" data-category="winner" data-aos="fade-up" data-aos-delay="300">
             <div class="artwork-image">
@@ -566,22 +397,22 @@
                 Trophy of victory for 3rd place in RebelInuX shilling contest.
               </p>
               <div class="artwork-actions">
-                <button class="cta-button view-artwork" 
-                        data-image="https://i.imgur.com/cb5pTtS.jpeg" 
-                        data-title="BUY THE DIP" 
-                        data-artist="@Prime__12" 
-                        data-description="Officially awarded to @Prime__12 for securing 3rd place in the RebelInuX shilling contest." 
+                <button class="cta-button view-artwork"
+                        data-image="https://i.imgur.com/cb5pTtS.jpeg"
+                        data-title="BUY THE DIP"
+                        data-artist="@Prime__12"
+                        data-description="Officially awarded to @Prime__12 for securing 3rd place in the RebelInuX shilling contest."
                         data-link="https://zora.co/coin/base:0xe8fe77c982370b7202f2228503e737362f4c28c4?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee">
                   <i class="fas fa-expand"></i> View Details
                 </button>
-                <a href="https://zora.co/coin/base:0xe8fe77c982370b7202f2228503e737362f4c28c4?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee" 
+                <a href="https://zora.co/coin/base:0xe8fe77c982370b7202f2228503e737362f4c28c4?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee"
                    target="_blank" rel="noopener noreferrer" class="cta-button gold">
                   <i class="fas fa-shopping-cart"></i> Buy on ZORA
                 </a>
               </div>
             </div>
           </div>
-          
+
           <!-- THE REBEL BLUEPRINT - 2nd Place Video -->
           <div class="artwork-card" data-category="video" data-aos="fade-up" data-aos-delay="400">
             <div class="artwork-image">
@@ -603,22 +434,22 @@
                 2nd Place winning video from Ultimate Rebel Creator Contest.
               </p>
               <div class="artwork-actions">
-                <button class="cta-button view-artwork" 
-                        data-image="https://i.imgur.com/PY3GeCm.png" 
-                        data-title="THE REBEL BLUEPRINT" 
-                        data-artist="@KraysWurld" 
-                        data-description="The definitive guide to the RebelInuX ecosystem." 
+                <button class="cta-button view-artwork"
+                        data-image="https://i.imgur.com/PY3GeCm.png"
+                        data-title="THE REBEL BLUEPRINT"
+                        data-artist="@KraysWurld"
+                        data-description="The definitive guide to the RebelInuX ecosystem."
                         data-link="https://zora.co/coin/base:0xf675595d75944cbc63fbe3f034f150f10b212d44?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee">
                   <i class="fas fa-expand"></i> View Details
                 </button>
-                <a href="https://zora.co/coin/base:0xf675595d75944cbc63fbe3f034f150f10b212d44?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee" 
+                <a href="https://zora.co/coin/base:0xf675595d75944cbc63fbe3f034f150f10b212d44?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee"
                    target="_blank" rel="noopener noreferrer" class="cta-button gold">
                   <i class="fas fa-shopping-cart"></i> Buy on ZORA
                 </a>
               </div>
             </div>
           </div>
-          
+
           <!-- THE GENESIS BLUEPRINT - Grand Prize Video -->
           <div class="artwork-card" data-category="video" data-aos="fade-up" data-aos-delay="500">
             <div class="artwork-image">
@@ -640,22 +471,22 @@
                 Grand Prize-winning video from the Ultimate Rebel Creator Contest.
               </p>
               <div class="artwork-actions">
-                <button class="cta-button view-artwork" 
-                        data-image="https://i.imgur.com/lzL0Tt2.png" 
-                        data-title="THE GENESIS BLUEPRINT" 
-                        data-artist="@LoneRogue8" 
-                        data-description="Selected by our judges as the absolute best entry." 
+                <button class="cta-button view-artwork"
+                        data-image="https://i.imgur.com/lzL0Tt2.png"
+                        data-title="THE GENESIS BLUEPRINT"
+                        data-artist="@LoneRogue8"
+                        data-description="Selected by our judges as the absolute best entry."
                         data-link="https://zora.co/coin/base:0xdfd06142e7439c3e04db73028e62350c1cebd393?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee">
                   <i class="fas fa-expand"></i> View Details
                 </button>
-                <a href="https://zora.co/coin/base:0xdfd06142e7439c3e04db73028e62350c1cebd393?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee" 
+                <a href="https://zora.co/coin/base:0xdfd06142e7439c3e04db73028e62350c1cebd393?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee"
                    target="_blank" rel="noopener noreferrer" class="cta-button gold">
                   <i class="fas fa-shopping-cart"></i> Buy on ZORA
                 </a>
               </div>
             </div>
           </div>
-          
+
           <!-- 74-SECOND BLUEPRINT - Audience Choice -->
           <div class="artwork-card" data-category="video" data-aos="fade-up" data-aos-delay="600">
             <div class="artwork-image">
@@ -677,23 +508,23 @@
                 Audience Choice winning video. Explains RebelInuX in 74 seconds.
               </p>
               <div class="artwork-actions">
-                <button class="cta-button view-artwork" 
-                        data-image="https://i.imgur.com/2ClOtx3.png" 
-                        data-title="74-SECOND BLUEPRINT" 
-                        data-artist="@Unxpxtd" 
-                        data-description="The People's Champion delivers. Masterfully explains the entire RebelInuX Epoch System." 
+                <button class="cta-button view-artwork"
+                        data-image="https://i.imgur.com/2ClOtx3.png"
+                        data-title="74-SECOND BLUEPRINT"
+                        data-artist="@Unxpxtd"
+                        data-description="The People's Champion delivers. Masterfully explains the entire RebelInuX ecosystem."
                         data-link="https://zora.co/coin/base:0xe03b6024ba8297b2e3f28ea91449ea268384192b?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee">
                   <i class="fas fa-expand"></i> View Details
                 </button>
-                <a href="https://zora.co/coin/base:0xe03b6024ba8297b2e3f28ea91449ea268384192b?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee" 
+                <a href="https://zora.co/coin/base:0xe03b6024ba8297b2e3f28ea91449ea268384192b?referrer=0xfcc14f45b6fb8a847bed4cd535fe08d075f64bee"
                    target="_blank" rel="noopener noreferrer" class="cta-button gold">
                   <i class="fas fa-shopping-cart"></i> Buy on ZORA
                 </a>
               </div>
             </div>
           </div>
-          
-          <!-- Grand Winner Artworks by @DefiMaven5 -->
+
+          <!-- REBEL BUILD -->
           <div class="artwork-card" data-category="featured" data-aos="fade-up" data-aos-delay="700">
             <div class="artwork-image">
               <img src="https://i.imgur.com/WOXZaSg.webp" alt="REBEL BUILD by @DefiMaven5" loading="lazy">
@@ -714,22 +545,23 @@
                 Showcasing RebelInuX's foundation and growth.
               </p>
               <div class="artwork-actions">
-                <button class="cta-button view-artwork" 
-                        data-image="https://i.imgur.com/WOXZaSg.webp" 
-                        data-title="REBEL BUILD" 
-                        data-artist="@DefiMaven5" 
-                        data-description="Award-winning artwork showcasing RebelInuX's foundation and growth." 
+                <button class="cta-button view-artwork"
+                        data-image="https://i.imgur.com/WOXZaSg.webp"
+                        data-title="REBEL BUILD"
+                        data-artist="@DefiMaven5"
+                        data-description="Award-winning artwork showcasing RebelInuX's foundation and growth."
                         data-link="https://zora.co/coin/base:0x2de4c9ab495d105bc51fd1bae759acb6409c567a">
                   <i class="fas fa-expand"></i> View Details
                 </button>
-                <a href="https://zora.co/coin/base:0x2de4c9ab495d105bc51fd1bae759acb6409c567a" 
+                <a href="https://zora.co/coin/base:0x2de4c9ab495d105bc51fd1bae759acb6409c567a"
                    target="_blank" rel="noopener noreferrer" class="cta-button gold">
                   <i class="fas fa-shopping-cart"></i> Buy on ZORA
                 </a>
               </div>
             </div>
           </div>
-          
+
+          <!-- SHIBA ENERGY -->
           <div class="artwork-card" data-category="featured" data-aos="fade-up" data-aos-delay="800">
             <div class="artwork-image">
               <img src="https://i.imgur.com/x1kfWUs.webp" alt="SHIBA ENERGY by @DefiMaven5" loading="lazy">
@@ -750,15 +582,15 @@
                 Capturing the explosive energy of the RebelInuX community.
               </p>
               <div class="artwork-actions">
-                <button class="cta-button view-artwork" 
-                        data-image="https://i.imgur.com/x1kfWUs.webp" 
-                        data-title="SHIBA ENERGY" 
-                        data-artist="@DefiMaven5" 
-                        data-description="Capturing the explosive energy of the RebelInuX community." 
+                <button class="cta-button view-artwork"
+                        data-image="https://i.imgur.com/x1kfWUs.webp"
+                        data-title="SHIBA ENERGY"
+                        data-artist="@DefiMaven5"
+                        data-description="Capturing the explosive energy of the RebelInuX community."
                         data-link="https://zora.co/coin/base:0xedba7bcef2ed941084b9bf78c4568f5a719f785c">
                   <i class="fas fa-expand"></i> View Details
                 </button>
-                <a href="https://zora.co/coin/base:0xedba7bcef2ed941084b9bf78c4568f5a719f785c" 
+                <a href="https://zora.co/coin/base:0xedba7bcef2ed941084b9bf78c4568f5a719f785c"
                    target="_blank" rel="noopener noreferrer" class="cta-button gold">
                   <i class="fas fa-shopping-cart"></i> Buy on ZORA
                 </a>
@@ -766,7 +598,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="view-more" data-aos="fade-up">
           <a href="https://zora.co/@rebelinux" target="_blank" rel="noopener noreferrer" class="cta-button gold">
             <i class="fas fa-external-link-alt"></i> Explore All Art on ZORA
@@ -781,10 +613,10 @@
         <div class="section-header" data-aos="fade-up">
           <h2><i class="fas fa-user-astronaut"></i> Featured Artist: @DefiMaven5 (Sasha)</h2>
           <p class="section-subtitle">
-            Grand Winner and top artist behind RebelInuX's most iconic artwork collection
+            Past contest winner and one of the most prolific artists in the RebelInuX community
           </p>
         </div>
-        
+
         <div class="artist-spotlight-card" data-aos="fade-up">
           <div class="artist-profile">
             <div class="artist-avatar-large">
@@ -796,7 +628,7 @@
                 "As a top artist and multiple contest winner, I've had the opportunity to push creative boundaries while competing at the highest level. Each win represents countless hours of discipline, innovation, and passion for the craft."
               </p>
               <div class="artist-tags">
-                <span class="artist-tag"><i class="fas fa-crown"></i> Grand Prize Winner</span>
+                <span class="artist-tag"><i class="fas fa-crown"></i> Past Grand Prize Winner</span>
                 <span class="artist-tag"><i class="fas fa-trophy"></i> Multiple Contest Champion</span>
                 <span class="artist-tag"><i class="fas fa-palette"></i> 12+ Featured Artworks</span>
                 <span class="artist-tag"><i class="fas fa-fire"></i> Back-to-back Wins</span>
@@ -815,34 +647,6 @@
       </div>
     </section>
 
-    <!-- ===== OFFICIAL ASSETS (Triple-Asset) ===== -->
-    <section id="official-assets">
-      <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-gem"></i> The Triple-Asset Ecosystem</h2>
-          <p class="section-subtitle">
-            Hold all three assets to qualify for weekly $REBL rewards
-          </p>
-        </div>
-        
-        <div class="zora-notice" data-aos="fade-up">
-          <div class="notice-content">
-            <i class="fas fa-info-circle"></i>
-            <h3>Three Required Assets for $REBL Rewards</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 1rem 0;">
-              <span style="background: #D4A76A20; padding: 0.5rem 1rem; border-radius: 8px;">1️⃣ $rebelinux Creator Coin</span>
-              <span style="background: #D4A76A20; padding: 0.5rem 1rem; border-radius: 8px;">2️⃣ Permanent Rebel Key</span>
-              <span style="background: #D4A76A20; padding: 0.5rem 1rem; border-radius: 8px;">3️⃣ Current Journey Collectible</span>
-            </div>
-            <p>All assets are minted and traded exclusively on ZORA. Connect your wallet to view, purchase, or trade.</p>
-            <a href="https://zora.co/@rebelinux" target="_blank" rel="noopener noreferrer" class="cta-button gold">
-              <i class="fas fa-external-link-alt"></i> Buy on ZORA
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ===== BRAND ASSETS ===== -->
     <section id="brand-assets">
       <div class="container">
@@ -853,7 +657,7 @@
             <br><em>Logos designed by <a href="https://www.fiverr.com/masumcreation" target="_blank" style="color: var(--rebel-gold);">Masum B</a> - Professional Graphic Designer</em>
           </p>
         </div>
-        
+
         <div class="brand-info" data-aos="fade-up">
           <div class="brand-card">
             <div class="brand-colors">
@@ -872,7 +676,7 @@
                   <div class="color-details">
                     <span class="color-name">Vibrant Red</span>
                     <span class="color-code">#D74D4D</span>
-                    <span class="color-role">Leash & Background</span>
+                    <span class="color-role">Accent</span>
                   </div>
                 </div>
                 <div class="color-item">
@@ -880,7 +684,7 @@
                   <div class="color-details">
                     <span class="color-name">Cream Contrast</span>
                     <span class="color-code">#FFEDD2</span>
-                    <span class="color-role">Secondary/Contrast</span>
+                    <span class="color-role">Background</span>
                   </div>
                 </div>
                 <div class="color-item">
@@ -888,13 +692,13 @@
                   <div class="color-details">
                     <span class="color-name">Pure Black</span>
                     <span class="color-code">#000000</span>
-                    <span class="color-role">Accent</span>
+                    <span class="color-role">Secondary/Contrast</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <div class="brand-card" data-aos="fade-up">
             <div class="brand-logos">
               <h3>Official Logos <span class="designer-credit">by <a href="https://www.fiverr.com/masumcreation" target="_blank">Masum B</a></span></h3>
@@ -925,7 +729,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="brand-guidelines" data-aos="fade-up">
           <h3><i class="fas fa-book"></i> Brand Guidelines</h3>
           <div class="guidelines-content">
@@ -949,7 +753,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- ===== SUBMIT ART ===== -->
     <section id="submit-art">
       <div class="container">
@@ -959,16 +763,16 @@
             Share your creativity with the RebelInuX community
           </p>
         </div>
-        
+
         <div class="submit-artwork-card" data-aos="fade-up">
           <div class="submit-icon">
             <i class="fas fa-paint-brush"></i>
           </div>
           <h3>Share Your Creativity</h3>
           <p class="submit-description">
-            We're always looking for talented artists to contribute to the RebelInuX ecosystem. Submit your artwork for a chance to be featured in our gallery and potentially influence future Journey Collectible themes.
+            We're always looking for talented artists to contribute to the RebelInuX ecosystem. Submit your artwork for a chance to be featured in our gallery and to enter active contests.
           </p>
-          
+
           <div class="submit-benefits">
             <div class="benefit-card">
               <div class="benefit-icon"><i class="fas fa-star"></i></div>
@@ -976,32 +780,32 @@
               <p>Get your artwork featured on our official website and social media.</p>
             </div>
             <div class="benefit-card">
-              <div class="benefit-icon"><i class="fas fa-cube"></i></div>
-              <h4>Journey Influence</h4>
-              <p>Selected artwork may influence future Journey Collectible themes.</p>
+              <div class="benefit-icon"><i class="fas fa-trophy"></i></div>
+              <h4>Contest Prizes</h4>
+              <p>Win $REBL by placing in Thumbnail, Tokenization, or Journey contests.</p>
             </div>
             <div class="benefit-card">
-              <div class="benefit-icon"><i class="fas fa-trophy"></i></div>
-              <h4>Special Events</h4>
-              <p>Occasional larger contests with significant prizes announced on X.</p>
+              <div class="benefit-icon"><i class="fas fa-film"></i></div>
+              <h4>Shape the Journey</h4>
+              <p>Your proposals can become the next official RebelInuX historical theme.</p>
             </div>
           </div>
-          
+
           <div class="submit-channels">
-            <a href="https://t.me/RebelInuX" target="_blank" rel="noopener noreferrer" class="cta-button submit-btn">
-              <i class="fab fa-telegram"></i> Submit via Telegram
+            <a href="contests.html" class="cta-button gold submit-btn">
+              <i class="fas fa-trophy"></i> View Active Contests
             </a>
-            <a href="https://x.com/RebelInuX" target="_blank" rel="noopener noreferrer" class="cta-button gold submit-btn">
+            <a href="https://x.com/RebelInuX" target="_blank" rel="noopener noreferrer" class="cta-button submit-btn">
               <i class="fab fa-twitter"></i> Tag us on X
             </a>
             <a href="https://discord.gg/s8dkuyD3cZ" target="_blank" rel="noopener noreferrer" class="cta-button submit-btn discord-btn">
               <i class="fab fa-discord"></i> Share on Discord
             </a>
           </div>
-          
+
           <div class="submit-tip">
             <i class="fas fa-lightbulb"></i>
-            <p>Tip: Include your X/Twitter handle and wallet address for proper credit!</p>
+            <p>Tip: Include your X/Twitter handle and Solana wallet address for proper credit and reward distribution!</p>
           </div>
         </div>
       </div>
@@ -1011,71 +815,71 @@
     <section id="faq">
       <div class="container">
         <h2 data-aos="fade-up">Frequently Asked Questions</h2>
-        
+
         <div class="content-card" data-aos="fade-up">
           <div class="faq-grid">
             <div class="faq-item" data-aos="fade-right">
               <div class="faq-header">
                 <h4>
                   <i class="fas fa-question-circle"></i>
-                  <span class="faq-question-text">What are Journey Collectibles?</span>
+                  <span class="faq-question-text">What is this gallery for?</span>
                   <i class="fas fa-chevron-down faq-chevron"></i>
                 </h4>
               </div>
               <div class="faq-content">
-                AI-generated videos retracing important historical events. Each Journey is a collection of multiple video Collectibles. The subject is determined by the community through the Journey Contest.
+                This gallery showcases community artwork and past contest winners. To see the AI-animated Journey Collectibles themselves, visit the <a href="journey.html">Journey page</a>.
               </div>
             </div>
-            
+
             <div class="faq-item" data-aos="fade-left">
               <div class="faq-header">
                 <h4>
                   <i class="fas fa-question-circle"></i>
-                  <span class="faq-question-text">What are the three required assets for rewards?</span>
+                  <span class="faq-question-text">How can I enter a contest?</span>
                   <i class="fas fa-chevron-down faq-chevron"></i>
                 </h4>
               </div>
               <div class="faq-content">
-                To qualify for weekly $REBL rewards, hold: 1) $rebelinux Creator Coin, 2) Permanent Rebel Key, and 3) the most recent Journey Collectible. Register your Solana address once on the Rebel Key ZORA page.
+                Go to the <a href="contests.html">Contests page</a> to see the active contest, the rules, and how to submit. Contests are free to enter. Winners earn $REBL.
               </div>
             </div>
-            
+
             <div class="faq-item" data-aos="fade-right" data-aos-delay="100">
               <div class="faq-header">
                 <h4>
                   <i class="fas fa-question-circle"></i>
-                  <span class="faq-question-text">Where can I buy Journey Collectibles?</span>
+                  <span class="faq-question-text">What kinds of contests exist?</span>
                   <i class="fas fa-chevron-down faq-chevron"></i>
                 </h4>
               </div>
               <div class="faq-content">
-                All RebelInuX Journey Collectibles are exclusively available on ZORA at <a href="https://zora.co/@rebelinux" target="_blank">zora.co/@rebelinux</a>. Connect your wallet to purchase.
+                Three main types: <strong>Thumbnail Contests</strong> (design a video thumbnail), <strong>Tokenization Contests</strong> (choose a scene to become a content coin on Zora), and <strong>Journey Contests</strong> (propose the next historical theme). Full rules on the <a href="contests.html">Contests page</a>.
               </div>
             </div>
-            
+
             <div class="faq-item" data-aos="fade-left" data-aos-delay="100">
               <div class="faq-header">
                 <h4>
                   <i class="fas fa-question-circle"></i>
-                  <span class="faq-question-text">What is the Journey Contest?</span>
+                  <span class="faq-question-text">How do I submit my artwork?</span>
                   <i class="fas fa-chevron-down faq-chevron"></i>
                 </h4>
               </div>
               <div class="faq-content">
-                Community voting mechanism where REBL Governance Hub members decide the next Journey theme. Hybrid scoring: 60% vote + 40% social engagement. Winners receive credit, crypto rewards, and free mints.
+                Share your artwork on X, Discord, or submit it directly to an active contest. Include your social handle and Solana wallet address for credit and reward distribution.
               </div>
             </div>
-            
+
             <div class="faq-item" data-aos="fade-right" data-aos-delay="200">
               <div class="faq-header">
                 <h4>
                   <i class="fas fa-question-circle"></i>
-                  <span class="faq-question-text">How can I submit my artwork?</span>
+                  <span class="faq-question-text">Can I use the RebelInuX brand assets?</span>
                   <i class="fas fa-chevron-down faq-chevron"></i>
                 </h4>
               </div>
               <div class="faq-content">
-                Share your artwork on Telegram, Twitter/X, or Discord using the links above. Include your social handle and wallet address for credit.
+                Yes — for fan art, community projects, and non-commercial purposes. Do not use the branding for scam projects, misleading promotions, or unauthorized commercial activities. Please credit RebelInuX and link to our official channels. Logo design by <a href="https://www.fiverr.com/masumcreation" target="_blank">Masum B</a>.
               </div>
             </div>
           </div>
@@ -1087,26 +891,26 @@
     <section id="related-pages">
       <div class="container">
         <h2 data-aos="fade-up">Explore More</h2>
-        
+
         <div class="related-grid">
-          <a href="community.html" class="related-card community-card" data-aos="fade-right">
-            <div class="related-icon"><i class="fas fa-users"></i></div>
-            <h3>Community Hub</h3>
-            <p>Connect with Artists</p>
+          <a href="journey.html" class="related-card community-card" data-aos="fade-right">
+            <div class="related-icon"><i class="fas fa-film"></i></div>
+            <h3>The Journey</h3>
+            <p>AI-Animated Collectibles</p>
             <div class="related-arrow">
-              <i class="fas fa-arrow-right"></i> Join Discussions
+              <i class="fas fa-arrow-right"></i> Explore Collectibles
             </div>
           </a>
-          
-          <a href="epoch-rewards.html" class="related-card rewards-card" data-aos="fade-up">
-            <div class="related-icon"><i class="fas fa-gift"></i></div>
-            <h3>Epoch Rewards</h3>
-            <p>Claim Weekly $REBL</p>
+
+          <a href="contests.html" class="related-card rewards-card" data-aos="fade-up">
+            <div class="related-icon"><i class="fas fa-trophy"></i></div>
+            <h3>Contests</h3>
+            <p>Enter & Earn $REBL</p>
             <div class="related-arrow">
-              <i class="fas fa-arrow-right"></i> Start Earning
+              <i class="fas fa-arrow-right"></i> See Contests
             </div>
           </a>
-          
+
           <a href="governance.html" class="related-card governance-card" data-aos="fade-left">
             <div class="related-icon"><i class="fas fa-university"></i></div>
             <h3>Governance Hub</h3>
@@ -1123,15 +927,15 @@
     <section id="final-cta" style="text-align: center; padding: var(--spacing-xl) var(--spacing-md); margin: var(--spacing-xl) auto; max-width: 800px;" data-aos="fade-up">
       <h2 style="color: var(--rebel-gold); margin-bottom: var(--spacing-lg);">JOIN THE ART REBELLION</h2>
       <p style="font-size: 1.2em; margin-bottom: var(--spacing-lg); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-        Collect Journey Collectibles. Create art. Shape history. Join our vibrant creative community.
+        Create art. Win contests. Shape history. Join our vibrant creative community.
       </p>
-      
+
       <div style="display: flex; justify-content: center; gap: var(--spacing-md); margin-top: var(--spacing-lg); flex-wrap: wrap;">
-        <a href="https://zora.co/@rebelinux" target="_blank" class="cta-button">
-          <i class="fas fa-gem"></i> Buy Journey Collectibles
+        <a href="contests.html" class="cta-button gold">
+          <i class="fas fa-trophy"></i> Enter a Contest
         </a>
-        <a href="community.html" class="cta-button gold">
-          <i class="fas fa-users"></i> Join Community
+        <a href="journey.html" class="cta-button">
+          <i class="fas fa-film"></i> Explore the Journey
         </a>
         <a href="#submit-art" class="cta-button">
           <i class="fas fa-paint-brush"></i> Submit Art
@@ -1139,54 +943,56 @@
       </div>
     </section>
   </main>
-  
+
   <!-- Footer -->
   <div id="footer-container"></div>
-  
+
   <!-- JavaScript Includes -->
   <script src="js/includes.js"></script>
   <script src="js/common.js"></script>
   <script src="js/artwork.js"></script>
-  
+
   <!-- AOS Animation -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  
+
   <script>
     AOS.init({ duration: 800, once: true, offset: 100 });
-    
+
     // Lightbox for artwork modal
     document.querySelectorAll('.view-artwork').forEach(btn => {
       btn.addEventListener('click', function() {
         const modal = document.getElementById('artworkModal');
+        if (!modal) return;
+
         const img = document.getElementById('modalImage');
         const title = document.getElementById('modalTitle');
         const artist = document.getElementById('modalArtist');
         const desc = document.getElementById('modalDescription');
         const link = document.getElementById('modalLink');
-        
+
         img.src = this.dataset.image;
         title.textContent = this.dataset.title;
         artist.textContent = 'by ' + this.dataset.artist;
         desc.textContent = this.dataset.description;
         link.href = this.dataset.link;
-        
+
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
       });
     });
-    
+
     document.getElementById('modalClose')?.addEventListener('click', function() {
-      document.getElementById('artworkModal').classList.remove('active');
+      document.getElementById('artworkModal')?.classList.remove('active');
       document.body.style.overflow = '';
     });
-    
+
     document.getElementById('artworkModal')?.addEventListener('click', function(e) {
       if (e.target === this) {
         this.classList.remove('active');
         document.body.style.overflow = '';
       }
     });
-    
+
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         document.getElementById('artworkModal')?.classList.remove('active');
