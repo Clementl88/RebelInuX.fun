@@ -251,6 +251,7 @@ header.scrolled {
   transform: translateY(0);
 }
 
+/* Mobile menu — top-level links */
 #nav-desktop a:not(.mobile-direct-buy) {
   display: flex;
   align-items: center;
@@ -273,6 +274,47 @@ header.scrolled {
 #nav-desktop a:not(.mobile-direct-buy):active {
   background: rgba(255, 255, 255, 0.1);
   transform: scale(0.98);
+}
+
+/* Mobile menu — colored links (matching their page) */
+#nav-desktop a.nav-journey {
+  color: #E3B87C;
+  background: linear-gradient(135deg,
+    rgba(227, 184, 124, 0.12),
+    rgba(227, 184, 124, 0.03));
+  border-color: rgba(227, 184, 124, 0.25);
+}
+
+#nav-desktop a.nav-contests {
+  color: #FBBF24;
+  background: linear-gradient(135deg,
+    rgba(251, 191, 36, 0.12),
+    rgba(251, 191, 36, 0.03));
+  border-color: rgba(251, 191, 36, 0.25);
+}
+
+#nav-desktop a.nav-governance {
+  color: #FF9800;
+  background: linear-gradient(135deg,
+    rgba(255, 152, 0, 0.12),
+    rgba(255, 152, 0, 0.03));
+  border-color: rgba(255, 152, 0, 0.25);
+}
+
+#nav-desktop a.nav-trade {
+  color: #FF6B35;
+  background: linear-gradient(135deg,
+    rgba(255, 107, 53, 0.12),
+    rgba(255, 107, 53, 0.03));
+  border-color: rgba(255, 107, 53, 0.25);
+}
+
+#nav-desktop a.nav-tokenomics {
+  color: #00BCD4;
+  background: linear-gradient(135deg,
+    rgba(0, 188, 212, 0.12),
+    rgba(0, 188, 212, 0.03));
+  border-color: rgba(0, 188, 212, 0.25);
 }
 
 /* Mobile dropdown inside menu */
@@ -407,6 +449,7 @@ body.nav-open {
     box-shadow: none;
   }
 
+  /* Base pill styling for all top-level links */
   #nav-desktop a:not(.mobile-direct-buy) {
     padding: 8px 16px;
     border-radius: var(--border-radius-full);
@@ -418,6 +461,7 @@ body.nav-open {
     color: rgba(255, 255, 255, 0.9);
     position: relative;
     overflow: hidden;
+    border: 1px solid transparent;
   }
 
   #nav-desktop a:not(.mobile-direct-buy) i {
@@ -425,63 +469,48 @@ body.nav-open {
     font-size: 0.85rem;
   }
 
-  /* Dropdown — desktop positioning */
-  #nav-desktop .dropdown {
-    width: auto;
-    margin: 0;
-    position: relative;
-    display: inline-block;
+  /* ---------- Nav pill colors — base state ---------- */
+  #nav-desktop a.nav-journey {
+    color: #E3B87C;
+    border-color: rgba(227, 184, 124, 0.4);
+    background: linear-gradient(135deg,
+      rgba(227, 184, 124, 0.15),
+      rgba(227, 184, 124, 0.03));
   }
 
-  #nav-desktop .dropbtn {
-    padding: 8px 16px;
-    border-radius: var(--border-radius-full);
-    font-size: 0.85rem;
-    min-height: 40px;
-    width: auto;
-    gap: 6px;
+  #nav-desktop a.nav-contests {
+    color: #FBBF24;
+    border-color: rgba(251, 191, 36, 0.4);
+    background: linear-gradient(135deg,
+      rgba(251, 191, 36, 0.15),
+      rgba(251, 191, 36, 0.03));
   }
 
-  #nav-desktop .dropdown-content {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    min-width: 220px;
-    margin-top: 8px;
-    padding: 8px 0;
-    max-height: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: visible;
-    background: rgba(15, 15, 15, 0.98);
-    border: 1px solid rgba(212, 167, 106, 0.3);
-    border-radius: var(--border-radius-lg);
-    box-shadow:
-      0 10px 40px rgba(0, 0, 0, 0.6),
-      0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  #nav-desktop a.nav-governance {
+    color: #FF9800;
+    border-color: rgba(255, 152, 0, 0.4);
+    background: linear-gradient(135deg,
+      rgba(255, 152, 0, 0.15),
+      rgba(255, 152, 0, 0.03));
   }
 
-  #nav-desktop .dropdown.active .dropdown-content {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    max-height: none;
-    padding: 8px 0;
+  #nav-desktop a.nav-trade {
+    color: #FF6B35;
+    border-color: rgba(255, 107, 53, 0.4);
+    background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.15),
+      rgba(255, 107, 53, 0.03));
   }
 
-  #nav-desktop .dropdown-content a {
-    margin: 0 6px;
-    border-radius: var(--border-radius-md);
-    font-size: 0.9rem;
-    min-height: 48px;
-    padding: 12px 18px;
+  #nav-desktop a.nav-tokenomics {
+    color: #00BCD4;
+    border-color: rgba(0, 188, 212, 0.4);
+    background: linear-gradient(135deg,
+      rgba(0, 188, 212, 0.15),
+      rgba(0, 188, 212, 0.03));
   }
 
-  /* Nav color variants — desktop hover */
-  /* ---------- Nav pill colors (hover) ---------- */
+  /* ---------- Nav pill colors — hover state ---------- */
   #nav-desktop a.nav-journey:hover {
     background: linear-gradient(135deg,
       rgba(227, 184, 124, 0.25),
@@ -532,6 +561,28 @@ body.nav-open {
     transform: translateY(-2px);
   }
 
+  /* Dropdown — desktop positioning */
+  #nav-desktop .dropdown {
+    width: auto;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+  }
+
+  #nav-desktop .dropbtn {
+    padding: 8px 16px;
+    border-radius: var(--border-radius-full);
+    font-size: 0.85rem;
+    min-height: 40px;
+    width: auto;
+    gap: 6px;
+    color: #FFD700;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg,
+      rgba(255, 215, 0, 0.1),
+      rgba(255, 152, 0, 0.05));
+  }
+
   #nav-desktop .dropbtn:hover {
     background: linear-gradient(135deg,
       rgba(255, 215, 0, 0.2),
@@ -542,15 +593,47 @@ body.nav-open {
     transform: translateY(-2px);
   }
 
-  /* More button (dropdown trigger) keeps its gold color */
-  #nav-desktop .dropbtn {
-    color: #FFD700;
-    border: 1px solid rgba(255, 215, 0, 0.4);
-    background: linear-gradient(135deg,
-      rgba(255, 215, 0, 0.1),
-      rgba(255, 152, 0, 0.05));
+  #nav-desktop .dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 220px;
+    margin-top: 8px;
+    padding: 8px 0;
+    max-height: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: visible;
+    background: rgba(15, 15, 15, 0.98);
+    border: 1px solid rgba(212, 167, 106, 0.3);
+    border-radius: var(--border-radius-lg);
+    box-shadow:
+      0 10px 40px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(255, 255, 255, 0.05) inset;
   }
 
+  #nav-desktop .dropdown.active .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    max-height: none;
+    padding: 8px 0;
+  }
+
+  #nav-desktop .dropdown-content a {
+    margin: 0 6px;
+    border-radius: var(--border-radius-md);
+    font-size: 0.9rem;
+    min-height: 48px;
+    padding: 12px 18px;
+    background: transparent;
+    border: none;
+  }
+
+  /* Active state (current page) */
   #nav-desktop a.active {
     background: linear-gradient(135deg,
       rgba(212, 167, 106, 0.25),
