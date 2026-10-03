@@ -1,5 +1,6 @@
 /* ============================================================
    HEADER + FOOTER — RebelInuX v3.0
+   3-state nav pill system: default / hover / selected
    Mobile-first. Base = phone. Enhances at 769px+.
    ============================================================ */
 
@@ -181,12 +182,10 @@ header.scrolled {
     rgba(212, 167, 106, 0.1));
 }
 
-/* Desktop-only buy button hidden on mobile */
 .buy-dropdown.desktop-primary-action {
   display: none;
 }
 
-/* Mobile buy button shown in menu */
 .mobile-direct-buy {
   display: flex !important;
   width: 100%;
@@ -269,20 +268,20 @@ header.scrolled {
   width: 100%;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #nav-desktop a:not(.mobile-direct-buy):active {
-  background: rgba(255, 255, 255, 0.1);
   transform: scale(0.98);
 }
 
-/* Mobile menu — colored links (matching their page) */
+/* Mobile — page-colored links (default state) */
 #nav-desktop a.nav-journey {
   color: #E3B87C;
   background: linear-gradient(135deg,
     rgba(227, 184, 124, 0.12),
     rgba(227, 184, 124, 0.03));
-  border-color: rgba(227, 184, 124, 0.25);
+  border-color: rgba(227, 184, 124, 0.3);
 }
 
 #nav-desktop a.nav-contests {
@@ -290,7 +289,7 @@ header.scrolled {
   background: linear-gradient(135deg,
     rgba(251, 191, 36, 0.12),
     rgba(251, 191, 36, 0.03));
-  border-color: rgba(251, 191, 36, 0.25);
+  border-color: rgba(251, 191, 36, 0.3);
 }
 
 #nav-desktop a.nav-governance {
@@ -298,7 +297,7 @@ header.scrolled {
   background: linear-gradient(135deg,
     rgba(255, 152, 0, 0.12),
     rgba(255, 152, 0, 0.03));
-  border-color: rgba(255, 152, 0, 0.25);
+  border-color: rgba(255, 152, 0, 0.3);
 }
 
 #nav-desktop a.nav-trade {
@@ -306,7 +305,7 @@ header.scrolled {
   background: linear-gradient(135deg,
     rgba(255, 107, 53, 0.12),
     rgba(255, 107, 53, 0.03));
-  border-color: rgba(255, 107, 53, 0.25);
+  border-color: rgba(255, 107, 53, 0.3);
 }
 
 #nav-desktop a.nav-tokenomics {
@@ -314,7 +313,68 @@ header.scrolled {
   background: linear-gradient(135deg,
     rgba(0, 188, 212, 0.12),
     rgba(0, 188, 212, 0.03));
-  border-color: rgba(0, 188, 212, 0.25);
+  border-color: rgba(0, 188, 212, 0.3);
+}
+
+/* Mobile — selected state (current page) */
+#nav-desktop a.nav-journey.active {
+  background: linear-gradient(135deg,
+    rgba(227, 184, 124, 0.4),
+    rgba(227, 184, 124, 0.18));
+  color: #FFFFFF;
+  border-color: #E3B87C;
+  box-shadow: 0 4px 20px rgba(227, 184, 124, 0.45);
+  font-weight: 700;
+}
+
+#nav-desktop a.nav-contests.active {
+  background: linear-gradient(135deg,
+    rgba(251, 191, 36, 0.4),
+    rgba(251, 191, 36, 0.18));
+  color: #FFFFFF;
+  border-color: #FBBF24;
+  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.45);
+  font-weight: 700;
+}
+
+#nav-desktop a.nav-governance.active {
+  background: linear-gradient(135deg,
+    rgba(255, 152, 0, 0.4),
+    rgba(255, 152, 0, 0.18));
+  color: #FFFFFF;
+  border-color: #FF9800;
+  box-shadow: 0 4px 20px rgba(255, 152, 0, 0.45);
+  font-weight: 700;
+}
+
+#nav-desktop a.nav-trade.active {
+  background: linear-gradient(135deg,
+    rgba(255, 107, 53, 0.4),
+    rgba(255, 107, 53, 0.18));
+  color: #FFFFFF;
+  border-color: #FF6B35;
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.45);
+  font-weight: 700;
+}
+
+#nav-desktop a.nav-tokenomics.active {
+  background: linear-gradient(135deg,
+    rgba(0, 188, 212, 0.4),
+    rgba(0, 188, 212, 0.18));
+  color: #FFFFFF;
+  border-color: #00BCD4;
+  box-shadow: 0 4px 20px rgba(0, 188, 212, 0.45);
+  font-weight: 700;
+}
+
+/* Mobile — generic .active fallback (no page color) */
+#nav-desktop a.active:not([class*="nav-"]) {
+  background: linear-gradient(135deg,
+    rgba(212, 167, 106, 0.4),
+    rgba(212, 167, 106, 0.18));
+  color: #FFFFFF;
+  border-color: var(--rebel-gold);
+  font-weight: 700;
 }
 
 /* Mobile dropdown inside menu */
@@ -331,9 +391,9 @@ header.scrolled {
   font-size: 0.95rem;
   min-height: 52px;
   background: linear-gradient(135deg,
-    rgba(255, 215, 0, 0.08),
+    rgba(255, 215, 0, 0.1),
     rgba(255, 152, 0, 0.04));
-  border: 1px solid rgba(255, 215, 0, 0.2);
+  border: 1px solid rgba(255, 215, 0, 0.3);
   color: #FFD700;
   font-weight: 600;
   font-family: inherit;
@@ -342,6 +402,16 @@ header.scrolled {
   justify-content: space-between;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#nav-desktop .dropbtn.active {
+  background: linear-gradient(135deg,
+    rgba(255, 215, 0, 0.4),
+    rgba(255, 215, 0, 0.18));
+  color: #FFFFFF;
+  border-color: #FFD700;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.45);
 }
 
 #nav-desktop .dropdown-content {
@@ -402,7 +472,6 @@ header.scrolled {
 #nav-desktop .dropdown-content a.nav-roadmap { color: #FF5722; }
 #nav-desktop .dropdown-content a.nav-artwork { color: #E91E63; }
 
-/* Prevent body scroll when menu is open */
 body.nav-open {
   overflow: hidden;
 }
@@ -412,22 +481,10 @@ body.nav-open {
    TABLET / DESKTOP — 769px and up
    ============================================================ */
 @media (min-width: 769px) {
-  /* Hide mobile toggle */
-  .mobile-nav-toggle {
-    display: none;
-  }
+  .mobile-nav-toggle { display: none; }
+  .buy-dropdown.desktop-primary-action { display: block; }
+  .mobile-direct-buy { display: none !important; }
 
-  /* Show desktop buy dropdown */
-  .buy-dropdown.desktop-primary-action {
-    display: block;
-  }
-
-  /* Hide mobile buy button (it's inside the menu) */
-  .mobile-direct-buy {
-    display: none !important;
-  }
-
-  /* Desktop navigation */
   #nav-desktop {
     display: flex;
     position: static;
@@ -440,7 +497,7 @@ body.nav-open {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
     flex: 1;
     margin: 0 var(--spacing-md);
     opacity: 1;
@@ -449,27 +506,43 @@ body.nav-open {
     box-shadow: none;
   }
 
-  /* Base pill styling for all top-level links */
+  /* ============================================
+     BASE PILL — shared by every top-level link
+     ============================================ */
   #nav-desktop a:not(.mobile-direct-buy) {
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: var(--border-radius-full);
     margin: 0;
     font-size: 0.85rem;
+    font-weight: 600;
     min-height: 40px;
     width: auto;
-    background: rgba(255, 255, 255, 0.05);
-    color: rgba(255, 255, 255, 0.9);
     position: relative;
     overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
     border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
   }
 
   #nav-desktop a:not(.mobile-direct-buy) i {
-    margin-right: 6px;
+    margin-right: 4px;
     font-size: 0.85rem;
+    transition: transform 0.25s ease;
   }
 
-  /* ---------- Nav pill colors — base state ---------- */
+  #nav-desktop a:not(.mobile-direct-buy):hover i {
+    transform: scale(1.15);
+  }
+
+  /* ============================================
+     STATE 1 — DEFAULT (page color)
+     ============================================ */
   #nav-desktop a.nav-journey {
     color: #E3B87C;
     border-color: rgba(227, 184, 124, 0.4);
@@ -510,58 +583,146 @@ body.nav-open {
       rgba(0, 188, 212, 0.03));
   }
 
-  /* ---------- Nav pill colors — hover state ---------- */
+  /* ============================================
+     STATE 2 — HOVER (brighter + glow + lift)
+     ============================================ */
   #nav-desktop a.nav-journey:hover {
     background: linear-gradient(135deg,
-      rgba(227, 184, 124, 0.25),
-      rgba(227, 184, 124, 0.12));
-    color: #F0CA8A;
+      rgba(227, 184, 124, 0.28),
+      rgba(227, 184, 124, 0.14));
+    color: #F5D8A8;
     border-color: #E3B87C;
-    box-shadow: 0 4px 15px rgba(227, 184, 124, 0.25);
+    box-shadow: 0 6px 20px rgba(227, 184, 124, 0.35);
     transform: translateY(-2px);
   }
 
   #nav-desktop a.nav-contests:hover {
     background: linear-gradient(135deg,
-      rgba(251, 191, 36, 0.25),
-      rgba(251, 191, 36, 0.12));
-    color: #FCD34D;
+      rgba(251, 191, 36, 0.28),
+      rgba(251, 191, 36, 0.14));
+    color: #FDE047;
     border-color: #FBBF24;
-    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.25);
+    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.35);
     transform: translateY(-2px);
   }
 
   #nav-desktop a.nav-governance:hover {
     background: linear-gradient(135deg,
-      rgba(255, 152, 0, 0.25),
-      rgba(255, 152, 0, 0.12));
-    color: #FFB74D;
+      rgba(255, 152, 0, 0.28),
+      rgba(255, 152, 0, 0.14));
+    color: #FFC166;
     border-color: #FF9800;
-    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.25);
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.35);
     transform: translateY(-2px);
   }
 
   #nav-desktop a.nav-trade:hover {
     background: linear-gradient(135deg,
-      rgba(255, 107, 53, 0.25),
-      rgba(255, 107, 53, 0.12));
-    color: #FF8A65;
+      rgba(255, 107, 53, 0.28),
+      rgba(255, 107, 53, 0.14));
+    color: #FFA07A;
     border-color: #FF6B35;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.25);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.35);
     transform: translateY(-2px);
   }
 
   #nav-desktop a.nav-tokenomics:hover {
     background: linear-gradient(135deg,
-      rgba(0, 188, 212, 0.25),
-      rgba(0, 188, 212, 0.12));
-    color: #4DD0E1;
+      rgba(0, 188, 212, 0.28),
+      rgba(0, 188, 212, 0.14));
+    color: #6EE7F0;
     border-color: #00BCD4;
-    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.25);
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.35);
     transform: translateY(-2px);
   }
 
-  /* Dropdown — desktop positioning */
+  /* ============================================
+     STATE 3 — SELECTED (current page)
+     Filled + white text + solid border + inner highlight
+     ============================================ */
+
+  /* Fallback for .active without a specific page class */
+  #nav-desktop a.active:not([class*="nav-"]) {
+    background: linear-gradient(135deg,
+      rgba(212, 167, 106, 0.4),
+      rgba(212, 167, 106, 0.18));
+    color: #FFFFFF;
+    border-color: var(--rebel-gold);
+    box-shadow:
+      0 4px 20px rgba(212, 167, 106, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    font-weight: 700;
+  }
+
+  #nav-desktop a.nav-journey.active {
+    background: linear-gradient(135deg,
+      rgba(227, 184, 124, 0.4),
+      rgba(227, 184, 124, 0.18));
+    color: #FFFFFF;
+    border-color: #E3B87C;
+    box-shadow:
+      0 4px 20px rgba(227, 184, 124, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    font-weight: 700;
+  }
+
+  #nav-desktop a.nav-contests.active {
+    background: linear-gradient(135deg,
+      rgba(251, 191, 36, 0.4),
+      rgba(251, 191, 36, 0.18));
+    color: #FFFFFF;
+    border-color: #FBBF24;
+    box-shadow:
+      0 4px 20px rgba(251, 191, 36, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    font-weight: 700;
+  }
+
+  #nav-desktop a.nav-governance.active {
+    background: linear-gradient(135deg,
+      rgba(255, 152, 0, 0.4),
+      rgba(255, 152, 0, 0.18));
+    color: #FFFFFF;
+    border-color: #FF9800;
+    box-shadow:
+      0 4px 20px rgba(255, 152, 0, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    font-weight: 700;
+  }
+
+  #nav-desktop a.nav-trade.active {
+    background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.4),
+      rgba(255, 107, 53, 0.18));
+    color: #FFFFFF;
+    border-color: #FF6B35;
+    box-shadow:
+      0 4px 20px rgba(255, 107, 53, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    font-weight: 700;
+  }
+
+  #nav-desktop a.nav-tokenomics.active {
+    background: linear-gradient(135deg,
+      rgba(0, 188, 212, 0.4),
+      rgba(0, 188, 212, 0.18));
+    color: #FFFFFF;
+    border-color: #00BCD4;
+    box-shadow:
+      0 4px 20px rgba(0, 188, 212, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    font-weight: 700;
+  }
+
+  /* ============================================
+     DROPDOWN — "More" button (same 3 states)
+     ============================================ */
   #nav-desktop .dropdown {
     width: auto;
     margin: 0;
@@ -570,27 +731,46 @@ body.nav-open {
   }
 
   #nav-desktop .dropbtn {
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: var(--border-radius-full);
     font-size: 0.85rem;
+    font-weight: 600;
     min-height: 40px;
     width: auto;
     gap: 6px;
+    display: inline-flex;
+    align-items: center;
     color: #FFD700;
     border: 1px solid rgba(255, 215, 0, 0.4);
     background: linear-gradient(135deg,
-      rgba(255, 215, 0, 0.1),
-      rgba(255, 152, 0, 0.05));
+      rgba(255, 215, 0, 0.15),
+      rgba(255, 152, 0, 0.03));
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   #nav-desktop .dropbtn:hover {
     background: linear-gradient(135deg,
-      rgba(255, 215, 0, 0.2),
-      rgba(255, 215, 0, 0.1));
+      rgba(255, 215, 0, 0.28),
+      rgba(255, 215, 0, 0.14));
     color: #FFEB3B;
     border-color: #FFD700;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.25);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.35);
     transform: translateY(-2px);
+  }
+
+  #nav-desktop .dropdown.active .dropbtn {
+    background: linear-gradient(135deg,
+      rgba(255, 215, 0, 0.4),
+      rgba(255, 215, 0, 0.18));
+    color: #FFFFFF;
+    border-color: #FFD700;
+    box-shadow:
+      0 4px 20px rgba(255, 215, 0, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    font-weight: 700;
   }
 
   #nav-desktop .dropdown-content {
@@ -633,16 +813,6 @@ body.nav-open {
     border: none;
   }
 
-  /* Active state (current page) */
-  #nav-desktop a.active {
-    background: linear-gradient(135deg,
-      rgba(212, 167, 106, 0.25),
-      rgba(215, 77, 77, 0.15));
-    color: white;
-    box-shadow: 0 4px 20px rgba(212, 167, 106, 0.25);
-    border: 1px solid var(--rebel-gold);
-  }
-
   /* Brand — larger on desktop */
   .brand-logo {
     height: 48px;
@@ -651,9 +821,7 @@ body.nav-open {
     padding: 4px;
   }
 
-  .brand-title {
-    font-size: 1.5rem;
-  }
+  .brand-title { font-size: 1.5rem; }
 
   .brand-subtitle {
     font-size: 0.7rem;
@@ -661,9 +829,7 @@ body.nav-open {
     letter-spacing: 1.2px;
   }
 
-  .brand-content {
-    gap: 12px;
-  }
+  .brand-content { gap: 12px; }
 }
 
 
@@ -748,9 +914,7 @@ body.nav-open {
     transform: translateY(0) scale(1);
   }
 
-  .action-group {
-    margin-bottom: 18px;
-  }
+  .action-group { margin-bottom: 18px; }
 
   .group-title {
     display: flex;
@@ -786,9 +950,7 @@ body.nav-open {
     color: white;
   }
 
-  .buy-option:active {
-    transform: scale(0.98);
-  }
+  .buy-option:active { transform: scale(0.98); }
 
   .buy-option.primary-action {
     background: linear-gradient(135deg,
@@ -955,9 +1117,7 @@ body.nav-open {
    SMALL PHONE — up to 380px
    ============================================================ */
 @media (max-width: 380px) {
-  .brand-title {
-    font-size: 1rem;
-  }
+  .brand-title { font-size: 1rem; }
 
   .brand-subtitle {
     font-size: 0.5rem;
@@ -965,10 +1125,7 @@ body.nav-open {
     letter-spacing: 0.6px;
   }
 
-  .brand-logo {
-    height: 32px;
-    width: 32px;
-  }
+  .brand-logo { height: 32px; width: 32px; }
 
   .mobile-nav-toggle {
     width: 40px;
@@ -976,13 +1133,9 @@ body.nav-open {
     padding: 10px;
   }
 
-  .mobile-nav-toggle span {
-    width: 18px;
-  }
+  .mobile-nav-toggle span { width: 18px; }
 
-  #nav-desktop {
-    padding: 70px 15px 30px;
-  }
+  #nav-desktop { padding: 70px 15px 30px; }
 
   #nav-desktop a:not(.mobile-direct-buy) {
     padding: 12px 15px;
@@ -1193,9 +1346,7 @@ footer {
   text-align: center;
 }
 
-.footer-buy-button i {
-  font-size: 1.1rem;
-}
+.footer-buy-button i { font-size: 1.1rem; }
 
 .footer-grid {
   display: grid;
@@ -1335,9 +1486,7 @@ footer {
   line-height: 1.5;
 }
 
-.disclaimer-text strong {
-  color: white;
-}
+.disclaimer-text strong { color: white; }
 
 .disclaimer-link {
   color: var(--rebel-gold);
@@ -1360,9 +1509,7 @@ footer {
   text-align: center;
 }
 
-.disclaimer-icon {
-  font-size: 0.9rem;
-}
+.disclaimer-icon { font-size: 0.9rem; }
 
 .copyright {
   color: rgba(255, 255, 255, 0.7);
@@ -1383,9 +1530,7 @@ footer {
     text-align: left;
   }
 
-  .footer-column {
-    text-align: left;
-  }
+  .footer-column { text-align: left; }
 
   .footer-column-title::after {
     left: 0;
@@ -1393,30 +1538,15 @@ footer {
   }
 
   .footer-link,
-  .footer-contact-link {
-    justify-content: flex-start;
-  }
+  .footer-contact-link { justify-content: flex-start; }
 
-  .contract-info {
-    text-align: left;
-  }
+  .contract-info { text-align: left; }
 
-  .disclaimer-warning {
-    flex-direction: row;
-  }
+  .disclaimer-warning { flex-direction: row; }
 
-  .footer-brand-logo {
-    height: 60px;
-    width: 60px;
-  }
-
-  .footer-brand-title {
-    font-size: 1.8rem;
-  }
-
-  .footer-brand-subtitle {
-    font-size: 0.9rem;
-  }
+  .footer-brand-logo { height: 60px; width: 60px; }
+  .footer-brand-title { font-size: 1.8rem; }
+  .footer-brand-subtitle { font-size: 0.9rem; }
 }
 
 
