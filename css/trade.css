@@ -2681,3 +2681,29 @@ html, body {
     max-width: 100%;
   }
 }
+/* ============================================================
+   v3.0 — Style overrides
+   ============================================================ */
+
+/* Locked badge (was burned / red, now locked / blue) */
+.burned-badge,
+.locked-badge {
+  background: rgba(33, 150, 243, 0.2) !important;
+  color: #2196F3 !important;
+  border: 1px solid #2196F3 !important;
+}
+.burned-badge:hover,
+.locked-badge:hover {
+  background: rgba(33, 150, 243, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+/* Takeaway icon size fix */
+.takeaway-icon {
+  flex-shrink: 0;
+}
+
+/* Ensure related cards render even if JS didn't run */
+.related-card {
+  opacity: 1 !important;
+}
