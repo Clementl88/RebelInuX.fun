@@ -1,311 +1,201 @@
-// js/tokenomics.js - Tokenomics page functionality
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Tokenomics page loaded');
-    
-    // Hide loader after page loads
-    setTimeout(function() {
-        const loader = document.getElementById('loader');
-        if (loader) loader.style.display = 'none';
-    }, 500);
-    
-    // Initialize all components
-    initializeAccordion();
-    initializeTokenomicsChart();
-    setupBackToTop();
-    setupProgressUpdates();
-    
-    // Initial progress calculation
-    updateFounderProgress();
+// js/tokenomics.js — Tokenomics page functionality (v3.0)
+
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('Tokenomics page loaded (v3.0)');
+
+  // Hide loader
+  setTimeout(() => {
+    const loader = document.getElementById('loader');
+    if (loader) loader.style.display = 'none';
+  }, 500);
+
+  initializeAccordion();
+  initializeTokenomicsChart();
+  setupBackToTop();
+  matchAccordionColorsToButtons();
 });
-document.addEventListener('DOMContentLoaded', function() {
-  // Match accordion colors to their buttons
-  const accordionItems = document.querySelectorAll('.accordion-item');
-  
-  accordionItems.forEach(item => {
-    // Find buttons inside accordion content
-    const buttons = item.querySelectorAll('.accordion-content .cta-button');
-    const accordionColor = Array.from(item.classList)
-      .find(cls => cls.startsWith('color-'));
-    
-    if (accordionColor) {
-      buttons.forEach(button => {
-        button.classList.add(accordionColor);
-      });
-    }
-  });
-  
-  // Also match expand/collapse buttons to the most common accordion color
-  const colorCounts = {};
-  accordionItems.forEach(item => {
-    const colorClass = Array.from(item.classList)
-      .find(cls => cls.startsWith('color-'));
-    if (colorClass) {
-      colorCounts[colorClass] = (colorCounts[colorClass] || 0) + 1;
-    }
-  });
-  
-  // Find the most common color
-  let mostCommonColor = null;
-  let maxCount = 0;
-  Object.entries(colorCounts).forEach(([color, count]) => {
-    if (count > maxCount) {
-      mostCommonColor = color;
-      maxCount = count;
-    }
-  });
-  
-  // Apply the most common color to expand/collapse buttons
-  if (mostCommonColor) {
-    const expandBtn = document.getElementById('expandAll');
-    const collapseBtn = document.getElementById('collapseAll');
-    
-    if (expandBtn) expandBtn.classList.add(mostCommonColor);
-    if (collapseBtn) collapseBtn.classList.add(mostCommonColor);
-  }
-});
-// ========== ACCORDION FUNCTIONALITY ==========
+
+// ============================================================================
+// ACCORDION
+// ============================================================================
 function initializeAccordion() {
-    console.log('Initializing accordion...');
-    
-    // Get all accordion headers
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    
-    if (accordionHeaders.length === 0) {
-        console.warn('No accordion headers found!');
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  if (!accordionHeaders.length) {
+    console.warn('No accordion headers found');
+    return;
+  }
+
+  accordionHeaders.forEach((header, index) => {
+    header.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const content = this.nextElementSibling;
+      if (!content || !content.classList.contains('accordion-content')) {
+        console.error('Next sibling is not accordion-content');
         return;
-    }
-    
-    console.log(`Found ${accordionHeaders.length} accordion headers`);
-    
-    // Add click event to each header
-    accordionHeaders.forEach((header, index) => {
-        header.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            console.log(`Clicked accordion ${index + 1}`);
-            console.log('Header element:', this);
-            console.log('Next sibling:', this.nextElementSibling);
-            console.log('Next sibling class:', this.nextElementSibling.className);
-            
-            const content = this.nextElementSibling;
-            
-            // Check if it's actually an accordion-content
-            if (!content.classList.contains('accordion-content')) {
-                console.error('Next sibling is NOT accordion-content!');
-                return;
-            }
-            
-            const isActive = content.classList.contains('active');
-            console.log('Is currently active?', isActive);
-            
-            // Toggle this item
-            if (isActive) {
-                content.classList.remove('active');
-                this.classList.remove('active');
-                console.log('Collapsed accordion');
-            } else {
-                content.classList.add('active');
-                this.classList.add('active');
-                console.log('Expanded accordion');
-                
-                // Smooth scroll to expanded section
-                setTimeout(() => {
-                    content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }, 300);
-            }
-        });
+      }
+
+      const isActive = content.classList.contains('active');
+
+      if (isActive) {
+        content.classList.remove('active');
+        this.classList.remove('active');
+      } else {
+        content.classList.add('active');
+        this.classList.add('active');
+
+        setTimeout(() => {
+          content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 300);
+      }
     });
-    
-    // Set up expand/collapse all buttons
-    const expandAllBtn = document.getElementById('expandAll');
-    const collapseAllBtn = document.getElementById('collapseAll');
-    
-    if (expandAllBtn) {
-        expandAllBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            document.querySelectorAll('.accordion-content').forEach(content => {
-                content.classList.add('active');
-            });
-            document.querySelectorAll('.accordion-header').forEach(header => {
-                header.classList.add('active');
-            });
-        });
-    }
-    
-    if (collapseAllBtn) {
-        collapseAllBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            document.querySelectorAll('.accordion-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.querySelectorAll('.accordion-header').forEach(header => {
-                header.classList.remove('active');
-            });
-        });
-    }
-    
-    console.log('Accordion initialized successfully');
+  });
+
+  const expandAllBtn = document.getElementById('expandAll');
+  const collapseAllBtn = document.getElementById('collapseAll');
+
+  if (expandAllBtn) {
+    expandAllBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelectorAll('.accordion-content').forEach(c => c.classList.add('active'));
+      document.querySelectorAll('.accordion-header').forEach(h => h.classList.add('active'));
+    });
+  }
+
+  if (collapseAllBtn) {
+    collapseAllBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
+    });
+  }
+
+  console.log(`Accordion initialized with ${accordionHeaders.length} items`);
 }
 
-// ========== CHART INITIALIZATION ==========
-function initializeTokenomicsChart() {
-    const ctx = document.getElementById('distributionChart');
-    if (!ctx) {
-        console.warn('Distribution chart canvas not found');
-        showFallbackChart();
-        return;
+// ============================================================================
+// MATCH ACCORDION COLORS TO BUTTONS
+// ============================================================================
+function matchAccordionColorsToButtons() {
+  const accordionItems = document.querySelectorAll('.accordion-item');
+
+  accordionItems.forEach(item => {
+    const buttons = item.querySelectorAll('.accordion-content .cta-button');
+    const accordionColor = Array.from(item.classList).find(cls => cls.startsWith('color-'));
+
+    if (accordionColor) {
+      buttons.forEach(button => button.classList.add(accordionColor));
     }
-    
-    try {
-        // Destroy existing chart if it exists
-        if (window.tokenomicsChart) {
-            window.tokenomicsChart.destroy();
-        }
-        
-        // Create new chart
+  });
+}
+
+// ============================================================================
+// CHART
+// ============================================================================
+function initializeTokenomicsChart() {
+  const ctx = document.getElementById('distributionChart');
+  if (!ctx) {
+    console.warn('Distribution chart canvas not found');
+    showFallbackChart();
+    return;
+  }
+
+  try {
+    if (window.tokenomicsChart) {
+      window.tokenomicsChart.destroy();
+    }
+
     window.tokenomicsChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
+      type: 'pie',
+      data: {
         labels: [
-            'Public Distribution (70%)',
-            'ZORA Rewards Treasury (16%)',
-            'Team Fund (7%)',
-            'Ecosystem Fund (6%)',
-            'Community Reserve (1%)'
+          'Public Distribution (70%)',
+          'ZORA Rewards Treasury (17%)',
+          'Team Fund (7%)',
+          'Ecosystem Fund (6%)'
         ],
         datasets: [{
-            data: [70, 16, 7, 6, 1],
-            backgroundColor: [
-                'rgba(255, 51, 102, 0.9)',     // Red - Public Distribution
-                'rgba(156, 39, 176, 0.9)',     // Purple - ZORA Rewards
-                'rgba(75, 192, 192, 0.9)',     // Teal - Team Fund
-                'rgba(255, 206, 86, 0.9)',     // Yellow - Ecosystem Fund
-                'rgba(75, 192, 86, 0.9)'       // Green - Community Reserve
-            ],
-            borderColor: 'rgba(255, 255, 255, 1)',
-            borderWidth: 2,
-            hoverOffset: 15
+          data: [70, 17, 7, 6],
+          backgroundColor: [
+            'rgba(255, 51, 102, 0.9)',     // Red — Public Distribution
+            'rgba(156, 39, 176, 0.9)',     // Purple — ZORA Rewards
+            'rgba(75, 192, 192, 0.9)',     // Teal — Team Fund
+            'rgba(255, 206, 86, 0.9)'      // Yellow — Ecosystem Fund
+          ],
+          borderColor: 'rgba(255, 255, 255, 1)',
+          borderWidth: 2,
+          hoverOffset: 15
         }]
-    },
-    options: {
+      },
+      options: {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-            legend: {
-                position: window.innerWidth <= 768 ? 'bottom' : 'right',
-                labels: {
-                    color: 'white',
-                    padding: 15,
-                    usePointStyle: true
-                }
+          legend: {
+            position: window.innerWidth <= 768 ? 'bottom' : 'right',
+            labels: {
+              color: 'white',
+              padding: 15,
+              usePointStyle: true
             }
+          }
         }
-    }
-});
-        
-    } catch (error) {
-        console.error('Chart initialization failed:', error);
-        showFallbackChart();
-    }
-}
-
-// ========== PROGRESS UPDATES ==========
-function setupProgressUpdates() {
-    // Update founder progress
-    updateFounderProgress();
-    
-    // Set interval for live updates (every minute)
-    setInterval(updateFounderProgress, 60000);
-}
-
-function updateFounderProgress() {
-    const startDate = new Date("2025-11-01T01:28:00Z");
-    const endDate = new Date("2026-11-01T01:27:00Z");
-    const now = new Date();
-    
-    const totalDuration = endDate - startDate;
-    const elapsed = Math.max(0, now - startDate);
-    
-    // Calculate time-based progress
-    const timeProgressPercent = Math.min(100, (elapsed / totalDuration) * 100);
-    
-    // From Streamflow: 8% already unlocked
-    const unlockedPercent = 8;
-    
-    // Update progress bars
-    const unlockedBar = document.getElementById('founderUnlockedBar');
-    const timeBar = document.getElementById('founderTimeBar');
-    
-    if (unlockedBar) unlockedBar.style.width = `${unlockedPercent}%`;
-    if (timeBar) timeBar.style.width = `${timeProgressPercent.toFixed(1)}%`;
-    
-    // Update text values
-    const unlockedAmountEl = document.getElementById('founderUnlockedAmount');
-    const timeProgressEl = document.getElementById('founderTimeProgress');
-    
-    if (unlockedAmountEl) {
-        unlockedAmountEl.textContent = '13.49M REBL';
-    }
-    
-    if (timeProgressEl) {
-        const daysElapsed = Math.floor(elapsed / (1000 * 60 * 60 * 24));
-        timeProgressEl.textContent = `${daysElapsed} days`;
-    }
-}
-
-// ========== BACK TO TOP BUTTON ==========
-function setupBackToTop() {
-    const backToTop = document.getElementById('backToTop');
-    if (!backToTop) return;
-    
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
+      }
     });
-    
-    backToTop.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+
+    console.log('Chart initialized');
+  } catch (error) {
+    console.error('Chart initialization failed:', error);
+    showFallbackChart();
+  }
 }
 
-// ========== FALLBACK FOR CHART ==========
 function showFallbackChart() {
-    const chartContainer = document.querySelector('.chart-wrapper');
-    if (!chartContainer) return;
-    
-    chartContainer.innerHTML = `
-        <div class="chart-fallback">
-            <div class="fallback-icon">
-                <i class="fas fa-chart-pie"></i>
-            </div>
-            <h4>Token Distribution</h4>
-            <div class="fallback-data">
-                <table>
-                    <tr><td>Bonding Curve:</td><td>53.77%</td></tr>
-                    <tr><td>Founder's Commitment:</td><td>16.23%</td></tr>
-                    <tr><td>ZORA Rewards Treasury:</td><td>16%</td></tr>
-                    <tr><td>Team Fund:</td><td>7%</td></tr>
-                    <tr><td>Ecosystem Fund:</td><td>6%</td></tr>
-                    <tr><td>Community DAO Reserve:</td><td>1%</td></tr>
-                </table>
-            </div>
-        </div>
-    `;
+  const chartContainer = document.querySelector('.chart-wrapper');
+  if (!chartContainer) return;
+
+  chartContainer.innerHTML = `
+    <div class="chart-fallback">
+      <div class="fallback-icon"><i class="fas fa-chart-pie"></i></div>
+      <h4>Token Distribution</h4>
+      <div class="fallback-data">
+        <table>
+          <tr><td>Public Distribution:</td><td>70%</td></tr>
+          <tr><td>ZORA Rewards Treasury:</td><td>17%</td></tr>
+          <tr><td>Team Fund:</td><td>7%</td></tr>
+          <tr><td>Ecosystem Fund:</td><td>6%</td></tr>
+        </table>
+      </div>
+    </div>
+  `;
 }
 
-// ========== WINDOW RESIZE HANDLER ==========
-window.addEventListener('resize', function() {
-    if (window.tokenomicsChart) {
-        window.tokenomicsChart.options.plugins.legend.position = window.innerWidth <= 768 ? 'bottom' : 'right';
-        window.tokenomicsChart.resize();
-        window.tokenomicsChart.update();
-    }
+// ============================================================================
+// BACK TO TOP
+// ============================================================================
+function setupBackToTop() {
+  const backToTop = document.getElementById('backToTop');
+  if (!backToTop) return;
+
+  window.addEventListener('scroll', function () {
+    backToTop.classList.toggle('visible', window.pageYOffset > 300);
+  });
+
+  backToTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// ============================================================================
+// RESIZE — chart legend position
+// ============================================================================
+window.addEventListener('resize', function () {
+  if (window.tokenomicsChart) {
+    window.tokenomicsChart.options.plugins.legend.position =
+      window.innerWidth <= 768 ? 'bottom' : 'right';
+    window.tokenomicsChart.resize();
+    window.tokenomicsChart.update();
+  }
 });
