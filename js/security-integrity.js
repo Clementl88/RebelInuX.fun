@@ -513,3 +513,34 @@ window.copyContract = copyContract;
 window.addToWallet = addToWallet;
 window.showToast = showToast;
 window.initSecurityIntegrityPage = initSecurityIntegrityPage;
+
+/* ============================================================
+   v3.0 — Style overrides
+   ============================================================ */
+
+/* LP badge: was burned (red), now locked (blue) */
+.burned-badge {
+  background: rgba(33, 150, 243, 0.2) !important;
+  color: #2196F3 !important;
+  border: 1px solid #2196F3 !important;
+}
+.burned-badge:hover {
+  background: rgba(33, 150, 243, 0.3) !important;
+}
+
+/* Takeaways footer: make the arrow actually interactive */
+.takeaways-footer a {
+  color: var(--rebel-gold) !important;
+}
+.takeaways-footer a:hover {
+  color: var(--rebel-red) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Security card icons align center vertically */
+.security-card h3 {
+  color: var(--rebel-gold);
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
