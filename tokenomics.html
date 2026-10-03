@@ -3,63 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Detailed $REBL token distribution, vesting schedules, and allocation for RebelInuX ecosystem." />
-  <meta name="keywords" content="$REBL tokenomics, token distribution, vesting, RebelInuX rewards, supply metrics" />
+  <meta name="description" content="Detailed $REBL token distribution, vesting schedules, and value acceleration mechanics for the RebelInuX ecosystem." />
+  <meta name="keywords" content="$REBL tokenomics, token distribution, vesting, RebelInuX, value acceleration, supply metrics" />
   <meta property="og:title" content="$REBL Tokenomics - RebelInuX Token Details" />
-  <meta property="og:description" content="Detailed breakdown of $REBL token distribution, vesting schedules, and reward mechanisms." />
+  <meta property="og:description" content="Detailed breakdown of $REBL token distribution, vesting schedules, and value acceleration." />
   <meta property="og:image" content="images/Logo_REBL.svg" />
   <meta property="og:url" content="https://rebelinux.fun/tokenomics.html" />
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="RebelInuX">
   <meta name="twitter:title" content="$REBL Tokenomics - RebelInuX Token Details">
-  <meta name="twitter:description" content="Detailed breakdown of $REBL token distribution, vesting schedules, and reward mechanisms.">
+  <meta name="twitter:description" content="Detailed breakdown of $REBL token distribution, vesting schedules, and value acceleration.">
   <meta name="twitter:card" content="summary_large_image" />
-  
-  <!-- Favicon ---->
-  <link rel="icon" href="images/Logo_REBL.svg">
+
+  <!-- Mobile Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1a1a">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/Logo_REBL.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/Logo_REBL.svg">
   <title>$REBL Tokenomics - RebelInuX Token Details</title>
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- AOS Animation -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <!-- External Libraries -->
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
+
   <!-- CSS Files -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/header-footer.css">
   <link rel="stylesheet" href="css/tokenomics.css">
-  
 </head>
 <body>
   <!-- Loading Animation -->
   <div class="loader" id="loader">
     <div class="loader-spinner"></div>
   </div>
-  
+
   <!-- Back to Top Button -->
   <div class="back-to-top" id="backToTop">
     <i class="fas fa-arrow-up"></i>
   </div>
-  
-  <!-- Header will be inserted here by JavaScript -->
+
+  <!-- Header -->
   <div id="header-container"></div>
-  
+
   <main>
     <!-- Hero Section -->
     <section class="page-hero page-hero--tokenomics" data-aos="fade-up">
       <div class="container">
         <h1>$REBL TOKENOMICS</h1>
-        <p class="text-lead" data-aos="fade-up" data-aos-delay="100">Complete breakdown of $REBL token distribution, vesting schedules, and reward mechanisms in the RebelInuX ecosystem.</p>
+        <p class="text-lead" data-aos="fade-up" data-aos-delay="100">
+          Complete breakdown of $REBL token distribution, vesting schedules, and value acceleration in the RebelInuX ecosystem.
+        </p>
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
           <a href="#distribution" class="cta-button">
             <i class="fas fa-chart-pie"></i> View Distribution
@@ -67,24 +74,22 @@
           <a href="#vesting" class="cta-button gold">
             <i class="fas fa-calendar-alt"></i> Vesting Schedule
           </a>
-          <a href="#cross-chain" class="cta-button">
-            <i class="fas fa-sync-alt"></i> Cross-Chain Value
+          <a href="#value-acceleration" class="cta-button">
+            <i class="fas fa-sync-alt"></i> Value Acceleration
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Key Takeaways Box -->
+    <!-- Key Takeaways -->
     <section class="key-takeaways" data-aos="fade-up">
       <div class="takeaways-container">
         <div class="takeaways-box">
           <div class="takeaways-header">
-            <div class="takeaways-icon">
-              <i class="fas fa-bolt"></i>
-            </div>
+            <div class="takeaways-icon"><i class="fas fa-bolt"></i></div>
             <h3 class="takeaways-title">Key Takeaways</h3>
           </div>
-          
+
           <div class="takeaways-grid">
             <div class="takeaway-item takeaway-red" data-aos="fade-right">
               <div class="takeaway-icon"><i class="fas fa-coins"></i></div>
@@ -96,11 +101,11 @@
             </div>
 
             <div class="takeaway-item takeaway-purple" data-aos="fade-up">
-              <div class="takeaway-icon"><i class="fas fa-gift"></i></div>
+              <div class="takeaway-icon"><i class="fas fa-award"></i></div>
               <div class="takeaway-content">
                 <div class="takeaway-title">ZORA Rewards Treasury</div>
-                <div class="takeaway-value">160M $REBL</div>
-                <div class="takeaway-sub">16% for weekly rewards</div>
+                <div class="takeaway-value">170M $REBL</div>
+                <div class="takeaway-sub">17% for contest rewards</div>
               </div>
             </div>
 
@@ -116,13 +121,13 @@
             <div class="takeaway-item takeaway-red" data-aos="fade-left">
               <div class="takeaway-icon"><i class="fas fa-fire"></i></div>
               <div class="takeaway-content">
-                <div class="takeaway-title">Buyback & Burn</div>
-                <div class="takeaway-value">80% of Revenue</div>
-                <div class="takeaway-sub">Creates deflationary pressure</div>
+                <div class="takeaway-title">Value Acceleration</div>
+                <div class="takeaway-value">50% Buy-Back & Burn</div>
+                <div class="takeaway-sub">+ 20% AI · 15% Reserve · 15% Ops</div>
               </div>
             </div>
           </div>
-          
+
           <div class="takeaways-footer">
             <a href="#detailed-tokenomics">
               <i class="fas fa-arrow-down"></i> See detailed breakdown below
@@ -136,27 +141,23 @@
     <section id="quick-stats" data-aos="fade-up">
       <div class="container">
         <h2><i class="fas fa-chart-line"></i> Token Overview</h2>
-        
+
         <div class="stats-overview">
           <div class="stat-card" data-aos="fade-right">
-            <div class="stat-icon">
-              <i class="fas fa-coins"></i>
-            </div>
-            <div class="stat-value">937,891,029</div>
+            <div class="stat-icon"><i class="fas fa-coins"></i></div>
+            <div class="stat-value">937.89M</div>
             <div class="stat-label">Current Supply</div>
             <div class="progress-container">
               <div class="progress-bar">
-                <div class="progress-fill" style="width: 94.49%"></div>
+                <div class="progress-fill" style="width: 93.79%"></div>
               </div>
-              <div class="stat-note">94.49% of total</div>
+              <div class="stat-note">93.79% of total</div>
             </div>
           </div>
-          
+
           <div class="stat-card" data-aos="fade-up">
-            <div class="stat-icon">
-              <i class="fas fa-fire"></i>
-            </div>
-            <div class="stat-value">62,108,971</div>
+            <div class="stat-icon"><i class="fas fa-fire"></i></div>
+            <div class="stat-value">62.11M</div>
             <div class="stat-label">Total Burned</div>
             <div class="progress-container">
               <div class="progress-bar">
@@ -165,22 +166,16 @@
               <div class="stat-note">6.21% of total</div>
             </div>
           </div>
-          
+
           <div class="stat-card" data-aos="fade-up">
-            <div class="stat-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <div class="stat-value">85</div>
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <div class="stat-value">85+</div>
             <div class="stat-label">Holders</div>
-            <div class="stat-note">
-              <i class="fas fa-arrow-up"></i> Growing community
-            </div>
+            <div class="stat-note"><i class="fas fa-arrow-up"></i> Growing community</div>
           </div>
-          
+
           <div class="stat-card" data-aos="fade-left">
-            <div class="stat-icon">
-              <i class="fas fa-cubes"></i>
-            </div>
+            <div class="stat-icon"><i class="fas fa-cubes"></i></div>
             <div class="stat-value">1,000,000,000</div>
             <div class="stat-label">Max Supply</div>
             <div class="stat-note">Fixed supply • Deflationary</div>
@@ -193,12 +188,12 @@
     <section id="distribution" data-aos="fade-up">
       <div class="container">
         <h2><i class="fas fa-chart-pie"></i> Token Distribution</h2>
-        
+
         <div class="chart-container">
           <div class="chart-wrapper">
             <canvas id="distributionChart"></canvas>
           </div>
-          
+
           <div class="distribution-summary">
             <h4>Allocation Summary</h4>
             <div class="allocation-items">
@@ -210,7 +205,7 @@
               <div class="allocation-item">
                 <span class="allocation-color" style="background: var(--rebel-purple);"></span>
                 <span class="allocation-name">ZORA Rewards Treasury</span>
-                <span class="allocation-value">16% (160M)</span>
+                <span class="allocation-value">17% (170M)</span>
               </div>
               <div class="allocation-item">
                 <span class="allocation-color" style="background: #4bc0c0;"></span>
@@ -222,11 +217,6 @@
                 <span class="allocation-name">Ecosystem Fund</span>
                 <span class="allocation-value">6% (60M)</span>
               </div>
-              <div class="allocation-item">
-                <span class="allocation-color" style="background: #4CAF50;"></span>
-                <span class="allocation-name">Community Reserve</span>
-                <span class="allocation-value">1% (10M)</span>
-              </div>
             </div>
           </div>
         </div>
@@ -237,10 +227,10 @@
     <section id="vesting" data-aos="fade-up">
       <div class="container">
         <h2><i class="fas fa-calendar-alt"></i> Vesting Schedule</h2>
-        
+
         <div class="vesting-grid">
-          
-          <!-- Public Distribution (Card + Timeline integrated) -->
+
+          <!-- Public Distribution -->
           <div class="vesting-card full-width" style="border-color: var(--rebel-red);" data-aos="fade-right">
             <div class="vesting-header">
               <div class="vesting-icon" style="background: rgba(255, 51, 102, 0.2); color: var(--rebel-red);">
@@ -252,7 +242,7 @@
                 <div class="vesting-percentage">70% of Total Supply</div>
               </div>
             </div>
-            
+
             <div class="vesting-details">
               <div class="vesting-detail">
                 <span class="detail-label">Distribution Method</span>
@@ -264,30 +254,20 @@
               </div>
               <div class="vesting-detail">
                 <span class="detail-label">LP Lock</span>
-                <span class="detail-value">100% LP tokens permanently burned on PumpSwap</span>
+                <span class="detail-value">90% LP tokens locked for 1 year</span>
               </div>
               <div class="vesting-detail">
                 <span class="detail-label">Fair Launch</span>
-                <span class="detail-value">Creator received zero tokens</span>
+                <span class="detail-value">Creator received zero tokens at genesis</span>
               </div>
             </div>
-            
-            <!-- Founder Lock (sub-note) -->
-            <div class="founder-lock-note" style="margin-top: 0.5rem; padding: 0.5rem; background: rgba(0, 170, 255, 0.1); border-radius: 8px;">
-              <i class="fas fa-user-shield" style="color: var(--rebel-blue);"></i>
-              <strong>Founder's Voluntary Lock:</strong> 161.84M REBL locked • 12-month linear vesting • <span id="founderUnlockedAmount">13.49M</span> REBL unlocked so far
-              <a href="https://app.streamflow.finance/contract/solana/mainnet/Gr2Ej69EusSQSGrVjin3NZ6ZRYQhWZaWUwuFEqWLJFy9" 
-                 target="_blank" style="margin-left: 0.75rem; font-size: 0.8rem; color: var(--rebel-blue);">
-                <i class="fas fa-external-link-alt"></i> Verify
-              </a>
-            </div>
-            
+
             <div class="vesting-status" style="margin-top: 0.75rem;">
               <i class="fas fa-water" style="color: #00ffff;"></i>
               <span>Graduated • Trading on PumpSwap liquidity pool</span>
             </div>
           </div>
-          
+
           <!-- ZORA Rewards Treasury -->
           <div class="vesting-card" style="border-color: var(--rebel-purple);" data-aos="fade-up">
             <div class="vesting-header">
@@ -296,41 +276,42 @@
               </div>
               <div>
                 <h4 class="vesting-title">ZORA Rewards Treasury</h4>
-                <div class="vesting-amount">160M REBL</div>
-                <div class="vesting-percentage">16% of Total Supply</div>
+                <div class="vesting-amount">170M REBL</div>
+                <div class="vesting-percentage">17% of Total Supply</div>
               </div>
             </div>
-            
+
             <div class="vesting-details">
               <div class="vesting-detail">
-                <span class="detail-label">Asset Holder Rewards</span>
-                <span class="detail-value" style="color: var(--rebel-purple);">128M REBL (80%)</span>
+                <span class="detail-label">Cliff (40%)</span>
+                <span class="detail-value" style="color: var(--rebel-purple);">68M REBL — released at launch</span>
               </div>
-              <div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div>
-              
+              <div class="progress-bar"><div class="progress-fill" style="width: 40%"></div></div>
+
               <div class="vesting-detail">
-                <span class="detail-label">Community Incentives</span>
-                <span class="detail-value" style="color: #E91E63;">32M REBL (20%)</span>
+                <span class="detail-label">Linear Vesting (60%)</span>
+                <span class="detail-value" style="color: #E91E63;">102M REBL — over 2 years</span>
               </div>
-              <div class="progress-bar"><div class="progress-fill" style="width: 20%"></div></div>
-              
+              <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
+
               <div class="vesting-detail">
-                <span class="detail-label">Vesting Schedule</span>
-                <span class="detail-value">40% cliff (Sep 14, 2025) • 60% over 2 years (4M REBL/month)</span>
+                <span class="detail-label">Purpose</span>
+                <span class="detail-value">Funds contest prizes + volume-milestone bonuses</span>
               </div>
             </div>
-            
+
             <div class="vesting-status">
               <i class="fas fa-check-circle" style="color: var(--rebel-purple);"></i>
-              <span>Cliff Active • 76M REBL already claimed</span>
+              <span>Active • Multi-sig wallet secured</span>
             </div>
-            
-            <a href="https://app.streamflow.finance/contract/solana/mainnet/BAPQbfCF7EKUZJVURbXj4k3K4wJUZ8UcechNDKKZd4U9" 
-               target="_blank" class="cta-button full-width" style="background: linear-gradient(135deg, var(--rebel-purple), #E91E63);">
-              <i class="fas fa-external-link-alt"></i> Vesting Contract
+
+            <a href="https://solscan.io/account/ANjMEXSCmGAkZVjU5VRhfQyTzR9KKhDACNyiVnAQ9Juo"
+               target="_blank" rel="noopener noreferrer"
+               class="cta-button full-width" style="background: linear-gradient(135deg, var(--rebel-purple), #E91E63);">
+              <i class="fas fa-external-link-alt"></i> View Multi-Sig Wallet
             </a>
           </div>
-          
+
           <!-- Team Fund -->
           <div class="vesting-card" style="border-color: #4bc0c0;" data-aos="fade-up">
             <div class="vesting-header">
@@ -343,37 +324,38 @@
                 <div class="vesting-percentage">7% of Total Supply</div>
               </div>
             </div>
-            
+
             <div class="vesting-details">
               <div class="vesting-detail">
-                <span class="detail-label">Immediate Operations</span>
-                <span class="detail-value" style="color: #00ff00;">28M REBL (40%)</span>
+                <span class="detail-label">Immediate Operations (40%)</span>
+                <span class="detail-value" style="color: #00ff00;">28M REBL — strategic initiatives</span>
               </div>
               <div class="progress-bar"><div class="progress-fill" style="width: 40%"></div></div>
-              
+
               <div class="vesting-detail">
-                <span class="detail-label">Long-Term Vesting</span>
-                <span class="detail-value">42M REBL (60%)</span>
+                <span class="detail-label">Long-Term Vesting (60%)</span>
+                <span class="detail-value">42M REBL — 3-year linear with 40% cliff</span>
               </div>
               <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
-              
+
               <div class="vesting-detail">
-                <span class="detail-label">Vesting Schedule</span>
-                <span class="detail-value">40% cliff (Oct 10, 2025) • 3.5M REBL/quarter</span>
+                <span class="detail-label">Purpose</span>
+                <span class="detail-value">Core contributors • retention • alignment</span>
               </div>
             </div>
-            
+
             <div class="vesting-status">
               <i class="fas fa-check-circle" style="color: #4bc0c0;"></i>
-              <span>Active • 28M REBL cliff unlocked</span>
+              <span>Active • 28M REBL immediately available</span>
             </div>
-            
-            <a href="https://app.streamflow.finance/contract/solana/mainnet/2vyMez3M8qatsg61JGAukmVipRVHWeFRAAX92R7hEfEL" 
-               target="_blank" class="cta-button full-width" style="background: #4bc0c0;">
+
+            <a href="https://app.streamflow.finance/contract/solana/mainnet/2vyMez3M8qatsg61JGAukmVipRVHWeFRAAX92R7hEfEL"
+               target="_blank" rel="noopener noreferrer"
+               class="cta-button full-width" style="background: #4bc0c0;">
               <i class="fas fa-external-link-alt"></i> Vesting Contract
             </a>
           </div>
-          
+
           <!-- Ecosystem Fund -->
           <div class="vesting-card" style="border-color: var(--rebel-gold);" data-aos="fade-left">
             <div class="vesting-header">
@@ -386,103 +368,58 @@
                 <div class="vesting-percentage">6% of Total Supply</div>
               </div>
             </div>
-            
+
             <div class="vesting-details">
               <div class="vesting-detail">
-                <span class="detail-label">Initial Operations</span>
-                <span class="detail-value" style="color: #FF9800;">5M REBL (8.3%)</span>
+                <span class="detail-label">Initial Operations (0.5%)</span>
+                <span class="detail-value" style="color: #FF9800;">5M REBL — first 6 months</span>
               </div>
               <div class="progress-bar"><div class="progress-fill" style="width: 8.3%"></div></div>
-              
+
               <div class="vesting-detail">
-                <span class="detail-label">Sustained Growth</span>
-                <span class="detail-value">55M REBL (91.7%)</span>
+                <span class="detail-label">Sustained Growth (5.5%)</span>
+                <span class="detail-value">55M REBL — 6-month cliff, then 20% + 18-month linear</span>
               </div>
               <div class="progress-bar"><div class="progress-fill" style="width: 25%"></div></div>
-              
-              <div class="vesting-detail">
-                <span class="detail-label">Vesting Schedule</span>
-                <span class="detail-value">6-month cliff (Mar 14, 2026) • 18-month linear</span>
-              </div>
-            </div>
-            
-            <div class="vesting-status">
-              <i class="fas fa-clock" style="color: var(--rebel-gold);"></i>
-              <span>Not started • Cliff ends Mar 14, 2026</span>
-            </div>
-            
-            <a href="https://app.streamflow.finance/token-dashboard/solana/mainnet/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump/contract/B477oon9LQ1ypqyKFPR3S5ADqkgd76RGCqCzC6sum7P1" 
-               target="_blank" class="cta-button gold full-width">
-              <i class="fas fa-external-link-alt"></i> Vesting Contract
-            </a>
-          </div>
-          
-          <!-- Community Reserve -->
-          <div class="vesting-card" style="border-color: #4CAF50;" data-aos="fade-up">
-            <div class="vesting-header">
-              <div class="vesting-icon" style="background: rgba(76, 175, 80, 0.2); color: #4CAF50;">
-                <i class="fas fa-users"></i>
-              </div>
-              <div>
-                <h4 class="vesting-title">Community Reserve</h4>
-                <div class="vesting-amount">10M REBL</div>
-                <div class="vesting-percentage">1% of Total Supply</div>
-              </div>
-            </div>
-            
-            <div class="vesting-details">
-              <div class="vesting-detail">
-                <span class="detail-label">Lockup Period</span>
-                <span class="detail-value" style="color: #FF9800;">Until July 1, 2026</span>
-              </div>
-              <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
-              
-              <div class="vesting-detail">
-                <span class="detail-label">Vesting Schedule</span>
-                <span class="detail-value">20% cliff (2M) • 1M REBL/quarter for 8 quarters</span>
-              </div>
-              <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
-              
+
               <div class="vesting-detail">
                 <span class="detail-label">Purpose</span>
-                <span class="detail-value">Community grants • Partnerships • DAO initiatives</span>
+                <span class="detail-value">Development • audits • marketing • operations</span>
               </div>
             </div>
-            
+
             <div class="vesting-status">
-              <i class="fas fa-clock" style="color: #FF9800;"></i>
-              <span>Locked until Jul 1, 2026</span>
+              <i class="fas fa-clock" style="color: var(--rebel-gold);"></i>
+              <span>Cliff period • 6 months</span>
             </div>
-            
-            <a href="https://app.streamflow.finance/contract/solana/mainnet/2i2UE92x4Rg7schBhyfGYCyKKYAinWSye5ZvSgnt368X" 
-               target="_blank" class="cta-button full-width" style="background: linear-gradient(135deg, #4CAF50, #8BC34A);">
+
+            <a href="https://solscan.io/account/B477oon9LQ1ypqyKFPR3S5ADqkgd76RGCqCzC6sum7P1"
+               target="_blank" rel="noopener noreferrer"
+               class="cta-button gold full-width">
               <i class="fas fa-external-link-alt"></i> Vesting Contract
             </a>
           </div>
-          
         </div>
       </div>
     </section>
-    
-    <!-- ========== DETAILED TOKENOMICS ACCORDION ========== -->
+
+    <!-- Detailed Tokenomics Accordion -->
     <section id="detailed-tokenomics" data-aos="fade-up">
       <div class="container">
         <h2 class="color-gold">
-          <i class="fas fa-list-alt"></i> 
+          <i class="fas fa-list-alt"></i>
           Detailed Tokenomics Breakdown
         </h2>
-        
-        <!-- ACCORDION WRAPPER -->
+
         <div class="accordion">
-          <!-- Bonding Curve (Public Distribution) - RED -->
+
+          <!-- Public Distribution -->
           <div class="accordion-item color-red">
             <button class="accordion-header">
               <span class="color-red">
                 <i class="fas fa-chart-line" style="margin-right: 10px;"></i>
                 Public Distribution (Bonding Curve)
-                <span style="margin-left: 10px; font-size: 0.9em;">
-                  (700M REBL • 70%)
-                </span>
+                <span style="margin-left: 10px; font-size: 0.9em;">(700M REBL • 70%)</span>
               </span>
               <i class="fas fa-chevron-down accordion-icon"></i>
             </button>
@@ -492,9 +429,9 @@
                   <i class="fas fa-chart-line" style="color: var(--rebel-red);"></i>
                 </div>
                 <h3 style="color: var(--rebel-red);">Fair Launch Distribution</h3>
-                <p>100% of the supply was minted into the pump.fun bonding curve. The creator received <strong>zero tokens</strong> at launch, adhering to a true fair launch.</p>
+                <p>100% of the supply was minted into the pump.fun bonding curve. The creator received <strong>zero tokens</strong> at genesis, adhering to a true fair launch.</p>
               </div>
-              
+
               <div class="contract-stats">
                 <div class="contract-stat">
                   <div class="stat-number" style="color: var(--rebel-red);">700M</div>
@@ -507,9 +444,9 @@
                   <div class="stat-sub">True fair launch</div>
                 </div>
                 <div class="contract-stat">
-                  <div class="stat-number" style="color: var(--rebel-red);">100%</div>
-                  <div class="stat-label">LP Tokens Burned</div>
-                  <div class="stat-sub">On PumpSwap - permanently locked</div>
+                  <div class="stat-number" style="color: var(--rebel-red);">90%</div>
+                  <div class="stat-label">LP Tokens Locked</div>
+                  <div class="stat-sub">On PumpSwap — for 1 year</div>
                 </div>
               </div>
 
@@ -517,8 +454,8 @@
                 <i class="fas fa-rocket"></i>
                 <strong>Post-Graduation:</strong> Following bonding curve completion, the token graduated and is now tradeable via the <strong>PumpSwap liquidity pool</strong>.
                 <div style="margin-top: 0.5rem;">
-                  <a href="https://pump.fun/coin/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump" target="_blank" style="color: #00ffff; font-size: 0.85rem;">
-                    <i class="fas fa-external-link-alt"></i> View on Pump.fun
+                  <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump" target="_blank" style="color: #00ffff; font-size: 0.85rem;">
+                    <i class="fas fa-external-link-alt"></i> Trade on PumpSwap
                   </a>
                   <span style="margin: 0 0.5rem;">•</span>
                   <a href="https://dexscreener.com/solana/Fyak2SY4vx2PnExMh87rJ7uGAVrhN3Z9SfZcJEMa7kyv" target="_blank" style="color: #00ffff; font-size: 0.85rem;">
@@ -526,269 +463,157 @@
                   </a>
                 </div>
               </div>
-              
-              <!-- Founder Commitment Note -->
+
               <div class="founder-note" style="background: rgba(0, 170, 255, 0.1); border-left: 4px solid var(--rebel-blue); padding: 1rem; margin: 1rem 0; border-radius: 8px;">
                 <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
                   <i class="fas fa-user-shield" style="color: var(--rebel-blue); font-size: 1.25rem;"></i>
                   <strong style="color: var(--rebel-blue);">Founder's Commitment to Transparency</strong>
                 </div>
                 <p style="margin: 0; font-size: 0.9rem;">
-                  The founder purchased tokens on the open bonding curve like any other participant. 
-                  <strong>161.84M REBL (16.23%)</strong> of these personally acquired tokens are locked in a 
-                  <strong>12-month linear vesting contract with zero cliff</strong>, demonstrating long-term alignment with the community.
+                  The founder purchased tokens on the open bonding curve like any other participant.
+                  Founder-held tokens are subject to a <strong>3-year linear vesting schedule with a 40% cliff</strong>, demonstrating long-term alignment with the community.
                 </p>
-                <div style="margin-top: 0.75rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                  <a href="https://app.streamflow.finance/contract/solana/mainnet/Gr2Ej69EusSQSGrVjin3NZ6ZRYQhWZaWUwuFEqWLJFy9" 
-                     target="_blank" rel="noopener noreferrer" 
-                     style="font-size: 0.8rem; color: var(--rebel-blue); text-decoration: none;">
-                    <i class="fas fa-external-link-alt"></i> Verify Vesting Contract
-                  </a>
-                  <span style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">
-                    <i class="fas fa-lock"></i> Locked: 161.84M REBL
-                  </span>
-                  <span style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">
-                    <i class="fas fa-calendar-alt"></i> 12-month linear
-                  </span>
-                </div>
               </div>
-              
+
               <div class="accordion-actions">
-                <a href="https://pump.fun/coin/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump" 
+                <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump"
                    target="_blank" class="cta-button" style="background: rgba(255, 51, 102, 0.1); border-color: var(--rebel-red); color: var(--rebel-red);">
-                  <i class="fas fa-external-link-alt"></i> View on Pump.fun
+                  <i class="fas fa-external-link-alt"></i> Trade on PumpSwap
                 </a>
               </div>
             </div>
           </div>
-          
-          <!-- ZORA Rewards Treasury - PURPLE -->
+
+          <!-- ZORA Rewards Treasury -->
           <div class="accordion-item color-purple">
             <button class="accordion-header">
               <span class="color-purple">
                 <i class="fas fa-award" style="margin-right: 10px;"></i>
                 ZORA Rewards Treasury
-                <span style="margin-left: 10px; font-size: 0.9em;">
-                  (160M REBL • 16%)
-                </span>
+                <span style="margin-left: 10px; font-size: 0.9em;">(170M REBL • 17%)</span>
               </span>
               <i class="fas fa-chevron-down accordion-icon"></i>
             </button>
             <div class="accordion-content">
-              <!-- Hero Section -->
               <div class="accordion-hero">
                 <div class="accordion-hero-icon" style="background: rgba(156, 39, 176, 0.2); border-color: var(--rebel-purple);">
                   <i class="fas fa-award color-purple"></i>
                 </div>
-                <h3 class="color-purple">Cross-Chain Rewards Engine</h3>
-                <p>Weekly $REBL rewards for $rebelinux Creator Coin holders + Community incentives for ZORA ecosystem growth</p>
+                <h3 class="color-purple">Contest Rewards Engine</h3>
+                <p>Funds contest prizes and volume-milestone bonuses. Rewards are distributed to contest winners and those whose selected scenes reach trading volume milestones.</p>
               </div>
-              
-              <!-- Allocation Breakdown -->
-              <div class="allocation-breakdown">
-                <!-- Asset Holder Rewards -->
-                <div class="allocation-card" style="border-color: var(--rebel-purple);">
-                  <div class="allocation-icon" style="background: rgba(156, 39, 176, 0.2); border-color: var(--rebel-purple);">
-                    <i class="fas fa-gift color-purple"></i>
-                  </div>
-                  <div class="allocation-amount color-purple">128M REBL</div>
-                  <div class="allocation-title color-purple">Asset Holder Rewards</div>
-                  <div class="allocation-sub">80% of treasury • Weekly epoch distributions</div>
-                  
-                  <div class="allocation-detail color-purple">
-                    <i class="fas fa-calendar-week"></i> Weekly Distribution
-                  </div>
-                </div>
-                
-                <!-- Community Incentives -->
-                <div class="allocation-card" style="border-color: var(--rebel-purple);">
-                  <div class="allocation-icon" style="background: rgba(156, 39, 176, 0.2); border-color: var(--rebel-purple);">
-                    <i class="fas fa-users color-purple"></i>
-                  </div>
-                  <div class="allocation-amount color-purple">32M REBL</div>
-                  <div class="allocation-title color-purple">Community Incentives</div>
-                  <div class="allocation-sub">20% of treasury • Contests & initiatives</div>
-                  
-                  <div class="allocation-detail color-purple">
-                    <i class="fas fa-trophy"></i> Community Programs
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Contract Stats Grid -->
+
               <div class="contract-stats">
                 <div class="contract-stat">
-                  <div class="stat-number color-purple">76M</div>
-                  <div class="stat-label">Already Unlocked</div>
-                  <div class="stat-sub">From initial 40% cliff</div>
+                  <div class="stat-number color-purple">68M</div>
+                  <div class="stat-label">Cliff Unlock (40%)</div>
+                  <div class="stat-sub">Released immediately</div>
                 </div>
-                
                 <div class="contract-stat">
-                  <div class="stat-number color-purple">160M</div>
-                  <div class="stat-label">Total in Contract</div>
-                  <div class="stat-sub">Full allocation</div>
+                  <div class="stat-number color-purple">102M</div>
+                  <div class="stat-label">Linear Vesting (60%)</div>
+                  <div class="stat-sub">Over 2 years</div>
                 </div>
-                
                 <div class="contract-stat">
-                  <div class="stat-number color-purple">40%</div>
-                  <div class="stat-label">Cliff Unlock</div>
-                  <div class="stat-sub">Immediate availability</div>
-                </div>
-                
-                <div class="contract-stat">
-                  <div class="stat-number color-purple">4M/mo</div>
-                  <div class="stat-label">Unlock Rate</div>
-                  <div class="stat-sub">Linear monthly unlocks</div>
+                  <div class="stat-number color-purple">2+ yrs</div>
+                  <div class="stat-label">Reward Runway</div>
+                  <div class="stat-sub">Contest rewards sustained</div>
                 </div>
               </div>
-              
-              <!-- Progress Visualization -->
-              <div class="progress-visualization">
-                <h5 class="color-purple">
-                  <i class="fas fa-chart-bar"></i> 
-                  Vesting Progress
-                </h5>
-                
-                <!-- Overall Progress -->
-                <div class="overall-progress">
-                  <div class="progress-header">
-                    <span class="color-purple">Overall Vesting Progress</span>
-                    <span class="color-purple" id="contractProgress">47.5%</span>
-                  </div>
-                  <div class="progress-bar-large">
-                    <div id="contractProgressBar" class="progress-fill-large" style="width: 47.5%; background: var(--rebel-purple);"></div>
-                  </div>
-                  <div class="progress-dates">
-                    <span>Cliff: Sep 14, 2025</span>
-                    <span>End: Sep 14, 2027</span>
-                  </div>
-                </div>
-                
-                <!-- Breakdown -->
-                <div class="breakdown-grid">
-                  <div class="breakdown-item">
-                    <div class="breakdown-number color-purple">76M</div>
-                    <div class="breakdown-label">Already Unlocked</div>
-                    <div class="breakdown-sub">To ZORA holders</div>
-                  </div>
-                  
-                  <div class="breakdown-item">
-                    <div class="breakdown-number color-purple">84M</div>
-                    <div class="breakdown-label">Remaining</div>
-                    <div class="breakdown-sub">For future distributions</div>
-                  </div>
-                  
-                  <div class="breakdown-item">
-                    <div class="breakdown-number color-purple">24 mos</div>
-                    <div class="breakdown-label">Remaining Vesting</div>
-                    <div class="breakdown-sub">Until full distribution</div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Reward Distribution Info -->
+
               <div class="reward-distribution" style="background: rgba(156, 39, 176, 0.1); border-color: var(--rebel-purple);">
                 <h5 class="color-purple">
-                  <i class="fas fa-gift"></i> 
-                  Reward Distribution Mechanism
+                  <i class="fas fa-gift"></i>
+                  How Rewards Flow
                 </h5>
-                
+
                 <div class="distribution-flow">
+                  <div class="distribution-step">
+                    <div class="step-icon" style="border-color: var(--rebel-purple);">
+                      <i class="fas fa-trophy color-purple"></i>
+                    </div>
+                    <div class="step-title color-purple">Contest</div>
+                    <div class="step-desc">Enter a contest</div>
+                  </div>
+
+                  <div class="step-arrow">
+                    <i class="fas fa-arrow-right color-purple"></i>
+                  </div>
+
+                  <div class="distribution-step">
+                    <div class="step-icon" style="border-color: var(--rebel-purple);">
+                      <i class="fas fa-vote-yea color-purple"></i>
+                    </div>
+                    <div class="step-title color-purple">Winner Selected</div>
+                    <div class="step-desc">Hub pre-selects + X vote</div>
+                  </div>
+
+                  <div class="step-arrow">
+                    <i class="fas fa-arrow-right color-purple"></i>
+                  </div>
+
                   <div class="distribution-step">
                     <div class="step-icon" style="border-color: var(--rebel-purple);">
                       <i class="fas fa-coins color-purple"></i>
                     </div>
-                    <div class="step-title color-purple">Hold $rebelinux</div>
-                    <div class="step-desc">Creator Coin on ZORA</div>
-                  </div>
-                  
-                  <div class="step-arrow">
-                    <i class="fas fa-arrow-right color-purple"></i>
-                  </div>
-                  
-                  <div class="distribution-step">
-                    <div class="step-icon" style="border-color: var(--rebel-purple);">
-                      <i class="fas fa-calendar-week color-purple"></i>
-                    </div>
-                    <div class="step-title color-purple">Weekly Epochs</div>
-                    <div class="step-desc">Snapshot taken weekly</div>
-                  </div>
-                  
-                  <div class="step-arrow">
-                    <i class="fas fa-arrow-right color-purple"></i>
-                  </div>
-                  
-                  <div class="distribution-step">
-                    <div class="step-icon" style="border-color: var(--rebel-purple);">
-                      <i class="fas fa-gift color-purple"></i>
-                    </div>
-                    <div class="step-title color-purple">Claim $REBL</div>
-                    <div class="step-desc">Proportional rewards</div>
+                    <div class="step-title color-purple">Earn $REBL</div>
+                    <div class="step-desc">Base + volume bonuses</div>
                   </div>
                 </div>
-                
+
                 <div class="distribution-cta">
-                  <a href="epoch-rewards.html" class="cta-button color-purple">
-                    <i class="fas fa-play-circle"></i> Start Earning Rewards
+                  <a href="contests.html" class="cta-button color-purple">
+                    <i class="fas fa-trophy"></i> View Contests
                   </a>
                 </div>
               </div>
-              
-              <!-- Action Buttons -->
+
               <div class="accordion-actions">
-                <a href="https://app.streamflow.finance/contract/solana/mainnet/BAPQbfCF7EKUZJVURbXj4k3K4wJUZ8UcechNDKKZd4U9" 
-                   target="_blank" rel="noopener noreferrer" 
+                <a href="https://solscan.io/account/ANjMEXSCmGAkZVjU5VRhfQyTzR9KKhDACNyiVnAQ9Juo"
+                   target="_blank" rel="noopener noreferrer"
                    class="cta-button color-purple">
-                  <i class="fas fa-external-link-alt"></i> Vesting Contract
+                  <i class="fas fa-external-link-alt"></i> Multi-Sig Wallet
                 </a>
-                <a href="epoch-rewards.html" 
-                   class="cta-button color-purple">
-                  <i class="fas fa-gift"></i> Claim Weekly Rewards
+                <a href="contests.html" class="cta-button color-purple">
+                  <i class="fas fa-trophy"></i> Enter a Contest
                 </a>
-                <a href="https://zora.co/@rebelinux" 
-                   target="_blank" rel="noopener noreferrer" 
+                <a href="https://zora.co/@rebelinux"
+                   target="_blank" rel="noopener noreferrer"
                    class="cta-button color-purple">
                   <i class="fas fa-cube"></i> View ZORA Collection
                 </a>
               </div>
             </div>
-          </div> <!-- End ZORA Rewards Treasury -->
-          
-          <!-- Team Fund - TEAL/CYAN -->
+          </div>
+
+          <!-- Team Fund -->
           <div class="accordion-item color-teal">
             <button class="accordion-header">
               <span class="color-teal">
                 <i class="fas fa-users-cog" style="margin-right: 10px;"></i>
                 Team Fund
-                <span style="margin-left: 10px; font-size: 0.9em;">
-                  (70M REBL • 7%)
-                </span>
+                <span style="margin-left: 10px; font-size: 0.9em;">(70M REBL • 7%)</span>
               </span>
               <i class="fas fa-chevron-down accordion-icon"></i>
             </button>
             <div class="accordion-content">
-              <!-- Hero Section -->
               <div class="accordion-hero">
                 <div class="accordion-hero-icon" style="background: rgba(0, 188, 212, 0.2); border-color: #00bcd4;">
                   <i class="fas fa-users-cog" style="color: #00bcd4;"></i>
                 </div>
-                <h3 style="color: #00bcd4;">Core Team Compensation & Development</h3>
-                <p>Dedicated to compensating and retaining core contributors with transparent vesting for optimal long-term alignment</p>
+                <h3 style="color: #00bcd4;">Core Team Compensation</h3>
+                <p>Dedicated to compensating and retaining core contributors with transparent vesting for optimal long-term alignment.</p>
               </div>
-              
-              <!-- Allocation Breakdown -->
+
               <div class="allocation-section">
-                <h5 style="color: #00bcd4;">
-                  <i class="fas fa-chart-pie"></i> 
-                  Allocation Breakdown
-                </h5>
+                <h5 style="color: #00bcd4;"><i class="fas fa-chart-pie"></i> Allocation Breakdown</h5>
                 <div class="allocation-grid">
                   <div class="allocation-card" style="border-color: #00bcd4;">
                     <div class="allocation-number" style="color: #00bcd4;">28M</div>
                     <div class="allocation-title" style="color: #00bcd4;">Immediate Operations</div>
                     <div class="allocation-sub">40% • Strategic initiatives</div>
                   </div>
-                  
+
                   <div class="allocation-card" style="border-color: #00bcd4;">
                     <div class="allocation-number" style="color: #00bcd4;">42M</div>
                     <div class="allocation-title" style="color: #00bcd4;">Long-Term Vesting</div>
@@ -796,13 +621,9 @@
                   </div>
                 </div>
               </div>
-              
-              <!-- Vesting Schedule -->
+
               <div class="info-box" style="background: rgba(0, 188, 212, 0.1); border-color: #00bcd4;">
-                <h5 style="color: #00bcd4;">
-                  <i class="fas fa-calendar-alt"></i> 
-                  Vesting Schedule Details
-                </h5>
+                <h5 style="color: #00bcd4;"><i class="fas fa-calendar-alt"></i> Vesting Schedule Details</h5>
                 <div class="schedule-grid">
                   <div>
                     <div class="schedule-title" style="color: #00bcd4;">Initial Cliff</div>
@@ -818,157 +639,98 @@
                   </div>
                 </div>
               </div>
-              
-              <!-- Progress Visualization -->
-              <div class="progress-section" style="background: rgba(0, 188, 212, 0.1); border-color: #00bcd4;">
-                <h5 style="color: #00bcd4;">
-                  <i class="fas fa-chart-line"></i> 
-                  Vesting Progress
-                </h5>
-                
-                <!-- Immediate Operations Progress -->
-                <div class="progress-item">
-                  <div class="progress-header">
-                    <span style="color: #00bcd4;">Immediate Operations</span>
-                    <span style="color: #00bcd4;">40% • 28M REBL</span>
-                  </div>
-                  <div class="progress-bar">
-                    <div class="progress-fill" style="width: 100%; background: #00bcd4;"></div>
-                  </div>
-                  <div class="progress-note">
-                    Unlocked immediately for team operations and development
-                  </div>
-                </div>
-                
-                <!-- Long-Term Vesting Progress -->
-                <div class="progress-item">
-                  <div class="progress-header">
-                    <span style="color: #00bcd4;">Long-Term Vesting</span>
-                    <span style="color: #00bcd4;">60% • 42M REBL</span>
-                  </div>
-                  <div class="progress-bar">
-                    <div class="progress-fill" style="width: 60%; background: #00bcd4;"></div>
-                  </div>
-                  <div class="progress-note">
-                    Linear vesting over 3 years with 40% initial cliff
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Action Buttons -->
+
               <div class="accordion-actions">
-                <a href="https://app.streamflow.finance/contract/solana/mainnet/2vyMez3M8qatsg61JGAukmVipRVHWeFRAAX92R7hEfEL" 
-                   target="_blank" rel="noopener noreferrer" 
+                <a href="https://app.streamflow.finance/contract/solana/mainnet/2vyMez3M8qatsg61JGAukmVipRVHWeFRAAX92R7hEfEL"
+                   target="_blank" rel="noopener noreferrer"
                    class="cta-button" style="background: rgba(0, 188, 212, 0.1); border-color: #00bcd4; color: #00bcd4;">
                   <i class="fas fa-external-link-alt"></i> Vesting Contract
                 </a>
-                <a href="https://solscan.io/account/8zzcDm3FWxAXsVw2iok5EoXj9q8XCG9tSu9UeenHcp52" 
-                   target="_blank" rel="noopener noreferrer" 
+                <a href="https://solscan.io/account/8zzcDm3FWxAXsVw2iok5EoXj9q8XCG9tSu9UeenHcp52"
+                   target="_blank" rel="noopener noreferrer"
                    class="cta-button" style="background: rgba(0, 188, 212, 0.1); border-color: #00bcd4; color: #00bcd4;">
                   <i class="fas fa-vault"></i> Multi-Sig Wallet
                 </a>
-                <a href="governance.html" class="cta-button" style="background: rgba(0, 188, 212, 0.1); border-color: #00bcd4; color: #00bcd4;">
-                  <i class="fas fa-vote-yea"></i> Governance
-                </a>
               </div>
             </div>
-          </div> <!-- End Team Fund -->
-          
-          <!-- Ecosystem Fund - GOLD -->
+          </div>
+
+          <!-- Ecosystem Fund -->
           <div class="accordion-item color-gold">
             <button class="accordion-header">
               <span class="color-gold">
                 <i class="fas fa-seedling" style="margin-right: 10px;"></i>
                 Ecosystem Fund
-                <span style="margin-left: 10px; font-size: 0.9em;">
-                  (60M REBL • 6%)
-                </span>
+                <span style="margin-left: 10px; font-size: 0.9em;">(60M REBL • 6%)</span>
               </span>
               <i class="fas fa-chevron-down accordion-icon"></i>
             </button>
             <div class="accordion-content">
-              <!-- Hero Section -->
               <div class="accordion-hero">
                 <div class="accordion-hero-icon" style="background: rgba(255, 204, 0, 0.2); border-color: var(--rebel-gold);">
                   <i class="fas fa-seedling color-gold"></i>
                 </div>
                 <h3 class="color-gold">Sustainable Growth & Development</h3>
-                <p>Fueling long-term ecosystem development, security audits, marketing, and strategic partnerships</p>
+                <p>Fueling long-term ecosystem development, security audits, marketing, and strategic partnerships.</p>
               </div>
-              
-              <!-- Fund Allocation -->
+
               <div class="fund-allocation">
-                <!-- Initial Operations -->
                 <div class="allocation-card" style="border-color: var(--rebel-gold);">
                   <div class="allocation-icon" style="background: rgba(255, 204, 0, 0.2); border-color: var(--rebel-gold);">
                     <i class="fas fa-rocket color-gold"></i>
                   </div>
                   <div class="allocation-amount color-gold">5M REBL</div>
                   <div class="allocation-title color-gold">Initial Operations</div>
-                  <div class="allocation-sub">8.3% for essential costs during first 6 months</div>
+                  <div class="allocation-sub">0.5% for essential costs during first 6 months</div>
                 </div>
-                
-                <!-- Sustained Growth -->
+
                 <div class="allocation-card" style="border-color: var(--rebel-gold);">
                   <div class="allocation-icon" style="background: rgba(255, 204, 0, 0.2); border-color: var(--rebel-gold);">
                     <i class="fas fa-chart-line color-gold"></i>
                   </div>
                   <div class="allocation-amount color-gold">55M REBL</div>
                   <div class="allocation-title color-gold">Sustained Growth</div>
-                  <div class="allocation-sub">91.7% for long-term ecosystem development</div>
+                  <div class="allocation-sub">5.5% for long-term ecosystem development</div>
                 </div>
               </div>
-              
-              <!-- Use Cases -->
+
               <div class="use-cases">
-                <h5 class="color-gold">
-                  <i class="fas fa-list-check"></i> 
-                  Fund Use Cases
-                </h5>
+                <h5 class="color-gold"><i class="fas fa-list-check"></i> Fund Use Cases</h5>
                 <div class="use-cases-grid">
                   <div class="use-case" style="border-color: var(--rebel-gold);">
-                    <div class="use-case-icon color-gold">
-                      <i class="fas fa-code"></i>
-                    </div>
+                    <div class="use-case-icon color-gold"><i class="fas fa-code"></i></div>
                     <div class="use-case-title color-gold">Development</div>
                     <div class="use-case-desc">Platform features and tools</div>
                   </div>
-                  
+
                   <div class="use-case" style="border-color: var(--rebel-gold);">
-                    <div class="use-case-icon color-gold">
-                      <i class="fas fa-shield-alt"></i>
-                    </div>
+                    <div class="use-case-icon color-gold"><i class="fas fa-shield-alt"></i></div>
                     <div class="use-case-title color-gold">Security Audits</div>
                     <div class="use-case-desc">Smart contract security reviews</div>
                   </div>
-                  
+
                   <div class="use-case" style="border-color: var(--rebel-gold);">
-                    <div class="use-case-icon color-gold">
-                      <i class="fas fa-bullhorn"></i>
-                    </div>
+                    <div class="use-case-icon color-gold"><i class="fas fa-bullhorn"></i></div>
                     <div class="use-case-title color-gold">Marketing</div>
                     <div class="use-case-desc">Community growth initiatives</div>
                   </div>
-                  
+
                   <div class="use-case" style="border-color: var(--rebel-gold);">
-                    <div class="use-case-icon color-gold">
-                      <i class="fas fa-handshake"></i>
-                    </div>
+                    <div class="use-case-icon color-gold"><i class="fas fa-handshake"></i></div>
                     <div class="use-case-title color-gold">Partnerships</div>
                     <div class="use-case-desc">Strategic collaborations</div>
                   </div>
                 </div>
               </div>
-              
-              <!-- Action Buttons -->
+
               <div class="accordion-actions">
-                <a href="https://app.streamflow.finance/token-dashboard/solana/mainnet/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump/contract/B477oon9LQ1ypqyKFPR3S5ADqkgd76RGCqCzC6sum7P1" 
-                   target="_blank" rel="noopener noreferrer" 
+                <a href="https://solscan.io/account/B477oon9LQ1ypqyKFPR3S5ADqkgd76RGCqCzC6sum7P1"
+                   target="_blank" rel="noopener noreferrer"
                    class="cta-button color-gold">
                   <i class="fas fa-external-link-alt"></i> Vesting Contract
                 </a>
-                <a href="https://solscan.io/account/DGRMGRm6fWLs53ghWR7RFJ1JC8UvcKWQP9LtunQ1sa7R" 
-                   target="_blank" rel="noopener noreferrer" 
+                <a href="https://solscan.io/account/DGRMGRm6fWLs53ghWR7RFJ1JC8UvcKWQP9LtunQ1sa7R"
+                   target="_blank" rel="noopener noreferrer"
                    class="cta-button color-gold">
                   <i class="fas fa-vault"></i> Multi-Sig Wallet
                 </a>
@@ -977,63 +739,10 @@
                 </a>
               </div>
             </div>
-          </div> <!-- End Ecosystem Fund -->
-          
-          <!-- Community Reserve - GREEN -->
-          <div class="accordion-item color-green">
-            <button class="accordion-header">
-              <span class="color-green">
-                <i class="fas fa-vote-yea" style="margin-right: 10px;"></i>
-                Community Reserve
-                <span style="margin-left: 10px; font-size: 0.9em;">
-                  (10M REBL • 1%)
-                </span>
-              </span>
-              <i class="fas fa-chevron-down accordion-icon"></i>
-            </button>
-            <div class="accordion-content">
-              <div class="accordion-hero">
-                <div class="accordion-hero-icon" style="background: rgba(76, 175, 80, 0.2); border-color: #4CAF50;">
-                  <i class="fas fa-vote-yea" style="color: #4CAF50;"></i>
-                </div>
-                <h3 style="color: #4CAF50;">Community Governance Treasury</h3>
-                <p>Reserved for community-driven initiatives, grants, and strategic partnerships controlled by $REBL holders through decentralized governance.</p>
-              </div>
-              
-              <div class="dao-stats">
-                <div class="dao-stat">
-                  <div class="stat-number" style="color: #4CAF50;">10M</div>
-                  <div class="stat-label">Total Allocation</div>
-                  <div class="stat-sub">1% of total supply</div>
-                </div>
-                <div class="dao-stat">
-                  <div class="stat-number" style="color: #4CAF50;">2M</div>
-                  <div class="stat-label">Initial Cliff</div>
-                  <div class="stat-sub">20% unlocked immediately</div>
-                </div>
-                <div class="dao-stat">
-                  <div class="stat-number" style="color: #4CAF50;">1M</div>
-                  <div class="stat-label">Quarterly Unlocks</div>
-                  <div class="stat-sub">For 8 quarters</div>
-                </div>
-              </div>
-              
-              <div class="accordion-actions">
-                <a href="https://app.streamflow.finance/contract/solana/mainnet/2i2UE92x4Rg7schBhyfGYCyKKYAinWSye5ZvSgnt368X" 
-                   target="_blank" rel="noopener noreferrer" 
-                   class="cta-button" style="background: rgba(76, 175, 80, 0.1); border-color: #4CAF50; color: #4CAF50;">
-                  <i class="fas fa-external-link-alt"></i> Vesting Contract
-                </a>
-                <a href="governance.html" class="cta-button" style="background: rgba(76, 175, 80, 0.1); border-color: #4CAF50; color: #4CAF50;">
-                  <i class="fas fa-vote-yea"></i> Governance Details
-                </a>
-              </div>
-            </div>
-          </div> <!-- End Community DAO Reserve -->
-          
-        </div> <!-- END ACCORDION WRAPPER -->
-        
-        <!-- Expand/Collapse All Button -->
+          </div>
+        </div>
+
+        <!-- Accordion Controls -->
         <div class="accordion-controls">
           <button id="expandAll" class="cta-button color-gold">
             <i class="fas fa-expand-alt"></i> Expand All Sections
@@ -1044,156 +753,147 @@
         </div>
       </div>
     </section>
-    
-    <!-- Cross-Chain Value Section -->
-    <section id="cross-chain" data-aos="fade-up">
+
+    <!-- Value Acceleration -->
+    <section id="value-acceleration" data-aos="fade-up">
       <div class="container">
         <h2><i class="fas fa-sync-alt"></i> Cross-Chain Value Acceleration</h2>
-        
+
         <div class="content-card">
-          <h3><i class="fas fa-rocket"></i> How ZORA Revenue Fuels $REBL Value</h3>
-          
-          <!-- ZORA Treasury Stats -->
+          <h3><i class="fas fa-rocket"></i> How ZORA Creator Fees Fuel $REBL Value</h3>
+
           <div class="zora-treasury-stats">
-            <h4><i class="fas fa-award"></i> ZORA Rewards Treasury (160M REBL)</h4>
-            
+            <h4><i class="fas fa-award"></i> ZORA Rewards Treasury (170M REBL)</h4>
+
             <div class="treasury-grid">
               <div class="treasury-stat" data-aos="fade-right">
-                <div class="treasury-number">128M</div>
-                <div class="treasury-label">Asset Holder Rewards</div>
-                <div class="treasury-sub">80% of treasury</div>
+                <div class="treasury-number">68M</div>
+                <div class="treasury-label">Cliff Unlock</div>
+                <div class="treasury-sub">40% • immediate</div>
               </div>
               <div class="treasury-stat" data-aos="fade-up">
-                <div class="treasury-number">32M</div>
-                <div class="treasury-label">Community Incentives</div>
-                <div class="treasury-sub">20% of treasury</div>
+                <div class="treasury-number">102M</div>
+                <div class="treasury-label">Linear Vesting</div>
+                <div class="treasury-sub">60% • over 2 years</div>
               </div>
               <div class="treasury-stat" data-aos="fade-up">
-                <div class="treasury-number">76M</div>
-                <div class="treasury-label">Already Unlocked</div>
-                <div class="treasury-sub">From 40% cliff</div>
+                <div class="treasury-number">2+ yrs</div>
+                <div class="treasury-label">Reward Runway</div>
+                <div class="treasury-sub">Contest rewards sustained</div>
               </div>
               <div class="treasury-stat" data-aos="fade-left">
-                <div class="treasury-number">4M/mo</div>
-                <div class="treasury-label">Monthly Unlocks</div>
-                <div class="treasury-sub">Linear vesting</div>
-              </div>
-              <div class="treasury-stat" data-aos="fade-up">
-                <div class="treasury-number">3.2M/mo</div>
-                <div class="treasury-label">To Epoch Pool</div>
-                <div class="treasury-sub">80% of monthly unlocks</div>
+                <div class="treasury-number">Multi-sig</div>
+                <div class="treasury-label">Security</div>
+                <div class="treasury-sub">Cold storage wallet</div>
               </div>
             </div>
-            
+
             <div class="treasury-note">
               <i class="fas fa-link"></i>
-              <strong>Connected:</strong> The 160M $REBL ZORA Treasury funds these rewards. 
+              <strong>Connected:</strong> The 170M $REBL ZORA Treasury funds contest prizes and volume-milestone bonuses. Beyond 2 years, the 15% fee Reserve and other ecosystem revenue provide supplementary funding.
             </div>
           </div>
-          
-          <!-- Revenue Distribution -->
-          <h4><i class="fas fa-chart-pie"></i> ZORA Revenue Distribution</h4>
-          
+
+          <h4><i class="fas fa-chart-pie"></i> Value Acceleration Fee Split</h4>
+
+          <p style="text-align: center; color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;">
+            ZORA charges a 1% trading fee on Content Coins, of which 0.5% goes to the creator.
+            All creator fees flow into the Value Acceleration mechanism, deployed at REBL Governance Hub discretion.
+          </p>
+
           <div class="revenue-grid">
             <div class="revenue-card" style="border-color: var(--rebel-red);" data-aos="fade-right">
-              <div class="revenue-icon">
-                <i class="fas fa-fire"></i>
-              </div>
-              <div class="revenue-percentage">80%</div>
+              <div class="revenue-icon"><i class="fas fa-fire"></i></div>
+              <div class="revenue-percentage">50%</div>
               <h5>Buy-Back & Burn</h5>
-              <p>ETH revenue from ZORA assets is bridged to Solana to <strong>permanently burn $REBL</strong>, creating deflationary pressure.</p>
+              <p>Reserved for $REBL buy-backs and burns on Solana. Deployments are triggered by Governance Hub vote, allowing the community to time buy-backs strategically.</p>
             </div>
-            
+
             <div class="revenue-card" style="border-color: var(--rebel-gold);" data-aos="fade-up">
-              <div class="revenue-icon">
-                <i class="fas fa-users"></i>
-              </div>
-              <div class="revenue-percentage">15%</div>
-              <h5>Community Reserve</h5>
-              <p>Funds future community initiatives, strategic partnerships, and community-driven buy-back campaigns.</p>
+              <div class="revenue-icon"><i class="fas fa-robot"></i></div>
+              <div class="revenue-percentage">20%</div>
+              <h5>AI Production</h5>
+              <p>Reserved for the creation of Rebel Journey Collectibles — AI video generation tools, animation, voice, editing, and rendering infrastructure.</p>
             </div>
-            
+
             <div class="revenue-card" style="border-color: #4CAF50;" data-aos="fade-left">
-              <div class="revenue-icon">
-                <i class="fas fa-cogs"></i>
-              </div>
-              <div class="revenue-percentage">5%</div>
+              <div class="revenue-icon"><i class="fas fa-shield-alt"></i></div>
+              <div class="revenue-percentage">15%</div>
+              <h5>Reserve</h5>
+              <p>General-purpose reserve for future buy-backs and community initiatives. Provides supplementary funding for the ZORA Rewards Treasury's initial 170M allocation.</p>
+            </div>
+
+            <div class="revenue-card" style="border-color: #00bcd4;" data-aos="fade-up">
+              <div class="revenue-icon"><i class="fas fa-cogs"></i></div>
+              <div class="revenue-percentage">15%</div>
               <h5>Operations</h5>
-              <p>Covers essential operational costs: infrastructure, security audits, development tools, and ecosystem maintenance.</p>
+              <p>Covers hosting, security, tooling, minting of Rebel Journey Collectibles, and day-to-day ecosystem support on ZORA.</p>
             </div>
           </div>
-          
-          <!-- Virtuous Cycle -->
+
           <div class="virtuous-cycle">
             <div class="cycle-header">
               <i class="fas fa-recycle"></i>
               <span>Virtuous Cycle</span>
             </div>
-            
+
             <div class="cycle-steps">
               <div class="cycle-step" data-aos="fade-right">
                 <div class="step-icon" style="background: linear-gradient(135deg, var(--rebel-red), var(--rebel-purple));">
+                  <i class="fas fa-palette"></i>
+                </div>
+                <div class="step-content">
+                  <div class="step-title">1. Community Creates</div>
+                  <div class="step-desc">Contests select scenes to tokenize</div>
+                </div>
+              </div>
+
+              <div class="cycle-arrow"><i class="fas fa-arrow-right"></i></div>
+
+              <div class="cycle-step" data-aos="fade-up">
+                <div class="step-icon" style="background: linear-gradient(135deg, var(--rebel-gold), #FF9800);">
                   <i class="fas fa-coins"></i>
                 </div>
                 <div class="step-content">
-                  <div class="step-title">1. Hold $rebelinux</div>
-                  <div class="step-desc">Creator Coin on ZORA</div>
+                  <div class="step-title">2. Content Coins Trade</div>
+                  <div class="step-desc">ZORA creator fees accumulate</div>
                 </div>
               </div>
-              
-              <div class="cycle-arrow">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-              
-              <div class="cycle-step" data-aos="fade-up">
-                <div class="step-icon" style="background: linear-gradient(135deg, var(--rebel-gold), #FF9800);">
-                  <i class="fas fa-gift"></i>
-                </div>
-                <div class="step-content">
-                  <div class="step-title">2. Earn $REBL Weekly</div>
-                  <div class="step-desc">From 160M Treasury</div>
-                </div>
-              </div>
-              
-              <div class="cycle-arrow">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-              
+
+              <div class="cycle-arrow"><i class="fas fa-arrow-right"></i></div>
+
               <div class="cycle-step" data-aos="fade-left">
                 <div class="step-icon" style="background: linear-gradient(135deg, var(--rebel-blue), #0099ff);">
-                  <i class="fas fa-chart-line"></i>
+                  <i class="fas fa-fire"></i>
                 </div>
                 <div class="step-content">
-                  <div class="step-title">3. Value ↗ Increases</div>
-                  <div class="step-desc">80% Buyback & Burn</div>
+                  <div class="step-title">3. Value Accrues</div>
+                  <div class="step-desc">50% buy-back & burn · 20% AI</div>
                 </div>
               </div>
-              
-              <div class="cycle-arrow cycle-loop">
-                <i class="fas fa-redo"></i>
-              </div>
+
+              <div class="cycle-arrow cycle-loop"><i class="fas fa-redo"></i></div>
             </div>
-            
+
             <div class="cycle-note">
               <i class="fas fa-sync-alt"></i>
-              <strong>Cycle repeats:</strong> More value → More holders → More rewards
+              <strong>Cycle repeats:</strong> More contests → More content coins → More fee revenue → More value
             </div>
-            
-            <!-- Cycle Stats -->
+
             <div class="cycle-stats">
               <div class="cycle-stat" data-aos="fade-right">
-                <div class="stat-number">160M</div>
+                <div class="stat-number">170M</div>
                 <div class="stat-label">Treasury Size</div>
               </div>
               <div class="cycle-stat" data-aos="fade-left">
-                <div class="stat-number">3.2M/mo</div>
-                <div class="stat-label">To Rewards</div>
+                <div class="stat-number">50%</div>
+                <div class="stat-label">Buy-Back & Burn</div>
               </div>
             </div>
-            
+
             <div class="cycle-cta">
-              <a href="epoch-rewards.html" class="cta-button">
-                <i class="fas fa-play"></i> Start Earning Now
+              <a href="contests.html" class="cta-button">
+                <i class="fas fa-trophy"></i> Enter a Contest
               </a>
             </div>
           </div>
@@ -1205,130 +905,86 @@
     <section id="creator-coin-supply" data-aos="fade-up">
       <div class="container">
         <h2><i class="fas fa-coin"></i> $rebelinux Creator Coin Supply</h2>
-        
+
         <div class="content-card">
           <p class="supply-intro">
-            Weekly $REBL rewards are calculated using the <strong>active circulating supply of 499,242,047 $rebelinux</strong>. 
-            This excludes all locked and non-circulating tokens.
+            The $rebelinux Creator Coin is the digital claim ticket of the RebelInuX ecosystem on ZORA (Base).
+            Current circulation and founder allocations are listed below.
           </p>
-          
-          <!-- Formula Box -->
-          <div class="formula-box">
-            <h4><i class="fas fa-calculator"></i> Active Supply Calculation</h4>
-            <div class="formula-display">
-              <div class="formula-line">
-                <span class="formula-number">1,000,000,000.00</span>
-                <span class="formula-label">Total Supply</span>
-              </div>
-              <div class="formula-line">
-                <span class="formula-operator">−</span>
-                <span class="formula-number">489,448,313.04</span>
-                <span class="formula-label">Founder's Unvested (Locked)</span>
-              </div>
-              <div class="formula-line">
-                <span class="formula-operator">−</span>
-                <span class="formula-number">11,309,640.29</span>
-                <span class="formula-label">Founder's Vested Holdings</span>
-              </div>
-              <div class="formula-total">
-                <span class="formula-operator">=</span>
-                <strong class="formula-result">499,242,047.00</strong>
-                <span class="formula-label">Active Supply (CS)</span>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Detailed Breakdown -->
+
           <div class="breakdown-section">
-            <h5><i class="fas fa-search"></i> Detailed Allocation Breakdown</h5>
-            
+            <h5><i class="fas fa-search"></i> Supply Distribution</h5>
+
             <div class="breakdown-grid">
               <div class="breakdown-item" data-aos="fade-right">
-                <div class="breakdown-title">Founder's Unvested</div>
-                <div class="breakdown-value">489,448,313.04</div>
-                <div class="breakdown-percentage">49.0% of total supply</div>
+                <div class="breakdown-title">Total Supply</div>
+                <div class="breakdown-value">1,000,000,000</div>
+                <div class="breakdown-percentage">$rebelinux</div>
               </div>
-              
+
               <div class="breakdown-item" data-aos="fade-up">
-                <div class="breakdown-title">Founder's Vested Holdings</div>
-                <div class="breakdown-value">11,309,640.29</div>
-                <div class="breakdown-percentage">1.1% of total supply</div>
+                <div class="breakdown-title">Protocol Reserves</div>
+                <div class="breakdown-value">489.4M</div>
+                <div class="breakdown-percentage">48.94% — 5-year linear vesting</div>
               </div>
-              
+
               <div class="breakdown-item" data-aos="fade-up">
-                <div class="breakdown-title">Founder's Total Allocation</div>
-                <div class="breakdown-value">500,757,953.33</div>
-                <div class="breakdown-percentage">50.1% of total supply</div>
+                <div class="breakdown-title">Founder Allocation</div>
+                <div class="breakdown-value">11.3M</div>
+                <div class="breakdown-percentage">1.13% — includes 757,953 secondary market</div>
               </div>
-              
+
               <div class="breakdown-item" data-aos="fade-left">
-                <div class="breakdown-title">Percentage in Circulation</div>
-                <div class="breakdown-value">49.92%</div>
-                <div class="breakdown-percentage">of total supply is active</div>
+                <div class="breakdown-title">Liquid Supply</div>
+                <div class="breakdown-value">499.2M</div>
+                <div class="breakdown-percentage">49.92% — available for trading</div>
               </div>
             </div>
-            
-            <!-- NOTE 1: Non-Circulating Supply -->
+
             <div class="breakdown-note">
               <i class="fas fa-info-circle"></i>
-              <strong>Total Non-Circulating:</strong> ~508.8M $rebelinux (Founder holdings + ZORA burn account + other locked tokens)
+              <strong>As of October 2, 2025:</strong> Supply metrics undergo periodic revision to reflect vesting progression and market activity.
             </div>
-            
-            <!-- NOTE 2: Bonding Curve Status -->
+
             <div class="breakdown-note" style="margin-top: 0.75rem; border-left-color: #00ffff;">
               <i class="fas fa-rocket"></i>
-              <strong>Bonding Curve Status:</strong> The 700M public distribution graduated and is now trading on <strong>PumpSwap</strong>. 100% of LP tokens were permanently burned.
+              <strong>$rebelinux on ZORA:</strong> The creator coin is deployed on Base (ZORA) and available for trading at
+              <a href="https://zora.co/@rebelinux" target="_blank" style="color: #00ffff;">zora.co/@rebelinux</a>.
             </div>
           </div>
-          
-          <!-- Supply Stats -->
+
           <div class="supply-stats">
             <div class="supply-stat" data-aos="fade-right">
               <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
               <div class="stat-value">1.0B</div>
-              <div class="stat-label">Total Fixed Supply</div>
+              <div class="stat-label">Total Supply</div>
             </div>
-            
+
             <div class="supply-stat" data-aos="fade-up">
               <div class="stat-icon"><i class="fas fa-lock"></i></div>
-              <div class="stat-value">500.8M</div>
+              <div class="stat-value">489.4M</div>
+              <div class="stat-label">Protocol Reserves</div>
+            </div>
+
+            <div class="supply-stat" data-aos="fade-up">
+              <div class="stat-icon"><i class="fas fa-user-shield"></i></div>
+              <div class="stat-value">11.3M</div>
               <div class="stat-label">Founder Holdings</div>
             </div>
-            
-            <div class="supply-stat" data-aos="fade-up">
-              <div class="stat-icon"><i class="fas fa-fire"></i></div>
-              <div class="stat-value">6.03M</div>
-              <div class="stat-label">ZORA Burn Account</div>
-            </div>
-            
+
             <div class="supply-stat highlight" data-aos="fade-left">
               <div class="stat-icon"><i class="fas fa-coins"></i></div>
               <div class="stat-value">499.2M</div>
-              <div class="stat-label">ACTIVE SUPPLY (CS)</div>
-              <div class="stat-note">Used for all epoch calculations</div>
+              <div class="stat-label">Liquid Supply</div>
+              <div class="stat-note">Available for trading</div>
             </div>
           </div>
-          
-          <!-- Oblivion Flame Mechanism -->
-          <div class="mechanism-section" data-aos="fade-up">
-            <div class="mechanism-icon">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <div class="mechanism-content">
-              <div class="mechanism-title">The "Oblivion Flame" Mechanism</div>
-              <div class="mechanism-desc">
-                The <a href="https://zora.co/@rebelinux_burn" target="_blank" class="mechanism-link">rebelinux_burn</a> account holds $rebelinux tokens, which qualify it for a share of every epoch's $REBL reward pool. 
-                The $REBL tokens it earns are <strong>permanently burned</strong>, creating deflationary pressure while the original $rebelinux continue to be eligible for future epochs.
-              </div>
-            </div>
-          </div>
-          
-          <!-- Connection to Calculator -->
+
           <div class="calculator-connection" data-aos="fade-up">
-            <h4><i class="fas fa-link"></i> See This in Action</h4>
-            <p>This exact <strong>499,242,047 $rebelinux</strong> supply is used in the epoch reward calculator.</p>
-            <a href="rebl-calculator.html" class="cta-button">
-              <i class="fas fa-calculator"></i> Try the Reward Calculator
+            <h4><i class="fas fa-link"></i> Explore $rebelinux</h4>
+            <p>View the creator coin, its supply, and its role in the ecosystem on ZORA.</p>
+            <a href="https://zora.co/@rebelinux" target="_blank" rel="noopener noreferrer" class="cta-button">
+              <i class="fas fa-external-link-alt"></i> View on ZORA
             </a>
           </div>
         </div>
@@ -1339,185 +995,163 @@
     <section id="security-overview" data-aos="fade-up">
       <div class="container">
         <h2><i class="fas fa-shield-alt"></i> Security Overview</h2>
-        
+
         <div class="content-card security-card">
           <div class="security-header">
-            <div class="security-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
+            <div class="security-icon"><i class="fas fa-shield-alt"></i></div>
             <h3>Maximum Security & Trustless Design</h3>
             <div class="security-badge">
               <i class="fas fa-check-circle"></i>
               <span>VERIFIED & SECURE</span>
             </div>
           </div>
-          
+
           <div class="security-stats">
             <div class="security-stat" data-aos="fade-right">
               <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
               <div class="stat-label">Mint Authority</div>
               <div class="stat-value">Renounced</div>
             </div>
-            
+
             <div class="security-stat" data-aos="fade-up">
               <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
               <div class="stat-label">Freeze Authority</div>
               <div class="stat-value">Renounced</div>
             </div>
-            
+
             <div class="security-stat" data-aos="fade-up">
-              <div class="stat-icon"><i class="fas fa-fire"></i></div>
-              <div class="stat-label">LP Lock</div>
-              <div class="stat-value">100% 🔐</div>
-              <div class="stat-sub">Pump.fun AMM LP Tokens Burned</div>
-              <a href="https://solscan.io/tx/262a4YA5K5XQVhDLTVURpiHk9fkhfaWQBYQ8dFAqd1iZpPcxpJsq63Xj5Kzyf61ZY1BeEgPo6Ca6uHZJ7s3faMTH" 
-                 target="_blank" rel="noopener noreferrer" class="verify-link">
-                <i class="fas fa-external-link-alt"></i> Verify on Solscan
-              </a>
+              <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+              <div class="stat-label">Update Authority</div>
+              <div class="stat-value">Renounced</div>
             </div>
-            
+
             <div class="security-stat" data-aos="fade-left">
               <div class="stat-icon"><i class="fas fa-lock"></i></div>
-              <div class="stat-label">Vested Tokens</div>
-              <div class="stat-value">33.12% Locked</div>
+              <div class="stat-label">LP Tokens</div>
+              <div class="stat-value">90% Locked</div>
+              <div class="stat-sub">For 1 year</div>
             </div>
           </div>
-          
+
           <p class="security-description">
-            The $REBL token has been designed with maximum security and transparency. All critical authorities have been renounced, and liquidity is permanently locked.
+            The $REBL token has been designed with maximum security and transparency.
+            All critical authorities have been permanently renounced, and liquidity is locked.
           </p>
-          
+
           <div class="security-actions">
-            <a href="security.html" class="cta-button">
+            <a href="security-integrity.html" class="cta-button">
               <i class="fas fa-shield-alt"></i> View Full Security Details
             </a>
             <a href="trade.html#contract-verify" class="cta-button gold">
-              <i class="fas fa-file-contract"></i> Verify Contracts
+              <i class="fas fa-file-contract"></i> Verify Contract
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ -->
     <section id="faq" data-aos="fade-up">
       <div class="container">
         <h2>Frequently Asked Questions</h2>
-        
+
         <div class="faq-grid">
           <div class="faq-item" data-aos="fade-right">
             <h4><i class="fas fa-question-circle"></i> What is the total supply of $REBL?</h4>
-            <p>The total supply is fixed at 1,000,000,000 (1 billion) $REBL tokens, with a deflationary mechanism through buyback and burn.</p>
+            <p>Fixed at 1,000,000,000 (1 billion) $REBL tokens, with deflationary pressure through buy-back and burn.</p>
           </div>
-          
+
           <div class="faq-item" data-aos="fade-left">
-            <h4><i class="fas fa-question-circle"></i> How are ZORA holders rewarded?</h4>
-            <p>160M $REBL (16% of total supply) is allocated to reward $rebelinux Creator Coin holders through weekly epoch distributions.</p>
+            <h4><i class="fas fa-question-circle"></i> How are rewards distributed?</h4>
+            <p>The ZORA Rewards Treasury (170M $REBL, 17%) funds contest prizes and volume-milestone bonuses. Winners earn $REBL for participating in Thumbnail, Tokenization, or Journey contests. <a href="contests.html">See contests →</a></p>
           </div>
-          
+
           <div class="faq-item" data-aos="fade-right" data-aos-delay="100">
-            <h4><i class="fas fa-question-circle"></i> What is the Founder's Commitment?</h4>
-            <p>The founder has locked 161.84M $REBL (16.23% of supply) for 1 year with no cliff, demonstrating long-term commitment.</p>
+            <h4><i class="fas fa-question-circle"></i> How does Value Acceleration work?</h4>
+            <p>All ZORA creator fees flow into the Value Acceleration mechanism: 50% buy-back & burn, 20% AI production, 15% reserve, 15% operations. Deployments are triggered by REBL Governance Hub vote.</p>
           </div>
-          
+
           <div class="faq-item" data-aos="fade-left" data-aos-delay="100">
-            <h4><i class="fas fa-question-circle"></i> How does the buyback & burn work?</h4>
-            <p>80% of ZORA revenue is used to buy back and permanently burn $REBL tokens, creating deflationary pressure.</p>
+            <h4><i class="fas fa-question-circle"></i> What is the founder's vesting schedule?</h4>
+            <p>Founder-held tokens are subject to a 3-year linear vesting schedule with a 40% cliff, demonstrating long-term alignment with the community.</p>
           </div>
-          
+
           <div class="faq-item" data-aos="fade-right" data-aos-delay="200">
-            <h4><i class="fas fa-question-circle"></i> What is the Community Reserve?</h4>
-            <p>10M $REBL (1% of supply) is reserved for community-driven initiatives, grants, and strategic partnerships. It is locked until July 2026 and will be controlled by $REBL holders through governance.</p>
+            <h4><i class="fas fa-question-circle"></i> What replaced the epoch reward system?</h4>
+            <p>In v3.0, rewards shifted from holding-based (epochs, age bonuses, Rebel Key) to <strong>participation-based</strong>. The community now earns $REBL through contests — designing thumbnails, selecting scenes to tokenize, and voting on the next Journey.</p>
           </div>
-          
+
           <div class="faq-item" data-aos="fade-left" data-aos-delay="200">
             <h4><i class="fas fa-question-circle"></i> How can I verify vesting contracts?</h4>
-            <p>All vesting contracts are publicly verifiable on Streamflow. Links are provided for each allocation.</p>
+            <p>All vesting contracts are publicly verifiable on Streamflow and Solscan. Links are provided for each allocation above.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Explore More Section -->
+    <!-- Related Pages -->
     <section id="related-pages" data-aos="fade-up">
       <div class="container">
         <h2>Explore More</h2>
         <div class="related-grid">
-          <!-- Trade -->
-          <a href="trade.html" class="related-card trade-card" data-aos="fade-right">
-            <div class="related-icon"><i class="fas fa-chart-line"></i></div>
-            <h3>Trade $REBL</h3>
-            <p>Participate in Economy</p>
+          <a href="contests.html" class="related-card contests-card" data-aos="fade-right">
+            <div class="related-icon"><i class="fas fa-trophy"></i></div>
+            <h3>Contests</h3>
+            <p>Earn $REBL by Participating</p>
             <div class="related-arrow">
-              <i class="fas fa-arrow-right"></i> Pump.fun & DexTools
+              <i class="fas fa-arrow-right"></i> Enter a Contest
             </div>
           </a>
-          
-          <!-- Epoch Rewards -->
-          <a href="epoch-rewards.html" class="related-card rewards-card" data-aos="fade-up">
-            <div class="related-icon"><i class="fas fa-gift"></i></div>
-            <h3>Epoch Rewards</h3>
-            <p>Claim Distribution</p>
+
+          <a href="journey.html" class="related-card journey-card" data-aos="fade-up">
+            <div class="related-icon"><i class="fas fa-film"></i></div>
+            <h3>The Journey</h3>
+            <p>AI-Animated Collectibles</p>
             <div class="related-arrow">
-              <i class="fas fa-arrow-right"></i> Weekly $REBL Rewards
+              <i class="fas fa-arrow-right"></i> Explore Collectibles
             </div>
           </a>
-          
-          <!-- Whitepaper -->
+
           <a href="whitepaper.html" class="related-card whitepaper-card" data-aos="fade-left">
             <div class="related-icon"><i class="fas fa-file-alt"></i></div>
-            <h3>Whitepaper</h3>
+            <h3>Whitepaper v3.0</h3>
             <p>Deep Technical Dive</p>
             <div class="related-arrow">
-              <i class="fas fa-arrow-right"></i> Economic Details
+              <i class="fas fa-arrow-right"></i> Read Whitepaper
             </div>
           </a>
         </div>
       </div>
     </section>
   </main>
-  
-  <!-- Footer will be inserted here by JavaScript -->
+
+  <!-- Footer -->
   <div id="footer-container"></div>
-  
-  <!-- JavaScript Includes -->
+
+  <!-- JavaScript -->
   <script src="js/includes.js"></script>
   <script src="js/common.js"></script>
   <script src="js/tokenomics.js"></script>
-  
-  <!-- AOS Animation -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  
+
   <script>
-    // Initialize AOS
-    document.addEventListener('DOMContentLoaded', function() {
-      AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-      });
-      
-      // Smooth scrolling for internal links
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({ duration: 800, once: true, offset: 100 });
+
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          
           const targetId = this.getAttribute('href');
           if (targetId === '#') return;
-          
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
-            });
+            e.preventDefault();
+            window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
           }
         });
       });
     });
   </script>
-  
-  <!-- Analytics -->
+
   <script src="js/analytics.js" defer></script>
 </body>
 </html>
