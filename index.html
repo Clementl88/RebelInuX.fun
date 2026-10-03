@@ -4,13 +4,13 @@
   <!-- Meta tags for SEO and social sharing -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="description" content="RebelInuX | AI Art • History • SocialFi. Participate in contests. Preserve history. Earn $REBL on Solana. AI-animated historical Journey Collectibles. Whitepaper v3.0." />
   <meta name="keywords" content="RebelInuX, AI-Animated Historical Collectibles, Journey Collectibles, SocialFi, ZORA, Base chain, Solana, $REBL, $rebelinux, Creator Coin, Content Coins, AI art, historical collectibles, French Revolution, participation rewards, contests, tokenization" />
-<meta name="theme-color" content="#0a0a0f">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <!-- Title -->
+
   <title>RebelInuX | AI Art • History • SocialFi</title>
 
   <!-- Open Graph -->
@@ -49,406 +49,6 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/header-footer.css">
   <link rel="stylesheet" href="css/index.css">
-
-  <style>
-    /* Additional homepage-specific styles (v3.0) */
-    .warning-note {
-      background: rgba(255, 193, 7, 0.1);
-      border-left: 3px solid #ffc107;
-      padding: 0.75rem;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      margin-top: 0.75rem;
-    }
-    .reward-range {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 1rem 0;
-      flex-wrap: wrap;
-    }
-    .reward-range span {
-      font-size: 0.75rem;
-      background: rgba(212, 167, 106, 0.15);
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-    }
-    .participation-grid {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 1rem 0;
-      flex-wrap: wrap;
-    }
-    .participation-item {
-      text-align: center;
-      background: rgba(212, 167, 106, 0.1);
-      border: 1px solid rgba(212, 167, 106, 0.3);
-      border-radius: 12px;
-      padding: 0.8rem 1.5rem;
-    }
-    .participation-item .value {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--rebel-gold);
-    }
-    .participation-item .label {
-      font-size: 0.7rem;
-      color: rgba(255, 255, 255, 0.7);
-    }
-    .whats-new-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #e3b87c, #c99e5c);
-      color: #0a0a0f;
-      padding: 0.2rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.6rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.5rem;
-    }
-    .journey-story-card {
-      background: linear-gradient(135deg, rgba(227, 184, 124, 0.15), rgba(255, 193, 7, 0.08));
-      border-radius: 20px;
-      padding: 1.5rem;
-      border: 1px solid rgba(227, 184, 124, 0.4);
-    }
-    .historical-badge {
-      display: inline-block;
-      background: rgba(212, 167, 106, 0.2);
-      border-radius: 20px;
-      padding: 0.25rem 0.75rem;
-      font-size: 0.7rem;
-      margin-bottom: 0.75rem;
-      color: var(--rebel-gold);
-    }
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      margin: 1.5rem 0;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .social-icon {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.8rem;
-      transition: all 0.3s ease;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: white;
-    }
-    .social-icon i { font-size: 1rem; }
-    .social-icon:hover { transform: translateY(-3px); }
-    .social-icon.zora:hover { background: linear-gradient(135deg, #e3b87c, #c99e5c); color: #0a0a0f; border-color: transparent; }
-    .social-icon.tiktok:hover { background: #000000; border-color: #00f2ea; color: #00f2ea; }
-    .social-icon.instagram:hover { background: linear-gradient(45deg, #f09433, #d62976, #962fbf); border-color: transparent; }
-    .social-icon.youtube:hover { background: #ff0000; border-color: #ff0000; }
-    .social-icon.twitter:hover { background: #1da1f2; border-color: #1da1f2; }
-    .feature-tags {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-    .feature-tag {
-      background: rgba(227, 184, 124, 0.2);
-      padding: 0.4rem 1rem;
-      border-radius: 30px;
-      font-size: 0.75rem;
-    }
-    .stat-card .stat-title {
-      font-size: 0.7rem;
-      line-height: 1.3;
-      word-break: break-word;
-    }
-    .stat-card .stat-value { font-size: 1.3rem; }
-    .stat-card .stat-description { font-size: 0.65rem; line-height: 1.3; }
-    .register-link {
-      display: inline-block;
-      background: var(--rebel-gold);
-      color: #1a1a2e !important;
-      padding: 0.75rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 800;
-      text-decoration: none;
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 15px rgba(212, 167, 106, 0.4);
-      transition: all 0.3s ease;
-    }
-    .register-link i { margin-right: 0.3rem; }
-    .register-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(212, 167, 106, 0.5);
-      background: #f0ca8a;
-    }
-    .contract-emphasis {
-      background: #FFEDD2;
-      border-radius: 1.2rem;
-      padding: 1.2rem;
-      margin-top: 1rem;
-      border: 1px solid #2e7d32;
-      text-align: center;
-    }
-    .contract-code {
-      background: #050508;
-      padding: 0.8rem;
-      border-radius: 0.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin: 0.8rem 0;
-    }
-    .copy-contract-btn {
-      background: var(--rebel-gold);
-      border: none;
-      padding: 0.4rem 1rem;
-      border-radius: 2rem;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .value-card, .comparison-card, .step-card, .token-card, .stat-card {
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-
-    /* 2 Assets Display */
-    .two-asset-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-    .asset-card {
-      background: rgba(255,255,255,0.04);
-      border-radius: 16px;
-      padding: 1.2rem;
-      border: 1px solid rgba(212, 167, 106, 0.2);
-      text-align: center;
-      transition: 0.3s;
-    }
-    .asset-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--rebel-gold);
-    }
-    .asset-card .asset-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-    .asset-card .asset-badge {
-      display: inline-block;
-      padding: 0.15rem 0.6rem;
-      border-radius: 20px;
-      font-size: 0.55rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.3rem;
-    }
-    .asset-card h4 { font-size: 1rem; margin: 0.3rem 0; color: white; }
-    .asset-card p { font-size: 0.75rem; color: rgba(255,255,255,0.7); line-height: 1.3; }
-    .asset-card .asset-sub {
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.4);
-      margin-top: 0.2rem;
-    }
-    .asset-card.reward-card {
-      background: linear-gradient(135deg, rgba(212,167,106,0.2), rgba(212,167,106,0.05));
-      border: 2px solid var(--rebel-gold);
-    }
-    .asset-badge.asset-1 { background: rgba(227,184,124,0.2); color: #e3b87c; border-color: #e3b87c; }
-    .asset-badge.asset-2 { background: rgba(139,92,246,0.2); color: #8b5cf6; border-color: #8b5cf6; }
-    .asset-badge.asset-3 { background: rgba(251,191,36,0.2); color: #fbbf24; border-color: #fbbf24; }
-
-    .three-asset-formula {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      margin: 0.75rem 0;
-      padding: 0.5rem 1rem;
-      background: rgba(212,167,106,0.08);
-      border-radius: 12px;
-      border: 1px solid rgba(212,167,106,0.15);
-      flex-wrap: wrap;
-      font-size: 0.8rem;
-    }
-    .three-asset-formula .asset-badge {
-      padding: 0.15rem 0.5rem;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.7rem;
-    }
-    .three-asset-formula .arrow {
-      color: var(--rebel-gold);
-      font-size: 1rem;
-      font-weight: 700;
-    }
-    .three-asset-formula .result {
-      background: var(--rebel-gold);
-      padding: 0.15rem 0.6rem;
-      border-radius: 10px;
-      font-weight: 700;
-      color: #0a0a0f;
-      font-size: 0.8rem;
-    }
-
-    .asset-legend {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 0.75rem 0;
-      flex-wrap: wrap;
-    }
-    .asset-legend-item {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.7rem;
-      color: rgba(255,255,255,0.6);
-    }
-    .asset-legend-item .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-    .dot-1 { background: #e3b87c; }
-    .dot-2 { background: #8b5cf6; }
-    .dot-3 { background: #fbbf24; }
-
-    @media (max-width: 768px) {
-      .chain-platform { padding: 1rem !important; }
-      .token-card, .nft-card { padding: 0.8rem !important; }
-      .token-header { flex-direction: column !important; align-items: center !important; text-align: center; }
-      .token-details .detail-item { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
-      .token-actions { flex-direction: column; }
-      .action-btn { width: 100%; justify-content: center; }
-      .ecosystem-flow { flex-direction: column; }
-      .bridge-animation { width: 100%; text-align: center; margin: 1rem 0; }
-      .stats-grid { justify-content: center; }
-      .hero-title { font-size: 28px; }
-      .social-links { justify-content: center; }
-      .two-asset-grid { grid-template-columns: 1fr; }
-      .three-asset-formula { font-size: 0.65rem; padding: 0.3rem 0.6rem; }
-      .asset-legend { gap: 0.75rem; font-size: 0.6rem; }
-    }
-
-    .quick-stats-bar {
-      background: rgba(10,10,15,0.8);
-      backdrop-filter: blur(8px);
-      border-radius: 28px;
-      border: 1px solid rgba(227,184,124,0.3);
-      padding: 1rem;
-      overflow-x: auto;
-    }
-    .stat-item {
-      background: rgba(0,0,0,0.4);
-      border-radius: 20px;
-      padding: 0.5rem 1rem;
-      transition: 0.2s;
-    }
-    .stat-item:hover {
-      background: rgba(227,184,124,0.15);
-      transform: translateY(-2px);
-    }
-    .participation-section {
-      background: rgba(212, 167, 106, 0.08);
-      border-radius: 16px;
-      padding: 1.5rem;
-      border: 1px solid rgba(212, 167, 106, 0.2);
-      margin: 1.5rem 0;
-    }
-    .participation-section h4 { color: var(--rebel-gold); margin-bottom: 0.5rem; }
-    .participation-section .participation-note {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.7);
-      margin-top: 0.5rem;
-    }
-    .whitepaper-link-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(212, 167, 106, 0.15);
-      border: 1px solid var(--rebel-gold);
-      border-radius: 50px;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.7rem;
-      color: var(--rebel-gold);
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .whitepaper-link-badge:hover {
-      background: rgba(212, 167, 106, 0.25);
-      transform: translateY(-2px);
-    }
-    .whitepaper-link-badge i { font-size: 0.8rem; }
-    .whitepaper-link-gold {
-      color: var(--rebel-gold);
-      text-decoration: none;
-      font-size: 0.75rem;
-      border: 1px solid var(--rebel-gold);
-      padding: 0.15rem 0.6rem;
-      border-radius: 12px;
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-    .whitepaper-link-gold:hover {
-      background: var(--rebel-gold);
-      color: #0a0a0f;
-    }
-
-    /* Journey Timeline */
-    .journey-timeline {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-      padding: 0.3rem 0.8rem;
-      background: rgba(255,255,255,0.03);
-      border-radius: 50px;
-      margin: 0.3rem 0;
-    }
-    .timeline-year {
-      font-size: 0.55rem;
-      padding: 0.15rem 0.4rem;
-      border-radius: 10px;
-      font-weight: 600;
-    }
-    .timeline-year.active { background: rgba(212,167,106,0.2); color: var(--rebel-gold); }
-    .timeline-year.inactive { color: rgba(255,255,255,0.3); }
-    .timeline-arrow { color: rgba(255,255,255,0.2); font-size: 0.5rem; }
-
-    /* Journey Card Badges */
-    .journey-collectible-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.2rem;
-      background: rgba(139,92,246,0.12);
-      border: 1px solid rgba(139,92,246,0.2);
-      border-radius: 20px;
-      padding: 0.15rem 0.5rem;
-      font-size: 0.55rem;
-      color: #8b5cf6;
-    }
-
-    /* Section headers */
-    .section-header h2 .highlight-gold { color: var(--rebel-gold); }
-    .subtitle-3assets {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.5);
-      margin-top: 0.2rem;
-      font-weight: 400;
-    }
-    .subtitle-3assets strong { color: var(--rebel-gold); font-weight: 600; }
-  </style>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -507,30 +107,30 @@
               <span class="title-line"><span class="highlight">Historical Journey</span> Collectibles</span>
             </h1>
 
-            <!-- Subtitle: Participation Model -->
-            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="250" style="font-size: 1.1rem; margin-top: 0.3rem;">
+            <!-- Subtitle -->
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="250">
               <span class="gradient-text">Participate</span>
-              <span style="color: rgba(255,255,255,0.3);">→</span>
+              <span class="arrow-sep">→</span>
               <span class="gradient-text">Preserve History</span>
-              <span style="color: rgba(255,255,255,0.3);">→</span>
+              <span class="arrow-sep">→</span>
               <span class="gradient-text">Earn $REBL</span>
             </p>
 
-            <p class="hero-description" data-aos="fade-up" data-aos-delay="300" style="font-size: 0.95rem;">
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
               We transform <strong>real historical paintings</strong> into <strong>living AI-animated video collectibles</strong>.
               Our mascot travels through time, witnessing pivotal moments in human history.
               <strong>The community decides what comes next.</strong>
             </p>
 
             <!-- Current Journey Highlight -->
-            <div style="background: rgba(212,167,106,0.1); border-radius: 14px; padding: 0.8rem 1.2rem; margin: 0.8rem 0; border: 1px solid rgba(212,167,106,0.2);" data-aos="fade-up" data-aos-delay="330">
-              <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                <span style="background: #D4A76A; color: #0a0a0f; padding: 0.1rem 0.5rem; border-radius: 10px; font-weight: 700; font-size: 0.65rem;">🇫🇷 CURRENT</span>
-                <span style="font-weight: 600; font-size: 0.9rem;">RebelInuX at the <strong>1789 French Revolution</strong></span>
-                <a href="journey.html" style="color: var(--rebel-gold); font-size: 0.75rem; text-decoration: none; margin-left: auto;">
-                  <i class="fas fa-arrow-right"></i> View all chapters
-                </a>
+            <div class="current-journey-box" data-aos="fade-up" data-aos-delay="330">
+              <div class="current-journey-row">
+                <span class="current-tag">🇫🇷 CURRENT</span>
+                <span class="current-title">RebelInuX at the <strong>1789 French Revolution</strong></span>
               </div>
+              <a href="journey.html" class="current-link">
+                <i class="fas fa-arrow-right"></i> View all chapters
+              </a>
               <div class="journey-timeline">
                 <span class="timeline-year active">1779</span>
                 <span class="timeline-arrow">→</span>
@@ -539,11 +139,9 @@
                 <span class="timeline-year active">1789</span>
                 <span class="timeline-arrow">→</span>
                 <span class="timeline-year inactive">Next</span>
-                <span style="font-size: 0.5rem; color: var(--rebel-gold); margin-left: 0.3rem;">
-                  <i class="fas fa-vote-yea"></i> You decide
-                </span>
+                <span class="vote-hint"><i class="fas fa-vote-yea"></i> You decide</span>
               </div>
-              <div style="display: flex; gap: 0.4rem; margin-top: 0.3rem; flex-wrap: wrap;">
+              <div class="journey-badges">
                 <span class="journey-collectible-badge">✅ 8 Collectibles Live</span>
                 <span class="journey-collectible-badge">🎬 Chapters I–V</span>
               </div>
@@ -553,15 +151,15 @@
             <div class="asset-legend" data-aos="fade-up" data-aos-delay="350">
               <span class="asset-legend-item">
                 <span class="dot dot-1"></span>
-                <strong>$rebelinux</strong> <span style="color: rgba(255,255,255,0.3);">·</span> Creator Coin
+                <strong>$rebelinux</strong> <span class="dot-sep">·</span> Creator Coin
               </span>
               <span class="asset-legend-item">
                 <span class="dot dot-2"></span>
-                <strong>Journey Collectibles</strong> <span style="color: rgba(255,255,255,0.3);">·</span> Content Coins
+                <strong>Journey Collectibles</strong> <span class="dot-sep">·</span> Content Coins
               </span>
               <span class="asset-legend-item">
                 <span class="dot dot-3"></span>
-                <strong>$REBL</strong> <span style="color: rgba(255,255,255,0.3);">·</span> Reward Token
+                <strong>$REBL</strong> <span class="dot-sep">·</span> Reward Token
               </span>
             </div>
 
@@ -599,7 +197,7 @@
               <span class="result">Earn $REBL</span>
             </div>
 
-            <p class="hero-sub-description" data-aos="fade-up" data-aos-delay="500" style="font-size: 0.8rem;">
+            <p class="hero-sub-description" data-aos="fade-up" data-aos-delay="500">
               <strong>50% of ZORA revenue</strong> buys back and burns $REBL, <strong>20% funds AI production</strong>,
               <strong>15% replenishes the reserve</strong>, <strong>15% covers operations</strong>.
               <strong>Participation rewards:</strong> Contest winners earn $REBL + volume bonuses.
@@ -643,11 +241,11 @@
               <span>🎨 AI-Animated Historical Journey Collectibles</span>
             </div>
 
-            <!-- Participation Model Section -->
+            <!-- Participation Model -->
             <div class="participation-section" data-aos="fade-up" data-aos-delay="700">
               <span class="whats-new-badge">🆕 WHITEPAPER v3.0</span>
               <h4>🏆 It Rewards Participation, Not Holding</h4>
-              <p style="font-size: 0.85rem; line-height: 1.6;">
+              <p class="participation-intro">
                 Create thumbnails. Select scenes. Tokenize animated paintings. Vote on contests.
                 The community decides and earns $REBL.
               </p>
@@ -668,7 +266,7 @@
               <p class="participation-note">
                 Contests are free to enter. No purchase required to participate. Winners earn $REBL.
               </p>
-              <div style="margin-top: 0.75rem; text-align: center;">
+              <div class="participation-cta">
                 <a href="contests.html" class="whitepaper-link-gold">
                   <i class="fas fa-trophy"></i> See all contest mechanics
                 </a>
@@ -737,8 +335,13 @@
                 </div>
 
                 <div class="bridge-animation" aria-hidden="true">
+                  <div class="bridge-line"></div>
+                  <div class="bridge-content">
+                    <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                    <span>Cross-Chain</span>
+                    <small>Rewards</small>
+                  </div>
                   <div class="bridge-tokens">
-                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     <div class="moving-coin"></div>
                   </div>
                 </div>
@@ -779,72 +382,70 @@
           <div class="stat-item red-stat"><div class="stat-number">1B</div><div class="stat-title">$REBL Supply</div></div>
           <div class="stat-item yellow-stat"><div class="stat-number">170M</div><div class="stat-title">ZORA Rewards Treasury</div></div>
           <div class="stat-item yellow-stat"><div class="stat-number">500K</div><div class="stat-title">$REBL Governance Entry</div></div>
-          <div class="stat-item yellow-stat"><div class="stat-number">50%</div><div class="stat-title">Buy-Back & Burn</div></div>
+          <div class="stat-item yellow-stat"><div class="stat-number">50%</div><div class="stat-title">Buy-Back &amp; Burn</div></div>
         </div>
       </div>
     </section>
 
     <!-- ========== JOURNEY STORY SECTION ========== -->
-    <section id="journey-story" class="value-proposition" aria-label="Journey Story" data-aos="fade-up" style="background: linear-gradient(135deg, #2d1b4e, #1a1a3e);">
+    <section id="journey-story" class="value-proposition journey-story-section" aria-label="Journey Story" data-aos="fade-up">
       <div class="container">
         <div class="section-header" data-aos="fade-up" data-aos-delay="100">
-          <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
-            <span class="whats-new-badge" style="background: rgba(212,167,106,0.2); color: var(--rebel-gold);">🏛️ THE JOURNEY</span>
+          <div class="journey-badge-wrap">
+            <span class="whats-new-badge dark-badge">🏛️ THE JOURNEY</span>
           </div>
           <h1><i class="fas fa-film" aria-hidden="true"></i> RebelInuX Journey Collectibles</h1>
-          <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Time-Traveling Art • AI Animation • Collective History</p>
-          <p class="subtitle-3assets" style="color: rgba(255,255,255,0.4); font-size: 0.85rem;">
-            Participate in <strong style="color: var(--rebel-gold);">contests</strong> → Earn <strong style="color: var(--rebel-gold);">$REBL</strong> on Solana
+          <p class="section-subtitle light-subtitle">Time-Traveling Art • AI Animation • Collective History</p>
+          <p class="subtitle-3assets">
+            Participate in <strong>contests</strong> → Earn <strong>$REBL</strong> on Solana
           </p>
         </div>
 
         <div class="journey-story-card" data-aos="fade-up" data-aos-delay="200">
           <div class="historical-badge">🇫🇷 CURRENT JOURNEY: 1789 French Revolution</div>
-          <h3 style="color: var(--rebel-gold); margin-bottom: 1rem;">Our Mascot Travels Through Time</h3>
-          <p style="line-height: 1.6; margin-bottom: 1rem;">
+          <h3>Our Mascot Travels Through Time</h3>
+          <p>
             The RebelInuX mascot travels through history, painting scenes as they unfold. We use
             <strong>real historical paintings</strong> and <strong>animate them with AI</strong>,
             transforming static art into living video collectibles.
           </p>
-          <p style="line-height: 1.6; margin-bottom: 1rem;">
+          <p>
             Currently witnessing the <strong>1789 French Revolution</strong> — a defining moment of rebellion and change.
             But this is just the beginning. Future journeys will explore historical events from all countries and cultures.
           </p>
-          <p style="line-height: 1.6;">
+          <p>
             <strong>This is a collective work.</strong> You decide our next destinations, which historical moments to capture,
             which scenes are important, and what elements to add, including what our mascot wears in each era.
             Participate in the <strong>Governance Hub</strong> to shape history.
           </p>
 
           <!-- Featured Chapters -->
-          <div style="margin: 1.5rem 0; background: rgba(255,255,255,0.03); border-radius: 16px; padding: 1rem; border: 1px solid rgba(212,167,106,0.15);">
-            <h4 style="color: var(--rebel-gold); margin-bottom: 0.75rem; font-size: 0.9rem;">
-              <i class="fas fa-list"></i> Featured Chapters
-            </h4>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.6rem;">
-              <div style="background: rgba(255,255,255,0.03); border-radius: 10px; padding: 0.6rem; border-left: 3px solid #e3b87c;">
-                <div style="font-weight: 700; font-size: 0.75rem;">REBL-J1A</div>
-                <div style="font-size: 0.65rem; color: rgba(255,255,255,0.6);">Twilight of the Ancien Régime</div>
-                <div style="font-size: 0.55rem; color: rgba(255,255,255,0.3);">1779</div>
+          <div class="featured-chapters">
+            <h4><i class="fas fa-list"></i> Featured Chapters</h4>
+            <div class="chapters-grid">
+              <div class="chapter-item chapter-1">
+                <div class="chapter-code">REBL-J1A</div>
+                <div class="chapter-title">Twilight of the Ancien Régime</div>
+                <div class="chapter-year">1779</div>
               </div>
-              <div style="background: rgba(255,255,255,0.03); border-radius: 10px; padding: 0.6rem; border-left: 3px solid #8b5cf6;">
-                <div style="font-weight: 700; font-size: 0.75rem;">REBL-J1B</div>
-                <div style="font-size: 0.65rem; color: rgba(255,255,255,0.6);">Winter of Discontent</div>
-                <div style="font-size: 0.55rem; color: rgba(255,255,255,0.3);">1780–1788</div>
+              <div class="chapter-item chapter-2">
+                <div class="chapter-code">REBL-J1B</div>
+                <div class="chapter-title">Winter of Discontent</div>
+                <div class="chapter-year">1780–1788</div>
               </div>
-              <div style="background: rgba(255,255,255,0.03); border-radius: 10px; padding: 0.6rem; border-left: 3px solid #fbbf24;">
-                <div style="font-weight: 700; font-size: 0.75rem;">REBL-J1C</div>
-                <div style="font-size: 0.65rem; color: rgba(255,255,255,0.6);">The Oath</div>
-                <div style="font-size: 0.55rem; color: rgba(255,255,255,0.3);">1789</div>
+              <div class="chapter-item chapter-3">
+                <div class="chapter-code">REBL-J1C</div>
+                <div class="chapter-title">The Oath</div>
+                <div class="chapter-year">1789</div>
               </div>
-              <div style="background: rgba(255,255,255,0.03); border-radius: 10px; padding: 0.6rem; border-left: 3px solid #d1aa77ab;">
-                <div style="font-weight: 700; font-size: 0.75rem;">REBL-J1D</div>
-                <div style="font-size: 0.65rem; color: rgba(255,255,255,0.6);">The Fall</div>
-                <div style="font-size: 0.55rem; color: rgba(255,255,255,0.3);">July 1789</div>
+              <div class="chapter-item chapter-4">
+                <div class="chapter-code">REBL-J1D</div>
+                <div class="chapter-title">The Fall</div>
+                <div class="chapter-year">July 1789</div>
               </div>
             </div>
-            <div style="text-align: center; margin-top: 0.8rem;">
-              <a href="journey.html" style="color: var(--rebel-gold); font-size: 0.75rem; text-decoration: none;">
+            <div class="chapters-cta">
+              <a href="journey.html" class="chapters-link">
                 <i class="fas fa-arrow-right"></i> View all 8 chapters
               </a>
             </div>
@@ -852,12 +453,12 @@
 
           <!-- Social Media Links -->
           <div class="social-links">
-            <span style="font-weight: 600; margin-right: 5px; font-size: 0.8rem;">📱 Follow the Journey:</span>
-            <a href="https://zora.co/@rebelinux" target="_blank" class="social-icon zora"><i class="fas fa-store"></i> ZORA</a>
-            <a href="https://tiktok.com/@rebelinux" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
-            <a href="https://instagram.com/rebelinux_rebl/" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://youtube.com/@RebelInuX_REBL" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i> YouTube</a>
-            <a href="https://twitter.com/RebelInuX" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i> Twitter/X</a>
+            <span class="social-links-label">📱 Follow the Journey:</span>
+            <a href="https://zora.co/@rebelinux" target="_blank" rel="noopener noreferrer" class="social-icon zora"><i class="fas fa-store"></i> ZORA</a>
+            <a href="https://tiktok.com/@rebelinux" target="_blank" rel="noopener noreferrer" class="social-icon tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="https://instagram.com/rebelinux_rebl/" target="_blank" rel="noopener noreferrer" class="social-icon instagram"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://youtube.com/@RebelInuX_REBL" target="_blank" rel="noopener noreferrer" class="social-icon youtube"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="https://twitter.com/RebelInuX" target="_blank" rel="noopener noreferrer" class="social-icon twitter"><i class="fab fa-twitter"></i> Twitter/X</a>
           </div>
 
           <!-- Feature Tags -->
@@ -901,7 +502,7 @@
                 <li><i class="fas fa-check"></i> Free to enter</li>
                 <li><i class="fas fa-check"></i> Volume bonuses up to $111</li>
               </ul>
-              <a href="contests.html" class="whitepaper-link-gold" style="margin-top: 0.5rem; display: inline-block;">
+              <a href="contests.html" class="whitepaper-link-gold inline-link">
                 <i class="fas fa-arrow-right"></i> Contest mechanics
               </a>
             </div>
@@ -916,7 +517,7 @@
                 <li><i class="fas fa-check"></i> 1 member = 1 vote</li>
                 <li><i class="fas fa-check"></i> Token-gated Telegram</li>
               </ul>
-              <a href="governance.html" class="whitepaper-link-gold" style="margin-top: 0.5rem; display: inline-block;">
+              <a href="governance.html" class="whitepaper-link-gold inline-link">
                 <i class="fas fa-arrow-right"></i> Governance details
               </a>
             </div>
@@ -930,15 +531,17 @@
       <div class="container">
         <div class="section-header" data-aos="fade-up" data-aos-delay="100">
           <h2><i class="fas fa-sitemap" aria-hidden="true"></i> The <span class="highlight-gold">Participation</span> Ecosystem</h2>
-          <p class="section-subtitle">Contests → Content Coins → Trading Fees → Buy-Back & Burn</p>
+          <p class="section-subtitle">Contests → Content Coins → Trading Fees → Buy-Back &amp; Burn</p>
         </div>
 
         <!-- Governance Hub CTA -->
-        <div style="background: rgba(227,184,124,0.1); border-left: 5px solid #e3b87c; border-radius: 1rem; padding: 1rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;" data-aos="fade-up" data-aos-delay="150">
-          <div>
-            <i class="fas fa-vote-yea" style="font-size: 1.5rem; color: #e3b87c;"></i>
-            <strong>Join the REBL Governance Hub (500K $REBL)</strong><br>
-            <span style="color: #ccc;">Pre-select contest finalists. Vote on treasury. Shape history.</span>
+        <div class="governance-cta" data-aos="fade-up" data-aos-delay="150">
+          <div class="governance-cta-text">
+            <i class="fas fa-vote-yea" aria-hidden="true"></i>
+            <div>
+              <strong>Join the REBL Governance Hub (500K $REBL)</strong>
+              <span>Pre-select contest finalists. Vote on treasury. Shape history.</span>
+            </div>
           </div>
           <a href="governance.html" class="register-link"><i class="fas fa-vote-yea"></i> Join the Hub →</a>
         </div>
@@ -982,7 +585,7 @@
                 </div>
               </div>
 
-              <div class="nft-card journey-card-new" role="article" data-aos="fade-up" data-aos-delay="500" style="border-color: #8b5cf6; margin-top: 1rem;">
+              <div class="nft-card journey-card-new" role="article" data-aos="fade-up" data-aos-delay="500" style="border-color: #8b5cf6;">
                 <div class="nft-header">
                   <div class="nft-icon" aria-hidden="true"><i class="fas fa-film"></i></div>
                   <div class="nft-info">
@@ -998,16 +601,20 @@
                     <br><small>Next destination decided by community vote.</small>
                   </div>
                 </div>
-                <div class="token-actions" style="margin-top: 1rem;">
+                <div class="token-actions spaced-top">
                   <a href="journey.html" class="action-btn outline" aria-label="View Journey Collectibles"><i class="fas fa-arrow-right" aria-hidden="true"></i><span>View all collectibles</span></a>
                 </div>
               </div>
             </div>
 
             <!-- Bridge Animation -->
-            <div class="bridge-animation" aria-hidden="true" data-aos="fade-up" data-aos-delay="600">
+            <div class="bridge-animation ecosystem-bridge" aria-hidden="true" data-aos="fade-up" data-aos-delay="600">
               <div class="bridge-line"></div>
-              <div class="bridge-content"><i class="fas fa-exchange-alt" aria-hidden="true"></i><span>Cross-Chain Rewards</span></div>
+              <div class="bridge-content">
+                <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                <span>Cross-Chain</span>
+                <small>Rewards</small>
+              </div>
               <div class="bridge-particles">
                 <div class="particle" style="left: 20%; --tx: -10px; animation-delay: 0s;"></div>
                 <div class="particle" style="left: 50%; --tx: 10px; animation-delay: 0.5s;"></div>
@@ -1037,7 +644,7 @@
                 <div class="token-details">
                   <div class="detail-item"><div class="detail-icon" aria-hidden="true"><i class="fas fa-trophy"></i></div><div class="detail-text"><div class="detail-label">Rewards</div><div class="detail-value highlight">Contest Prizes + Volume Bonuses</div><div class="detail-note">Base reward + cumulative milestones</div></div></div>
                   <div class="detail-item"><div class="detail-icon" aria-hidden="true"><i class="fas fa-vote-yea"></i></div><div class="detail-text"><div class="detail-label">Governance</div><div class="detail-value">500K $REBL Threshold</div><div class="detail-value">1 member = 1 vote</div></div></div>
-                  <div class="detail-item"><div class="detail-icon" aria-hidden="true"><i class="fas fa-fire"></i></div><div class="detail-text"><div class="detail-label">Value Acceleration</div><div class="detail-value">50% buy-back & burn · 20% AI</div><div class="detail-value">15% reserve · 15% ops</div></div></div>
+                  <div class="detail-item"><div class="detail-icon" aria-hidden="true"><i class="fas fa-fire"></i></div><div class="detail-text"><div class="detail-label">Value Acceleration</div><div class="detail-value">50% buy-back &amp; burn · 20% AI</div><div class="detail-value">15% reserve · 15% ops</div></div></div>
                 </div>
                 <div class="token-achievement rebl-achievement"><i class="fas fa-crown" aria-hidden="true"></i><span>Governance token for the RebelInuX SocialFi Ecosystem</span></div>
                 <div class="contract-address">
@@ -1070,7 +677,7 @@
               <div class="process-step" role="article">
                 <div class="step-number" aria-hidden="true">1</div>
                 <div class="step-content">
-                  <h5>Watch & Discover</h5>
+                  <h5>Watch &amp; Discover</h5>
                   <p>Follow the Rebel Journey on TikTok, YouTube, Instagram, and Facebook. Discover the scenes that will be selected for tokenization.</p>
                 </div>
               </div>
@@ -1080,7 +687,7 @@
                 <div class="step-content">
                   <h5>Enter a Contest</h5>
                   <p>Design a thumbnail, propose a painting to tokenize, or suggest the next Journey theme. Contests are free to enter.</p>
-                  <div style="margin-top: 0.6rem;">
+                  <div class="step-content-cta">
                     <a href="contests.html" class="register-link"><i class="fas fa-trophy"></i> Contest Rules →</a>
                   </div>
                 </div>
@@ -1129,7 +736,7 @@
               <div class="stat-description">Any country, any era</div>
             </div>
             <div class="stat-card" role="article" data-aos="fade-up" data-aos-delay="300">
-              <div class="stat-header"><div class="stat-icon" aria-hidden="true"><i class="fas fa-palette"></i></div><div class="stat-title">Scenes & Elements</div></div>
+              <div class="stat-header"><div class="stat-icon" aria-hidden="true"><i class="fas fa-palette"></i></div><div class="stat-title">Scenes &amp; Elements</div></div>
               <div class="stat-value">Collective</div>
               <div class="stat-unit">Work</div>
               <div class="stat-description">Submit key moments</div>
@@ -1148,7 +755,10 @@
             </div>
           </div>
           <div class="stats-action" data-aos="fade-up" data-aos-delay="600">
-            <a href="governance.html" class="cta-button primary" aria-label="Join Governance Hub"><i class="fas fa-vote-yea" aria-hidden="true"></i><span>Join $REBL Governance Hub (500K $REBL) and Shape History</span></a>
+            <a href="governance.html" class="cta-button primary" aria-label="Join Governance Hub">
+              <i class="fas fa-vote-yea" aria-hidden="true"></i>
+              <span>Join $REBL Governance Hub (500K $REBL) and Shape History</span>
+            </a>
           </div>
         </div>
       </div>
@@ -1170,7 +780,7 @@
               <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Hold collectibles with artistic and historical value</span></li>
               <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Multi-chain (ZORA on Base → Solana)</span></li>
               <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Community-decided historical journeys</span></li>
-              <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>50% of ZORA revenue → Buy-Back & Burn</span></li>
+              <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>50% of ZORA revenue → Buy-Back &amp; Burn</span></li>
               <li class="feature-item"><i class="fas fa-check-circle" aria-hidden="true"></i> <span>Not an investment. No funds used.</span></li>
             </ul>
             <div class="comparison-cta"><a href="#how-it-works" class="cta-button primary" aria-label="Get started"><i class="fas fa-play" aria-hidden="true"></i><span>Start Participating</span></a></div>
@@ -1185,16 +795,16 @@
               <li class="feature-item negative"><i class="fas fa-times-circle" aria-hidden="true"></i> <span>No buy-back and burn mechanism</span></li>
               <li class="feature-item negative"><i class="fas fa-times-circle" aria-hidden="true"></i> <span>Uses your funds</span></li>
             </ul>
-            <div class="comparison-cta"><a href="education.html" class="cta-button primary" aria-label="Learn more"><i class="fas fa-info-circle" aria-hidden="true"></i><span>Learn More</span></a></div>
+            <div class="comparison-cta"><a href="education.html" class="cta-button secondary-dark" aria-label="Learn more"><i class="fas fa-info-circle" aria-hidden="true"></i><span>Learn More</span></a></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ========== OFFICIAL CONTRACT ========== -->
-    <section aria-label="Official contract" data-aos="fade-up" style="padding: 2rem 0;">
+    <section class="official-contract-section" aria-label="Official contract" data-aos="fade-up">
       <div class="container">
-        <div class="contract-emphasis" style="max-width: 700px; margin: 0 auto;">
+        <div class="contract-emphasis">
           <div class="contract-header">
             <i class="fas fa-fingerprint" aria-hidden="true"></i>
             <h4>Official $REBL Token</h4>
@@ -1225,9 +835,11 @@
           <div class="step-card" role="article" data-aos="fade-up" data-aos-delay="300">
             <div class="step-number" aria-hidden="true">1</div>
             <div class="step-icon" aria-hidden="true"><i class="fas fa-film"></i></div>
-            <h3>Watch & Discover</h3>
+            <h3>Watch &amp; Discover</h3>
             <p>Follow the Rebel Journey on TikTok, YouTube, Instagram, and Facebook. All videos are free to watch.</p>
-            <a href="journey.html" class="cta-button primary"><i class="fas fa-film"></i><span>Explore the Journey</span></a>
+            <a href="journey.html" class="step-btn step-btn-primary">
+              <i class="fas fa-film"></i><span>Explore the Journey</span>
+            </a>
           </div>
 
           <div class="step-card" role="article" data-aos="fade-up" data-aos-delay="400">
@@ -1235,7 +847,9 @@
             <div class="step-icon" aria-hidden="true"><i class="fas fa-trophy"></i></div>
             <h3>Enter a Contest</h3>
             <p>Design a thumbnail, propose a painting to tokenize, or suggest the next Journey theme.</p>
-            <a href="contests.html" class="cta-button gold-glow"><i class="fas fa-trophy"></i><span>Contest Rules</span></a>
+            <a href="contests.html" class="step-btn step-btn-gold">
+              <i class="fas fa-trophy"></i><span>Contest Rules</span>
+            </a>
           </div>
 
           <div class="step-card" role="article" data-aos="fade-up" data-aos-delay="500">
@@ -1243,7 +857,17 @@
             <div class="step-icon" aria-hidden="true"><i class="fas fa-coins"></i></div>
             <h3>Earn $REBL</h3>
             <p>Winners earn $REBL, plus cumulative volume bonuses if their tokenized scene trades.</p>
-            <a href="tokenomics.html" class="cta-button secondary"><i class="fas fa-sitemap"></i><span>Tokenomics</span></a>
+            <a href="tokenomics.html" class="step-btn step-btn-dark">
+              <i class="fas fa-sitemap"></i><span>Tokenomics</span>
+            </a>
+            <div class="step-btn-row">
+              <a href="contests.html" class="step-btn-mini">
+                <i class="fas fa-trophy"></i><span>Contest mechanics</span>
+              </a>
+              <a href="governance.html" class="step-btn-mini">
+                <i class="fas fa-vote-yea"></i><span>Governance details</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -1261,7 +885,7 @@
               <div class="feature"><i class="fas fa-film"></i><span>AI-Animated Historical Collectibles</span></div>
               <div class="feature"><i class="fas fa-trophy"></i><span>3 Contest Types</span></div>
               <div class="feature"><i class="fas fa-vote-yea"></i><span>Community Governance</span></div>
-              <div class="feature"><i class="fas fa-fire"></i><span>50% Buy-Back & Burn</span></div>
+              <div class="feature"><i class="fas fa-fire"></i><span>50% Buy-Back &amp; Burn</span></div>
             </div>
 
             <div class="cta-buttons">
@@ -1278,8 +902,8 @@
 
           <div class="cta-visual" data-aos="fade-up" data-aos-delay="300">
             <div class="visual-container">
-              <div style="position: relative; display: inline-block; width: 350px; height: 350px;">
-                <img src="images/rebelinux_logo/$rebelinux SVG (4).svg" alt="RebelInuX Logo" class="cta-logo" style="width: 100%; height: 100%; object-fit: contain;">
+              <div class="cta-logo-wrap">
+                <img src="images/rebelinux_logo/$rebelinux SVG (4).svg" alt="RebelInuX Logo" class="cta-logo">
                 <div class="pulse-effect" aria-hidden="true"></div>
               </div>
               <div class="token-flow" aria-hidden="true">
@@ -1305,40 +929,58 @@
   <!-- AOS Animation -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 800, once: true, offset: 100, disable: window.innerWidth < 768 ? 'mobile' : false });
-    window.addEventListener('resize', function() { AOS.refresh(); });
+    AOS.init({
+      duration: 700,
+      once: true,
+      offset: 80,
+      disable: window.innerWidth < 600 ? 'mobile' : false
+    });
+    window.addEventListener('resize', function () { AOS.refresh(); });
 
-    function copyToClipboard(text) {
-      navigator.clipboard.writeText(text).then(() => alert('Contract address copied!')).catch(() => prompt('Copy manually:', text));
-    }
+    // ---- Global fallbacks (used by inline onclick attributes) ----
+    window.copyToClipboard = window.copyToClipboard || function (text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(
+          () => window.showNotification && window.showNotification('✅ Contract address copied!', 'success'),
+          () => prompt('Copy manually:', text)
+        );
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        window.showNotification && window.showNotification('✅ Contract address copied!', 'success');
+      }
+    };
 
-    function toggleContractView(btn) {
-      const code = btn.closest('.contract-address').querySelector('code');
-      const full = code.getAttribute('data-full');
+    window.toggleContractView = window.toggleContractView || function (btn) {
+      const wrap = btn.closest('.contract-address');
+      const code = wrap ? wrap.querySelector('code') : null;
+      if (!code) return;
+      const full = code.getAttribute('data-full') || code.textContent;
+      const icon = btn.querySelector('i');
       if (code.classList.contains('expanded')) {
-        code.textContent = full.substring(0, 8) + '...' + full.substring(full.length - 6);
+        code.textContent = full.slice(0, 8) + '…' + full.slice(-6);
         code.classList.remove('expanded');
-        btn.querySelector('i').className = 'fas fa-expand-alt';
+        if (icon) icon.className = 'fas fa-expand-alt';
       } else {
         code.textContent = full;
         code.classList.add('expanded');
-        btn.querySelector('i').className = 'fas fa-compress-alt';
+        if (icon) icon.className = 'fas fa-compress-alt';
       }
-    }
+    };
 
-    function addToWallet(address) { alert('Add token to wallet: ' + address); }
-    function copyContractAddress() { copyToClipboard('F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump'); }
+    window.addToWallet = window.addToWallet || function (address) {
+      if (window.RebelInuX && window.RebelInuX.addToWallet) {
+        return window.RebelInuX.addToWallet(address);
+      }
+      alert('Add token to wallet: ' + address);
+    };
 
-    const loader = document.getElementById('loader');
-    if (loader) {
-      setTimeout(() => { loader.classList.add('loaded'); setTimeout(() => { loader.style.display = 'none'; }, 500); }, 2000);
-    }
-
-    const backBtn = document.getElementById('backToTop');
-    if (backBtn) {
-      window.addEventListener('scroll', () => { backBtn.classList.toggle('visible', window.scrollY > 400); });
-      backBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-    }
+    window.copyContractAddress = window.copyContractAddress || function () {
+      window.copyToClipboard('F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump');
+    };
   </script>
   <script src="js/analytics.js" defer></script>
 </body>
