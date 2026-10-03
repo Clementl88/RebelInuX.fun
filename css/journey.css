@@ -818,34 +818,16 @@
 
 .cta-badges i { color: #22c55e; }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 768px) {
-  .journey-hero { padding: 4rem 0 2rem; }
-  .hero-journey-stats { gap: 1.25rem; }
-  .hero-stat .stat-num { font-size: 1.2rem; }
-  .collectibles-grid { grid-template-columns: 1fr; }
-  .teaser-card { flex-direction: column; padding: 1.75rem; }
-  .teaser-actions { flex-direction: column; }
-  .teaser-actions .cta-button { width: 100%; justify-content: center; }
-  .journey-cta-card { padding: 2rem 1.25rem; }
-  .cta-actions { flex-direction: column; }
-  .cta-actions .cta-button { width: 100%; justify-content: center; }
-  .cta-badges { flex-direction: column; gap: 0.5rem; }
-  .timeline { padding-left: 1.5rem; }
-  .collectible-actions { flex-direction: column; }
-  .action-btn { width: 100%; }
-}
-
 /* ---------- Filter hide/show ---------- */
 .collectible-card.hidden { display: none; }
 
 /* ============================================================
-   v3.0 — Tokenomics-style shared components
+   v3.0 — SHARED COMPONENTS (Tokenomics-style)
    ============================================================ */
 
 /* ========== KEY TAKEAWAYS ========== */
 .key-takeaways {
-  margin: var(--spacing-2xl, 48px) 0;
+  margin: 3rem 0;
 }
 
 .takeaways-container {
@@ -914,23 +896,23 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
-.takeaway-purple { border-left-color: var(--rebel-purple, #9C27B0) !important; }
+.takeaway-purple { border-left-color: #9C27B0 !important; }
 .takeaway-red { border-left-color: var(--rebel-red) !important; }
 .takeaway-gold { border-left-color: var(--rebel-gold) !important; }
-.takeaway-blue { border-left-color: var(--rebel-blue, #1976D2) !important; }
-.takeaway-green { border-left-color: var(--rebel-green, #2E7D32) !important; }
+.takeaway-blue { border-left-color: #1976D2 !important; }
+.takeaway-green { border-left-color: #2E7D32 !important; }
 
-.takeaway-purple .takeaway-icon { color: var(--rebel-purple, #9C27B0) !important; }
+.takeaway-purple .takeaway-icon { color: #9C27B0 !important; }
 .takeaway-red .takeaway-icon { color: var(--rebel-red) !important; }
 .takeaway-gold .takeaway-icon { color: var(--rebel-gold) !important; }
-.takeaway-blue .takeaway-icon { color: var(--rebel-blue, #1976D2) !important; }
-.takeaway-green .takeaway-icon { color: var(--rebel-green, #2E7D32) !important; }
+.takeaway-blue .takeaway-icon { color: #1976D2 !important; }
+.takeaway-green .takeaway-icon { color: #2E7D32 !important; }
 
-.takeaway-purple .takeaway-title { color: var(--rebel-purple, #9C27B0) !important; }
+.takeaway-purple .takeaway-title { color: #9C27B0 !important; }
 .takeaway-red .takeaway-title { color: var(--rebel-red) !important; }
 .takeaway-gold .takeaway-title { color: var(--rebel-gold) !important; }
-.takeaway-blue .takeaway-title { color: var(--rebel-blue, #1976D2) !important; }
-.takeaway-green .takeaway-title { color: var(--rebel-green, #2E7D32) !important; }
+.takeaway-blue .takeaway-title { color: #1976D2 !important; }
+.takeaway-green .takeaway-title { color: #2E7D32 !important; }
 
 .takeaway-icon {
   font-size: 1.5rem;
@@ -992,7 +974,7 @@
 }
 
 .stat-card {
-  background: var(--card-bg, rgba(0, 0, 0, 0.4));
+  background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(212, 167, 106, 0.2);
   border-radius: 16px;
   padding: 1.5rem;
@@ -1051,8 +1033,35 @@
   transition: width 1s ease;
 }
 
-/* ========== RESPONSIVE ========== */
+/* ============================================================
+   RESPONSIVE — merged
+   ============================================================ */
 @media (max-width: 768px) {
+  /* Hero */
+  .journey-hero { padding: 4rem 0 2rem; }
+  .hero-journey-stats { gap: 1.25rem; }
+  .hero-stat .stat-num { font-size: 1.2rem; }
+
+  /* Collectibles */
+  .collectibles-grid { grid-template-columns: 1fr; }
+  .collectible-actions { flex-direction: column; }
+  .action-btn { width: 100%; }
+
+  /* Contest teaser */
+  .teaser-card { flex-direction: column; padding: 1.75rem; }
+  .teaser-actions { flex-direction: column; }
+  .teaser-actions .cta-button { width: 100%; justify-content: center; }
+
+  /* Final CTA */
+  .journey-cta-card { padding: 2rem 1.25rem; }
+  .cta-actions { flex-direction: column; }
+  .cta-actions .cta-button { width: 100%; justify-content: center; }
+  .cta-badges { flex-direction: column; gap: 0.5rem; }
+
+  /* Timeline */
+  .timeline { padding-left: 1.5rem; }
+
+  /* v3.0 shared components */
   .takeaways-grid,
   .stats-overview {
     grid-template-columns: 1fr !important;
