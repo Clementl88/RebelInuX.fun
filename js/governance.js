@@ -1,32 +1,15 @@
-// governance.js - Governance Portal page functionality
+// governance.js — Governance Portal page functionality (v3.0)
 
-// Initialize after common components are loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   setTimeout(initGovernancePage, 300);
 });
 
 function initGovernancePage() {
-  console.log('Initializing Governance Portal page');
-  
-  // Initialize mobile dropdown
-  initializeMobileDropdown();
-  
-  // Initialize governance data
-  initGovernanceData();
-  
-  // Initialize animations
-  initScrollAnimations();
-  
-  // Initialize AOS animations
+  console.log('Initializing Governance Portal page (v3.0)');
+
   initAOS();
-  
-  // Initialize accordion functionality
   initAccordion();
-  
-  // Initialize stats animation
   initStatsAnimation();
-  
-  // Initialize governance hub verification reminder
   initGovernanceHubReminder();
 }
 
@@ -38,102 +21,100 @@ function initAOS() {
       once: true,
       offset: 100,
     });
-    
-    // Refresh AOS on window resize
-    window.addEventListener('resize', function() {
+
+    window.addEventListener('resize', function () {
       AOS.refresh();
     });
   }
 }
 
-// ========== MOBILE DROPDOWN FUNCTIONALITY ==========
-function initializeMobileDropdown() {
-  const dropbtn = document.querySelector('.dropbtn');
-  const navDesktop = document.getElementById('nav-desktop');
-  
-  if (!dropbtn) return;
-  
-  // Mobile dropdown toggle
-  dropbtn.addEventListener('click', function(e) {
-    // Only handle on mobile
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      const dropdownContent = this.nextElementSibling;
-      const isActive = dropdownContent.style.display === 'block' || 
-                      dropdownContent.classList.contains('active');
-      
-      // Toggle this dropdown
-      if (!isActive) {
-        dropdownContent.style.display = 'block';
-        dropdownContent.classList.add('active');
-        this.classList.add('active');
-      } else {
-        dropdownContent.style.display = 'none';
-        dropdownContent.classList.remove('active');
-        this.classList.remove('active');
-      }
-    }
+// ========== STATS ANIMATION ==========
+function initStatsAnimation() {
+  document.querySelectorAll('.stat-number').forEach((stat, index) => {
+    stat.style.opacity = '0';
+    stat.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+      stat.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      stat.style.opacity = '1';
+      stat.style.transform = 'translateY(0)';
+    }, 100 + (index * 100));
   });
 }
 
-// ========== GOVERNANCE DATA FUNCTIONS ==========
-function initGovernanceData() {
-  console.log('Initializing governance data');
-  
-  // Fetch and update governance stats
-  updateGovernanceStats();
-  
-  // Start periodic updates
-  setInterval(updateGovernanceStats, 60000); // Update every minute
-}
+// ========== FAQ ACCORDION ==========
+function initAccordion() {
+  const accordionItems = document.querySelectorAll('.faq-item');
 
-async function updateGovernanceStats() {
-  try {
-    // Current date: February 6, 2026
-    const currentDate = new Date('2026-02-06');
-    const daoLaunchDate = new Date('2026-07-01'); // Q3 2026
-    
-    // Calculate days until DAO launch
-    const timeDiff = daoLaunchDate.getTime() - currentDate.getTime();
-    const daysUntilLaunch = Math.ceil(timeDiff / (1000 * 3600 * 24));
-    
-    // Update stats display
-    const statsContainer = document.querySelector('.governance-stats');
-    if (statsContainer) {
-      const statItems = statsContainer.querySelectorAll('.stat-item');
-      
-      // Update participant stat to show "Growing"
-      const participantStat = statItems[2];
-      if (participantStat) {
-        const numberElement = participantStat.querySelector('.stat-number');
-        if (numberElement) {
-          // Animate between "6+" and "Growing"
-          if (numberElement.textContent === '6') {
-            numberElement.textContent = 'Growing';
-            numberElement.style.color = '#4CAF50'; // Green for growth
-          } else if (numberElement.textContent === 'Growing') {
-            numberElement.textContent = '6+';
-            numberElement.style.color = 'var(--rebel-gold)';
-          } else {
-            numberElement.textContent = 'Growing';
-            numberElement.style.color = '#4CAF50';
+  accordionItems.forEach((item) => {
+    const header = item.querySelector('.faq-header');
+    const content = item.querySelector('.faq-content');
+    const chevron = item.querySelector('.faq-chevron');
+
+    if (!header || !content) return;
+
+    header.style.cursor = 'pointer';
+
+    header.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+
+      // Close all other items
+      document.querySelectorAll('.faq-item').forEach((otherItem) => {
+        if (otherItem !== item && otherItem.classList.contains('active')) {
+          otherItem.classList.remove('active');
+          const otherContent = otherItem.querySelector('.faq-content');
+          const otherChevron = otherItem.querySelector('.faq-chevron');
+          if (otherContent) {
+            otherContent.style.maxHeight = '0';
+            otherContent.style.opacity = '0';
+            otherContent.style.paddingTop = '0';
+          }
+          if (otherChevron) {
+            otherChevron.style.transform = 'rotate(0deg)';
           }
         }
+      });
+
+      if (!isActive) {
+        item.classList.add('active');
+        content.style.maxHeight = '500px';
+        content.style.opacity = '1';
+        content.style.paddingTop = 'var(--spacing-md)';
+        if (chevron) chevron.style.transform = 'rotate(180deg)';
+      } else {
+        item.classList.remove('active');
+        content.style.maxHeight = '0';
+        content.style.opacity = '0';
+        content.style.paddingTop = '0';
+        if (chevron) chevron.style.transform = 'rotate(0deg)';
       }
+    });
+
+    // Initialize as closed
+    content.style.maxHeight = '0';
+    content.style.opacity = '0';
+    content.style.paddingTop = '0';
+    content.style.overflow = 'hidden';
+    content.style.transition = 'all 0.5s ease';
+
+    if (chevron) {
+      chevron.style.transition = 'transform 0.3s ease';
+      chevron.style.transform = 'rotate(0deg)';
     }
-    
-    // Update last updated time
-    updateLastUpdated();
-    
-  } catch (error) {
-    console.error('Error updating governance stats:', error);
-  }
+  });
+
+  // Auto-expand first FAQ item
+  setTimeout(() => {
+    const firstFaqItem = document.querySelector('.faq-item');
+    if (firstFaqItem) {
+      const firstHeader = firstFaqItem.querySelector('.faq-header');
+      if (firstHeader) firstHeader.click();
+    }
+  }, 1000);
 }
 
+// ========== GOVERNANCE HUB REMINDER ==========
 function initGovernanceHubReminder() {
-  // Show reminder about governance hub access
   const reminderBtn = document.createElement('button');
   reminderBtn.className = 'cta-button';
   reminderBtn.style.cssText = `
@@ -145,37 +126,37 @@ function initGovernanceHubReminder() {
     padding: 12px 20px;
     border-radius: 30px;
     box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
-    animation: pulse 2s infinite;
     font-size: 0.9rem;
     display: flex;
     align-items: center;
     gap: 8px;
   `;
-  
+
   reminderBtn.innerHTML = `
     <i class="fab fa-telegram"></i>
     <span>Join Governance Hub</span>
   `;
-  
-  reminderBtn.addEventListener('click', function() {
-    window.location.hash = '#rebl-governance-hub';
-    showToast('Scroll to Governance Hub section', 'info');
+
+  reminderBtn.addEventListener('click', function () {
+    const target = document.getElementById('governance-hub');
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
   });
-  
-  // Add to body after a delay
+
   setTimeout(() => {
-    if (document.querySelector('#rebl-governance-hub')) {
+    if (document.getElementById('governance-hub')) {
       document.body.appendChild(reminderBtn);
-      
-      // Remove after 30 seconds
+
       setTimeout(() => {
         if (reminderBtn.parentNode) {
           reminderBtn.style.transition = 'opacity 0.5s ease';
           reminderBtn.style.opacity = '0';
           setTimeout(() => {
-            if (reminderBtn.parentNode) {
-              reminderBtn.parentNode.removeChild(reminderBtn);
-            }
+            if (reminderBtn.parentNode) reminderBtn.parentNode.removeChild(reminderBtn);
           }, 500);
         }
       }, 30000);
@@ -183,343 +164,5 @@ function initGovernanceHubReminder() {
   }, 3000);
 }
 
-function initStatsAnimation() {
-  // Animate stat numbers
-  document.querySelectorAll('.stat-number').forEach((stat, index) => {
-    const originalValue = stat.textContent;
-    stat.style.opacity = '0';
-    stat.style.transform = 'translateY(20px)';
-    
-    setTimeout(() => {
-      stat.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      stat.style.opacity = '1';
-      stat.style.transform = 'translateY(0)';
-    }, 100 + (index * 100));
-  });
-}
-
-function updateLastUpdated() {
-  const now = new Date('2026-02-06'); // February 6, 2026
-  now.setHours(now.getHours() + Math.floor(Math.random() * 24)); // Add random hour
-  now.setMinutes(now.getMinutes() + Math.floor(Math.random() * 60)); // Add random minute
-  
-  const timeString = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-  const dateString = now.toLocaleDateString('en-US', { 
-    weekday: 'long', 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  });
-  
-  // Create or update timestamp element
-  let timestampElement = document.querySelector('.update-time');
-  if (!timestampElement) {
-    timestampElement = document.createElement('div');
-    timestampElement.className = 'update-time';
-    timestampElement.style.cssText = `
-      text-align: center;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.7);
-      margin-top: var(--spacing-md);
-      padding: var(--spacing-sm);
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: var(--border-radius);
-      border: 1px solid rgba(255, 204, 0, 0.2);
-    `;
-    const statsContainer = document.querySelector('.governance-stats');
-    if (statsContainer) {
-      statsContainer.parentNode.insertBefore(timestampElement, statsContainer.nextSibling);
-    }
-  }
-  
-  timestampElement.textContent = `Last Updated: ${dateString} at ${timeString}`;
-  timestampElement.innerHTML += `<br><small>DAO Launch: Q3 2026 • Governance Hub: ACTIVE NOW</small>`;
-}
-
-function calculateDaysUntilLaunch() {
-  const currentDate = new Date('2026-02-06');
-  const daoLaunchDate = new Date('2026-07-01');
-  const timeDiff = daoLaunchDate.getTime() - currentDate.getTime();
-  return Math.ceil(timeDiff / (1000 * 3600 * 24));
-}
-
-// ========== FIXED ACCORDION FUNCTIONALITY ==========
-function initAccordion() {
-  const accordionItems = document.querySelectorAll('.faq-item');
-  
-  accordionItems.forEach((item, index) => {
-    const header = item.querySelector('.faq-header');
-    const content = item.querySelector('.faq-content');
-    const chevron = item.querySelector('.faq-chevron');
-    
-    if (header && content) {
-      header.style.cursor = 'pointer';
-      
-      header.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-        
-        // Close all other items except this one
-        document.querySelectorAll('.faq-item').forEach(otherItem => {
-          if (otherItem !== item && otherItem.classList.contains('active')) {
-            otherItem.classList.remove('active');
-            const otherContent = otherItem.querySelector('.faq-content');
-            const otherChevron = otherItem.querySelector('.faq-chevron');
-            if (otherContent) {
-              otherContent.style.maxHeight = '0';
-              otherContent.style.opacity = '0';
-              otherContent.style.paddingTop = '0';
-            }
-            if (otherChevron) {
-              otherChevron.style.transform = 'rotate(0deg)';
-            }
-          }
-        });
-        
-        if (!isActive) {
-          // Open this item
-          item.classList.add('active');
-          content.style.maxHeight = '500px';
-          content.style.opacity = '1';
-          content.style.paddingTop = 'var(--spacing-md)';
-          if (chevron) {
-            chevron.style.transform = 'rotate(180deg)';
-          }
-          
-          // Smooth scroll to ensure the expanded content is visible
-          setTimeout(() => {
-            const itemTop = item.getBoundingClientRect().top + window.pageYOffset;
-            const headerHeight = document.querySelector('header')?.offsetHeight || 100;
-            
-            if (itemTop < window.pageYOffset + headerHeight + 50) {
-              window.scrollTo({
-                top: itemTop - headerHeight - 20,
-                behavior: 'smooth'
-              });
-            }
-          }, 100);
-        } else {
-          // Close this item
-          item.classList.remove('active');
-          content.style.maxHeight = '0';
-          content.style.opacity = '0';
-          content.style.paddingTop = '0';
-          if (chevron) {
-            chevron.style.transform = 'rotate(0deg)';
-          }
-        }
-      });
-      
-      // Initialize as closed (except first one)
-      content.style.maxHeight = '0';
-      content.style.opacity = '0';
-      content.style.paddingTop = '0';
-      content.style.overflow = 'hidden';
-      content.style.transition = 'all 0.5s ease';
-      
-      // Initialize chevron
-      if (chevron) {
-        chevron.style.transition = 'transform 0.3s ease';
-        chevron.style.transform = 'rotate(0deg)';
-      }
-    }
-  });
-  
-  // Auto-expand first FAQ item on page load for better UX
-  setTimeout(() => {
-    const firstFaqItem = document.querySelector('.faq-item');
-    if (firstFaqItem) {
-      const firstHeader = firstFaqItem.querySelector('.faq-header');
-      if (firstHeader) {
-        firstHeader.click();
-      }
-    }
-  }, 1000);
-}
-
-// ========== ANIMATION FUNCTIONS ==========
-function initScrollAnimations() {
-  const animatedElements = document.querySelectorAll(
-    '.principle-item, .process-step, .related-card, .faq-item, .content-card'
-  );
-  
-  // Use Intersection Observer for better performance
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    });
-    
-    animatedElements.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(el);
-    });
-  } else {
-    // Fallback for older browsers
-    window.addEventListener('scroll', animateElements);
-    animateElements(); // Initial check
-  }
-}
-
-function animateElements() {
-  const animatedElements = document.querySelectorAll(
-    '.principle-item, .process-step, .related-card, .faq-item, .content-card'
-  );
-  
-  animatedElements.forEach((el, index) => {
-    const rect = el.getBoundingClientRect();
-    const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 0;
-    
-    if (isVisible) {
-      setTimeout(() => {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-      }, index * 50);
-    }
-  });
-}
-
-// ========== TOAST NOTIFICATION ==========
-function showToast(message, type = 'info', duration = 3000) {
-  // Remove existing toasts
-  const existingToast = document.querySelector('.toast-notification');
-  if (existingToast) existingToast.remove();
-  
-  // Create toast
-  const toast = document.createElement('div');
-  toast.className = `toast-notification toast-${type}`;
-  toast.innerHTML = `
-    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-triangle' : 'info-circle'}"></i>
-    <span>${message}</span>
-  `;
-  
-  // Style toast
-  toast.style.cssText = `
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
-    color: white;
-    padding: 12px 24px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
-    z-index: 9999;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    animation: slideUp 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 90%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  `;
-  
-  document.body.appendChild(toast);
-  
-  // Add animation styles if not already present
-  if (!document.querySelector('#toast-styles')) {
-    const style = document.createElement('style');
-    style.id = 'toast-styles';
-    style.textContent = `
-      @keyframes slideUp {
-        from {
-          transform: translateX(-50%) translateY(100px);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(-50%) translateY(0);
-          opacity: 1;
-        }
-      }
-      
-      @keyframes slideDown {
-        from {
-          transform: translateX(-50%) translateY(0);
-          opacity: 1;
-        }
-        to {
-          transform: translateX(-50%) translateY(100px);
-          opacity: 0;
-        }
-      }
-      
-      @keyframes pulse {
-        0% {
-          box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
-        }
-        50% {
-          box-shadow: 0 4px 20px rgba(0, 136, 204, 0.6);
-        }
-        100% {
-          box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
-        }
-      }
-    `;
-    document.head.appendChild(style);
-  }
-  
-  // Remove toast after duration
-  setTimeout(() => {
-    toast.style.animation = 'slideDown 0.3s ease';
-    setTimeout(() => {
-      if (toast.parentNode) {
-        toast.parentNode.removeChild(toast);
-      }
-    }, 300);
-  }, duration);
-}
-
-// ========== GLOBAL EXPORTS ==========
-window.initializeMobileDropdown = initializeMobileDropdown;
-window.showToast = showToast;
-
-// Add touch-active class styles and FAQ improvements
-document.addEventListener('DOMContentLoaded', function() {
-  const style = document.createElement('style');
-  style.textContent = `
-    .touch-active {
-      opacity: 0.7 !important;
-      transform: scale(0.98) !important;
-      transition: all 0.1s ease !important;
-    }
-    
-    /* FAQ improvements - these supplement the main CSS */
-    .faq-question-text {
-      flex: 1;
-      text-align: left;
-    }
-    
-    /* Print styles for FAQ */
-    @media print {
-      .faq-item {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-      
-      .faq-content {
-        max-height: none !important;
-        opacity: 1 !important;
-        padding: 10px 0 !important;
-        display: block !important;
-      }
-      
-      .faq-chevron {
-        display: none !important;
-      }
-    }
-  `;
-  document.head.appendChild(style);
-});
+// ========== EXPORTS ==========
+window.initGovernancePage = initGovernancePage;
