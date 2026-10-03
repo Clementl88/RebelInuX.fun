@@ -799,3 +799,228 @@
   .cta-actions .cta-button { width: 100%; justify-content: center; }
   .cta-badges { flex-direction: column; gap: 0.5rem; }
 }
+/* ============================================================
+   v3.0 — Tokenomics-style shared components
+   ============================================================ */
+
+/* ========== KEY TAKEAWAYS ========== */
+.key-takeaways {
+  margin: var(--spacing-2xl, 48px) 0;
+}
+
+.takeaways-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.takeaways-box {
+  background: linear-gradient(135deg,
+    rgba(156, 39, 176, 0.15),
+    rgba(0, 170, 255, 0.15));
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 2px solid var(--rebel-gold);
+  backdrop-filter: blur(10px);
+}
+
+.takeaways-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.takeaways-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--rebel-red);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.takeaways-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--rebel-gold);
+  margin: 0;
+}
+
+.takeaways-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 0;
+}
+
+.takeaway-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.takeaway-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.takeaway-purple { border-left-color: #9C27B0 !important; }
+.takeaway-red { border-left-color: var(--rebel-red) !important; }
+.takeaway-gold { border-left-color: var(--rebel-gold) !important; }
+.takeaway-blue { border-left-color: #1976D2 !important; }
+.takeaway-green { border-left-color: #2E7D32 !important; }
+
+.takeaway-purple .takeaway-icon { color: #9C27B0 !important; }
+.takeaway-red .takeaway-icon { color: var(--rebel-red) !important; }
+.takeaway-gold .takeaway-icon { color: var(--rebel-gold) !important; }
+.takeaway-blue .takeaway-icon { color: #1976D2 !important; }
+.takeaway-green .takeaway-icon { color: #2E7D32 !important; }
+
+.takeaway-purple .takeaway-title { color: #9C27B0 !important; }
+.takeaway-red .takeaway-title { color: var(--rebel-red) !important; }
+.takeaway-gold .takeaway-title { color: var(--rebel-gold) !important; }
+.takeaway-blue .takeaway-title { color: #1976D2 !important; }
+.takeaway-green .takeaway-title { color: #2E7D32 !important; }
+
+.takeaway-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.takeaway-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.takeaway-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.takeaway-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: white;
+  margin: 0.25rem 0;
+}
+
+.takeaway-sub {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.25rem;
+}
+
+.takeaways-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.takeaways-footer a {
+  color: var(--rebel-gold);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.takeaways-footer a:hover {
+  color: var(--rebel-red);
+  transform: translateY(-2px);
+}
+
+/* ========== STATS OVERVIEW ========== */
+.stats-overview {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: var(--card-bg, rgba(0, 0, 0, 0.4));
+  border: 1px solid rgba(212, 167, 106, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.stat-card:hover {
+  border-color: var(--rebel-gold);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+.stat-card .stat-icon {
+  font-size: 2.5rem;
+  color: var(--rebel-gold);
+  margin-bottom: 0.75rem;
+}
+
+.stat-card .stat-value {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 0.4rem;
+}
+
+.stat-card .stat-label {
+  color: var(--rebel-gold);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.stat-card .stat-note {
+  font-size: 0.8rem;
+  color: var(--rebel-gold);
+  margin-top: 0.5rem;
+}
+
+.stat-card .progress-container {
+  margin-top: 1rem;
+}
+
+.stat-card .progress-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--rebel-red), var(--rebel-gold));
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .takeaways-grid,
+  .stats-overview {
+    grid-template-columns: 1fr !important;
+  }
+
+  .takeaway-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}
