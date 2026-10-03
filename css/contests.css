@@ -784,28 +784,13 @@
   color: #22c55e;
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 768px) {
-  .contests-hero { padding: 4rem 0 2rem; }
-  .active-contest-card { padding: 1.25rem; }
-  .active-contest-title { font-size: 1.25rem; }
-  .active-contest-meta { grid-template-columns: 1fr; }
-  .active-contest-actions { flex-direction: column; }
-  .active-contest-actions .cta-button { width: 100%; justify-content: center; }
-  .flow-step { flex-direction: column; gap: 0.75rem; }
-  .enter-step { padding: 1.75rem 1.25rem; }
-  .contests-cta-card { padding: 2rem 1.25rem; }
-  .cta-actions { flex-direction: column; }
-  .cta-actions .cta-button { width: 100%; justify-content: center; }
-  .cta-badges { flex-direction: column; gap: 0.5rem; }
-}
 /* ============================================================
-   v3.0 — Tokenomics-style shared components
+   v3.0 — SHARED COMPONENTS (Tokenomics-style)
    ============================================================ */
 
 /* ========== KEY TAKEAWAYS ========== */
 .key-takeaways {
-  margin: var(--spacing-2xl, 48px) 0;
+  margin: 3rem 0;
 }
 
 .takeaways-container {
@@ -952,7 +937,7 @@
 }
 
 .stat-card {
-  background: var(--card-bg, rgba(0, 0, 0, 0.4));
+  background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(212, 167, 106, 0.2);
   border-radius: 16px;
   padding: 1.5rem;
@@ -1011,8 +996,33 @@
   transition: width 1s ease;
 }
 
-/* ========== RESPONSIVE ========== */
+/* ============================================================
+   RESPONSIVE — merged
+   ============================================================ */
 @media (max-width: 768px) {
+  /* Hero */
+  .contests-hero { padding: 4rem 0 2rem; }
+
+  /* Active contest */
+  .active-contest-card { padding: 1.25rem; }
+  .active-contest-title { font-size: 1.25rem; }
+  .active-contest-meta { grid-template-columns: 1fr; }
+  .active-contest-actions { flex-direction: column; }
+  .active-contest-actions .cta-button { width: 100%; justify-content: center; }
+
+  /* Flow */
+  .flow-step { flex-direction: column; gap: 0.75rem; }
+
+  /* Enter step */
+  .enter-step { padding: 1.75rem 1.25rem; }
+
+  /* Final CTA */
+  .contests-cta-card { padding: 2rem 1.25rem; }
+  .cta-actions { flex-direction: column; }
+  .cta-actions .cta-button { width: 100%; justify-content: center; }
+  .cta-badges { flex-direction: column; gap: 0.5rem; }
+
+  /* v3.0 shared components */
   .takeaways-grid,
   .stats-overview {
     grid-template-columns: 1fr !important;
