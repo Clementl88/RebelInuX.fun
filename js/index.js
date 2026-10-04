@@ -1,7 +1,7 @@
 /**
  * ============================================================
  * REBELINUX — PRO HOME PAGE JAVASCRIPT
- * v5.1 · Mobile-First · Video Modal
+ * v5.2 · Mobile-First · Video Modal + YouTube Thumbnails
  * ============================================================
  */
 
@@ -29,7 +29,7 @@
   // BOOT
   // ============================================================
   document.addEventListener('DOMContentLoaded', () => {
-    console.log('🚀 RebelInuX v5.1 — Initializing...');
+    console.log('🚀 RebelInuX v5.2 — Initializing...');
     setTimeout(() => {
       initIndexPage();
       initPerformanceMonitoring();
@@ -42,6 +42,7 @@
       initLoader,
       initAudienceCarousel,
       initVideoModal,
+      initYouTubeThumbnails,
       initScrollAnimations,
       initParallaxEffects,
       initContractAddresses,
@@ -161,7 +162,70 @@
   }
 
   // ============================================================
-  // VIDEO MODAL — inline YouTube playback
+  // YOUTUBE THUMBNAILS
+  // Injects the official YouTube thumbnail into each video trigger.
+  // Fallback chain: maxresdefault → sddefault → hqdefault → mqdefault
+  // ============================================================
+  function initYouTubeThumbnails() {
+    const triggers = document.querySelectorAll('[data-video-open][data-video-id]');
+    triggers.forEach(trigger => {
+      const videoId = trigger.getAttribute('data-video-id');
+      if (!videoId || videoId.startsWith('VIDEO_ID_')) return;
+
+      const thumbWrap =
+        trigger.querySelector('.video-thumb') ||
+        trigger.querySelector('.gallery-thumb');
+      if (!thumbWrap) return;
+      if (thumbWrap.querySelector('img.yt-thumb')) return;
+
+      const img = document.createElement('img');
+      img.className = 'yt-thumb';
+      img.alt = trigger.getAttribute('data-video-title') || 'Video thumbnail';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.referrerPolicy = 'no-referrer';
+
+      const qualities = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault'];
+      let qualityIndex = 0;
+
+      const tryNext = () => {
+        if (qualityIndex >= qualities.length) {
+          img.remove();
+          return;
+        }
+        const q = qualities[qualityIndex++];
+        img.src = `https://i.ytimg.com/vi/${videoId}/${q}.jpg`;
+      };
+
+      img.addEventListener('load', () => {
+        // YouTube returns a 120x90 placeholder for missing thumbs
+        if (img.naturalWidth <= 120 && qualityIndex < qualities.length) {
+          tryNext();
+          return;
+        }
+        img.classList.add('yt-thumb--loaded');
+        thumbWrap.classList.add('has-thumbnail');
+        // Set the blurred backdrop using the same thumbnail
+        thumbWrap.style.setProperty('--thumb-bg', `url("${img.src}")`);
+      });
+
+      img.addEventListener('error', tryNext);
+
+      const placeholder = thumbWrap.querySelector(
+        '.video-placeholder, .gallery-placeholder'
+      );
+      if (placeholder) {
+        thumbWrap.insertBefore(img, placeholder);
+      } else {
+        thumbWrap.insertBefore(img, thumbWrap.firstChild);
+      }
+
+      tryNext();
+    });
+  }
+
+  // ============================================================
+  // VIDEO MODAL
   // ============================================================
   let lastFocusedElement = null;
 
@@ -175,7 +239,6 @@
     const ytLink = document.getElementById('videoModalYT');
     const loading = document.getElementById('videoModalLoading');
 
-    // Open from any element with data-video-open
     document.querySelectorAll('[data-video-open]').forEach(trigger => {
       trigger.addEventListener('click', (e) => {
         e.preventDefault();
@@ -186,12 +249,10 @@
       });
     });
 
-    // Close
     modal.querySelectorAll('[data-close-modal]').forEach(el => {
       el.addEventListener('click', closeVideoModal);
     });
 
-    // Share
     const shareBtn = modal.querySelector('[data-share-video]');
     if (shareBtn) {
       shareBtn.addEventListener('click', () => {
@@ -211,7 +272,6 @@
       });
     }
 
-    // Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
         closeVideoModal();
@@ -263,7 +323,6 @@
       }
     }
 
-    // Expose
     window.RebelInuX = window.RebelInuX || {};
     window.RebelInuX.openVideoModal = openVideoModal;
     window.RebelInuX.closeVideoModal = closeVideoModal;
@@ -762,9 +821,9 @@
   window.addEventListener('load', () => {
     document.documentElement.classList.add('page-loaded');
     document.dispatchEvent(new CustomEvent('rebelinux:pageReady', {
-      detail: { timestamp: Date.now(), page: 'index', version: '5.1', viewport: getViewport() }
+      detail: { timestamp: Date.now(), page: 'index', version: '5.2', viewport: getViewport() }
     }));
-    console.log('✅ RebelInuX v5.1 ready');
+    console.log('✅ RebelInuX v5.2 ready');
   });
 
   window.addEventListener('error', (e) => {
@@ -782,7 +841,7 @@
     copyToClipboard, addToWallet, showNotification,
     toggleContractView, copyContractAddress, detectWallet,
     getViewport, isMobile, isTablet, isDesktop,
-    REBL_CONTRACT, REBELINUX_CONTRACT, version: '5.1'
+    REBL_CONTRACT, REBELINUX_CONTRACT, version: '5.2'
   });
 
   window.copyToClipboard     = copyToClipboard;
@@ -791,5 +850,5 @@
   window.copyContractAddress = copyContractAddress;
   window.showNotification    = showNotification;
 
-  console.log('🪙 RebelInuX JS v5.1 loaded');
+  console.log('🪙 RebelInuX JS v5.2 loaded');
 })();
