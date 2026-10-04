@@ -14,172 +14,63 @@
   <meta name="twitter:title" content="RebelInuX Whitepaper v3.0 Download">
   <meta name="twitter:description" content="Download the complete RebelInuX whitepaper v3.0 covering participation rewards, Journey Collectibles, and $REBL tokenomics.">
   <meta name="twitter:card" content="summary_large_image" />
-  
-  <!-- Mobile Meta Tags -->
+
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#1a1a1a">
   <meta name="mobile-web-app-capable" content="yes">
-  
-  <!-- Favicon -->
+
   <link rel="icon" href="images/Logo_REBL.svg" type="image/webp">
   <link rel="apple-touch-icon" href="images/Logo_REBL.svg">
   <title>Whitepaper v3.0 Download - RebelInuX</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- AOS Animation -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <!-- CSS Files -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/header-footer.css">
   <link rel="stylesheet" href="css/whitepaper.css">
-
-  <style>
-    /* NEW IN V3.0 Badge */
-    .badge-new {
-      display: inline-block;
-      background: #D74D4D;
-      color: #fff;
-      font-size: 0.6em;
-      font-weight: 700;
-      padding: 2px 10px;
-      border-radius: 20px;
-      margin-left: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      vertical-align: middle;
-      animation: pulse-badge 2s infinite;
-    }
-    
-    @keyframes pulse-badge {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
-    }
-    
-    .badge-new.gold {
-      background: #D4A76A;
-      color: #1a1a1a;
-    }
-
-    /* Comparison Table */
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      font-size: 0.9em;
-    }
-    
-    .comparison-table th {
-      background: #D4A76A;
-      color: #1a1a1a;
-      padding: 12px 16px;
-      text-align: left;
-      font-weight: 700;
-    }
-    
-    .comparison-table td {
-      padding: 12px 16px;
-      border-bottom: 1px solid rgba(212, 167, 106, 0.2);
-    }
-    
-    .comparison-table .old {
-      color: #999;
-      text-decoration: line-through;
-    }
-    
-    .comparison-table .new {
-      color: #D4A76A;
-      font-weight: 600;
-    }
-    
-    .comparison-table .check {
-      color: #2E7D32;
-    }
-    
-    .comparison-table .cross {
-      color: #D74D4D;
-    }
-
-    /* What's New Section */
-    .whats-new-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin: 20px 0;
-    }
-    
-    .whats-new-item {
-      background: rgba(212, 167, 106, 0.08);
-      border-left: 3px solid #D4A76A;
-      padding: 16px 20px;
-      border-radius: 0 8px 8px 0;
-    }
-    
-    .whats-new-item .old {
-      color: #999;
-      font-size: 0.85em;
-      text-decoration: line-through;
-    }
-    
-    .whats-new-item .new {
-      color: #D4A76A;
-      font-weight: 600;
-      font-size: 1em;
-    }
-    
-    .whats-new-item .arrow {
-      color: #D74D4D;
-      margin: 0 8px;
-    }
-
-    @media (max-width: 768px) {
-      .whats-new-grid {
-        grid-template-columns: 1fr;
-      }
-      .comparison-table {
-        font-size: 0.75em;
-      }
-      .comparison-table th,
-      .comparison-table td {
-        padding: 8px 10px;
-      }
-    }
-  </style>
 </head>
 <body>
   <!-- Loading Animation -->
   <div class="loader" id="loader">
     <div class="loader-spinner"></div>
   </div>
-  
+
   <!-- Back to Top Button -->
   <div class="back-to-top" id="backToTop">
     <i class="fas fa-arrow-up"></i>
   </div>
-  
-  <!-- Header will be inserted here by JavaScript -->
+
+  <!-- Header -->
   <div id="header-container"></div>
-  
+
   <main>
     <!-- Hero Section -->
     <section class="page-hero page-hero--whitepaper">
+      <div class="hero-background-pattern" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
       <div class="container">
         <div class="whitepaper-header" data-aos="fade-up">
-          <div class="document-badge">
+          <div class="document-badge" data-aos="fade-up">
             <i class="fas fa-file-contract"></i>
             <span>OFFICIAL DOCUMENT</span>
             <span class="badge-new">NEW v3.0</span>
           </div>
-          <h1>WHITEPAPER v3.0</h1>
-          <p class="text-lead" data-aos="fade-up" data-aos-delay="100">
+
+          <h1 data-aos="fade-up" data-aos-delay="100">
+            Whitepaper <em class="gold-serif">v3.0</em>
+          </h1>
+
+          <p class="text-lead" data-aos="fade-up" data-aos-delay="150">
             AI-Animated Historical Journey Collectibles | Participation-Based SocialFi Ecosystem | $REBL Tokenomics
           </p>
         </div>
@@ -195,10 +86,10 @@
           </div>
           <div>
             <h2>RebelInuX Whitepaper v3.0 <span class="badge-new gold">NEW</span></h2>
-            <p class="document-subtitle">Complete Documentation & Participation-Based SocialFi Economic Model</p>
+            <p class="document-subtitle">Complete Documentation &amp; Participation-Based SocialFi Economic Model</p>
           </div>
         </div>
-        
+
         <div class="download-info">
           <div class="info-grid">
             <div class="info-item">
@@ -233,131 +124,133 @@
         </div>
 
         <!-- WHAT'S NEW IN V3.0 -->
-        <div class="whats-new-section" style="background: rgba(212, 167, 106, 0.06); border-radius: 12px; padding: 24px; margin: 20px 0;">
-          <h3 style="color: #D4A76A; margin-bottom: 12px;"><i class="fas fa-star"></i> WHAT'S NEW IN V3.0</h3>
-          
+        <div class="whats-new-section" data-aos="fade-up">
+          <h3><i class="fas fa-star"></i> WHAT'S NEW IN V3.0</h3>
+
           <div class="whats-new-grid">
             <div class="whats-new-item">
               <span class="old">Epoch-based holding rewards</span>
               <span class="arrow">→</span>
               <span class="new">Participation-based rewards via contests</span>
-              <span class="badge-new" style="font-size: 0.5em; margin-left: 8px;">NEW</span>
+              <span class="badge-new badge-mini">NEW</span>
             </div>
-            
+
             <div class="whats-new-item">
               <span class="old">Triple-asset eligibility + FIFO anti-dump</span>
               <span class="arrow">→</span>
               <span class="new">Contests open to everyone</span>
-              <span class="badge-new" style="font-size: 0.5em; margin-left: 8px;">NEW</span>
+              <span class="badge-new badge-mini">NEW</span>
             </div>
-            
+
             <div class="whats-new-item">
               <span class="old">Age-weighted rewards (+7% per epoch)</span>
               <span class="arrow">→</span>
               <span class="new">Base reward + cumulative volume bonuses</span>
-              <span class="badge-new" style="font-size: 0.5em; margin-left: 8px;">NEW</span>
+              <span class="badge-new badge-mini">NEW</span>
             </div>
-            
+
             <div class="whats-new-item">
               <span class="old">Collector bonuses (+0.05x / +0.10x)</span>
               <span class="arrow">→</span>
               <span class="new">Contest winner rewards (thumbnail, tokenisation, journey)</span>
-              <span class="badge-new" style="font-size: 0.5em; margin-left: 8px;">NEW</span>
+              <span class="badge-new badge-mini">NEW</span>
             </div>
-            
+
             <div class="whats-new-item">
               <span class="old">Journey Contest with 60/40 hybrid scoring</span>
               <span class="arrow">→</span>
               <span class="new">Pre-selection by Governance Hub + community vote on X</span>
-              <span class="badge-new" style="font-size: 0.5em; margin-left: 8px;">NEW</span>
+              <span class="badge-new badge-mini">NEW</span>
             </div>
-            
+
             <div class="whats-new-item">
               <span class="old">Full-video collectibles only (pre-Ch V)</span>
               <span class="arrow">→</span>
               <span class="new">Per-scene collectibles from Chapter V: Liberty</span>
-              <span class="badge-new" style="font-size: 0.5em; margin-left: 8px;">NEW</span>
+              <span class="badge-new badge-mini">NEW</span>
             </div>
           </div>
         </div>
 
         <!-- COMPARISON TABLE -->
-        <div style="margin: 20px 0;">
-          <h3 style="color: #D4A76A; margin-bottom: 12px;"><i class="fas fa-exchange-alt"></i> Before vs. After</h3>
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th style="width: 30%;">Aspect</th>
-                <th style="width: 35%;">Before (v2.2)</th>
-                <th style="width: 35%;">After (v3.0)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Reward model</strong></td>
-                <td class="old">Holding / epoch-based</td>
-                <td class="new">Participation-based (contests)</td>
-              </tr>
-              <tr>
-                <td><strong>Eligibility</strong></td>
-                <td class="old">2-asset baseline + boosters</td>
-                <td class="new">Free to enter contests</td>
-              </tr>
-              <tr>
-                <td><strong>Reward trigger</strong></td>
-                <td class="old">Age-weighted epochs</td>
-                <td class="new">Contest wins + trading volume milestones</td>
-              </tr>
-              <tr>
-                <td><strong>Anti-dump</strong></td>
-                <td class="old">Epoch-End FIFO Age Depletion</td>
-                <td class="new">N/A (participation model)</td>
-              </tr>
-              <tr>
-                <td><strong>Fee split (ZORA revenue)</strong></td>
-                <td class="old">50 / 20 / 15 / 15</td>
-                <td class="new">50 / 20 / 15 / 15 (unchanged)</td>
-              </tr>
-              <tr>
-                <td><strong>Buy-backs</strong></td>
-                <td class="old">Governance-triggered</td>
-                <td class="new">Governance-triggered (unchanged)</td>
-              </tr>
-              <tr>
-                <td><strong>Contest winner reward</strong></td>
-                <td class="old">N/A</td>
-                <td class="new">Base reward + cumulative volume bonuses</td>
-              </tr>
-              <tr>
-                <td><strong>Partnerships</strong></td>
-                <td class="old">Founder-decided</td>
-                <td class="new">Governance Hub approval (unchanged)</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="comparison-section" data-aos="fade-up">
+          <h3><i class="fas fa-exchange-alt"></i> Before vs. After</h3>
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Aspect</th>
+                  <th>Before (v2.2)</th>
+                  <th>After (v3.0)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Reward model</strong></td>
+                  <td class="old">Holding / epoch-based</td>
+                  <td class="new">Participation-based (contests)</td>
+                </tr>
+                <tr>
+                  <td><strong>Eligibility</strong></td>
+                  <td class="old">2-asset baseline + boosters</td>
+                  <td class="new">Free to enter contests</td>
+                </tr>
+                <tr>
+                  <td><strong>Reward trigger</strong></td>
+                  <td class="old">Age-weighted epochs</td>
+                  <td class="new">Contest wins + trading volume milestones</td>
+                </tr>
+                <tr>
+                  <td><strong>Anti-dump</strong></td>
+                  <td class="old">Epoch-End FIFO Age Depletion</td>
+                  <td class="new">N/A (participation model)</td>
+                </tr>
+                <tr>
+                  <td><strong>Fee split (ZORA revenue)</strong></td>
+                  <td class="old">50 / 20 / 15 / 15</td>
+                  <td class="new">50 / 20 / 15 / 15 (unchanged)</td>
+                </tr>
+                <tr>
+                  <td><strong>Buy-backs</strong></td>
+                  <td class="old">Governance-triggered</td>
+                  <td class="new">Governance-triggered (unchanged)</td>
+                </tr>
+                <tr>
+                  <td><strong>Contest winner reward</strong></td>
+                  <td class="old">N/A</td>
+                  <td class="new">Base reward + cumulative volume bonuses</td>
+                </tr>
+                <tr>
+                  <td><strong>Partnerships</strong></td>
+                  <td class="old">Founder-decided</td>
+                  <td class="new">Governance Hub approval (unchanged)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        
-        <div class="document-preview">
+
+        <div class="document-preview" data-aos="fade-up">
           <div class="preview-header">
             <h3><i class="fas fa-eye"></i> Document Preview</h3>
             <p>Quick overview of whitepaper v3.0 contents</p>
           </div>
-          
+
           <div class="preview-content">
             <div class="preview-section">
               <h4>📋 Key Document Highlights</h4>
               <ul>
-                <li><span class="badge-new" style="font-size: 0.55em;">NEW</span> Participation-based reward system (contests, not holding)</li>
-                <li><span class="badge-new" style="font-size: 0.55em;">NEW</span> Base reward + cumulative volume bonuses for contest winners</li>
-                <li><span class="badge-new" style="font-size: 0.55em;">NEW</span> Three contest types: Thumbnail, Tokenisation, Journey</li>
-                <li><span class="badge-new" style="font-size: 0.55em;">NEW</span> Governance Hub pre-selection + community vote on X</li>
-                <li><span class="badge-new" style="font-size: 0.55em;">NEW</span> Per-scene Rebel Journey Collectibles (content coins on Zora)</li>
+                <li><span class="badge-new badge-mini">NEW</span> Participation-based reward system (contests, not holding)</li>
+                <li><span class="badge-new badge-mini">NEW</span> Base reward + cumulative volume bonuses for contest winners</li>
+                <li><span class="badge-new badge-mini">NEW</span> Three contest types: Thumbnail, Tokenisation, Journey</li>
+                <li><span class="badge-new badge-mini">NEW</span> Governance Hub pre-selection + community vote on X</li>
+                <li><span class="badge-new badge-mini">NEW</span> Per-scene Rebel Journey Collectibles (content coins on Zora)</li>
                 <li>REBL Governance Hub (Collab.land, 500K $REBL threshold, 1 member = 1 vote)</li>
                 <li>Multi-chain architecture (Solana + ZORA/Base)</li>
                 <li>Cross-chain value acceleration: 50% buy-back &amp; burn, 20% AI, 15% reserve, 15% ops</li>
               </ul>
             </div>
-            
+
             <div class="preview-section">
               <h4>🎯 Core Features</h4>
               <ul>
@@ -371,28 +264,28 @@
             </div>
           </div>
         </div>
-        
-        <div class="download-actions">
+
+        <div class="download-actions" data-aos="fade-up">
           <div class="download-notice">
             <i class="fas fa-exclamation-circle"></i>
             <p>
-              <strong>Legal Notice:</strong> This document contains important risk warnings and legal disclaimers. 
+              <strong>Legal Notice:</strong> This document contains important risk warnings and legal disclaimers.
               RebelInuX is a community-driven project focused on AI-animated historical art. $REBL is not a security, investment, or financial product.
             </p>
           </div>
-          
+
           <div class="download-buttons">
-            <a href="https://rebelinux.fun/RebelInuX_White_Paper_v3.0.pdf" 
+            <a href="https://rebelinux.fun/RebelInuX_White_Paper_v3.0.pdf"
                download="RebelInuX_White_Paper_v3.0.pdf"
                class="cta-button gold download-btn">
-              <i class="fas fa-download"></i> Download Whitepaper v3.0 (PDF) <span class="badge-new" style="font-size: 0.5em; margin-left: 8px;">NEW</span>
+              <i class="fas fa-download"></i> Download Whitepaper v3.0 (PDF) <span class="badge-new badge-mini">NEW</span>
             </a>
-            
+
             <button class="cta-button view-btn" onclick="viewWhitepaperOnline()">
               <i class="fas fa-eye"></i> View Online
             </button>
           </div>
-          
+
           <div class="alternative-formats">
             <h4><i class="fas fa-shield-alt"></i> Document Verification</h4>
             <div class="format-buttons">
@@ -413,18 +306,22 @@
 
     <!-- Key Information Section -->
     <section id="key-info" class="container">
-      <h2 data-aos="fade-up"><i class="fas fa-star"></i> Key Whitepaper v3.0 Information</h2>
-      
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">⭐ Key Information</span>
+        <h2>Key Whitepaper v3.0 <em class="gold-serif">Information</em></h2>
+        <p class="section-subtitle">Everything important at a glance</p>
+      </div>
+
       <div class="content-card" data-aos="fade-up">
         <div class="key-info-grid">
           <div class="key-info-item" data-aos="fade-right">
             <div class="key-info-icon">
               <i class="fas fa-hand-holding-heart"></i>
             </div>
-            <h3>Participation Rewards <span class="badge-new" style="font-size: 0.5em;">NEW</span></h3>
+            <h3>Participation Rewards <span class="badge-new badge-mini">NEW</span></h3>
             <p>The system rewards participation, not holding. Enter contests by designing thumbnails, proposing scenes to tokenize, or suggesting the next Journey theme. Winners earn $REBL.</p>
           </div>
-          
+
           <div class="key-info-item" data-aos="fade-up">
             <div class="key-info-icon">
               <i class="fas fa-chart-line"></i>
@@ -432,7 +329,7 @@
             <h3>Base Reward + Volume Bonuses</h3>
             <p>Every contest winner receives a base $REBL reward (amount announced per contest). If the tokenized scene reaches trading volume milestones, cumulative bonuses apply — up to $111 total.</p>
           </div>
-          
+
           <div class="key-info-item" data-aos="fade-left">
             <div class="key-info-icon">
               <i class="fas fa-fire"></i>
@@ -440,15 +337,15 @@
             <h3>Governance-Triggered Value Acceleration</h3>
             <p>ZORA creator fees are split into four governance-controlled pools: 50% buy-back &amp; burn, 20% AI production, 15% reserve, 15% operations. All deployments are triggered by REBL Governance Hub vote.</p>
           </div>
-          
+
           <div class="key-info-item" data-aos="fade-right" data-aos-delay="100">
             <div class="key-info-icon">
               <i class="fas fa-trophy"></i>
             </div>
-            <h3>Three Contest Types <span class="badge-new" style="font-size: 0.5em;">NEW</span></h3>
+            <h3>Three Contest Types <span class="badge-new badge-mini">NEW</span></h3>
             <p>Thumbnail Contests, Tokenisation Contests, and Journey Contests. Governance Hub pre-selects finalists; the community then votes for the winner on X.</p>
           </div>
-          
+
           <div class="key-info-item" data-aos="fade-up" data-aos-delay="100">
             <div class="key-info-icon">
               <i class="fas fa-vote-yea"></i>
@@ -456,7 +353,7 @@
             <h3>REBL Governance Hub</h3>
             <p>Token-gated Telegram via Collab.land. 500K $REBL threshold, 1 member = 1 vote. Pre-selects contest finalists, votes on treasury proposals and protocol parameters, and ratifies negotiated partnerships.</p>
           </div>
-          
+
           <div class="key-info-item" data-aos="fade-left" data-aos-delay="100">
             <div class="key-info-icon">
               <i class="fas fa-history"></i>
@@ -470,47 +367,51 @@
 
     <!-- FAQ -->
     <section id="faq" class="container">
-      <h2 data-aos="fade-up">Frequently Asked Questions</h2>
-      
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">❓ Questions</span>
+        <h2>Frequently Asked <em class="gold-serif">Questions</em></h2>
+        <p class="section-subtitle">Everything you need to know about Whitepaper v3.0</p>
+      </div>
+
       <div class="content-card" data-aos="fade-up">
         <div class="faq-grid">
           <div class="faq-item" data-aos="fade-right">
             <h4><i class="fas fa-question-circle"></i> What version is this whitepaper?</h4>
             <p>This is version 3.0, published October 2026. It covers the participation-based SocialFi ecosystem, contest rewards, Journey Collectibles as content coins, and the revised tokenomics.</p>
           </div>
-          
+
           <div class="faq-item" data-aos="fade-right" data-aos-delay="100">
             <h4><i class="fas fa-question-circle"></i> What's new in v3.0?</h4>
             <p><strong>New features include:</strong> participation-based rewards via contests, base reward + cumulative volume bonuses for winners, three contest types (Thumbnail, Tokenisation, Journey), Governance Hub pre-selection + community vote on X, and per-scene Rebel Journey Collectibles from Chapter V onward.</p>
           </div>
-          
+
           <div class="faq-item" data-aos="fade-left" data-aos-delay="200">
             <h4><i class="fas fa-question-circle"></i> How do I earn $REBL rewards?</h4>
             <p>Enter contests. Winners earn a base $REBL reward plus cumulative volume bonuses if their tokenized scene reaches trading milestones. Contests are free to enter — no purchase is required.</p>
           </div>
-          
+
           <div class="faq-item" data-aos="fade-left" data-aos-delay="300">
             <h4><i class="fas fa-question-circle"></i> How are winners selected?</h4>
             <p>The REBL Governance Hub reviews all submissions and pre-selects a shortlist of finalists based on skill criteria. The community then votes for the winner on X. In the rare event of a tie, the project owner makes the final decision.</p>
           </div>
-          
+
           <div class="faq-item" data-aos="fade-right" data-aos-delay="400">
             <h4><i class="fas fa-question-circle"></i> Are there legal restrictions?</h4>
             <p>Yes. Residents of France, the European Economic Area (EEA), and Switzerland are expressly prohibited from participating. See the whitepaper for full restrictions.</p>
           </div>
-          
-<div class="faq-item" data-aos="fade-left" data-aos-delay="500">
-    <h4><i class="fas fa-question-circle"></i> Where can I find the contract address?</h4>
-    <p>The $REBL Solana token address is:</p>
-    <div class="token-address-box">
-        <code class="token-address">F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump</code>
-        <a href="https://solscan.io/token/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump"
-           target="_blank" rel="noopener noreferrer"
-           class="token-verify-btn">
-            <i class="fas fa-external-link-alt"></i> Verify on Solscan
-        </a>
-    </div>
-</div>
+
+          <div class="faq-item" data-aos="fade-left" data-aos-delay="500">
+            <h4><i class="fas fa-question-circle"></i> Where can I find the contract address?</h4>
+            <p>The $REBL Solana token address is:</p>
+            <div class="token-address-box">
+              <code class="token-address">F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump</code>
+              <a href="https://solscan.io/token/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump"
+                 target="_blank" rel="noopener noreferrer"
+                 class="token-verify-btn">
+                <i class="fas fa-external-link-alt"></i> Verify on Solscan
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -520,7 +421,7 @@
       <div class="content-card important-notice" data-aos="fade-up">
         <div class="notice-header">
           <i class="fas fa-exclamation-triangle"></i>
-          <h3>⚠️ Important Legal & Risk Warning</h3>
+          <h3>⚠️ Important Legal &amp; Risk Warning</h3>
         </div>
         <div class="notice-content">
           <p><strong>RebelInuX is a community-driven project focused on AI-animated historical art and SocialFi ecosystem.</strong></p>
@@ -529,7 +430,7 @@
             <h4><i class="fas fa-ban"></i> Restricted Jurisdictions:</h4>
             <ul>
               <li><strong>France:</strong> Prohibited for French residents due to AMF restrictions</li>
-              <li><strong>European Economic Area (EEA) & Switzerland:</strong> Prohibited under MiCA regulations</li>
+              <li><strong>European Economic Area (EEA) &amp; Switzerland:</strong> Prohibited under MiCA regulations</li>
             </ul>
           </div>
           <p class="warning">Cryptocurrency investments carry significant risks, including potential loss of entire investment. Always conduct your own research (DYOR) and consult with qualified professionals.</p>
@@ -538,35 +439,41 @@
     </section>
 
     <!-- CTA Section -->
-    <section style="text-align: center; padding: var(--spacing-xl) var(--spacing-md); margin: var(--spacing-xl) auto; max-width: 800px;" data-aos="fade-up">
-      <h2 style="color: var(--rebel-gold); margin-bottom: var(--spacing-lg);">READY TO DIVE DEEP?</h2>
-      <p style="font-size: 1.2em; margin-bottom: var(--spacing-lg); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-        Download the complete RebelInuX whitepaper v3.0 to understand our participation-based SocialFi ecosystem, contest mechanics, Journey Collectibles, and $REBL tokenomics.
-      </p>
-      
-      <a href="https://rebelinux.fun/RebelInuX_White_Paper_v3.0.pdf" 
-         download="RebelInuX_White_Paper_v3.0.pdf"
-         class="cta-button gold" style="margin-top: var(--spacing-lg);">
-        <i class="fas fa-download"></i> DOWNLOAD WHITEPAPER v3.0 (299 KB) <span class="badge-new" style="font-size: 0.5em; margin-left: 8px;">NEW</span>
-      </a>
+    <section class="container cta-section" data-aos="fade-up">
+      <div class="section-header">
+        <span class="section-eyebrow">📄 Download</span>
+        <h2>Ready to <em class="gold-serif">Dive Deep?</em></h2>
+        <p class="section-subtitle">Download the complete RebelInuX whitepaper v3.0 to understand our participation-based SocialFi ecosystem, contest mechanics, Journey Collectibles, and $REBL tokenomics.</p>
+      </div>
+
+      <div class="cta-section-actions">
+        <a href="https://rebelinux.fun/RebelInuX_White_Paper_v3.0.pdf"
+           download="RebelInuX_White_Paper_v3.0.pdf"
+           class="cta-button gold">
+          <i class="fas fa-download"></i> DOWNLOAD WHITEPAPER v3.0 (299 KB) <span class="badge-new badge-mini">NEW</span>
+        </a>
+      </div>
     </section>
 
     <!-- Explore More -->
     <section id="related-pages" data-aos="fade-up">
       <div class="container">
-        <h2>Explore More</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">🧭 Continue Exploring</span>
+          <h2>Explore <em class="gold-serif">More</em></h2>
+          <p class="section-subtitle">Three ways to deepen your understanding</p>
+        </div>
+
         <div class="related-grid">
-          <!-- Tokenomics Card -->
           <a href="tokenomics.html" class="related-card tokenomics-card" data-aos="fade-right">
             <div class="related-icon"><i class="fas fa-coins"></i></div>
             <h3>Tokenomics</h3>
             <p>Economic Model Details</p>
             <div class="related-arrow">
-              <i class="fas fa-arrow-right"></i> Supply & Distribution
+              <i class="fas fa-arrow-right"></i> Supply &amp; Distribution
             </div>
           </a>
-          
-          <!-- Roadmap Card -->
+
           <a href="roadmap.html" class="related-card roadmap-card" data-aos="fade-up">
             <div class="related-icon"><i class="fas fa-road"></i></div>
             <h3>Roadmap</h3>
@@ -575,8 +482,7 @@
               <i class="fas fa-arrow-right"></i> Development Schedule
             </div>
           </a>
-          
-          <!-- Governance Card -->
+
           <a href="governance.html" class="related-card governance-card" data-aos="fade-left">
             <div class="related-icon"><i class="fas fa-university"></i></div>
             <h3>Governance</h3>
@@ -589,50 +495,20 @@
       </div>
     </section>
   </main>
-  
-  <!-- Footer will be inserted here by JavaScript -->
+
   <div id="footer-container"></div>
-  
-  <!-- JavaScript Includes -->
+
   <script src="js/includes.js"></script>
   <script src="js/common.js"></script>
   <script src="js/whitepaper.js"></script>
-  
-  <!-- AOS Animation -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  
+
   <script>
-    // Initialize AOS
     document.addEventListener('DOMContentLoaded', function() {
-      AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-      });
+      AOS.init({ duration: 800, once: true, offset: 100 });
     });
-    
-    // Whitepaper functions
-    function viewWhitepaperOnline() {
-      window.open('https://rebelinux.fun/RebelInuX_White_Paper_v3.0.pdf', '_blank');
-    }
-    
-    function verifyDocumentHash() {
-      alert('Document hash verification:\n\nUse the following to verify authenticity:\n- File size: ~299 KB\n- Version: v3.0\n- Published: October 2026\n\nContact team for SHA-256 hash verification.');
-    }
-    
-    function showDocumentInfo() {
-      alert('RebelInuX Whitepaper v3.0\n\nPublished: October 2026\nFormat: PDF\nPages: ~40\nSize: ~299 KB\n\nNEW IN V3.0:\n- Participation-based rewards via contests\n- Base reward + cumulative volume bonuses\n- Three contest types: Thumbnail, Tokenisation, Journey\n- Governance Hub pre-selection + community vote on X\n- Per-scene collectibles from Chapter V onward\n- No more epoch rewards or age-weighted calculations\n\nContents:\n- Market Overview & SocialFi Opportunity\n- RebelInuX Architecture\n- The Participation System\n- Tokenomics (Fair Launch, Allocation, Vesting)\n- Cross-Chain Value Acceleration\n- REBL Governance Hub\n- Journey Contest\n- Decentralization & Security\n- Roadmap\n- Glossary & FAQ');
-    }
-    
-    function printDocument() {
-      window.open('https://rebelinux.fun/RebelInuX_White_Paper_v3.0.pdf', '_blank');
-      setTimeout(function() {
-        window.print();
-      }, 1000);
-    }
   </script>
-  
-  <!-- Analytics -->
+
   <script src="js/analytics.js" defer></script>
 </body>
 </html>
