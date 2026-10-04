@@ -2372,21 +2372,49 @@ button.chapter-row:hover {
   cursor: pointer;
   font-family: inherit;
 }
+/* Step 01 — Gold gradient with strong shadow */
 .step-cta--gold {
-  background: linear-gradient(135deg, #e6c493, #ffd700);
+  background: linear-gradient(135deg, #d4a76a 0%, #ffd700 100%);
   color: #1a1a2e;
+  box-shadow: 0 6px 18px rgba(212, 167, 106, 0.45), 0 2px 4px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  font-weight: 800;
 }
-.step-cta--gold:hover { transform: translateY(-2px); background: #e6b65f; box-shadow: 0 10px 25px rgba(212,167,106,0.4); }
+.step-cta--gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(212, 167, 106, 0.55), 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #e3b87c 0%, #ffdd44 100%);
+}
+
+/* Step 02 — Deep amber that contrasts against the light card */
 .step-cta--amber {
-  background: #d4a76a;
-  color: #1a1a2e;
+  background: linear-gradient(135deg, #c2843a 0%, #d4a76a 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(196, 132, 58, 0.4), 0 2px 4px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
-.step-cta--amber:hover { transform: translateY(-2px); background: #e6b65f; }
+.step-cta--amber:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #d4a76a 0%, #e6b65f 100%);
+  box-shadow: 0 12px 28px rgba(196, 132, 58, 0.5), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Step 03 — Dark with gold accents */
 .step-cta--dark {
   background: #1a1a2e;
-  color: white;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+  box-shadow: 0 6px 18px rgba(26, 26, 46, 0.3), 0 2px 4px rgba(0, 0, 0, 0.08);
+  font-weight: 800;
 }
-.step-cta--dark:hover { transform: translateY(-2px); background: #2a2a3e; }
+.step-cta--dark:hover {
+  transform: translateY(-3px);
+  background: #2a2a3e;
+  border-color: #ffd700;
+  box-shadow: 0 12px 28px rgba(26, 26, 46, 0.45), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 .step-cta-row {
   display: flex;
   flex-direction: column;
@@ -2397,22 +2425,30 @@ button.chapter-row:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  padding: 0.6rem 0.9rem;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
   border-radius: 10px;
-  font-size: 0.76rem;
-  font-weight: 700;
+  font-size: 0.78rem;
+  font-weight: 800;
   text-decoration: none;
-  background: rgba(212, 167, 106, 0.15);
-  color: #1a1a2e;
-  border: 1px solid rgba(212, 167, 106, 0.4);
+  background: rgba(212, 167, 106, 0.22);
+  color: #8b5a00;
+  border: 2px solid #d4a76a;
   transition: all 0.25s ease;
-  min-height: 40px;
+  min-height: 44px;
+  box-shadow: 0 3px 8px rgba(212, 167, 106, 0.15);
 }
-.step-cta-mini i { color: #b8860b; font-size: 0.75rem; }
+.step-cta-mini i {
+  color: #8b5a00;
+  font-size: 0.85rem;
+  transition: color 0.25s ease;
+}
 .step-cta-mini:hover {
   background: #d4a76a;
-  border-color: #d4a76a;
+  border-color: #b8860b;
+  color: #1a1a2e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(212, 167, 106, 0.35);
 }
 .step-cta-mini:hover i { color: #1a1a2e; }
 
