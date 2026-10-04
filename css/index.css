@@ -1468,9 +1468,9 @@ button.chapter-row:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(212, 167, 106, 0.15);
+  background: #1a1a2e;
   border: 1px solid var(--rebel-gold);
-  color: #b8860b;
+  color: var(--rebel-gold);
   text-decoration: none;
   font-size: 0.8rem;
   font-weight: 700;
