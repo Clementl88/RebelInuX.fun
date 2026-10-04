@@ -1,7 +1,7 @@
 /**
  * ============================================================
  * REBELINUX — PRO HOME PAGE JAVASCRIPT
- * v5.0 · Mobile-First · Museum-Grade
+ * v5.1 · Mobile-First · Video Modal
  * ============================================================
  */
 
@@ -14,12 +14,12 @@
   const REBL_CONTRACT      = 'F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump';
   const REBELINUX_CONTRACT = '0xf95beeF6439ec38fA757238Cdec8417ABDA536bd';
 
-  function getViewport() {
+  const getViewport = () => {
     const w = window.innerWidth;
     if (w < BP_TABLET) return 'mobile';
     if (w < BP_DESKTOP) return 'tablet';
     return 'desktop';
-  }
+  };
   const isMobile  = () => getViewport() === 'mobile';
   const isTablet  = () => getViewport() === 'tablet';
   const isDesktop = () => getViewport() === 'desktop';
@@ -29,7 +29,7 @@
   // BOOT
   // ============================================================
   document.addEventListener('DOMContentLoaded', () => {
-    console.log('🚀 RebelInuX v5.0 — Initializing...');
+    console.log('🚀 RebelInuX v5.1 — Initializing...');
     setTimeout(() => {
       initIndexPage();
       initPerformanceMonitoring();
@@ -41,6 +41,7 @@
     const queue = [
       initLoader,
       initAudienceCarousel,
+      initVideoModal,
       initScrollAnimations,
       initParallaxEffects,
       initContractAddresses,
@@ -160,13 +161,122 @@
   }
 
   // ============================================================
+  // VIDEO MODAL — inline YouTube playback
+  // ============================================================
+  let lastFocusedElement = null;
+
+  function initVideoModal() {
+    const modal = document.getElementById('videoModal');
+    if (!modal) return;
+
+    const frame = document.getElementById('videoModalFrame');
+    const label = document.getElementById('videoModalLabel');
+    const desc = document.getElementById('videoModalDesc');
+    const ytLink = document.getElementById('videoModalYT');
+    const loading = document.getElementById('videoModalLoading');
+
+    // Open from any element with data-video-open
+    document.querySelectorAll('[data-video-open]').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const videoId = trigger.getAttribute('data-video-id');
+        const title = trigger.getAttribute('data-video-title') || 'Journey Chapter';
+        const description = trigger.getAttribute('data-video-desc') || '';
+        openVideoModal({ videoId, title, description });
+      });
+    });
+
+    // Close
+    modal.querySelectorAll('[data-close-modal]').forEach(el => {
+      el.addEventListener('click', closeVideoModal);
+    });
+
+    // Share
+    const shareBtn = modal.querySelector('[data-share-video]');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', () => {
+        const url = ytLink ? ytLink.href : window.location.href;
+        const shareData = {
+          title: label ? label.textContent : 'RebelInuX Journey',
+          text: desc ? desc.textContent : 'Watch the Journey',
+          url
+        };
+        if (navigator.share) {
+          navigator.share(shareData).catch(() => {});
+        } else if (navigator.clipboard) {
+          navigator.clipboard.writeText(url).then(() => {
+            showNotification('🔗 Link copied!', 'success');
+          });
+        }
+      });
+    }
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+        closeVideoModal();
+      }
+    });
+
+    function openVideoModal({ videoId, title, description }) {
+      if (!videoId || !frame) return;
+
+      lastFocusedElement = document.activeElement;
+
+      frame.innerHTML = '';
+      if (loading) loading.style.display = 'flex';
+      if (label) label.textContent = title;
+      if (desc) desc.textContent = description || '';
+
+      const origin = encodeURIComponent(window.location.origin || 'https://rebelinux.fun');
+      const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&origin=${origin}`;
+      const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+      if (ytLink) ytLink.href = watchUrl;
+
+      const iframe = document.createElement('iframe');
+      iframe.src = embedUrl;
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('loading', 'eager');
+      iframe.setAttribute('title', title);
+      iframe.addEventListener('load', () => {
+        if (loading) loading.style.display = 'none';
+      });
+
+      frame.appendChild(iframe);
+
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('video-modal-open');
+
+      const closeBtn = modal.querySelector('.video-modal-close');
+      if (closeBtn) setTimeout(() => closeBtn.focus(), 100);
+    }
+
+    function closeVideoModal() {
+      if (!modal || modal.getAttribute('aria-hidden') === 'true') return;
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('video-modal-open');
+      setTimeout(() => { if (frame) frame.innerHTML = ''; }, 300);
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
+    }
+
+    // Expose
+    window.RebelInuX = window.RebelInuX || {};
+    window.RebelInuX.openVideoModal = openVideoModal;
+    window.RebelInuX.closeVideoModal = closeVideoModal;
+  }
+
+  // ============================================================
   // SCROLL ANIMATIONS
   // ============================================================
   function initScrollAnimations() {
     const selector = [
       '.audience-card', '.pillar-card', '.partner-card', '.why-card',
       '.step-card', '.gallery-card', '.roadmap-item', '.live-stat',
-      '.token-panel', '.chain-column', '.chapter-row', '.editorial-tag'
+      '.token-panel', '.chain-column', '.editorial-tag'
     ].join(', ');
     const els = document.querySelectorAll(selector);
     if (!els.length) return;
@@ -409,7 +519,7 @@
   }
 
   // ============================================================
-  // PARTICLES (desktop)
+  // PARTICLES
   // ============================================================
   function initParticles() {
     if (isMobile() || prefersReducedMotion()) return;
@@ -497,7 +607,8 @@
     const targets = document.querySelectorAll(
       '.action-btn, .copy-btn, .view-btn, .wallet-btn, .cta-button, ' +
       '.audience-cta, .partner-cta, .step-cta, .step-cta-mini, ' +
-      '.token-panel-cta, .governance-banner-cta, .wallet-bar-btn'
+      '.token-panel-cta, .governance-banner-cta, .wallet-bar-btn, ' +
+      '.video-modal-close, .video-modal-yt, .video-modal-share'
     );
     targets.forEach(el => {
       if (el.offsetHeight && el.offsetHeight < 44) el.style.minHeight = '44px';
@@ -620,7 +731,7 @@
   }
 
   // ============================================================
-  // HOVER EFFECTS (desktop only)
+  // HOVER EFFECTS
   // ============================================================
   function initHoverEffects() {
     if (isMobile()) return;
@@ -651,9 +762,9 @@
   window.addEventListener('load', () => {
     document.documentElement.classList.add('page-loaded');
     document.dispatchEvent(new CustomEvent('rebelinux:pageReady', {
-      detail: { timestamp: Date.now(), page: 'index', version: '5.0', viewport: getViewport() }
+      detail: { timestamp: Date.now(), page: 'index', version: '5.1', viewport: getViewport() }
     }));
-    console.log('✅ RebelInuX v5.0 ready');
+    console.log('✅ RebelInuX v5.1 ready');
   });
 
   window.addEventListener('error', (e) => {
@@ -666,12 +777,13 @@
   // ============================================================
   // PUBLIC API
   // ============================================================
-  window.RebelInuX = {
+  window.RebelInuX = window.RebelInuX || {};
+  Object.assign(window.RebelInuX, {
     copyToClipboard, addToWallet, showNotification,
     toggleContractView, copyContractAddress, detectWallet,
     getViewport, isMobile, isTablet, isDesktop,
-    REBL_CONTRACT, REBELINUX_CONTRACT, version: '5.0'
-  };
+    REBL_CONTRACT, REBELINUX_CONTRACT, version: '5.1'
+  });
 
   window.copyToClipboard     = copyToClipboard;
   window.toggleContractView  = toggleContractView;
@@ -679,5 +791,5 @@
   window.copyContractAddress = copyContractAddress;
   window.showNotification    = showNotification;
 
-  console.log('🪙 RebelInuX JS v5.0 loaded');
+  console.log('🪙 RebelInuX JS v5.1 loaded');
 })();
