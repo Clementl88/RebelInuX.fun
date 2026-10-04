@@ -3020,6 +3020,88 @@ body.video-modal-open {
   .token-instructions-modal .button-group { flex-direction: column !important; }
 }
 /* ============================================================
+   VIDEO MODAL — Mobile Fix (fits small screens)
+   ============================================================ */
+@media (max-width: 767px) {
+  .video-modal {
+    padding: 0;                 /* remove outer padding */
+    align-items: stretch;       /* fill full height */
+  }
+  .video-modal-shell {
+    max-width: 100%;
+    width: 100%;
+    max-height: 100vh;
+    max-height: 100dvh;         /* modern browsers — respects URL bar */
+    height: 100vh;
+    height: 100dvh;
+    border-radius: 0;           /* full-screen on mobile */
+    border: none;
+    border-left: none;
+    border-right: none;
+    transform: none;            /* no entrance transform on mobile */
+  }
+  .video-modal[aria-hidden="false"] .video-modal-shell {
+    transform: none;
+  }
+
+  .video-modal-header {
+    padding: 0.6rem 0.85rem;
+    padding-top: calc(0.6rem + env(safe-area-inset-top, 0px));
+  }
+  .video-modal-title {
+    font-size: 0.78rem;
+  }
+  .video-modal-close {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .video-modal-player {
+    flex: 1;
+    min-height: 0;              /* crucial — lets flex shrink properly */
+  }
+  .video-modal-frame {
+    aspect-ratio: auto;         /* let the frame fill available space */
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    position: relative;
+  }
+
+  .video-modal-footer {
+    padding: 0.7rem 0.85rem;
+    padding-bottom: calc(0.7rem + env(safe-area-inset-bottom, 0px));
+  }
+  .video-modal-desc {
+    font-size: 0.78rem;
+    margin-bottom: 0.5rem;
+  }
+  .video-modal-actions {
+    gap: 0.4rem;
+  }
+  .video-modal-yt,
+  .video-modal-share {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.74rem;
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+/* Very short phones (iPhone SE landscape, etc.) */
+@media (max-width: 767px) and (max-height: 600px) {
+  .video-modal-desc {
+    display: none;              /* hide description to save space */
+  }
+  .video-modal-header {
+    padding: 0.4rem 0.75rem;
+  }
+  .video-modal-footer {
+    padding: 0.5rem 0.75rem;
+  }
+}
+/* ============================================================
    GALLERY — 12 cards (Chapters I–VI), featured spans 2 cols on desktop
    ============================================================ */
 @media (min-width: 992px) {
