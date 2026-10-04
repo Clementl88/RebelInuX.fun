@@ -2768,7 +2768,7 @@ body.video-modal-open {
    ============================================================ */
 .back-to-top {
   position: fixed;
-  bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
   right: calc(1rem + env(safe-area-inset-right, 0px));
   width: 44px; height: 44px;
   background: var(--gold-gradient);
