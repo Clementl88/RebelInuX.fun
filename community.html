@@ -24,7 +24,9 @@
   <link rel="apple-touch-icon" href="images/Logo_REBL.svg">
   <title>Community Hub - RebelInuX</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -50,22 +52,35 @@
   <main>
     <!-- Hero Section -->
     <section class="page-hero page-hero--community">
+      <div class="hero-background-pattern" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
       <div class="container">
-        <h1 data-aos="fade-up">COMMUNITY HUB</h1>
-        <p class="text-lead" data-aos="fade-up" data-aos-delay="100">
+        <div class="hero-eyebrow" data-aos="fade-up">
+          <span class="live-dot"></span>
+          <span>COMMUNITY-DRIVEN · MULTI-PLATFORM · GLOBAL</span>
+        </div>
+
+        <h1 data-aos="fade-up" data-aos-delay="100">
+          Community <em class="gold-serif">Hub</em>
+        </h1>
+
+        <p class="text-lead" data-aos="fade-up" data-aos-delay="150">
           Connect with rebels across multiple platforms. Engage, share ideas, participate in contests, and shape the next Journey with the RebelInuX community.
         </p>
+
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-          <a href="#social-platforms" class="cta-button">
+          <a href="#social-platforms" class="cta-button primary-glow">
             <i class="fab fa-telegram"></i> Join Telegram
           </a>
-          <a href="#participation" class="cta-button gold">
+          <a href="#participation" class="cta-button secondary">
             <i class="fas fa-trophy"></i> How to Participate
           </a>
-          <a href="#community-guidelines" class="cta-button">
+          <a href="#community-guidelines" class="cta-button secondary">
             <i class="fas fa-shield-alt"></i> Guidelines
           </a>
         </div>
+
         <div class="community-stats" data-aos="fade-up" data-aos-delay="300">
           <div class="stat-item">
             <div class="stat-number">278+</div>
@@ -102,7 +117,7 @@
 
         <div class="mission-content">
           <p>
-            At <strong style="color: var(--rebel-gold);">RebelInuX</strong>, our community is the heart of everything we do.
+            At <strong class="mission-emphasis">RebelInuX</strong>, our community is the heart of everything we do.
             We're building more than just a token — we're creating a <strong>decentralized movement</strong> where every rebel
             contributes to our collective success.
           </p>
@@ -128,10 +143,11 @@
     <!-- Social Platforms -->
     <section id="social-platforms">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fas fa-share-alt"></i> JOIN OUR COMMUNITY</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto var(--spacing-xl); color: #ccc; font-size: 1.1rem;" data-aos="fade-up">
-          Connect with us across all platforms. Stay updated with announcements, participate in discussions, and connect with fellow rebels.
-        </p>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">🌐 Connect</span>
+          <h2>Join Our <em class="gold-serif">Community</em></h2>
+          <p class="section-subtitle">Connect with us across all platforms. Stay updated with announcements, participate in discussions, and connect with fellow rebels.</p>
+        </div>
 
         <div class="social-grid">
           <!-- Telegram -->
@@ -339,95 +355,89 @@
     <!-- Participation Section -->
     <section id="participation">
       <div class="container">
-        <h2 data-aos="fade-up" style="text-align: center;"><i class="fas fa-trophy"></i> HOW PARTICIPATION WORKS</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">🎯 Participate</span>
+          <h2>How Participation <em class="gold-serif">Works</em></h2>
+          <p class="section-subtitle">RebelInuX rewards participation, not holding</p>
+        </div>
 
-        <div class="content-card" data-aos="fade-up">
-          <div class="mission-header" style="background: linear-gradient(135deg, rgba(255, 51, 102, 0.2), rgba(255, 204, 0, 0.2)); text-align: center;">
-            <div class="mission-icon" style="background: rgba(255, 204, 0, 0.3); margin: 0 auto;">
+        <div class="content-card participation-card" data-aos="fade-up">
+          <div class="participation-hero">
+            <div class="participation-icon">
               <i class="fas fa-trophy"></i>
             </div>
-            <div style="width: 100%;">
-              <h2 style="color: var(--rebel-gold); text-align: center;">Enter Contests. Earn $REBL.</h2>
-              <p class="mission-subtitle" style="text-align: center;">RebelInuX rewards participation, not holding</p>
-            </div>
-          </div>
-
-          <div class="mission-content" style="text-align: center; padding: var(--spacing-xl);">
-            <p style="font-size: 1.2em; margin-bottom: var(--spacing-xl); line-height: 1.6;">
+            <h2>Enter Contests. <em class="gold-serif">Earn $REBL.</em></h2>
+            <p>
               Contests are free to enter. No purchase required.
               Winners earn $REBL, with cumulative volume bonuses up to $111 on Tokenization Contests.
             </p>
+          </div>
 
-            <div class="voting-grid">
-              <!-- Thumbnail Contests -->
-              <div class="voting-card" data-aos="fade-up">
-                <div class="voting-icon">
-                  <i class="fas fa-image"></i>
-                </div>
-                <h3>Thumbnail Contests</h3>
-                <p>Design a thumbnail for one of our videos. Your work becomes the official visual.</p>
-                <a href="contests.html"
-                   class="cta-button" style="width: 100%; margin-top: var(--spacing-md);">
-                  <i class="fas fa-trophy"></i> Enter Contest
-                </a>
-                <div class="voting-info">
-                  <i class="fas fa-check"></i> Base $REBL reward
-                </div>
+          <div class="voting-grid">
+            <!-- Thumbnail Contests -->
+            <div class="voting-card" data-aos="fade-up">
+              <div class="voting-icon">
+                <i class="fas fa-image"></i>
               </div>
-
-              <!-- Tokenization Contests -->
-              <div class="voting-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="voting-icon">
-                  <i class="fas fa-gavel"></i>
-                </div>
-                <h3>Tokenization Contests</h3>
-                <p>Choose a scene to become a content coin on Zora. Volume bonuses unlock as it trades.</p>
-                <a href="contests.html"
-                   class="cta-button gold" style="width: 100%; margin-top: var(--spacing-md);">
-                  <i class="fas fa-trophy"></i> Enter Contest
-                </a>
-                <div class="voting-info">
-                  <i class="fas fa-fire"></i> Up to $111 bonuses
-                </div>
-              </div>
-
-              <!-- Journey Contests -->
-              <div class="voting-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="voting-icon">
-                  <i class="fas fa-globe"></i>
-                </div>
-                <h3>Journey Contests</h3>
-                <p>Propose the next historical theme — country and period. The winner shapes the next Journey.</p>
-                <a href="contests.html"
-                   class="cta-button" style="background: linear-gradient(135deg, var(--rebel-red), #8a2be2); width: 100%; margin-top: var(--spacing-md);">
-                  <i class="fas fa-trophy"></i> Enter Contest
-                </a>
-                <div class="voting-info">
-                  <i class="fas fa-vote-yea"></i> Community vote on X
-                </div>
-              </div>
-
-              <!-- Governance Hub -->
-              <div class="voting-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="voting-icon">
-                  <i class="fas fa-vote-yea"></i>
-                </div>
-                <h3>Governance Hub</h3>
-                <p>Hold 500K+ $REBL to pre-select finalists and vote on protocol parameters.</p>
-                <a href="governance.html"
-                   class="cta-button gold" style="width: 100%; margin-top: var(--spacing-md);">
-                  <i class="fas fa-vote-yea"></i> Learn More
-                </a>
-                <div class="voting-info">
-                  <i class="fas fa-users"></i> 1 member = 1 vote
-                </div>
+              <h3>Thumbnail Contests</h3>
+              <p>Design a thumbnail for one of our videos. Your work becomes the official visual.</p>
+              <a href="contests.html" class="cta-button primary-glow voting-cta">
+                <i class="fas fa-trophy"></i> Enter Contest
+              </a>
+              <div class="voting-info">
+                <i class="fas fa-check"></i> Base $REBL reward
               </div>
             </div>
 
-            <div class="pro-tip">
-              <i class="fas fa-lightbulb"></i>
-              <strong>Tip:</strong> Follow us on X to catch the latest contest announcements and vote for the finalists on the public poll.
+            <!-- Tokenization Contests -->
+            <div class="voting-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="voting-icon">
+                <i class="fas fa-gavel"></i>
+              </div>
+              <h3>Tokenization Contests</h3>
+              <p>Choose a scene to become a content coin on Zora. Volume bonuses unlock as it trades.</p>
+              <a href="contests.html" class="cta-button gold voting-cta">
+                <i class="fas fa-trophy"></i> Enter Contest
+              </a>
+              <div class="voting-info">
+                <i class="fas fa-fire"></i> Up to $111 bonuses
+              </div>
             </div>
+
+            <!-- Journey Contests -->
+            <div class="voting-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="voting-icon voting-icon--purple">
+                <i class="fas fa-globe"></i>
+              </div>
+              <h3>Journey Contests</h3>
+              <p>Propose the next historical theme — country and period. The winner shapes the next Journey.</p>
+              <a href="contests.html" class="cta-button purple voting-cta">
+                <i class="fas fa-trophy"></i> Enter Contest
+              </a>
+              <div class="voting-info">
+                <i class="fas fa-vote-yea"></i> Community vote on X
+              </div>
+            </div>
+
+            <!-- Governance Hub -->
+            <div class="voting-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="voting-icon">
+                <i class="fas fa-vote-yea"></i>
+              </div>
+              <h3>Governance Hub</h3>
+              <p>Hold 500K+ $REBL to pre-select finalists and vote on protocol parameters.</p>
+              <a href="governance.html" class="cta-button gold voting-cta">
+                <i class="fas fa-vote-yea"></i> Learn More
+              </a>
+              <div class="voting-info">
+                <i class="fas fa-users"></i> 1 member = 1 vote
+              </div>
+            </div>
+          </div>
+
+          <div class="pro-tip">
+            <i class="fas fa-lightbulb"></i>
+            <span><strong>Tip:</strong> Follow us on X to catch the latest contest announcements and vote for the finalists on the public poll.</span>
           </div>
         </div>
       </div>
@@ -436,16 +446,20 @@
     <!-- Community Guidelines -->
     <section id="community-guidelines">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fas fa-shield-alt"></i> COMMUNITY GUIDELINES</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">🛡️ Guidelines</span>
+          <h2>Community <em class="gold-serif">Guidelines</em></h2>
+          <p class="section-subtitle">To maintain a positive and productive environment for all rebels</p>
+        </div>
 
         <div class="content-card" data-aos="fade-up">
           <div class="guidelines-intro">
-            <div style="text-align: center; margin-bottom: var(--spacing-xl);">
-              <div style="width: 80px; height: 80px; background: rgba(255, 204, 0, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-lg); border: 3px solid var(--rebel-gold);">
-                <i class="fas fa-handshake" style="color: var(--rebel-gold); font-size: 2.5rem;"></i>
+            <div class="guidelines-hero">
+              <div class="guidelines-hero-icon">
+                <i class="fas fa-handshake"></i>
               </div>
-              <h3 style="color: var(--rebel-gold); margin-bottom: var(--spacing-md);">Our Community Values</h3>
-              <p style="color: rgba(255, 255, 255, 0.9); max-width: 800px; margin: 0 auto; line-height: 1.6;">
+              <h3>Our Community Values</h3>
+              <p>
                 To maintain a positive and productive environment for all rebels, we ask everyone to follow these simple guidelines.
               </p>
             </div>
@@ -524,7 +538,11 @@
     <!-- Community Benefits -->
     <section id="community-benefits">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fas fa-gift"></i> COMMUNITY BENEFITS</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">🎁 Benefits</span>
+          <h2>Community <em class="gold-serif">Benefits</em></h2>
+          <p class="section-subtitle">What you get as part of the RebelInuX community</p>
+        </div>
 
         <div class="benefits-grid">
           <div class="benefit-card" data-aos="fade-right">
@@ -587,7 +605,11 @@
     <!-- How to Get Involved -->
     <section id="get-involved">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fas fa-hands-helping"></i> HOW TO GET INVOLVED</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">🚀 Get Started</span>
+          <h2>How to Get <em class="gold-serif">Involved</em></h2>
+          <p class="section-subtitle">Four steps to join the rebellion</p>
+        </div>
 
         <div class="content-card" data-aos="fade-up">
           <div class="involvement-steps">
@@ -613,7 +635,7 @@
             <div class="step-item" data-aos="fade-right" data-aos-delay="100">
               <div class="step-number">02</div>
               <div class="step-content">
-                <h4>Engage & Participate</h4>
+                <h4>Engage &amp; Participate</h4>
                 <p>Share your ideas, provide feedback, and help answer questions from new members.</p>
                 <div class="step-tips">
                   <span class="tip"><i class="fas fa-comment"></i> Be active in chats</span>
@@ -633,7 +655,7 @@
                   <span class="tip"><i class="fas fa-gavel"></i> Tokenization Contests</span>
                   <span class="tip"><i class="fas fa-globe"></i> Journey Contests</span>
                 </div>
-                <div class="step-actions" style="margin-top: var(--spacing-md);">
+                <div class="step-actions step-actions--spaced">
                   <a href="contests.html" class="step-action">
                     <i class="fas fa-trophy"></i> See Contests
                   </a>
@@ -644,7 +666,7 @@
             <div class="step-item" data-aos="fade-right" data-aos-delay="300">
               <div class="step-number">04</div>
               <div class="step-content">
-                <h4>Share & Create Content</h4>
+                <h4>Share &amp; Create Content</h4>
                 <p>Help grow our community by creating and sharing RebelInuX content.</p>
                 <div class="step-actions">
                   <a href="https://x.com/RebelInuX" target="_blank" class="step-action">
@@ -667,7 +689,11 @@
     <!-- FAQ Section -->
     <section id="faq">
       <div class="container">
-        <h2 data-aos="fade-up">Frequently Asked Questions</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">❓ Questions</span>
+          <h2>Frequently Asked <em class="gold-serif">Questions</em></h2>
+          <p class="section-subtitle">Everything you need to know about the community</p>
+        </div>
 
         <div class="content-card" data-aos="fade-up">
           <div class="faq-grid">
@@ -712,29 +738,32 @@
     </section>
 
     <!-- Final CTA -->
-    <section style="text-align: center; padding: var(--spacing-xl) var(--spacing-md); margin: var(--spacing-xl) auto; max-width: 800px;" data-aos="fade-up">
-      <h2 style="color: var(--rebel-gold); margin-bottom: var(--spacing-lg);">READY TO JOIN THE REBELLION?</h2>
-      <p style="font-size: 1.2em; margin-bottom: var(--spacing-lg); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-        Join our growing community across multiple platforms. Connect with fellow rebels, stay updated, and participate in contests to shape the future of RebelInuX.
-      </p>
+    <section class="container cta-section" data-aos="fade-up">
+      <div class="section-header">
+        <span class="section-eyebrow">🔥 Join the Rebellion</span>
+        <h2>Ready to <em class="gold-serif">Join the Rebellion?</em></h2>
+        <p class="section-subtitle">
+          Join our growing community across multiple platforms. Connect with fellow rebels, stay updated, and participate in contests to shape the future of RebelInuX.
+        </p>
+      </div>
 
-      <div style="display: flex; justify-content: center; gap: var(--spacing-md); margin-top: var(--spacing-lg); flex-wrap: wrap;">
-        <a href="https://t.me/RebelInuX" target="_blank" class="cta-button">
+      <div class="cta-section-actions">
+        <a href="https://t.me/RebelInuX" target="_blank" rel="noopener noreferrer" class="cta-button primary-glow">
           <i class="fab fa-telegram"></i> JOIN TELEGRAM
         </a>
-        <a href="https://x.com/RebelInuX" target="_blank" class="cta-button gold">
+        <a href="https://x.com/RebelInuX" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
           <i class="fab fa-twitter"></i> FOLLOW ON X
         </a>
-        <a href="https://discord.com/invite/s8dkuyD3cZ" target="_blank" class="cta-button" style="background: #7289da;">
+        <a href="https://discord.com/invite/s8dkuyD3cZ" target="_blank" rel="noopener noreferrer" class="cta-button" style="background: #7289da; color:#fff; border-color:#7289da;">
           <i class="fab fa-discord"></i> JOIN DISCORD
         </a>
-        <a href="https://www.tiktok.com/@rebelinux" target="_blank" class="cta-button" style="background: #000000;">
+        <a href="https://www.tiktok.com/@rebelinux" target="_blank" rel="noopener noreferrer" class="cta-button" style="background: #000; color:#fff; border-color:#333;">
           <i class="fab fa-tiktok"></i> FOLLOW ON TIKTOK
         </a>
-        <a href="https://www.instagram.com/rebelinux_rebl/" target="_blank" class="cta-button" style="background: linear-gradient(45deg, #f09433, #d62976, #962fbf);">
+        <a href="https://www.instagram.com/rebelinux_rebl/" target="_blank" rel="noopener noreferrer" class="cta-button instagram-gradient">
           <i class="fab fa-instagram"></i> FOLLOW ON IG
         </a>
-        <a href="contests.html" class="cta-button" style="background: var(--rebel-red);">
+        <a href="contests.html" class="cta-button" style="background: var(--rebel-red); color:#fff; border-color: var(--rebel-red);">
           <i class="fas fa-trophy"></i> ENTER A CONTEST
         </a>
       </div>
@@ -743,7 +772,11 @@
     <!-- Related Pages -->
     <section id="related-pages">
       <div class="container">
-        <h2 data-aos="fade-up">Explore More</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">🧭 Continue Exploring</span>
+          <h2>Explore <em class="gold-serif">More</em></h2>
+          <p class="section-subtitle">Three ways to deepen your understanding</p>
+        </div>
 
         <div class="related-grid">
           <a href="journey.html" class="related-card artwork-card" data-aos="fade-right">
@@ -758,7 +791,7 @@
           <a href="contests.html" class="related-card governance-card" data-aos="fade-up">
             <div class="related-icon"><i class="fas fa-trophy"></i></div>
             <h3>Contests</h3>
-            <p>Enter & Earn $REBL</p>
+            <p>Enter &amp; Earn $REBL</p>
             <div class="related-arrow">
               <i class="fas fa-arrow-right"></i> See Contests
             </div>
