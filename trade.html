@@ -24,7 +24,9 @@
   <link rel="apple-touch-icon" href="images/Logo_REBL.svg">
   <title>Trade $REBL - Live Charts & Real-time Prices | RebelInuX</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -50,17 +52,31 @@
   <main>
     <!-- Hero Section -->
     <section class="page-hero page-hero--trade" data-aos="fade-up">
+      <div class="hero-background-pattern" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
       <div class="container">
-        <h1>TRADE & EXCHANGE GUIDE</h1>
-        <p class="text-lead" data-aos="fade-up" data-aos-delay="100">Live charts, real-time prices, DexScreener data, and contract verification for RebelInuX.</p>
+        <div class="hero-eyebrow" data-aos="fade-up">
+          <span class="live-dot"></span>
+          <span>LIVE DATA · VERIFIED CONTRACT · MULTI-CHAIN</span>
+        </div>
+
+        <h1 data-aos="fade-up" data-aos-delay="100">
+          Trade &amp; Exchange <em class="gold-serif">Guide</em>
+        </h1>
+
+        <p class="text-lead" data-aos="fade-up" data-aos-delay="150">
+          Live charts, real-time prices, DexScreener data, and contract verification for RebelInuX.
+        </p>
+
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-          <a href="#live-chart" class="cta-button">
+          <a href="#live-chart" class="cta-button primary-glow">
             <i class="fas fa-chart-line"></i> Live Chart
           </a>
-          <a href="#contract-verify" class="cta-button gold">
+          <a href="#contract-verify" class="cta-button secondary">
             <i class="fas fa-file-contract"></i> Contract Verification
           </a>
-          <a href="#buy-now" class="cta-button">
+          <a href="#buy-now" class="cta-button secondary">
             <i class="fas fa-shopping-cart"></i> Buy Now
           </a>
         </div>
@@ -105,7 +121,7 @@
               </div>
               <div class="takeaway-content">
                 <div class="takeaway-title">Contract Verified</div>
-                <div class="takeaway-value">Solscan & RugCheck</div>
+                <div class="takeaway-value">Solscan &amp; RugCheck</div>
                 <div class="takeaway-sub">Transparent code verification</div>
               </div>
             </div>
@@ -128,7 +144,7 @@
               <div class="takeaway-content">
                 <div class="takeaway-title">Live Trading</div>
                 <div class="takeaway-value">GeckoTerminal</div>
-                <div class="takeaway-sub">Real-time charts & data</div>
+                <div class="takeaway-sub">Real-time charts &amp; data</div>
               </div>
             </div>
 
@@ -156,10 +172,13 @@
     <!-- Logo Explanation Section -->
     <section id="logo-explanation" data-aos="fade-up">
       <div class="container">
-        <div class="content-card logo-card">
-          <h3><i class="fas fa-images"></i> Understanding the Dual Logo System</h3>
-          <p class="section-intro">You'll notice $REBL appears with different logos across platforms. Here's why:</p>
+        <div class="section-header">
+          <span class="section-eyebrow">🖼️ Brand</span>
+          <h2>Understanding the <em class="gold-serif">Dual Logo System</em></h2>
+          <p class="section-subtitle">You'll notice $REBL appears with different logos across platforms. Here's why:</p>
+        </div>
 
+        <div class="content-card logo-card">
           <div class="logo-explanation-grid">
             <!-- On-Chain Section -->
             <div class="logo-section onchain">
@@ -172,7 +191,7 @@
                 <p class="logo-subtitle">Permanently stored on Solana blockchain</p>
                 <ul class="logo-features">
                   <li><i class="fas fa-check"></i> Immutable once deployed</li>
-                  <li><i class="fas fa-check"></i> Used in wallets & blockchain explorers</li>
+                  <li><i class="fas fa-check"></i> Used in wallets &amp; blockchain explorers</li>
                   <li><i class="fas fa-check"></i> Appears on Pump.fun, Jupiter</li>
                 </ul>
                 <div class="platform-examples">
@@ -193,7 +212,7 @@
                 <p class="logo-subtitle">Current brand identity across platforms</p>
                 <ul class="logo-features">
                   <li><i class="fas fa-check"></i> Modern, refined design</li>
-                  <li><i class="fas fa-check"></i> Used for marketing & websites</li>
+                  <li><i class="fas fa-check"></i> Used for marketing &amp; websites</li>
                   <li><i class="fas fa-check"></i> Appears on analytics platforms</li>
                 </ul>
                 <div class="platform-examples">
@@ -216,7 +235,7 @@
               <div class="contract-emphasis">
                 <div class="contract-display-inline">
                   <code>F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump</code>
-                  <button onclick="copyContract()" class="cta-button small">
+                  <button onclick="copyContract()" class="cta-button primary-glow small">
                     <i class="fas fa-copy"></i> Copy
                   </button>
                 </div>
@@ -265,7 +284,11 @@
     <!-- Live Trading Dashboard -->
     <section id="live-trading" data-aos="fade-up">
       <div class="container">
-        <h2><i class="fas fa-chart-line"></i> Live Trading Dashboard</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">📊 Live Data</span>
+          <h2>Live Trading <em class="gold-serif">Dashboard</em></h2>
+          <p class="section-subtitle">Real-time prices, market cap, volume, and liquidity</p>
+        </div>
 
         <div class="trading-dashboard">
           <div class="dashboard-header">
@@ -346,7 +369,11 @@
     <!-- Live Chart Section -->
     <section id="live-chart" data-aos="fade-up">
       <div class="container">
-        <h2><i class="fas fa-chart-line"></i> Live $REBL Chart</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">📈 Interactive</span>
+          <h2>Live $REBL <em class="gold-serif">Chart</em></h2>
+          <p class="section-subtitle">Real-time price action, trading volume, and technical analysis powered by GeckoTerminal</p>
+        </div>
 
         <div class="chart-container">
           <div class="chart-header">
@@ -380,7 +407,11 @@
     <!-- Trading Pairs & Exchanges -->
     <section id="buy-now" data-aos="fade-up">
       <div class="container">
-        <h2><i class="fas fa-shopping-cart"></i> Buy $REBL Now</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">🛒 Buy Now</span>
+          <h2>Buy <em class="gold-serif">$REBL</em></h2>
+          <p class="section-subtitle">Three ways to trade — all leading to the same verified token</p>
+        </div>
 
         <div class="exchange-links">
           <!-- Pump.fun Card -->
@@ -446,7 +477,11 @@
     <!-- Trading Pairs -->
     <section id="trading-pairs" data-aos="fade-up">
       <div class="container">
-        <h2><i class="fas fa-exchange-alt"></i> Trading Pairs</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">💱 Pairs</span>
+          <h2>Trading <em class="gold-serif">Pairs</em></h2>
+          <p class="section-subtitle">SOL/REBL and USDC/REBL — both on Jupiter</p>
+        </div>
 
         <div class="trading-pairs-grid">
           <!-- SOL/REBL Pair -->
@@ -525,7 +560,11 @@
     <!-- Full Contract Verification -->
     <section id="contract-verify" data-aos="fade-up">
       <div class="container">
-        <h2><i class="fas fa-file-contract"></i> FULL CONTRACT VERIFICATION</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">🛡️ Trust</span>
+          <h2>Full Contract <em class="gold-serif">Verification</em></h2>
+          <p class="section-subtitle">Verify the $REBL contract address on multiple third-party platforms</p>
+        </div>
 
         <div class="contract-verify-container">
 
@@ -720,7 +759,12 @@
     <!-- FAQ Section -->
     <section id="faq" data-aos="fade-up">
       <div class="container">
-        <h2>Frequently Asked Questions</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">❓ Questions</span>
+          <h2>Frequently Asked <em class="gold-serif">Questions</em></h2>
+          <p class="section-subtitle">Everything you need to know before trading $REBL</p>
+        </div>
+
         <div class="content-card">
           <div class="faq-grid">
             <div class="faq-item" data-aos="fade-right">
@@ -760,7 +804,12 @@
     <!-- Explore More -->
     <section id="related-pages" data-aos="fade-up">
       <div class="container">
-        <h2>Explore More</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">🧭 Continue Exploring</span>
+          <h2>Explore <em class="gold-serif">More</em></h2>
+          <p class="section-subtitle">Three ways to deepen your understanding</p>
+        </div>
+
         <div class="related-grid">
           <a href="journey.html" class="related-card rewards-card" data-aos="fade-right">
             <div class="related-icon"><i class="fas fa-film"></i></div>
@@ -774,7 +823,7 @@
           <a href="contests.html" class="related-card trade-card" data-aos="fade-up">
             <div class="related-icon"><i class="fas fa-trophy"></i></div>
             <h3>Contests</h3>
-            <p>Enter & Earn $REBL</p>
+            <p>Enter &amp; Earn $REBL</p>
             <div class="related-arrow">
               <i class="fas fa-arrow-right"></i> See Contests
             </div>
@@ -783,7 +832,7 @@
           <a href="tokenomics.html" class="related-card tokenomics-card" data-aos="fade-left">
             <div class="related-icon"><i class="fas fa-coins"></i></div>
             <h3>Tokenomics</h3>
-            <p>Supply & Distribution</p>
+            <p>Supply &amp; Distribution</p>
             <div class="related-arrow">
               <i class="fas fa-arrow-right"></i> Economic Model
             </div>
