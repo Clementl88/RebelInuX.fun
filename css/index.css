@@ -2376,7 +2376,7 @@ button.chapter-row:hover {
   background: linear-gradient(135deg, #e6c493, #ffd700);
   color: #1a1a2e;
 }
-.step-cta--gold:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(212,167,106,0.4); }
+.step-cta--gold:hover { transform: translateY(-2px); background: #e6b65f; box-shadow: 0 10px 25px rgba(212,167,106,0.4); }
 .step-cta--amber {
   background: #d4a76a;
   color: #1a1a2e;
