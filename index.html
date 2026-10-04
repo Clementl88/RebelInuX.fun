@@ -31,6 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.youtube.com">
+  <link rel="preconnect" href="https://i.ytimg.com">
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -92,10 +93,9 @@
           <div class="hero-text">
             <div class="hero-eyebrow" data-aos="fade-up">
               <span class="live-dot"></span>
-              <span>WhITEPAPER v4.0 · LIVE</span>
+              <span>WHITEPAPER v4.0 · LIVE</span>
             </div>
 
-            <!-- Audience Carousel -->
             <div class="audience-carousel" data-aos="fade-up" data-aos-delay="100">
               <div class="audience-slides">
                 <div class="audience-slide active" data-audience="collector">
@@ -143,7 +143,6 @@
               </div>
             </div>
 
-            <!-- Journey Ribbon -->
             <div class="journey-ribbon" data-aos="fade-up" data-aos-delay="200">
               <span class="ribbon-flag">🇫🇷 CURRENT</span>
               <span class="ribbon-title"><strong>1789 French Revolution</strong></span>
@@ -156,7 +155,6 @@
               </a>
             </div>
 
-            <!-- CTAs -->
             <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
               <a href="journey.html" class="cta-button cta-primary">
                 <i class="fas fa-gem"></i><span>Explore Collectibles</span>
@@ -169,7 +167,6 @@
               </a>
             </div>
 
-            <!-- Trust row -->
             <div class="trust-row" data-aos="fade-up" data-aos-delay="400">
               <span class="trust-item"><i class="fas fa-shield-halved"></i> On-Chain Verified</span>
               <span class="trust-item"><i class="fas fa-fire"></i> 50% Buy-Back &amp; Burn</span>
@@ -192,7 +189,12 @@
                   <span>NOW SHOWING</span>
                 </div>
 
-                <a href="https://www.youtube.com/shorts/_Dsgy-ef6xk" target="_blank" rel="noopener noreferrer" class="video-link">
+                <button class="video-link"
+                        data-video-open
+                        data-video-id="_Dsgy-ef6xk"
+                        data-video-title="Chapter IV — The Fall"
+                        data-video-desc="July 1789. One decision. Everything changed."
+                        aria-label="Play Chapter IV: The Fall">
                   <div class="video-thumb">
                     <img src="images/journey/chapter-4-fall.jpg"
                          alt="Chapter IV: The Fall"
@@ -206,7 +208,7 @@
                       <i class="fas fa-play"></i>
                     </div>
                   </div>
-                </a>
+                </button>
                 <span class="video-chapter-tag">CHAPTER IV</span>
               </div>
 
@@ -219,7 +221,6 @@
         </div>
       </div>
 
-      <!-- Live Stats Ribbon -->
       <div class="live-stats-ribbon" data-aos="fade-up" data-aos-delay="500">
         <div class="live-stat">
           <span class="live-stat-value">8</span>
@@ -241,18 +242,24 @@
     </section>
 
     <!-- ============================================================
-         GALLERY — VIDEO SHOWCASE
+         GALLERY — INLINE VIDEO PLAYBACK
          ============================================================ -->
     <section class="gallery-section" id="gallery" aria-label="Gallery">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
           <span class="section-eyebrow">🎬 The Gallery</span>
           <h2>Real Paintings. <em class="gold-serif">AI-Animated.</em></h2>
-          <p class="section-subtitle">History, brought to life one chapter at a time.</p>
+          <p class="section-subtitle">Play any chapter directly here — no redirect.</p>
         </div>
 
         <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://www.youtube.com/shorts/_Dsgy-ef6xk" target="_blank" rel="noopener noreferrer" class="gallery-card gallery-card--featured">
+          <!-- Featured -->
+          <button class="gallery-card gallery-card--featured"
+                  data-video-open
+                  data-video-id="_Dsgy-ef6xk"
+                  data-video-title="Chapter IV — The Fall"
+                  data-video-desc="The Bastille falls. Everything changes."
+                  aria-label="Play Chapter IV">
             <div class="gallery-thumb">
               <img src="images/journey/chapter-4-fall.jpg" alt="Chapter IV" loading="lazy"
                    onerror="this.style.display='none';this.parentElement.classList.add('no-image')">
@@ -265,9 +272,15 @@
               <h4>The Fall — July 1789</h4>
               <p>The Bastille falls. Everything changes.</p>
             </div>
-          </a>
+          </button>
 
-          <a href="journey.html" class="gallery-card">
+          <!-- Chapter III — replace VIDEO_ID with your real short ID -->
+          <button class="gallery-card"
+                  data-video-open
+                  data-video-id="VIDEO_ID_CH3"
+                  data-video-title="Chapter III — The Oath"
+                  data-video-desc="The Tennis Court Oath is sworn. A new nation begins."
+                  aria-label="Play Chapter III">
             <div class="gallery-thumb">
               <img src="images/journey/chapter-3-oath.jpg" alt="Chapter III" loading="lazy"
                    onerror="this.style.display='none';this.parentElement.classList.add('no-image')">
@@ -279,9 +292,15 @@
               <h4>The Oath — 1789</h4>
               <p>The Tennis Court Oath is sworn.</p>
             </div>
-          </a>
+          </button>
 
-          <a href="journey.html" class="gallery-card">
+          <!-- Chapter II — replace VIDEO_ID -->
+          <button class="gallery-card"
+                  data-video-open
+                  data-video-id="VIDEO_ID_CH2"
+                  data-video-title="Chapter II — Winter of Discontent"
+                  data-video-desc="A kingdom on the edge of collapse."
+                  aria-label="Play Chapter II">
             <div class="gallery-thumb">
               <img src="images/journey/chapter-2-winter.jpg" alt="Chapter II" loading="lazy"
                    onerror="this.style.display='none';this.parentElement.classList.add('no-image')">
@@ -293,7 +312,67 @@
               <h4>Winter of Discontent</h4>
               <p>A kingdom on the edge.</p>
             </div>
-          </a>
+          </button>
+
+          <!-- Chapter I — replace VIDEO_ID -->
+          <button class="gallery-card"
+                  data-video-open
+                  data-video-id="VIDEO_ID_CH1"
+                  data-video-title="Chapter I — Twilight of the Ancien Régime"
+                  data-video-desc="The last days of the old order."
+                  aria-label="Play Chapter I">
+            <div class="gallery-thumb">
+              <img src="images/journey/chapter-1-twilight.jpg" alt="Chapter I" loading="lazy"
+                   onerror="this.style.display='none';this.parentElement.classList.add('no-image')">
+              <div class="gallery-placeholder"><i class="fas fa-crown"></i></div>
+              <div class="gallery-overlay"><i class="fas fa-play"></i></div>
+              <span class="gallery-badge">CHAPTER I</span>
+            </div>
+            <div class="gallery-meta">
+              <h4>Twilight of the Ancien Régime</h4>
+              <p>The old world in its final hours.</p>
+            </div>
+          </button>
+
+          <!-- Chapter V — replace VIDEO_ID -->
+          <button class="gallery-card"
+                  data-video-open
+                  data-video-id="VIDEO_ID_CH5"
+                  data-video-title="Chapter V — The Republic Rises"
+                  data-video-desc="From revolution to republic."
+                  aria-label="Play Chapter V">
+            <div class="gallery-thumb">
+              <img src="images/journey/chapter-5-republic.jpg" alt="Chapter V" loading="lazy"
+                   onerror="this.style.display='none';this.parentElement.classList.add('no-image')">
+              <div class="gallery-placeholder"><i class="fas fa-flag"></i></div>
+              <div class="gallery-overlay"><i class="fas fa-play"></i></div>
+              <span class="gallery-badge">CHAPTER V</span>
+            </div>
+            <div class="gallery-meta">
+              <h4>The Republic Rises</h4>
+              <p>A nation reborn in fire and ink.</p>
+            </div>
+          </button>
+
+          <!-- Chapter VI — replace VIDEO_ID -->
+          <button class="gallery-card"
+                  data-video-open
+                  data-video-id="VIDEO_ID_CH6"
+                  data-video-title="Chapter VI — The Terror"
+                  data-video-desc="The Revolution devours its own."
+                  aria-label="Play Chapter VI">
+            <div class="gallery-thumb">
+              <img src="images/journey/chapter-6-terror.jpg" alt="Chapter VI" loading="lazy"
+                   onerror="this.style.display='none';this.parentElement.classList.add('no-image')">
+              <div class="gallery-placeholder"><i class="fas fa-fire"></i></div>
+              <div class="gallery-overlay"><i class="fas fa-play"></i></div>
+              <span class="gallery-badge">CHAPTER VI</span>
+            </div>
+            <div class="gallery-meta">
+              <h4>The Terror</h4>
+              <p>The blade turns inward.</p>
+            </div>
+          </button>
         </div>
 
         <div class="gallery-cta" data-aos="fade-up" data-aos-delay="200">
@@ -305,7 +384,7 @@
     </section>
 
     <!-- ============================================================
-         THE JOURNEY — Editorial story block
+         THE JOURNEY — Editorial
          ============================================================ -->
     <section class="journey-editorial" id="journey-story" aria-label="The Journey">
       <div class="container">
@@ -345,48 +424,56 @@
                 <a href="journey.html" class="chapter-list-link">View all 8 <i class="fas fa-arrow-right"></i></a>
               </div>
 
-              <div class="chapter-row" data-chapter="I">
+              <button class="chapter-row" data-video-open data-video-id="VIDEO_ID_CH1"
+                      data-video-title="Chapter I — Twilight of the Ancien Régime"
+                      data-video-desc="The old world in its final hours.">
                 <span class="chapter-num">I</span>
-                <div class="chapter-info">
-                  <div class="chapter-code">REBL-J1A</div>
-                  <div class="chapter-name">Twilight of the Ancien Régime</div>
-                </div>
+                <span class="chapter-info">
+                  <span class="chapter-code">REBL-J1A</span>
+                  <span class="chapter-name">Twilight of the Ancien Régime</span>
+                </span>
                 <span class="chapter-year">1779</span>
-              </div>
+              </button>
 
-              <div class="chapter-row" data-chapter="II">
+              <button class="chapter-row" data-video-open data-video-id="VIDEO_ID_CH2"
+                      data-video-title="Chapter II — Winter of Discontent"
+                      data-video-desc="A kingdom on the edge of collapse.">
                 <span class="chapter-num">II</span>
-                <div class="chapter-info">
-                  <div class="chapter-code">REBL-J1B</div>
-                  <div class="chapter-name">Winter of Discontent</div>
-                </div>
+                <span class="chapter-info">
+                  <span class="chapter-code">REBL-J1B</span>
+                  <span class="chapter-name">Winter of Discontent</span>
+                </span>
                 <span class="chapter-year">1780–88</span>
-              </div>
+              </button>
 
-              <div class="chapter-row" data-chapter="III">
+              <button class="chapter-row" data-video-open data-video-id="VIDEO_ID_CH3"
+                      data-video-title="Chapter III — The Oath"
+                      data-video-desc="The Tennis Court Oath is sworn.">
                 <span class="chapter-num">III</span>
-                <div class="chapter-info">
-                  <div class="chapter-code">REBL-J1C</div>
-                  <div class="chapter-name">The Oath</div>
-                </div>
+                <span class="chapter-info">
+                  <span class="chapter-code">REBL-J1C</span>
+                  <span class="chapter-name">The Oath</span>
+                </span>
                 <span class="chapter-year">1789</span>
-              </div>
+              </button>
 
-              <div class="chapter-row" data-chapter="IV">
+              <button class="chapter-row" data-video-open data-video-id="_Dsgy-ef6xk"
+                      data-video-title="Chapter IV — The Fall"
+                      data-video-desc="The Bastille falls. Everything changes.">
                 <span class="chapter-num">IV</span>
-                <div class="chapter-info">
-                  <div class="chapter-code">REBL-J1D</div>
-                  <div class="chapter-name">The Fall</div>
-                </div>
+                <span class="chapter-info">
+                  <span class="chapter-code">REBL-J1D</span>
+                  <span class="chapter-name">The Fall</span>
+                </span>
                 <span class="chapter-year">July 1789</span>
-              </div>
+              </button>
 
               <div class="chapter-row chapter-row--muted">
                 <span class="chapter-num">V+</span>
-                <div class="chapter-info">
-                  <div class="chapter-code">REBL-J1E–H</div>
-                  <div class="chapter-name">The Republic Rises…</div>
-                </div>
+                <span class="chapter-info">
+                  <span class="chapter-code">REBL-J1E–H</span>
+                  <span class="chapter-name">The Republic Rises…</span>
+                </span>
                 <span class="chapter-year">1789–99</span>
               </div>
             </div>
@@ -404,7 +491,7 @@
     </section>
 
     <!-- ============================================================
-         THE FIVE AUDIENCES — segmented value props
+         FIVE AUDIENCES
          ============================================================ -->
     <section class="audience-section" id="for-you" aria-label="For you">
       <div class="container">
@@ -460,7 +547,7 @@
               <li><i class="fas fa-check"></i> Researched narratives</li>
               <li><i class="fas fa-check"></i> Free to watch</li>
             </ul>
-            <a href="https://youtube.com/@RebelInuX_REBL" target="_blank" rel="noopener noreferrer" class="audience-cta">Watch on YouTube <i class="fas fa-arrow-right"></i></a>
+            <a href="#gallery" class="audience-cta">Watch the Gallery <i class="fas fa-arrow-right"></i></a>
           </article>
 
           <article class="audience-card">
@@ -479,7 +566,7 @@
     </section>
 
     <!-- ============================================================
-         WHY THIS WINS — Investor block
+         WHY THIS WINS — Investor
          ============================================================ -->
     <section class="why-wins" id="why-wins" aria-label="Why this wins">
       <div class="container">
@@ -537,7 +624,7 @@
     </section>
 
     <!-- ============================================================
-         HOW PARTICIPATION WORKS
+         PARTICIPATION
          ============================================================ -->
     <section class="participation-section-block" id="how-it-works" aria-label="How it works">
       <div class="container">
@@ -597,7 +684,7 @@
     </section>
 
     <!-- ============================================================
-         PARTNERS — For Museums & Collaborators
+         PARTNERS
          ============================================================ -->
     <section class="partners-section" id="partners" aria-label="Partners">
       <div class="container">
@@ -658,7 +745,7 @@
     </section>
 
     <!-- ============================================================
-         TOKEN ECOSYSTEM
+         ECOSYSTEM
          ============================================================ -->
     <section class="ecosystem-section" id="token-ecosystem" aria-label="Token ecosystem">
       <div class="container">
@@ -682,7 +769,6 @@
         </div>
 
         <div class="chains-grid">
-          <!-- Base platform -->
           <div class="chain-column" data-aos="fade-up" data-aos-delay="100">
             <div class="chain-column-header">
               <div class="chain-logo-wrap">
@@ -770,7 +856,6 @@
             </div>
           </div>
 
-          <!-- Bridge -->
           <div class="chain-bridge" aria-hidden="true" data-aos="fade-up" data-aos-delay="200">
             <div class="chain-bridge-line"></div>
             <div class="chain-bridge-chip">
@@ -779,7 +864,6 @@
             </div>
           </div>
 
-          <!-- Solana platform -->
           <div class="chain-column" data-aos="fade-up" data-aos-delay="300">
             <div class="chain-column-header">
               <div class="chain-logo-wrap chain-logo-wrap--solana">
@@ -949,9 +1033,11 @@
             </div>
             <h3>Watch &amp; Discover</h3>
             <p>Follow the Journey on TikTok, YouTube, Instagram. All videos are free.</p>
-            <a href="journey.html" class="step-cta step-cta--gold">
-              <i class="fas fa-film"></i><span>Explore the Journey</span>
-            </a>
+            <button class="step-cta step-cta--gold" data-video-open data-video-id="_Dsgy-ef6xk"
+                    data-video-title="Chapter IV — The Fall"
+                    data-video-desc="Watch the latest chapter.">
+              <i class="fas fa-play"></i><span>Watch the Latest</span>
+            </button>
           </div>
 
           <div class="step-card" data-aos="fade-up" data-aos-delay="200">
@@ -1028,6 +1114,47 @@
     </section>
   </main>
 
+  <!-- ============================================================
+       VIDEO MODAL — inline playback
+       ============================================================ -->
+  <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="video-modal-backdrop" data-close-modal></div>
+
+    <div class="video-modal-shell">
+      <div class="video-modal-header">
+        <div class="video-modal-title">
+          <span class="live-dot"></span>
+          <span id="videoModalLabel">Chapter IV — The Fall</span>
+        </div>
+        <button class="video-modal-close" data-close-modal aria-label="Close video">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="video-modal-player">
+        <div id="videoModalFrame" class="video-modal-frame">
+          <!-- YouTube iframe gets injected here -->
+        </div>
+        <div class="video-modal-loading" id="videoModalLoading">
+          <div class="loader-spinner"></div>
+          <span>Loading video…</span>
+        </div>
+      </div>
+
+      <div class="video-modal-footer">
+        <p class="video-modal-desc" id="videoModalDesc">One decision. Everything changed.</p>
+        <div class="video-modal-actions">
+          <a href="#" id="videoModalYT" target="_blank" rel="noopener noreferrer" class="video-modal-yt">
+            <i class="fab fa-youtube"></i> Watch on YouTube
+          </a>
+          <button class="video-modal-share" data-share-video>
+            <i class="fas fa-share-alt"></i> Share
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Sticky wallet bar -->
   <div class="wallet-bar" id="walletBar">
     <span class="wallet-bar-text"><i class="fas fa-wallet"></i> Connect to unlock holder benefits</span>
@@ -1050,7 +1177,6 @@
     AOS.init({ duration: 700, once: true, offset: 80, disable: window.innerWidth < 600 ? 'mobile' : false });
     window.addEventListener('resize', () => AOS.refresh());
 
-    // Fallbacks for inline onclick
     window.copyToClipboard = window.copyToClipboard || function (text) {
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(text).then(
