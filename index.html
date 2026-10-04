@@ -31,7 +31,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.youtube.com">
-  <link rel="preconnect" href="https://i.ytimg.com">
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+  <link rel="dns-prefetch" href="https://i.ytimg.com">
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -81,7 +82,7 @@
 
   <main>
     <!-- ============================================================
-         HERO — AUDIENCE-AWARE CAROUSEL
+         HERO
          ============================================================ -->
     <section class="page-hero page-hero--main" aria-label="Hero">
       <div class="hero-background-pattern" aria-hidden="true"></div>
@@ -175,7 +176,7 @@
             </div>
           </div>
 
-          <!-- Hero Visual: Featured Video -->
+          <!-- Hero Visual -->
           <div class="hero-visual">
             <div class="hero-video-card" data-aos="fade-up" data-aos-delay="200">
               <div class="video-frame">
@@ -196,10 +197,6 @@
                         data-video-desc="July 1789. One decision. Everything changed."
                         aria-label="Play Chapter IV: The Fall">
                   <div class="video-thumb">
-                    <img src="images/journey/chapter-4-fall.jpg"
-                         alt="Chapter IV: The Fall"
-                         loading="eager"
-                         onerror="this.style.display='none';this.parentElement.classList.add('no-image')">
                     <div class="video-placeholder">
                       <i class="fas fa-landmark"></i>
                       <span>Chapter IV</span>
@@ -242,7 +239,7 @@
     </section>
 
     <!-- ============================================================
-         GALLERY — INLINE VIDEO PLAYBACK
+         GALLERY — thumbnails come from YouTube automatically
          ============================================================ -->
     <section class="gallery-section" id="gallery" aria-label="Gallery">
       <div class="container">
@@ -253,7 +250,7 @@
         </div>
 
         <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
-          <!-- Featured -->
+          <!-- FEATURED — Chapter IV -->
           <button class="gallery-card gallery-card--featured"
                   data-video-open
                   data-video-id="_Dsgy-ef6xk"
@@ -261,8 +258,6 @@
                   data-video-desc="The Bastille falls. Everything changes."
                   aria-label="Play Chapter IV">
             <div class="gallery-thumb">
-              <img src="images/journey/chapter-4-fall.jpg" alt="Chapter IV" loading="lazy"
-                   onerror="this.style.display='none';this.parentElement.classList.add('no-image')">
               <div class="gallery-placeholder"><i class="fas fa-landmark"></i></div>
               <div class="gallery-overlay"><i class="fas fa-play"></i></div>
               <span class="gallery-badge">CHAPTER IV</span>
@@ -274,7 +269,7 @@
             </div>
           </button>
 
-          <!-- Chapter III — replace VIDEO_ID with your real short ID -->
+          <!-- CHAPTER III — replace VIDEO_ID_CH3 with the real YouTube ID -->
           <button class="gallery-card"
                   data-video-open
                   data-video-id="VIDEO_ID_CH3"
@@ -282,8 +277,6 @@
                   data-video-desc="The Tennis Court Oath is sworn. A new nation begins."
                   aria-label="Play Chapter III">
             <div class="gallery-thumb">
-              <img src="images/journey/chapter-3-oath.jpg" alt="Chapter III" loading="lazy"
-                   onerror="this.style.display='none';this.parentElement.classList.add('no-image')">
               <div class="gallery-placeholder"><i class="fas fa-scroll"></i></div>
               <div class="gallery-overlay"><i class="fas fa-play"></i></div>
               <span class="gallery-badge">CHAPTER III</span>
@@ -294,7 +287,7 @@
             </div>
           </button>
 
-          <!-- Chapter II — replace VIDEO_ID -->
+          <!-- CHAPTER II -->
           <button class="gallery-card"
                   data-video-open
                   data-video-id="VIDEO_ID_CH2"
@@ -302,8 +295,6 @@
                   data-video-desc="A kingdom on the edge of collapse."
                   aria-label="Play Chapter II">
             <div class="gallery-thumb">
-              <img src="images/journey/chapter-2-winter.jpg" alt="Chapter II" loading="lazy"
-                   onerror="this.style.display='none';this.parentElement.classList.add('no-image')">
               <div class="gallery-placeholder"><i class="fas fa-snowflake"></i></div>
               <div class="gallery-overlay"><i class="fas fa-play"></i></div>
               <span class="gallery-badge">CHAPTER II</span>
@@ -314,16 +305,14 @@
             </div>
           </button>
 
-          <!-- Chapter I — replace VIDEO_ID -->
+          <!-- CHAPTER I -->
           <button class="gallery-card"
                   data-video-open
                   data-video-id="VIDEO_ID_CH1"
                   data-video-title="Chapter I — Twilight of the Ancien Régime"
-                  data-video-desc="The last days of the old order."
+                  data-video-desc="The old world in its final hours."
                   aria-label="Play Chapter I">
             <div class="gallery-thumb">
-              <img src="images/journey/chapter-1-twilight.jpg" alt="Chapter I" loading="lazy"
-                   onerror="this.style.display='none';this.parentElement.classList.add('no-image')">
               <div class="gallery-placeholder"><i class="fas fa-crown"></i></div>
               <div class="gallery-overlay"><i class="fas fa-play"></i></div>
               <span class="gallery-badge">CHAPTER I</span>
@@ -334,7 +323,7 @@
             </div>
           </button>
 
-          <!-- Chapter V — replace VIDEO_ID -->
+          <!-- CHAPTER V -->
           <button class="gallery-card"
                   data-video-open
                   data-video-id="VIDEO_ID_CH5"
@@ -342,8 +331,6 @@
                   data-video-desc="From revolution to republic."
                   aria-label="Play Chapter V">
             <div class="gallery-thumb">
-              <img src="images/journey/chapter-5-republic.jpg" alt="Chapter V" loading="lazy"
-                   onerror="this.style.display='none';this.parentElement.classList.add('no-image')">
               <div class="gallery-placeholder"><i class="fas fa-flag"></i></div>
               <div class="gallery-overlay"><i class="fas fa-play"></i></div>
               <span class="gallery-badge">CHAPTER V</span>
@@ -354,7 +341,7 @@
             </div>
           </button>
 
-          <!-- Chapter VI — replace VIDEO_ID -->
+          <!-- CHAPTER VI -->
           <button class="gallery-card"
                   data-video-open
                   data-video-id="VIDEO_ID_CH6"
@@ -362,8 +349,6 @@
                   data-video-desc="The Revolution devours its own."
                   aria-label="Play Chapter VI">
             <div class="gallery-thumb">
-              <img src="images/journey/chapter-6-terror.jpg" alt="Chapter VI" loading="lazy"
-                   onerror="this.style.display='none';this.parentElement.classList.add('no-image')">
               <div class="gallery-placeholder"><i class="fas fa-fire"></i></div>
               <div class="gallery-overlay"><i class="fas fa-play"></i></div>
               <span class="gallery-badge">CHAPTER VI</span>
@@ -384,7 +369,7 @@
     </section>
 
     <!-- ============================================================
-         THE JOURNEY — Editorial
+         JOURNEY EDITORIAL
          ============================================================ -->
     <section class="journey-editorial" id="journey-story" aria-label="The Journey">
       <div class="container">
@@ -566,7 +551,7 @@
     </section>
 
     <!-- ============================================================
-         WHY THIS WINS — Investor
+         WHY THIS WINS
          ============================================================ -->
     <section class="why-wins" id="why-wins" aria-label="Why this wins">
       <div class="container">
@@ -991,7 +976,7 @@
     </section>
 
     <!-- ============================================================
-         OFFICIAL CONTRACT
+         CONTRACT
          ============================================================ -->
     <section class="contract-section" aria-label="Official contract">
       <div class="container">
@@ -1033,7 +1018,9 @@
             </div>
             <h3>Watch &amp; Discover</h3>
             <p>Follow the Journey on TikTok, YouTube, Instagram. All videos are free.</p>
-            <button class="step-cta step-cta--gold" data-video-open data-video-id="_Dsgy-ef6xk"
+            <button class="step-cta step-cta--gold"
+                    data-video-open
+                    data-video-id="_Dsgy-ef6xk"
                     data-video-title="Chapter IV — The Fall"
                     data-video-desc="Watch the latest chapter.">
               <i class="fas fa-play"></i><span>Watch the Latest</span>
@@ -1132,9 +1119,7 @@
       </div>
 
       <div class="video-modal-player">
-        <div id="videoModalFrame" class="video-modal-frame">
-          <!-- YouTube iframe gets injected here -->
-        </div>
+        <div id="videoModalFrame" class="video-modal-frame"></div>
         <div class="video-modal-loading" id="videoModalLoading">
           <div class="loader-spinner"></div>
           <span>Loading video…</span>
