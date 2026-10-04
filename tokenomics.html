@@ -27,7 +27,9 @@
   <title>$REBL Tokenomics - RebelInuX Token Details</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -62,19 +64,31 @@
   <main>
     <!-- Hero Section -->
     <section class="page-hero page-hero--tokenomics" data-aos="fade-up">
+      <div class="hero-background-pattern" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
       <div class="container">
-        <h1>$REBL TOKENOMICS</h1>
-        <p class="text-lead" data-aos="fade-up" data-aos-delay="100">
+        <div class="hero-eyebrow" data-aos="fade-up">
+          <span class="live-dot"></span>
+          <span>FIXED SUPPLY · DEFLATIONARY · VERIFIABLE ON-CHAIN</span>
+        </div>
+
+        <h1 data-aos="fade-up" data-aos-delay="100">
+          $REBL <em class="gold-serif">Tokenomics</em>
+        </h1>
+
+        <p class="text-lead" data-aos="fade-up" data-aos-delay="150">
           Complete breakdown of $REBL token distribution, vesting schedules, and value acceleration in the RebelInuX ecosystem.
         </p>
+
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-          <a href="#distribution" class="cta-button">
+          <a href="#distribution" class="cta-button primary-glow">
             <i class="fas fa-chart-pie"></i> View Distribution
           </a>
-          <a href="#vesting" class="cta-button gold">
+          <a href="#vesting" class="cta-button secondary">
             <i class="fas fa-calendar-alt"></i> Vesting Schedule
           </a>
-          <a href="#value-acceleration" class="cta-button">
+          <a href="#value-acceleration" class="cta-button secondary">
             <i class="fas fa-sync-alt"></i> Value Acceleration
           </a>
         </div>
@@ -140,7 +154,11 @@
     <!-- Quick Stats -->
     <section id="quick-stats" data-aos="fade-up">
       <div class="container">
-        <h2><i class="fas fa-chart-line"></i> Token Overview</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">📊 By the Numbers</span>
+          <h2>Token <em class="gold-serif">Overview</em></h2>
+          <p class="section-subtitle">Everything you need to know at a glance</p>
+        </div>
 
         <div class="stats-overview">
           <div class="stat-card" data-aos="fade-right">
@@ -187,7 +205,11 @@
     <!-- Distribution Chart -->
     <section id="distribution" data-aos="fade-up">
       <div class="container">
-        <h2><i class="fas fa-chart-pie"></i> Token Distribution</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">🥧 Allocation</span>
+          <h2>Token <em class="gold-serif">Distribution</em></h2>
+          <p class="section-subtitle">Fair launch · Transparent allocation · Zero creator allocation at genesis</p>
+        </div>
 
         <div class="chart-container">
           <div class="chart-wrapper">
@@ -226,7 +248,11 @@
     <!-- Vesting Schedule -->
     <section id="vesting" data-aos="fade-up">
       <div class="container">
-        <h2><i class="fas fa-calendar-alt"></i> Vesting Schedule</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">📅 Schedules</span>
+          <h2>Vesting <em class="gold-serif">Schedule</em></h2>
+          <p class="section-subtitle">Transparent cliffs and linear vesting for every allocation</p>
+        </div>
 
         <div class="vesting-grid">
 
@@ -406,10 +432,11 @@
     <!-- Detailed Tokenomics Accordion -->
     <section id="detailed-tokenomics" data-aos="fade-up">
       <div class="container">
-        <h2 class="color-gold">
-          <i class="fas fa-list-alt"></i>
-          Detailed Tokenomics Breakdown
-        </h2>
+        <div class="section-header">
+          <span class="section-eyebrow">📖 The Deep Dive</span>
+          <h2>Detailed Tokenomics <em class="gold-serif">Breakdown</em></h2>
+          <p class="section-subtitle">Every allocation, every purpose, every commitment</p>
+        </div>
 
         <div class="accordion">
 
@@ -757,7 +784,11 @@
     <!-- Value Acceleration -->
     <section id="value-acceleration" data-aos="fade-up">
       <div class="container">
-        <h2><i class="fas fa-sync-alt"></i> Cross-Chain Value Acceleration</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">🔄 The Engine</span>
+          <h2>Cross-Chain Value <em class="gold-serif">Acceleration</em></h2>
+          <p class="section-subtitle">How ZORA Creator Fees Fuel $REBL Value</p>
+        </div>
 
         <div class="content-card">
           <h3><i class="fas fa-rocket"></i> How ZORA Creator Fees Fuel $REBL Value</h3>
@@ -892,7 +923,7 @@
             </div>
 
             <div class="cycle-cta">
-              <a href="contests.html" class="cta-button">
+              <a href="contests.html" class="cta-button primary-glow">
                 <i class="fas fa-trophy"></i> Enter a Contest
               </a>
             </div>
@@ -904,7 +935,11 @@
     <!-- Creator Coin Supply -->
     <section id="creator-coin-supply" data-aos="fade-up">
       <div class="container">
-        <h2><i class="fas fa-coin"></i> $rebelinux Creator Coin Supply</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">🪙 Creator Coin</span>
+          <h2>$rebelinux Creator Coin <em class="gold-serif">Supply</em></h2>
+          <p class="section-subtitle">The digital claim ticket of the RebelInuX ecosystem on ZORA (Base)</p>
+        </div>
 
         <div class="content-card">
           <p class="supply-intro">
@@ -983,7 +1018,7 @@
           <div class="calculator-connection" data-aos="fade-up">
             <h4><i class="fas fa-link"></i> Explore $rebelinux</h4>
             <p>View the creator coin, its supply, and its role in the ecosystem on ZORA.</p>
-            <a href="https://zora.co/@rebelinux" target="_blank" rel="noopener noreferrer" class="cta-button">
+            <a href="https://zora.co/@rebelinux" target="_blank" rel="noopener noreferrer" class="cta-button primary-glow">
               <i class="fas fa-external-link-alt"></i> View on ZORA
             </a>
           </div>
@@ -994,7 +1029,11 @@
     <!-- Security Overview -->
     <section id="security-overview" data-aos="fade-up">
       <div class="container">
-        <h2><i class="fas fa-shield-alt"></i> Security Overview</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">🛡️ Trust</span>
+          <h2>Security <em class="gold-serif">Overview</em></h2>
+          <p class="section-subtitle">Maximum security & trustless design</p>
+        </div>
 
         <div class="content-card security-card">
           <div class="security-header">
@@ -1039,10 +1078,10 @@
           </p>
 
           <div class="security-actions">
-            <a href="security-integrity.html" class="cta-button">
+            <a href="security-integrity.html" class="cta-button primary-glow">
               <i class="fas fa-shield-alt"></i> View Full Security Details
             </a>
-            <a href="trade.html#contract-verify" class="cta-button gold">
+            <a href="trade.html#contract-verify" class="cta-button secondary">
               <i class="fas fa-file-contract"></i> Verify Contract
             </a>
           </div>
@@ -1053,7 +1092,11 @@
     <!-- FAQ -->
     <section id="faq" data-aos="fade-up">
       <div class="container">
-        <h2>Frequently Asked Questions</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">❓ Questions</span>
+          <h2>Frequently Asked <em class="gold-serif">Questions</em></h2>
+          <p class="section-subtitle">Everything you need to know about $REBL</p>
+        </div>
 
         <div class="faq-grid">
           <div class="faq-item" data-aos="fade-right">
@@ -1092,7 +1135,12 @@
     <!-- Related Pages -->
     <section id="related-pages" data-aos="fade-up">
       <div class="container">
-        <h2>Explore More</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">🧭 Continue Exploring</span>
+          <h2>Explore <em class="gold-serif">More</em></h2>
+          <p class="section-subtitle">Three ways to deepen your understanding</p>
+        </div>
+
         <div class="related-grid">
           <a href="contests.html" class="related-card contests-card" data-aos="fade-right">
             <div class="related-icon"><i class="fas fa-trophy"></i></div>
