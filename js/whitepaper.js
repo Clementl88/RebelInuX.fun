@@ -6,34 +6,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function initWhitepaperPage() {
   console.log('Initializing Whitepaper page');
-  
-  // Initialize mobile dropdown
+
   initializeMobileDropdown();
-  
-  // Initialize download functionality
   initDownloadFunctionality();
-  
-  // Initialize AOS animations
   initAOS();
-  
-  // Initialize touch events
   initTouchEvents();
-  
-  // Initialize file size display
   updateFileSizeDisplay();
 }
 
 function initDownloadFunctionality() {
-  // Add click handlers to all download buttons
   const downloadButtons = document.querySelectorAll('.download-btn');
   downloadButtons.forEach(button => {
     button.addEventListener('click', function(e) {
-      // Add loading state
       const originalText = this.innerHTML;
       this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
       this.classList.add('downloading');
-      
-      // Simulate download delay for better UX
+
       setTimeout(() => {
         this.innerHTML = originalText;
         this.classList.remove('downloading');
@@ -45,7 +33,6 @@ function initDownloadFunctionality() {
 }
 
 function updateFileSizeDisplay() {
-  // Update all file size displays
   const fileSizeElements = document.querySelectorAll('.info-value');
   fileSizeElements.forEach(el => {
     if (el.textContent.includes('MB') || el.textContent.includes('KB')) {
@@ -60,68 +47,61 @@ function updateFileSizeDisplay() {
   });
 }
 
-// Global functions for HTML onclick handlers
 function verifyDocumentHash() {
   const hash = "SHA-256: [File hash will be provided when available]";
   const message = `📄 Document Verification\n\nTo verify document authenticity:\n\n1. File Name: RebelInuX_White_Paper.pdf\n2. File Size: 5.8 MB\n3. Page Count: 32 pages\n4. Published: October 23, 2025\n5. Version: 1.5\n\nOfficial cryptographic hash will be provided when available for complete verification.`;
-  
+
   showToast('Verification information shown', 'info');
   setTimeout(() => {
     alert(message);
   }, 100);
-  
+
   trackDownload('whitepaper_verify_hash');
 }
 
 function showDocumentInfo() {
   const info = `📄 RebelInuX Whitepaper Information\n\n• Version: 1.5\n• Pages: 32\n• File Size: 5.8 MB\n• Format: PDF\n• Published: October 23, 2025\n• Language: English\n\n📋 Key Sections:\n1. Abstract & Executive Summary\n2. Triple-Asset Ecosystem\n3. Token Economics\n4. DAO Governance Model\n5. Security & Decentralization\n6. Roadmap 2025-2026\n7. Risk Assessment & Legal Disclaimers\n\n🎯 Core Topics:\n• Multi-chain architecture (Solana + ZORA/Base)\n• Dual-governance system\n• Contract renouncement details\n• Vesting schedules\n• Restricted jurisdictions`;
-  
+
   showToast('Document information shown', 'info');
   setTimeout(() => {
     alert(info);
   }, 100);
-  
+
   trackDownload('whitepaper_info');
 }
 
 function printDocument() {
   showToast('Opening print dialog...', 'info');
-  
-  // Create print iframe
+
   const iframe = document.createElement('iframe');
   iframe.style.display = 'none';
   iframe.src = 'https://rebelinux.fun/RebelInuX_White_Paper.pdf';
   document.body.appendChild(iframe);
-  
-  // Wait for iframe to load, then print
+
   iframe.onload = function() {
     setTimeout(() => {
       iframe.contentWindow.print();
-      // Remove iframe after print dialog closes
       setTimeout(() => {
         document.body.removeChild(iframe);
       }, 1000);
     }, 1000);
   };
-  
+
   trackDownload('whitepaper_print');
 }
 
 function viewWhitepaperOnline() {
   const url = 'https://docs.google.com/viewer?url=https://rebelinux.fun/RebelInuX_White_Paper.pdf';
   window.open(url, '_blank', 'noopener,noreferrer');
-  
-  // Track view action
+
   trackDownload('whitepaper_view_online');
   showToast('Opening whitepaper in new tab...', 'info');
 }
 
 function trackDownload(type) {
-  // In a real implementation, you would send this to analytics
   console.log(`Download tracked: ${type} - ${new Date().toISOString()}`);
   console.log(`File: RebelInuX_White_Paper.pdf (5.8 MB, 32 pages, v1.5)`);
-  
-  // Store in localStorage for session tracking
+
   const downloads = JSON.parse(localStorage.getItem('rebelinux_downloads') || '[]');
   downloads.push({
     type: type,
@@ -137,14 +117,12 @@ function trackDownload(type) {
 
 function showDownloadSuccess() {
   showToast('✅ Whitepaper download started!', 'success');
-  
-  // Show additional info after download
+
   setTimeout(() => {
     const info = `📥 Download Tips:\n\n• Save the PDF to your preferred location\n• File size: 5.8 MB (32 pages)\n• Open with Adobe Reader or any PDF viewer\n• Recommended: Create a backup copy\n• Share with interested community members\n\n⚠️ Remember legal restrictions apply to certain jurisdictions.`;
-    
+
     showToast('Check your downloads folder', 'info');
-    
-    // Show more detailed info in console
+
     console.info('%c📥 Whitepaper Download Complete!', 'color: #4CAF50; font-weight: bold;');
     console.info('File: RebelInuX_White_Paper.pdf');
     console.info('Size: 5.8 MB | Pages: 32 | Version: 1.5');
@@ -160,7 +138,7 @@ function initAOS() {
       offset: 100,
       disable: window.innerWidth < 768 ? 'mobile' : false
     });
-    
+
     window.addEventListener('resize', function() {
       AOS.refresh();
     });
@@ -168,7 +146,6 @@ function initAOS() {
 }
 
 function initTouchEvents() {
-  // Prevent zoom on double-tap
   let lastTouchEnd = 0;
   document.addEventListener('touchend', function(event) {
     const now = Date.now();
@@ -177,28 +154,26 @@ function initTouchEvents() {
     }
     lastTouchEnd = now;
   }, { passive: false });
-  
-  // Add touch feedback
+
   document.querySelectorAll('a, button').forEach(element => {
     element.addEventListener('touchstart', function() {
       this.classList.add('touch-active');
     });
-    
+
     element.addEventListener('touchend', function() {
       this.classList.remove('touch-active');
     });
-    
+
     element.addEventListener('touchcancel', function() {
       this.classList.remove('touch-active');
     });
   });
 }
 
-// Toast notification function
 function showToast(message, type = 'info') {
   const existingToast = document.querySelector('.toast-notification');
   if (existingToast) existingToast.remove();
-  
+
   const toast = document.createElement('div');
   toast.className = `toast-notification toast-${type}`;
   toast.innerHTML = `
@@ -206,7 +181,7 @@ function showToast(message, type = 'info') {
                      type === 'warning' ? 'exclamation-circle' : 'info-circle'}"></i>
     <span>${message}</span>
   `;
-  
+
   toast.style.cssText = `
     position: fixed;
     bottom: 20px;
@@ -231,42 +206,27 @@ function showToast(message, type = 'info') {
     text-align: center;
     line-height: 1.4;
   `;
-  
+
   document.body.appendChild(toast);
-  
-  // Add animation styles if not already present
+
   if (!document.querySelector('#toast-styles')) {
     const style = document.createElement('style');
     style.id = 'toast-styles';
     style.textContent = `
       @keyframes slideUp {
-        from {
-          transform: translateX(-50%) translateY(100px);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(-50%) translateY(0);
-          opacity: 1;
-        }
+        from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+        to   { transform: translateX(-50%) translateY(0); opacity: 1; }
       }
-      
       @keyframes slideDown {
-        from {
-          transform: translateX(-50%) translateY(0);
-          opacity: 1;
-        }
-        to {
-          transform: translateX(-50%) translateY(100px);
-          opacity: 0;
-        }
+        from { transform: translateX(-50%) translateY(0); opacity: 1; }
+        to   { transform: translateX(-50%) translateY(100px); opacity: 0; }
       }
     `;
     document.head.appendChild(style);
   }
-  
-  // Auto-remove after 4 seconds (longer for mobile)
+
   const duration = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 5000 : 4000;
-  
+
   setTimeout(() => {
     toast.style.animation = 'slideDown 0.3s ease';
     setTimeout(() => {
@@ -277,14 +237,12 @@ function showToast(message, type = 'info') {
   }, duration);
 }
 
-// Global exports
 window.verifyDocumentHash = verifyDocumentHash;
 window.showDocumentInfo = showDocumentInfo;
 window.printDocument = printDocument;
 window.viewWhitepaperOnline = viewWhitepaperOnline;
 window.showToast = showToast;
 
-// Add touch-active class styles
 document.addEventListener('DOMContentLoaded', function() {
   const style = document.createElement('style');
   style.textContent = `
@@ -293,20 +251,17 @@ document.addEventListener('DOMContentLoaded', function() {
       transform: scale(0.98) !important;
       transition: all 0.1s ease !important;
     }
-    
     .download-btn.downloading {
       opacity: 0.7;
       cursor: not-allowed;
       animation: none !important;
     }
-    
     .download-btn.downloading:hover {
       transform: none !important;
     }
   `;
   document.head.appendChild(style);
-  
-  // Add download success animation to card
+
   setTimeout(() => {
     const downloadCard = document.querySelector('.download-card');
     if (downloadCard) {
