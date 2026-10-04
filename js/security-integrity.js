@@ -57,7 +57,6 @@ function initPrincipleCards() {
 
   principleCards.forEach((card) => {
     card.addEventListener('click', function (e) {
-      // Don't expand if a link/button inside was clicked
       if (e.target.closest('a') || e.target.closest('button')) return;
 
       if (window.innerWidth <= 768) {
