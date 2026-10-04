@@ -2415,6 +2415,19 @@ button.chapter-row:hover {
   border-color: #ffd700;
   box-shadow: 0 12px 28px rgba(26, 26, 46, 0.45), 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* Step 01 — Watch the Most-Watched (unique style) */
+.step-cta--watch {
+  background: linear-gradient(135deg, #d4a76a 0%, #ffd700 100%);
+  color: #1a1a2e;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 18px rgba(212, 167, 106, 0.45), 0 2px 4px rgba(0, 0, 0, 0.08);
+  font-weight: 800;
+}
+.step-cta--watch:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #e3b87c 0%, #ffdd44 100%);
+  box-shadow: 0 12px 28px rgba(212, 167, 106, 0.55), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 .step-cta-row {
   display: flex;
   flex-direction: column;
