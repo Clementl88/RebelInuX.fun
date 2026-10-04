@@ -21,12 +21,17 @@
   <meta name="twitter:description" content="Enter Thumbnail, Tokenization, or Journey contests. Free to enter. Winners earn $REBL.">
   <meta name="twitter:image" content="https://rebelinux.fun/images/Logo_REBL.svg">
 
+  <meta name="theme-color" content="#0a0a0f">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
   <link rel="icon" type="image/svg+xml" href="images/Logo_REBL.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="images/Logo_REBL.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
@@ -55,31 +60,47 @@
   <main>
 
     <!-- ========== HERO ========== -->
- <section class="page-hero page-hero--contests" aria-label="Contests hero" data-aos="fade-up">
-  <div class="container">
-    <h1>ENTER CONTESTS. EARN $REBL.</h1>
-    <p class="text-lead" data-aos="fade-up" data-aos-delay="100">
-      RebelInuX rewards <strong>participation, not holding</strong>. Create thumbnails. Select scenes. Propose the next Journey. Winners earn $REBL on Solana.
-    </p>
+    <section class="page-hero page-hero--contests" aria-label="Contests hero" data-aos="fade-up">
+      <div class="hero-background-pattern" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
 
-    <div class="hero-badges" data-aos="fade-up" data-aos-delay="150">
-      <span class="hero-badge"><i class="fas fa-check-circle"></i> Free to enter</span>
-      <span class="hero-badge"><i class="fas fa-check-circle"></i> No purchase required</span>
-      <span class="hero-badge"><i class="fas fa-check-circle"></i> Rewards in $REBL</span>
-    </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-eyebrow" data-aos="fade-up">
+              <span class="live-dot"></span>
+              <span>FREE TO ENTER · NO PURCHASE REQUIRED</span>
+            </div>
 
-    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-      <a href="#active-contest" class="cta-button">
-        <i class="fas fa-bullhorn"></i> View Active Contest
-      </a>
-      <a href="#contest-types" class="cta-button gold">
-        <i class="fas fa-list"></i> Contest Types
-      </a>
-    </div>
-  </div>
-</section>
+            <h1 data-aos="fade-up" data-aos-delay="100">
+              Enter Contests. <em class="gold-serif">Earn $REBL.</em>
+            </h1>
 
-    <!-- ========== KEY TAKEAWAYS (v3.0 style) ========== -->
+            <p class="text-lead" data-aos="fade-up" data-aos-delay="150">
+              RebelInuX rewards <strong>participation, not holding</strong>. Create thumbnails.
+              Select scenes. Propose the next Journey. Winners earn $REBL on Solana.
+            </p>
+
+            <div class="hero-badges" data-aos="fade-up" data-aos-delay="200">
+              <span class="hero-badge"><i class="fas fa-check-circle"></i> Free to enter</span>
+              <span class="hero-badge"><i class="fas fa-check-circle"></i> No purchase required</span>
+              <span class="hero-badge"><i class="fas fa-check-circle"></i> Rewards in $REBL</span>
+            </div>
+
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="250">
+              <a href="#active-contest" class="cta-button primary-glow">
+                <i class="fas fa-bullhorn"></i><span>View Active Contest</span>
+              </a>
+              <a href="#contest-types" class="cta-button secondary">
+                <i class="fas fa-list"></i><span>Contest Types</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== KEY TAKEAWAYS ========== -->
     <section class="key-takeaways" aria-label="Key takeaways" data-aos="fade-up">
       <div class="takeaways-container">
         <div class="takeaways-box">
@@ -135,10 +156,14 @@
       </div>
     </section>
 
-    <!-- ========== STATS OVERVIEW (v3.0 style) ========== -->
+    <!-- ========== STATS OVERVIEW ========== -->
     <section id="contests-stats" aria-label="Contest stats" data-aos="fade-up">
       <div class="container">
-        <h2><i class="fas fa-chart-line"></i> Contest Overview</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">📊 By the Numbers</span>
+          <h2>Contest <em class="gold-serif">Overview</em></h2>
+          <p class="section-subtitle">Everything you need to know at a glance</p>
+        </div>
 
         <div class="stats-overview">
           <div class="stat-card" data-aos="fade-right">
@@ -242,7 +267,8 @@
     <section id="contest-types" class="contest-types-section" aria-label="Contest types">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-trophy"></i> The <span class="highlight-gold">3 Contest Types</span></h2>
+          <span class="section-eyebrow">🏆 Three Ways to Win</span>
+          <h2>The <em class="gold-serif">3 Contest Types</em></h2>
           <p class="section-subtitle">Each rewards a different kind of contribution</p>
         </div>
 
@@ -309,7 +335,8 @@
     <section id="how-it-works" class="how-it-works-section" aria-label="How a contest works">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-route"></i> How a Contest Works</h2>
+          <span class="section-eyebrow">⚙️ The Process</span>
+          <h2>How a Contest <em class="gold-serif">Works</em></h2>
           <p class="section-subtitle">From submission to reward — 6 steps</p>
         </div>
 
@@ -369,7 +396,8 @@
     <section id="rewards" class="rewards-section" aria-label="Reward structure">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-coins"></i> Reward Structure</h2>
+          <span class="section-eyebrow">🪙 Rewards</span>
+          <h2>Reward <em class="gold-serif">Structure</em></h2>
           <p class="section-subtitle">Base reward + cumulative volume bonuses (Tokenization Contests only)</p>
         </div>
 
@@ -446,7 +474,8 @@
     <section id="criteria" class="criteria-section" aria-label="Selection criteria">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-star"></i> Skill Criteria</h2>
+          <span class="section-eyebrow">⭐ Selection</span>
+          <h2>Skill <em class="gold-serif">Criteria</em></h2>
           <p class="section-subtitle">What the Governance Hub looks for when pre-selecting finalists</p>
         </div>
 
@@ -502,7 +531,8 @@
     <section id="how-to-enter" class="how-to-enter-section" aria-label="How to enter">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-play-circle"></i> How to Enter</h2>
+          <span class="section-eyebrow">🚀 Get Started</span>
+          <h2>How to <em class="gold-serif">Enter</em></h2>
           <p class="section-subtitle">3 steps. No wallet required to participate.</p>
         </div>
 
@@ -548,7 +578,8 @@
     <section id="faq" class="faq-section" aria-label="Frequently asked questions">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+          <span class="section-eyebrow">❓ Questions</span>
+          <h2>Frequently Asked <em class="gold-serif">Questions</em></h2>
           <p class="section-subtitle">Everything you need to know before entering</p>
         </div>
 
@@ -630,7 +661,7 @@
     <section class="contests-final-cta" aria-label="Final call to action">
       <div class="container">
         <div class="contests-cta-card" data-aos="fade-up">
-          <h2>Ready to <span class="gradient-text">participate?</span></h2>
+          <h2>Ready to <em class="gold-serif">participate?</em></h2>
           <p>Join the rebellion. Create. Select. Vote. Earn $REBL.</p>
           <div class="cta-actions">
             <a href="https://x.com/RebelInuX" target="_blank" rel="noopener noreferrer" class="cta-button primary-glow large">
