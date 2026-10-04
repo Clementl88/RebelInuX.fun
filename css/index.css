@@ -1988,7 +1988,7 @@ img { max-width: 100%; height: auto; display: block; }
   text-decoration: none;
   text-align: center;
   color: #1a1a2e;
-  background: rgba(212, 167, 106, 0.15);
+  background: rgba(212, 167, 106, 0.3);
   border: 1px solid rgba(212, 167, 106, 0.5);
   transition: all 0.25s ease;
   position: relative;
