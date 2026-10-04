@@ -15,164 +15,76 @@
   <meta name="twitter:description" content="Explore community art, contest winners, and official RebelInuX brand assets.">
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Mobile Meta Tags -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#1a1a1a">
   <meta name="mobile-web-app-capable" content="yes">
 
-  <!-- Favicon -->
   <link rel="icon" href="images/Logo_REBL.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/Logo_REBL.svg">
-  <title>Artwork Gallery | RebelInuX — Community Art & Contest Winners</title>
+  <title>Artwork Gallery | RebelInuX — Community Art &amp; Contest Winners</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- AOS Animation -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <!-- CSS Files -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/header-footer.css">
   <link rel="stylesheet" href="css/artwork.css">
-
-  <style>
-    /* Special Events Badge */
-    .event-badge {
-      display: inline-block;
-      padding: 0.2rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #FF9800, #FF5722);
-      color: white;
-      margin-left: 0.5rem;
-    }
-
-    /* Cross-link cards to Journey and Contests */
-    .cross-link-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      max-width: 1000px;
-      margin: 2rem auto 0;
-    }
-
-    .cross-link-card {
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .cross-link-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .cross-link-card.journey-card {
-      border: 2px solid var(--rebel-gold);
-    }
-
-    .cross-link-card.journey-card:hover {
-      background: rgba(212, 167, 106, 0.1);
-      box-shadow: 0 12px 30px rgba(212, 167, 106, 0.25);
-    }
-
-    .cross-link-card.contests-card {
-      border: 2px solid #FBBF24;
-    }
-
-    .cross-link-card.contests-card:hover {
-      background: rgba(251, 191, 36, 0.1);
-      box-shadow: 0 12px 30px rgba(251, 191, 36, 0.25);
-    }
-
-    .cross-link-icon {
-      font-size: 2.5rem;
-      color: var(--rebel-gold);
-    }
-
-    .cross-link-card.contests-card .cross-link-icon {
-      color: #FBBF24;
-    }
-
-    .cross-link-card h3 {
-      color: #fff;
-      font-size: 1.2rem;
-      margin: 0;
-    }
-
-    .cross-link-card p {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.85rem;
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    .cross-link-arrow {
-      color: var(--rebel-gold);
-      font-weight: 700;
-      font-size: 0.85rem;
-      margin-top: 0.5rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .cross-link-card.contests-card .cross-link-arrow {
-      color: #FBBF24;
-    }
-  </style>
 </head>
 <body>
-  <!-- Loading Animation -->
   <div class="loader" id="loader">
     <div class="loader-spinner"></div>
   </div>
 
-  <!-- Back to Top Button -->
   <div class="back-to-top" id="backToTop">
     <i class="fas fa-arrow-up"></i>
   </div>
 
-  <!-- Header -->
   <div id="header-container"></div>
 
   <main>
     <!-- Hero Section -->
     <section class="page-hero page-hero--artwork">
+      <div class="hero-background-pattern" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
       <div class="container">
-        <h1 data-aos="fade-up">COMMUNITY ARTWORK GALLERY</h1>
-        <p class="text-lead" data-aos="fade-up" data-aos-delay="100">
+        <div class="hero-eyebrow" data-aos="fade-up">
+          <span class="live-dot"></span>
+          <span>COMMUNITY-CREATED · CONTEST-WINNING · ON-CHAIN</span>
+        </div>
+
+        <h1 data-aos="fade-up" data-aos-delay="100">
+          Community Artwork <em class="gold-serif">Gallery</em>
+        </h1>
+
+        <p class="text-lead" data-aos="fade-up" data-aos-delay="150">
           Award-winning community art, contest winners, and official RebelInuX brand assets.
           Every piece here was created by or for the RebelInuX community.
         </p>
+
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-          <a href="#featured-art" class="cta-button gold">
+          <a href="#featured-art" class="cta-button primary-glow">
             <i class="fas fa-trophy"></i> Contest Winners
           </a>
-          <a href="#artist-spotlight" class="cta-button">
+          <a href="#artist-spotlight" class="cta-button secondary">
             <i class="fas fa-user-astronaut"></i> Featured Artist
           </a>
-          <a href="#brand-assets" class="cta-button">
+          <a href="#brand-assets" class="cta-button secondary">
             <i class="fas fa-palette"></i> Brand Assets
           </a>
-          <a href="#submit-art" class="cta-button">
+          <a href="#submit-art" class="cta-button secondary">
             <i class="fas fa-paint-brush"></i> Submit Your Art
           </a>
         </div>
+
         <div class="artwork-stats" data-aos="fade-up" data-aos-delay="300">
           <div class="stat-item">
             <div class="stat-number">78+</div>
@@ -192,7 +104,7 @@
           <div class="stat-item">
             <div class="stat-number">4</div>
             <div class="stat-label">Contest Types</div>
-            <div class="stat-subtitle">Thumbnail • Tokenization • Journey • Special</div>
+            <div class="stat-subtitle">Thumbnail · Tokenization · Journey · Special</div>
           </div>
         </div>
       </div>
@@ -222,8 +134,8 @@
       </div>
     </section>
 
-    <!-- ===== CROSS-LINK CARDS (Journey + Contests) ===== -->
-    <section id="cross-links" style="padding: 3rem 0 0;">
+    <!-- CROSS-LINK CARDS (Journey + Contests) -->
+    <section id="cross-links" class="cross-links-section">
       <div class="container">
         <div class="cross-link-grid" data-aos="fade-up">
           <a href="journey.html" class="cross-link-card journey-card">
@@ -247,11 +159,12 @@
       </div>
     </section>
 
-    <!-- ===== FEATURED ART & CONTEST WINNERS ===== -->
-    <section id="featured-art" style="padding-top: 3rem;">
+    <!-- FEATURED ART & CONTEST WINNERS -->
+    <section id="featured-art" class="featured-art-section">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-trophy"></i> Community Art & Contest Winners</h2>
+          <span class="section-eyebrow">🏆 Award-Winning Work</span>
+          <h2>Community Art &amp; <em class="gold-serif">Contest Winners</em></h2>
           <p class="section-subtitle">
             Award-winning artwork by RebelInuX community members. From past contest winners to featured creations.
           </p>
@@ -607,11 +520,12 @@
       </div>
     </section>
 
-    <!-- ===== ARTIST SPOTLIGHT ===== -->
+    <!-- ARTIST SPOTLIGHT -->
     <section id="artist-spotlight">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-user-astronaut"></i> Featured Artist: @DefiMaven5 (Sasha)</h2>
+          <span class="section-eyebrow">🌟 Featured Artist</span>
+          <h2>Featured Artist: <em class="gold-serif">@DefiMaven5 (Sasha)</em></h2>
           <p class="section-subtitle">
             Past contest winner and one of the most prolific artists in the RebelInuX community
           </p>
@@ -647,14 +561,15 @@
       </div>
     </section>
 
-    <!-- ===== BRAND ASSETS ===== -->
+    <!-- BRAND ASSETS -->
     <section id="brand-assets">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-palette"></i> Brand Assets & Resources</h2>
+          <span class="section-eyebrow">🎨 Brand Kit</span>
+          <h2>Brand Assets &amp; <em class="gold-serif">Resources</em></h2>
           <p class="section-subtitle">
             Official logos, colors, and design resources for the RebelInuX brand.
-            <br><em>Logos designed by <a href="https://www.fiverr.com/masumcreation" target="_blank" style="color: var(--rebel-gold);">Masum B</a> - Professional Graphic Designer</em>
+            <br><em>Logos designed by <a href="https://www.fiverr.com/masumcreation" target="_blank" class="designer-inline-link">Masum B</a> — Professional Graphic Designer</em>
           </p>
         </div>
 
@@ -743,7 +658,7 @@
             </div>
             <div class="guideline">
               <h4>Attribution</h4>
-              <p>When using RebelInuX assets, please credit the project and link to our official channels. Logo design by <a href="https://www.fiverr.com/masumcreation" target="_blank" style="color: var(--rebel-gold);">Masum B</a>.</p>
+              <p>When using RebelInuX assets, please credit the project and link to our official channels. Logo design by <a href="https://www.fiverr.com/masumcreation" target="_blank" class="designer-inline-link">Masum B</a>.</p>
             </div>
             <div class="guideline">
               <h4>Modifications</h4>
@@ -754,11 +669,12 @@
       </div>
     </section>
 
-    <!-- ===== SUBMIT ART ===== -->
+    <!-- SUBMIT ART -->
     <section id="submit-art">
       <div class="container">
         <div class="section-header" data-aos="fade-up">
-          <h2><i class="fas fa-paint-brush"></i> Submit Your Artwork</h2>
+          <span class="section-eyebrow">🖌️ Get Featured</span>
+          <h2>Submit Your <em class="gold-serif">Artwork</em></h2>
           <p class="section-subtitle">
             Share your creativity with the RebelInuX community
           </p>
@@ -811,10 +727,14 @@
       </div>
     </section>
 
-    <!-- ===== FAQ ===== -->
+    <!-- FAQ -->
     <section id="faq">
       <div class="container">
-        <h2 data-aos="fade-up">Frequently Asked Questions</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">❓ Questions</span>
+          <h2>Frequently Asked <em class="gold-serif">Questions</em></h2>
+          <p class="section-subtitle">Everything you need to know about the gallery</p>
+        </div>
 
         <div class="content-card" data-aos="fade-up">
           <div class="faq-grid">
@@ -887,10 +807,14 @@
       </div>
     </section>
 
-    <!-- ===== RELATED PAGES ===== -->
+    <!-- RELATED PAGES -->
     <section id="related-pages">
       <div class="container">
-        <h2 data-aos="fade-up">Explore More</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">🧭 Continue Exploring</span>
+          <h2>Explore <em class="gold-serif">More</em></h2>
+          <p class="section-subtitle">Three ways to deepen your understanding</p>
+        </div>
 
         <div class="related-grid">
           <a href="journey.html" class="related-card community-card" data-aos="fade-right">
@@ -905,7 +829,7 @@
           <a href="contests.html" class="related-card rewards-card" data-aos="fade-up">
             <div class="related-icon"><i class="fas fa-trophy"></i></div>
             <h3>Contests</h3>
-            <p>Enter & Earn $REBL</p>
+            <p>Enter &amp; Earn $REBL</p>
             <div class="related-arrow">
               <i class="fas fa-arrow-right"></i> See Contests
             </div>
@@ -923,36 +847,35 @@
       </div>
     </section>
 
-    <!-- ===== FINAL CTA ===== -->
-    <section id="final-cta" style="text-align: center; padding: var(--spacing-xl) var(--spacing-md); margin: var(--spacing-xl) auto; max-width: 800px;" data-aos="fade-up">
-      <h2 style="color: var(--rebel-gold); margin-bottom: var(--spacing-lg);">JOIN THE ART REBELLION</h2>
-      <p style="font-size: 1.2em; margin-bottom: var(--spacing-lg); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-        Create art. Win contests. Shape history. Join our vibrant creative community.
-      </p>
+    <!-- FINAL CTA -->
+    <section class="container cta-section" data-aos="fade-up">
+      <div class="section-header">
+        <span class="section-eyebrow">🔥 Join the Rebellion</span>
+        <h2>Join the <em class="gold-serif">Art Rebellion</em></h2>
+        <p class="section-subtitle">
+          Create art. Win contests. Shape history. Join our vibrant creative community.
+        </p>
+      </div>
 
-      <div style="display: flex; justify-content: center; gap: var(--spacing-md); margin-top: var(--spacing-lg); flex-wrap: wrap;">
-        <a href="contests.html" class="cta-button gold">
+      <div class="cta-section-actions">
+        <a href="contests.html" class="cta-button primary-glow">
           <i class="fas fa-trophy"></i> Enter a Contest
         </a>
-        <a href="journey.html" class="cta-button">
+        <a href="journey.html" class="cta-button secondary">
           <i class="fas fa-film"></i> Explore the Journey
         </a>
-        <a href="#submit-art" class="cta-button">
+        <a href="#submit-art" class="cta-button secondary">
           <i class="fas fa-paint-brush"></i> Submit Art
         </a>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <div id="footer-container"></div>
 
-  <!-- JavaScript Includes -->
   <script src="js/includes.js"></script>
   <script src="js/common.js"></script>
   <script src="js/artwork.js"></script>
-
-  <!-- AOS Animation -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
   <script>
@@ -1001,7 +924,6 @@
     });
   </script>
 
-  <!-- Analytics -->
   <script src="js/analytics.js" defer></script>
 </body>
 </html>
