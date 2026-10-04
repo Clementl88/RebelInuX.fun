@@ -1,6 +1,7 @@
 /* ============================================================
-   HEADER + FOOTER — RebelInuX v3.0
+   HEADER + FOOTER — RebelInuX v3.1
    3-state nav pill system: default / hover / selected
+   Trade Guide + Governance now live in the "More" dropdown.
    Mobile-first. Base = phone. Enhances at 769px+.
    ============================================================ */
 
@@ -292,22 +293,6 @@ header.scrolled {
   border-color: rgba(251, 191, 36, 0.3);
 }
 
-#nav-desktop a.nav-governance {
-  color: #FF9800;
-  background: linear-gradient(135deg,
-    rgba(255, 152, 0, 0.12),
-    rgba(255, 152, 0, 0.03));
-  border-color: rgba(255, 152, 0, 0.3);
-}
-
-#nav-desktop a.nav-trade {
-  color: #FF6B35;
-  background: linear-gradient(135deg,
-    rgba(255, 107, 53, 0.12),
-    rgba(255, 107, 53, 0.03));
-  border-color: rgba(255, 107, 53, 0.3);
-}
-
 #nav-desktop a.nav-tokenomics {
   color: #00BCD4;
   background: linear-gradient(135deg,
@@ -334,26 +319,6 @@ header.scrolled {
   color: #FFFFFF;
   border-color: #FBBF24;
   box-shadow: 0 4px 20px rgba(251, 191, 36, 0.45);
-  font-weight: 700;
-}
-
-#nav-desktop a.nav-governance.active {
-  background: linear-gradient(135deg,
-    rgba(255, 152, 0, 0.4),
-    rgba(255, 152, 0, 0.18));
-  color: #FFFFFF;
-  border-color: #FF9800;
-  box-shadow: 0 4px 20px rgba(255, 152, 0, 0.45);
-  font-weight: 700;
-}
-
-#nav-desktop a.nav-trade.active {
-  background: linear-gradient(135deg,
-    rgba(255, 107, 53, 0.4),
-    rgba(255, 107, 53, 0.18));
-  color: #FFFFFF;
-  border-color: #FF6B35;
-  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.45);
   font-weight: 700;
 }
 
@@ -431,7 +396,7 @@ header.scrolled {
 }
 
 #nav-desktop .dropdown.active .dropdown-content {
-  max-height: 600px;
+  max-height: 800px;
   opacity: 1;
   padding: 8px 0;
 }
@@ -460,14 +425,16 @@ header.scrolled {
   font-size: 0.95rem;
 }
 
-/* Dropdown link colors (mobile) */
-#nav-desktop .dropdown-content a.nav-whitepaper { color: #A78BFA; }
-#nav-desktop .dropdown-content a.nav-community { color: #4EA6FF; }
-#nav-desktop .dropdown-content a.nav-security-integrity { color: #66BB6A; }
-#nav-desktop .dropdown-content a.nav-roadmap { color: #FF7043; }
-#nav-desktop .dropdown-content a.nav-artwork { color: #F06292; }
+/* Dropdown link colors (mobile) — all 7 secondary pages */
+#nav-desktop .dropdown-content a.nav-whitepaper        { color: #A78BFA; }
+#nav-desktop .dropdown-content a.nav-community         { color: #4EA6FF; }
+#nav-desktop .dropdown-content a.nav-security-integrity{ color: #66BB6A; }
+#nav-desktop .dropdown-content a.nav-roadmap           { color: #FF7043; }
+#nav-desktop .dropdown-content a.nav-artwork           { color: #F06292; }
+#nav-desktop .dropdown-content a.nav-trade             { color: #FF8A50; }
+#nav-desktop .dropdown-content a.nav-governance        { color: #FFB74D; }
 
-/* Mobile — active dropdown link */
+/* Mobile — active dropdown link states */
 #nav-desktop .dropdown-content a.nav-whitepaper.active {
   background: linear-gradient(135deg,
     rgba(103, 58, 183, 0.4),
@@ -510,6 +477,24 @@ header.scrolled {
     rgba(233, 30, 99, 0.18));
   color: #FFFFFF;
   border-left: 3px solid #E91E63;
+  font-weight: 700;
+}
+
+#nav-desktop .dropdown-content a.nav-trade.active {
+  background: linear-gradient(135deg,
+    rgba(255, 107, 53, 0.4),
+    rgba(255, 107, 53, 0.18));
+  color: #FFFFFF;
+  border-left: 3px solid #FF6B35;
+  font-weight: 700;
+}
+
+#nav-desktop .dropdown-content a.nav-governance.active {
+  background: linear-gradient(135deg,
+    rgba(255, 152, 0, 0.4),
+    rgba(255, 152, 0, 0.18));
+  color: #FFFFFF;
+  border-left: 3px solid #FF9800;
   font-weight: 700;
 }
 
@@ -600,22 +585,6 @@ body.nav-open {
       rgba(251, 191, 36, 0.03));
   }
 
-  #nav-desktop a.nav-governance {
-    color: #FF9800;
-    border-color: rgba(255, 152, 0, 0.4);
-    background: linear-gradient(135deg,
-      rgba(255, 152, 0, 0.15),
-      rgba(255, 152, 0, 0.03));
-  }
-
-  #nav-desktop a.nav-trade {
-    color: #FF6B35;
-    border-color: rgba(255, 107, 53, 0.4);
-    background: linear-gradient(135deg,
-      rgba(255, 107, 53, 0.15),
-      rgba(255, 107, 53, 0.03));
-  }
-
   #nav-desktop a.nav-tokenomics {
     color: #00BCD4;
     border-color: rgba(0, 188, 212, 0.4);
@@ -644,26 +613,6 @@ body.nav-open {
     color: #FDE047;
     border-color: #FBBF24;
     box-shadow: 0 6px 20px rgba(251, 191, 36, 0.35);
-    transform: translateY(-2px);
-  }
-
-  #nav-desktop a.nav-governance:hover {
-    background: linear-gradient(135deg,
-      rgba(255, 152, 0, 0.28),
-      rgba(255, 152, 0, 0.14));
-    color: #FFC166;
-    border-color: #FF9800;
-    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.35);
-    transform: translateY(-2px);
-  }
-
-  #nav-desktop a.nav-trade:hover {
-    background: linear-gradient(135deg,
-      rgba(255, 107, 53, 0.28),
-      rgba(255, 107, 53, 0.14));
-    color: #FFA07A;
-    border-color: #FF6B35;
-    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.35);
     transform: translateY(-2px);
   }
 
@@ -714,32 +663,6 @@ body.nav-open {
     border-color: #FBBF24;
     box-shadow:
       0 4px 20px rgba(251, 191, 36, 0.45),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    transform: translateY(-1px);
-    font-weight: 700;
-  }
-
-  #nav-desktop a.nav-governance.active {
-    background: linear-gradient(135deg,
-      rgba(255, 152, 0, 0.4),
-      rgba(255, 152, 0, 0.18));
-    color: #FFFFFF;
-    border-color: #FF9800;
-    box-shadow:
-      0 4px 20px rgba(255, 152, 0, 0.45),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    transform: translateY(-1px);
-    font-weight: 700;
-  }
-
-  #nav-desktop a.nav-trade.active {
-    background: linear-gradient(135deg,
-      rgba(255, 107, 53, 0.4),
-      rgba(255, 107, 53, 0.18));
-    color: #FFFFFF;
-    border-color: #FF6B35;
-    box-shadow:
-      0 4px 20px rgba(255, 107, 53, 0.45),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
     font-weight: 700;
@@ -858,7 +781,7 @@ body.nav-open {
   }
 
   /* ============================================
-     DROPDOWN CONTENT — ACTIVE STATES (5 pages)
+     DROPDOWN CONTENT — ACTIVE STATES (7 pages)
      ============================================ */
   #nav-desktop .dropdown-content a.nav-whitepaper.active {
     background: linear-gradient(135deg,
@@ -906,6 +829,26 @@ body.nav-open {
       rgba(233, 30, 99, 0.18)) !important;
     color: #FFFFFF !important;
     border-left: 3px solid #E91E63;
+    font-weight: 700;
+    padding-left: 22px;
+  }
+
+  #nav-desktop .dropdown-content a.nav-trade.active {
+    background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.4),
+      rgba(255, 107, 53, 0.18)) !important;
+    color: #FFFFFF !important;
+    border-left: 3px solid #FF6B35;
+    font-weight: 700;
+    padding-left: 22px;
+  }
+
+  #nav-desktop .dropdown-content a.nav-governance.active {
+    background: linear-gradient(135deg,
+      rgba(255, 152, 0, 0.4),
+      rgba(255, 152, 0, 0.18)) !important;
+    color: #FFFFFF !important;
+    border-left: 3px solid #FF9800;
     font-weight: 700;
     padding-left: 22px;
   }
@@ -1238,65 +1181,6 @@ body.nav-open {
     padding: 12px 15px;
     font-size: 0.9rem;
     min-height: 48px;
-  }
-}
-
-
-/* ============================================================
-   ⭐ MOBILE FORCE-COLOR FIX — Trade + Governance
-   Guarantees the two pills show their page color on mobile,
-   regardless of cascade order or specificity conflicts.
-   ============================================================ */
-@media (max-width: 768px) {
-
-  /* Trade Guide — bright orange */
-  #nav-desktop a.nav-trade {
-    color: #FF6B35 !important;
-    background: linear-gradient(135deg,
-      rgba(255, 107, 53, 0.12),
-      rgba(255, 107, 53, 0.03)) !important;
-    border: 1px solid rgba(255, 107, 53, 0.3) !important;
-  }
-
-  #nav-desktop a.nav-trade:active {
-    background: linear-gradient(135deg,
-      rgba(255, 107, 53, 0.2),
-      rgba(255, 107, 53, 0.08)) !important;
-  }
-
-  #nav-desktop a.nav-trade.active {
-    background: linear-gradient(135deg,
-      rgba(255, 107, 53, 0.4),
-      rgba(255, 107, 53, 0.18)) !important;
-    color: #FFFFFF !important;
-    border-color: #FF6B35 !important;
-    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.45) !important;
-    font-weight: 700 !important;
-  }
-
-  /* Governance — orange */
-  #nav-desktop a.nav-governance {
-    color: #FF9800 !important;
-    background: linear-gradient(135deg,
-      rgba(255, 152, 0, 0.12),
-      rgba(255, 152, 0, 0.03)) !important;
-    border: 1px solid rgba(255, 152, 0, 0.3) !important;
-  }
-
-  #nav-desktop a.nav-governance:active {
-    background: linear-gradient(135deg,
-      rgba(255, 152, 0, 0.2),
-      rgba(255, 152, 0, 0.08)) !important;
-  }
-
-  #nav-desktop a.nav-governance.active {
-    background: linear-gradient(135deg,
-      rgba(255, 152, 0, 0.4),
-      rgba(255, 152, 0, 0.18)) !important;
-    color: #FFFFFF !important;
-    border-color: #FF9800 !important;
-    box-shadow: 0 4px 20px rgba(255, 152, 0, 0.45) !important;
-    font-weight: 700 !important;
   }
 }
 
