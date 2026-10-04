@@ -3072,3 +3072,14 @@ body.video-modal-open {
   .token-instructions-modal ol { font-size: 0.9rem !important; }
   .token-instructions-modal .button-group { flex-direction: column !important; }
 }
+/* ============================================================
+   GALLERY — 12 cards (Chapters I–VI), featured spans 2 cols on desktop
+   ============================================================ */
+@media (min-width: 992px) {
+  .gallery-card--featured {
+    grid-column: span 2;
+  }
+  .gallery-card--featured .gallery-thumb {
+    aspect-ratio: 16 / 10;
+  }
+}
