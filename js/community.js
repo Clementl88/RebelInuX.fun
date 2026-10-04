@@ -19,7 +19,6 @@ function initFAQAccordion() {
 
   faqItems.forEach((item) => {
     item.addEventListener('click', (e) => {
-      // Don't toggle if a link inside the FAQ was clicked
       if (e.target.tagName === 'A' || e.target.closest('a')) return;
       toggleFAQItem(item);
     });
@@ -36,7 +35,6 @@ function initFAQAccordion() {
     });
   });
 
-  // Open the first FAQ by default
   if (faqItems.length > 0) {
     setTimeout(() => toggleFAQItem(faqItems[0], true), 1500);
   }
