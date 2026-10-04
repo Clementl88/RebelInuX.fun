@@ -22,9 +22,11 @@
 
   <link rel="icon" href="images/Logo_REBL.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/Logo_REBL.svg">
-  <title>Security & Integrity - RebelInuX</title>
+  <title>Security &amp; Integrity - RebelInuX</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -49,25 +51,38 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="page-hero page-hero--trade page-hero--security" data-aos="fade-up">
+    <section class="page-hero page-hero--security" data-aos="fade-up">
+      <div class="hero-background-pattern" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
       <div class="container">
-        <h1 data-aos="fade-up">SECURITY & INTEGRITY</h1>
-        <p class="text-lead" data-aos="fade-up" data-aos-delay="100">
+        <div class="hero-eyebrow" data-aos="fade-up">
+          <span class="live-dot"></span>
+          <span>VERIFIED · TRANSPARENT · BOT-FREE</span>
+        </div>
+
+        <h1 data-aos="fade-up" data-aos-delay="100">
+          Security <em class="gold-serif">&amp; Integrity</em>
+        </h1>
+
+        <p class="text-lead" data-aos="fade-up" data-aos-delay="150">
           Complete contract verification, security audits, transparency metrics, and ethical principles for RebelInuX.
         </p>
+
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-          <a href="#security-checklist" class="cta-button">
+          <a href="#security-checklist" class="cta-button primary-glow">
             <i class="fas fa-list-check"></i> Security Checklist
           </a>
-          <a href="#contract-verification" class="cta-button gold">
+          <a href="#contract-verification" class="cta-button secondary">
             <i class="fas fa-file-contract"></i> Verify Contract
           </a>
-          <a href="#principles-section" class="cta-button">
+          <a href="#principles-section" class="cta-button secondary">
             <i class="fas fa-handshake"></i> Our Principles
           </a>
         </div>
+
         <div class="organic-badge" data-aos="fade-up" data-aos-delay="300">
-          <i class="fas fa-shield-alt"></i> 100% BOT-FREE & TRANSPARENT
+          <i class="fas fa-shield-alt"></i> 100% BOT-FREE &amp; TRANSPARENT
         </div>
       </div>
     </section>
@@ -123,7 +138,7 @@
               </div>
               <div class="takeaway-content">
                 <div class="takeaway-title">Contract Verified</div>
-                <div class="takeaway-value">Solscan & RugCheck</div>
+                <div class="takeaway-value">Solscan &amp; RugCheck</div>
                 <div class="takeaway-sub">Transparent code verification</div>
               </div>
             </div>
@@ -140,55 +155,61 @@
 
     <!-- Security Status Banner -->
     <section id="security-status" class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">🛡️ Status</span>
+        <h2>Overall Security <em class="gold-serif">Status</em></h2>
+        <p class="section-subtitle">Verified across multiple platforms</p>
+      </div>
+
       <div class="content-card" data-aos="fade-up">
-        <div style="display: flex; align-items: center; justify-content: center; gap: var(--spacing-lg); margin-bottom: var(--spacing-lg); flex-wrap: wrap; text-align: left;">
-          <div style="width: 70px; height: 70px; background: rgba(76, 175, 80, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <i class="fas fa-shield-alt" style="color: #4CAF50; font-size: 2rem;"></i>
+        <div class="security-status-header">
+          <div class="security-status-icon">
+            <i class="fas fa-shield-alt"></i>
           </div>
-          <div style="text-align: left;">
-            <h3 style="color: var(--rebel-gold); margin-bottom: 0.5rem; font-size: 1.5rem;">Overall Security Status</h3>
-            <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 25px; background: rgba(76, 175, 80, 0.2); color: #4CAF50; border: 1px solid #4CAF50; font-weight: 700;">
+          <div>
+            <h3>Overall Security Status</h3>
+            <div class="security-status-badge">
               <i class="fas fa-check-circle"></i>
-              <span>VERIFIED & SECURE</span>
+              <span>VERIFIED &amp; SECURE</span>
             </div>
           </div>
         </div>
 
-        <p style="margin-bottom: var(--spacing-lg); font-size: 1.1rem; line-height: 1.6;">
+        <p class="security-status-desc">
           The $REBL token has been designed with maximum security and transparency in mind. All critical authorities have been renounced, liquidity is locked, and the contract is fully verified on multiple platforms.
         </p>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg); margin: var(--spacing-xl) 0;">
-          <div style="text-align: center;">
-            <div style="font-size: 2rem; color: #4CAF50; margin-bottom: 0.5rem;">
+        <div class="security-status-grid">
+          <div class="security-status-item">
+            <div class="security-status-icon-lg verified">
               <i class="fas fa-check-circle"></i>
             </div>
-            <div style="font-weight: 600; color: var(--rebel-gold);">Mint Authority</div>
-            <div>Renounced</div>
+            <div class="security-status-label">Mint Authority</div>
+            <div class="security-status-value">Renounced</div>
           </div>
 
-          <div style="text-align: center;">
-            <div style="font-size: 2rem; color: #4CAF50; margin-bottom: 0.5rem;">
+          <div class="security-status-item">
+            <div class="security-status-icon-lg verified">
               <i class="fas fa-check-circle"></i>
             </div>
-            <div style="font-weight: 600; color: var(--rebel-gold);">Freeze Authority</div>
-            <div>Renounced</div>
+            <div class="security-status-label">Freeze Authority</div>
+            <div class="security-status-value">Renounced</div>
           </div>
 
-          <div style="text-align: center;">
-            <div style="font-size: 2rem; color: #4CAF50; margin-bottom: 0.5rem;">
+          <div class="security-status-item">
+            <div class="security-status-icon-lg verified">
               <i class="fas fa-check-circle"></i>
             </div>
-            <div style="font-weight: 600; color: var(--rebel-gold);">Update Authority</div>
-            <div>Renounced</div>
+            <div class="security-status-label">Update Authority</div>
+            <div class="security-status-value">Renounced</div>
           </div>
 
-          <div style="text-align: center;">
-            <div style="font-size: 2rem; color: #2196F3; margin-bottom: 0.5rem;">
+          <div class="security-status-item">
+            <div class="security-status-icon-lg locked">
               <i class="fas fa-lock"></i>
             </div>
-            <div style="font-weight: 600; color: var(--rebel-gold);">LP Tokens</div>
-            <div>90% Locked (1yr)</div>
+            <div class="security-status-label">LP Tokens</div>
+            <div class="security-status-value">90% Locked (1yr)</div>
           </div>
         </div>
       </div>
@@ -196,16 +217,20 @@
 
     <!-- Core Principles Section -->
     <section id="principles-section" class="container">
-      <h2 data-aos="fade-up">OUR CORE PRINCIPLES</h2>
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">⚖️ Our Foundation</span>
+        <h2>Our Core <em class="gold-serif">Principles</em></h2>
+        <p class="section-subtitle">Trust and authenticity, engineered into every decision</p>
+      </div>
 
       <div class="principles-intro" data-aos="fade-up">
         <p>
-          At <strong style="color: var(--rebel-gold);">RebelInuX</strong>, we believe that lasting success is built on
+          At <strong>RebelInuX</strong>, we believe that lasting success is built on
           <strong>trust and authenticity</strong>. We're pioneering a new standard in the crypto space by
           formally establishing our commitment to <strong>organic growth</strong> and
           <strong>transparent practices</strong>.
         </p>
-        <p style="margin-top: var(--spacing-md); font-style: italic; color: var(--rebel-gold);">
+        <p class="principles-intro-quote">
           We are building a project for the long term, and that starts with a real community.
         </p>
       </div>
@@ -222,33 +247,26 @@
 
           <ul class="card-list">
             <li>
-              <strong>Volume & Buy Bots</strong>
-              <br>
-              <small style="opacity: 0.8;">No artificial trading volume or automated market manipulation</small>
+              <strong>Volume &amp; Buy Bots</strong>
+              <small>No artificial trading volume or automated market manipulation</small>
             </li>
             <li>
-              <strong>Fake Engagement & Secondary Account Pumping</strong>
-              <br>
-              <small style="opacity: 0.8;">No fake accounts or coordinated artificial hype</small>
+              <strong>Fake Engagement &amp; Secondary Account Pumping</strong>
+              <small>No fake accounts or coordinated artificial hype</small>
             </li>
             <li>
               <strong>Paid Votes for Artificial Trending</strong>
-              <br>
-              <small style="opacity: 0.8;">No payment for fake social proof or listings</small>
+              <small>No payment for fake social proof or listings</small>
             </li>
             <li>
               <strong>Any other form of market manipulation</strong>
-              <br>
-              <small style="opacity: 0.8;">Complete prohibition of deceptive practices</small>
+              <small>Complete prohibition of deceptive practices</small>
             </li>
           </ul>
 
-          <div style="margin-top: auto; padding-top: var(--spacing-md);">
-            <div style="background: rgba(255, 51, 102, 0.2); padding: var(--spacing-sm); border-radius: 8px; text-align: center;">
-              <small style="color: var(--rebel-red); font-weight: 600;">
-                <i class="fas fa-exclamation-triangle"></i> Zero tolerance policy
-              </small>
-            </div>
+          <div class="card-footer card-footer--prohibit">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>Zero tolerance policy</span>
           </div>
         </div>
 
@@ -263,33 +281,26 @@
 
           <ul class="card-list">
             <li>
-              <strong>Real Utility & Development</strong>
-              <br>
-              <small style="opacity: 0.8;">Building actual value through technology and innovation</small>
+              <strong>Real Utility &amp; Development</strong>
+              <small>Building actual value through technology and innovation</small>
             </li>
             <li>
               <strong>Genuine Community Engagement</strong>
-              <br>
-              <small style="opacity: 0.8;">Real conversations and relationships with our community</small>
+              <small>Real conversations and relationships with our community</small>
             </li>
             <li>
               <strong>Transparent Communication</strong>
-              <br>
-              <small style="opacity: 0.8;">Open and honest updates about project status</small>
+              <small>Open and honest updates about project status</small>
             </li>
             <li>
               <strong>Organic Hype from Real Believers</strong>
-              <br>
-              <small style="opacity: 0.8;">Growth driven by genuine enthusiasm and value</small>
+              <small>Growth driven by genuine enthusiasm and value</small>
             </li>
           </ul>
 
-          <div style="margin-top: auto; padding-top: var(--spacing-md);">
-            <div style="background: rgba(255, 204, 0, 0.2); padding: var(--spacing-sm); border-radius: 8px; text-align: center;">
-              <small style="color: var(--rebel-gold); font-weight: 600;">
-                <i class="fas fa-star"></i> Our foundation for success
-              </small>
-            </div>
+          <div class="card-footer card-footer--champion">
+            <i class="fas fa-star"></i>
+            <span>Our foundation for success</span>
           </div>
         </div>
       </div>
@@ -297,7 +308,10 @@
 
     <!-- Commitment Section -->
     <section class="commitment-section" data-aos="fade-up">
-      <h2 class="commitment-title">OUR COMMITMENT TO YOU</h2>
+      <div class="section-header">
+        <span class="section-eyebrow">🤝 Our Promise</span>
+        <h2 class="commitment-title">Our Commitment <em class="gold-serif">to You</em></h2>
+      </div>
 
       <div class="commitment-content">
         <p>We understand that trust is earned, not given. That's why we've built RebelInuX on a foundation
@@ -341,7 +355,11 @@
     <!-- Security Checklist -->
     <section id="security-checklist">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fas fa-list-check"></i> Complete Security Checklist</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">✅ Audit</span>
+          <h2>Complete Security <em class="gold-serif">Checklist</em></h2>
+          <p class="section-subtitle">Every critical parameter, verified</p>
+        </div>
 
         <div class="content-card" data-aos="fade-up">
           <div class="security-grid">
@@ -436,14 +454,18 @@
     <!-- Contract Verification -->
     <section id="contract-verification">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fas fa-file-contract"></i> Contract Verification</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">📜 Verification</span>
+          <h2>Contract <em class="gold-serif">Verification</em></h2>
+          <p class="section-subtitle">Verify the official $REBL contract on trusted platforms</p>
+        </div>
 
-        <div style="background: rgba(255, 51, 102, 0.1); padding: var(--spacing-lg); border-radius: var(--border-radius); margin-bottom: var(--spacing-xl); border-left: 4px solid var(--rebel-red);" data-aos="fade-up">
-          <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: 0.5rem;">
-            <i class="fas fa-exclamation-triangle" style="color: var(--rebel-red); font-size: 1.2rem;"></i>
-            <span style="font-weight: 600; color: var(--rebel-red); font-size: 1.1rem;">IMPORTANT SECURITY NOTICE</span>
+        <div class="security-notice" data-aos="fade-up">
+          <div class="security-notice-header">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>IMPORTANT SECURITY NOTICE</span>
           </div>
-          <p style="margin: 0; font-size: 1em; line-height: 1.6;">
+          <p>
             Always verify this contract address in your wallet before making any transactions. Scammers create fake websites with different addresses.
           </p>
         </div>
@@ -552,10 +574,11 @@
     <!-- Verification Tools -->
     <section id="verification-tools">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fas fa-tools"></i> Verification Tools</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto var(--spacing-xl); color: #ccc; font-size: 1.1rem;" data-aos="fade-up">
-          Use these trusted third-party platforms to independently verify the security and legitimacy of the $REBL token.
-        </p>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">🧰 Tools</span>
+          <h2>Verification <em class="gold-serif">Tools</em></h2>
+          <p class="section-subtitle">Use trusted third-party platforms to independently verify the security and legitimacy of $REBL</p>
+        </div>
 
         <div class="tools-grid" data-aos="fade-up">
           <a href="https://solscan.io/token/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump"
@@ -624,13 +647,13 @@
     <!-- Security Best Practices -->
     <section id="security-best-practices">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fas fa-user-shield"></i> Security Best Practices</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">🔐 Stay Safe</span>
+          <h2>Security Best <em class="gold-serif">Practices</em></h2>
+          <p class="section-subtitle">How to stay safe in the crypto space</p>
+        </div>
 
         <div class="content-card" data-aos="fade-up">
-          <h3 style="color: var(--rebel-gold); margin-bottom: var(--spacing-lg); text-align: center;">
-            How to Stay Safe in the Crypto Space
-          </h3>
-
           <div class="best-practices-grid">
             <div class="practice-item" data-aos="fade-right">
               <div class="practice-icon">
@@ -693,12 +716,12 @@
             </div>
           </div>
 
-          <div style="background: rgba(255, 204, 0, 0.1); padding: var(--spacing-xl); border-radius: var(--border-radius); margin-top: var(--spacing-xl); border-left: 4px solid var(--rebel-gold);">
-            <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: 0.5rem;">
-              <i class="fas fa-lightbulb" style="color: var(--rebel-gold); font-size: 1.2rem;"></i>
-              <span style="font-weight: 600; color: var(--rebel-gold); font-size: 1.1rem;">Remember</span>
+          <div class="practice-reminder">
+            <div class="practice-reminder-header">
+              <i class="fas fa-lightbulb"></i>
+              <span>Remember</span>
             </div>
-            <p style="margin: 0; font-size: 1em; line-height: 1.6;">
+            <p>
               If something seems too good to be true, it probably is. Always do your own research (DYOR) and verify information from multiple sources.
             </p>
           </div>
@@ -709,7 +732,11 @@
     <!-- Audit Reports -->
     <section id="audit-reports">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fas fa-file-invoice"></i> Audit & Verification Reports</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">📄 Reports</span>
+          <h2>Audit &amp; Verification <em class="gold-serif">Reports</em></h2>
+          <p class="section-subtitle">Independent verification from trusted platforms</p>
+        </div>
 
         <div class="content-card" data-aos="fade-up">
           <div class="audit-grid">
@@ -731,7 +758,7 @@
               </div>
               <a href="https://solscan.io/token/F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump"
                  target="_blank" rel="noopener noreferrer"
-                 class="cta-button full-width">
+                 class="cta-button primary-glow full-width">
                 <i class="fas fa-external-link-alt"></i> View on Solscan
               </a>
             </div>
@@ -766,7 +793,11 @@
     <!-- FAQ -->
     <section id="faq">
       <div class="container">
-        <h2 data-aos="fade-up">Frequently Asked Questions</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">❓ Questions</span>
+          <h2>Frequently Asked <em class="gold-serif">Questions</em></h2>
+          <p class="section-subtitle">Everything you need to know about $REBL security</p>
+        </div>
 
         <div class="content-card" data-aos="fade-up">
           <div class="faq-grid">
@@ -805,26 +836,29 @@
     </section>
 
     <!-- Final CTA -->
-    <section style="text-align: center; padding: var(--spacing-xl) var(--spacing-md); margin: var(--spacing-xl) auto; max-width: 800px;" data-aos="fade-up">
-      <h2 style="color: var(--rebel-gold); margin-bottom: var(--spacing-lg);">READY TO JOIN THE REBELLION?</h2>
-      <p style="font-size: 1.2em; margin-bottom: var(--spacing-lg); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-        Join a community that values <strong>integrity, transparency, and real growth</strong> over empty promises.
-      </p>
+    <section class="container cta-section" data-aos="fade-up">
+      <div class="section-header">
+        <span class="section-eyebrow">🔥 Join the Rebellion</span>
+        <h2>Ready to <em class="gold-serif">Join the Rebellion?</em></h2>
+        <p class="section-subtitle">
+          Join a community that values <strong>integrity, transparency, and real growth</strong> over empty promises.
+        </p>
+      </div>
 
-      <div style="display: flex; justify-content: center; gap: var(--spacing-md); margin-top: var(--spacing-lg); flex-wrap: wrap;">
-        <a href="tokenomics.html" class="cta-button gold">
+      <div class="cta-section-actions">
+        <a href="tokenomics.html" class="cta-button primary-glow">
           <i class="fas fa-chart-line"></i> VERIFY OUR TOKENOMICS
         </a>
-        <a href="community.html" class="cta-button">
+        <a href="community.html" class="cta-button secondary">
           <i class="fas fa-hands-helping"></i> JOIN OUR COMMUNITY
         </a>
-        <a href="trade.html" class="cta-button" style="background: var(--rebel-red);">
+        <a href="trade.html" class="cta-button" style="background: var(--rebel-red); color:#fff; border-color: var(--rebel-red);">
           <i class="fas fa-shopping-cart"></i> TRADE $REBL
         </a>
       </div>
 
-      <div style="margin-top: var(--spacing-xl); background: rgba(255, 51, 102, 0.1); padding: var(--spacing-lg); border-radius: var(--border-radius); max-width: 600px; margin-left: auto; margin-right: auto;">
-        <p style="margin: 0; font-size: 0.95em; color: var(--rebel-gold); line-height: 1.6;">
+      <div class="cta-reminder" data-aos="fade-up">
+        <p>
           <strong><i class="fas fa-exclamation-triangle"></i> REMEMBER:</strong> Always verify contract addresses and beware of impersonators.
           Our only official channels are listed on this website. Bookmark this page for easy reference.
         </p>
@@ -834,7 +868,12 @@
     <!-- Explore More -->
     <section id="related-pages" data-aos="fade-up">
       <div class="container">
-        <h2>Explore More</h2>
+        <div class="section-header">
+          <span class="section-eyebrow">🧭 Continue Exploring</span>
+          <h2>Explore <em class="gold-serif">More</em></h2>
+          <p class="section-subtitle">Three ways to deepen your understanding</p>
+        </div>
+
         <div class="related-grid">
           <a href="governance.html" class="related-card governance-card" data-aos="fade-right">
             <div class="related-icon"><i class="fas fa-university"></i></div>
