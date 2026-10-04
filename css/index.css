@@ -1073,6 +1073,12 @@ button.chapter-row:hover {
   grid-template-columns: repeat(2, 1fr);
   gap: 0.6rem;
 }
+@media (min-width: 600px) {
+  .idilys-traits {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
 .idilys-trait {
   display: flex;
   align-items: center;
@@ -2781,7 +2787,6 @@ body.video-modal-open {
     gap: 2.5rem;
     padding: 2.5rem 2rem;
   }
-  .idilys-traits { grid-template-columns: repeat(4, 1fr); }
   .idilys-right { order: -1; }
 
   .why-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
