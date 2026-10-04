@@ -3083,3 +3083,11 @@ body.video-modal-open {
     aspect-ratio: 16 / 10;
   }
 }
+/* ============================================================
+   GALLERY — "MOST WATCHED" badge (best performer)
+   ============================================================ */
+.gallery-featured-tag.hot-tag {
+  background: linear-gradient(135deg, #ff4500, #ff6347);
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 69, 0, 0.4);
+}
