@@ -2418,7 +2418,7 @@ button.chapter-row:hover {
 /* Step 01 — Watch the Most-Watched (unique style) */
 .step-cta--watch {
   background: linear-gradient(135deg, #d74d4d 0%, #ff4757 100%);
-  color: #ffffff;
+  color: #000000;
   border: 2px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 6px 18px rgba(215, 77, 77, 0.4);
 }
