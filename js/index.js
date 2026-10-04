@@ -776,6 +776,18 @@
     }
   }
 
+  function initWalletBar() {
+    const bar = document.getElementById('walletBar');
+    if (!bar) return;
+    setTimeout(() => {
+      if (bar.style.display !== 'none') {
+        bar.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        bar.style.opacity = '0';
+        bar.style.transform = 'translate(-50%, 20px)';
+        setTimeout(() => { bar.style.display = 'none'; }, 400);
+      }
+    }, 45000);
+  }
 
   // ============================================================
   // HOVER EFFECTS
