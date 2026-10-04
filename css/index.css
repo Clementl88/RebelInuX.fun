@@ -1,6 +1,6 @@
 /* =============================================================
    REBELINUX — PRO HOME PAGE STYLES
-   v5.1 · Mobile-First · Museum-Grade + Video Modal
+   v5.2 · Mobile-First · Museum-Grade + YouTube Thumbnails
    ============================================================= */
 
 :root {
@@ -215,7 +215,6 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 1.25rem;
 }
 
-/* Audience carousel */
 .audience-carousel {
   position: relative;
   margin-bottom: 1.75rem;
@@ -262,7 +261,6 @@ img { max-width: 100%; height: auto; display: block; }
   word-break: break-word;
 }
 .hero-title em { font-style: italic; }
-
 .hero-subtitle {
   font-size: clamp(1rem, 4vw, 1.2rem);
   color: rgba(255, 255, 255, 0.8);
@@ -335,14 +333,12 @@ img { max-width: 100%; height: auto; display: block; }
   overflow: hidden;
 }
 .cta-button:hover, .cta-button:active { transform: translateY(-2px); }
-
 .cta-primary {
   background: var(--gold-gradient);
   color: #1a1a2e;
   box-shadow: 0 6px 20px rgba(212, 167, 106, 0.35);
 }
 .cta-primary:hover { box-shadow: 0 10px 30px rgba(212, 167, 106, 0.55); }
-
 .cta-gold {
   background: #1a1a2e;
   color: white;
@@ -353,7 +349,6 @@ img { max-width: 100%; height: auto; display: block; }
   border-color: var(--rebel-gold);
   color: var(--rebel-gold);
 }
-
 .cta-ghost {
   background: rgba(255, 255, 255, 0.05);
   color: white;
@@ -363,7 +358,6 @@ img { max-width: 100%; height: auto; display: block; }
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
 }
-
 .cta-large { padding: 1.1rem 1.5rem; font-size: 1rem; }
 
 .trust-row {
@@ -406,7 +400,7 @@ img { max-width: 100%; height: auto; display: block; }
   border-style: solid;
   border-width: 0;
   pointer-events: none;
-  z-index: 3;
+  z-index: 4;
 }
 .frame-corner--tl { top: 4px; left: 4px; border-top-width: 2px; border-left-width: 2px; border-radius: 6px 0 0 0; }
 .frame-corner--tr { top: 4px; right: 4px; border-top-width: 2px; border-right-width: 2px; border-radius: 0 6px 0 0; }
@@ -416,7 +410,7 @@ img { max-width: 100%; height: auto; display: block; }
 .video-live-badge {
   position: absolute;
   top: 1rem; left: 1rem;
-  z-index: 4;
+  z-index: 5;
   background: rgba(0,0,0,0.75);
   color: white;
   font-size: 0.6rem;
@@ -433,7 +427,7 @@ img { max-width: 100%; height: auto; display: block; }
 .video-chapter-tag {
   position: absolute;
   top: 1rem; right: 1rem;
-  z-index: 4;
+  z-index: 5;
   background: rgba(0,0,0,0.75);
   color: var(--rebel-gold);
   font-size: 0.6rem;
@@ -444,10 +438,11 @@ img { max-width: 100%; height: auto; display: block; }
   border: 1px solid rgba(212, 167, 106, 0.4);
 }
 
-/* Video & gallery cards as buttons */
+/* Card buttons — shared reset */
 button.video-link,
 button.gallery-card,
-button.chapter-row {
+button.chapter-row,
+button.step-cta {
   border: none;
   background: transparent;
   padding: 0;
@@ -478,25 +473,63 @@ button.chapter-row {
   background: #050508;
   cursor: pointer;
 }
-.video-thumb img {
-  width: 100%; height: 100%;
+
+/* ============================================================
+   YOUTUBE THUMBNAILS — injected by JS, sits above the placeholder
+   ============================================================ */
+.yt-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.6s ease;
+  z-index: 1;
+  pointer-events: none;
 }
-.video-link:hover .video-thumb img { transform: scale(1.05); }
+.yt-thumb--loaded { opacity: 1; }
+
+/* Blurred backdrop layer that uses the same thumbnail as wallpaper */
+.video-thumb::before,
+.gallery-thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a120b, #2a1f14);
+  background-size: cover;
+  background-position: center;
+  filter: blur(28px) brightness(0.45) saturate(1.2);
+  z-index: 0;
+  opacity: 0.85;
+  transition: opacity 0.5s ease;
+}
+.video-thumb.has-thumbnail::before,
+.gallery-thumb.has-thumbnail::before {
+  background-image: var(--thumb-bg, none);
+}
+
+/* Placeholder (shown only before the thumbnail is loaded) */
 .video-placeholder {
   position: absolute; inset: 0;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
   color: rgba(212, 167, 106, 0.5);
   background: linear-gradient(135deg, #1a120b, #2a1f14);
+  z-index: 2;
+  transition: opacity 0.4s ease;
 }
 .video-placeholder i { font-size: 4rem; }
-.video-placeholder span { font-family: var(--font-display); font-style: italic; font-size: 1.5rem; color: rgba(212, 167, 106, 0.7); }
-.video-thumb.no-image .video-placeholder { display: flex; }
+.video-placeholder span {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: rgba(212, 167, 106, 0.7);
+}
+.has-thumbnail .video-placeholder { opacity: 0; pointer-events: none; }
 
 .video-overlay {
   position: absolute;
@@ -504,6 +537,7 @@ button.chapter-row {
   display: flex; align-items: center; justify-content: center;
   background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.75) 100%);
   pointer-events: none;
+  z-index: 3;
 }
 .video-overlay i {
   width: 68px; height: 68px;
@@ -516,7 +550,12 @@ button.chapter-row {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
 }
-.video-link:hover .video-overlay i { transform: scale(1.15); }
+.video-link:hover .video-overlay i,
+button.gallery-card:hover .video-overlay i { transform: scale(1.15); }
+
+/* Hover zoom on the injected YouTube thumbnail */
+.video-link:hover .yt-thumb,
+button.gallery-card:hover .yt-thumb { transform: scale(1.06); }
 
 .video-meta { text-align: center; padding: 1rem 0.5rem 0; }
 .video-meta h4 {
@@ -644,22 +683,15 @@ button.gallery-card:hover {
   overflow: hidden;
   background: linear-gradient(135deg, #1a120b, #2a1f14);
 }
-.gallery-thumb img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.55s ease;
-}
-button.gallery-card:hover .gallery-thumb img { transform: scale(1.06); }
-
 .gallery-placeholder {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
   color: rgba(212, 167, 106, 0.35);
   font-size: 4rem;
-  z-index: 0;
+  z-index: 2;
+  transition: opacity 0.4s ease;
 }
-.gallery-thumb.no-image .gallery-placeholder { display: flex; }
-.gallery-thumb:not(.no-image) .gallery-placeholder { display: none; }
+.has-thumbnail .gallery-placeholder { opacity: 0; pointer-events: none; }
 
 .gallery-overlay {
   position: absolute;
@@ -667,6 +699,7 @@ button.gallery-card:hover .gallery-thumb img { transform: scale(1.06); }
   display: flex; align-items: center; justify-content: center;
   background: linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.7) 100%);
   pointer-events: none;
+  z-index: 3;
 }
 .gallery-overlay i {
   width: 56px; height: 56px;
@@ -679,7 +712,6 @@ button.gallery-card:hover .gallery-thumb img { transform: scale(1.06); }
   box-shadow: 0 8px 24px rgba(0,0,0,0.45);
   transition: transform 0.3s ease;
 }
-button.gallery-card:hover .gallery-overlay i { transform: scale(1.15); }
 
 .gallery-badge {
   position: absolute;
@@ -692,7 +724,7 @@ button.gallery-card:hover .gallery-overlay i { transform: scale(1.15); }
   padding: 0.3rem 0.65rem;
   border-radius: 20px;
   border: 1px solid rgba(212,167,106,0.4);
-  z-index: 2;
+  z-index: 4;
   backdrop-filter: blur(6px);
 }
 .gallery-featured-tag {
@@ -705,7 +737,7 @@ button.gallery-card:hover .gallery-overlay i { transform: scale(1.15); }
   letter-spacing: 1px;
   padding: 0.3rem 0.6rem;
   border-radius: 20px;
-  z-index: 2;
+  z-index: 4;
 }
 .gallery-meta {
   padding: 1.1rem 1.15rem 1.25rem;
@@ -720,7 +752,6 @@ button.gallery-card:hover .gallery-overlay i { transform: scale(1.15); }
   margin-bottom: 0.2rem;
 }
 .gallery-meta p { color: rgba(255, 255, 255, 0.55); font-size: 0.8rem; }
-
 .gallery-cta {
   text-align: center;
   margin-top: 2.5rem;
@@ -843,7 +874,6 @@ button.chapter-row:hover {
   gap: 0.85rem;
   padding: 0.85rem 0;
 }
-
 .chapter-num {
   font-family: var(--font-display);
   font-style: italic;
@@ -2229,7 +2259,6 @@ button.chapter-row:hover {
   font-size: 0.82rem;
   font-weight: 700;
   color: white;
-  letter-spacing: 0.3px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -2291,7 +2320,6 @@ button.chapter-row:hover {
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.5px;
   z-index: 2;
 }
 .video-modal-loading .loader-spinner {
@@ -2521,7 +2549,6 @@ body.video-modal-open {
 
   .wallet-bar-text { display: flex; }
 
-  /* Video modal — tablet */
   .video-modal-shell { max-width: 560px; }
   .video-modal-frame { max-height: calc(100vh - 260px); }
 }
@@ -2583,7 +2610,6 @@ body.video-modal-open {
   .roadmap::before { left: 16px; }
   .roadmap-marker { left: -3rem; }
 
-  /* Video modal — desktop */
   .video-modal-shell { max-width: 500px; }
 }
 
