@@ -8,10 +8,10 @@ window.legalInitialized = false;
 // ===== WAIT FOR COMPONENTS =====
 function waitForComponents(callback, maxAttempts = 20) {
   let attempts = 0;
-  
+
   const checkInterval = setInterval(function() {
     attempts++;
-    
+
     if (window.componentsLoaded || document.querySelector('#header-container')) {
       clearInterval(checkInterval);
       console.log('✅ Components ready, initializing legal page');
@@ -29,12 +29,11 @@ function waitForComponents(callback, maxAttempts = 20) {
 // ===== DOM CONTENT LOADED =====
 document.addEventListener('DOMContentLoaded', function() {
   console.log('📄 Legal page DOM ready');
-  
-  // Mark components as loaded after a short delay
+
   setTimeout(function() {
     window.componentsLoaded = true;
   }, 300);
-  
+
   waitForComponents(function() {
     setTimeout(initLegalPage, 200);
   });
@@ -46,34 +45,30 @@ function initLegalPage() {
     console.log('⚠️ Legal page already initialized');
     return;
   }
-  
+
   console.log('⚖️ Initializing Legal page');
   window.legalInitialized = true;
-  
-  // Initialize all legal components
+
   initCopyButtons();
   initDisclaimerCheckboxes();
   initCookiePreferences();
-//  initPrintButton();
   highlightCurrentLegalPage();
   initAOSWithDelay();
   initContractReminder();
   initFaqInteractions();
-  
-  // Check if this is 404 page and initialize 404 specific features
+
   if (document.querySelector('.page-hero--404')) {
     init404Page();
   }
-  
+
   console.log('✅ Legal page initialization complete');
 }
 
 // ===== COPY CONTRACT FUNCTIONALITY =====
 function initCopyButtons() {
   const copyButtons = document.querySelectorAll('.copy-mini-btn, .copy-contract-btn, .copy-button');
-  
+
   copyButtons.forEach(button => {
-    // Remove existing listeners to prevent duplicates
     button.removeEventListener('click', handleCopyClick);
     button.addEventListener('click', handleCopyClick);
   });
@@ -81,22 +76,21 @@ function initCopyButtons() {
 
 function handleCopyClick(e) {
   e.preventDefault();
-  
-  // Find the contract code element
-  const contractElement = this.closest('.contract-address-box')?.querySelector('code') || 
+
+  const contractElement = this.closest('.contract-address-box')?.querySelector('code') ||
                          document.getElementById('contract-address') ||
                          this.closest('div')?.querySelector('code');
-  
+
   if (contractElement) {
     const contractAddress = contractElement.textContent.trim();
-    
+
     navigator.clipboard.writeText(contractAddress).then(() => {
       const originalHTML = this.innerHTML;
       this.innerHTML = '<i class="fas fa-check"></i>';
       this.style.background = '#4CAF50';
-      
+
       showLegalToast('Contract address copied! Always verify before transacting.', 'success');
-      
+
       setTimeout(() => {
         this.innerHTML = originalHTML;
         this.style.background = '';
@@ -104,14 +98,13 @@ function handleCopyClick(e) {
     }).catch(err => {
       console.error('Failed to copy: ', err);
       showLegalToast('Failed to copy. Please try again.', 'error');
-      
+
       setTimeout(() => {
         this.innerHTML = '<i class="fas fa-copy"></i>';
         this.style.background = '';
       }, 2000);
     });
   } else {
-    // Fallback contract address
     const contractAddress = 'F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump';
     navigator.clipboard.writeText(contractAddress).then(() => {
       showLegalToast('Contract address copied!', 'success');
@@ -122,11 +115,11 @@ function handleCopyClick(e) {
 // ===== DISCLAIMER CHECKBOXES =====
 function initDisclaimerCheckboxes() {
   const checkboxes = document.querySelectorAll('.ack-statement input[type="checkbox"]');
-  
+
   checkboxes.forEach(checkbox => {
     checkbox.checked = true;
     checkbox.disabled = true;
-    
+
     checkbox.addEventListener('click', function(e) {
       e.preventDefault();
       this.checked = true;
@@ -137,7 +130,7 @@ function initDisclaimerCheckboxes() {
 // ===== COOKIE PREFERENCES =====
 function initCookiePreferences() {
   const cookieSettingsLink = document.querySelector('a[href="#cookie-settings"]');
-  
+
   if (cookieSettingsLink) {
     cookieSettingsLink.removeEventListener('click', handleCookieClick);
     cookieSettingsLink.addEventListener('click', handleCookieClick);
@@ -150,18 +143,14 @@ function handleCookieClick(e) {
 }
 
 function showCookiePreferences() {
-  // Remove existing modal
   const existingModal = document.querySelector('.legal-modal');
   if (existingModal) existingModal.remove();
-  
+
   const modal = document.createElement('div');
   modal.className = 'legal-modal';
   modal.style.cssText = `
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.95);
     display: flex;
     align-items: center;
@@ -169,14 +158,14 @@ function showCookiePreferences() {
     z-index: 10000;
     animation: fadeIn 0.3s ease;
   `;
-  
+
   modal.innerHTML = `
-    <div style="background: #1a1a1a; padding: 2rem; border-radius: 16px; 
+    <div style="background: #1a1a1a; padding: 2rem; border-radius: 16px;
                 border: 2px solid var(--rebel-gold); max-width: 500px; width: 90%;">
       <h3 style="color: var(--rebel-gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
         <i class="fas fa-cookie-bite"></i> Cookie Preferences
       </h3>
-      
+
       <div style="margin-bottom: 1.5rem;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 0.5rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
           <div>
@@ -185,7 +174,7 @@ function showCookiePreferences() {
           </div>
           <span style="background: rgba(76,175,80,0.2); color: #4CAF50; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Always On</span>
         </div>
-        
+
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
           <div>
             <strong style="color: white;">Analytics Cookies</strong>
@@ -197,25 +186,24 @@ function showCookiePreferences() {
           </label>
         </div>
       </div>
-      
+
       <div style="display: flex; gap: 1rem; justify-content: flex-end;">
-        <button onclick="this.closest('.legal-modal').remove()" 
-                style="background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 25px; 
+        <button onclick="this.closest('.legal-modal').remove()"
+                style="background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 25px;
                        padding: 0.8rem 1.5rem; cursor: pointer; font-weight: 600;">
           Cancel
         </button>
-        <button onclick="saveCookiePreferences()" 
-                style="background: var(--rebel-gold); color: #1a1a1a; border: none; border-radius: 25px; 
+        <button onclick="saveCookiePreferences()"
+                style="background: var(--rebel-gold); color: #1a1a1a; border: none; border-radius: 25px;
                        padding: 0.8rem 1.5rem; cursor: pointer; font-weight: 600;">
           Save Preferences
         </button>
       </div>
     </div>
   `;
-  
+
   document.body.appendChild(modal);
-  
-  // Close on background click
+
   modal.addEventListener('click', function(e) {
     if (e.target === modal) {
       modal.remove();
@@ -223,10 +211,9 @@ function showCookiePreferences() {
   });
 }
 
-// Save cookie preferences
 window.saveCookiePreferences = function() {
   const analyticsOptOut = document.getElementById('analytics-opt-out')?.checked;
-  
+
   try {
     if (analyticsOptOut) {
       localStorage.setItem('rebelinux_analytics_opt_out', 'true');
@@ -238,57 +225,16 @@ window.saveCookiePreferences = function() {
   } catch (e) {
     console.warn('Could not save cookie preferences:', e);
   }
-  
-  // Close modal
+
   const modal = document.querySelector('.legal-modal');
   if (modal) modal.remove();
 };
-
-// ===== PRINT BUTTON =====
-//function initPrintButton() {
-//  const legalHeader = document.querySelector('.legal-header');
-  
- // if (legalHeader && !document.querySelector('.print-button')) {
-//    const printButton = document.createElement('button');
-  //  printButton.className = 'print-button';
-  //  printButton.innerHTML = '<i class="fas fa-print"></i> Print';
-  //  printButton.style.cssText = `
-   //   background: rgba(255,255,255,0.1);
- //     color: white;
-   //   border: 1px solid rgba(255,255,255,0.3);
-  //    border-radius: 25px;
-  //    padding: 0.5rem 1rem;
-  //    margin-left: auto;
-  //    cursor: pointer;
-  //    display: flex;
- //     align-items: center;
-  //    gap: 0.5rem;
-  //    font-size: 0.85rem;
-  //    transition: all 0.3s ease;
-    //`;
-    
- //   printButton.addEventListener('mouseenter', function() {
-  //    this.style.background = 'rgba(255,255,255,0.2)';
-  //  });
-    
-  //  printButton.addEventListener('mouseleave', function() {
-  //    this.style.background = 'rgba(255,255,255,0.1)';
-   // });
-    
-   // printButton.addEventListener('click', function() {
-   //   window.print();
-  //    showLegalToast('Preparing document for printing...', 'info');
-  //  });
-    
- //   legalHeader.appendChild(printButton);
-  //}
-//}
 
 // ===== HIGHLIGHT CURRENT PAGE =====
 function highlightCurrentLegalPage() {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   const relatedLinks = document.querySelectorAll('.related-card');
-  
+
   relatedLinks.forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPage) {
@@ -296,7 +242,7 @@ function highlightCurrentLegalPage() {
       link.style.boxShadow = '0 0 15px rgba(255, 204, 0, 0.3)';
       link.style.opacity = '0.9';
       link.style.cursor = 'default';
-      
+
       link.addEventListener('click', function(e) {
         e.preventDefault();
       });
@@ -308,7 +254,6 @@ function highlightCurrentLegalPage() {
 function initContractReminder() {
   const contractReminder = document.querySelector('.contract-reminder');
   if (contractReminder) {
-    // Ensure copy button works in contract reminder
     const copyBtn = contractReminder.querySelector('.copy-mini-btn');
     if (copyBtn) {
       copyBtn.removeEventListener('click', handleCopyClick);
@@ -320,7 +265,7 @@ function initContractReminder() {
 // ===== FAQ INTERACTIONS =====
 function initFaqInteractions() {
   const faqItems = document.querySelectorAll('.faq-item');
-  
+
   faqItems.forEach(item => {
     item.addEventListener('click', function() {
       this.style.transition = 'all 0.3s ease';
@@ -331,37 +276,30 @@ function initFaqInteractions() {
 // ===== 404 PAGE SPECIFIC =====
 function init404Page() {
   console.log('🦴 404 Page detected');
-  
-  // Hide back to top button
+
   const backToTop = document.getElementById('backToTop');
   if (backToTop) {
     backToTop.style.display = 'none';
   }
-  
-  // Setup easter egg
+
   setupEasterEgg();
-  
-  // Prefetch popular pages
   prefetchPopularPages();
-  
-  // Log 404 error
   log404Error();
 }
 
-// Easter egg for 404 page
 function setupEasterEgg() {
   const eggElement = document.querySelector('.egg-content');
-  
+
   if (eggElement) {
     let clickCount = 0;
-    
+
     eggElement.addEventListener('click', function(e) {
       clickCount++;
-      
+
       if (clickCount === 5) {
         showSecretAchievement('🔍 404 Explorer', 'You found the secret!');
       }
-      
+
       if (clickCount === 10) {
         showSecretAchievement('👑 Rebel Legend', 'You\'re a true rebel!', 'legend');
       }
@@ -369,15 +307,14 @@ function setupEasterEgg() {
   }
 }
 
-// Secret achievement popup
 function showSecretAchievement(title, message, type = 'normal') {
   const achievement = document.createElement('div');
   achievement.className = 'achievement-popup';
-  
-  const colors = type === 'legend' 
+
+  const colors = type === 'legend'
     ? 'linear-gradient(135deg, var(--rebel-red), #b71c1c); color: white; border: 2px solid var(--rebel-gold);'
     : 'linear-gradient(135deg, var(--rebel-gold), #e6b800); color: var(--rebel-dark);';
-  
+
   achievement.style.cssText = `
     position: fixed;
     top: 20px;
@@ -393,7 +330,7 @@ function showSecretAchievement(title, message, type = 'normal') {
     box-shadow: 0 5px 20px rgba(255, 204, 0, 0.5);
     animation: slideInRight 0.5s ease;
   `;
-  
+
   achievement.innerHTML = `
     <i class="fas fa-${type === 'legend' ? 'crown' : 'trophy'}" style="font-size: 1.5rem;"></i>
     <div>
@@ -404,9 +341,9 @@ function showSecretAchievement(title, message, type = 'normal') {
       <i class="fas fa-times"></i>
     </button>
   `;
-  
+
   document.body.appendChild(achievement);
-  
+
   setTimeout(() => {
     if (achievement.parentElement) {
       achievement.style.animation = 'slideOutRight 0.5s ease';
@@ -415,15 +352,13 @@ function showSecretAchievement(title, message, type = 'normal') {
   }, 5000);
 }
 
-// Prefetch popular pages
 function prefetchPopularPages() {
   const pagesToPrefetch = [
     'index.html',
     'trade.html',
-    'epoch-rewards.html',
     'tokenomics.html'
   ];
-  
+
   if ('requestIdleCallback' in window) {
     requestIdleCallback(() => {
       pagesToPrefetch.forEach(page => {
@@ -437,12 +372,10 @@ function prefetchPopularPages() {
   }
 }
 
-// Log 404 error
 function log404Error() {
   const badUrl = document.referrer || window.location.pathname;
   console.warn(`⚠️ 404 Error: ${badUrl}`);
-  
-  // Store in session storage
+
   try {
     const errors = JSON.parse(sessionStorage.getItem('rebel_404_errors') || '[]');
     errors.push({
@@ -476,24 +409,24 @@ window.factIndex = Math.floor(Math.random() * window.funFacts.length);
 function showLegalToast(message, type = 'info') {
   const existingToast = document.querySelector('.legal-toast');
   if (existingToast) existingToast.remove();
-  
+
   const toast = document.createElement('div');
   toast.className = 'legal-toast';
-  
+
   const colors = {
     success: '#4CAF50',
     error: '#f44336',
     info: '#2196F3',
     warning: '#FF9800'
   };
-  
+
   const icons = {
     success: 'check-circle',
     error: 'exclamation-circle',
     info: 'info-circle',
     warning: 'exclamation-triangle'
   };
-  
+
   toast.style.cssText = `
     position: fixed;
     bottom: 20px;
@@ -511,10 +444,10 @@ function showLegalToast(message, type = 'info') {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     animation: slideUp 0.3s ease;
   `;
-  
+
   toast.innerHTML = `<i class="fas fa-${icons[type] || icons.info}"></i><span>${message}</span>`;
   document.body.appendChild(toast);
-  
+
   setTimeout(() => {
     toast.style.animation = 'slideDown 0.3s ease';
     setTimeout(() => toast.remove(), 300);
@@ -545,42 +478,30 @@ function addAnimationStyles() {
     style.textContent = `
       @keyframes slideUp {
         from { transform: translateX(-50%) translateY(100px); opacity: 0; }
-        to { transform: translateX(-50%) translateY(0); opacity: 1; }
+        to   { transform: translateX(-50%) translateY(0); opacity: 1; }
       }
-      
       @keyframes slideDown {
         from { transform: translateX(-50%) translateY(0); opacity: 1; }
-        to { transform: translateX(-50%) translateY(100px); opacity: 0; }
+        to   { transform: translateX(-50%) translateY(100px); opacity: 0; }
       }
-      
       @keyframes slideInRight {
         from { transform: translateX(100%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
+        to   { transform: translateX(0); opacity: 1; }
       }
-      
       @keyframes slideOutRight {
         from { transform: translateX(0); opacity: 1; }
-        to { transform: translateX(100%); opacity: 0; }
+        to   { transform: translateX(100%); opacity: 0; }
       }
-      
       @keyframes fadeIn {
         from { opacity: 0; }
-        to { opacity: 1; }
+        to   { opacity: 1; }
       }
-      
-      .legal-modal {
-        animation: fadeIn 0.3s ease;
-      }
-      
-      .print-button {
-        transition: all 0.3s ease;
-      }
+      .legal-modal { animation: fadeIn 0.3s ease; }
     `;
     document.head.appendChild(style);
   }
 }
 
-// Call this immediately
 addAnimationStyles();
 
 // ===== GLOBAL EXPORTS =====
