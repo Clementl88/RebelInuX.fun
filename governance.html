@@ -24,7 +24,9 @@
   <link rel="apple-touch-icon" href="images/Logo_REBL.svg">
   <title>Governance Portal - REBL Governance Hub | RebelInuX</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -49,23 +51,36 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="page-hero page-hero--trade page-hero--governance">
+    <section class="page-hero page-hero--governance">
+      <div class="hero-background-pattern" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
       <div class="container">
-        <h1 data-aos="fade-up">REBL GOVERNANCE HUB</h1>
-        <p class="text-lead" data-aos="fade-up" data-aos-delay="100">
+        <div class="hero-eyebrow" data-aos="fade-up">
+          <span class="live-dot"></span>
+          <span>COMMUNITY-DRIVEN · TOKEN-GATED · 1 MEMBER = 1 VOTE</span>
+        </div>
+
+        <h1 data-aos="fade-up" data-aos-delay="100">
+          REBL Governance <em class="gold-serif">Hub</em>
+        </h1>
+
+        <p class="text-lead" data-aos="fade-up" data-aos-delay="150">
           Low-friction, effective community governance. All key decisions — from Journey Contest finalists to treasury allocations — are made through the REBL Governance Hub.
         </p>
+
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
-          <a href="#governance-hub" class="cta-button" style="background: linear-gradient(135deg, #0088cc, #00ace6);">
+          <a href="#governance-hub" class="cta-button primary-glow">
             <i class="fab fa-telegram"></i> Join Governance Hub
           </a>
-          <a href="#journey-contest" class="cta-button gold">
+          <a href="#journey-contest" class="cta-button secondary">
             <i class="fas fa-film"></i> Journey Contest
           </a>
-          <a href="#governance-powers" class="cta-button">
+          <a href="#governance-powers" class="cta-button secondary">
             <i class="fas fa-gavel"></i> Governance Powers
           </a>
         </div>
+
         <div class="governance-stats" data-aos="fade-up" data-aos-delay="300">
           <div class="stat-item">
             <div class="stat-number">500K $REBL</div>
@@ -90,78 +105,84 @@
     <!-- REBL Governance Hub -->
     <section id="governance-hub">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fab fa-telegram"></i> REBL GOVERNANCE HUB</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">💬 The Hub</span>
+          <h2>REBL Governance <em class="gold-serif">Hub</em></h2>
+          <p class="section-subtitle">A token-gated Telegram group for qualified $REBL holders</p>
+        </div>
 
-        <div class="content-card" data-aos="fade-up" style="background: linear-gradient(135deg, rgba(0, 136, 204, 0.1), rgba(0, 170, 255, 0.1)); border-color: #0088cc;">
-          <div style="text-align: center; margin-bottom: var(--spacing-xl);">
-            <div style="width: 100px; height: 100px; background: rgba(0, 136, 204, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-lg); border: 3px solid #0088cc;">
-              <i class="fab fa-telegram" style="color: #0088cc; font-size: 3rem;"></i>
+        <div class="content-card governance-hub-card" data-aos="fade-up">
+          <div class="governance-hub-header">
+            <div class="governance-hub-icon">
+              <i class="fab fa-telegram"></i>
             </div>
-            <h3 style="color: #0088cc; margin-bottom: var(--spacing-sm);">Token-Gated Telegram Group</h3>
-            <p style="font-size: 1.2em; color: rgba(255, 255, 255, 0.9); max-width: 800px; margin: 0 auto;">
+            <h3>Token-Gated Telegram Group</h3>
+            <p>
               Holding 500,000+ $REBL grants you access to our exclusive governance Telegram group.
               <strong>1 member = 1 vote</strong> — not weighted by balance — preventing whale dominance.
             </p>
           </div>
 
           <div class="principles-grid">
-            <div class="principle-item" data-aos="fade-right" style="border-color: #0088cc; background: rgba(0, 136, 204, 0.1);">
+            <div class="principle-item" data-aos="fade-right" style="border-color: #0088cc; background: rgba(0, 136, 204, 0.08);">
               <div class="principle-icon" style="color: #0088cc;">
                 <i class="fas fa-comments"></i>
               </div>
-              <h4 style="color: #0088cc;">What We Discuss & Decide</h4>
-              <ul style="text-align: left; color: white; font-size: 0.95em; padding-left: var(--spacing-md);">
+              <h4 style="color: #0088cc;">What We Discuss &amp; Decide</h4>
+              <ul class="principle-list">
                 <li><strong>Journey Contest Finalists:</strong> Pre-select finalists for the next historical theme (country + period)</li>
                 <li><strong>Treasury Proposals:</strong> Initiatives funded by the ZORA Rewards Treasury</li>
                 <li><strong>Protocol Parameters:</strong> Contest schedule, participation thresholds, reward structure</li>
-                <li><strong>Partnerships & Grants:</strong> Negotiated collaborations, subject to Hub ratification</li>
+                <li><strong>Partnerships &amp; Grants:</strong> Negotiated collaborations, subject to Hub ratification</li>
                 <li><strong>Value Acceleration:</strong> Adjust distribution percentages (50/20/15/15)</li>
               </ul>
             </div>
 
-            <div class="principle-item" data-aos="fade-left" style="border-color: #25D366; background: rgba(37, 211, 102, 0.1);">
+            <div class="principle-item" data-aos="fade-left" style="border-color: #25D366; background: rgba(37, 211, 102, 0.08);">
               <div class="principle-icon" style="color: #25D366;">
                 <i class="fas fa-shield-alt"></i>
               </div>
               <h4 style="color: #25D366;">How to Join (Secure)</h4>
-              <ol style="text-align: left; color: white; font-size: 0.95em; padding-left: var(--spacing-lg);">
+              <ol class="principle-list principle-list--ordered">
                 <li><strong>Hold at least 500,000 $REBL</strong> in your wallet</li>
                 <li><strong>Click the Collab.Land link:</strong>
                   <a href="https://telegram.me/collablandbot?start=VFBDI1RFTCNDT01NIy0xMDAyODg1MTA4NjYz"
                      target="_blank"
-                     style="color: #25D366; text-decoration: underline;">Verify Access Here</a>
+                     rel="noopener noreferrer"
+                     class="principle-link">Verify Access Here</a>
                 </li>
                 <li><strong>Connect your wallet</strong> (no private keys needed — signature only!)</li>
                 <li><strong>Get automatically verified</strong> and granted access</li>
               </ol>
-              <div style="background: rgba(255, 255, 255, 0.1); padding: var(--spacing-md); border-radius: 8px; margin-top: var(--spacing-md);">
-                <p style="font-size: 0.9em; color: #25D366; margin: 0;">
-                  <i class="fas fa-lock"></i> <strong>Why Collab.Land is Safe:</strong> No private keys required • Non-custodial verification • Read-only access • Used by thousands of Web3 communities
+              <div class="collabland-safety">
+                <p>
+                  <i class="fas fa-lock"></i>
+                  <span><strong>Why Collab.Land is Safe:</strong> No private keys required • Non-custodial verification • Read-only access • Used by thousands of Web3 communities</span>
                 </p>
               </div>
             </div>
           </div>
 
-          <div style="background: rgba(0, 136, 204, 0.2); padding: var(--spacing-lg); border-radius: var(--border-radius); margin-top: var(--spacing-xl); border-left: 4px solid #0088cc;">
-            <h4 style="color: #0088cc; margin-bottom: var(--spacing-sm);">
+          <div class="principle-callout">
+            <h4>
               <i class="fas fa-bullhorn"></i> Why Equal Voting?
             </h4>
-            <p style="color: rgba(255, 255, 255, 0.9); margin: 0;">
+            <p>
               Unlike traditional DAOs where whales dominate, the REBL Governance Hub gives <strong>each member 1 equal vote</strong>.
               This ensures every qualified participant has the same say, regardless of how many tokens they hold.
               True community governance.
             </p>
           </div>
 
-          <div style="text-align: center; margin-top: var(--spacing-xl);">
+          <div class="principle-actions">
             <a href="https://telegram.me/collablandbot?start=VFBDI1RFTCNDT01NIy0xMDAyODg1MTA4NjYz"
                target="_blank"
                rel="noopener noreferrer"
-               class="cta-button" style="background: linear-gradient(135deg, #0088cc, #00ace6); margin-right: var(--spacing-md);">
+               class="cta-button"
+               style="background: linear-gradient(135deg, #0088cc, #00ace6);">
               <i class="fab fa-telegram"></i> JOIN GOVERNANCE HUB
             </a>
-            <a href="trade.html"
-               class="cta-button gold">
+            <a href="trade.html" class="cta-button gold">
               <i class="fas fa-shopping-cart"></i> BUY $REBL TO JOIN
             </a>
           </div>
@@ -172,15 +193,19 @@
     <!-- Journey Contest Section -->
     <section id="journey-contest">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fas fa-film"></i> THE JOURNEY CONTEST</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">🎬 The Contest</span>
+          <h2>The Journey <em class="gold-serif">Contest</em></h2>
+          <p class="section-subtitle">The Hub pre-selects finalists. The community votes on X.</p>
+        </div>
 
-        <div class="content-card" data-aos="fade-up" style="background: linear-gradient(135deg, rgba(156, 39, 176, 0.1), rgba(255, 51, 102, 0.1)); border-color: var(--rebel-purple);">
-          <div style="text-align: center; margin-bottom: var(--spacing-xl);">
-            <div style="width: 100px; height: 100px; background: rgba(156, 39, 176, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-lg); border: 3px solid var(--rebel-purple);">
-              <i class="fas fa-film" style="color: var(--rebel-purple); font-size: 3rem;"></i>
+        <div class="content-card journey-contest-card" data-aos="fade-up">
+          <div class="journey-contest-header">
+            <div class="journey-contest-icon">
+              <i class="fas fa-film"></i>
             </div>
-            <h3 style="color: var(--rebel-purple); margin-bottom: var(--spacing-sm);">Community Decides the Next Journey</h3>
-            <p style="font-size: 1.2em; color: rgba(255, 255, 255, 0.9); max-width: 800px; margin: 0 auto;">
+            <h3>Community Decides the Next Journey</h3>
+            <p>
               The Journey Contest determines which historical period and country will be the next Journey collection.
               <strong>The Hub pre-selects finalists. The community votes on X.</strong>
             </p>
@@ -192,7 +217,7 @@
                 <i class="fas fa-trophy"></i>
               </div>
               <h4 style="color: var(--rebel-red);">How It Works</h4>
-              <ul style="text-align: left; color: white; font-size: 0.95em; padding-left: var(--spacing-md);">
+              <ul class="principle-list">
                 <li><strong>Submit:</strong> Create an original image featuring the RebelInuX mascot in a specific country and historical period</li>
                 <li><strong>Pre-select:</strong> The Governance Hub reviews all entries and shortlists finalists</li>
                 <li><strong>Vote:</strong> The community votes on X among the finalists</li>
@@ -206,25 +231,23 @@
                 <i class="fas fa-list-check"></i>
               </div>
               <h4 style="color: var(--rebel-gold);">Selection Criteria</h4>
-              <div style="text-align: center; margin: var(--spacing-lg) 0;">
-                <div style="background: rgba(0, 0, 0, 0.3); padding: var(--spacing-md); border-radius: 8px; text-align: left;">
-                  <p><strong>Hub Pre-Selection:</strong> The REBL Governance Hub selects finalists based on creative vision, historical significance, and alignment with the RebelInuX mascot's identity.</p>
-                  <p><strong>Public Vote:</strong> Once finalists are published, anyone can vote for their preferred entry through a poll on X.</p>
-                  <p><strong>Tie-Breaking:</strong> In the rare event of a tie, the project owner makes the final decision.</p>
-                  <p><strong>Veto:</strong> In extreme cases (offensive, illegal, or plagiarized content), the Governance Hub may veto a winner by a 75% supermajority vote.</p>
-                </div>
+              <div class="principle-note">
+                <p><strong>Hub Pre-Selection:</strong> The REBL Governance Hub selects finalists based on creative vision, historical significance, and alignment with the RebelInuX mascot's identity.</p>
+                <p><strong>Public Vote:</strong> Once finalists are published, anyone can vote for their preferred entry through a poll on X.</p>
+                <p><strong>Tie-Breaking:</strong> In the rare event of a tie, the project owner makes the final decision.</p>
+                <p><strong>Veto:</strong> In extreme cases (offensive, illegal, or plagiarized content), the Governance Hub may veto a winner by a 75% supermajority vote.</p>
               </div>
             </div>
           </div>
 
-          <div class="principles-grid" style="margin-top: var(--spacing-lg);">
+          <div class="principles-grid principles-grid--secondary">
             <div class="principle-item" data-aos="fade-right" style="border-color: #4CAF50;">
               <div class="principle-icon" style="color: #4CAF50;">
                 <i class="fas fa-gift"></i>
               </div>
               <h4 style="color: #4CAF50;">The Prize</h4>
               <p>The winning theme becomes the project's next official Journey. Winner receives:</p>
-              <ul style="text-align: left; color: white; font-size: 0.95em; padding-left: var(--spacing-md);">
+              <ul class="principle-list">
                 <li>Base $REBL reward (announced per contest)</li>
                 <li>Public credit as contest winner</li>
                 <li>$rebelinux Creator Coins</li>
@@ -238,15 +261,15 @@
               </div>
               <h4 style="color: var(--rebel-blue);">Reward Flow</h4>
               <p>The newly minted Journey collection becomes available as content coins on Zora. The community can trade them, and the winning scene becomes a permanent part of the historical journey.</p>
-              <div style="margin-top: var(--spacing-md); padding: var(--spacing-sm); background: rgba(0, 170, 255, 0.1); border-radius: 8px;">
-                <p style="margin: 0; font-size: 0.85rem;"><i class="fas fa-info-circle"></i> A new contest begins once the current Journey is completed. Duration varies by historical theme.</p>
+              <div class="principle-info">
+                <p><i class="fas fa-info-circle"></i> A new contest begins once the current Journey is completed. Duration varies by historical theme.</p>
               </div>
             </div>
           </div>
 
-          <div style="background: rgba(156, 39, 176, 0.2); padding: var(--spacing-lg); border-radius: var(--border-radius); margin-top: var(--spacing-xl); text-align: center;">
-            <h4 style="color: var(--rebel-purple); margin-bottom: var(--spacing-sm);">Current Journey</h4>
-            <p style="font-size: 1.2rem; font-weight: 700; color: var(--rebel-gold); margin-bottom: var(--spacing-sm);">1789 French Revolution</p>
+          <div class="current-journey-box">
+            <h4>Current Journey</h4>
+            <p class="current-journey-name">1789 French Revolution</p>
             <p>Featuring the RebelInuX mascot across 5 chapters and 8 collectibles. The next destination will be decided by community vote.</p>
           </div>
         </div>
@@ -256,10 +279,14 @@
     <!-- Governance Powers -->
     <section id="governance-powers">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fas fa-gavel"></i> Governance Powers</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">⚖️ The Powers</span>
+          <h2>Governance <em class="gold-serif">Powers</em></h2>
+          <p class="section-subtitle">What REBL holders can vote on</p>
+        </div>
 
         <div class="content-card" data-aos="fade-up">
-          <p style="font-size: 1.2em; line-height: 1.6; margin-bottom: var(--spacing-xl); text-align: center;">
+          <p class="principle-lead">
             REBL holders who meet the 500,000 $REBL threshold have the power to vote on:
           </p>
 
@@ -277,7 +304,7 @@
                 <i class="fas fa-vault"></i>
               </div>
               <h4 style="color: var(--rebel-gold);">Treasury Proposals</h4>
-              <p>Propose and vote on initiatives funded by the ZORA Rewards Treasury, including triggering buy-backs from the Buy-Back & Burn Pool.</p>
+              <p>Propose and vote on initiatives funded by the ZORA Rewards Treasury, including triggering buy-backs from the Buy-Back &amp; Burn Pool.</p>
             </div>
 
             <div class="principle-item" data-aos="fade-left" style="border-color: var(--rebel-blue);">
@@ -289,12 +316,12 @@
             </div>
           </div>
 
-          <div class="principles-grid" style="margin-top: var(--spacing-lg);">
+          <div class="principles-grid principles-grid--secondary">
             <div class="principle-item" data-aos="fade-right" style="border-color: #4CAF50;">
               <div class="principle-icon" style="color: #4CAF50;">
                 <i class="fas fa-handshake"></i>
               </div>
-              <h4 style="color: #4CAF50;">Partnerships & Grants</h4>
+              <h4 style="color: #4CAF50;">Partnerships &amp; Grants</h4>
               <p>Approve negotiated partnerships and community grant programs. The core team negotiates; the Hub ratifies.</p>
             </div>
 
@@ -313,15 +340,19 @@
     <!-- ZORA Rewards Treasury -->
     <section id="dao-treasury">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fas fa-vault"></i> ZORA Rewards Treasury</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">🏦 The Treasury</span>
+          <h2>ZORA Rewards <em class="gold-serif">Treasury</em></h2>
+          <p class="section-subtitle">170M $REBL — 17% of total supply, dedicated to contest rewards</p>
+        </div>
 
         <div class="content-card" data-aos="fade-up">
-          <div style="text-align: center; margin-bottom: var(--spacing-xl);">
-            <div style="width: 80px; height: 80px; background: rgba(156, 39, 176, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-lg); border: 3px solid var(--rebel-purple);">
-              <i class="fas fa-award" style="color: var(--rebel-purple); font-size: 2.5rem;"></i>
+          <div class="treasury-header">
+            <div class="treasury-icon">
+              <i class="fas fa-award"></i>
             </div>
-            <h3 style="color: var(--rebel-purple); margin-bottom: var(--spacing-sm);">ZORA Rewards Treasury (170M $REBL)</h3>
-            <p style="color: rgba(255, 255, 255, 0.9); max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+            <h3>ZORA Rewards Treasury (170M $REBL)</h3>
+            <p>
               17% of total supply dedicated to funding contest prizes and volume-milestone bonuses. Secured in a multi-sig cold storage wallet.
             </p>
           </div>
@@ -342,7 +373,7 @@
                 <i class="fas fa-bullseye"></i>
               </div>
               <h4 style="color: var(--rebel-gold);">What It Funds</h4>
-              <ul style="text-align: left; color: white; padding-left: var(--spacing-md);">
+              <ul class="principle-list">
                 <li>Thumbnail Contest base rewards</li>
                 <li>Tokenization Contest base rewards</li>
                 <li>Volume-milestone bonuses (up to $111)</li>
@@ -352,51 +383,54 @@
             </div>
           </div>
 
-          <div style="background: rgba(0, 0, 0, 0.3); padding: var(--spacing-xl); border-radius: var(--border-radius); margin: var(--spacing-xl) 0; border: 2px solid var(--rebel-gold);" data-aos="fade-up">
-            <h4 style="color: var(--rebel-gold); margin-bottom: var(--spacing-lg); text-align: center;">
+          <div class="decentralization-card" data-aos="fade-up">
+            <h4>
               <i class="fas fa-handshake"></i> Progressive Decentralization
             </h4>
-            <p style="text-align: center; margin-bottom: var(--spacing-lg);">
+            <p>
               If the community grows to demand a full on-chain DAO, a vote within the Governance Hub will initiate that transition.
               Until then, the <strong>REBL Governance Hub remains the definitive decision-making body.</strong>
             </p>
 
-            <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: var(--spacing-xl);">
-              <div style="text-align: center;">
-                <div style="width: 60px; height: 60px; background: rgba(0, 136, 204, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-md); border: 2px solid #0088cc;">
-                  <i class="fab fa-telegram" style="color: #0088cc; font-size: 1.8rem;"></i>
+            <div class="decentralization-flow">
+              <div class="flow-node">
+                <div class="flow-node-icon" style="border-color: #0088cc;">
+                  <i class="fab fa-telegram" style="color: #0088cc;"></i>
                 </div>
-                <div style="font-weight: 700; color: white;">Current</div>
-                <div style="color: #0088cc; font-size: 0.85rem;">Governance Hub</div>
+                <div class="flow-node-label">Current</div>
+                <div class="flow-node-sub" style="color: #0088cc;">Governance Hub</div>
               </div>
 
-              <div style="font-size: 2rem; color: var(--rebel-gold);">
+              <div class="flow-arrow">
                 <i class="fas fa-arrow-right"></i>
               </div>
 
-              <div style="text-align: center;">
-                <div style="width: 60px; height: 60px; background: rgba(156, 39, 176, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-md); border: 2px solid var(--rebel-purple);">
-                  <i class="fas fa-vote-yea" style="color: var(--rebel-purple); font-size: 1.8rem;"></i>
+              <div class="flow-node">
+                <div class="flow-node-icon" style="border-color: var(--rebel-purple);">
+                  <i class="fas fa-vote-yea" style="color: var(--rebel-purple);"></i>
                 </div>
-                <div style="font-weight: 700; color: white;">Future</div>
-                <div style="color: var(--rebel-purple); font-size: 0.85rem;">On-Chain DAO</div>
+                <div class="flow-node-label">Future</div>
+                <div class="flow-node-sub" style="color: var(--rebel-purple);">On-Chain DAO</div>
               </div>
             </div>
           </div>
 
-          <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-md); justify-content: center; margin-top: var(--spacing-xl);" data-aos="fade-up">
+          <div class="principle-actions" data-aos="fade-up">
             <a href="https://solscan.io/account/ANjMEXSCmGAkZVjU5VRhfQyTzR9KKhDACNyiVnAQ9Juo"
                target="_blank" rel="noopener noreferrer"
-               class="cta-button" style="background: linear-gradient(135deg, var(--rebel-purple), #E91E63);">
+               class="cta-button"
+               style="background: linear-gradient(135deg, var(--rebel-purple), #E91E63);">
               <i class="fas fa-vault"></i> ZORA Rewards Multi-Sig
             </a>
             <a href="https://discord.gg/s8dkuyD3cZ"
                target="_blank" rel="noopener noreferrer"
-               class="cta-button" style="background: linear-gradient(135deg, #5865F2, #7289DA);">
+               class="cta-button"
+               style="background: linear-gradient(135deg, #5865F2, #7289DA);">
               <i class="fab fa-discord"></i> Join Discussion
             </a>
             <a href="tokenomics.html"
-               class="cta-button" style="background: linear-gradient(135deg, var(--rebel-red), var(--rebel-gold));">
+               class="cta-button"
+               style="background: var(--gold-gradient);">
               <i class="fas fa-chart-pie"></i> View Tokenomics
             </a>
           </div>
@@ -407,7 +441,11 @@
     <!-- Implementation Status -->
     <section id="implementation-status">
       <div class="container">
-        <h2 data-aos="fade-up"><i class="fas fa-check-circle"></i> Implementation Status</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">✅ Status</span>
+          <h2>Implementation <em class="gold-serif">Status</em></h2>
+          <p class="section-subtitle">What's live now, and what's coming next</p>
+        </div>
 
         <div class="content-card" data-aos="fade-up">
           <div class="principles-grid">
@@ -416,7 +454,7 @@
                 <i class="fas fa-check-circle"></i>
               </div>
               <h4 style="color: #4CAF50;">Live Now</h4>
-              <ul style="text-align: left; color: white; padding-left: var(--spacing-md);">
+              <ul class="principle-list">
                 <li>REBL Governance Hub on Telegram via Collab.land (500K $REBL threshold)</li>
                 <li>Journey Contest system: Hub pre-selection + community vote on X</li>
                 <li>Contests: Thumbnail, Tokenization, and Journey contests</li>
@@ -429,7 +467,7 @@
                 <i class="fas fa-clock"></i>
               </div>
               <h4 style="color: #FF9800;">Upcoming</h4>
-              <ul style="text-align: left; color: white; padding-left: var(--spacing-md);">
+              <ul class="principle-list">
                 <li>Treasury proposal framework</li>
                 <li>Parameter adjustment voting</li>
                 <li>Potential on-chain DAO transition (community-dependent)</li>
@@ -443,7 +481,11 @@
     <!-- Governance FAQ -->
     <section id="faq">
       <div class="container">
-        <h2 data-aos="fade-up">Frequently Asked Questions</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">❓ Questions</span>
+          <h2>Frequently Asked <em class="gold-serif">Questions</em></h2>
+          <p class="section-subtitle">Everything you need to know about governance</p>
+        </div>
 
         <div class="content-card" data-aos="fade-up">
           <div class="faq-grid">
@@ -532,7 +574,11 @@
     <!-- Related Pages -->
     <section id="related-pages">
       <div class="container">
-        <h2 data-aos="fade-up">Explore More</h2>
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">🧭 Continue Exploring</span>
+          <h2>Explore <em class="gold-serif">More</em></h2>
+          <p class="section-subtitle">Three ways to deepen your understanding</p>
+        </div>
 
         <div class="related-grid">
           <a href="journey.html" class="related-card community-card" data-aos="fade-right">
@@ -547,7 +593,7 @@
           <a href="contests.html" class="related-card roadmap-card" data-aos="fade-up">
             <div class="related-icon"><i class="fas fa-trophy"></i></div>
             <h3>Contests</h3>
-            <p>Enter & Earn $REBL</p>
+            <p>Enter &amp; Earn $REBL</p>
             <div class="related-arrow">
               <i class="fas fa-arrow-right"></i> See Contests
             </div>
@@ -558,7 +604,7 @@
             <h3>Tokenomics</h3>
             <p>Economic Model</p>
             <div class="related-arrow">
-              <i class="fas fa-arrow-right"></i> Supply & Distribution
+              <i class="fas fa-arrow-right"></i> Supply &amp; Distribution
             </div>
           </a>
         </div>
