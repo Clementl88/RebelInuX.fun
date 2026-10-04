@@ -1997,7 +1997,7 @@ img { max-width: 100%; height: auto; display: block; }
 .step-btn-mini i { font-size: 0.8rem; color: #b8860b; }
 .step-btn-mini:hover,
 .step-btn-mini:active {
-  background: #d4a76a;
+  background: #bd8e4f;
   border-color: #d4a76a;
   color: #1a1a2e;
   transform: translateY(-1px);
