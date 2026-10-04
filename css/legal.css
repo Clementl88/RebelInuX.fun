@@ -1863,3 +1863,274 @@ section.container {
     display: none !important;
   }
 }
+/* ============================================================
+   TERMS PAGE — utility class additions
+   (Append to existing legal.css)
+   ============================================================ */
+
+/* Summary icons (replace inline styles) */
+.summary-icon-red  { color: var(--rebel-red); }
+.legal-icon-red    { color: var(--rebel-red); }
+.legal-icon-green  { color: var(--rebel-green); }
+.legal-icon-gold   { color: var(--rebel-gold); }
+
+/* Intro text */
+.legal-intro-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+  line-height: 1.65;
+  margin: 0.75rem 0 0;
+}
+.legal-intro-text strong { color: #fff; }
+
+/* Legal sub-heading inside section-content */
+.legal-subheading {
+  color: var(--rebel-gold);
+  margin: 1.25rem 0 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: -0.005em;
+  line-height: 1.35;
+}
+
+/* Critical box with header row */
+.critical-box-header .critical-box-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.critical-box-header .critical-box-header-row i {
+  font-size: 1.65rem;
+  color: var(--rebel-red);
+  flex-shrink: 0;
+}
+.critical-box-header .critical-box-header-row h4 {
+  color: var(--rebel-red);
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: -0.005em;
+  line-height: 1.35;
+}
+
+/* Liability box */
+.liability-box {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(215, 77, 77, 0.2);
+}
+.liability-box > p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  margin: 0 0 0.75rem;
+}
+
+/* Jurisdiction box (for terms) */
+.jurisdiction-box {
+  background: rgba(215, 77, 77, 0.08);
+  border: 1px solid rgba(215, 77, 77, 0.4);
+  border-radius: 14px;
+  padding: 1.25rem 1.15rem;
+  margin-bottom: 1rem;
+}
+.jurisdiction-box .jurisdiction-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+.jurisdiction-box .jurisdiction-header i {
+  font-size: 1.35rem;
+  color: var(--rebel-red);
+  flex-shrink: 0;
+}
+.jurisdiction-box .jurisdiction-header h4 {
+  color: var(--rebel-red);
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: -0.005em;
+  line-height: 1.35;
+}
+.jurisdiction-box > p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  margin: 0 0 0.85rem;
+}
+.jurisdiction-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+.jurisdiction-tag {
+  background: rgba(215, 77, 77, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(215, 77, 77, 0.4);
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Eligibility requirements */
+.eligibility-requirements {
+  background: rgba(76, 175, 80, 0.06);
+  border-left: 3px solid var(--rebel-green);
+  border-radius: 0 12px 12px 0;
+  padding: 1.1rem 1rem;
+  margin-top: 1rem;
+}
+.eligibility-requirements h4 {
+  color: var(--rebel-green);
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: -0.005em;
+}
+
+/* Verification note in contract section */
+.verification-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(212, 167, 106, 0.06);
+  border-left: 3px solid var(--rebel-gold);
+  border-radius: 0 12px 12px 0;
+  padding: 0.9rem 1rem;
+  margin-top: 0.85rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+}
+.verification-note i {
+  color: var(--rebel-gold);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  font-size: 1.35rem;
+}
+.verification-note strong { color: var(--rebel-gold); }
+
+/* Verification links */
+.verification-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+.verification-links a {
+  color: #2196F3;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.9rem;
+  background: rgba(33, 150, 243, 0.08);
+  border: 1px solid rgba(33, 150, 243, 0.3);
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+.verification-links a:hover {
+  background: rgba(33, 150, 243, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(33, 150, 243, 0.2);
+}
+
+/* Contact simple row */
+.contact-simple {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(212, 167, 106, 0.08);
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 167, 106, 0.2);
+  margin: 0.75rem 0 0;
+  flex-wrap: wrap;
+}
+.contact-simple i {
+  color: var(--rebel-gold);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.contact-simple a {
+  color: var(--rebel-gold);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.8rem;
+  word-break: break-all;
+}
+.contact-simple a:hover { text-decoration: underline; }
+
+/* ============================================================
+   PRIVACY PAGE — utility class additions
+   (Append to existing legal.css)
+   ============================================================ */
+
+/* Summary icons (replace inline styles) */
+.summary-icon-green { color: var(--rebel-green); }
+.legal-icon-red    { color: var(--rebel-red); }
+.legal-icon-green  { color: var(--rebel-green); }
+.legal-icon-gold   { color: var(--rebel-gold); }
+.cookie-icon-green { color: var(--rebel-green); }
+.cookie-icon-orange{ color: #FF9800; }
+.cookie-icon-red   { color: var(--rebel-red); }
+
+/* Intro paragraph after the Last Updated label */
+.legal-intro-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+  line-height: 1.65;
+  margin: 0.75rem 0 0;
+}
+.legal-intro-text strong { color: #fff; }
+
+/* Summary item label wrapper */
+.summary-item span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+/* Rights footer paragraph */
+.rights-footer {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  background: rgba(212, 167, 106, 0.06);
+  border-left: 3px solid var(--rebel-gold);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.6;
+}
+.rights-footer i { color: var(--rebel-gold); margin-right: 0.4rem; }
+
+/* Response guarantee strip */
+.response-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(76, 175, 80, 0.4);
+  color: var(--rebel-green);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.response-guarantee i {
+  color: var(--rebel-green);
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+.response-guarantee span { color: rgba(255, 255, 255, 0.85); }
+
+/* Contact box uses default legal.css .contact-box — that's fine. */
