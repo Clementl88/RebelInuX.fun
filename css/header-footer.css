@@ -381,12 +381,12 @@ header.scrolled {
 }
 
 #nav-desktop .dropbtn.active {
-  background: linear-gradient(135deg,
-    rgba(255, 215, 0, 0.4),
-    rgba(255, 215, 0, 0.18));
+  background: rgba(255, 255, 255, 0.14);
   color: #FFFFFF;
-  border-color: #FFD700;
-  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.45);
+  border: 1px solid rgba(212, 167, 106, 0.6);
+  box-shadow:
+    0 4px 20px rgba(212, 167, 106, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 #nav-desktop .dropdown-content {
@@ -701,7 +701,7 @@ body.nav-open {
     display: inline-block;
   }
 
-  #nav-desktop .dropbtn {
+   #nav-desktop .dropbtn {
     padding: 8px 18px;
     border-radius: var(--border-radius-full);
     font-size: 0.85rem;
@@ -711,35 +711,29 @@ body.nav-open {
     gap: 6px;
     display: inline-flex;
     align-items: center;
-    color: #FFD700;
-    border: 1px solid rgba(255, 215, 0, 0.4);
-    background: linear-gradient(135deg,
-      rgba(255, 215, 0, 0.15),
-      rgba(255, 152, 0, 0.03));
+    color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
     cursor: pointer;
     font-family: inherit;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  #nav-desktop .dropbtn:hover {
-    background: linear-gradient(135deg,
-      rgba(255, 215, 0, 0.28),
-      rgba(255, 215, 0, 0.14));
-    color: #FFEB3B;
-    border-color: #FFD700;
-    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.35);
+#nav-desktop .dropbtn:hover {
+    background: rgba(255, 255, 255, 0.09);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
   }
 
-  #nav-desktop .dropdown.active .dropbtn,
+   #nav-desktop .dropdown.active .dropbtn,
   #nav-desktop .dropbtn.active {
-    background: linear-gradient(135deg,
-      rgba(255, 215, 0, 0.4),
-      rgba(255, 215, 0, 0.18));
+    background: rgba(255, 255, 255, 0.14);
     color: #FFFFFF;
-    border-color: #FFD700;
+    border-color: rgba(212, 167, 106, 0.6);
     box-shadow:
-      0 4px 20px rgba(255, 215, 0, 0.45),
+      0 4px 20px rgba(212, 167, 106, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
     font-weight: 700;
