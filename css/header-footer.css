@@ -365,11 +365,9 @@ header.scrolled {
   border-radius: 12px;
   font-size: 0.95rem;
   min-height: 52px;
-  background: linear-gradient(135deg,
-    rgba(255, 215, 0, 0.1),
-    rgba(255, 152, 0, 0.04));
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  color: #FFD700;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.75);
   font-weight: 600;
   font-family: inherit;
   display: flex;
