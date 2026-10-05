@@ -1,5 +1,5 @@
 /* ============================================================
-   HEADER + FOOTER — RebelInuX v3.1
+   HEADER + FOOTER — RebelInuX v3.2
    3-state nav pill system: default / hover / selected
    Trade Guide + Governance now live in the "More" dropdown.
    Mobile-first. Base = phone. Enhances at 769px+.
@@ -15,15 +15,15 @@ header {
   position: sticky;
   top: 0;
   z-index: var(--z-dropdown);
-  backdrop-filter: blur(20px) saturate(200%);
-  -webkit-backdrop-filter: blur(20px) saturate(200%);
-  border-bottom: 1px solid rgba(212, 167, 106, 0.2);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid rgba(212, 167, 106, 0.25);
   background-image:
     linear-gradient(rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.95)),
     linear-gradient(90deg,
-      rgba(215, 77, 77, 0.25) 0%,
-      rgba(212, 167, 106, 0.25) 50%,
-      rgba(215, 77, 77, 0.25) 100%);
+      rgba(212, 167, 106, 0.35) 0%,
+      rgba(212, 167, 106, 0.12) 50%,
+      rgba(212, 167, 106, 0.35) 100%);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -32,9 +32,10 @@ header {
 
 header.scrolled {
   background: rgba(5, 5, 5, 0.98);
-  backdrop-filter: blur(30px) saturate(200%);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  border-bottom-color: rgba(212, 167, 106, 0.3);
+  border-bottom-color: rgba(212, 167, 106, 0.4);
 }
 
 .header-container {
@@ -104,7 +105,7 @@ header.scrolled {
 }
 
 .brand-subtitle {
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   color: var(--rebel-gold);
   font-weight: 600;
   letter-spacing: 0.8px;
@@ -189,31 +190,40 @@ header.scrolled {
 
 .mobile-direct-buy {
   display: flex !important;
-  width: 100%;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   margin: 16px 0 0;
-  padding: 18px 24px;
-  font-size: 1rem;
-  min-height: 58px;
+  padding: 16px 24px;
+  min-height: 54px;
   border-radius: 14px;
-  background: linear-gradient(135deg,
-    var(--rebel-red),
-    var(--rebel-gold),
-    var(--rebel-red));
-  background-size: 200% auto;
-  color: white;
+  gap: 10px;
+
+  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
-  border: 2px solid rgba(212, 167, 106, 0.4);
-  box-shadow: 0 6px 25px rgba(215, 77, 77, 0.4);
+
+  background: linear-gradient(135deg, #d4a76a 0%, #ffd700 50%, #d4a76a 100%);
+  color: #0a0a0f;
+  border: none;
+  box-shadow: 0 8px 24px rgba(212, 167, 106, 0.35);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mobile-direct-buy:hover,
+.mobile-direct-buy:active {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(212, 167, 106, 0.5);
+  color: #0a0a0f;
 }
 
 .mobile-direct-buy i {
-  font-size: 1.1rem;
-  margin-right: 10px;
+  font-size: 1rem;
+  margin-right: 0;
 }
 
 
@@ -229,8 +239,8 @@ header.scrolled {
   height: 100vh;
   height: 100dvh;
   background: rgba(8, 8, 8, 0.98);
-  backdrop-filter: blur(25px) saturate(180%);
-  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  backdrop-filter: blur(25px) saturate(160%);
+  -webkit-backdrop-filter: blur(25px) saturate(160%);
   padding: 80px 20px 40px;
   z-index: 1001;
   overflow-y: auto;
@@ -864,7 +874,7 @@ body.nav-open {
   .brand-title { font-size: 1.5rem; }
 
   .brand-subtitle {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     padding: 3px 10px;
     letter-spacing: 1.2px;
   }
@@ -898,7 +908,6 @@ body.nav-open {
     letter-spacing: 0.06em;
     text-transform: uppercase;
 
-    /* Static gold gradient — matches every other primary CTA on the site */
     background: linear-gradient(135deg, #d4a76a 0%, #ffd700 50%, #d4a76a 100%);
     color: #0a0a0f;
     border: none;
@@ -935,8 +944,8 @@ body.nav-open {
     top: 100%;
     right: 0;
     background: rgba(10, 10, 10, 0.98);
-    backdrop-filter: blur(30px) saturate(180%);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    backdrop-filter: blur(30px) saturate(160%);
+    -webkit-backdrop-filter: blur(30px) saturate(160%);
     border: 1px solid rgba(212, 167, 106, 0.4);
     border-top: none;
     border-radius: 0 0 var(--border-radius-xl) var(--border-radius-xl);
@@ -1168,7 +1177,7 @@ body.nav-open {
   .brand-title { font-size: 1rem; }
 
   .brand-subtitle {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     padding: 1px 5px;
     letter-spacing: 0.6px;
   }
@@ -1386,7 +1395,6 @@ footer {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
-  /* Static gold gradient — matches the rest of the site */
   background: linear-gradient(135deg, #d4a76a 0%, #ffd700 50%, #d4a76a 100%);
   color: #0a0a0f;
   border: none;
