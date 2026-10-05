@@ -2247,3 +2247,446 @@ section.container {
   .hero-background-pattern,
   .hero-vignette { display: none !important; }
 }
+/* ============================================================
+   PRIVACY PAGE — Museum additions
+   Cookie grid · Third-party cards · Rights grid · Blockchain box
+   ============================================================ */
+
+/* ---------- Cookie grid ---------- */
+.cookie-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 1.5rem 0;
+  border-top: var(--rule-hair);
+}
+
+.cookie-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  padding: 1.25rem 0.25rem;
+  border-bottom: var(--rule-hair);
+  min-width: 0;
+}
+
+.cookie-icon {
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  margin-top: 0.15rem;
+}
+
+.cookie-icon-green  { color: var(--brass); }
+.cookie-icon-orange { color: var(--rebel-orange); }
+.cookie-icon-red    { color: var(--rebel-red); }
+
+.cookie-details { min-width: 0; flex: 1; }
+.cookie-details h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #f0ead8;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.005em;
+}
+.cookie-details p {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  color: rgba(240, 234, 216, 0.72);
+  line-height: 1.65;
+  margin: 0 0 0.65rem;
+}
+
+.cookie-badge {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 2px;
+  font-family: var(--font-label);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+.cookie-badge.required {
+  color: var(--brass);
+  border-color: rgba(201, 168, 106, 0.45);
+}
+.cookie-badge.optional {
+  color: var(--rebel-orange);
+  border-color: rgba(184, 138, 74, 0.45);
+}
+.cookie-badge.never {
+  color: var(--rebel-red);
+  border-color: rgba(179, 74, 74, 0.45);
+}
+
+/* ---------- Opt-out box ---------- */
+.opt-out-box {
+  margin-top: 1.5rem;
+  padding: 1.1rem 1.25rem;
+  background: rgba(201, 168, 106, 0.03);
+  border-left: 2px solid var(--brass);
+  border-top: 1px solid rgba(201, 168, 106, 0.15);
+  border-bottom: 1px solid rgba(201, 168, 106, 0.15);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: rgba(240, 234, 216, 0.8);
+}
+.opt-out-box p { margin: 0; }
+.opt-out-box i {
+  color: var(--brass);
+  margin-right: 0.5rem;
+  font-size: 0.95rem;
+}
+.opt-out-box strong { color: #f0ead8; font-weight: 600; }
+.opt-out-box a {
+  color: var(--brass-light);
+  text-decoration: underline;
+  text-decoration-color: rgba(201, 168, 106, 0.4);
+  text-underline-offset: 3px;
+  transition: var(--transition);
+}
+.opt-out-box a:hover { color: var(--brass); text-decoration-color: var(--brass); }
+
+/* ---------- Third-party grid ---------- */
+.third-party-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.third-party-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  background: var(--gallery-panel);
+  border: 1px solid rgba(201, 168, 106, 0.2);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+  min-width: 0;
+}
+.third-party-card::before {
+  content: '';
+  position: absolute;
+  top: 4px; left: 4px; right: 4px; bottom: 4px;
+  border: 1px solid rgba(201, 168, 106, 0.08);
+  pointer-events: none;
+  transition: var(--transition);
+}
+.third-party-card:hover {
+  border-color: var(--brass);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+.third-party-card:hover::before { border-color: rgba(201, 168, 106, 0.18); }
+
+.third-party-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(201, 168, 106, 0.4);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--brass);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+.third-party-card:hover .third-party-icon {
+  border-color: var(--brass);
+  background: rgba(201, 168, 106, 0.06);
+}
+
+.third-party-info {
+  flex: 1;
+  min-width: 0;
+}
+.third-party-info h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #f0ead8;
+  margin: 0 0 0.15rem;
+  letter-spacing: -0.005em;
+}
+.third-party-info p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: rgba(240, 234, 216, 0.55);
+  margin: 0;
+}
+
+.external-icon {
+  color: var(--brass);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: var(--transition);
+}
+.third-party-card:hover .external-icon {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+/* ---------- Blockchain box ---------- */
+.blockchain-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 1.5rem 1.25rem;
+  background: rgba(201, 168, 106, 0.03);
+  border-top: var(--rule-brass);
+  border-bottom: var(--rule-brass);
+}
+
+.blockchain-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(201, 168, 106, 0.4);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--brass);
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.blockchain-text { min-width: 0; flex: 1; }
+.blockchain-text h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #f0ead8;
+  margin: 0 0 0.65rem;
+  letter-spacing: -0.005em;
+}
+.blockchain-text p {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: rgba(240, 234, 216, 0.78);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+.blockchain-text p strong { color: var(--brass-light); font-weight: 600; }
+.blockchain-text .small-text {
+  margin: 1rem 0 0.5rem;
+  font-family: var(--font-label);
+  font-style: normal;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+.blockchain-text .legal-list {
+  margin: 0.5rem 0 0;
+}
+
+/* ---------- Rights grid ---------- */
+.rights-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 1.5rem 0;
+  border-top: var(--rule-hair);
+}
+
+.right-card {
+  padding: 1.5rem 0.5rem;
+  border-bottom: var(--rule-hair);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.right-card i {
+  color: var(--brass);
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+}
+.right-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #f0ead8;
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+.right-card p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: rgba(240, 234, 216, 0.65);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Contact box (privacy variant) ---------- */
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 1.25rem 0;
+  border-top: var(--rule-hair);
+}
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 0.25rem;
+  border-bottom: var(--rule-hair);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: rgba(240, 234, 216, 0.78);
+  line-height: 1.6;
+}
+.contact-method i {
+  color: var(--brass);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+.contact-method strong {
+  color: var(--brass);
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-right: 0.4rem;
+}
+.contact-method a {
+  color: var(--brass-light);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  word-break: break-all;
+}
+.contact-method a:hover { color: var(--brass); text-decoration: underline; }
+
+/* ---------- Jurisdiction notice (privacy) ---------- */
+.jurisdiction-notice {
+  margin-top: 2.5rem;
+  padding: 1.5rem 1.25rem;
+  background: rgba(201, 168, 106, 0.03);
+  border-top: var(--rule-brass);
+  border-bottom: var(--rule-brass);
+}
+.notice-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+.notice-header i {
+  color: var(--brass);
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+.notice-header h4 {
+  font-family: var(--font-label);
+  color: var(--brass);
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.jurisdiction-notice p {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  color: rgba(240, 234, 216, 0.78);
+  line-height: 1.7;
+  margin: 0 0 0.75rem;
+}
+.jurisdiction-notice p:last-child { margin-bottom: 0; }
+.jurisdiction-notice .small-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: rgba(240, 234, 216, 0.5);
+}
+.jurisdiction-notice .small-text i {
+  color: var(--brass);
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+}
+
+/* ---------- Info box colour variants (privacy uses none now) ---------- */
+.info-box.info-blue,
+.info-box.info-warning {
+  background: rgba(201, 168, 106, 0.03);
+  border-left: 2px solid var(--brass);
+}
+
+/* ---------- Security badge variants ---------- */
+.security-badge--blue,
+.security-badge--gold,
+.security-badge--red {
+  background: transparent;
+  border-color: rgba(201, 168, 106, 0.4);
+  color: var(--brass);
+}
+.security-badge--blue i,
+.security-badge--gold i,
+.security-badge--red i { color: var(--brass); }
+
+/* ---------- Age restriction variants ---------- */
+.age-restriction--blue,
+.age-restriction--gold,
+.age-restriction--purple {
+  background: rgba(201, 168, 106, 0.03);
+  border-left-color: var(--brass);
+}
+.age-restriction--blue i,
+.age-restriction--gold i,
+.age-restriction--purple i,
+.age-restriction--blue strong,
+.age-restriction--gold strong,
+.age-restriction--purple strong { color: var(--brass); }
+
+/* ---------- Update note variants ---------- */
+.update-note--blue,
+.update-note--red {
+  background: rgba(201, 168, 106, 0.04);
+  border-left-color: var(--brass);
+}
+.update-note--blue i,
+.update-note--red i,
+.update-note--blue strong,
+.update-note--red strong { color: var(--brass-light); }
+
+/* ============================================================
+   RESPONSIVE — Privacy additions
+   ============================================================ */
+@media (min-width: 640px) {
+  .third-party-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .rights-grid { grid-template-columns: repeat(2, 1fr); }
+  .right-card { padding: 1.75rem 1.25rem; border-right: var(--rule-hair); }
+  .right-card:nth-child(2n) { border-right: none; }
+  .right-card:nth-last-child(-n+2) { border-bottom: none; }
+
+  .blockchain-box { flex-direction: row; align-items: flex-start; gap: 1.5rem; padding: 1.75rem 1.5rem; }
+
+  .contact-method { padding: 1.15rem 0.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .third-party-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+  .rights-grid { grid-template-columns: repeat(4, 1fr); }
+  .right-card { border-right: var(--rule-hair); padding: 2rem 1.5rem; }
+  .right-card:nth-child(2n) { border-right: var(--rule-hair); }
+  .right-card:last-child { border-right: none; }
+  .right-card:nth-last-child(-n+4) { border-bottom: none; }
+
+  .cookie-grid { grid-template-columns: 1fr; }
+}
