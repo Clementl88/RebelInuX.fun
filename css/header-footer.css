@@ -884,32 +884,40 @@ body.nav-open {
   }
 
   .buy-toggle {
-    background: linear-gradient(135deg,
-      var(--rebel-red),
-      var(--rebel-gold),
-      var(--rebel-red));
-    background-size: 200% auto;
-    color: white;
-    padding: 12px 22px;
-    border-radius: var(--border-radius-full);
-    font-weight: 800;
-    font-size: 0.95rem;
-    letter-spacing: 0.8px;
-    border: 2px solid rgba(212, 167, 106, 0.3);
-    cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
     justify-content: center;
-    text-transform: uppercase;
-    animation: gradientShift 3s ease infinite;
-    box-shadow:
-      0 6px 25px rgba(215, 77, 77, 0.4),
-      0 0 40px rgba(215, 77, 77, 0.2);
-    position: relative;
-    overflow: hidden;
-    font-family: inherit;
+    gap: 10px;
+    padding: 12px 22px;
     min-height: 46px;
+    border-radius: var(--border-radius-full);
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    /* Static gold gradient — matches every other primary CTA on the site */
+    background: linear-gradient(135deg, #d4a76a 0%, #ffd700 50%, #d4a76a 100%);
+    color: #0a0a0f;
+    border: none;
+    box-shadow: 0 6px 20px rgba(212, 167, 106, 0.35);
+
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .buy-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(212, 167, 106, 0.5);
+    color: #0a0a0f;
+  }
+
+  .buy-toggle.active {
+    background: linear-gradient(135deg, #c99e5c 0%, #e6c300 50%, #c99e5c 100%);
+    color: #0a0a0f;
   }
 
   .buy-toggle .dropdown-arrow {
