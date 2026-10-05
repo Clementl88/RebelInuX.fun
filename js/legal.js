@@ -1,45 +1,53 @@
 // legal.js - Complete Legal Pages Functionality
 // Supports Privacy Policy, Terms of Service, Disclaimer, and 404 pages
 
-// ===== GLOBAL VARIABLES =====
+// ===== GLOBAL STATE =====
 window.componentsLoaded = false;
 window.legalInitialized = false;
 
-// ===== WAIT FOR COMPONENTS =====
+const CONTRACT_ADDRESS = 'F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump';
+
+// ===== COMPONENT READY =====
+// Preferred: includes.js dispatches 'components:loaded' when header/footer are injected.
+// Fallback: short polling loop for older includes.js versions.
 function waitForComponents(callback, maxAttempts = 20) {
+  let settled = false;
+
+  function settle(source) {
+    if (settled) return;
+    settled = true;
+    console.log(`✅ Components ready (${source})`);
+    callback();
+  }
+
+  window.addEventListener('components:loaded', () => settle('event'), { once: true });
+
   let attempts = 0;
-
-  const checkInterval = setInterval(function() {
+  const poll = setInterval(() => {
     attempts++;
-
     if (window.componentsLoaded || document.querySelector('#header-container')) {
-      clearInterval(checkInterval);
-      console.log('✅ Components ready, initializing legal page');
-      callback();
+      clearInterval(poll);
+      settle('poll');
     } else if (attempts >= maxAttempts) {
-      clearInterval(checkInterval);
-      console.warn('⚠️ Components timeout, forcing initialization');
-      callback();
-    } else {
-      console.log(`⏳ Waiting for components... (${attempts}/${maxAttempts})`);
+      clearInterval(poll);
+      console.warn('⚠️ Components timeout — forcing init');
+      settle('timeout');
     }
   }, 100);
 }
 
-// ===== DOM CONTENT LOADED =====
+// ===== BOOT =====
 document.addEventListener('DOMContentLoaded', function() {
   console.log('📄 Legal page DOM ready');
 
-  setTimeout(function() {
-    window.componentsLoaded = true;
-  }, 300);
+  // Legacy bridge: if includes.js doesn't dispatch an event,
+  // flip the flag after a short delay so polling can succeed.
+  setTimeout(() => { window.componentsLoaded = true; }, 300);
 
-  waitForComponents(function() {
-    setTimeout(initLegalPage, 200);
-  });
+  waitForComponents(() => setTimeout(initLegalPage, 200));
 });
 
-// ===== MAIN INITIALIZATION =====
+// ===== INIT =====
 function initLegalPage() {
   if (window.legalInitialized) {
     console.log('⚠️ Legal page already initialized');
@@ -53,9 +61,9 @@ function initLegalPage() {
   initDisclaimerCheckboxes();
   initCookiePreferences();
   highlightCurrentLegalPage();
-  initAOSWithDelay();
-  initContractReminder();
   initFaqInteractions();
+
+  // AOS is initialized inline in the HTML — do NOT re-init here.
 
   if (document.querySelector('.page-hero--404')) {
     init404Page();
@@ -64,52 +72,37 @@ function initLegalPage() {
   console.log('✅ Legal page initialization complete');
 }
 
-// ===== COPY CONTRACT FUNCTIONALITY =====
+// ===== COPY CONTRACT =====
 function initCopyButtons() {
-  const copyButtons = document.querySelectorAll('.copy-mini-btn, .copy-contract-btn, .copy-button');
-
-  copyButtons.forEach(button => {
-    button.removeEventListener('click', handleCopyClick);
-    button.addEventListener('click', handleCopyClick);
+  // Delegated — works for buttons added after init too.
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('[data-action="copy"], .copy-mini-btn, .copy-contract-btn, .copy-button');
+    if (!btn) return;
+    e.preventDefault();
+    handleCopy(btn);
   });
 }
 
-function handleCopyClick(e) {
-  e.preventDefault();
+function handleCopy(button) {
+  const box = button.closest('.contract-address-box, .contract-reminder, div');
+  const codeEl = box?.querySelector('code') || document.getElementById('contract-address');
+  const address = (codeEl?.textContent || CONTRACT_ADDRESS).trim();
 
-  const contractElement = this.closest('.contract-address-box')?.querySelector('code') ||
-                         document.getElementById('contract-address') ||
-                         this.closest('div')?.querySelector('code');
+  navigator.clipboard.writeText(address).then(() => {
+    const original = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-check"></i>';
+    button.style.background = '#4CAF50';
 
-  if (contractElement) {
-    const contractAddress = contractElement.textContent.trim();
+    showLegalToast('Contract address copied! Always verify before transacting.', 'success');
 
-    navigator.clipboard.writeText(contractAddress).then(() => {
-      const originalHTML = this.innerHTML;
-      this.innerHTML = '<i class="fas fa-check"></i>';
-      this.style.background = '#4CAF50';
-
-      showLegalToast('Contract address copied! Always verify before transacting.', 'success');
-
-      setTimeout(() => {
-        this.innerHTML = originalHTML;
-        this.style.background = '';
-      }, 2000);
-    }).catch(err => {
-      console.error('Failed to copy: ', err);
-      showLegalToast('Failed to copy. Please try again.', 'error');
-
-      setTimeout(() => {
-        this.innerHTML = '<i class="fas fa-copy"></i>';
-        this.style.background = '';
-      }, 2000);
-    });
-  } else {
-    const contractAddress = 'F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump';
-    navigator.clipboard.writeText(contractAddress).then(() => {
-      showLegalToast('Contract address copied!', 'success');
-    });
-  }
+    setTimeout(() => {
+      button.innerHTML = original;
+      button.style.background = '';
+    }, 2000);
+  }).catch(err => {
+    console.error('Failed to copy: ', err);
+    showLegalToast('Failed to copy. Please try again.', 'error');
+  });
 }
 
 // ===== DISCLAIMER CHECKBOXES =====
@@ -119,6 +112,9 @@ function initDisclaimerCheckboxes() {
   checkboxes.forEach(checkbox => {
     checkbox.checked = true;
     checkbox.disabled = true;
+    // Decorative only — label carries the meaning for screen readers.
+    checkbox.setAttribute('aria-hidden', 'true');
+    checkbox.setAttribute('tabindex', '-1');
 
     checkbox.addEventListener('click', function(e) {
       e.preventDefault();
@@ -129,22 +125,18 @@ function initDisclaimerCheckboxes() {
 
 // ===== COOKIE PREFERENCES =====
 function initCookiePreferences() {
-  const cookieSettingsLink = document.querySelector('a[href="#cookie-settings"]');
-
-  if (cookieSettingsLink) {
-    cookieSettingsLink.removeEventListener('click', handleCookieClick);
-    cookieSettingsLink.addEventListener('click', handleCookieClick);
+  const link = document.querySelector('a[href="#cookie-settings"]');
+  if (link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      showCookiePreferences();
+    });
   }
 }
 
-function handleCookieClick(e) {
-  e.preventDefault();
-  showCookiePreferences();
-}
-
 function showCookiePreferences() {
-  const existingModal = document.querySelector('.legal-modal');
-  if (existingModal) existingModal.remove();
+  const existing = document.querySelector('.legal-modal');
+  if (existing) existing.remove();
 
   const modal = document.createElement('div');
   modal.className = 'legal-modal';
@@ -163,7 +155,7 @@ function showCookiePreferences() {
     <div style="background: #1a1a1a; padding: 2rem; border-radius: 16px;
                 border: 2px solid var(--rebel-gold); max-width: 500px; width: 90%;">
       <h3 style="color: var(--rebel-gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
-        <i class="fas fa-cookie-bite"></i> Cookie Preferences
+        <i class="fas fa-cookie-bite" aria-hidden="true"></i> Cookie Preferences
       </h3>
 
       <div style="margin-bottom: 1.5rem;">
@@ -188,12 +180,12 @@ function showCookiePreferences() {
       </div>
 
       <div style="display: flex; gap: 1rem; justify-content: flex-end;">
-        <button onclick="this.closest('.legal-modal').remove()"
+        <button type="button" data-modal-action="cancel"
                 style="background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 25px;
                        padding: 0.8rem 1.5rem; cursor: pointer; font-weight: 600;">
           Cancel
         </button>
-        <button onclick="saveCookiePreferences()"
+        <button type="button" data-modal-action="save"
                 style="background: var(--rebel-gold); color: #1a1a1a; border: none; border-radius: 25px;
                        padding: 0.8rem 1.5rem; cursor: pointer; font-weight: 600;">
           Save Preferences
@@ -205,17 +197,19 @@ function showCookiePreferences() {
   document.body.appendChild(modal);
 
   modal.addEventListener('click', function(e) {
-    if (e.target === modal) {
-      modal.remove();
-    }
+    if (e.target === modal) modal.remove();
+
+    const action = e.target.closest('[data-modal-action]')?.getAttribute('data-modal-action');
+    if (action === 'cancel') modal.remove();
+    if (action === 'save') saveCookiePreferences();
   });
 }
 
-window.saveCookiePreferences = function() {
-  const analyticsOptOut = document.getElementById('analytics-opt-out')?.checked;
+function saveCookiePreferences() {
+  const optOut = document.getElementById('analytics-opt-out')?.checked;
 
   try {
-    if (analyticsOptOut) {
+    if (optOut) {
       localStorage.setItem('rebelinux_analytics_opt_out', 'true');
       showLegalToast('Analytics cookies disabled', 'success');
     } else {
@@ -228,59 +222,41 @@ window.saveCookiePreferences = function() {
 
   const modal = document.querySelector('.legal-modal');
   if (modal) modal.remove();
-};
+}
 
 // ===== HIGHLIGHT CURRENT PAGE =====
 function highlightCurrentLegalPage() {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const relatedLinks = document.querySelectorAll('.related-card');
+  const path = window.location.pathname;
+  const current = path.split('/').pop().replace(/\.html$/, '') || 'index';
 
-  relatedLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage) {
+  document.querySelectorAll('.related-card').forEach(link => {
+    const href = (link.getAttribute('href') || '').replace(/\.html$/, '');
+    if (href === current) {
       link.style.borderColor = 'var(--rebel-gold)';
       link.style.boxShadow = '0 0 15px rgba(255, 204, 0, 0.3)';
       link.style.opacity = '0.9';
       link.style.cursor = 'default';
-
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-      });
+      link.setAttribute('aria-current', 'page');
+      link.addEventListener('click', e => e.preventDefault());
     }
   });
 }
 
-// ===== CONTRACT REMINDER =====
-function initContractReminder() {
-  const contractReminder = document.querySelector('.contract-reminder');
-  if (contractReminder) {
-    const copyBtn = contractReminder.querySelector('.copy-mini-btn');
-    if (copyBtn) {
-      copyBtn.removeEventListener('click', handleCopyClick);
-      copyBtn.addEventListener('click', handleCopyClick);
-    }
-  }
-}
-
-// ===== FAQ INTERACTIONS =====
+// ===== FAQ =====
 function initFaqInteractions() {
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  faqItems.forEach(item => {
+  document.querySelectorAll('.faq-item').forEach(item => {
     item.addEventListener('click', function() {
       this.style.transition = 'all 0.3s ease';
     });
   });
 }
 
-// ===== 404 PAGE SPECIFIC =====
+// ===== 404 ONLY =====
 function init404Page() {
   console.log('🦴 404 Page detected');
 
   const backToTop = document.getElementById('backToTop');
-  if (backToTop) {
-    backToTop.style.display = 'none';
-  }
+  if (backToTop) backToTop.style.display = 'none';
 
   setupEasterEgg();
   prefetchPopularPages();
@@ -289,22 +265,14 @@ function init404Page() {
 
 function setupEasterEgg() {
   const eggElement = document.querySelector('.egg-content');
+  if (!eggElement) return;
 
-  if (eggElement) {
-    let clickCount = 0;
-
-    eggElement.addEventListener('click', function(e) {
-      clickCount++;
-
-      if (clickCount === 5) {
-        showSecretAchievement('🔍 404 Explorer', 'You found the secret!');
-      }
-
-      if (clickCount === 10) {
-        showSecretAchievement('👑 Rebel Legend', 'You\'re a true rebel!', 'legend');
-      }
-    });
-  }
+  let clickCount = 0;
+  eggElement.addEventListener('click', () => {
+    clickCount++;
+    if (clickCount === 5) showSecretAchievement('🔍 404 Explorer', 'You found the secret!');
+    if (clickCount === 10) showSecretAchievement('👑 Rebel Legend', "You're a true rebel!", 'legend');
+  });
 }
 
 function showSecretAchievement(title, message, type = 'normal') {
@@ -332,15 +300,18 @@ function showSecretAchievement(title, message, type = 'normal') {
   `;
 
   achievement.innerHTML = `
-    <i class="fas fa-${type === 'legend' ? 'crown' : 'trophy'}" style="font-size: 1.5rem;"></i>
+    <i class="fas fa-${type === 'legend' ? 'crown' : 'trophy'}" style="font-size: 1.5rem;" aria-hidden="true"></i>
     <div>
       <strong>🏆 ${title}!</strong>
       <p style="margin: 0.2rem 0 0; font-size: 0.85rem;">${message}</p>
     </div>
-    <button onclick="this.parentElement.remove()" style="background: transparent; border: none; color: ${type === 'legend' ? 'white' : 'var(--rebel-dark)'}; cursor: pointer; margin-left: 0.5rem;">
-      <i class="fas fa-times"></i>
+    <button type="button" data-dismiss-achievement style="background: transparent; border: none; color: ${type === 'legend' ? 'white' : 'var(--rebel-dark)'}; cursor: pointer; margin-left: 0.5rem;">
+      <i class="fas fa-times" aria-hidden="true"></i>
     </button>
   `;
+
+  achievement.querySelector('[data-dismiss-achievement]')
+    .addEventListener('click', () => achievement.remove());
 
   document.body.appendChild(achievement);
 
@@ -353,23 +324,18 @@ function showSecretAchievement(title, message, type = 'normal') {
 }
 
 function prefetchPopularPages() {
-  const pagesToPrefetch = [
-    'index.html',
-    'trade.html',
-    'tokenomics.html'
-  ];
+  const pages = ['index.html', 'trade.html', 'tokenomics.html'];
+  if (!('requestIdleCallback' in window)) return;
 
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(() => {
-      pagesToPrefetch.forEach(page => {
-        const link = document.createElement('link');
-        link.rel = 'prefetch';
-        link.href = page;
-        document.head.appendChild(link);
-      });
-      console.log('📦 Prefetched popular pages');
+  requestIdleCallback(() => {
+    pages.forEach(page => {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = page;
+      document.head.appendChild(link);
     });
-  }
+    console.log('📦 Prefetched popular pages');
+  });
 }
 
 function log404Error() {
@@ -378,55 +344,24 @@ function log404Error() {
 
   try {
     const errors = JSON.parse(sessionStorage.getItem('rebel_404_errors') || '[]');
-    errors.push({
-      url: badUrl,
-      timestamp: new Date().toISOString()
-    });
+    errors.push({ url: badUrl, timestamp: new Date().toISOString() });
     if (errors.length > 5) errors.shift();
     sessionStorage.setItem('rebel_404_errors', JSON.stringify(errors));
-  } catch (e) {
-    // Ignore storage errors
-  }
+  } catch (_) { /* storage may be unavailable */ }
 }
 
-// ===== FUN FACTS DATABASE =====
-window.funFacts = [
-  "The $REBL contract has 98.57% of LP tokens burned - one of the highest burn rates on Solana.",
-  "RebelInuX launched with zero presale and zero team allocation - 100% fair launch.",
-  "The dual logo system exists because on-chain metadata is immutable. Both logos represent the same token!",
-  "$REBL has 67+ verified holders and growing.",
-  "The Rebel Key NFTs are a legacy collection from an earlier era of RebelInuX.",
-  "'RebelInuX' combines 'Rebel' + 'Inu' (dog) + 'X' (the unknown) — we're the rebellious unknown.",
-  "Always verify the contract address. Scammers create fake tokens with similar addresses.",
-  "The original on-chain logo is stored permanently on Solana and can never be changed.",
-  "You can track $REBL live on DexScreener and GeckoTerminal.",
-  "404 errors are also called 'Page Not Found' — but we prefer 'Rogue Page'."
-];
-
-window.factIndex = Math.floor(Math.random() * window.funFacts.length);
-
-// ===== TOAST NOTIFICATION =====
+// ===== TOAST =====
 function showLegalToast(message, type = 'info') {
-  const existingToast = document.querySelector('.legal-toast');
-  if (existingToast) existingToast.remove();
+  const existing = document.querySelector('.legal-toast');
+  if (existing) existing.remove();
+
+  const colors = { success: '#4CAF50', error: '#f44336', info: '#2196F3', warning: '#FF9800' };
+  const icons  = { success: 'check-circle', error: 'exclamation-circle', info: 'info-circle', warning: 'exclamation-triangle' };
 
   const toast = document.createElement('div');
   toast.className = 'legal-toast';
-
-  const colors = {
-    success: '#4CAF50',
-    error: '#f44336',
-    info: '#2196F3',
-    warning: '#FF9800'
-  };
-
-  const icons = {
-    success: 'check-circle',
-    error: 'exclamation-circle',
-    info: 'info-circle',
-    warning: 'exclamation-triangle'
-  };
-
+  toast.setAttribute('role', 'status');
+  toast.setAttribute('aria-live', 'polite');
   toast.style.cssText = `
     position: fixed;
     bottom: 20px;
@@ -445,7 +380,7 @@ function showLegalToast(message, type = 'info') {
     animation: slideUp 0.3s ease;
   `;
 
-  toast.innerHTML = `<i class="fas fa-${icons[type] || icons.info}"></i><span>${message}</span>`;
+  toast.innerHTML = `<i class="fas fa-${icons[type] || icons.info}" aria-hidden="true"></i><span>${message}</span>`;
   document.body.appendChild(toast);
 
   setTimeout(() => {
@@ -454,60 +389,41 @@ function showLegalToast(message, type = 'info') {
   }, 3000);
 }
 
-// ===== AOS INITIALIZATION =====
-function initAOSWithDelay() {
-  if (typeof AOS !== 'undefined') {
-    setTimeout(function() {
-      AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-      });
-      console.log('✅ AOS initialized');
-    }, 200);
-  } else {
-    console.log('⏳ AOS not loaded, skipping animation');
-  }
-}
-
 // ===== ANIMATION STYLES =====
-function addAnimationStyles() {
-  if (!document.getElementById('legal-animation-styles')) {
-    const style = document.createElement('style');
-    style.id = 'legal-animation-styles';
-    style.textContent = `
-      @keyframes slideUp {
-        from { transform: translateX(-50%) translateY(100px); opacity: 0; }
-        to   { transform: translateX(-50%) translateY(0); opacity: 1; }
-      }
-      @keyframes slideDown {
-        from { transform: translateX(-50%) translateY(0); opacity: 1; }
-        to   { transform: translateX(-50%) translateY(100px); opacity: 0; }
-      }
-      @keyframes slideInRight {
-        from { transform: translateX(100%); opacity: 0; }
-        to   { transform: translateX(0); opacity: 1; }
-      }
-      @keyframes slideOutRight {
-        from { transform: translateX(0); opacity: 1; }
-        to   { transform: translateX(100%); opacity: 0; }
-      }
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-      }
-      .legal-modal { animation: fadeIn 0.3s ease; }
-    `;
-    document.head.appendChild(style);
-  }
-}
+(function addAnimationStyles() {
+  if (document.getElementById('legal-animation-styles')) return;
+  const style = document.createElement('style');
+  style.id = 'legal-animation-styles';
+  style.textContent = `
+    @keyframes slideUp {
+      from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+      to   { transform: translateX(-50%) translateY(0); opacity: 1; }
+    }
+    @keyframes slideDown {
+      from { transform: translateX(-50%) translateY(0); opacity: 1; }
+      to   { transform: translateX(-50%) translateY(100px); opacity: 0; }
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to   { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOutRight {
+      from { transform: translateX(0); opacity: 1; }
+      to   { transform: translateX(100%); opacity: 0; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .legal-modal { animation: fadeIn 0.3s ease; }
+  `;
+  document.head.appendChild(style);
+})();
 
-addAnimationStyles();
-
-// ===== GLOBAL EXPORTS =====
+// ===== EXPORTS =====
 window.initLegalPage = initLegalPage;
 window.showLegalToast = showLegalToast;
-window.saveCookiePreferences = window.saveCookiePreferences;
-window.copyContract = handleCopyClick;
+window.saveCookiePreferences = saveCookiePreferences;
+window.copyContract = handleCopy;
 
 console.log('✅ legal.js loaded successfully');
