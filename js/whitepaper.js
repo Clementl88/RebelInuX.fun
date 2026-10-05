@@ -91,7 +91,7 @@ function printDocument() {
 }
 
 function viewWhitepaperOnline() {
-  const url = 'https://docs.google.com/viewer?url=https://rebelinux.fun/RebelInuX_White_Paper.pdf';
+  const url = 'https://docs.google.com/viewer?url=https://rebelinux.fun/RebelInuX_White_Paper_v3.0.pdf';
   window.open(url, '_blank', 'noopener,noreferrer');
 
   trackDownload('whitepaper_view_online');
