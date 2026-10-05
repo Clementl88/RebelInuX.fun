@@ -395,7 +395,7 @@ window.funFacts = [
   "RebelInuX launched with zero presale and zero team allocation - 100% fair launch.",
   "The dual logo system exists because on-chain metadata is immutable. Both logos represent the same token!",
   "$REBL has 67+ verified holders and growing.",
-  "The Rebel Key NFTs on Base earn $REBL rewards every epoch.",
+  "The Rebel Key NFTs are a legacy collection from an earlier era of RebelInuX.",
   "'RebelInuX' combines 'Rebel' + 'Inu' (dog) + 'X' (the unknown) — we're the rebellious unknown.",
   "Always verify the contract address. Scammers create fake tokens with similar addresses.",
   "The original on-chain logo is stored permanently on Solana and can never be changed.",
