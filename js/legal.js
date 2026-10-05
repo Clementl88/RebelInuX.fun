@@ -1,49 +1,45 @@
 // legal.js - Complete Legal Pages Functionality
 // Supports Privacy Policy, Terms of Service, Disclaimer, and 404 pages
 
-// ===== GLOBAL STATE =====
+// ===== GLOBAL VARIABLES =====
 window.componentsLoaded = false;
 window.legalInitialized = false;
 
-const CONTRACT_ADDRESS = 'F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump';
-
-// ===== COMPONENT READY =====
+// ===== WAIT FOR COMPONENTS =====
 function waitForComponents(callback, maxAttempts = 20) {
-  let settled = false;
-
-  function settle(source) {
-    if (settled) return;
-    settled = true;
-    console.log(`✅ Components ready (${source})`);
-    callback();
-  }
-
-  window.addEventListener('components:loaded', () => settle('event'), { once: true });
-
   let attempts = 0;
-  const poll = setInterval(() => {
+
+  const checkInterval = setInterval(function() {
     attempts++;
+
     if (window.componentsLoaded || document.querySelector('#header-container')) {
-      clearInterval(poll);
-      settle('poll');
+      clearInterval(checkInterval);
+      console.log('✅ Components ready, initializing legal page');
+      callback();
     } else if (attempts >= maxAttempts) {
-      clearInterval(poll);
-      console.warn('⚠️ Components timeout — forcing init');
-      settle('timeout');
+      clearInterval(checkInterval);
+      console.warn('⚠️ Components timeout, forcing initialization');
+      callback();
+    } else {
+      console.log(`⏳ Waiting for components... (${attempts}/${maxAttempts})`);
     }
   }, 100);
 }
 
-// ===== BOOT =====
+// ===== DOM CONTENT LOADED =====
 document.addEventListener('DOMContentLoaded', function() {
   console.log('📄 Legal page DOM ready');
 
-  setTimeout(() => { window.componentsLoaded = true; }, 300);
+  setTimeout(function() {
+    window.componentsLoaded = true;
+  }, 300);
 
-  waitForComponents(() => setTimeout(initLegalPage, 200));
+  waitForComponents(function() {
+    setTimeout(initLegalPage, 200);
+  });
 });
 
-// ===== INIT =====
+// ===== MAIN INITIALIZATION =====
 function initLegalPage() {
   if (window.legalInitialized) {
     console.log('⚠️ Legal page already initialized');
@@ -57,9 +53,9 @@ function initLegalPage() {
   initDisclaimerCheckboxes();
   initCookiePreferences();
   highlightCurrentLegalPage();
+  initAOSWithDelay();
+  initContractReminder();
   initFaqInteractions();
-
-  // AOS is initialized inline in the HTML — do NOT re-init here.
 
   if (document.querySelector('.page-hero--404')) {
     init404Page();
@@ -68,36 +64,52 @@ function initLegalPage() {
   console.log('✅ Legal page initialization complete');
 }
 
-// ===== COPY CONTRACT =====
+// ===== COPY CONTRACT FUNCTIONALITY =====
 function initCopyButtons() {
-  document.addEventListener('click', function(e) {
-    const btn = e.target.closest('[data-action="copy"], .copy-mini-btn, .copy-contract-btn, .copy-button');
-    if (!btn) return;
-    e.preventDefault();
-    handleCopy(btn);
+  const copyButtons = document.querySelectorAll('.copy-mini-btn, .copy-contract-btn, .copy-button');
+
+  copyButtons.forEach(button => {
+    button.removeEventListener('click', handleCopyClick);
+    button.addEventListener('click', handleCopyClick);
   });
 }
 
-function handleCopy(button) {
-  const box = button.closest('.contract-address-box, .contract-reminder, div');
-  const codeEl = box?.querySelector('code') || document.getElementById('contract-address');
-  const address = (codeEl?.textContent || CONTRACT_ADDRESS).trim();
+function handleCopyClick(e) {
+  e.preventDefault();
 
-  navigator.clipboard.writeText(address).then(() => {
-    const original = button.innerHTML;
-    button.innerHTML = '<i class="fas fa-check"></i>';
-    button.style.background = '#6a8a6a';
+  const contractElement = this.closest('.contract-address-box')?.querySelector('code') ||
+                         document.getElementById('contract-address') ||
+                         this.closest('div')?.querySelector('code');
 
-    showLegalToast('Contract address copied! Always verify before transacting.', 'success');
+  if (contractElement) {
+    const contractAddress = contractElement.textContent.trim();
 
-    setTimeout(() => {
-      button.innerHTML = original;
-      button.style.background = '';
-    }, 2000);
-  }).catch(err => {
-    console.error('Failed to copy: ', err);
-    showLegalToast('Failed to copy. Please try again.', 'error');
-  });
+    navigator.clipboard.writeText(contractAddress).then(() => {
+      const originalHTML = this.innerHTML;
+      this.innerHTML = '<i class="fas fa-check"></i>';
+      this.style.background = '#4CAF50';
+
+      showLegalToast('Contract address copied! Always verify before transacting.', 'success');
+
+      setTimeout(() => {
+        this.innerHTML = originalHTML;
+        this.style.background = '';
+      }, 2000);
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+      showLegalToast('Failed to copy. Please try again.', 'error');
+
+      setTimeout(() => {
+        this.innerHTML = '<i class="fas fa-copy"></i>';
+        this.style.background = '';
+      }, 2000);
+    });
+  } else {
+    const contractAddress = 'F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump';
+    navigator.clipboard.writeText(contractAddress).then(() => {
+      showLegalToast('Contract address copied!', 'success');
+    });
+  }
 }
 
 // ===== DISCLAIMER CHECKBOXES =====
@@ -107,8 +119,6 @@ function initDisclaimerCheckboxes() {
   checkboxes.forEach(checkbox => {
     checkbox.checked = true;
     checkbox.disabled = true;
-    checkbox.setAttribute('aria-hidden', 'true');
-    checkbox.setAttribute('tabindex', '-1');
 
     checkbox.addEventListener('click', function(e) {
       e.preventDefault();
@@ -119,25 +129,29 @@ function initDisclaimerCheckboxes() {
 
 // ===== COOKIE PREFERENCES =====
 function initCookiePreferences() {
-  const link = document.querySelector('a[href="#cookie-settings"]');
-  if (link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      showCookiePreferences();
-    });
+  const cookieSettingsLink = document.querySelector('a[href="#cookie-settings"]');
+
+  if (cookieSettingsLink) {
+    cookieSettingsLink.removeEventListener('click', handleCookieClick);
+    cookieSettingsLink.addEventListener('click', handleCookieClick);
   }
 }
 
+function handleCookieClick(e) {
+  e.preventDefault();
+  showCookiePreferences();
+}
+
 function showCookiePreferences() {
-  const existing = document.querySelector('.legal-modal');
-  if (existing) existing.remove();
+  const existingModal = document.querySelector('.legal-modal');
+  if (existingModal) existingModal.remove();
 
   const modal = document.createElement('div');
   modal.className = 'legal-modal';
   modal.style.cssText = `
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.92);
+    background: rgba(0, 0, 0, 0.95);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,46 +160,42 @@ function showCookiePreferences() {
   `;
 
   modal.innerHTML = `
-    <div style="background: #16140f; padding: 2rem; border-radius: 2px;
-                border: 1px solid rgba(201, 168, 106, 0.45); max-width: 500px; width: 90%;
-                position: relative;">
-      <h3 style="color: #c9a86a; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;
-                 font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.35rem; font-weight: 500;">
-        <i class="fas fa-cookie-bite" aria-hidden="true"></i> Cookie Preferences
+    <div style="background: #1a1a1a; padding: 2rem; border-radius: 16px;
+                border: 2px solid var(--rebel-gold); max-width: 500px; width: 90%;">
+      <h3 style="color: var(--rebel-gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        <i class="fas fa-cookie-bite"></i> Cookie Preferences
       </h3>
 
       <div style="margin-bottom: 1.5rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 0.75rem; background: rgba(201, 168, 106, 0.04); border-left: 2px solid #c9a86a;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 0.5rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
           <div>
-            <strong style="color: #f0ead8; font-family: 'Cormorant Garamond', serif;">Essential Cookies</strong>
-            <p style="color: rgba(240, 234, 216, 0.65); font-size: 0.85rem; margin: 0; font-family: 'Cormorant Garamond', serif;">Required for site functionality</p>
+            <strong style="color: white;">Essential Cookies</strong>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin: 0;">Required for site functionality</p>
           </div>
-          <span style="color: #c9a86a; padding: 0.2rem 0.8rem; font-size: 0.62rem; font-family: 'Montserrat', sans-serif; letter-spacing: 1.5px; text-transform: uppercase; border: 1px solid rgba(201, 168, 106, 0.4);">Always On</span>
+          <span style="background: rgba(76,175,80,0.2); color: #4CAF50; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem;">Always On</span>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem; background: rgba(201, 168, 106, 0.04); border-left: 2px solid #c9a86a;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
           <div>
-            <strong style="color: #f0ead8; font-family: 'Cormorant Garamond', serif;">Analytics Cookies</strong>
-            <p style="color: rgba(240, 234, 216, 0.65); font-size: 0.85rem; margin: 0; font-family: 'Cormorant Garamond', serif;">Anonymous usage data</p>
+            <strong style="color: white;">Analytics Cookies</strong>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin: 0;">Anonymous usage data</p>
           </div>
-          <label style="display: flex; align-items: center; gap: 0.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase;">
-            <span style="color: #c9a86a;">Opt-out</span>
-            <input type="checkbox" id="analytics-opt-out" style="accent-color: #c9a86a; width: 18px; height: 18px;">
+          <label style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="color: white;">Opt-out</span>
+            <input type="checkbox" id="analytics-opt-out" style="accent-color: var(--rebel-gold); width: 18px; height: 18px;">
           </label>
         </div>
       </div>
 
       <div style="display: flex; gap: 1rem; justify-content: flex-end;">
-        <button type="button" data-modal-action="cancel"
-                style="background: transparent; color: rgba(240, 234, 216, 0.8); border: 1px solid rgba(201, 168, 106, 0.35); border-radius: 2px;
-                       padding: 0.75rem 1.25rem; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 700;
-                       font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase;">
+        <button onclick="this.closest('.legal-modal').remove()"
+                style="background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 25px;
+                       padding: 0.8rem 1.5rem; cursor: pointer; font-weight: 600;">
           Cancel
         </button>
-        <button type="button" data-modal-action="save"
-                style="background: linear-gradient(135deg, #8a7042 0%, #c9a86a 50%, #8a7042 100%); color: #1a1815; border: none; border-radius: 2px;
-                       padding: 0.75rem 1.25rem; cursor: pointer; font-family: 'Montserrat', sans-serif; font-weight: 800;
-                       font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase;">
+        <button onclick="saveCookiePreferences()"
+                style="background: var(--rebel-gold); color: #1a1a1a; border: none; border-radius: 25px;
+                       padding: 0.8rem 1.5rem; cursor: pointer; font-weight: 600;">
           Save Preferences
         </button>
       </div>
@@ -195,19 +205,17 @@ function showCookiePreferences() {
   document.body.appendChild(modal);
 
   modal.addEventListener('click', function(e) {
-    if (e.target === modal) modal.remove();
-
-    const action = e.target.closest('[data-modal-action]')?.getAttribute('data-modal-action');
-    if (action === 'cancel') modal.remove();
-    if (action === 'save') saveCookiePreferences();
+    if (e.target === modal) {
+      modal.remove();
+    }
   });
 }
 
-function saveCookiePreferences() {
-  const optOut = document.getElementById('analytics-opt-out')?.checked;
+window.saveCookiePreferences = function() {
+  const analyticsOptOut = document.getElementById('analytics-opt-out')?.checked;
 
   try {
-    if (optOut) {
+    if (analyticsOptOut) {
       localStorage.setItem('rebelinux_analytics_opt_out', 'true');
       showLegalToast('Analytics cookies disabled', 'success');
     } else {
@@ -220,40 +228,59 @@ function saveCookiePreferences() {
 
   const modal = document.querySelector('.legal-modal');
   if (modal) modal.remove();
-}
+};
 
 // ===== HIGHLIGHT CURRENT PAGE =====
 function highlightCurrentLegalPage() {
-  const path = window.location.pathname;
-  const current = path.split('/').pop().replace(/\.html$/, '') || 'index';
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const relatedLinks = document.querySelectorAll('.related-card');
 
-  document.querySelectorAll('.related-card').forEach(link => {
-    const href = (link.getAttribute('href') || '').replace(/\.html$/, '');
-    if (href === current) {
-      link.style.boxShadow = '0 0 20px rgba(201, 168, 106, 0.25)';
+  relatedLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage) {
+      link.style.borderColor = 'var(--rebel-gold)';
+      link.style.boxShadow = '0 0 15px rgba(255, 204, 0, 0.3)';
       link.style.opacity = '0.9';
       link.style.cursor = 'default';
-      link.setAttribute('aria-current', 'page');
-      link.addEventListener('click', e => e.preventDefault());
+
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+      });
     }
   });
 }
 
-// ===== FAQ =====
+// ===== CONTRACT REMINDER =====
+function initContractReminder() {
+  const contractReminder = document.querySelector('.contract-reminder');
+  if (contractReminder) {
+    const copyBtn = contractReminder.querySelector('.copy-mini-btn');
+    if (copyBtn) {
+      copyBtn.removeEventListener('click', handleCopyClick);
+      copyBtn.addEventListener('click', handleCopyClick);
+    }
+  }
+}
+
+// ===== FAQ INTERACTIONS =====
 function initFaqInteractions() {
-  document.querySelectorAll('.faq-item').forEach(item => {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
     item.addEventListener('click', function() {
       this.style.transition = 'all 0.3s ease';
     });
   });
 }
 
-// ===== 404 ONLY =====
+// ===== 404 PAGE SPECIFIC =====
 function init404Page() {
   console.log('🦴 404 Page detected');
 
   const backToTop = document.getElementById('backToTop');
-  if (backToTop) backToTop.style.display = 'none';
+  if (backToTop) {
+    backToTop.style.display = 'none';
+  }
 
   setupEasterEgg();
   prefetchPopularPages();
@@ -262,14 +289,22 @@ function init404Page() {
 
 function setupEasterEgg() {
   const eggElement = document.querySelector('.egg-content');
-  if (!eggElement) return;
 
-  let clickCount = 0;
-  eggElement.addEventListener('click', () => {
-    clickCount++;
-    if (clickCount === 5) showSecretAchievement('🔍 404 Explorer', 'You found the secret!');
-    if (clickCount === 10) showSecretAchievement('👑 Rebel Legend', "You're a true rebel!", 'legend');
-  });
+  if (eggElement) {
+    let clickCount = 0;
+
+    eggElement.addEventListener('click', function(e) {
+      clickCount++;
+
+      if (clickCount === 5) {
+        showSecretAchievement('🔍 404 Explorer', 'You found the secret!');
+      }
+
+      if (clickCount === 10) {
+        showSecretAchievement('👑 Rebel Legend', 'You\'re a true rebel!', 'legend');
+      }
+    });
+  }
 }
 
 function showSecretAchievement(title, message, type = 'normal') {
@@ -277,8 +312,8 @@ function showSecretAchievement(title, message, type = 'normal') {
   achievement.className = 'achievement-popup';
 
   const colors = type === 'legend'
-    ? 'linear-gradient(135deg, #7a3030, #b34a4a); color: #f5efe0; border: 2px solid #c9a86a;'
-    : 'linear-gradient(135deg, #8a7042, #e8d29a); color: #1a1815; border: 2px solid #8a7042;';
+    ? 'linear-gradient(135deg, var(--rebel-red), #b71c1c); color: white; border: 2px solid var(--rebel-gold);'
+    : 'linear-gradient(135deg, var(--rebel-gold), #e6b800); color: var(--rebel-dark);';
 
   achievement.style.cssText = `
     position: fixed;
@@ -286,30 +321,26 @@ function showSecretAchievement(title, message, type = 'normal') {
     right: 20px;
     background: ${colors}
     padding: 1rem 1.5rem;
-    border-radius: 2px;
+    border-radius: 50px;
     display: flex;
     align-items: center;
     gap: 1rem;
     font-weight: 700;
     z-index: 10000;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 20px rgba(255, 204, 0, 0.5);
     animation: slideInRight 0.5s ease;
-    font-family: 'Cormorant Garamond', Georgia, serif;
   `;
 
   achievement.innerHTML = `
-    <i class="fas fa-${type === 'legend' ? 'crown' : 'trophy'}" style="font-size: 1.5rem;" aria-hidden="true"></i>
+    <i class="fas fa-${type === 'legend' ? 'crown' : 'trophy'}" style="font-size: 1.5rem;"></i>
     <div>
       <strong>🏆 ${title}!</strong>
       <p style="margin: 0.2rem 0 0; font-size: 0.85rem;">${message}</p>
     </div>
-    <button type="button" data-dismiss-achievement style="background: transparent; border: none; color: ${type === 'legend' ? '#f5efe0' : '#1a1815'}; cursor: pointer; margin-left: 0.5rem;">
-      <i class="fas fa-times" aria-hidden="true"></i>
+    <button onclick="this.parentElement.remove()" style="background: transparent; border: none; color: ${type === 'legend' ? 'white' : 'var(--rebel-dark)'}; cursor: pointer; margin-left: 0.5rem;">
+      <i class="fas fa-times"></i>
     </button>
   `;
-
-  achievement.querySelector('[data-dismiss-achievement]')
-    .addEventListener('click', () => achievement.remove());
 
   document.body.appendChild(achievement);
 
@@ -322,18 +353,23 @@ function showSecretAchievement(title, message, type = 'normal') {
 }
 
 function prefetchPopularPages() {
-  const pages = ['index.html', 'trade.html', 'tokenomics.html'];
-  if (!('requestIdleCallback' in window)) return;
+  const pagesToPrefetch = [
+    'index.html',
+    'trade.html',
+    'tokenomics.html'
+  ];
 
-  requestIdleCallback(() => {
-    pages.forEach(page => {
-      const link = document.createElement('link');
-      link.rel = 'prefetch';
-      link.href = page;
-      document.head.appendChild(link);
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      pagesToPrefetch.forEach(page => {
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = page;
+        document.head.appendChild(link);
+      });
+      console.log('📦 Prefetched popular pages');
     });
-    console.log('📦 Prefetched popular pages');
-  });
+  }
 }
 
 function log404Error() {
@@ -342,99 +378,136 @@ function log404Error() {
 
   try {
     const errors = JSON.parse(sessionStorage.getItem('rebel_404_errors') || '[]');
-    errors.push({ url: badUrl, timestamp: new Date().toISOString() });
+    errors.push({
+      url: badUrl,
+      timestamp: new Date().toISOString()
+    });
     if (errors.length > 5) errors.shift();
     sessionStorage.setItem('rebel_404_errors', JSON.stringify(errors));
-  } catch (_) { /* storage unavailable */ }
+  } catch (e) {
+    // Ignore storage errors
+  }
 }
 
-// ===== TOAST =====
-function showLegalToast(message, type = 'info') {
-  const existing = document.querySelector('.legal-toast');
-  if (existing) existing.remove();
+// ===== FUN FACTS DATABASE =====
+window.funFacts = [
+  "The $REBL contract has 98.57% of LP tokens burned - one of the highest burn rates on Solana.",
+  "RebelInuX launched with zero presale and zero team allocation - 100% fair launch.",
+  "The dual logo system exists because on-chain metadata is immutable. Both logos represent the same token!",
+  "$REBL has 67+ verified holders and growing.",
+  "The Rebel Key NFTs are a legacy collection from an earlier era of RebelInuX.",
+  "'RebelInuX' combines 'Rebel' + 'Inu' (dog) + 'X' (the unknown) — we're the rebellious unknown.",
+  "Always verify the contract address. Scammers create fake tokens with similar addresses.",
+  "The original on-chain logo is stored permanently on Solana and can never be changed.",
+  "You can track $REBL live on DexScreener and GeckoTerminal.",
+  "404 errors are also called 'Page Not Found' — but we prefer 'Rogue Page'."
+];
 
-  const colors = {
-    success: '#6a8a6a',
-    error:   '#b34a4a',
-    info:    '#6a8fa8',
-    warning: '#b88a4a'
-  };
-  const icons = {
-    success: 'check-circle',
-    error:   'exclamation-circle',
-    info:    'info-circle',
-    warning: 'exclamation-triangle'
-  };
+window.factIndex = Math.floor(Math.random() * window.funFacts.length);
+
+// ===== TOAST NOTIFICATION =====
+function showLegalToast(message, type = 'info') {
+  const existingToast = document.querySelector('.legal-toast');
+  if (existingToast) existingToast.remove();
 
   const toast = document.createElement('div');
   toast.className = 'legal-toast';
-  toast.setAttribute('role', 'status');
-  toast.setAttribute('aria-live', 'polite');
+
+  const colors = {
+    success: '#4CAF50',
+    error: '#f44336',
+    info: '#2196F3',
+    warning: '#FF9800'
+  };
+
+  const icons = {
+    success: 'check-circle',
+    error: 'exclamation-circle',
+    info: 'info-circle',
+    warning: 'exclamation-triangle'
+  };
+
   toast.style.cssText = `
     position: fixed;
-    bottom: 24px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: #16140f;
-    color: #f0ead8;
-    padding: 14px 24px;
-    border: 1px solid ${colors[type] || colors.info};
-    border-radius: 2px;
+    background: ${colors[type] || colors.info};
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 500;
-    font-size: 0.95rem;
+    gap: 10px;
+    font-weight: 600;
     z-index: 9999;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     animation: slideUp 0.3s ease;
   `;
 
-  toast.innerHTML = `<i class="fas fa-${icons[type] || icons.info}" style="color: ${colors[type] || colors.info};" aria-hidden="true"></i><span>${message}</span>`;
+  toast.innerHTML = `<i class="fas fa-${icons[type] || icons.info}"></i><span>${message}</span>`;
   document.body.appendChild(toast);
 
   setTimeout(() => {
     toast.style.animation = 'slideDown 0.3s ease';
     setTimeout(() => toast.remove(), 300);
-  }, 3200);
+  }, 3000);
+}
+
+// ===== AOS INITIALIZATION =====
+function initAOSWithDelay() {
+  if (typeof AOS !== 'undefined') {
+    setTimeout(function() {
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+      });
+      console.log('✅ AOS initialized');
+    }, 200);
+  } else {
+    console.log('⏳ AOS not loaded, skipping animation');
+  }
 }
 
 // ===== ANIMATION STYLES =====
-(function addAnimationStyles() {
-  if (document.getElementById('legal-animation-styles')) return;
-  const style = document.createElement('style');
-  style.id = 'legal-animation-styles';
-  style.textContent = `
-    @keyframes slideUp {
-      from { transform: translateX(-50%) translateY(100px); opacity: 0; }
-      to   { transform: translateX(-50%) translateY(0); opacity: 1; }
-    }
-    @keyframes slideDown {
-      from { transform: translateX(-50%) translateY(0); opacity: 1; }
-      to   { transform: translateX(-50%) translateY(100px); opacity: 0; }
-    }
-    @keyframes slideInRight {
-      from { transform: translateX(100%); opacity: 0; }
-      to   { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes slideOutRight {
-      from { transform: translateX(0); opacity: 1; }
-      to   { transform: translateX(100%); opacity: 0; }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-    .legal-modal { animation: fadeIn 0.3s ease; }
-  `;
-  document.head.appendChild(style);
-})();
+function addAnimationStyles() {
+  if (!document.getElementById('legal-animation-styles')) {
+    const style = document.createElement('style');
+    style.id = 'legal-animation-styles';
+    style.textContent = `
+      @keyframes slideUp {
+        from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+        to   { transform: translateX(-50%) translateY(0); opacity: 1; }
+      }
+      @keyframes slideDown {
+        from { transform: translateX(-50%) translateY(0); opacity: 1; }
+        to   { transform: translateX(-50%) translateY(100px); opacity: 0; }
+      }
+      @keyframes slideInRight {
+        from { transform: translateX(100%); opacity: 0; }
+        to   { transform: translateX(0); opacity: 1; }
+      }
+      @keyframes slideOutRight {
+        from { transform: translateX(0); opacity: 1; }
+        to   { transform: translateX(100%); opacity: 0; }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+      .legal-modal { animation: fadeIn 0.3s ease; }
+    `;
+    document.head.appendChild(style);
+  }
+}
 
-// ===== EXPORTS =====
+addAnimationStyles();
+
+// ===== GLOBAL EXPORTS =====
 window.initLegalPage = initLegalPage;
 window.showLegalToast = showLegalToast;
-window.saveCookiePreferences = saveCookiePreferences;
-window.copyContract = handleCopy;
+window.saveCookiePreferences = window.saveCookiePreferences;
+window.copyContract = handleCopyClick;
 
 console.log('✅ legal.js loaded successfully');
