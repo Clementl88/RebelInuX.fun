@@ -1361,32 +1361,48 @@ footer {
 }
 
 .footer-buy-button {
-  background: linear-gradient(135deg,
-    var(--rebel-red),
-    var(--rebel-gold),
-    var(--rebel-red));
-  background-size: 200% auto;
-  color: white;
-  padding: 14px 24px;
-  border-radius: var(--border-radius-full);
-  font-weight: 800;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  border: 2px solid rgba(212, 167, 106, 0.4);
-  text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+  padding: 14px 28px;
+  border-radius: 50px;
   width: 100%;
   max-width: 320px;
-  justify-content: center;
-  text-transform: uppercase;
-  animation: gradientShift 3s ease infinite;
-  box-shadow: 0 6px 25px rgba(215, 77, 77, 0.4);
+  text-decoration: none;
   text-align: center;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  /* Static gold gradient — matches the rest of the site */
+  background: linear-gradient(135deg, #d4a76a 0%, #ffd700 50%, #d4a76a 100%);
+  color: #0a0a0f;
+  border: none;
+  box-shadow: 0 8px 24px rgba(212, 167, 106, 0.35);
+
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-buy-button i { font-size: 1.1rem; }
+.footer-buy-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(212, 167, 106, 0.5);
+  color: #0a0a0f;
+}
+
+.footer-buy-button:visited,
+.footer-buy-button:focus {
+  text-decoration: none;
+  color: #0a0a0f;
+}
+
+.footer-buy-button i {
+  font-size: 1rem;
+}
 
 .footer-grid {
   display: grid;
