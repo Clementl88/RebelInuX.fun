@@ -1083,6 +1083,11 @@ section.container {
   transition: var(--transition);
   letter-spacing: 0.04em;
 }
+.locked-badge {
+  background: rgba(33, 150, 243, 0.15);
+  color: #2196F3;
+  border: 1px solid rgba(33, 150, 243, 0.5);
+}
 .verified-badge {
   background: rgba(76, 175, 80, 0.15);
   color: var(--rebel-green);
