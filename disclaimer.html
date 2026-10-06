@@ -17,16 +17,16 @@
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#0e0d0b">
+  <meta name="theme-color" content="#1a1a1a">
   <meta name="mobile-web-app-capable" content="yes">
 
-  <link rel="icon" href="images/Logo_REBL.svg" type="image/svg+xml">
+  <link rel="icon" href="images/Logo_REBL.svg" type="image/webp">
   <link rel="apple-touch-icon" href="images/Logo_REBL.svg">
   <title>Disclaimer - RebelInuX</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -36,7 +36,7 @@
 
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/header-footer.css">
-  <link rel="stylesheet" href="css/legal-museum.css">
+  <link rel="stylesheet" href="css/legal.css">
 </head>
 <body>
   <div class="loader" id="loader">
@@ -44,7 +44,7 @@
   </div>
 
   <div class="back-to-top" id="backToTop">
-    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    <i class="fas fa-arrow-up"></i>
   </div>
 
   <div id="header-container"></div>
@@ -53,11 +53,12 @@
     <!-- Hero Section -->
     <section class="page-hero page-hero--disclaimer" data-aos="fade-up">
       <div class="hero-background-pattern" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
 
       <div class="container">
         <div class="hero-eyebrow" data-aos="fade-up">
           <span class="live-dot"></span>
-          <span>Legally Binding · Read Carefully · DYOR</span>
+          <span>LEGALLY BINDING · READ CAREFULLY · DYOR</span>
         </div>
 
         <h1 data-aos="fade-up" data-aos-delay="100">
@@ -70,13 +71,13 @@
 
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
           <a href="#full-disclaimer" class="cta-button primary-glow">
-            <i class="fas fa-file-contract" aria-hidden="true"></i> Read Disclaimer
+            <i class="fas fa-file-contract"></i> Read Disclaimer
           </a>
           <a href="terms-of-service.html" class="cta-button secondary">
-            <i class="fas fa-gavel" aria-hidden="true"></i> Terms of Service
+            <i class="fas fa-gavel"></i> Terms of Service
           </a>
           <a href="privacy-policy.html" class="cta-button secondary">
-            <i class="fas fa-shield-alt" aria-hidden="true"></i> Privacy Policy
+            <i class="fas fa-shield-alt"></i> Privacy Policy
           </a>
         </div>
       </div>
@@ -87,12 +88,11 @@
       <div class="container">
         <div class="critical-content">
           <div class="critical-icon">
-            <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+            <i class="fas fa-skull"></i>
           </div>
           <div class="critical-text">
-            <p class="critical-kicker">Critical Legal Notice</p>
-            <h2 class="critical-title">Read Before Proceeding</h2>
-            <p>RebelInuX ($REBL) is a <strong>meme token for entertainment purposes only</strong>. It has <strong>no intrinsic value</strong>, <strong>no financial rights</strong>, and <strong>no guarantees</strong>.</p>
+            <h2>⚠️ CRITICAL LEGAL NOTICE ⚠️</h2>
+            <p>RebelInuX ($REBL) is a <strong>MEME TOKEN FOR ENTERTAINMENT PURPOSES ONLY</strong>. It has <strong>NO INTRINSIC VALUE</strong>, <strong>NO FINANCIAL RIGHTS</strong>, and <strong>NO GUARANTEES</strong>.</p>
             <p class="highlight-red"><strong>You can lose 100% of your funds. Participation is prohibited in EEA, Switzerland, France, and other restricted jurisdictions.</strong></p>
           </div>
         </div>
@@ -105,15 +105,16 @@
         <div class="takeaways-box disclaimer-emphasis">
           <div class="takeaways-header">
             <div class="takeaways-icon warning-icon">
-              <i class="fas fa-exclamation" aria-hidden="true"></i>
+              <i class="fas fa-exclamation"></i>
             </div>
-            <h3 class="takeaways-title">Disclaimer Key Points</h3>
+            <h3 class="takeaways-title">⚠️ Disclaimer Key Points ⚠️</h3>
           </div>
 
           <div class="takeaways-grid">
-            <div class="takeaway-item" data-aos="fade-right">
+            <!-- Meme Token Only -->
+            <div class="takeaway-item takeaway-red" data-aos="fade-right">
               <div class="takeaway-icon">
-                <i class="fas fa-smile" aria-hidden="true"></i>
+                <i class="fas fa-smile"></i>
               </div>
               <div class="takeaway-content">
                 <div class="takeaway-title">Meme Token Only</div>
@@ -122,9 +123,10 @@
               </div>
             </div>
 
-            <div class="takeaway-item" data-aos="fade-up">
+            <!-- No Financial Rights -->
+            <div class="takeaway-item takeaway-red" data-aos="fade-up">
               <div class="takeaway-icon">
-                <i class="fas fa-ban" aria-hidden="true"></i>
+                <i class="fas fa-ban"></i>
               </div>
               <div class="takeaway-content">
                 <div class="takeaway-title">No Financial Rights</div>
@@ -133,9 +135,10 @@
               </div>
             </div>
 
-            <div class="takeaway-item" data-aos="fade-up">
+            <!-- Total Loss Risk -->
+            <div class="takeaway-item takeaway-red" data-aos="fade-up">
               <div class="takeaway-icon">
-                <i class="fas fa-fire" aria-hidden="true"></i>
+                <i class="fas fa-fire"></i>
               </div>
               <div class="takeaway-content">
                 <div class="takeaway-title">Total Loss Risk</div>
@@ -144,9 +147,10 @@
               </div>
             </div>
 
-            <div class="takeaway-item" data-aos="fade-left">
+            <!-- Restricted Jurisdictions -->
+            <div class="takeaway-item takeaway-red" data-aos="fade-left">
               <div class="takeaway-icon">
-                <i class="fas fa-globe" aria-hidden="true"></i>
+                <i class="fas fa-globe"></i>
               </div>
               <div class="takeaway-content">
                 <div class="takeaway-title">Restricted</div>
@@ -158,7 +162,7 @@
 
           <div class="takeaways-footer disclaimer-footer">
             <a href="#full-disclaimer">
-              <i class="fas fa-arrow-down" aria-hidden="true"></i> Read Full Legal Disclaimer Below
+              <i class="fas fa-arrow-down"></i> Read Full Legal Disclaimer Below
             </a>
           </div>
         </div>
@@ -166,23 +170,23 @@
     </section>
 
     <!-- Full Disclaimer Content -->
-    <section id="full-disclaimer" class="legal-content-section anchor-target" data-aos="fade-up">
+    <section id="full-disclaimer" class="legal-content-section" data-aos="fade-up">
       <div class="container">
         <div class="content-card legal-card disclaimer-card">
 
           <!-- Header -->
           <div class="legal-header">
             <div class="legal-icon warning-icon-large">
-              <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+              <i class="fas fa-exclamation-triangle"></i>
             </div>
             <div class="legal-title-wrapper">
               <h2>Official <em class="gold-serif">Disclaimer</em></h2>
               <div class="legal-badges">
                 <span class="badge verified-badge">
-                  <i class="fas fa-check-circle" aria-hidden="true"></i> Current
+                  <i class="fas fa-check-circle"></i> Current
                 </span>
                 <span class="badge legal-badge">
-                  <i class="fas fa-calendar-alt" aria-hidden="true"></i> Effective: Oct 2026
+                  <i class="fas fa-calendar-alt"></i> Effective: Oct 2026
                 </span>
               </div>
             </div>
@@ -191,423 +195,381 @@
           <!-- Last Updated & Intro -->
           <div class="legal-intro">
             <p class="legal-last-updated">
-              <i class="fas fa-calendar-alt" aria-hidden="true"></i> <strong>Last Updated:</strong> October 5, 2026
+              <i class="fas fa-calendar-alt"></i> <strong>Last Updated:</strong> October 5, 2026
             </p>
 
             <div class="legal-intro-box critical-box">
-              <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+              <i class="fas fa-exclamation-circle"></i>
               <div>
-                <p class="legal-intro-lead"><strong>This disclaimer is legally binding</strong></p>
+                <p class="legal-intro-lead"><strong>⚠️ THIS DISCLAIMER IS LEGALLY BINDING ⚠️</strong></p>
                 <p>By accessing, using, or interacting with RebelInuX ($REBL token, website, community, or any associated services), you explicitly acknowledge and agree to all terms in this disclaimer. <strong class="highlight-red">If you do not agree, you must immediately cease all use.</strong></p>
               </div>
             </div>
           </div>
 
-          <!-- ═══════════════════════════════════════════════
-               CRITICAL DISCLAIMER BOX — Engraved Tablet
-               ═══════════════════════════════════════════════ -->
+          <!-- CRITICAL DISCLAIMER BOX -->
           <div class="critical-disclaimer-box">
             <div class="critical-disclaimer-header">
-              <span class="critical-disclaimer-rule" aria-hidden="true"></span>
-              <h3>Absolutely Critical</h3>
-              <span class="critical-disclaimer-rule" aria-hidden="true"></span>
+              <i class="fas fa-skull"></i>
+              <h3>🚨🚨🚨 ABSOLUTELY CRITICAL 🚨🚨🚨</h3>
+              <i class="fas fa-skull"></i>
             </div>
 
-            <p class="critical-disclaimer-lead">
-              Six terms govern your use of this site and the $REBL token. Read each one.
-            </p>
-
             <div class="critical-disclaimer-content">
-
-              <article class="critical-item">
-                <div class="critical-marker" aria-hidden="true">
-                  <span class="critical-numeral">I</span>
-                </div>
+              <div class="critical-item">
+                <div class="critical-marker">1.</div>
                 <div class="critical-text-content">
-                  <p class="critical-rule-title">A Meme Token</p>
-                  <p>$REBL has <strong>zero intrinsic value</strong>. It is not an investment product, not a security, not a commodity, and not regulated by any financial authority.</p>
+                  <strong>$REBL IS A MEME TOKEN.</strong> It has <strong class="highlight-red">zero intrinsic value</strong>. It is <strong>not an investment product</strong>, not a security, not a commodity, and not regulated by any financial authority.
                 </div>
-              </article>
+              </div>
 
-              <article class="critical-item">
-                <div class="critical-marker" aria-hidden="true">
-                  <span class="critical-numeral">II</span>
-                </div>
+              <div class="critical-item">
+                <div class="critical-marker">2.</div>
                 <div class="critical-text-content">
-                  <p class="critical-rule-title">Total Loss Possible</p>
-                  <p>You can lose <strong>100% of your money</strong>. Cryptocurrency is extremely volatile. The price of $REBL can go to zero at any time, for any reason, or no reason at all.</p>
+                  <strong>YOU CAN LOSE 100% OF YOUR MONEY.</strong> Cryptocurrency is extremely volatile. The price of $REBL can go to zero at any time, for any reason, or no reason at all.
                 </div>
-              </article>
+              </div>
 
-              <article class="critical-item">
-                <div class="critical-marker" aria-hidden="true">
-                  <span class="critical-numeral">III</span>
-                </div>
+              <div class="critical-item">
+                <div class="critical-marker">3.</div>
                 <div class="critical-text-content">
-                  <p class="critical-rule-title">No Financial Rights</p>
-                  <p>Holding $REBL confers <strong>no rights</strong> to dividends, profits, ownership, equity, revenue, voting, or any financial benefit whatsoever.</p>
+                  <strong>NO FINANCIAL RIGHTS.</strong> Holding $REBL confers <strong>no rights</strong> to dividends, profits, ownership, equity, revenue, voting, or any financial benefit whatsoever.
                 </div>
-              </article>
+              </div>
 
-              <article class="critical-item">
-                <div class="critical-marker" aria-hidden="true">
-                  <span class="critical-numeral">IV</span>
-                </div>
+              <div class="critical-item">
+                <div class="critical-marker">4.</div>
                 <div class="critical-text-content">
-                  <p class="critical-rule-title">Restricted Jurisdictions</p>
-                  <p>Residents of <strong class="highlight-red">EEA, Switzerland, France</strong>, and other prohibited regions are strictly forbidden from participating. By using this site, you certify you are not from these regions.</p>
+                  <strong>RESTRICTED JURISDICTIONS.</strong> <span class="highlight-red">Residents of EEA, Switzerland, France, and other prohibited regions are STRICTLY FORBIDDEN from participating.</span> By using this site, you certify you are not from these regions.
                 </div>
-              </article>
+              </div>
 
-              <article class="critical-item">
-                <div class="critical-marker" aria-hidden="true">
-                  <span class="critical-numeral">V</span>
-                </div>
+              <div class="critical-item">
+                <div class="critical-marker">5.</div>
                 <div class="critical-text-content">
-                  <p class="critical-rule-title">No Liability</p>
-                  <p>RebelInuX developers, contributors, and community members assume <strong>no liability</strong> for any financial losses, damages, or legal consequences you may incur.</p>
+                  <strong>NO LIABILITY.</strong> RebelInuX developers, contributors, and community members <strong class="highlight-red">assume NO liability</strong> for any financial losses, damages, or legal consequences you may incur.
                 </div>
-              </article>
+              </div>
 
-              <article class="critical-item">
-                <div class="critical-marker" aria-hidden="true">
-                  <span class="critical-numeral">VI</span>
-                </div>
+              <div class="critical-item">
+                <div class="critical-marker">6.</div>
                 <div class="critical-text-content">
-                  <p class="critical-rule-title">No Professional Advice</p>
-                  <p>Nothing on this website constitutes financial, legal, tax, or investment advice. <strong>DYOR</strong> (Do Your Own Research) and consult qualified professionals.</p>
+                  <strong>NO PROFESSIONAL ADVICE.</strong> Nothing on this website constitutes financial, legal, tax, or investment advice. <strong>DYOR (Do Your Own Research)</strong> and consult qualified professionals.
                 </div>
-              </article>
+              </div>
             </div>
 
             <div class="critical-disclaimer-footer">
-              <span class="critical-footer-rule" aria-hidden="true"></span>
-              <p>By proceeding, you acknowledge and accept all of the above</p>
-              <span class="critical-footer-rule" aria-hidden="true"></span>
+              <i class="fas fa-gavel"></i>
+              <span>BY PROCEEDING, YOU ACKNOWLEDGE AND ACCEPT ALL OF THE ABOVE</span>
+              <i class="fas fa-gavel"></i>
             </div>
           </div>
 
           <!-- Detailed Disclaimer Sections -->
           <div class="legal-sections">
 
-            <!-- I. Meme Token Status -->
+            <!-- 1. Meme Token Status -->
             <div class="legal-section" data-aos="fade-right">
               <div class="section-header">
-                <div class="section-number warning-number">I</div>
-                <h3><i class="fas fa-smile" aria-hidden="true"></i> Meme Token Status</h3>
+                <div class="section-number warning-number">1</div>
+                <h3><i class="fas fa-smile"></i> Meme Token Status</h3>
               </div>
               <div class="section-content">
                 <p>RebelInuX ($REBL) is a <strong>meme token created for entertainment and community purposes</strong>. It was launched fairly with:</p>
                 <ul class="legal-list">
-                  <li><i class="fas fa-times-circle legal-icon-red" aria-hidden="true"></i> No presale, no team allocation, no insider advantage</li>
-                  <li><i class="fas fa-times-circle legal-icon-red" aria-hidden="true"></i> No venture capital backing or institutional investment</li>
-                  <li><i class="fas fa-times-circle legal-icon-red" aria-hidden="true"></i> No promise of future development or utility</li>
-                  <li><i class="fas fa-times-circle legal-icon-red" aria-hidden="true"></i> No revenue model, no profit-sharing, no dividends</li>
+                  <li><i class="fas fa-times-circle legal-icon-red"></i> No presale, no team allocation, no insider advantage</li>
+                  <li><i class="fas fa-times-circle legal-icon-red"></i> No venture capital backing or institutional investment</li>
+                  <li><i class="fas fa-times-circle legal-icon-red"></i> No promise of future development or utility</li>
+                  <li><i class="fas fa-times-circle legal-icon-red"></i> No revenue model, no profit-sharing, no dividends</li>
                 </ul>
                 <p class="highlight-box">Meme tokens derive value <strong>solely from community sentiment and market speculation</strong>. This value is highly volatile and can disappear instantly.</p>
               </div>
             </div>
 
-            <!-- II. Not a Security -->
+            <!-- 2. Not a Security / Not Regulated -->
             <div class="legal-section" data-aos="fade-right" data-aos-delay="50">
               <div class="section-header">
-                <div class="section-number warning-number">II</div>
-                <h3><i class="fas fa-ban" aria-hidden="true"></i> Not a Security | Not Regulated</h3>
+                <div class="section-number warning-number">2</div>
+                <h3><i class="fas fa-ban"></i> Not a Security | Not Regulated</h3>
               </div>
               <div class="section-content">
                 <div class="not-security-box">
                   <p><strong>$REBL is NOT a security under U.S. law or any other jurisdiction's securities regulations.</strong></p>
                   <ul class="legal-list">
-                    <li><i class="fas fa-times-circle legal-icon-red" aria-hidden="true"></i> No investment contract — no expectation of profit from others' efforts</li>
-                    <li><i class="fas fa-times-circle legal-icon-red" aria-hidden="true"></i> No common enterprise — RebelInuX is not a company</li>
-                    <li><i class="fas fa-times-circle legal-icon-red" aria-hidden="true"></i> No management team — it's a decentralized community</li>
-                    <li><i class="fas fa-times-circle legal-icon-red" aria-hidden="true"></i> Not registered with SEC, FINRA, FCA, or any regulator</li>
+                    <li><i class="fas fa-times-circle legal-icon-red"></i> No investment contract - no expectation of profit from others' efforts</li>
+                    <li><i class="fas fa-times-circle legal-icon-red"></i> No common enterprise - RebelInuX is not a company</li>
+                    <li><i class="fas fa-times-circle legal-icon-red"></i> No management team - it's a decentralized community</li>
+                    <li><i class="fas fa-times-circle legal-icon-red"></i> Not registered with SEC, FINRA, FCA, or any regulator</li>
                   </ul>
                   <p class="small-text">The Howey Test and similar international frameworks do not classify meme tokens as securities. However, regulatory classifications may change. You assume all regulatory risk.</p>
                 </div>
               </div>
             </div>
 
-            <!-- III. High Risk -->
+            <!-- 3. High Risk - Total Loss -->
             <div class="legal-section" data-aos="fade-right" data-aos-delay="100">
               <div class="section-header">
-                <div class="section-number warning-number">III</div>
-                <h3><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> High Risk — Total Loss Possible</h3>
+                <div class="section-number warning-number">3</div>
+                <h3><i class="fas fa-exclamation-triangle"></i> HIGH RISK — TOTAL LOSS POSSIBLE</h3>
               </div>
               <div class="section-content">
                 <div class="risk-warning-detailed">
-                  <h4>Cryptocurrency is Extremely Speculative</h4>
+                  <h4>⚠️ CRYPTOCURRENCY IS EXTREMELY SPECULATIVE ⚠️</h4>
                   <p>You should never purchase meme tokens with funds you cannot afford to lose entirely. Consider the following risks:</p>
 
                   <div class="risk-grid-detailed">
                     <div class="risk-detailed-item">
-                      <i class="fas fa-chart-line" aria-hidden="true"></i>
-                      <strong>Price Volatility</strong>
-                      $REBL has experienced and will continue to experience extreme price fluctuations. 50%+ daily drops are possible.
+                      <i class="fas fa-chart-line"></i>
+                      <strong>Price Volatility:</strong> $REBL has experienced and will continue to experience extreme price fluctuations. 50%+ daily drops are possible.
                     </div>
                     <div class="risk-detailed-item">
-                      <i class="fas fa-tint" aria-hidden="true"></i>
-                      <strong>Liquidity Risk</strong>
-                      Although LP tokens are burned, trading volume may decrease, making it difficult to sell.
+                      <i class="fas fa-tint"></i>
+                      <strong>Liquidity Risk:</strong> Although LP tokens are burned, trading volume may decrease, making it difficult to sell.
                     </div>
                     <div class="risk-detailed-item">
-                      <i class="fas fa-users-slash" aria-hidden="true"></i>
-                      <strong>Community Abandonment</strong>
-                      Meme tokens rely on community interest. If interest wanes, the token may become worthless.
+                      <i class="fas fa-users-slash"></i>
+                      <strong>Community Abandonment:</strong> Meme tokens rely on community interest. If interest wanes, the token may become worthless.
                     </div>
                     <div class="risk-detailed-item">
-                      <i class="fas fa-code" aria-hidden="true"></i>
-                      <strong>Smart Contract Risk</strong>
-                      Despite verification and audits, vulnerabilities may exist.
+                      <i class="fas fa-code"></i>
+                      <strong>Smart Contract Risk:</strong> Despite verification and audits, vulnerabilities may exist.
                     </div>
                     <div class="risk-detailed-item">
-                      <i class="fas fa-gavel" aria-hidden="true"></i>
-                      <strong>Regulatory Risk</strong>
-                      Governments may restrict or ban meme tokens.
+                      <i class="fas fa-gavel"></i>
+                      <strong>Regulatory Risk:</strong> Governments may restrict or ban meme tokens.
                     </div>
                     <div class="risk-detailed-item">
-                      <i class="fas fa-shield-halved" aria-hidden="true"></i>
-                      <strong>Security Risk</strong>
-                      Wallets, exchanges, and bridges can be hacked.
+                      <i class="fas fa-shield-halved"></i>
+                      <strong>Security Risk:</strong> Wallets, exchanges, and bridges can be hacked.
                     </div>
                   </div>
 
                   <div class="total-loss-emphasis">
-                    <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
-                    <p><strong>You acknowledge that you may lose your entire investment and agree not to hold anyone responsible.</strong></p>
+                    <i class="fas fa-skull"></i>
+                    <p><strong>YOU ACKNOWLEDGE THAT YOU MAY LOSE YOUR ENTIRE INVESTMENT AND AGREE NOT TO HOLD ANYONE RESPONSIBLE.</strong></p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- IV. Restricted Jurisdictions -->
+            <!-- 4. Restricted Jurisdictions -->
             <div class="legal-section" data-aos="fade-right" data-aos-delay="150">
               <div class="section-header">
-                <div class="section-number warning-number">IV</div>
-                <h3><i class="fas fa-globe" aria-hidden="true"></i> Restricted Jurisdictions</h3>
+                <div class="section-number warning-number">4</div>
+                <h3><i class="fas fa-globe"></i> Restricted Jurisdictions</h3>
               </div>
               <div class="section-content">
                 <div class="jurisdiction-warning-box">
                   <div class="jurisdiction-warning-header">
-                    <i class="fas fa-ban" aria-hidden="true"></i>
-                    <h4>Participation is Strictly Prohibited For</h4>
+                    <i class="fas fa-ban"></i>
+                    <h4>PARTICIPATION IS STRICTLY PROHIBITED FOR:</h4>
                   </div>
 
                   <div class="jurisdiction-flags">
                     <div class="flag-item">
                       <span class="flag">🇪🇺</span>
                       <span class="flag-name">European Economic Area (EEA)</span>
-                      <span class="flag-status prohibited">Prohibited</span>
+                      <span class="flag-status prohibited">PROHIBITED</span>
                     </div>
                     <div class="flag-item">
                       <span class="flag">🇨🇭</span>
                       <span class="flag-name">Switzerland</span>
-                      <span class="flag-status prohibited">Prohibited</span>
+                      <span class="flag-status prohibited">PROHIBITED</span>
                     </div>
                     <div class="flag-item">
                       <span class="flag">🇫🇷</span>
                       <span class="flag-name">France</span>
-                      <span class="flag-status prohibited">Prohibited</span>
+                      <span class="flag-status prohibited">PROHIBITED</span>
                     </div>
                     <div class="flag-item">
                       <span class="flag">🇺🇸</span>
                       <span class="flag-name">United States (if deemed a security)</span>
-                      <span class="flag-status warning">Check Local Laws</span>
+                      <span class="flag-status warning">CHECK LOCAL LAWS</span>
                     </div>
                     <div class="flag-item">
                       <span class="flag">🇨🇳</span>
                       <span class="flag-name">China</span>
-                      <span class="flag-status prohibited">Prohibited</span>
+                      <span class="flag-status prohibited">PROHIBITED</span>
                     </div>
                     <div class="flag-item">
                       <span class="flag">⚠️</span>
                       <span class="flag-name">Other jurisdictions where crypto is restricted</span>
-                      <span class="flag-status warning">Verify Local Laws</span>
+                      <span class="flag-status warning">VERIFY LOCAL LAWS</span>
                     </div>
                   </div>
 
                   <div class="jurisdiction-statement">
                     <p><strong>By accessing this website or purchasing $REBL, you represent and warrant that you are NOT a resident of any prohibited jurisdiction.</strong></p>
-                    <p>If you are a resident of a prohibited jurisdiction, you are hereby notified that you are <span class="highlight-red">not authorized</span> to use this site or acquire $REBL. Any such acquisition is at your own risk and may violate local laws.</p>
+                    <p>If you are a resident of a prohibited jurisdiction, you are hereby notified that you are <span class="highlight-red">NOT AUTHORIZED</span> to use this site or acquire $REBL. Any such acquisition is at your own risk and may violate local laws.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- V. No Liability -->
+            <!-- 5. No Liability / No Warranty -->
             <div class="legal-section" data-aos="fade-right" data-aos-delay="200">
               <div class="section-header">
-                <div class="section-number warning-number">V</div>
-                <h3><i class="fas fa-shield" aria-hidden="true"></i> No Liability / No Warranty</h3>
+                <div class="section-number warning-number">5</div>
+                <h3><i class="fas fa-shield"></i> No Liability / No Warranty</h3>
               </div>
               <div class="section-content">
                 <div class="liability-disclaimer-box">
-                  <h4>The RebelInuX Project, Its Developers, Contributors, and Community Members</h4>
+                  <h4>THE REBELINUX PROJECT, ITS DEVELOPERS, CONTRIBUTORS, AND COMMUNITY MEMBERS:</h4>
                   <ul class="legal-list">
-                    <li><i class="fas fa-times-circle legal-icon-red" aria-hidden="true"></i> Provide all content and services "AS IS" and "AS AVAILABLE"</li>
-                    <li><i class="fas fa-times-circle legal-icon-red" aria-hidden="true"></i> Make <strong>no warranties</strong>, express or implied, including merchantability or fitness for a particular purpose</li>
-                    <li><i class="fas fa-times-circle legal-icon-red" aria-hidden="true"></i> Are <strong>not liable</strong> for any direct, indirect, incidental, consequential, or punitive damages</li>
-                    <li><i class="fas fa-times-circle legal-icon-red" aria-hidden="true"></i> Are <strong>not responsible</strong> for any financial losses, lost profits, or data breaches</li>
-                    <li><i class="fas fa-times-circle legal-icon-red" aria-hidden="true"></i> Do <strong>not guarantee</strong> the accuracy, completeness, or timeliness of any information</li>
+                    <li><i class="fas fa-times-circle legal-icon-red"></i> Provide all content and services "AS IS" and "AS AVAILABLE"</li>
+                    <li><i class="fas fa-times-circle legal-icon-red"></i> Make NO WARRANTIES, express or implied, including merchantability or fitness for a particular purpose</li>
+                    <li><i class="fas fa-times-circle legal-icon-red"></i> Are NOT liable for any direct, indirect, incidental, consequential, or punitive damages</li>
+                    <li><i class="fas fa-times-circle legal-icon-red"></i> Are NOT responsible for any financial losses, lost profits, or data breaches</li>
+                    <li><i class="fas fa-times-circle legal-icon-red"></i> Do NOT guarantee the accuracy, completeness, or timeliness of any information</li>
                   </ul>
 
                   <div class="liability-conclusion">
-                    <p><strong>You expressly assume all risk and responsibility for your use of RebelInuX and $REBL.</strong></p>
+                    <p><strong>YOU EXPRESSLY ASSUME ALL RISK AND RESPONSIBILITY FOR YOUR USE OF REBELINUX AND $REBL.</strong></p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- VI. No Fiduciary Relationship -->
+            <!-- 6. No Fiduciary Relationship -->
             <div class="legal-section" data-aos="fade-right" data-aos-delay="250">
               <div class="section-header">
-                <div class="section-number warning-number">VI</div>
-                <h3><i class="fas fa-user-tie" aria-hidden="true"></i> No Fiduciary Relationship</h3>
+                <div class="section-number warning-number">6</div>
+                <h3><i class="fas fa-user-tie"></i> No Fiduciary Relationship</h3>
               </div>
               <div class="section-content">
                 <p>No fiduciary duty or special relationship is created between you and RebelInuX or its community members. We are not your advisors, agents, or fiduciaries. You are solely responsible for your own decisions.</p>
               </div>
             </div>
 
-            <!-- VII. Forward-Looking Statements -->
+            <!-- 7. Forward-Looking Statements -->
             <div class="legal-section" data-aos="fade-right" data-aos-delay="300">
               <div class="section-header">
-                <div class="section-number warning-number">VII</div>
-                <h3><i class="fas fa-binoculars" aria-hidden="true"></i> Forward-Looking Statements</h3>
+                <div class="section-number warning-number">7</div>
+                <h3><i class="fas fa-binoculars"></i> Forward-Looking Statements</h3>
               </div>
               <div class="section-content">
                 <p>Any statements about future plans, roadmap items, or potential utility are <strong>aspirational only</strong> and constitute <strong>forward-looking statements</strong>. There is <strong>no guarantee</strong> that any stated goal or milestone will be achieved. RebelInuX may be abandoned at any time with no prior notice.</p>
               </div>
             </div>
 
-            <!-- VIII. Third-Party Content -->
+            <!-- 8. Third-Party Content -->
             <div class="legal-section" data-aos="fade-right" data-aos-delay="350">
               <div class="section-header">
-                <div class="section-number warning-number">VIII</div>
-                <h3><i class="fas fa-external-link-alt" aria-hidden="true"></i> Third-Party Content</h3>
+                <div class="section-number warning-number">8</div>
+                <h3><i class="fas fa-external-link-alt"></i> Third-Party Content</h3>
               </div>
               <div class="section-content">
                 <p>Our website links to external platforms. RebelInuX does not endorse, control, or guarantee the accuracy of any third-party content. You access third-party services at your own risk and are subject to their terms.</p>
               </div>
             </div>
 
-            <!-- IX. Contract Address Verification -->
+            <!-- 9. Contract Address Verification -->
             <div class="legal-section" data-aos="fade-right" data-aos-delay="400">
               <div class="section-header">
-                <div class="section-number warning-number">IX</div>
-                <h3><i class="fas fa-file-contract" aria-hidden="true"></i> Contract Address Verification</h3>
+                <div class="section-number warning-number">9</div>
+                <h3><i class="fas fa-file-contract"></i> Contract Address Verification</h3>
               </div>
               <div class="section-content">
-                <p><strong>Scam warning:</strong> Fake tokens impersonating $REBL exist. The only official contract address is:</p>
+                <p><strong>SCAM WARNING:</strong> Fake tokens impersonating $REBL exist. The ONLY official contract address is:</p>
 
                 <div class="contract-address-box large">
                   <code>F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump</code>
-                  <button type="button" class="copy-mini-btn" data-action="copy" aria-label="Copy contract address">
-                    <i class="fas fa-copy" aria-hidden="true"></i> Copy
+                  <button onclick="copyDisclaimerContract()" class="copy-mini-btn">
+                    <i class="fas fa-copy"></i>
                   </button>
                 </div>
 
-                <p class="highlight-red"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> <strong>Double-check every character before transacting. Scammers create similar addresses to steal funds.</strong></p>
+                <p class="highlight-red"><i class="fas fa-exclamation-triangle"></i> <strong>Double-check every character before transacting. Scammers create similar addresses to steal funds.</strong></p>
 
                 <div class="verification-badges">
-                  <span><i class="fas fa-check-circle" aria-hidden="true"></i> Verified on Solscan</span>
-                  <span><i class="fas fa-check-circle" aria-hidden="true"></i> Verified on RugCheck</span>
-                  <span><i class="fas fa-check-circle" aria-hidden="true"></i> 98.57% LP Burned</span>
+                  <span><i class="fas fa-check-circle"></i> Verified on Solscan</span>
+                  <span><i class="fas fa-check-circle"></i> Verified on RugCheck</span>
+                  <span><i class="fas fa-check-circle"></i> 98.57% LP Burned</span>
                 </div>
               </div>
             </div>
 
-            <!-- X. Changes to Disclaimer -->
+            <!-- 10. Changes to Disclaimer -->
             <div class="legal-section" data-aos="fade-right" data-aos-delay="450">
               <div class="section-header">
-                <div class="section-number warning-number">X</div>
-                <h3><i class="fas fa-edit" aria-hidden="true"></i> Changes to Disclaimer</h3>
+                <div class="section-number warning-number">10</div>
+                <h3><i class="fas fa-edit"></i> Changes to Disclaimer</h3>
               </div>
               <div class="section-content">
                 <p>We may update this disclaimer at any time. Continued use of the website or token after changes constitutes acceptance of the updated terms. It is your responsibility to review this page regularly.</p>
               </div>
             </div>
 
-            <!-- XI. Severability -->
+            <!-- 11. Severability -->
             <div class="legal-section" data-aos="fade-right" data-aos-delay="500">
               <div class="section-header">
-                <div class="section-number warning-number">XI</div>
-                <h3><i class="fas fa-puzzle-piece" aria-hidden="true"></i> Severability</h3>
+                <div class="section-number warning-number">11</div>
+                <h3><i class="fas fa-puzzle-piece"></i> Severability</h3>
               </div>
               <div class="section-content">
                 <p>If any provision of this disclaimer is found to be unenforceable or invalid under applicable law, such provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
               </div>
             </div>
 
-            <!-- XII. Contact -->
+            <!-- 12. Contact -->
             <div class="legal-section" data-aos="fade-right" data-aos-delay="550">
               <div class="section-header">
-                <div class="section-number warning-number">XII</div>
-                <h3><i class="fas fa-envelope" aria-hidden="true"></i> Contact</h3>
+                <div class="section-number warning-number">12</div>
+                <h3><i class="fas fa-envelope"></i> Contact</h3>
               </div>
               <div class="section-content">
                 <p>For questions regarding this disclaimer:</p>
                 <div class="contact-simple">
-                  <i class="fas fa-envelope" aria-hidden="true"></i>
+                  <i class="fas fa-envelope"></i>
                   <a href="mailto:contact@rebelinux.fun">contact@rebelinux.fun</a>
                 </div>
-                <p class="small-text">Please allow 5–7 business days for a response.</p>
+                <p class="small-text">Please allow 5-7 business days for a response.</p>
               </div>
             </div>
           </div>
 
-          <!-- ═══════════════════════════════════════════════
-               FINAL ACKNOWLEDGEMENT — Legal Instrument
-               ═══════════════════════════════════════════════ -->
+          <!-- FINAL ACKNOWLEDGEMENT -->
           <div class="final-acknowledgement">
             <div class="final-acknowledgement-header">
-              <span class="final-rule" aria-hidden="true"></span>
+              <i class="fas fa-check-double"></i>
               <h3>Final Acknowledgement and Acceptance</h3>
-              <span class="final-rule" aria-hidden="true"></span>
+              <i class="fas fa-check-double"></i>
             </div>
 
             <div class="final-acknowledgement-content">
+              <p><strong>I HAVE READ AND UNDERSTAND THIS DISCLAIMER IN ITS ENTIRETY.</strong></p>
 
-              <p class="final-preamble">
-                I have read and understand this disclaimer in its entirety, and I hereby affirm the following:
-              </p>
-
-              <ol class="acknowledgement-statements">
-                <li class="ack-statement">
-                  <span class="ack-number" aria-hidden="true">i.</span>
-                  <span class="ack-text">I acknowledge that $REBL is a <em>meme token</em> with no intrinsic value or financial rights.</span>
-                </li>
-                <li class="ack-statement">
-                  <span class="ack-number" aria-hidden="true">ii.</span>
-                  <span class="ack-text">I acknowledge that I <em>may lose 100% of my funds</em> and I accept this risk.</span>
-                </li>
-                <li class="ack-statement">
-                  <span class="ack-number" aria-hidden="true">iii.</span>
-                  <span class="ack-text">I certify that I am <em>not a resident</em> of the EEA, Switzerland, France, or any prohibited jurisdiction.</span>
-                </li>
-                <li class="ack-statement">
-                  <span class="ack-number" aria-hidden="true">iv.</span>
-                  <span class="ack-text">I agree <em>not to hold</em> the RebelInuX community liable for any losses.</span>
-                </li>
-                <li class="ack-statement">
-                  <span class="ack-number" aria-hidden="true">v.</span>
-                  <span class="ack-text">I understand that cryptocurrency is <em>highly speculative and unregulated</em>.</span>
-                </li>
-                <li class="ack-statement">
-                  <span class="ack-number" aria-hidden="true">vi.</span>
-                  <span class="ack-text">I confirm that I am <em>18 years of age or older</em>.</span>
-                </li>
-              </ol>
+              <div class="acknowledgement-statements">
+                <div class="ack-statement">
+                  <input type="checkbox" id="ack1" disabled checked>
+                  <label for="ack1">I acknowledge $REBL is a MEME TOKEN with no intrinsic value or financial rights.</label>
+                </div>
+                <div class="ack-statement">
+                  <input type="checkbox" id="ack2" disabled checked>
+                  <label for="ack2">I acknowledge I MAY LOSE 100% OF MY FUNDS and accept this risk.</label>
+                </div>
+                <div class="ack-statement">
+                  <input type="checkbox" id="ack3" disabled checked>
+                  <label for="ack3">I certify I am NOT a resident of EEA, Switzerland, France, or any prohibited jurisdiction.</label>
+                </div>
+                <div class="ack-statement">
+                  <input type="checkbox" id="ack4" disabled checked>
+                  <label for="ack4">I agree NOT TO HOLD the RebelInuX community liable for any losses.</label>
+                </div>
+                <div class="ack-statement">
+                  <input type="checkbox" id="ack5" disabled checked>
+                  <label for="ack5">I understand that cryptocurrency is HIGHLY SPECULATIVE and unregulated.</label>
+                </div>
+                <div class="ack-statement">
+                  <input type="checkbox" id="ack6" disabled checked>
+                  <label for="ack6">I confirm I am 18+ years of age or older.</label>
+                </div>
+              </div>
 
               <div class="acknowledgement-conclusion">
-                <p class="ack-conclusion-lead">By continuing to use this website or interact with $REBL, you are deemed to have accepted all terms of this disclaimer.</p>
-                <p class="ack-conclusion-warning">If you do not accept these terms, you must immediately exit this website and not purchase or hold $REBL tokens.</p>
-
-                <div class="ack-signature">
-                  <span class="ack-signature-line" aria-hidden="true"></span>
-                  <span class="ack-signature-label">Acknowledged by continued use</span>
-                  <span class="ack-signature-line" aria-hidden="true"></span>
-                </div>
+                <p><strong>BY CONTINUING TO USE THIS WEBSITE OR INTERACT WITH $REBL, YOU ARE DEEMED TO HAVE ACCEPTED ALL TERMS OF THIS DISCLAIMER.</strong></p>
+                <p class="small-text">If you do not accept these terms, you must immediately exit this website and not purchase or hold $REBL tokens.</p>
               </div>
             </div>
           </div>
@@ -616,10 +578,10 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="anchor-target" data-aos="fade-up">
+    <section id="faq" data-aos="fade-up">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Questions</span>
+          <span class="section-eyebrow">❓ Questions</span>
           <h2>Disclaimer <em class="gold-serif">FAQ</em></h2>
           <p class="section-subtitle">Common questions about risk and regulatory status</p>
         </div>
@@ -627,32 +589,32 @@
         <div class="content-card">
           <div class="faq-grid">
             <div class="faq-item" data-aos="fade-right">
-              <h4><i class="fas fa-question-circle" aria-hidden="true"></i> Is $REBL a scam?</h4>
+              <h4><i class="fas fa-question-circle"></i> Is $REBL a scam?</h4>
               <p><strong>No.</strong> $REBL launched fairly with no presale, LP tokens burned, and contract renounced. However, meme tokens carry extreme risk. This disclaimer is transparency, not an admission of wrongdoing.</p>
             </div>
 
             <div class="faq-item" data-aos="fade-left">
-              <h4><i class="fas fa-question-circle" aria-hidden="true"></i> Why can't EU residents participate?</h4>
+              <h4><i class="fas fa-question-circle"></i> Why can't EU residents participate?</h4>
               <p>The EEA and Switzerland have strict financial promotion regimes. To ensure compliance and protect consumers, we prohibit participation. If you're from these regions, please do not buy $REBL.</p>
             </div>
 
             <div class="faq-item" data-aos="fade-right">
-              <h4><i class="fas fa-question-circle" aria-hidden="true"></i> Who is liable if I lose money?</h4>
+              <h4><i class="fas fa-question-circle"></i> Who is liable if I lose money?</h4>
               <p><strong>You are.</strong> The disclaimer explicitly states that the RebelInuX community assumes no liability. Cryptocurrency trading is self-directed. You alone are responsible for your investment decisions.</p>
             </div>
 
             <div class="faq-item" data-aos="fade-left">
-              <h4><i class="fas fa-question-circle" aria-hidden="true"></i> Is this project regulated?</h4>
+              <h4><i class="fas fa-question-circle"></i> Is this project regulated?</h4>
               <p><strong>No.</strong> RebelInuX is not registered with any financial regulator. It's a decentralized community project. There is no investor protection scheme, no insurance, and no recourse if things go wrong.</p>
             </div>
 
             <div class="faq-item" data-aos="fade-right">
-              <h4><i class="fas fa-question-circle" aria-hidden="true"></i> How do I verify the contract?</h4>
+              <h4><i class="fas fa-question-circle"></i> How do I verify the contract?</h4>
               <p>Always check the contract address on Solscan and RugCheck. The official address is posted above. Scammers create fake tokens — double-check every character before transacting.</p>
             </div>
 
             <div class="faq-item" data-aos="fade-left">
-              <h4><i class="fas fa-question-circle" aria-hidden="true"></i> Can the team rug pull?</h4>
+              <h4><i class="fas fa-question-circle"></i> Can the team rug pull?</h4>
               <p><strong>No.</strong> Contract authority has been renounced. 98.57% of LP tokens are burned. No one can mint new tokens or remove liquidity. However, community-driven projects can still fail if interest dies.</p>
             </div>
           </div>
@@ -664,36 +626,36 @@
     <section id="related-pages" data-aos="fade-up">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Legal Documents</span>
-          <h2>Related <em class="gold-serif">Reading</em></h2>
+          <span class="section-eyebrow">⚖️ Legal Documents</span>
+          <h2>Related <em class="gold-serif">Legal Documents</em></h2>
           <p class="section-subtitle">Three more documents that govern your use of RebelInuX</p>
         </div>
 
         <div class="related-grid">
-          <a href="terms-of-service.html" class="related-card" data-aos="fade-right">
-            <div class="related-icon"><i class="fas fa-gavel" aria-hidden="true"></i></div>
+          <a href="terms-of-service.html" class="related-card terms-card" data-aos="fade-right">
+            <div class="related-icon"><i class="fas fa-gavel"></i></div>
             <h3>Terms of Service</h3>
             <p>User agreement &amp; conditions</p>
             <div class="related-arrow">
-              <i class="fas fa-arrow-right" aria-hidden="true"></i> Read Terms
+              <i class="fas fa-arrow-right"></i> Read Terms
             </div>
           </a>
 
-          <a href="privacy-policy.html" class="related-card" data-aos="fade-up">
-            <div class="related-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+          <a href="privacy-policy.html" class="related-card privacy-card" data-aos="fade-up">
+            <div class="related-icon"><i class="fas fa-shield-alt"></i></div>
             <h3>Privacy Policy</h3>
             <p>How we protect your data</p>
             <div class="related-arrow">
-              <i class="fas fa-arrow-right" aria-hidden="true"></i> Read Privacy
+              <i class="fas fa-arrow-right"></i> Read Privacy
             </div>
           </a>
 
-          <a href="trade.html" class="related-card" data-aos="fade-left">
-            <div class="related-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+          <a href="trade.html" class="related-card trade-card" data-aos="fade-left">
+            <div class="related-icon"><i class="fas fa-chart-line"></i></div>
             <h3>Trade $REBL</h3>
             <p>Live charts &amp; contract verification</p>
             <div class="related-arrow">
-              <i class="fas fa-arrow-right" aria-hidden="true"></i> Start Trading
+              <i class="fas fa-arrow-right"></i> Start Trading
             </div>
           </a>
         </div>
@@ -709,25 +671,43 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
   <script>
-    // AOS init — above-the-fold timing. legal.js does NOT re-init.
     document.addEventListener('DOMContentLoaded', function() {
-      if (typeof AOS !== 'undefined') {
-        AOS.init({ duration: 800, once: true, offset: 100 });
-      }
+      AOS.init({ duration: 800, once: true, offset: 100 });
 
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+          e.preventDefault();
           const targetId = this.getAttribute('href');
           if (targetId === '#') return;
-
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
-            e.preventDefault();
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
           }
         });
       });
     });
+
+    function copyDisclaimerContract() {
+      const contract = 'F4gh7VNjtp69gKv3JVhFFtXTD4NBbHfbEq5zdiBJpump';
+      navigator.clipboard.writeText(contract).then(() => {
+        const btn = event.target.closest('button');
+        const original = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i>';
+        btn.style.background = '#4CAF50';
+
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fas fa-copy"></i>';
+          btn.style.background = '';
+        }, 1500);
+
+        alert('Contract address copied! Always verify before transacting.');
+      });
+    }
+
+    window.copyDisclaimerContract = copyDisclaimerContract;
   </script>
 
   <script src="js/analytics.js" defer></script>
