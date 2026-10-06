@@ -2153,3 +2153,7 @@ main > section > .container {
     display: none !important;
   }
 }
+/* LP lock icon — brass to match other accent icons */
+.warning-item.verified .warning-item-header i.fa-lock {
+  color: var(--rebel-gold);
+}
