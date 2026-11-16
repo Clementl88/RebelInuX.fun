@@ -54,22 +54,6 @@
     });
   }
 
-  // ---------- Active Contest — Auto-Update Contest ID ----------
-  function initActiveContestId() {
-    const idEl = document.querySelector('.contest-id');
-    if (!idEl) return;
-
-    // Optional: uncomment if you want the ID to increment automatically
-    // based on a stored counter in localStorage (useful when you open contests often)
-    /*
-    const stored = localStorage.getItem('rebelinux_contest_id');
-    if (!stored) {
-      localStorage.setItem('rebelinux_contest_id', '001');
-    }
-    idEl.textContent = '#' + (stored || '001');
-    */
-  }
-
   // ---------- Copy helpers (reused from homepage) ----------
   function initCopyButtons() {
     const copyButtons = document.querySelectorAll('[data-copy]');
@@ -115,7 +99,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     initFaqAccordion();
     initSmoothScroll();
-    initActiveContestId();
     initCopyButtons();
     initSectionReveal();
   });
