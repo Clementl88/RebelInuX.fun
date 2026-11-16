@@ -167,13 +167,11 @@ function showFallbackChart() {
   chartContainer.innerHTML = `
     <div class="chart-fallback">
       <div class="fallback-icon"><i class="fas fa-chart-pie"></i></div>
-      <h4>Ecosystem Flow</h4>
+      <h4>Token Distribution</h4>
       <div class="fallback-data">
         <table>
-          <tr><td>AI Production:</td><td>50%</td></tr>
-          <tr><td>Contest Rewards:</td><td>30%</td></tr>
-          <tr><td>Reserve:</td><td>10%</td></tr>
-          <tr><td>Operations:</td><td>10%</td></tr>
+          <tr><td>Public Supply:</td><td>50%</td></tr>
+          <tr><td>Protocol Reserves:</td><td>50%</td></tr>
         </table>
       </div>
     </div>
