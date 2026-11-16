@@ -1,7 +1,7 @@
-// js/tokenomics.js — Tokenomics page functionality (v3.1)
+// js/tokenomics.js — Tokenomics page functionality (v3.2)
 
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('Tokenomics page loaded (v3.1)');
+  console.log('Tokenomics page loaded (v3.2)');
 
   // Hide loader
   setTimeout(() => {
