@@ -1,11 +1,12 @@
-// roadmap.js — Roadmap page functionality (v3.0)
+// roadmap.js — Roadmap page functionality (v3.1)
+// Aligned with $rebelinux Creator Coin on Zora (Base) — no $REBL, no Solana
 
 document.addEventListener('DOMContentLoaded', function () {
   setTimeout(initRoadmapPage, 300);
 });
 
 function initRoadmapPage() {
-  console.log('Initializing Roadmap page (v3.0)');
+  console.log('Initializing Roadmap page (v3.1)');
 
   initAOS();
   initProgressAnimations();
