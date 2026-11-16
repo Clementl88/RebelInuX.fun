@@ -92,7 +92,7 @@ function matchAccordionColorsToButtons() {
 }
 
 // ============================================================================
-// CHART — Ecosystem Flow (Remplace l'ancienne distribution 70/17/7/6)
+// CHART — Token Supply Distribution (50% Public / 50% Protocol)
 // ============================================================================
 function initializeTokenomicsChart() {
   const ctx = document.getElementById('distributionChart');
@@ -107,23 +107,18 @@ function initializeTokenomicsChart() {
       window.tokenomicsChart.destroy();
     }
 
-    // Utilisation d'un graphique en "Donut" pour un look plus moderne
     window.tokenomicsChart = new Chart(ctx, {
       type: 'doughnut',
       data: {
         labels: [
-          'AI Production (50%)',
-          'Contest Rewards (30%)',
-          'Reserve (10%)',
-          'Operations (10%)'
+          'Public Supply (50%)',
+          'Protocol Reserves (50%)'
         ],
         datasets: [{
-          data: [50, 30, 10, 10],
+          data: [50, 50],
           backgroundColor: [
-            'rgba(215, 77, 77, 0.9)',      // Red — AI Production (cohérent avec le CSS)
-            'rgba(212, 167, 106, 0.9)',    // Gold — Contest Rewards
-            'rgba(76, 175, 80, 0.9)',      // Green — Reserve
-            'rgba(0, 188, 212, 0.9)'       // Teal — Operations
+            'rgba(215, 77, 77, 0.9)',      // Red — Public Supply
+            'rgba(156, 39, 176, 0.9)'      // Purple — Protocol Reserves
           ],
           borderColor: 'rgba(255, 255, 255, 0.8)',
           borderWidth: 2,
@@ -133,7 +128,7 @@ function initializeTokenomicsChart() {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        cutout: '65%', // Crée l'effet "Donut" (trou au centre)
+        cutout: '65%',
         plugins: {
           legend: {
             position: window.innerWidth <= 768 ? 'bottom' : 'right',
