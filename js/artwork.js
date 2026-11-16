@@ -1,5 +1,5 @@
-// js/artwork.js — Enhanced Artwork Gallery v3.0
-// Aligned with RebelInuX Whitepaper v3.0 (participation model, no epoch/3-asset mechanics)
+// js/artwork.js — Enhanced Artwork Gallery v3.1
+// Aligned with $rebelinux Creator Coin on Zora (Base) — no $REBL, no Solana
 
 // ============================================================================
 // INITIALIZATION — Wait for header/footer components to load
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // MAIN INITIALIZATION
 // ============================================================================
 function initArtworkPage() {
-  console.log('🚀 Initializing Enhanced Artwork Gallery page (v3.0)');
+  console.log('🚀 Initializing Enhanced Artwork Gallery page (v3.1)');
 
   initAOSWithDelay();
   initGalleryInteractions();
@@ -188,7 +188,6 @@ function initArtworkModal() {
   const modalClose = document.getElementById('modalClose');
   const viewButtons = document.querySelectorAll('.view-artwork');
 
-  // If modal doesn't exist in HTML, wire up a lightweight fallback
   if (!modal) {
     viewButtons.forEach(button => {
       button.addEventListener('click', function (e) {
@@ -242,21 +241,21 @@ function initArtworkModal() {
   if (modalClose) {
     modalClose.addEventListener('click', function () {
       modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
     });
   }
 
   modal.addEventListener('click', function (e) {
     if (e.target === modal) {
       modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
     }
   });
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
       modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
     }
   });
 }
@@ -265,114 +264,54 @@ function initArtworkModal() {
 // SCROLL ANIMATIONS
 // ============================================================================
 function initScrollAnimations() {
-  const animatedElements = document.querySelectorAll(
-    '.artwork-card, .faq-item, .related-card, .brand-card, .guideline, .benefit-card, .cross-link-card'
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+  const elements = document.querySelectorAll(
+    '.artwork-card, .artist-spotlight-card, .brand-card, .submit-artwork-card, .faq-item, .cross-link-card, .related-card, .benefit-card'
   );
 
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+  elements.forEach((el) => observer.observe(el));
+}
 
-    animatedElements.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(el);
+// ============================================================================
+// BACK TO TOP
+// ============================================================================
+function initBackToTop() {
+  const backToTop = document.getElementById('backToTop');
+  if (!backToTop) return;
+
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 300);
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// ============================================================================
+// ANALYTICS
+// ============================================================================
+function trackPageVisit() {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'page_view', {
+      page_title: 'Artwork Gallery',
+      page_location: window.location.href
     });
   }
 }
 
 // ============================================================================
-// PAGE VISIT TRACKING (localStorage only — no external calls)
-// ============================================================================
-function trackPageVisit() {
-  try {
-    const visitCount = parseInt(localStorage.getItem('artwork_visits') || '0', 10);
-    localStorage.setItem('artwork_visits', String(visitCount + 1));
-
-    if (visitCount === 0) {
-      setTimeout(() => {
-        showToast('🎨 Welcome to the RebelInuX Art Gallery!', 'info', 5000);
-      }, 2000);
-    }
-  } catch (err) {
-    // localStorage may be disabled — fail silently
-  }
-}
-
-// ============================================================================
-// TOAST NOTIFICATIONS
-// ============================================================================
-function showToast(message, type = 'info', duration = 3000) {
-  const existingToast = document.querySelector('.toast-notification');
-  if (existingToast) existingToast.remove();
-
-  const toast = document.createElement('div');
-  toast.className = `toast-notification toast-${type}`;
-  toast.innerHTML = `
-    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-triangle' : 'info-circle'}"></i>
-    <span>${message}</span>
-  `;
-
-  toast.style.cssText = `
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
-    color: white;
-    padding: 12px 24px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
-    z-index: 9999;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    animation: slideUp 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 90%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  `;
-
-  document.body.appendChild(toast);
-
-  if (!document.querySelector('#toast-styles')) {
-    const style = document.createElement('style');
-    style.id = 'toast-styles';
-    style.textContent = `
-      @keyframes slideUp {
-        from { transform: translateX(-50%) translateY(100px); opacity: 0; }
-        to { transform: translateX(-50%) translateY(0); opacity: 1; }
-      }
-      @keyframes slideDown {
-        from { transform: translateX(-50%) translateY(0); opacity: 1; }
-        to { transform: translateX(-50%) translateY(100px); opacity: 0; }
-      }
-    `;
-    document.head.appendChild(style);
-  }
-
-  setTimeout(() => {
-    toast.style.animation = 'slideDown 0.3s ease';
-    setTimeout(() => {
-      if (toast.parentNode) toast.parentNode.removeChild(toast);
-    }, 300);
-  }, duration);
-}
-
-// ============================================================================
-// GLOBAL EXPORTS
+// EXPORTS
 // ============================================================================
 window.initArtworkPage = initArtworkPage;
-window.showToast = showToast;
+document.addEventListener('DOMContentLoaded', initBackToTop);
