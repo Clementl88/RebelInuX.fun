@@ -1,4 +1,5 @@
-// community.js — Community Hub page (v3.0)
+// community.js — Community Hub page (v3.1)
+// Aligned with $rebelinux on Zora (Base) — no $REBL, no Solana
 
 document.addEventListener('DOMContentLoaded', function () {
   console.log('Community Hub page initializing');
