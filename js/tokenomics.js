@@ -1,7 +1,7 @@
-// js/tokenomics.js — Tokenomics page functionality (v3.0)
+// js/tokenomics.js — Tokenomics page functionality (v3.1)
 
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('Tokenomics page loaded (v3.0)');
+  console.log('Tokenomics page loaded (v3.1)');
 
   // Hide loader
   setTimeout(() => {
@@ -92,7 +92,7 @@ function matchAccordionColorsToButtons() {
 }
 
 // ============================================================================
-// CHART
+// CHART — Ecosystem Flow (Remplace l'ancienne distribution 70/17/7/6)
 // ============================================================================
 function initializeTokenomicsChart() {
   const ctx = document.getElementById('distributionChart');
@@ -107,24 +107,25 @@ function initializeTokenomicsChart() {
       window.tokenomicsChart.destroy();
     }
 
+    // Utilisation d'un graphique en "Donut" pour un look plus moderne
     window.tokenomicsChart = new Chart(ctx, {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: [
-          'Public Distribution (70%)',
-          'ZORA Rewards Treasury (17%)',
-          'Team Fund (7%)',
-          'Ecosystem Fund (6%)'
+          'AI Production (50%)',
+          'Contest Rewards (30%)',
+          'Reserve (10%)',
+          'Operations (10%)'
         ],
         datasets: [{
-          data: [70, 17, 7, 6],
+          data: [50, 30, 10, 10],
           backgroundColor: [
-            'rgba(255, 51, 102, 0.9)',     // Red — Public Distribution
-            'rgba(156, 39, 176, 0.9)',     // Purple — ZORA Rewards
-            'rgba(75, 192, 192, 0.9)',     // Teal — Team Fund
-            'rgba(255, 206, 86, 0.9)'      // Yellow — Ecosystem Fund
+            'rgba(215, 77, 77, 0.9)',      // Red — AI Production (cohérent avec le CSS)
+            'rgba(212, 167, 106, 0.9)',    // Gold — Contest Rewards
+            'rgba(76, 175, 80, 0.9)',      // Green — Reserve
+            'rgba(0, 188, 212, 0.9)'       // Teal — Operations
           ],
-          borderColor: 'rgba(255, 255, 255, 1)',
+          borderColor: 'rgba(255, 255, 255, 0.8)',
           borderWidth: 2,
           hoverOffset: 15
         }]
@@ -132,13 +133,25 @@ function initializeTokenomicsChart() {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        cutout: '65%', // Crée l'effet "Donut" (trou au centre)
         plugins: {
           legend: {
             position: window.innerWidth <= 768 ? 'bottom' : 'right',
             labels: {
               color: 'white',
-              padding: 15,
-              usePointStyle: true
+              padding: 20,
+              usePointStyle: true,
+              font: {
+                family: 'Montserrat',
+                size: 13
+              }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return ' ' + context.label;
+              }
             }
           }
         }
@@ -159,13 +172,13 @@ function showFallbackChart() {
   chartContainer.innerHTML = `
     <div class="chart-fallback">
       <div class="fallback-icon"><i class="fas fa-chart-pie"></i></div>
-      <h4>Token Distribution</h4>
+      <h4>Ecosystem Flow</h4>
       <div class="fallback-data">
         <table>
-          <tr><td>Public Distribution:</td><td>70%</td></tr>
-          <tr><td>ZORA Rewards Treasury:</td><td>17%</td></tr>
-          <tr><td>Team Fund:</td><td>7%</td></tr>
-          <tr><td>Ecosystem Fund:</td><td>6%</td></tr>
+          <tr><td>AI Production:</td><td>50%</td></tr>
+          <tr><td>Contest Rewards:</td><td>30%</td></tr>
+          <tr><td>Reserve:</td><td>10%</td></tr>
+          <tr><td>Operations:</td><td>10%</td></tr>
         </table>
       </div>
     </div>
