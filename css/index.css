@@ -3208,3 +3208,72 @@ body.video-modal-open {
     font-size: 0.7rem !important;
   }
 }
+/* ===== PLATFORM CARDS (replaces token ecosystem) ===== */
+.platforms-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+@media (min-width: 600px) {
+  .platforms-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1000px) {
+  .platforms-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.platform-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 1.5rem 1.25rem;
+  text-decoration: none;
+  color: white;
+  transition: all 0.35s ease;
+  min-height: 200px;
+}
+.platform-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 167, 106, 0.4);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+}
+.platform-card > i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.platform-card--tiktok > i    { color: #00f2ea; }
+.platform-card--instagram > i { color: #e1306c; }
+.platform-card--youtube > i   { color: #ff0000; }
+.platform-card--facebook > i  { color: #1877f2; }
+.platform-card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+}
+.platform-card p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+  flex: 1;
+  margin: 0;
+}
+.platform-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--rebel-gold);
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(212, 167, 106, 0.15);
+  width: 100%;
+  margin-top: auto;
+}
+.platform-card:hover .platform-cta { gap: 0.65rem; }
+
+/* Social pill for Facebook */
+.social-pill.facebook:hover { background: #1877f2; border-color: #1877f2; }
